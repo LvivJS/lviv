@@ -17,7 +17,9 @@ paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles  = paths.sourceRoot + '/sass/*.scss';
-paths.buildStyles = paths.buildRoot + '/style';
+paths.styles = '/style';
+paths.buildDevStyles = paths.buildRoot + '/dev' + paths.styles;
+paths.buildProdStyles = paths.buildRoot + '/prod' + paths.styles;
 
 // code healthiness
 gulp.task('js_styleguide', function () {
@@ -66,17 +68,24 @@ gulp.task('browserify_watch', function () {
 });
 
 //sass
-gulp.task('css', function() {
+gulp.task('styles', function() {
   return gulp.src(paths.sassFiles)
   .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(concating('style.css'))
   .pipe(minifycss())
+  .pipe(gulp.dest(paths.buildProdStyles))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest(paths.buildStyles))
+  .pipe(gulp.dest(paths.buildDevStyles))
+
 });
 
+gulp.task('styles_watch', function(){
+  return gulp.watch(paths.sassFiles,['styles'])
+});
+
+
 // default
-gulp.task('default', ['js_watch', 'browserify_watch'], function () {
+gulp.task('default', ['js_watch', 'browserify_watch', 'styles_watch'], function () {
   gutil.log('Started successfully!')
 });
