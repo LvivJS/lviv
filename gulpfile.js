@@ -5,6 +5,10 @@ var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var gutil = require('gulp-util');
 var notifier = require('node-notifier');
+var sass = require('gulp-sass');
+var minifycss = require('gulp-minify-css');
+var concating = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {};
 paths.sourceRoot = './app';
@@ -12,6 +16,8 @@ paths.buildRoot  = './dist';
 paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
+paths.sassFiles  = paths.sourceRoot + '/sass/*.scss';
+paths.buildStyles = paths.buildRoot + '/style';
 
 // code healthiness
 gulp.task('js_styleguide', function () {
@@ -57,6 +63,17 @@ gulp.task('browserify_watch', function () {
     .bundle()
     .pipe(source(paths.buildFileName))
     .pipe(gulp.dest(paths.buildRoot));
+});
+
+//sass
+gulp.task('css', function() {
+  return gulp.src(paths.sassFiles)
+  .pipe(sourcemaps.init())
+  .pipe(sass())
+  .pipe(concating('style.css'))
+  .pipe(minifycss())
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest(paths.buildStyles))
 });
 
 // default
