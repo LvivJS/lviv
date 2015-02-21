@@ -5,10 +5,15 @@ var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var gutil = require('gulp-util');
 var notifier = require('node-notifier');
+var gulpif = require('gulp-if');
+var streamify = require('gulp-streamify');
+var uglify = require('gulp-uglify');
+
+var env = process.env.NODE_ENV || 'development';
 
 var paths = {};
-paths.sourceRoot = './app';
-paths.buildRoot  = './dist';
+paths.sourceRoot = './app/js';
+paths.buildRoot  = './dist/js';
 paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
@@ -36,7 +41,7 @@ gulp.task('build', ['js_styleguide'], function () {
 gulp.task('browserify_watch', function () {
   var bundler = browserify({
     entries: [paths.jsEntry],
-    debug: true, // gives sourcemaps
+    debug: env === 'development', // gives sourcemaps
     cache: {},
     packageCache: {},
     fullPaths: true
@@ -56,6 +61,7 @@ gulp.task('browserify_watch', function () {
     })
     .bundle()
     .pipe(source(paths.buildFileName))
+    .pipe(gulpif(env === 'production', streamify(uglify())))
     .pipe(gulp.dest(paths.buildRoot));
 });
 
