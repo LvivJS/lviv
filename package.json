@@ -15,5 +15,9 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "scripts": {
+    "jscs": "jscs app/js/*.js; true",
+    "start": "watchify app/js/main.js -o dist/js/bundle.js -dv"
   }
 }
