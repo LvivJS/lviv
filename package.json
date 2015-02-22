@@ -12,6 +12,7 @@
     "node-notifier": "^4.1.1",
     "rimraf": "^2.2.8",
     "vinyl-source-stream": "^1.0.0",
+    "watch": "^0.14.0",
     "watchify": "^2.3.0"
   },
   "engines": {
@@ -27,6 +28,8 @@
     "build": "npm run build:js",
     "build:js": "npm run browserify",
     "prebuild:js": "npm run jscs",
+    "watch": "npm run watch:js",
+    "watch:js": "watch 'npm run jscs' app/js",
     "clean": "npm run clean:js",
     "clean:js": "rimraf dist/js/*",
     "jscs": "jscs app/js/*.js; true",
