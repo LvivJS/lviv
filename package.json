@@ -10,14 +10,25 @@
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.3",
     "node-notifier": "^4.1.1",
+    "rimraf": "^2.2.8",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.3.0"
   },
   "engines": {
     "node": ">=0.10.0"
   },
+  "config": {
+    "jsBlob": "app/js/*.js",
+    "jsEntry": "app/js/main.js",
+    "jsDist": "dist/js/bundle.js"
+  },
   "scripts": {
+    "start": "npm run watchify",
+    "build:js": "npm run browserify",
+    "prebuild:js": "npm run jscs",
+    "clean": "rimraf dist",
     "jscs": "jscs app/js/*.js; true",
-    "start": "watchify app/js/main.js -o dist/js/bundle.js -dv"
+    "browserify": "browserify $npm_package_config_jsEntry > $npm_package_config_jsDist",
+    "watchify": "watchify $npm_package_config_jsEntry -o $npm_package_config_jsDist -dv"
   }
 }
