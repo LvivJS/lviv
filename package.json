@@ -24,9 +24,11 @@
   },
   "scripts": {
     "start": "npm run watchify",
+    "build": "npm run build:js",
     "build:js": "npm run browserify",
     "prebuild:js": "npm run jscs",
-    "clean": "rimraf dist",
+    "clean": "npm run clean:js",
+    "clean:js": "rimraf dist/js/*",
     "jscs": "jscs app/js/*.js; true",
     "browserify": "browserify $npm_package_config_jsEntry > $npm_package_config_jsDist",
     "watchify": "watchify $npm_package_config_jsEntry -o $npm_package_config_jsDist -dv"
