@@ -68,16 +68,22 @@ gulp.task('browserify_watch', function () {
 });
 
 //sass
-gulp.task('styles', function() {
+gulp.task('dev_styles', function() {
   return gulp.src(paths.sassFiles)
   .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(concating('style.css'))
-  .pipe(minifycss())
-  .pipe(gulp.dest(paths.buildProdStyles))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(paths.buildDevStyles))
 
+});
+
+gulp.task('prod_styles', function() {
+  return gulp.src(paths.sassFiles)
+  .pipe(sass())
+  .pipe(concating('style.css'))
+  .pipe(minifycss())
+  .pipe(gulp.dest(paths.buildProdStyles))
 });
 
 gulp.task('styles_watch', function(){
