@@ -87,7 +87,7 @@ gulp.task('prod_styles', function() {
 });
 
 gulp.task('styles_watch', function(){
-  return gulp.watch(paths.sassFiles,['styles'])
+  return gulp.watch(paths.sassFiles,['dev_styles'])
 });
 
 
