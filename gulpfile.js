@@ -15,25 +15,31 @@ var uglify = require('gulp-uglify');
 
 var env = process.env.NODE_ENV || 'development';
 
+
 var paths = {};
+
 paths.sourceRoot = './app/js';
 paths.buildRoot  = './dist/js';
 paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
-paths.sassFiles  = paths.sourceRoot + '/sass/*.scss';
+paths.sassFiles  = './app/sass/*.scss';
 paths.styles = '/style';
-paths.buildDevStyles = paths.buildRoot + '/dev' + paths.styles;
-paths.buildProdStyles = paths.buildRoot + '/prod' + paths.styles;
+paths.buildDevStyles = './dist/dev' + paths.styles;
+paths.buildProdStyles = './dist/prod' + paths.styles;
 
 // default
-gulp.task('default', ['js_watch'], function () {
+gulp.task('default', ['js_watch', 'style_watch'], function () {
   gutil.log('Started successfully!')
 });
 
 // js
 gulp.task('js_watch', function () {
   return gulp.watch('app/*.js', ['js_styleguide']);
+});
+
+gulp.task('style_watch', function(){
+  return gulp.watch(paths.sassFiles,['build_style'])
 });
 
 // build
@@ -69,26 +75,15 @@ bundler.on('time', function(time){
 });
 
 //sass
-gulp.task('dev_styles', function() {
+gulp.task('build_style', function() {
   return gulp.src(paths.sassFiles)
-  .pipe(sourcemaps.init())
+  .pipe(gulpif(env === 'development', sourcemaps.init()))
   .pipe(sass())
   .pipe(concating('style.css'))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest(paths.buildDevStyles))
-
-});
-
-gulp.task('prod_styles', function() {
-  return gulp.src(paths.sassFiles)
-  .pipe(sass())
-  .pipe(concating('style.css'))
-  .pipe(minifycss())
-  .pipe(gulp.dest(paths.buildProdStyles))
-});
-
-gulp.task('styles_watch', function(){
-  return gulp.watch(paths.sassFiles,['dev_styles'])
+  .pipe(gulpif(env === 'development', sourcemaps.write()))
+  .pipe(gulpif(env === 'development', gulp.dest(paths.buildDevStyles)))
+  .pipe(gulpif(env === 'production', minifycss()))
+  .pipe(gulpif(env === 'production', gulp.dest(paths.buildProdStyles)))
 });
 
 // TODO : exit process somehow
