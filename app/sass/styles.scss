@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+	font-family:$main-font;
+	font-size:$small-font;
+	box-sizing:border-box;
+}
+
+#container {
+	width:940px;
+	margin:0px auto;
+	background:$primary-color;
+	section{
+		h2{
+			width:200px;
+			height:40px;
+			text-transform:uppercase;
+			color:$heading-color;
+			font-size:$giant-font;
+			font-weight:normal;
+			padding-top:3px;
+			box-sizing:border-box;
+			margin-top:50px;
+			padding-left:10px;
+			border: 3px solid $border-color;
+			@include border-radius(25%);
+		}
+	}
+}
