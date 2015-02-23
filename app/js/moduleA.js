@@ -1,3 +1,3 @@
 module.exports = {
-  a: 'i am from moduleA yes'
+  a: 'i am from moduleA. '
 }
