@@ -12,6 +12,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpif = require('gulp-if');
 var streamify = require('gulp-streamify');
 var uglify = require('gulp-uglify');
+var livereload = require('live-reload');
+var shell = require('gulp-shell');
+// var exec = require('gulp-exec');
 
 var env = process.env.NODE_ENV || 'development';
 
@@ -58,7 +61,7 @@ gulp.task('js_styleguide', function () {
 // BROWSERIFY
 var bundler = watchify(browserify({
   entries: [paths.jsEntry],
-  debug: env === 'development', // gives sourcemaps
+  debug: env === 'development', // gives sourcemaps for development environment
   cache: {},
   packageCache: {},
   fullPaths: true
@@ -95,3 +98,13 @@ function browserify_bundle(){
   .pipe(gulp.dest(paths.buildRoot));
 }
 
+//start server
+gulp.task('start_server', shell.task(['node server.js']));
+
+//livereload
+gulp.task('livereload_start', shell.task(['live-reload --port 9091 dist/']));
+
+//run browserify, start server and reload page on saving changes
+gulp.task('serve', ['browserify_watch', 'start_server', 'livereload_start'], function() {
+  gutil.log('Started successfully!');
+});
