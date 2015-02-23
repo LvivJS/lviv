@@ -73,12 +73,12 @@ function browserify_bundle(){
 }
 
 //start server
-gulp.task('start_server', shell.task(['npm run serve']));
+gulp.task('start_server', shell.task(['node server.js']));
 
 //livereload
-gulp.task('livereload_start', shell.task(['npm run livereload']));
+gulp.task('livereload_start', shell.task(['live-reload --port 9091 dist/']));
 
 //run browserify, start server and reload page on saving changes
-gulp.task('start', ['browserify_watch', 'start_server', 'livereload_start'], function() {
+gulp.task('serve', ['browserify_watch', 'start_server', 'livereload_start'], function() {
   gutil.log('Started successfully!');
 });
