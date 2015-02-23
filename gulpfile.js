@@ -9,10 +9,15 @@ var sass = require('gulp-sass');
 var minifycss = require('gulp-minify-css');
 var concating = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
+var gulpif = require('gulp-if');
+var streamify = require('gulp-streamify');
+var uglify = require('gulp-uglify');
+
+var env = process.env.NODE_ENV || 'development';
 
 var paths = {};
-paths.sourceRoot = './app';
-paths.buildRoot  = './dist';
+paths.sourceRoot = './app/js';
+paths.buildRoot  = './dist/js';
 paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
@@ -21,10 +26,9 @@ paths.styles = '/style';
 paths.buildDevStyles = paths.buildRoot + '/dev' + paths.styles;
 paths.buildProdStyles = paths.buildRoot + '/prod' + paths.styles;
 
-// code healthiness
-gulp.task('js_styleguide', function () {
-  return gulp.src(paths.jsFiles)
-    .pipe(jscs())
+// default
+gulp.task('default', ['js_watch'], function () {
+  gutil.log('Started successfully!')
 });
 
 // js
@@ -33,38 +37,35 @@ gulp.task('js_watch', function () {
 });
 
 // build
-gulp.task('build', ['js_styleguide'], function () {
+gulp.task('build', ['js_styleguide', 'browserify_build'], function () {
   notifier.notify({
     'title': 'gulp notification:',
     'message': 'BUILD SUCCESS'
   });
 });
 
-// browserify
-gulp.task('browserify_watch', function () {
-  var bundler = browserify({
-    entries: [paths.jsEntry],
-    debug: true, // gives sourcemaps
-    cache: {},
-    packageCache: {},
-    fullPaths: true
-  });
-  var watcher = watchify(bundler);
+// code healthiness
+gulp.task('js_styleguide', function () {
+  return gulp.src(paths.jsFiles).pipe(jscs())
+});
 
-  return watcher
-    .on('update', function () {
-      var updateStart = Date.now();
-      gutil.log('Browserify rebundle started...');
+// BROWSERIFY
+var bundler = watchify(browserify({
+  entries: [paths.jsEntry],
+  debug: env === 'development', // gives sourcemaps
+  cache: {},
+  packageCache: {},
+  fullPaths: true
+}));
 
-      watcher.bundle()
-        .pipe(source(paths.buildFileName))
-        .pipe(gulp.dest(paths.buildRoot));
+gulp.task('browserify_build', browserify_bundle);
+gulp.task('browserify_watch', function(){
+  bundler.on('update', browserify_bundle);
+  return bundler.bundle(); // needed too keep process running
+});
 
-      gutil.log('Browserify rebundle finished after '+ gutil.colors.magenta((Date.now() - updateStart) + ' ms'));
-    })
-    .bundle()
-    .pipe(source(paths.buildFileName))
-    .pipe(gulp.dest(paths.buildRoot));
+bundler.on('time', function(time){
+  gutil.log('Browserify rebundle finished after '+ gutil.colors.magenta(time + ' ms'));
 });
 
 //sass
@@ -90,8 +91,12 @@ gulp.task('styles_watch', function(){
   return gulp.watch(paths.sassFiles,['dev_styles'])
 });
 
+// TODO : exit process somehow
+function browserify_bundle(){
+  return bundler.bundle()
+  .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+  .pipe(source(paths.buildFileName))
+  .pipe(gulpif(env === 'production', streamify(uglify())))
+  .pipe(gulp.dest(paths.buildRoot));
+}
 
-// default
-gulp.task('default', ['js_watch', 'browserify_watch', 'styles_watch'], function () {
-  gutil.log('Started successfully!')
-});
