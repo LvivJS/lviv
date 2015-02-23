@@ -25,6 +25,7 @@
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.3",
+    "jshint": "^2.6.0",
     "live-reload": "^0.2.0",
     "node-notifier": "^4.1.1",
     "rimraf": "^2.2.8",
@@ -32,24 +33,19 @@
     "watch": "^0.14.0",
     "watchify": "^2.3.0"
   },
-  "config": {
-    "jsBlob": "app/js/*.js",
-    "jsEntry": "app/js/main.js",
-    "jsDist": "dist/js/bundle.js"
-  },
   "scripts": {
     "start": "npm run serve & npm run watchify & npm run livereload",
     "serve": "node server.js",
     "build": "npm run build:js",
-    "build:js": "npm run browserify",
+    "build:js": "if not exist dist\\js mkdir dist\\js && npm run browserify",
     "prebuild:js": "npm run jscs",
     "watch": "npm run watch:js",
     "watch:js": "watch 'npm run jscs' app/js",
     "clean": "npm run clean:js",
     "clean:js": "rimraf dist/js/*",
     "livereload": "live-reload --port 9091 dist/",
-    "jscs": "jscs app/js/*.js; true",
-    "browserify": "browserify $npm_package_config_jsEntry > $npm_package_config_jsDist",
-    "watchify": "watchify $npm_package_config_jsEntry -o $npm_package_config_jsDist -dv"
+    "jscs": "",
+    "browserify": "browserify app/js/main.js > dist/js/bundle.js",
+    "watchify": "watchify app/js/main.js -o dist/js/bundle.js -dv"
   }
 }
