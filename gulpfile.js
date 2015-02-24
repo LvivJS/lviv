@@ -109,8 +109,8 @@ gulp.task('livereload_start', shell.task(['live-reload --port 9091 dist/']));
 
 //creeate folders for browserify if not exist
 gulp.task('browserify_make_dir', shell.task([
-  'mkdir ' + paths.buildDev.replace(slash, '\\') + paths.script.replace(slash, '\\'),
-  'mkdir ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\')
+  'if not exist ' + paths.buildDev.replace(slash, '\\') + paths.script.replace(slash, '\\') + ' mkdir ' + paths.buildDev.replace(slash, '\\') + paths.script.replace(slash, '\\'),
+  'if not exist ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\') + ' mkdir ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\')
   ]));
 
 //clean folders
