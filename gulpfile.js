@@ -82,7 +82,7 @@ gulp.task('build_style', function() {
   return gulp.src(paths.sassFiles)
   .pipe(gulpif(env === 'development', sourcemaps.init()))
   .pipe(sass())
-  .pipe(concating('style.css'))
+  .pipe(concating('styles.css'))
   .pipe(gulpif(env === 'development', sourcemaps.write()))
   .pipe(gulpif(env === 'development', gulp.dest(paths.buildDevStyles)))
   .pipe(gulpif(env === 'production', minifycss()))
@@ -105,6 +105,6 @@ gulp.task('start_server', shell.task(['node server.js']));
 gulp.task('livereload_start', shell.task(['live-reload --port 9091 dist/']));
 
 //run browserify, start server and reload page on saving changes
-gulp.task('serve', ['browserify_watch', 'start_server', 'livereload_start'], function() {
+gulp.task('serve', ['browserify_watch', 'style_watch', 'start_server', 'livereload_start'], function() {
   gutil.log('Started successfully!');
 });
