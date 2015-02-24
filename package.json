@@ -34,7 +34,6 @@
     "live-reload": "^0.2.0",
     "node-notifier": "^4.1.1",
     "rimraf": "^2.2.8",
-    "run-sequence": "^1.0.2",
     "vinyl-source-stream": "^1.0.0",
     "watch": "^0.14.0",
     "watchify": "^2.3.0"
