@@ -14,22 +14,21 @@ var streamify = require('gulp-streamify');
 var uglify = require('gulp-uglify');
 var livereload = require('live-reload');
 var shell = require('gulp-shell');
-// var exec = require('gulp-exec');
 
 var env = process.env.NODE_ENV || 'development';
 
 
 var paths = {};
 
-paths.sourceRoot = './app/js';
-paths.buildRoot  = './dist/js';
+paths.sourceRoot = './app/scripts';
 paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles  = './app/sass/*.scss';
 paths.styles = '/style';
-paths.buildDevStyles = './dist/dev' + paths.styles;
-paths.buildProdStyles = './dist/prod' + paths.styles;
+paths.script = '/scripts';
+paths.buildDev = './dist/dev';
+paths.buildProd = './dist/prod';
 
 // default
 gulp.task('default', ['js_watch', 'style_watch'], function () {
@@ -84,9 +83,9 @@ gulp.task('build_style', function() {
   .pipe(sass())
   .pipe(concating('style.css'))
   .pipe(gulpif(env === 'development', sourcemaps.write()))
-  .pipe(gulpif(env === 'development', gulp.dest(paths.buildDevStyles)))
+  .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.styles)))
   .pipe(gulpif(env === 'production', minifycss()))
-  .pipe(gulpif(env === 'production', gulp.dest(paths.buildProdStyles)))
+  .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.styles)))
 });
 
 // TODO : exit process somehow
@@ -95,7 +94,8 @@ function browserify_bundle(){
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
   .pipe(source(paths.buildFileName))
   .pipe(gulpif(env === 'production', streamify(uglify())))
-  .pipe(gulp.dest(paths.buildRoot));
+  .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.script)))
+  .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.script)));
 }
 
 //start server
