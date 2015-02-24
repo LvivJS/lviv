@@ -14,7 +14,7 @@ var streamify = require('gulp-streamify');
 var uglify = require('gulp-uglify');
 var livereload = require('live-reload');
 var shell = require('gulp-shell');
-// var exec = require('gulp-exec');
+var runSequence = require('run-sequence');
 
 var env = process.env.NODE_ENV || 'development';
 
@@ -22,14 +22,14 @@ var env = process.env.NODE_ENV || 'development';
 var paths = {};
 
 paths.sourceRoot = './app/js';
-paths.buildRoot  = './dist/js';
 paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles  = './app/sass/*.scss';
 paths.styles = '/style';
-paths.buildDevStyles = './dist/dev' + paths.styles;
-paths.buildProdStyles = './dist/prod' + paths.styles;
+paths.script = '/scripts';
+paths.buildDev = './dist/dev';
+paths.buildProd = './dist/prod';
 
 // default
 gulp.task('default', ['js_watch', 'style_watch'], function () {
@@ -84,18 +84,19 @@ gulp.task('build_style', function() {
   .pipe(sass())
   .pipe(concating('style.css'))
   .pipe(gulpif(env === 'development', sourcemaps.write()))
-  .pipe(gulpif(env === 'development', gulp.dest(paths.buildDevStyles)))
+  .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.styles)))
   .pipe(gulpif(env === 'production', minifycss()))
-  .pipe(gulpif(env === 'production', gulp.dest(paths.buildProdStyles)))
+  .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.styles)))
 });
 
 // TODO : exit process somehow
-function browserify_bundle(){
+function browserify_bundle() {
   return bundler.bundle()
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
   .pipe(source(paths.buildFileName))
   .pipe(gulpif(env === 'production', streamify(uglify())))
-  .pipe(gulp.dest(paths.buildRoot));
+  .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.script)))
+  .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.script)));
 }
 
 //start server
@@ -104,7 +105,28 @@ gulp.task('start_server', shell.task(['node server.js']));
 //livereload
 gulp.task('livereload_start', shell.task(['live-reload --port 9091 dist/']));
 
+
+
+//create directories for browserify
+gulp.task('browserify_make-dir', function() {
+  var slash = new RegExp('/+', 'g');
+  gulp.src('').pipe(shell([
+    'if not exist ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\') + ' mkdir ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\'), 
+    'if not exist ' + paths.buildDev.replace(slash, '\\') + paths.script.replace(slash, '\\') + ' mkdir ' + paths.buildDev.replace(slash, '\\') + paths.script.replace(slash, '\\')
+  ]));  
+  return gutil.log('folders has been created successfully!');;
+});
+
+
+
 //run browserify, start server and reload page on saving changes
-gulp.task('serve', ['browserify_watch', 'start_server', 'livereload_start'], function() {
-  gutil.log('Started successfully!');
+gulp.task('serve', function() {
+    runSequence([
+      'browserify_make-dir', 
+      'browserify_build',
+      'browserify_watch', 
+      'start_server', 
+      'livereload_start', 
+    ]);
+    gutil.log('Started successfully!');
 });
