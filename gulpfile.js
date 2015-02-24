@@ -16,7 +16,7 @@ var livereload = require('live-reload');
 var shell = require('gulp-shell');
 
 var env = process.env.NODE_ENV || 'development';
-
+var slash = new RegExp('/', 'g');
 
 var paths = {};
 
@@ -103,6 +103,13 @@ gulp.task('start_server', shell.task(['node server.js']));
 
 //livereload
 gulp.task('livereload_start', shell.task(['live-reload --port 9091 dist/']));
+
+//creeate folders for browserify if not exist
+
+gulp.task('browserify_make_dir', shell.task([
+  'mkdir ' + paths.buildDev.replace(slash, '\\') + paths.script.replace(slash, '\\'),
+  'mkdir ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\')
+  ]));
 
 //run browserify, start server and reload page on saving changes
 gulp.task('serve', ['browserify_watch', 'start_server', 'livereload_start'], function() {
