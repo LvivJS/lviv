@@ -112,12 +112,14 @@ gulp.task('browserify_make_dir', shell.task([
   'mkdir ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\')
   ]));
 
+//create folders and files before starting serve
 gulp.task('build', function() {
   runSequence([
     'browserify_make_dir',
     'build_style',
     'browserify_build'
   ]);
+  gutil.log('files builded');
 });
 
 //run browserify, start server and reload page on saving changes
