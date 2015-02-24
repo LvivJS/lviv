@@ -15,6 +15,7 @@ var uglify = require('gulp-uglify');
 var livereload = require('live-reload');
 var shell = require('gulp-shell');
 var runSequence = require('gulp-run-sequence');
+var clean = require('gulp-clean');
 
 var env = process.env.NODE_ENV || 'development';
 var slash = new RegExp('/', 'g');
@@ -112,9 +113,15 @@ gulp.task('browserify_make_dir', shell.task([
   'mkdir ' + paths.buildProd.replace(slash, '\\') + paths.script.replace(slash, '\\')
   ]));
 
+//clean folders
+gulp.task('build-clean', function() {
+  gulp.src('./dist').pipe(clean());
+});
+
 //create folders and files before starting serve
 gulp.task('build', function() {
   runSequence([
+    'build-clean',
     'browserify_make_dir',
     'build_style',
     'browserify_build'
