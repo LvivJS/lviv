@@ -26,7 +26,7 @@ paths.sourceRoot = './app/scripts';
 paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
-paths.sassFiles  = './app/sass/*.scss';
+paths.sassFiles  = './app/styles/*.scss';
 paths.styles = '/style';
 paths.script = '/scripts';
 paths.buildDev = './dist/dev';
@@ -83,7 +83,7 @@ gulp.task('build_style', function() {
   return gulp.src(paths.sassFiles)
   .pipe(gulpif(env === 'development', sourcemaps.init()))
   .pipe(sass())
-  .pipe(concating('style.css'))
+  .pipe(concating('styles.css'))
   .pipe(gulpif(env === 'development', sourcemaps.write()))
   .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.styles)))
   .pipe(gulpif(env === 'production', minifycss()))
@@ -130,6 +130,6 @@ gulp.task('build', function() {
 });
 
 //run browserify, start server and reload page on saving changes
-gulp.task('serve', ['browserify_watch', 'start_server', 'livereload_start'], function() {
+gulp.task('serve', ['browserify_watch', 'style_watch', 'start_server', 'livereload_start'], function() {
   gutil.log('Started successfully!');
 });

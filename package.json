@@ -57,8 +57,8 @@
     "jscs": "",
     "browserify": "browserify app/js/main.js > dist/js/bundle.js",
     "watchify": "watchify app/js/main.js -o dist/js/bundle.js -dv",
-    "build:css:dev": "node-sass --source-map dist/dev/style/style.css.map app/sass/styles.scss dist/dev/style/styles.css",
-    "build:css:prod": "node-sass --output-style compressed app/sass/styles.scss dist/prod/style/styles.css",
-    "watch:css": "node-sass app/sass --watch --source-map dist/dev/style/style.css.map --output dist/dev/style "
+    "build:css:dev": "node-sass --source-map dist/dev/style/style.css.map app/styles/styles.scss dist/dev/style/styles.css",
+    "build:css:prod": "node-sass --output-style compressed app/styles/styles.scss dist/prod/style/styles.css",
+    "watch:css": "node-sass app/styles --watch --source-map dist/dev/style/style.css.map --output dist/dev/style "
   }
 }
