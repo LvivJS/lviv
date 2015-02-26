@@ -16,6 +16,7 @@ var livereload = require('live-reload');
 var shell = require('gulp-shell');
 var runSequence = require('run-sequence');
 var deleteDist = require('del');
+var reactify = require('reactify');
 
 var env = process.env.NODE_ENV || 'development';
 var slash = new RegExp('/', 'g');
@@ -66,7 +67,7 @@ var bundler = watchify(browserify({
   cache: {},
   packageCache: {},
   fullPaths: true
-}));
+}).transform(reactify));
 
 gulp.task('browserify_build', browserify_bundle);
 gulp.task('browserify_watch', function(){
