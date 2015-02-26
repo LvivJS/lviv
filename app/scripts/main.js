@@ -1,4 +1,21 @@
-var moduleA = require('./moduleA.js');
+/** @jsx React.DOM */
 
-console.log(moduleA.a);
-document.getElementById('app').innerHTML = moduleA.a;
+var React = require('react');
+var Header = require('./modules/Header');
+
+
+var App = React.createClass({
+	render: function() {
+		return (
+			<div>
+			<Header />
+			</div>
+        )                
+	}
+});
+
+
+React.render(
+	<App />,
+	document.getElementById('app')
+);
