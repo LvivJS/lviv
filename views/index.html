@@ -1,53 +1,11 @@
 <!doctype html>
 <html>
   <head>
-    <title>conf maker</title>
+    <title>Conf maker</title>
     <link rel="stylesheet" href="dev/style/styles.css">
-    <script src="http://fb.me/react-0.12.2.min.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
   </head>
   <body>
     <div id="app"></div>
-	    
-    <div id="container">
-    	<section>
-    		<h2>Popular pages</h2>
-    	</section>
-    	<section>
-    		<h2>More info</h2>
-    	</section>
-	</div>
-    <script type="text/jsx">
-	    /** @jsx React.DOM */
-	    var SayHello = React.createClass({
-	    	render:function(){
-	    		return (
-	    			<p>Hello world, and everyone is this world!</p>
-	    		);
-	    	}
-	    });
-	    React.renderComponent(<SayHello />, document.getElementById('app'))
-    </script>
-
-
-    <div id="new-container"></div>
-
-    <script type="text/jsx">
-    /** @jsx React.DOM */
-    var HelloWorld = React.createClass({
-        render: function() {
-            return (
-                <div className="hello-world">
-                    Hello World!!!
-                </div>
-            );
-        }
-    });
-    React.render(
-        <HelloWorld />,
-        document.getElementById('new-container')
-        );
-    </script>
 
     <script src="dev/scripts/bundle.js"></script>
     <script src="//localhost:9091"></script>
