@@ -17,6 +17,8 @@ var shell = require('gulp-shell');
 var runSequence = require('run-sequence');
 var deleteDist = require('del');
 var reactify = require('reactify');
+var imagemin = require('gulp-imagemin');
+
 
 var env = process.env.NODE_ENV || 'development';
 var slash = new RegExp('/', 'g');
@@ -28,6 +30,7 @@ paths.jsFiles    = paths.sourceRoot + '/*.js';
 paths.jsEntry    = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles  = './app/styles/**/*.scss';
+paths.imageFiles = './app/images/*'
 paths.styles = '/style';
 paths.script = '/scripts';
 paths.buildDev = './dist/dev';
@@ -45,6 +48,19 @@ gulp.task('js_watch', function () {
 
 gulp.task('style_watch', function(){
   return gulp.watch(paths.sassFiles,['build_style'])
+});
+
+gulp.task('image_watch', function(){
+  return gulp.watch('./app/images/*',['build_image'])
+});
+
+gulp.task('build_image', function () {
+    return gulp.src(paths.imageFiles)
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulpif(env === 'development', gulp.dest('./dist/dev/images')))
+        .pipe(gulpif(env === 'development', gulp.dest('./dist/prod/images')))
 });
 
 // build
@@ -127,12 +143,13 @@ gulp.task('build', function() {
     'deleteDist',
     'browserify_make_dir',
     'build_style',
+    'build_image',
     'browserify_build'
   ]);
   gutil.log('files builded');
 });
 
 //run browserify, start server and reload page on saving changes
-gulp.task('serve', ['browserify_watch','js_watch' 'style_watch', 'start_server', 'livereload_start'], function() {
+gulp.task('serve', ['browserify_watch','js_watch', 'image_watch', 'style_watch', 'start_server', 'livereload_start'], function() {
   gutil.log('Started successfully!');
 });

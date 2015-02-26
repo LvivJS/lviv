@@ -5,7 +5,7 @@ var Header = React.createClass({
 	render: function() {
 		return(
 		 <div id="header" className="header">
-		  <div id="logo" className="header__logo"><img src="./images/logo.jpg"/></div>
+		  <div id="logo" className="header__logo"><img src="./dev/images/logo.jpg"/></div>
 		  <div id="menu" className="menu">
 		   <ul>
 			<li className="menu__item"><a href="#">Register</a></li>
