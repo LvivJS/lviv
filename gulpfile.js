@@ -133,6 +133,6 @@ gulp.task('build', function() {
 });
 
 //run browserify, start server and reload page on saving changes
-gulp.task('serve', ['browserify_watch', 'style_watch', 'start_server', 'livereload_start'], function() {
+gulp.task('serve', ['browserify_watch','js_watch' 'style_watch', 'start_server', 'livereload_start'], function() {
   gutil.log('Started successfully!');
 });

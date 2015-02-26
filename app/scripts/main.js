@@ -7,9 +7,9 @@ var Header = require('./modules/Header');
 var App = React.createClass({
 	render: function() {
 		return (
-			<div>
-			<Header />
-			</div>
+		  <div>
+		   <Header />
+		  </div>
         )                
 	}
 });
