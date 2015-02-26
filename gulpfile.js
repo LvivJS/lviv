@@ -14,8 +14,8 @@ var streamify = require('gulp-streamify');
 var uglify = require('gulp-uglify');
 var livereload = require('live-reload');
 var shell = require('gulp-shell');
-var runSequence = require('gulp-run-sequence');
-var clean = require('gulp-clean');
+var runSequence = require('run-sequence');
+var deleteDist = require('del');
 
 var env = process.env.NODE_ENV || 'development';
 var slash = new RegExp('/', 'g');
@@ -114,14 +114,16 @@ gulp.task('browserify_make_dir', shell.task([
   ]));
 
 //clean folders
-gulp.task('build-clean', function() {
-  gulp.src('./dist').pipe(clean());
+gulp.task('deleteDist', function() {
+  deleteDist(['./dist/dev/*', './dist/prod/*'], function() {
+    gutil.log('dev and prod folders cleaned');
+  });
 });
 
 //create folders and files before starting serve
 gulp.task('build', function() {
   runSequence([
-    'build-clean',
+    'deleteDist',
     'browserify_make_dir',
     'build_style',
     'browserify_build'
