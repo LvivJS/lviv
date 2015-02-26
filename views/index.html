@@ -29,6 +29,26 @@
 	    React.renderComponent(<SayHello />, document.getElementById('app'))
     </script>
 
+
+    <div id="new-container"></div>
+
+    <script type="text/jsx">
+    /** @jsx React.DOM */
+    var HelloWorld = React.createClass({
+        render: function() {
+            return (
+                <div className="hello-world">
+                    Hello World!!!
+                </div>
+            );
+        }
+    });
+    React.render(
+        <HelloWorld />,
+        document.getElementById('new-container')
+        );
+    </script>
+
     <script src="dev/scripts/bundle.js"></script>
     <script src="//localhost:9091"></script>
 
