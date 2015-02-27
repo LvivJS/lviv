@@ -11,7 +11,7 @@ var Header = React.createClass({
        <ul>
         <li className="menu__item"><a href="#">Register</a></li>
         <li className="menu__item menu__item--active"><a href="#">Schedule</a></li>
-        <li className="menu__item"><a href="#">Reporters</a></li>
+        <li className="menu__item"><a href="#">Speakers</a></li>
         <li className="menu__item"><a href="#">Locating</a></li>
        </ul>
       </div>

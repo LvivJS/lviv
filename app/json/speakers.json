@@ -1,0 +1,51 @@
+[
+	{
+		"name":"Werner Vogels",
+		"position":"Filmmaker + Artist at The External World, Mountain",
+		"photo_url":"/speakers/speaker-brian-wong.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+	},
+	{
+		"name":"David Allen",
+		"position":"Designer at That Dragon, Cancer",
+		"photo_url":"/speakers/speaker-david-allen.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+	},
+	{
+		"name":"Neelie Kroes",
+		"position":"Game Designer at Set Adventure",
+		"photo_url":"/speakers/speaker-eric-brewer.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+	},
+	{
+		"name":"Eric Brewer",
+		"position":"CTO, Amazon",
+		"photo_url":"/speakers/speaker-gabe-zichermann.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+	},
+	{
+		"name":"Jan Rezab",
+		"position":"Creative Director EVE Universe",
+		"photo_url":"/speakers/speaker-jan-rezab.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+
+	},
+	{
+		"name":"Mark Randall",
+		"position":"Play Maker Toca Boca",
+		"photo_url":"/speakers/speaker-mark-randall-new.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+	},
+	{
+		"name":"Gabe Zichermann",
+		"position":"Author at Getting Things Done",
+		"photo_url":"/speakers/speaker-nicolas-brusson.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+	},
+	{
+		"name":"Brian Wong",
+		"position":"Founder & CEO, Kiip",
+		"photo_url":"/speakers/speaker-scott-smith.jpg",
+		"about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley. His “CAP Theorem” covers basics tradeoffs required in the design of distributed systems. Eric was named a "Global Leader for Tomorrow" by the World Economic Forum and “most influential person on the architecture of the Internet” by InfoWorld."
+	}
+]

@@ -47,7 +47,7 @@ gulp.task('build', function () {
   runSequence(
     'deleteDist',
     'scripts_styleguide',
-    ['build_style', 'build_image', 'browserify_build'],
+    ['build_style', /*'build_image',*/ 'browserify_build'],
     notify_success);
 
   function notify_success(err){
@@ -79,12 +79,12 @@ gulp.task('build_style', function() {
 });
 
 //IMAGES
-gulp.task('build_image', function() {
-  return gulp.src(paths.imageFiles)
-    .pipe(imagemin({ progressive: true }))
-    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/images')))
-    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/images')))
-});
+// gulp.task('build_image', function() {
+//   return gulp.src(paths.imageFiles)
+//     .pipe(imagemin({ progressive: true }))
+//     .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/images')))
+//     .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/images')))
+// });
 
 //code healthiness
 gulp.task('scripts_styleguide', function () {
