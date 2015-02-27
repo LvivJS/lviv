@@ -1,7 +1,7 @@
 
-$color__primary: DodgerBlue;
+$color__primary: rgb(30, 145, 255);
 $color__primary--light: LightCyan;
-$color__heading--menu: Indigo;
+$color__heading--menu: rgb(255, 255, 255);
 $color__heading--active: LightSeaGreen;
 $color-boder: blue;
 
@@ -9,4 +9,8 @@ $font__main: Calibri;
 $font__giant:24px;
 $font__large:20px;
 $font__small:12px;
+
+
+
+$container: 940px;
 

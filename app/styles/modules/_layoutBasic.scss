@@ -1,0 +1,38 @@
+@import '../variables';
+@import '../mixins';
+
+#app {
+	display: flex;
+	justify-content: center;
+}
+
+.page-wrap {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+}
+
+#header, 
+#menu,
+#overview,
+#location,
+#speakers,
+#shedule,
+#registration,
+#footer {
+	@include container-ext;
+}
+
+
+/*  
+this is test styles and should be deleted
+every module which would be instead of .container
+should contain @include container-int; 
+*/
+.container,
+ {
+	@include container-int;
+	border: 3px $color__primary solid;
+	height: 400px;
+}

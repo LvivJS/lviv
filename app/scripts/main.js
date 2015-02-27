@@ -1,14 +1,12 @@
 'use strict';
 
 var React = require('react');
-var Header = require('./modules/Header');
+var LayoutBasic = require('./modules/Layout(basic)');
 
 var App = React.createClass({
   render: function() {
     return (
-      <div>
-       <Header />
-      </div>
+       <LayoutBasic />
     )
   }
 });
