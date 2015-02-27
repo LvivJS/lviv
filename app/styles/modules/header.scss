@@ -1,31 +1,13 @@
 @import '../variables';
 @import '../mixins';
 
-.header {
-	width:80%;
-	margin: 20px auto;
+#header {
+	@include container-ext;
 	background: $color__primary;
-	padding: 20px;
 	font-family: $font__main;
 }
 
-.menu__item{
-	list-style:none;
-	font-size: $font__giant;
-	display: inline-block;
-	padding: 20px;
-	color: $color__heading--menu;
-	a{
-		text-decoration:none;
-	}
+.header {
+	@include container-int;
 }
 
-.menu__item--active{
-	background:$color__primary--light
-}
-
-.menu__item:hover{
-	a{
-		color:$color__heading--active;
-	}
-}
