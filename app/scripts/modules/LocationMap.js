@@ -1,13 +1,12 @@
 var React = require('react');
 
 var LocationMap = React.createClass({
-	render: function() {
-		return (
-			<div id="googleMap" className="location">
-
-			</div>
-		);
-	}
+  render: function() {
+    return (
+      <div id="googleMap" className="location">
+      </div>
+    );
+  }
 });
 
 //google map script

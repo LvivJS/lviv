@@ -24,7 +24,7 @@ var env = process.env.NODE_ENV || 'development';
 
 var paths = {};
 paths.sourceRoot = './app/scripts';
-paths.jsFiles = paths.sourceRoot + '/*.js';
+paths.jsFiles = paths.sourceRoot + '/**/*.js';
 paths.jsEntry = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles = './app/styles/**/*.scss';
