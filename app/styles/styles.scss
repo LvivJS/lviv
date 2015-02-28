@@ -1,6 +1,12 @@
 @import 'variables';
 @import 'mixins';
-@import 'modules/header';
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
 body {
 	font-family:$font__main;
@@ -8,3 +14,13 @@ body {
 	box-sizing:border-box;
 }
 
+a {
+	color: $color__primary;
+	text-decoration: none;
+}
+
+
+@import 'modules/_layoutBasic';
+@import 'modules/header';
+@import 'modules/_menu';
+@import 'modules/_locationMap';

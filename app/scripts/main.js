@@ -1,16 +1,13 @@
 'use strict';
 
 var React = require('react');
-var Header = require('./modules/Header');
-var Speakers = require('./modules/Speakers');
+var LayoutBasic = require('./modules/Layout(basic)');
+
 
 var App = React.createClass({
   render: function() {
     return (
-      <div>
-       <Header />
-       <Speakers />
-      </div>
+       <LayoutBasic />
     )
   }
 });

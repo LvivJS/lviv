@@ -5,3 +5,14 @@
           border-radius: $radius;
 };
 
+@mixin container-int {
+	max-width: $container;
+	flex-grow: 1;
+	display: flex;
+}
+
+@mixin container-ext {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+}
