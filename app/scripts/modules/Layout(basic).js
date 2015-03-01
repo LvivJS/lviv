@@ -4,6 +4,7 @@ var React = require('react');
 var Header = require('./Header');
 var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
+var Speakers = require('./Speakers');
 
 var LayoutBasic = React.createClass({
   render: function() {
@@ -26,7 +27,7 @@ var LayoutBasic = React.createClass({
         </div>
         <div id="speakers">
           <div className="container">
-            here to be inserted speakers module
+            <Speakers />
           </div>
         </div>
         <div id="shedule">

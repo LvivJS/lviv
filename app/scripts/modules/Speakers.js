@@ -5,28 +5,25 @@ var Speaker = require('./Speaker')
 
 var Speakers = React.createClass({
   getInitialState: function() {
-    return {speakerInfo: []};
+    return (
+      {speakerInfo: []}
+    )
   },
-  getSpeakersInfo: function () {
+  componentDidMount: function() {
     var req = new XMLHttpRequest();
     req.open('get', './dev/json/speakers.json');
     req.onreadystatechange = function() {
-      
-    };
-    req.send(null);
-  },
-  componentWillMount: function(data) {
-    this.setState({speakerInfo: req.responseText});
-
+      var respond = JSON.parse(req.responseText);
+      this.setState({speakerInfo: respond});
+    }.bind(this);
+    req.send();
   },
   render: function() {
-    console.log(this.state.speakerInfo);
-    var oneSpeaker = this.state.speakerInfo.map(function(info){
+    var oneSpeaker = this.state.speakerInfo.map(function(info) {
       return <Speaker info={info}/>
     });
-    
 
-    return(
+    return (
      <div className="speakers">
       {oneSpeaker}
      </div>

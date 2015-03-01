@@ -3,7 +3,6 @@
 var React = require('react');
 var LayoutBasic = require('./modules/Layout(basic)');
 
-
 var App = React.createClass({
   render: function() {
     return (

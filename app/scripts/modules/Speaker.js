@@ -4,7 +4,7 @@ var React = require('react');
 
 var Speaker = React.createClass({
   render: function() {
-    return(
+    return (
      <div className="speaker">
       <div className="speaker__photo"><img src={this.props.info.photo_url}/></div>
       <div className="speaker__main">
