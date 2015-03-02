@@ -13,17 +13,28 @@
 
 }
 
-#header, 
-#menu,
-#overview,
-#location,
-#speakers,
-#shedule,
-#registration,
-#footer {
+.module-wrapper {
 	@include container-ext;
+	justify-align: center;
 }
 
+.module-header {
+	@include container-ext;
+	padding: 25px;
+	background: $color__primary--dark;
+	color: $color__heading--menu;
+	align-items: center;
+	font-size: 2em;
+}
+
+h1 {
+	@include container-ext;
+	align-items: center;
+	color: $color__primary;
+	font-size: 5em;
+	font-style: italic;
+	padding: 50px;
+}
 
 /*  
 this is test styles and should be deleted
@@ -36,3 +47,4 @@ should contain @include container-int;
 	border: 3px $color__primary solid;
 	height: 400px;
 }
+

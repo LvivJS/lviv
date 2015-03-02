@@ -3,7 +3,7 @@
 
 #menu {
 	@include container-ext;
-	background: darken($color__primary , 5%);
+	background: $color__primary--dark;
 }
 
 .menu {
