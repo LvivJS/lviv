@@ -1,12 +1,12 @@
 'use strict';
 
 var React = require('react');
-var LayoutBasic = require('./modules/Layout(basic)');
+var BasicLayout = require('./modules/BasicLayout');
 
 var App = React.createClass({
   render: function() {
     return (
-       <LayoutBasic />
+       <BasicLayout />
     )
   }
 });

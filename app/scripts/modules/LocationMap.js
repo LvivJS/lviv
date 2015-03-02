@@ -11,12 +11,20 @@ var LocationMap = React.createClass({
 
 //google map script
 function initialize() {
+  var myLatlng = new google.maps.LatLng(49.842721, 24.000630);
   var mapProp = {
-    center:new google.maps.LatLng(49.50, 24.0),
-    zoom: 9,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    center: myLatlng,
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    scrollwheel: false
   };
   var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Awesome place for conference! See you there!'
+  });
 
 }
 

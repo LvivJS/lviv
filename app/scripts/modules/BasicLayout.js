@@ -10,41 +10,41 @@ var LayoutBasic = React.createClass({
     return (
       <div className="page-wrap">
         <div id="header">
-
           <Header />
-
         </div>
-        <div id="menu">
-
+        <div id="menu" className="module-wrapper">
           <Menu />
-
-        </div>
-        <div id="overview">
+        </div>        
+        <h1 id="overview">A name of conferention</h1>
+        <div className="module-wrapper">        
           <div className="container">
             here to be inserted overview module
           </div>
-        </div>
-        <div id="speakers">
+        </div>        
+        <h2 id="speakers" className="module-header">Speakers</h2>
+        <div className="module-wrapper">        
           <div className="container">
             here to be inserted speakers module
           </div>
-        </div>
-        <div id="shedule">
+        </div>        
+        <h2 id="shedule" className="module-header">Shedule</h2>
+        <div className="module-wrapper">        
           <div className="container">
             here to be inserted shedule module
           </div>
-        </div>
-        <div id="location">
-
+        </div>        
+        <h2 id="location" className="module-header">Location</h2>
+        <div className="module-wrapper">
           <LocationMap />
-
-        </div>
-        <div id="registration">
+        </div>        
+        <h2 id="registration" className="module-header">Registration</h2>
+        <div className="module-wrapper">        
           <div className="container">
             here to be inserted registration module
           </div>
-        </div>
-        <div id="footer">
+        </div>        
+        <h2 id="footer" className="module-header">Partners</h2>
+        <div className="module-wrapper">
           <div className="container">
             here to be inserted footer module
           </div>

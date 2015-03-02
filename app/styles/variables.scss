@@ -1,6 +1,7 @@
 
 $color__primary: rgb(30, 145, 255);
 $color__primary--light: LightCyan;
+$color__primary--dark: darken($color__primary, 6%);
 $color__heading--menu: rgb(255, 255, 255);
 $color__heading--active: LightSeaGreen;
 $color-boder: blue;
