@@ -28,7 +28,8 @@ paths.jsFiles = paths.sourceRoot + '/**/*.js';
 paths.jsEntry = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles = './app/styles/**/*.scss';
-paths.imageFiles = './app/images/*'
+paths.imageFiles = './app/images/**/*';
+paths.jsonFiles = './app/json/*.json';
 paths.styles = '/style';
 paths.script = '/scripts';
 paths.buildDev = './dist/dev';
@@ -47,7 +48,7 @@ gulp.task('build', function () {
   runSequence(
     'deleteDist',
     'scripts_styleguide',
-    ['build_style', /*'build_image',*/ 'browserify_build'],
+    ['build_style', 'build_image', 'browserify_build', 'json_move'],
     notify_success);
 
   function notify_success(err){
@@ -79,12 +80,19 @@ gulp.task('build_style', function() {
 });
 
 //IMAGES
-// gulp.task('build_image', function() {
-//   return gulp.src(paths.imageFiles)
-//     .pipe(imagemin({ progressive: true }))
-//     .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/images')))
-//     .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/images')))
-// });
+gulp.task('build_image', function() {
+  return gulp.src(paths.imageFiles)
+    .pipe(imagemin({ progressive: true }))
+    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/images')))
+    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/images')))
+});
+
+//TEMPORARY task for moving json folder form app into dist/dev
+gulp.task('json_move', function() {
+  gulp.src(paths.jsonFiles)
+      .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/json')))
+      .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/json')))
+});
 
 //code healthiness
 gulp.task('scripts_styleguide', function () {

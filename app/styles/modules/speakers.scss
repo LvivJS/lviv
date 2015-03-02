@@ -1,13 +1,25 @@
 @import '../variables';
 @import '../mixins';
 
-#header {
-	@include container-ext;
-	background: $color__primary;
-	font-family: $font__main;
-}
 
-.header {
+
+.speakers{
 	@include container-int;
+	flex-wrap:wrap;
+	justify-content:center;
 }
 
+
+.speaker{
+	width:30%;
+	margin:10px;
+	height:auto;
+
+}
+.speaker__photo{
+}
+
+.speaker__photo>img {
+	width: 100%; 
+	height: auto;
+}

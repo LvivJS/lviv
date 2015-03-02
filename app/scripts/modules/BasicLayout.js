@@ -24,11 +24,7 @@ var LayoutBasic = React.createClass({
         </div>        
         <h2 id="speakers" className="module-header">Speakers</h2>
         <div className="module-wrapper">        
-          <div className="container">
-
-            <Speakers />
-
-          </div>
+          <Speakers />
         </div>        
         <h2 id="shedule" className="module-header">Shedule</h2>
         <div className="module-wrapper">        
