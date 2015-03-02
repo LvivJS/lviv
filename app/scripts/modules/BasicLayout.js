@@ -4,18 +4,19 @@ var React = require('react');
 var Header = require('./Header');
 var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
+var Footer = require('./Footer');
 
 var LayoutBasic = React.createClass({
   render: function() {
     return (
       <div className="page-wrap">
-        <div id="header">
+        <header id="header">
           <Header />
-        </div>
+        </header>
         <div id="menu" className="module-wrapper">
           <Menu />
         </div>        
-        <h1 id="overview">A name of conferention</h1>
+        <h1 id="overview">A name of conference</h1>
         <div className="module-wrapper">        
           <div className="container">
             here to be inserted overview module
@@ -44,11 +45,9 @@ var LayoutBasic = React.createClass({
           </div>
         </div>        
         <h2 id="footer" className="module-header">Partners</h2>
-        <div className="module-wrapper">
-          <div className="container">
-            here to be inserted footer module
-          </div>
-        </div>
+        <footer className="module-wrapper">
+          <Footer />
+        </footer>
       </div>
     );
   }

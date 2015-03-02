@@ -1,0 +1,27 @@
+@import '../variables';
+@import '../mixins';
+
+.footer {
+	@include container-int;
+	flex-direction: column;
+}
+
+.footer--partners-wrap {
+	display: flex;
+	flex: 1;
+	height: 100px;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer--partners-header {
+	color: $color__primary;
+	flex: 1;
+	font-size: 2em;
+	padding: 25px;
+}
+
+.footer--partners-items {
+	display: flex;
+	height: auto;
+}

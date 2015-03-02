@@ -10,12 +10,10 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-
 }
 
 .module-wrapper {
 	@include container-ext;
-	justify-align: center;
 }
 
 .module-header {
