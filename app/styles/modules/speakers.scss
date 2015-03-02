@@ -1,0 +1,13 @@
+@import '../variables';
+@import '../mixins';
+
+#header {
+	@include container-ext;
+	background: $color__primary;
+	font-family: $font__main;
+}
+
+.header {
+	@include container-int;
+}
+

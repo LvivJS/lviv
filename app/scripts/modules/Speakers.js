@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var Speaker = require('./Speaker')
+var Speaker = require('./Speaker');
 
 var Speakers = React.createClass({
   getInitialState: function() {
@@ -11,16 +11,16 @@ var Speakers = React.createClass({
   },
   componentDidMount: function() {
     var req = new XMLHttpRequest();
-    req.open('get', './dev/json/speakers.json');
+    req.open('get', './dev/json/speakers.json', true);
+    req.setRequestHeader('Content-Type', 'application/json');
     req.onreadystatechange = function() {
-      var respond = JSON.parse(req.responseText);
-      this.setState({speakerInfo: respond});
+      this.setState({speakerInfo: JSON.parse(req.responseText)});
     }.bind(this);
     req.send();
   },
   render: function() {
     var oneSpeaker = this.state.speakerInfo.map(function(info) {
-      return <Speaker info={info}/>
+      return <Speaker key={info.name} information={info} />
     });
 
     return (

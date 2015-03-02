@@ -27,7 +27,9 @@ var LayoutBasic = React.createClass({
         </div>
         <div id="speakers">
           <div className="container">
+
             <Speakers />
+
           </div>
         </div>
         <div id="shedule">
