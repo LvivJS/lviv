@@ -23,7 +23,7 @@
 
 .menu__item:hover{
 	a{
-		color:$color__heading--active;
+		color:$color__primary;
 	}
-	background:$color__primary--light
+	background:$color__heading--menu;
 }
