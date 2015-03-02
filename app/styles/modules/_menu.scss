@@ -13,17 +13,11 @@
 .menu__item{
 	list-style:none;
 	font-size: $font__giant;
-	display: inline-block;
+	color: $color__heading--menu;
 	padding: 20px;
-	a {
-		color: $color__heading--menu;
-		}
-	
 }
 
 .menu__item:hover{
-	a{
-		color:$color__primary;
-	}
+	color:$color__primary;
 	background:$color__heading--menu;
 }
