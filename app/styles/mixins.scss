@@ -17,10 +17,7 @@
 	justify-content: center;
 };
 
-@mixin social-button($image, $position-horizontal, $position-vertical) {
-	display:flex;
-	height:32px;
-	width:32px;
-	margin:5px;
-	background: $image $position-horizontal $position-vertical;
+@mixin social-button($image) {
+	background: $image;
 };
+

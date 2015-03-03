@@ -12,45 +12,80 @@
 	width:25%;
 	margin:20px;
 	height:auto;
+	.speaker__photo{
+		overflow:hidden;
+		img {
+			width: 100%; 
+			height: auto;
+			margin-bottom: -5px;
+		}
+	}
+	.speaker__main {
+		background-color:$color__primary--soft;
+		padding:5px;
+		.speaker__name {
+			text-transform:uppercase;
+			text-align:center;
+			color:$color__primary--dark;
+			font-weight:bold;
+			font-size: $font__large;
+		}
+		.speaker__pos {
+			color:$color__primary--dark;
+			text-align:center;
+			font-size:$font__small;
+			margin:5px auto;
+		}
+		.speaker__about {
+			color:$color__gray--darken;
+			text-align:justify;
+		}
+		.speaker__contacts {
+			flex-wrap:wrap;
+			justify-content:center;
+			display: flex;
+			padding:10px;
+			.speaker__contact {
+				display:flex;
+				height:20px;
+				width:20px;
+				margin:5px;
+			}
+			.speaker__contact:hover{
+				height:25px;
+				width:25px;
+				margin:0 5px;
+			}
+		}
+	}
+}
+.speaker:hover{
+	.speaker__main{
+		background-color:$color__primary--soften;
+	}
+	.speaker__photo{
+		img {
+			transform:scale(1.1,1.1);
+		}
+	}
+}
 
-}
-.speaker__name{
-	text-transform:uppercase;
-	text-align:center;
-	color:$color__primary--dark;
-	font-weight:bold;
-	font-size: $font__large;
-}
-.speaker__main{
-	background-color:$color__primary--soft;
-	padding:5px;
-}
-.speaker__pos{
-	color:$color__primary--desature;
-	text-align:center;
-	font-size:$font__small;
-}
-.speaker__about{
-	color:$color__primary--dark;
-	text-align:justify;
-}
-.speaker__photo>img {
-	width: 100%; 
-	height: auto;
-	margin-bottom: -5px;
-}
-.speaker__contacts {
-	flex-wrap:wrap;
-	justify-content:center;
-	display: flex;
-	padding:10px
-}
 .speaker__contact--facebook {
-	@include social-button(url('../images/socials.png'), center, left);
+	@include social-button(url('../images/socials/facebook.svg'));
 }
 .speaker__contact--twitter {
-	@include social-button(url('../images/socials.png'), center, center);
+	@include social-button(url('../images/socials/twitter.svg'));
 }
 .speaker__contact--linkedin {
-	@include social-button(url('../images/socials.png'), center, right);
+	@include social-button(url('../images/socials/linkedin.svg'));
 }
+.speaker__contact--facebook:hover {
+	@include social-button(url('../images/socials/facebook_dark.svg'));
+}
+.speaker__contact--twitter:hover {
+	@include social-button(url('../images/socials/twitter_dark.svg'));
+}
+.speaker__contact--linkedin:hover {
+	@include social-button(url('../images/socials/linkedin_dark.svg'));
+}
+
