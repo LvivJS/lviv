@@ -21,6 +21,7 @@ var imagemin = require('gulp-imagemin');
 var jsxcs = require('gulp-jsxcs');
 
 var env = process.env.NODE_ENV || 'development';
+var Dev = (env === 'development')?true:false;
 
 var paths = {};
 paths.sourceRoot = './app/scripts';
@@ -73,25 +74,25 @@ gulp.task('build_style', function() {
     .pipe(gulpif(env === 'development', sourcemaps.init()))
     .pipe(sass())
     .pipe(concating('styles.css'))
-    .pipe(gulpif(env === 'development', sourcemaps.write()))
-    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.styles)))
-    .pipe(gulpif(env === 'production', minifycss()))
-    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.styles)))
+    .pipe(gulpif(Dev, sourcemaps.write()))
+    .pipe(gulpif(Dev, gulp.dest(paths.buildDev + paths.styles)))
+    .pipe(gulpif(!Dev, minifycss()))
+    .pipe(gulpif(!Dev, gulp.dest(paths.buildProd + paths.styles)))
 });
 
 //IMAGES
 gulp.task('build_image', function() {
   return gulp.src(paths.imageFiles)
     .pipe(imagemin({ progressive: true }))
-    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/images')))
-    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/images')))
+    .pipe(gulpif(Dev, gulp.dest(paths.buildDev + '/images')))
+    .pipe(gulpif(!Dev, gulp.dest(paths.buildProd + '/images')))
 });
 
 //TEMPORARY task for moving json folder form app into dist/dev
 gulp.task('json_move', function() {
   gulp.src(paths.jsonFiles)
-      .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/json')))
-      .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/json')))
+      .pipe(gulpif(Dev, gulp.dest(paths.buildDev + '/json')))
+      .pipe(gulpif(!Dev, gulp.dest(paths.buildProd + '/json')))
 });
 
 //code healthiness
@@ -102,7 +103,7 @@ gulp.task('scripts_styleguide', function () {
 //BROWSERIFY
 var bundler = watchify(browserify({
   entries: [paths.jsEntry],
-  debug: env === 'development', // gives sourcemaps for development environment
+  debug: Dev, // gives sourcemaps for development environment
   cache: {},
   packageCache: {},
   fullPaths: true
@@ -123,9 +124,9 @@ function browserify_bundle(){
   return bundler.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source(paths.buildFileName))
-    .pipe(gulpif(env === 'production', streamify(uglify())))
-    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.script)))
-    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.script)));
+    .pipe(gulpif(!Dev, streamify(uglify())))
+    .pipe(gulpif(!Dev, gulp.dest(paths.buildProd + paths.script)))
+    .pipe(gulpif(Dev, gulp.dest(paths.buildDev + paths.script)));
 }
 
 //start server
