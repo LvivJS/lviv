@@ -4,51 +4,55 @@ var React = require('react');
 var Header = require('./Header');
 var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
+var Partners = require('./Partners');
 
 var LayoutBasic = React.createClass({
   render: function() {
     return (
       <div className="page-wrap">
-        <div id="header">
+        <header id="header">
           <Header />
-        </div>
+        </header>
         <div id="menu" className="module-wrapper">
           <Menu />
         </div>        
-        <h1 id="overview">A name of conferention</h1>
-        <div className="module-wrapper">        
+        <section id="overview" className="page-wrap">  
+        <h1>A name of conference</h1>
           <div className="container">
             here to be inserted overview module
           </div>
-        </div>        
-        <h2 id="speakers" className="module-header">Speakers</h2>
-        <div className="module-wrapper">        
+        </section>        
+        <section id="speakers" className="page-wrap">        
+        <h2 className="module-header">Speakers</h2>
           <div className="container">
             here to be inserted speakers module
           </div>
-        </div>        
-        <h2 id="shedule" className="module-header">Shedule</h2>
-        <div className="module-wrapper">        
+        </section>        
+        <section id="shedule" className="page-wrap">        
+        <h2 className="module-header">Shedule</h2>
           <div className="container">
             here to be inserted shedule module
           </div>
-        </div>        
-        <h2 id="location" className="module-header">Location</h2>
-        <div className="module-wrapper">
+        </section>        
+        <section id="location" className="page-wrap">
+        <h2 className="module-header">Location</h2>
           <LocationMap />
-        </div>        
-        <h2 id="registration" className="module-header">Registration</h2>
-        <div className="module-wrapper">        
+        </section>        
+        <section id="registration" className="page-wrap">        
+        <h2 className="module-header">Registration</h2>
           <div className="container">
             here to be inserted registration module
           </div>
-        </div>        
-        <h2 id="footer" className="module-header">Partners</h2>
-        <div className="module-wrapper">
+        </section>        
+        <section id="partners" className="page-wrap">
+        <h2 className="module-header">Partners</h2>
+          <Partners />
+        </section>
+        <footer id="footer" className="page-wrap">
           <div className="container">
             here to be inserted footer module
           </div>
-        </div>
+        </footer>
       </div>
     );
   }
