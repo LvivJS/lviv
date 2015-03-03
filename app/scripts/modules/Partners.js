@@ -31,7 +31,6 @@ var Partners = React.createClass({
 });
 
 var PartnerCategory = React.createClass({
-
   render: function() {
     return (
       <section className="partners__category">
@@ -46,12 +45,11 @@ var PartnerLink = React.createClass({
   render: function() {
     var link = this.props.array.map(function(item) {
       return (
-      	<a href={item.link} tittle={item.title} className="partners__item-link" key={item.title}>
+      	<a href={item.link} title={item.title} className="partners__item-link" key={item.title} target="_blank">
           <img src={item.img} alt={item.title} />
         </a>
       );
     });
-
     return (
       <div className="partners__items">
         { link }
