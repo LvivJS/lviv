@@ -8,18 +8,49 @@
 	flex-wrap:wrap;
 	justify-content:center;
 }
-
-
 .speaker{
-	width:30%;
-	margin:10px;
+	width:25%;
+	margin:20px;
 	height:auto;
 
 }
-.speaker__photo{
+.speaker__name{
+	text-transform:uppercase;
+	text-align:center;
+	color:$color__primary--dark;
+	font-weight:bold;
+	font-size: $font__large;
 }
-
+.speaker__main{
+	background-color:$color__primary--soft;
+	padding:5px;
+}
+.speaker__pos{
+	color:$color__primary--desature;
+	text-align:center;
+	font-size:$font__small;
+}
+.speaker__about{
+	color:$color__primary--dark;
+	text-align:justify;
+}
 .speaker__photo>img {
 	width: 100%; 
 	height: auto;
+	margin-bottom: -5px;
+}
+.speaker__contacts {
+	flex-wrap:wrap;
+	justify-content:center;
+	display: flex;
+	padding:10px
+}
+.speaker__contact--facebook {
+	@include social-button(url('../images/socials.png'), center, left);
+}
+.speaker__contact--twitter {
+	@include social-button(url('../images/socials.png'), center, center);
+}
+.speaker__contact--linkedin {
+	@include social-button(url('../images/socials.png'), center, right);
 }

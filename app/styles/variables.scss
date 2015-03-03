@@ -1,7 +1,9 @@
 
 $color__primary: rgb(30, 145, 255);
-$color__primary--light: lighten($color__primary, 30%);
-$color__primary--dark: darken($color__primary, 6%);
+$color__primary--light: lighten($color__primary, 5%);
+$color__primary--soft: lighten($color__primary, 40%);
+$color__primary--dark: darken($color__primary, 30%);
+$color__primary--desature: desaturate($color__primary, 20%);
 $color__heading--menu: rgb(255, 255, 255);
 $color__heading--active: LightSeaGreen;
 $color-boder: blue;
@@ -9,9 +11,8 @@ $color-boder: blue;
 $font__main: Calibri;
 $font__giant:24px;
 $font__large:20px;
-$font__small:12px;
+$font__small:14px;
 
 
 
 $container: 940px;
-
