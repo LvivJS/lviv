@@ -4,38 +4,40 @@
 .partners {
 	@include container-int;
 	flex-direction: column;
-	background: #f2f2f2;
 }
 
-.partners__wrapper {
+#partners {
+		background: #f2f2f2;
+}
+
+.partners__category {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
 	align-items: center;
 }
 
-.partners__header {
+.partners__category-header {
 	color: $color__primary;
 	font-size: 2em;
 	padding: 25px;
+	text-transform: capitalize;
 }
 
 .partners__items {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
 	flex: 1;
 }
 
 .partners__item-link {
-	border: 2px solid #0f0;
 	margin: 20px;
-	height: $partner-link-size;
-	width: $partner-link-size;
+	flex-grow: 1;
 }
 
-.partners__header--organizers {
-	color: $color__primary;
-	font-size: 2.5em;
-	margin-top: 40px;
-}
+// .partners__category-header--organizers {
+// 	color: $color__primary;
+// 	font-size: 2.5em;
+// 	margin-top: 40px;
+// }

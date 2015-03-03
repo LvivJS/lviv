@@ -16,39 +16,39 @@ var LayoutBasic = React.createClass({
         <div id="menu" className="module-wrapper">
           <Menu />
         </div>        
-        <section className="page-wrap">        
-        <h1 id="overview">A name of conference</h1>
+        <section id="overview" className="page-wrap">  
+        <h1>A name of conference</h1>
           <div className="container">
             here to be inserted overview module
           </div>
         </section>        
-        <section className="page-wrap">        
-        <h2 id="speakers" className="module-header">Speakers</h2>
+        <section id="speakers" className="page-wrap">        
+        <h2 className="module-header">Speakers</h2>
           <div className="container">
             here to be inserted speakers module
           </div>
         </section>        
-        <section className="page-wrap">        
-        <h2 id="shedule" className="module-header">Shedule</h2>
+        <section id="shedule" className="page-wrap">        
+        <h2 className="module-header">Shedule</h2>
           <div className="container">
             here to be inserted shedule module
           </div>
         </section>        
-        <section className="page-wrap">
-        <h2 id="location" className="module-header">Location</h2>
+        <section id="location" className="page-wrap">
+        <h2 className="module-header">Location</h2>
           <LocationMap />
         </section>        
-        <section className="page-wrap">        
-        <h2 id="registration" className="module-header">Registration</h2>
+        <section id="registration" className="page-wrap">        
+        <h2 className="module-header">Registration</h2>
           <div className="container">
             here to be inserted registration module
           </div>
         </section>        
-        <section className="page-wrap">
-        <h2 id="partners" className="module-header">Partners</h2>
+        <section id="partners" className="page-wrap">
+        <h2 className="module-header">Partners</h2>
           <Partners />
         </section>
-        <footer className="page-wrap">
+        <footer id="footer" className="page-wrap">
           <div className="container">
             here to be inserted footer module
           </div>
