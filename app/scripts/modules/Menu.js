@@ -9,6 +9,7 @@ var Menu = React.createClass({
           <a href="#shedule" className="menu__item">Shedule</a>
           <a href="#location" className="menu__item">Location</a>
           <a href="#registration" className="menu__item">Registration</a>
+          <a href="#partners" className="menu__item">Partners</a>
       </nav>
     );
   }

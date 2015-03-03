@@ -1,52 +1,40 @@
 @import '../variables';
 @import '../mixins';
 
-.footer {
+.partners {
 	@include container-int;
 	flex-direction: column;
-}
-
-.page-wrap:after {
-	content: 'some text';
-	height: 80px;
-	color: $color__heading--menu;
-	background: $color__primary;
-	padding: 40px 0 0 20%;
-	font-size: 1.7em;
-}
-
-footer {
 	background: #f2f2f2;
 }
 
-.footer__partners-wrap {
+.partners__wrapper {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
 	align-items: center;
 }
 
-.footer__partners-header {
+.partners__header {
 	color: $color__primary;
 	font-size: 2em;
 	padding: 25px;
 }
 
-.footer__partners-items {
+.partners__items {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	flex: 1;
 }
 
-.footer__partner-link {
+.partners__item-link {
 	border: 2px solid #0f0;
 	margin: 20px;
 	height: $partner-link-size;
 	width: $partner-link-size;
 }
 
-.footer__organizers-header {
+.partners__header--organizers {
 	color: $color__primary;
 	font-size: 2.5em;
 	margin-top: 40px;
