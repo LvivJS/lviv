@@ -1,130 +1,164 @@
 [
 	{
-		"conference": {
-			"name": "JavaScript Conference",
-			"days": [
-				{
-					"day":"Friday, 20 October",
-					"timetable": [
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						}
-					]
-				},
-				{
-					"day":"Saturday, 21 October",
-					"timetable": [
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						},
-						{
-							"time":"",
-							"article":"",
-							"speaker": [
-								{
-									"name":"",
-									"position":""
-									}
-							],
-							"about":""
-						}
-					]
-				}
-			]
-		}
+		"name": "JavaScript Conference",
+		"days": [
+			{
+				"day_name":"Friday, 20 October",
+				"timetable": [
+					{
+						"time":"8:55",
+						"article":"Morning Welcome",
+						"speaker": [
+							{
+								"name":"",
+								"position":""
+								}
+						],
+						"about":""
+					},
+					{
+						"time":"9:00-10:00",
+						"article":"The Fault, Dear Brutus (or: Career Advice From a Cranky Old Man)",
+						"speaker": [
+							{
+								"name":"Jeffrey Zeldman",
+								"position":"A Book Apart, An Event Apart"
+								}
+						],
+						"about":"We have met the enemy, and he is us. Many of the professional problems we blame on boneheaded bosses and clueless coworkers actually come from ourselves. Identify career woes you bring on yourself, and learn to get out of your own way. Make yourself irreplaceable."
+					},
+					{
+						"time":"10:15-11:15",
+						"article":"Icon Design Process",
+						"speaker": [
+							{
+								"name":"Jon Hicks",
+								"position":"author Icons: The Icon Handbook"
+								}
+						],
+						"about":"Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers.Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers."
+					},
+					{
+						"time":"11:30-12:30",
+						"article":"Designing for Social Behavior",
+						"speaker": [
+							{
+								"name":"Sarah Parmenter",
+								"position":"Founder, You Know Who"
+								}
+						],
+						"about":"Love it or loathe it, social media has been burned into everything we do. Once more, it’s fallen on the head of the trusty, multiple-hat-wearing web designer to become a social engineer. In addition to everything else we do, it’s now our job to design strategies and integrate them into our projects. It’s not just about connecting these services to our apps or websites. It’s about knowing how to craft together behaviors, user experience, and traditional design elements in a beautifully harmonious way that achieves business goals. From lessons learned while designing a large social network from scratch, and minus the overly familiar buzzwords and marketing cliches, Sarah will teach you how to truly engage with your users. Discover the real value of social media reciprocity, and learn how to make it work for you. "
+					},
+					{
+						"time":"12:30-2:00",
+						"article":"Lunch",
+						"speaker": [
+							{
+								"name":"",
+								"position":""
+								}
+						],
+						"about":""
+					},
+					{
+						"time":"2:00-3:00",
+						"article":"Icon Design Process",
+						"speaker": [
+							{
+								"name":"Jon Hicks",
+								"position":"author Icons: The Icon Handbook"
+								}
+						],
+						"about":"Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers.Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers."
+					},
+					{
+						"time":"3:15-4:15",
+						"article":"Designing for Social Behavior",
+						"speaker": [
+							{
+								"name":"Sarah Parmenter",
+								"position":"Founder, You Know Who"
+								}
+						],
+						"about":"Love it or loathe it, social media has been burned ine do, it’s now our job to design strategies and integrate them into our projects. It’s not just about connecting these services to our apps or websites. It’s about knowing how to craft together behaviors, user experience, and traditional design elements in a beautifully harmonious way that achieves business goals. From lessons learned while designing a large social network from scratch, and minus the overly familiar buzzwords and marketing cliches, Sarah will teach you how to truly engage with your users. Discover the real value of social media reciprocity, and learn how to make it work for you. "
+					},
+					{
+						"time":"4:30-7:00",
+						"article":"Opening Night Happy Hour",
+						"speaker": [
+							{
+								"name":"",
+								"position":""
+								}
+						],
+						"about":"Join us at A Happy Hour Apart, to be held in the 4th floor foyer, right next to the registration desk. We’ll provide tasty snacks and tastier beverages to recharge your body after a full day of recharging your mind!"
+					}
+				]
+			},
+			{
+				"day_name":"Saturday, 21 October",
+				"timetable": [
+					{
+						"time":"8:55",
+						"article":"Morning Welcome",
+						"speaker": [
+							{
+								"name":"",
+								"position":""
+								}
+						],
+						"about":""
+					},
+					{
+						"time":"9:00-10:00",
+						"article":"SVG is for Everybody",
+						"speaker": [
+							{
+								"name":"Chris Coyier",
+								"position":"Author, CSS-Tricks.com"
+								}
+						],
+						"about":"While SVG isn’t exactly new, browser support is just getting to the point that we can use it without much worry. Even if we do need fallbacks for older browsers, modern tools make it easy. This makes now the perfect time to learn about SVG and how it can help you in everyday web design. Perhaps the most compelling reason: SVG images look sharp at any dimension with tiny file sizes—which is great for making responsive websites responsibly. You’ll also learn how SVG helps to easily create complex shapes, and how to use it to make icons that are more accessible than with any other web-based icon creation technique. You’ll learn how SVG can make customized complex graphics on the fly, create compelling animations and other interactions, and empower some pretty great designerly effects."
+					},
+					{
+						"time":"10:15-11:15",
+						"article":"CSS Grid Layout",
+						"speaker": [
+							{
+								"name":"Rachel Andrew",
+								"position":"Co-founder, Perch"
+								},
+							{
+								"name":"Brad Frost",
+								"position":"Mobile Web Strategist and Front End Designer"
+								}									
+						],
+						"about":""
+					},
+					{
+						"time":"11:30-12:30",
+						"article":"Lunch",
+						"speaker": [
+							{
+								"name":"",
+								"position":""
+								}
+						],
+						"about":""
+					},
+					{
+						"time":"12:30-2:00",
+						"article":"Everything You Wanted to Know About Responsive Design…And Less!",
+						"speaker": [
+							{
+								"name":"",
+								"position":""
+								}
+						],
+						"about":"But how many designs can help a user who is completely in the dark and barely capable of rational thought? In this talk, Eric will draw on his personal and professional experience to explore examples of crisis-mitigating design successes and failures. In the process, he'll illustrate ways that you can and should consider the needs of users teetering on the edge of panic. Helping them will make your designs more relevant and useful for all your users."
+					}
+				]
+			}
+		]
 	}
-
 ]

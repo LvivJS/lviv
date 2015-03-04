@@ -6,6 +6,7 @@ var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
 var Speakers = require('./Speakers');
 var Partners = require('./Partners');
+var Schedule = require('./Schedule');
 
 var LayoutBasic = React.createClass({
   render: function() {
