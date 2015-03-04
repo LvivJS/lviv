@@ -14,7 +14,12 @@
 }
 
 @mixin container-ext {
-	display: flex;
+	display:flex;
 	flex: 1;
 	justify-content: center;
-}
+};
+
+@mixin social-button($image) {
+	background: $image;
+};
+

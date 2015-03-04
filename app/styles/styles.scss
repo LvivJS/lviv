@@ -9,8 +9,8 @@
 }
 
 body {
-	font-family: $font__main;
-	font-size: $font__small;
+	font-family:$font__main;
+	font-size:$font__small;
 }
 
 a {
@@ -23,5 +23,5 @@ a {
 @import 'modules/header';
 @import 'modules/_menu';
 @import 'modules/_locationMap';
+@import 'modules/speakers';
 @import 'modules/_partners';
-

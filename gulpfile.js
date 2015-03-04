@@ -21,6 +21,7 @@ var imagemin = require('gulp-imagemin');
 var jsxcs = require('gulp-jsxcs');
 
 var env = process.env.NODE_ENV || 'development';
+var isProd = env === 'production';
 
 var paths = {};
 paths.sourceRoot = './app/scripts';
@@ -28,7 +29,8 @@ paths.jsFiles = paths.sourceRoot + '/**/*.js';
 paths.jsEntry = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles = './app/styles/**/*.scss';
-paths.imageFiles = './app/images/*'
+paths.imageFiles = './app/images/**/*';
+paths.jsonFiles = './app/json/*.json';
 paths.styles = '/style';
 paths.script = '/scripts';
 paths.buildDev = './dist/dev';
@@ -47,7 +49,7 @@ gulp.task('build', function () {
   runSequence(
     'deleteDist',
     'scripts_styleguide',
-    ['build_style', 'build_image', 'browserify_build'],
+    ['build_style', 'build_image', 'browserify_build', 'json_move'],
     notify_success);
 
   function notify_success(err){
@@ -72,18 +74,25 @@ gulp.task('build_style', function() {
     .pipe(gulpif(env === 'development', sourcemaps.init()))
     .pipe(sass())
     .pipe(concating('styles.css'))
-    .pipe(gulpif(env === 'development', sourcemaps.write()))
-    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.styles)))
-    .pipe(gulpif(env === 'production', minifycss()))
-    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.styles)))
+    .pipe(gulpif(!isProd, sourcemaps.write()))
+    .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + paths.styles)))
+    .pipe(gulpif(isProd, minifycss()))
+    .pipe(gulpif(isProd, gulp.dest(paths.buildProd + paths.styles)))
 });
 
 //IMAGES
 gulp.task('build_image', function() {
   return gulp.src(paths.imageFiles)
     .pipe(imagemin({ progressive: true }))
-    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + '/images')))
-    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + '/images')))
+    .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + '/images')))
+    .pipe(gulpif(isProd, gulp.dest(paths.buildProd + '/images')))
+});
+
+//TEMPORARY task for moving json folder form app into dist/dev
+gulp.task('json_move', function() {
+  gulp.src(paths.jsonFiles)
+      .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + '/json')))
+      .pipe(gulpif(isProd, gulp.dest(paths.buildProd + '/json')))
 });
 
 //code healthiness
@@ -94,7 +103,7 @@ gulp.task('scripts_styleguide', function () {
 //BROWSERIFY
 var bundler = watchify(browserify({
   entries: [paths.jsEntry],
-  debug: env === 'development', // gives sourcemaps for development environment
+  debug: !isProd, // gives sourcemaps for development environment
   cache: {},
   packageCache: {},
   fullPaths: true
@@ -115,9 +124,9 @@ function browserify_bundle(){
   return bundler.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source(paths.buildFileName))
-    .pipe(gulpif(env === 'production', streamify(uglify())))
-    .pipe(gulpif(env === 'production', gulp.dest(paths.buildProd + paths.script)))
-    .pipe(gulpif(env === 'development', gulp.dest(paths.buildDev + paths.script)));
+    .pipe(gulpif(isProd, streamify(uglify())))
+    .pipe(gulpif(isProd, gulp.dest(paths.buildProd + paths.script)))
+    .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + paths.script)));
 }
 
 //start server
