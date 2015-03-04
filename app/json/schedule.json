@@ -3,6 +3,7 @@
 		"name": "JavaScript Conference",
 		"days": [
 			{
+				"day_id":"01",
 				"day_name":"Friday, 20 October",
 				"timetable": [
 					{
@@ -96,6 +97,7 @@
 				]
 			},
 			{
+				"day_id":"02",
 				"day_name":"Saturday, 21 October",
 				"timetable": [
 					{

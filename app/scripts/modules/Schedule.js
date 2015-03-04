@@ -30,18 +30,32 @@ var Schedule = React.createClass({
 });
 
 var Conference = React.createClass({
+  getInitialState:function() {
+    return {
+      active:" "
+    }
+  },
+  ChangeTab:function() {
+    this.refs.
+  },
+  componentDidMount: function() {
+    // var .getFirstChildWithTagName()
+  },
   render: function() {
+    console.log(this.props.days);
     var days = this.props.days.map(function(day) {
-      return <li>{day.day_name}</li>
+      return <li><span ref={day.day_id}/*onClick={this.ChangeTab}*/>{day.day_name}</span></li>
     });
     var timetables = this.props.days.map(function(day) {
-      return <Timetable sessions={day.timetable}/>
+      // if (day.day_id == this.state.active) {
+        return <Timetable sessions={day.timetable}/>
+      // }
     });
     return (
       <div className="conference">
         <h3>Shedule: {this.props.name}</h3>
         <ul>{days}</ul>
-        {timetables}
+        {timetables }
       </div>
     );
   }
