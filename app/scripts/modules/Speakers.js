@@ -19,13 +19,13 @@ var Speakers = React.createClass({
     req.send();
   },
   render: function() {
-    var oneSpeaker = this.state.speakerInfo.map(function(info) {
+    var speakers = this.state.speakerInfo.map(function(info) {
       return <Speaker key={info.name} information={info} />
     });
 
     return (
      <div className="speakers">
-      {oneSpeaker}
+      {speakers}
      </div>
     );
   }
