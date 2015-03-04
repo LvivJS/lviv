@@ -8,11 +8,10 @@
 
 /* layout */
 @mixin container-int {
-    max-width: $container;
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    margin: auto;
+	max-width: $container;
+	width: 100%;
+	display: flex;
+	margin: auto;
 }
 
 @mixin container-ext {
