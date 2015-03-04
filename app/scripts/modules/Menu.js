@@ -21,17 +21,19 @@ window.addEventListener('scroll', function() {
   var overview = document.getElementById('overview');
   var pageScroll = window.pageYOffset;
   var menuStyle = menu.style;
+  var manuHeight = menu.offsetHeight;
+  var headerHeight = header.offsetHeight;
 
-  if (pageScroll > header.offsetHeight && pageScroll < header.offsetHeight + menu.offsetHeight) {
+  if (pageScroll >= headerHeight) {
     menuStyle.position = 'fixed';
     menuStyle.width = '100%';
     menuStyle.top = '0';
     menuStyle.zIndex = '1';
-
-    overview.offsetTop = header.offsetHeight + (pageScroll + menu.offsetHeight);
-  } else if (pageScroll <= header.offsetHeight) {
+    header.style.marginBottom = menu.offsetHeight + 'px';
+  } else {
     menuStyle.position = 'static';
-  };
+    header.style.marginBottom = '0px';
+  }
 });
 
 module.exports = Menu;
