@@ -5,7 +5,7 @@ var React = require('react');
 var Partners = React.createClass({
   componentDidMount: function() {
     var oReq = new XMLHttpRequest();
-    oReq.open('get', './dev/scripts/json/partners.json', true);
+    oReq.open('get', './dev/json/partners.json', true);
     oReq.onreadystatechange = function reqListener () {
       this.setState({categories: JSON.parse(oReq.responseText)});
     }.bind(this);
