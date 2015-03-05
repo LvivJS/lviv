@@ -4,12 +4,14 @@ var Menu = React.createClass({
   render: function() {
     return (
       <nav className="menu">
-          <input type="checkbox" id="menuToggleBox" />
-          <label htmlFor="menuToggleBox" id="menuToggle">
-            <div className="menuToggle__stripe"></div>
-            <div className="menuToggle__stripe"></div>
-            <div className="menuToggle__stripe"></div>
-          </label>
+          <div id="toggleWrapper">
+            <input type="checkbox" id="menuToggleBox" />
+            <label htmlFor="menuToggleBox" id="menuToggle">
+              <div className="menuToggle__stripe"></div>
+              <div className="menuToggle__stripe"></div>
+              <div className="menuToggle__stripe"></div>
+            </label>
+          </div>
           <a href="#overview" className="menu__item">Overview</a>
           <a href="#speakers" className="menu__item">Speakers</a>
           <a href="#shedule" className="menu__item">Shedule</a>
