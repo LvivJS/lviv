@@ -1,0 +1,52 @@
+@import '../variables';
+@import '../mixins';
+
+.schedule{
+	@include container-int;
+	
+}
+
+.conference {
+	width:90%;
+	margin:15px auto;
+	border-top:2px solid $color__gray--darken;
+	border-bottom:2px solid $color__gray--darken;
+	.conference__title {
+		h3 {
+			width:40%;
+			font-size:$font__large;
+			color:$color__primary;
+			display:inline-block;
+			margin:10px 10px 10px 20px;
+	    }
+	    input{
+	    	vertical-align: middle;
+	    }
+	    input:focus{
+		    outline: 0;
+		}
+		input.up-arrow{
+	    	@include schedule-arrow(url('../images/arrow-up.svg'))
+	    }
+	    input.down-arrow{
+	    	@include schedule-arrow(url('../images/arrow-down.svg'))
+	    }
+	}
+	ul {
+		 display: flex;
+		li {
+			list-style:none;
+			font-size: $font__larger;
+			display:flex;
+			background-color: $color__gray--light;
+			padding:10px;
+		}
+		li.conference__tab--active {
+			background-color: $color__gray--normal;
+		}
+	}
+	.timetable{
+		background-color: $color__gray--normal;
+	}
+}
+

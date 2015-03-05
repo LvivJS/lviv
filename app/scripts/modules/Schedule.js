@@ -18,7 +18,6 @@ var Schedule = React.createClass({
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
-      console.log(conference);
       return (<Conference key={conference.name} days={conference.days} name={conference.name} />)
     });
     return (
@@ -32,30 +31,51 @@ var Schedule = React.createClass({
 var Conference = React.createClass({
   getInitialState:function() {
     return {
-      active:" "
+      activeTable:this.props.days[0],
+      activeDay:this.props.days[0].day_id,
+      isVisible:true
     }
   },
-  ChangeTab:function() {
-    this.refs.
+  ChangeTab:function(day) {
+    this.setState({
+      activeTable:day,
+      activeDay: day.day_id
+    });
+
   },
-  componentDidMount: function() {
-    // var .getFirstChildWithTagName()
+  ChangeConfRepresent:function() {
+    this.state.isVisible ? this.setState({isVisible:false}) : this.setState({isVisible:true});
+
   },
+  // RendConference:function() {
+  //   var days = this.props.days.map(function(day) {
+  //     return <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id}><span>{day.day_name}</span></li>
+  //   }.bind(this));
+  //   var timetable = this.props.days.map(function(day) {
+  //     if (day.day_id == this.state.activeDay) {
+  //       return <Timetable sessions={day.timetable} key={day.day_id}/>
+  //     };
+  //   }.bind(this));
+  //     if (this.state.isVisible) {
+  //       return (
+  //     } else {return }
+  //   }.bind(this),
   render: function() {
-    console.log(this.props.days);
     var days = this.props.days.map(function(day) {
-      return <li><span ref={day.day_id}/*onClick={this.ChangeTab}*/>{day.day_name}</span></li>
-    });
-    var timetables = this.props.days.map(function(day) {
-      // if (day.day_id == this.state.active) {
-        return <Timetable sessions={day.timetable}/>
-      // }
-    });
+      return <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id} className={(this.state.activeDay==day.day_id)?"conference__tab--active":null}><span>{day.day_name}</span></li>
+    }.bind(this));
+    var timetable = this.props.days.map(function(day) {
+      if (day.day_id == this.state.activeDay && this.state.isVisible) {
+        return <Timetable sessions={day.timetable} key={day.day_id}/>
+      };}.bind(this));
     return (
       <div className="conference">
-        <h3>Shedule: {this.props.name}</h3>
-        <ul>{days}</ul>
-        {timetables }
+        <div className="conference__title">
+          <h3>Shedule: {this.props.name}</h3>
+          <input type="button" onClick={this.ChangeConfRepresent} className={this.state.isVisible ? "up-arrow" : "down-arrow"}/>
+        </div>
+        {this.state.isVisible ? <ul>{days}</ul> : null}
+        {timetable}
       </div>
     );
   }
@@ -65,7 +85,7 @@ var Timetable = React.createClass({
   render: function() {
     var sessions = this.props.sessions.map(function(session) {
       return (
-        <div className="session">
+        <div className="session" key={session.article}>
         <div className="session__time">{session.time}</div>
           <div className="session__arrangement">
             <h4 className="session__arrangement--name">{session.article}</h4>
