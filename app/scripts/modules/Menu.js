@@ -3,22 +3,25 @@ var React = require('react');
 var Menu = React.createClass({
   render: function() {
     return (
-      <nav className="menu">
-          <div id="toggleWrapper">
-            <input type="checkbox" id="menuToggleBox" />
-            <label htmlFor="menuToggleBox" id="menuToggle">
-              <div className="menuToggle__stripe"></div>
-              <div className="menuToggle__stripe"></div>
-              <div className="menuToggle__stripe"></div>
-            </label>
-          </div>
-          <a href="#overview" className="menu__item">Overview</a>
-          <a href="#speakers" className="menu__item">Speakers</a>
-          <a href="#shedule" className="menu__item">Shedule</a>
-          <a href="#location" className="menu__item">Location</a>
-          <a href="#registration" className="menu__item">Registration</a>
-          <a href="#partners" className="menu__item">Partners</a>
-      </nav>
+      <div className="menu-wrapper">
+        <div id="toggleWrapper">
+          <input type="checkbox" id="menuToggleBox" />
+          <label htmlFor="menuToggleBox" id="menuToggle">
+            <div className="menuToggle__stripe"></div>
+            <div className="menuToggle__stripe"></div>
+            <div className="menuToggle__stripe"></div>
+          </label>
+        </div>
+        <nav id="menuItems">
+            <a href="#overview" className="menu__item">Overview</a>
+            <a href="#speakers" className="menu__item">Speakers</a>
+            <a href="#shedule" className="menu__item">Shedule</a>
+            <a href="#location" className="menu__item">Location</a>
+            <a href="#registration" className="menu__item">Registration</a>
+            <a href="#partners" className="menu__item">Partners</a>
+        </nav>
+        <div id="darkenScreen"></div>
+      </div>
     );
   }
 });
@@ -37,7 +40,6 @@ window.addEventListener('scroll', function() {
     menuStyle.position = 'fixed';
     menuStyle.width = '100%';
     menuStyle.top = '0';
-    menuStyle.zIndex = '1';
     overview.style.paddingTop = menu.offsetHeight + 'px';
   } else {
     menuStyle.position = 'static';
@@ -47,12 +49,16 @@ window.addEventListener('scroll', function() {
 
 //toggle label state and toggle menu visibility on sass bp(medium);
 window.onload = function menuToggle() {
+  var app = document.getElementById('app');
   var label = document.getElementById('menuToggle');
   var checkBox =  document.getElementById('menuToggleBox');
+  var menu = document.getElementById('menuItems');
+  var menuWidth = menu.offsetWidth;
   var menuItems = document.getElementsByClassName('menu__item');
   var menuButtonStripes = document.getElementsByClassName('menuToggle__stripe');
-  //label events
+  var darkenScreen = document.getElementById('darkenScreen');
 
+  //label events
   function setStripeMargin() {
     menuButtonStripes[1].style.marginTop = '4.5px';
     menuButtonStripes[1].style.marginBottom = '4.5px';
@@ -70,7 +76,7 @@ window.onload = function menuToggle() {
 
   var toggleDisplay = function(v) {
     for (i = 0; i < menuItems.length; i++) {
-      menuItems[i].style.display = v;
+      menu.style.left = v;
       //let on click on item togle visibility of menu
       menuItems[i].onclick = function() {
         toggle();
@@ -82,12 +88,21 @@ window.onload = function menuToggle() {
 
   function toggle() {
     if (!checkBox.checked) {
-      toggleDisplay('flex');
+      toggleDisplay(0 + 'px');
       setStripeMargin('4.5px');
       label.onmouseout = setStripeMargin;
+      //add darken effect to screen
+      app.appendChild(darkenScreen);
+      darkenScreen.style.opacity = '1';
+      setTimeout(function() {
+        darkenScreen.style.zIndex = '1';
+      }, 400);
+
     } else {
-      toggleDisplay('none');
+      toggleDisplay('-' + menuWidth + 'px');
       label.onmouseout = nullStripeMargin;
+      darkenScreen.style.opacity = '0';
+      darkenScreen.style.zIndex = '-1';
     }
   }
 

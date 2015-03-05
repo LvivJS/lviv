@@ -4,6 +4,7 @@
 #menu {
 	@include container-ext;
 	background: $color__primary--dark;
+	z-index: 2;
 	@include bp(medium) {
 		position: fixed !important;
 		width: 100%;
@@ -12,15 +13,32 @@
 }
 
 #toggleWrapper {
-	
+	display: none;
+	@include bp(medium) {
+		display: block;
+		height: auto;
+		background: $color__primary--dark;
+	}
 }
 
-.menu {
+.menu-wrapper {
 	@include container-int;
 	@include bp(medium) {
 		height: auto;
 		flex-direction: column;
-		overflow: hidden;
+	}
+}
+
+#menuItems {
+	@include container-int;
+	@include bp(medium) {
+		flex-direction: column;
+		max-width: $menu-width--resp;
+		position: fixed;
+		background: $color__primary--dark;
+		left: - $menu-width--resp;
+		transition: left 0.4s;
+		height: 100%;
 	}
 }
 
@@ -31,10 +49,8 @@
 	color: $color__heading--menu;
 	padding: $menu__item-padding--top-bottom $menu__item-padding--left-right;
 	transition: all 0.2s;
-
-
 	@include bp(medium) {
-		display: none;
+		padding-left: 40px;
 	}
 }
 
@@ -74,4 +90,20 @@
 	background: $color__primary--dark;
 	@include border-radius($menuToggleBox__stripe--height / 2);
 	transition: margin 0.07s;
+}
+
+#darkenScreen {
+	position: fixed;
+	left: 0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background: rgba(3, 3, 3, 0.64);
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: -1;
+
+	@include bp(large) {
+		display: none;
+	}
 }

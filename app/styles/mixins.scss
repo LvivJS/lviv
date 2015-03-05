@@ -59,4 +59,7 @@
   @else if $point == very-small {
     @media (max-width: 320px)  { @content; }
   }
+  @else if $point == large {
+  	@media (min-width: 769px)  { @content; }
+  }
 }
