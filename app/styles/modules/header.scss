@@ -5,6 +5,9 @@
 	@include container-ext;
 	background: $color__primary;
 	font-family: $font__main;
+	@include bp(medium) {
+		margin-top: $menu__toggle-button--size;
+	}
 }
 
 .header {

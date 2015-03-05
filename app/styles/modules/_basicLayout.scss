@@ -27,11 +27,11 @@
 
 h1 {
 	@include container-ext;
-	align-items: center;
+	text-align: center;
 	color: $color__primary;
 	font-size: 5em;
 	font-style: italic;
-	padding: 50px;
+	padding: 25px;
 }
 
 .invisible {

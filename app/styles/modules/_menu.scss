@@ -4,20 +4,70 @@
 #menu {
 	@include container-ext;
 	background: $color__primary--dark;
+	@include bp(medium) {
+		position: fixed !important;
+		width: 100%;
+		top: 0px;
+	}
 }
 
 .menu {
 	@include container-int;
+	@include bp(medium) {
+		height: auto;
+		flex-direction: column;
+		overflow: hidden;
+	}
 }
 
 .menu__item{
+	display: block;
 	list-style:none;
 	font-size: $font__giant;
 	color: $color__heading--menu;
-	padding: 20px;
+	padding: $menu__item-padding--top-bottom $menu__item-padding--left-right;
+	transition: all 0.2s;
+
+
+	@include bp(medium) {
+		display: none;
+	}
 }
 
 .menu__item:hover{
 	color:$color__primary;
 	background:$color__heading--menu;
+}
+
+/* toggle visibility of menu on smalles screens */
+
+#menuToggleBox {
+	display: none !important;
+}
+
+#menuToggle {
+	display: none;
+
+	@include bp(medium) {
+		@include border-radius(5px);
+		background: $color__primary--soften;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		padding: 6px 0;
+		height: $menu__toggle-button--size;
+		width: $menu__toggle-button--size;
+		margin-left: 10px;
+		transition: justify-content 0.2s;
+	}
+}
+
+.menuToggle__stripe {
+	height: $menuToggleBox__stripe--height;
+	width: 70%;
+	background: $color__primary--dark;
+	@include border-radius($menuToggleBox__stripe--height / 2);
+	transition: margin 0.07s;
 }
