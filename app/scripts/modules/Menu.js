@@ -94,15 +94,14 @@ window.onload = function menuToggle() {
       //add darken effect to screen
       app.appendChild(darkenScreen);
       darkenScreen.style.opacity = '1';
-      setTimeout(function() {
-        darkenScreen.style.zIndex = '1';
-      }, 400);
-
+      darkenScreen.style.zIndex = '1';
     } else {
       toggleDisplay('-' + menuWidth + 'px');
       label.onmouseout = nullStripeMargin;
       darkenScreen.style.opacity = '0';
-      darkenScreen.style.zIndex = '-1';
+      setTimeout(function() {
+        darkenScreen.style.zIndex = '-1';
+      }, 300);
     }
   }
 
