@@ -48,7 +48,7 @@ var Conference = React.createClass({
   render: function() {
     var days = this.props.days.map(function(day) {
       return (
-        <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id} 
+        <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id}
           className={(this.state.activeDay==day.day_id)?"conference__tab--active":null}>
           <span>{day.day_name}</span>
         </li>
@@ -62,7 +62,7 @@ var Conference = React.createClass({
       <div className="conference">
         <div className="conference__title">
           <h3>Shedule: {this.props.name}</h3>
-          <input type="button" onClick={this.ChangeConfRepresent} 
+          <input type="button" onClick={this.ChangeConfRepresent}
             className={this.state.confIsVisible ? "up-arrow" : "down-arrow"}/>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}
@@ -117,13 +117,13 @@ var Session = React.createClass({
             }
             {
               this.state.session.about ?
-              <span onClick={this.ChangeAbout.bind(null,this.state.session)} 
-                className= {this.state.isHidden ? 
+              <span onClick={this.ChangeAbout.bind(null,this.state.session)}
+                className= {this.state.isHidden ?
                 "session__button  session__button--inactive" : "session__button  session__button--active"}>
               </span>:null
             }
           </div>
-          <div className={this.state.isHidden ? 
+          <div className={this.state.isHidden ?
             "session__about invisible" : "session__about"}>
               {this.state.session.about}
           </div>
