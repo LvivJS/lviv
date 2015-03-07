@@ -46,22 +46,13 @@ var Conference = React.createClass({
   ChangeConfRepresent: function() {
     this.state.confIsVisible ? this.setState({confIsVisible:false}) : this.setState({confIsVisible:true});
   },
-  // RendConference:function() {
-  //   var days = this.props.days.map(function(day) {
-  //     return <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id}><span>{day.day_name}</span></li>
-  //   }.bind(this));
-  //   var timetable = this.props.days.map(function(day) {
-  //     if (day.day_id == this.state.activeDay) {
-  //       return <Timetable sessions={day.timetable} key={day.day_id}/>
-  //     };
-  //   }.bind(this));
-  //     if (this.state.confIsVisible) {
-  //       return (
-  //     } else {return }
-  //   }.bind(this),
   render: function() {
     var days = this.props.days.map(function(day) {
-      return <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id} className={(this.state.activeDay==day.day_id)?"conference__tab--active":null}><span>{day.day_name}</span></li>
+      return (
+        <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id} className={(this.state.activeDay==day.day_id)?"conference__tab--active":null}>
+          <span>{day.day_name}</span>
+        </li>
+      )
     }.bind(this));
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
@@ -86,19 +77,9 @@ var Timetable = React.createClass({
       sessions:this.props.sessions
     }
   },
-  // changeSession: function(newSession) {
-  //   var newSessions = this.state.sessions.map(function(oneSession) {
-  //     if (oneSession.article == newSession.article) {
-  //       oneSession = newSession;
-  //     }
-  //     return oneSession
-  //   }.bind(this));
-  //   console.log(newSessions);
-  //   this.setState({sessions:newSessions})
-  // },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
-      return <Session key={session.article} session={session} /*onChange={this.changeSession}*//>
+      return <Session key={session.article} session={session} />
     }.bind(this));
     return (
       <div className="timetable">
@@ -112,11 +93,16 @@ var Session = React.createClass({
   getInitialState: function() {
     return {
       session:this.props.session,
-      hidedContent:null
+      isHided:false,
+      inputValue:'-'
     }
   },
-  ChangeAbout: function(current) {
-    
+  ChangeAbout: function() {
+    if (this.state.isHided) {
+      this.setState({isHided:false, inputValue:'-'})
+    } else {
+      this.setState({isHided:true, inputValue:'+'})
+    }
   },
   render: function() {
     return (
@@ -125,11 +111,16 @@ var Session = React.createClass({
         <div className="session__arrangement">
           <h4 className="session__arrangement--name">{this.state.session.article}</h4>
           <div className="session__arrangement--speaker">
-            <span className="speaker__name">{this.state.session.speaker.name}</span>
-            <span className="speaker__pos">{this.state.session.speaker.position}</span>
+            <span className="speaker__name">{this.state.session.speaker.name}{this.state.session.speaker.position}</span>
+            {
+              this.state.session.about ?
+              <input type="button" onClick={this.ChangeAbout.bind(null,this.state.session)} value={this.state.inputValue}/>
+              :null
+            }
           </div>
-          <input type="button" onClick={this.ChangeAbout.bind(null,this.state.session)}/>
-          <div className="session__arrangement--about">{this.state.session.about}</div>
+          <div className={this.state.isHided ? "session__arrangement--about invisible" : "session__arrangement--about"}>
+            {this.state.session.about}
+          </div>
         </div>
       </div>
     )

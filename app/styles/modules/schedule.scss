@@ -23,9 +23,6 @@
 	    input{
 	    	vertical-align: middle;
 	    }
-	    input:focus{
-		    outline: 0;
-		}
 		input.up-arrow{
 	    	@include schedule-arrow(url('../images/arrow-up.svg'))
 	    }
@@ -64,17 +61,33 @@
 			}
 			.session__arrangement{
 				display:flex;
-				
 				justify-content: flex-start;
 				flex-direction: column;
 				flex-shrink: 3;
+				width:100%;
 				.session__arrangement--name{
 					margin-bottom:10px;
+					
 				}
 				.session__arrangement--speaker{
 					margin-bottom:10px;
+
 					color:$color__primary--dark;
 					font-weight:bold;
+					display:flex;
+					justify-content: space-between;
+					flex-direction: row;
+					.speaker__name{
+						flex-shrink:3;
+					}
+					input {
+						width:20px;
+						background:$color__primary--soften;
+						border:0px;
+						font-size:$font__giant;
+						margin:0 10px;
+						color:$color__gray--darken;
+					}
 				}
 				.session__arrangement--about{
 					margin-bottom:10px;
@@ -84,6 +97,9 @@
 		.session:last-child{
 			border-bottom:0px;
 		}
+	}
+	input:focus{
+		outline: 0;
 	}
 }
 
