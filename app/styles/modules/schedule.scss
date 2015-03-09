@@ -2,104 +2,104 @@
 @import '../mixins';
 
 .schedule{
-	@include container-int;
-	
+    @include container-int;
+    
 }
 
 .conference {
-	width:90%;
-	margin:15px auto;
-	border-top:2px solid $color__gray--darken;
-	border-bottom:2px solid $color__gray--darken;
-	.conference__title {
-		padding:15px 0;
-		h3 {
-			width:40%;
-			font-size:$font__large;
-			color:$color__primary;
-			display:inline-block;
-			margin:10px 10px 10px 20px;
-	    }
-	    input{
-	    	vertical-align: middle;
-	    }
-		input.up-arrow{
-	    	@include schedule-arrow(url('../images/arrow-up.svg'))
-	    }
-	    input.down-arrow{
-	    	@include schedule-arrow(url('../images/arrow-down.svg'))
-	    }
-	}
-	ul {
-		 display: flex;
-		li {
-			list-style:none;
-			font-size: $font__larger;
-			display:flex;
-			background-color: $color__primary--soft;
-			padding:10px;
-		}
-		li.conference__tab--active {
-			background-color: $color__primary--soften;
-		}
-		li:hover{
-			text-decoration: underline;
-		}
-	}
-	.timetable{
-		background-color: $color__primary--soften;
-		padding:10px;
-		.session{
-			display:flex;
-			justify-content: flex-start;
-			padding:5px;
-			border-bottom:1px dashed $color__gray--darken;
-			.session__time{
-				width:100px;
-				margin-right:20px;
-				flex-shrink: 0;
-			}
-			.session__arrangement{
-				display:flex;
-				justify-content: flex-start;
-				flex-direction: column;
-				flex-shrink: 3;
-				width:100%;
-				.session__arrangement--name{
-					margin-bottom:10px;
-					
-				}
-				.session__arrangement--speaker{
-					margin-bottom:10px;
+    width:90%;
+    margin:15px auto;
+    border-top:2px solid $color__gray--darken;
+    border-bottom:2px solid $color__gray--darken;
+    .conference__title {
+        padding:15px 0;
+        h3 {
+            width:40%;
+            font-size:$font__large;
+            color:$color__primary;
+            display:inline-block;
+            margin:10px 10px 10px 20px;
+        }
+        input{
+            vertical-align: middle;
+        }
+        input.up-arrow{
+            @include schedule-arrow(url('../images/arrow-up.svg'))
+        }
+        input.down-arrow{
+            @include schedule-arrow(url('../images/arrow-down.svg'))
+        }
+    }
+    ul {
+         display: flex;
+        li {
+            list-style:none;
+            font-size: $font__larger;
+            display:flex;
+            background-color: $color__primary--soft;
+            padding:10px;
+        }
+        li.conference__tab--active {
+            background-color: $color__primary--soften;
+        }
+        li:hover{
+            text-decoration: underline;
+        }
+    }
+    .timetable{
+        background-color: $color__primary--soften;
+        padding:10px;
+        .session{
+            display:flex;
+            justify-content: flex-start;
+            padding:5px;
+            border-bottom:1px dashed $color__gray--darken;
+            .session__time{
+                width:100px;
+                margin-right:20px;
+                flex-shrink: 0;
+            }
+            .session__arrangement{
+                display:flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                flex-shrink: 3;
+                width:100%;
+                .session__arrangement--name{
+                    margin-bottom:10px;
+                    
+                }
+                .session__arrangement--speaker{
+                    margin-bottom:10px;
 
-					color:$color__primary--dark;
-					font-weight:bold;
-					display:flex;
-					justify-content: space-between;
-					flex-direction: row;
-					.speaker__name{
-						flex-shrink:3;
-					}
-					input {
-						width:20px;
-						background:$color__primary--soften;
-						border:0px;
-						font-size:$font__giant;
-						margin:0 10px;
-						color:$color__gray--darken;
-					}
-				}
-				.session__arrangement--about{
-					margin-bottom:10px;
-				}
-			}
-		}
-		.session:last-child{
-			border-bottom:0px;
-		}
-	}
-	input:focus{
-		outline: 0;
-	}
+                    color:$color__primary--dark;
+                    font-weight:bold;
+                    display:flex;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    .speaker__name{
+                        flex-shrink:3;
+                    }
+                    input {
+                        width:20px;
+                        background:$color__primary--soften;
+                        border:0px;
+                        font-size:$font__giant;
+                        margin:0 10px;
+                        color:$color__gray--darken;
+                    }
+                }
+                .session__arrangement--about{
+                    margin-bottom:10px;
+                }
+            }
+        }
+        .session:last-child{
+            border-bottom:0px;
+        }
+    }
+    input:focus{
+        outline: 0;
+    }
 }
 

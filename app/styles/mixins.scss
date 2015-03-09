@@ -6,27 +6,27 @@
 };
 
 @mixin container-int {
-	max-width: $container;
-	width: 100%;
-	flex-grow: 1;
-	display: flex;
-	margin: auto;
+    max-width: $container;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    margin: auto;
 }
 
 @mixin container-ext {
-	display:flex;
-	flex: 1;
-	justify-content: center;
+    display:flex;
+    flex: 1;
+    justify-content: center;
 };
 
 @mixin social-button($image) {
-	background: $image;
+    background: $image;
 };
 
 @mixin schedule-arrow($image) {
-	width:30px;
-	height:30px;
-	border:0px;
-	background: $image;
+    width:30px;
+    height:30px;
+    border:0px;
+    background: $image;
 };
 
