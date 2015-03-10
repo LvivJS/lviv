@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var config = require('../config');
 
 var Schedule = React.createClass({
   getInitialState: function() {
@@ -9,12 +10,10 @@ var Schedule = React.createClass({
     }
   },
   componentDidMount: function() {
-    var req = new XMLHttpRequest();
-    req.open('get', './dev/json/schedule.json', true);
-    req.onreadystatechange = function() {
-      this.setState({conferences:JSON.parse(req.responseText)})
+    var getData = function(data) {
+      this.setState({conferences:JSON.parse(data)})
     }.bind(this);
-    req.send();
+    config.request('get', config.path.schedule, getData)
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {

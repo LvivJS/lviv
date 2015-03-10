@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var config = require('../config');
 
 var Speakers = React.createClass({
   getInitialState: function() {
@@ -9,13 +10,10 @@ var Speakers = React.createClass({
     )
   },
   componentDidMount: function() {
-    var req = new XMLHttpRequest();
-    req.open('get', './dev/json/speakers.json', true);
-    req.setRequestHeader('Content-Type', 'application/json');
-    req.onreadystatechange = function() {
-      this.setState({speakerInfo: JSON.parse(req.responseText)});
+    var getData = function(data) {
+      this.setState({speakerInfo: JSON.parse(data)});
     }.bind(this);
-    req.send();
+    config.request('get', config.path.speakers, getData)
   },
   render: function() {
     var speakers = this.state.speakerInfo.map(function(info) {
