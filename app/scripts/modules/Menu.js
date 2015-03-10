@@ -54,18 +54,9 @@ window.onload = function menuToggle() {
   var menuItems = document.getElementsByClassName('menu__item');
   var darkenScreen = document.getElementById('cm_darkenScreen');
 
-  var toggleClassName = function(element, addClass, resetClass) {
-    var classCheck = element.className.indexOf(addClass) ;
-    if (classCheck == -1) {
-      element.className += addClass;
-    } else {
-      element.className = resetClass;
-    }
-  };
-
   var toggleDisplay = function() {
-    toggleClassName(menu, ' menu--visible', 'menu');
-    toggleClassName(darkenScreen, ' darkenScreen--visible', 'darkenScreen--hidden');
+    menu.classList.toggle('menu--visible');
+    darkenScreen.classList.toggle('darkenScreen--visible');
   };
 
   //let button toggle menu and dark screen
