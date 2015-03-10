@@ -42,9 +42,18 @@ var Speaker = React.createClass({
         <div className="speaker__pos">{this.props.information.position}</div>
         <div className="speaker__about">{this.props.information.about}</div>
           <div className="speaker__contacts">
-            <a className={this.props.information.contact[0].twitter ? "speaker__contact speaker__contact--twitter ":"invisible"} href={this.props.information.contact[0].twitter}></a>
-            <a className={this.props.information.contact[0].facebook ? "speaker__contact speaker__contact--facebook":"invisible"} href={this.props.information.contact[0].facebook}></a> 
-            <a className={this.props.information.contact[0].linkedin ? "speaker__contact speaker__contact--linkedin":"invisible"} href={this.props.information.contact[0].linkedin}></a> 
+            <a className={this.props.information.contact[0].twitter ?
+              "speaker__contact speaker__contact--twitter ":"invisible"} 
+              href={this.props.information.contact[0].twitter}>
+            </a>
+            <a className={this.props.information.contact[0].facebook ? 
+              "speaker__contact speaker__contact--facebook":"invisible"} 
+              href={this.props.information.contact[0].facebook}>
+            </a> 
+            <a className={this.props.information.contact[0].linkedin ? 
+              "speaker__contact speaker__contact--linkedin":"invisible"} 
+              href={this.props.information.contact[0].linkedin}>
+            </a> 
           </div> 
         </div>
      </div>

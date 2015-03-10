@@ -49,7 +49,8 @@ var Conference = React.createClass({
   render: function() {
     var days = this.props.days.map(function(day) {
       return (
-        <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id} className={(this.state.activeDay==day.day_id)?"conference__tab--active":null}>
+        <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id} 
+          className={(this.state.activeDay==day.day_id)?"conference__tab--active":null}>
           <span>{day.day_name}</span>
         </li>
       )
@@ -62,7 +63,8 @@ var Conference = React.createClass({
       <div className="conference">
         <div className="conference__title">
           <h3>Shedule: {this.props.name}</h3>
-          <input type="button" onClick={this.ChangeConfRepresent} className={this.state.confIsVisible ? "up-arrow" : "down-arrow"}/>
+          <input type="button" onClick={this.ChangeConfRepresent} 
+            className={this.state.confIsVisible ? "up-arrow" : "down-arrow"}/>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}
         {timetable}
@@ -93,33 +95,33 @@ var Session = React.createClass({
   getInitialState: function() {
     return {
       session:this.props.session,
-      isHided:false,
-      inputValue:'-'
+      isHided:false
     }
   },
   ChangeAbout: function() {
-    if (this.state.isHided) {
-      this.setState({isHided:false, inputValue:'-'})
-    } else {
-      this.setState({isHided:true, inputValue:'+'})
-    }
+    this.state.isHided ? this.setState({isHided:false}) : this.setState({isHided:true});
   },
   render: function() {
     return (
       <div className="session" key={this.state.session.article}>
         <div className="session__time">{this.state.session.time}</div>
         <div className="session__arrangement">
-          <h4 className="session__arrangement--name">{this.state.session.article}</h4>
-          <div className="session__arrangement--speaker">
-            <span className="speaker__name">{this.state.session.speaker.name}{this.state.session.speaker.position}</span>
+          <h4 className="session__name">{this.state.session.article}</h4>
+          <div className="session__speaker">
+            <span className="speaker__name">
+              {this.state.session.speaker.name}{this.state.session.speaker.position}
+            </span>
             {
               this.state.session.about ?
-              <input type="button" onClick={this.ChangeAbout.bind(null,this.state.session)} value={this.state.inputValue}/>
-              :null
+              <span onClick={this.ChangeAbout.bind(null,this.state.session)} 
+                className= {this.state.isHided ? 
+                "session__button  session__button--inactive" : "session__button  session__button--active"}>
+              </span>:null
             }
           </div>
-          <div className={this.state.isHided ? "session__arrangement--about invisible" : "session__arrangement--about"}>
-            {this.state.session.about}
+          <div className={this.state.isHided ? 
+            "session__about invisible" : "session__about"}>
+              {this.state.session.about}
           </div>
         </div>
       </div>
