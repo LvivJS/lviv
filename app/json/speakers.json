@@ -7,7 +7,6 @@
     "contact": [
       {
         "facebook":"http://www.facebook.com",
-        "twitter":"",
         "linkedin":"http://www.linkedin.com"
       }
     ]
@@ -20,9 +19,7 @@
     "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
     "contact": [
       {
-        "facebook":"",
-        "twitter":"http://www.twitter.com",
-        "linkedin":""
+        "twitter":"http://www.twitter.com"
       }
     ]
   },
@@ -33,7 +30,6 @@
     "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
     "contact": [
       {
-        "facebook":"",
         "twitter":"http://www.twitter.com",
         "linkedin":"http://www.linkedin.com"
       }
@@ -60,7 +56,6 @@
     "contact": [
       {
         "facebook":"http://www.facebook.com",
-        "twitter":"",
         "linkedin":"http://www.linkedin.com"
       }
     ]
@@ -86,7 +81,6 @@
     "contact": [
       {
         "facebook":"http://www.facebook.com",
-        "twitter":"",
         "linkedin":"http://www.linkedin.com"
       }
     ]
@@ -99,8 +93,7 @@
     "contact": [
       {
         "facebook":"http://www.facebook.com",
-        "twitter":"http://www.twitter.com",
-        "linkedin":""
+        "twitter":"http://www.twitter.com"
       }
     ]
   }

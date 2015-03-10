@@ -9,16 +9,12 @@
           {
             "time":"8:55",
             "article":"Morning Welcome",
-            "speaker":
-              {
-                "name":"",
-                "position":""
-                },
-            "about":""
+            "type":"entertainment"
           },
           {
             "time":"9:00-10:00",
             "article":"The Fault, Dear Brutus (or: Career Advice From a Cranky Old Man)",
+            "type":"report",
             "speaker":
               {
                 "name":"Jeffrey Zeldman",
@@ -29,6 +25,7 @@
           {
             "time":"10:15-11:15",
             "article":"Icon Design Process",
+            "type":"report",
             "speaker":
               {
                 "name":"Jon Hicks",
@@ -39,6 +36,7 @@
           {
             "time":"11:30-12:30",
             "article":"Designing for Social Behaor",
+            "type":"report",
             "speaker":
               {
                 "name":"Sarah Parmenter",
@@ -49,16 +47,12 @@
           {
             "time":"12:30-2:00",
             "article":"Lunch",
-            "speaker":
-              {
-                "name":"",
-                "position":""
-                },
-            "about":""
+            "type":"entertainment"
           },
           {
             "time":"2:00-3:00",
             "article":"Icon Design Pross",
+            "type":"report",
             "speaker":
               {
                 "name":"Jon Hicks",
@@ -69,6 +63,7 @@
           {
             "time":"3:15-4:15",
             "article":"Designing for Social Behavior",
+            "type":"report",
             "speaker":
               {
                 "name":"Sarah Parmenter",
@@ -79,11 +74,7 @@
           {
             "time":"4:30-7:00",
             "article":"Opening Night Happy Hour",
-            "speaker":
-              {
-                "name":"",
-                "position":""
-                },
+            "type":"entertainment",
             "about":"Join us at A Happy Hour Apart, to be held in the 4th floor foyer, right next to the registration desk. We’ll provide tasty snacks and tastier beverages to recharge your body after a full day of recharging your mind!"
           }
         ]
@@ -95,16 +86,12 @@
           {
             "time":"8:55",
             "article":"Morning Welcome",
-            "speaker":
-              {
-                "name":"",
-                "position":""
-                },
-            "about":""
+            "type":"entertainment"
           },
           {
             "time":"9:00-10:00",
             "article":"SVG is for Everybody",
+            "type":"report",
             "speaker":
               {
                 "name":"Chris Coyier",
@@ -115,6 +102,7 @@
           {
             "time":"10:15-11:15",
             "article":"CSS Grid Layout",
+            "type":"report",
             "speaker":
               {
                 "name":"Rachel Andrew",
@@ -125,16 +113,12 @@
           {
             "time":"11:30-12:30",
             "article":"Lunch",
-            "speaker":
-              {
-                "name":"",
-                "position":""
-                },
-            "about":""
+            "type":"entertainment"
           },
           {
             "time":"12:30-2:00",
             "article":"Everything You Wanted to Know About Responsive Design…And Less!",
+            "type":"report",
             "speaker":
               {
                 "name":"",

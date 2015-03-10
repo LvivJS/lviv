@@ -72,7 +72,7 @@
     .session__name {
         margin-bottom:10px;
     }
-    .session__speaker {
+    .session__info {
         margin-bottom:10px;
         color:$color__primary--dark;
         font-weight:bold;
@@ -85,10 +85,10 @@
         span.session__button{
             width:20px;
             height:20px;
-            background:$color__primary--soften;
             border:0px;
             margin:0 10px;
             cursor:pointer;
+            @include user-select
         }
         span.session__button--inactive::after {
             @include schedule-about-button('+');
@@ -97,10 +97,16 @@
             @include schedule-about-button('-');
         }
     }
+    .session__info--right{
+        justify-content: flex-end;   
+    }
     .session__about {
         margin-bottom:10px;
     }
 }
 .session:last-child {
     border-bottom:0px;
+}
+.session--entertainment {
+    color:$color__primary;
 }
