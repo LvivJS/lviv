@@ -1,9 +1,11 @@
 @import '../variables';
 @import '../mixins';
 
-.schedule{
+.schedule {
     @include container-int;
-    
+    input:focus {
+        outline: 0;
+    }
 }
 
 .conference {
@@ -20,13 +22,13 @@
             display:inline-block;
             margin:10px 10px 10px 20px;
         }
-        input{
+        input {
             vertical-align: middle;
         }
-        input.up-arrow{
+        input.up-arrow {
             @include schedule-arrow(url('../images/arrow-up.svg'))
         }
-        input.down-arrow{
+        input.down-arrow {
             @include schedule-arrow(url('../images/arrow-down.svg'))
         }
     }
@@ -35,71 +37,70 @@
         li {
             list-style:none;
             font-size: $font__larger;
-            display:flex;
             background-color: $color__primary--soft;
             padding:10px;
         }
         li.conference__tab--active {
             background-color: $color__primary--soften;
         }
-        li:hover{
+        li:hover {
             text-decoration: underline;
         }
     }
-    .timetable{
-        background-color: $color__primary--soften;
-        padding:10px;
-        .session{
-            display:flex;
-            justify-content: flex-start;
-            padding:5px;
-            border-bottom:1px dashed $color__gray--darken;
-            .session__time{
-                width:100px;
-                margin-right:20px;
-                flex-shrink: 0;
-            }
-            .session__arrangement{
-                display:flex;
-                justify-content: flex-start;
-                flex-direction: column;
-                flex-shrink: 3;
-                width:100%;
-                .session__arrangement--name{
-                    margin-bottom:10px;
-                    
-                }
-                .session__arrangement--speaker{
-                    margin-bottom:10px;
-
-                    color:$color__primary--dark;
-                    font-weight:bold;
-                    display:flex;
-                    justify-content: space-between;
-                    flex-direction: row;
-                    .speaker__name{
-                        flex-shrink:3;
-                    }
-                    input {
-                        width:20px;
-                        background:$color__primary--soften;
-                        border:0px;
-                        font-size:$font__giant;
-                        margin:0 10px;
-                        color:$color__gray--darken;
-                    }
-                }
-                .session__arrangement--about{
-                    margin-bottom:10px;
-                }
-            }
+}
+.timetable {
+    background-color: $color__primary--soften;
+    padding:10px;
+}
+.session {
+    display:flex;
+    justify-content: flex-start;
+    padding:5px;
+    border-bottom:1px dashed $color__gray--darken;
+    .session__time {
+        width:100px;
+        margin-right:20px;
+        flex-shrink: 0;
+    }
+    .session__arrangement {
+        display:flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-shrink: 3;
+        width:100%;
+    }
+    .session__name {
+        margin-bottom:10px;
+    }
+    .session__speaker {
+        margin-bottom:10px;
+        color:$color__primary--dark;
+        font-weight:bold;
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row;
+        .speaker__name {
+            flex-shrink:3;
         }
-        .session:last-child{
-            border-bottom:0px;
+        span.session__button{
+            width:20px;
+            height:20px;
+            background:$color__primary--soften;
+            border:0px;
+            margin:0 10px;
+            cursor:pointer;
+        }
+        span.session__button--inactive::after {
+            @include schedule-about-button('+');
+        }
+        span.session__button--active::after {
+            @include schedule-about-button('-');
         }
     }
-    input:focus{
-        outline: 0;
+    .session__about {
+        margin-bottom:10px;
     }
 }
-
+.session:last-child {
+    border-bottom:0px;
+}
