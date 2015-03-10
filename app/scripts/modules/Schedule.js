@@ -40,7 +40,6 @@ var Conference = React.createClass({
       activeTable:day,
       activeDay: day.day_id
     });
-
   },
   ChangeConfRepresent: function() {
     this.state.confIsVisible ? this.setState({confIsVisible:false}) : this.setState({confIsVisible:true});
@@ -94,7 +93,8 @@ var Session = React.createClass({
   getInitialState: function() {
     return {
       session:this.props.session,
-      isHided:false
+      isHided:false,
+      isReport: this.props.session.type == 'report'
     }
   },
   ChangeAbout: function() {
@@ -102,14 +102,18 @@ var Session = React.createClass({
   },
   render: function() {
     return (
-      <div className="session" key={this.state.session.article}>
+      <div key={this.state.session.article}
+       className={this.state.isReport ? "session session--report" : "session session--entertainment"}>
         <div className="session__time">{this.state.session.time}</div>
         <div className="session__arrangement">
           <h4 className="session__name">{this.state.session.article}</h4>
-          <div className="session__speaker">
-            <span className="speaker__name">
-              {this.state.session.speaker.name}{this.state.session.speaker.position}
-            </span>
+          <div className={this.state.isReport ? "session__info" : "session__info session__info--right"}>
+            {
+              this.state.isReport ?
+              <span className="speaker__name">
+                {this.state.session.speaker.name}{this.state.session.speaker.position}
+              </span>:null
+            }
             {
               this.state.session.about ?
               <span onClick={this.ChangeAbout.bind(null,this.state.session)} 
