@@ -1,6 +1,8 @@
 'use strict';
 
 var React = require('react');
+var config = require('../config');
+var ajax = require('../utility');
 
 var Speakers = React.createClass({
   getInitialState: function() {
@@ -9,13 +11,10 @@ var Speakers = React.createClass({
     )
   },
   componentDidMount: function() {
-    var req = new XMLHttpRequest();
-    req.open('get', './dev/json/speakers.json', true);
-    req.setRequestHeader('Content-Type', 'application/json');
-    req.onreadystatechange = function() {
-      this.setState({speakerInfo: JSON.parse(req.responseText)});
+    var getData = function(data) {
+      this.setState({speakerInfo: JSON.parse(data)});
     }.bind(this);
-    req.send();
+    ajax('get', config.path.speakers, getData)
   },
   render: function() {
     var speakers = this.state.speakerInfo.map(function(info) {
@@ -42,9 +41,18 @@ var Speaker = React.createClass({
         <div className="speaker__pos">{this.props.information.position}</div>
         <div className="speaker__about">{this.props.information.about}</div>
           <div className="speaker__contacts">
-            <a className={this.props.information.contact[0].twitter ? "speaker__contact speaker__contact--twitter ":"invisible"} href={this.props.information.contact[0].twitter}></a>
-            <a className={this.props.information.contact[0].facebook ? "speaker__contact speaker__contact--facebook":"invisible"} href={this.props.information.contact[0].facebook}></a> 
-            <a className={this.props.information.contact[0].linkedin ? "speaker__contact speaker__contact--linkedin":"invisible"} href={this.props.information.contact[0].linkedin}></a> 
+            <a className={this.props.information.contact[0].twitter ?
+              "speaker__contact speaker__contact--twitter ":"invisible"} 
+              href={this.props.information.contact[0].twitter}>
+            </a>
+            <a className={this.props.information.contact[0].facebook ? 
+              "speaker__contact speaker__contact--facebook":"invisible"} 
+              href={this.props.information.contact[0].facebook}>
+            </a> 
+            <a className={this.props.information.contact[0].linkedin ? 
+              "speaker__contact speaker__contact--linkedin":"invisible"} 
+              href={this.props.information.contact[0].linkedin}>
+            </a> 
           </div> 
         </div>
      </div>

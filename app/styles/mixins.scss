@@ -6,20 +6,41 @@
 };
 
 @mixin container-int {
-	max-width: $container;
-	width: 100%;
-	flex-grow: 1;
-	display: flex;
-	margin: auto;
+    max-width: $container;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    margin: auto;
 }
 
 @mixin container-ext {
-	display:flex;
-	flex: 1;
-	justify-content: center;
+    display:flex;
+    flex: 1;
+    justify-content: center;
 };
 
 @mixin social-button($image) {
-	background: $image;
+    background: $image;
 };
 
+@mixin schedule-arrow($image) {
+    width:30px;
+    height:30px;
+    border:0px;
+    background: $image;
+};
+
+@mixin schedule-about-button($content) {
+    content:$content;
+    display:block;
+    font-size:$font__giant;
+    color:$color__gray--darken;
+    margin-top: -7px;
+};
+
+@mixin user-select() {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+};

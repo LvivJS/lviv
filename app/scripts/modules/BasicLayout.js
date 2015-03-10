@@ -6,6 +6,7 @@ var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
 var Speakers = require('./Speakers');
 var Partners = require('./Partners');
+var Schedule = require('./Schedule');
 
 var LayoutBasic = React.createClass({
   render: function() {
@@ -26,12 +27,10 @@ var LayoutBasic = React.createClass({
         <section id="speakers" className="page-wrap">        
           <h2 className="module-header">Speakers</h2>
             <Speakers />
-          </section>        
+        </section>        
         <section id="shedule" className="page-wrap">        
-        <h2 className="module-header">Shedule</h2>
-          <div className="container">
-            here to be inserted shedule module
-          </div>
+          <h2 className="module-header">Shedule</h2>
+          <Schedule /> 
         </section>        
         <section id="location" className="page-wrap">
         <h2 className="module-header">Location</h2>
