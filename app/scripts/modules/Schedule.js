@@ -2,6 +2,7 @@
 
 var React = require('react');
 var config = require('../config');
+var ajax = require('../utility');
 
 var Schedule = React.createClass({
   getInitialState: function() {
@@ -13,7 +14,7 @@ var Schedule = React.createClass({
     var getData = function(data) {
       this.setState({conferences:JSON.parse(data)})
     }.bind(this);
-    config.request('get', config.path.schedule, getData)
+    ajax('get', config.path.schedule, getData)
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
@@ -93,12 +94,12 @@ var Session = React.createClass({
   getInitialState: function() {
     return {
       session:this.props.session,
-      isHided:false,
+      isHidden:false,
       isReport: this.props.session.type == 'report'
     }
   },
   ChangeAbout: function() {
-    this.state.isHided ? this.setState({isHided:false}) : this.setState({isHided:true});
+    this.state.isHidden ? this.setState({isHidden:false}) : this.setState({isHidden:true});
   },
   render: function() {
     return (
@@ -117,12 +118,12 @@ var Session = React.createClass({
             {
               this.state.session.about ?
               <span onClick={this.ChangeAbout.bind(null,this.state.session)} 
-                className= {this.state.isHided ? 
+                className= {this.state.isHidden ? 
                 "session__button  session__button--inactive" : "session__button  session__button--active"}>
               </span>:null
             }
           </div>
-          <div className={this.state.isHided ? 
+          <div className={this.state.isHidden ? 
             "session__about invisible" : "session__about"}>
               {this.state.session.about}
           </div>
