@@ -1,3 +1,4 @@
+
 'use strict';
 
 var React = require('react');
@@ -6,7 +7,11 @@ var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
 var Speakers = require('./Speakers');
 var Partners = require('./Partners');
+<<<<<<< HEAD
 var Schedule = require('./Schedule');
+=======
+var Registration = require('./Registration');
+>>>>>>> Registration form. w/o validation&firebase
 
 var LayoutBasic = React.createClass({
   render: function() {
@@ -38,9 +43,7 @@ var LayoutBasic = React.createClass({
         </section>        
         <section id="registration" className="page-wrap">        
         <h2 className="module-header">Registration</h2>
-          <div className="container">
-            here to be inserted registration module
-          </div>
+          <Registration />
         </section>        
         <section id="partners" className="page-wrap">
         <h2 className="module-header">Partners</h2>
