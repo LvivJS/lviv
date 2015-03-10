@@ -23,10 +23,10 @@ $font__small:16px;
 $container: 940px;
 
 /* menu values */
-$menu__item-padding--top-bottom: 20px;
-$menu__item-padding--left-right: 2.4%;
+$item__padding--top-bottom: 20px;
+$item__padding--left-right: 2.4%;
 
-$menu__toggle-button--size: $menu__item-padding--top-bottom * 2;
-$menuToggleBox__stripe--height: 4px;
+$toggle-button__size: $item__padding--top-bottom * 2;
+$stripe__height: 4px;
 
 $menu-width--resp: 350px;

@@ -58,7 +58,7 @@
 	list-style:none;
 	font-size: $font__giant;
 	color: $color__heading--menu;
-	padding: $menu__item-padding--top-bottom $menu__item-padding--left-right;
+	padding: $item__padding--top-bottom $item__padding--left-right;
 	transition: all 0.2s;
 	@include bp(medium) {
 		padding-left: 40px;
@@ -88,18 +88,18 @@
 		align-items: center;
 		justify-content: space-around;
 		padding: 6px 0;
-		height: $menu__toggle-button--size;
-		width: $menu__toggle-button--size;
+		height: $toggle-button__size;
+		width: $toggle-button__size;
 		margin-left: 10px;
 		transition: justify-content 0.2s;
 	}
 }
 
 .menuToggle__stripe {
-	height: $menuToggleBox__stripe--height;
+	height: $stripe__height;
 	width: 70%;
 	background: $color__primary--dark;
-	@include border-radius($menuToggleBox__stripe--height / 2);
+	@include border-radius($stripe__height / 2);
 	transition: margin 0.07s;
 }
 
