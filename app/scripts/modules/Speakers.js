@@ -2,6 +2,7 @@
 
 var React = require('react');
 var config = require('../config');
+var ajax = require('../utility');
 
 var Speakers = React.createClass({
   getInitialState: function() {
@@ -13,7 +14,7 @@ var Speakers = React.createClass({
     var getData = function(data) {
       this.setState({speakerInfo: JSON.parse(data)});
     }.bind(this);
-    config.request('get', config.path.speakers, getData)
+    ajax('get', config.path.speakers, getData)
   },
   render: function() {
     var speakers = this.state.speakerInfo.map(function(info) {
