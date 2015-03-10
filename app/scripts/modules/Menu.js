@@ -5,14 +5,13 @@ var Menu = React.createClass({
     return (
       <div className="menu-wrapper">
         <div id="cm_toggleWrapper" className="toggleWrapper">
-          <input type="checkbox" id="cm_menuToggleBox" className="menuToggleBox" />
-          <label htmlFor="cm_menuToggleBox" id="cm_menuToggle" className="menuToggle">
+          <div id="cm_menuToggle" className="menuToggle">
             <div className="menuToggle__stripe"></div>
             <div className="menuToggle__stripe"></div>
             <div className="menuToggle__stripe"></div>
-          </label>
+          </div>
         </div>
-        <nav id="cm_menuItems" className="menuItems">
+        <nav id="cm_menuItems" className="menu">
             <a href="#overview" className="menu__item">Overview</a>
             <a href="#speakers" className="menu__item">Speakers</a>
             <a href="#shedule" className="menu__item">Shedule</a>
@@ -20,7 +19,7 @@ var Menu = React.createClass({
             <a href="#registration" className="menu__item">Registration</a>
             <a href="#partners" className="menu__item">Partners</a>
         </nav>
-        <div id="cm_darkenScreen" className="darkenScreen"></div>
+        <div id="cm_darkenScreen" className="darkenScreen--hidden"></div>
       </div>
     );
   }
@@ -49,7 +48,6 @@ window.addEventListener('scroll', function() {
 
 //toggle label state and toggle menu visibility on sass bp(medium);
 window.onload = function menuToggle() {
-  var app = document.getElementById('app');
   var label = document.getElementById('cm_menuToggle');
   var checkBox =  document.getElementById('cm_menuToggleBox');
   var menu = document.getElementById('cm_menuItems');
@@ -57,39 +55,32 @@ window.onload = function menuToggle() {
   var menuItems = document.getElementsByClassName('menu__item');
   var darkenScreen = document.getElementById('cm_darkenScreen');
 
-  var toggleDisplay = function(v) {
-    menu.style.left = v;
+  var toggleClassName = function(element, addClass, resetClass) {
+    var classCheck = element.className.indexOf(addClass) ;
+    if (classCheck == -1) {
+      element.className += addClass;
+    } else {
+      element.className = resetClass;
+    }
+  };
+
+  var toggleDisplay = function() {
+    toggleClassName(menu, ' menu--visible', 'menu');
+    toggleClassName(darkenScreen, ' darkenScreen--visible', 'darkenScreen--hidden');
     for (i = 0; i < menuItems.length; i++) {
       //let on click on menu item togle visibility of menu
       menuItems[i].onclick = function() {
-        toggle();
-        checkBox.checked = false;
+        toggleDisplay();
       };
     }
   };
 
-  var toggleDarkenScreen = function(o, v) {
-    darkenScreen.style.opacity = o;
-    darkenScreen.style.visibility = v;
-  };
-
-  function toggle() {
-    if (!checkBox.checked) {
-      toggleDisplay(0 + 'px');
-      //add darken effect to screen
-      toggleDarkenScreen('1', 'visible');
-    } else {
-      toggleDisplay('-' + menuWidth + 'px');
-      toggleDarkenScreen('0', 'hidden');
-    }
-  }
-
   label.onclick = function() {
-    toggle();
+    toggleDisplay();
   }
 
   darkenScreen.onclick = function() {
-    toggleDisplay('-' + menuWidth + 'px');
+    toggleDisplay();
     toggleDarkenScreen('0', 'hidden');
     checkBox.checked = false;
   }

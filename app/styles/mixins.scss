@@ -1,29 +1,29 @@
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
 };
 
 
 /* layout */
 @mixin container-int {
-	max-width: $container;
-	width: 100%;
-	display: flex;
-	margin: auto;
+  max-width: $container;
+  width: 100%;
+  display: flex;
+  margin: auto;
 }
 
 @mixin container-ext {
-    display:flex;
-    flex: 1;
-    justify-content: center;
+  display:flex;
+  flex: 1;
+  justify-content: center;
 };
 
 
 /* speakers */
 @mixin social-button($image) {
-    background: $image;
+  background: $image;
 };
 
 @mixin schedule-arrow($image) {
@@ -50,16 +50,16 @@
 
 /* media queries */
 @mixin bp($point) {
-  @if $point == medium {
-    @media (max-width: 768px) { @content; }
+    @if $point == medium {
+      @media (max-width: 768px) { @content; }
   }
-  @else if $point == small {
-    @media (max-width: 481px) { @content; }
+    @else if $point == small {
+      @media (max-width: 481px) { @content; }
   }
-  @else if $point == very-small {
-    @media (max-width: 320px)  { @content; }
+    @else if $point == very-small {
+      @media (max-width: 320px)  { @content; }
   }
-  @else if $point == large {
-  	@media (min-width: 769px)  { @content; }
+    @else if $point == large {
+      @media (min-width: 769px)  { @content; }
   }
 }

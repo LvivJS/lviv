@@ -29,7 +29,7 @@
 	}
 }
 
-.menuItems {
+.menu {
 	@include container-int;
 	@include bp(medium) {
 		flex-direction: column;
@@ -41,6 +41,14 @@
 		height: 100%;
 	}
 }
+
+.menu--visible {
+	@include bp(medium) {
+		left: 0px;
+	}
+}
+
+
 
 .menu__item{
 	display: block;
@@ -96,7 +104,7 @@
 	margin: 4.5px 0;
 }
 
-.darkenScreen {
+.darkenScreen--hidden {
 	cursor: pointer;
 	position: fixed;
 	left: 0;
@@ -112,4 +120,9 @@
 	@include bp(large) {
 		display: none;
 	}
+}
+
+.darkenScreen--visible {
+	opacity: 1;
+	visibility: visible;
 }
