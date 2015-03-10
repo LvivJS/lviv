@@ -4,15 +4,15 @@ var Menu = React.createClass({
   render: function() {
     return (
       <div className="menu-wrapper">
-        <div id="toggleWrapper">
-          <input type="checkbox" id="menuToggleBox" />
-          <label htmlFor="menuToggleBox" id="menuToggle">
+        <div id="cm_toggleWrapper" className="toggleWrapper">
+          <input type="checkbox" id="cm_menuToggleBox" className="menuToggleBox" />
+          <label htmlFor="cm_menuToggleBox" id="cm_menuToggle" className="menuToggle">
             <div className="menuToggle__stripe"></div>
             <div className="menuToggle__stripe"></div>
             <div className="menuToggle__stripe"></div>
           </label>
         </div>
-        <nav id="menuItems">
+        <nav id="cm_menuItems" className="menuItems">
             <a href="#overview" className="menu__item">Overview</a>
             <a href="#speakers" className="menu__item">Speakers</a>
             <a href="#shedule" className="menu__item">Shedule</a>
@@ -20,7 +20,7 @@ var Menu = React.createClass({
             <a href="#registration" className="menu__item">Registration</a>
             <a href="#partners" className="menu__item">Partners</a>
         </nav>
-        <div id="darkenScreen"></div>
+        <div id="cm_darkenScreen" className="darkenScreen"></div>
       </div>
     );
   }
@@ -50,63 +50,48 @@ window.addEventListener('scroll', function() {
 //toggle label state and toggle menu visibility on sass bp(medium);
 window.onload = function menuToggle() {
   var app = document.getElementById('app');
-  var label = document.getElementById('menuToggle');
-  var checkBox =  document.getElementById('menuToggleBox');
-  var menu = document.getElementById('menuItems');
+  var label = document.getElementById('cm_menuToggle');
+  var checkBox =  document.getElementById('cm_menuToggleBox');
+  var menu = document.getElementById('cm_menuItems');
   var menuWidth = menu.offsetWidth;
   var menuItems = document.getElementsByClassName('menu__item');
-  var menuButtonStripes = document.getElementsByClassName('menuToggle__stripe');
-  var darkenScreen = document.getElementById('darkenScreen');
-
-  //label events
-  function setStripeMargin() {
-    menuButtonStripes[1].style.marginTop = '4.5px';
-    menuButtonStripes[1].style.marginBottom = '4.5px';
-  }
-
-  function nullStripeMargin() {
-    menuButtonStripes[1].style.marginTop = '0px';
-    menuButtonStripes[1].style.marginBottom = '0px';
-  }
-  //make stripes on label closer together
-  label.onmouseout = nullStripeMargin;
-
-  //make stripes on label further apart
-  label.onmouseover = setStripeMargin;
+  var darkenScreen = document.getElementById('cm_darkenScreen');
 
   var toggleDisplay = function(v) {
+    menu.style.left = v;
     for (i = 0; i < menuItems.length; i++) {
-      menu.style.left = v;
-      //let on click on item togle visibility of menu
+      //let on click on menu item togle visibility of menu
       menuItems[i].onclick = function() {
         toggle();
         checkBox.checked = false;
-        nullStripeMargin();
       };
     }
+  };
+
+  var toggleDarkenScreen = function(o, v) {
+    darkenScreen.style.opacity = o;
+    darkenScreen.style.visibility = v;
   };
 
   function toggle() {
     if (!checkBox.checked) {
       toggleDisplay(0 + 'px');
-      setStripeMargin('4.5px');
-      label.onmouseout = setStripeMargin;
       //add darken effect to screen
-      app.appendChild(darkenScreen);
-      darkenScreen.style.opacity = '1';
-      darkenScreen.style.zIndex = '1';
+      toggleDarkenScreen('1', 'visible');
     } else {
       toggleDisplay('-' + menuWidth + 'px');
-      label.onmouseout = nullStripeMargin;
-      darkenScreen.style.opacity = '0';
-      setTimeout(function() {
-        darkenScreen.style.zIndex = '-1';
-      }, 300);
+      toggleDarkenScreen('0', 'hidden');
     }
   }
 
   label.onclick = function() {
     toggle();
+  }
+
+  darkenScreen.onclick = function() {
+    toggleDisplay('-' + menuWidth + 'px');
+    toggleDarkenScreen('0', 'hidden');
+    checkBox.checked = false;
   }
 };
 

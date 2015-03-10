@@ -6,13 +6,13 @@
 	background: $color__primary--dark;
 	z-index: 2;
 	@include bp(medium) {
-		position: fixed !important;
+		position: fixed;
 		width: 100%;
 		top: 0px;
 	}
 }
 
-#toggleWrapper {
+.toggleWrapper {
 	display: none;
 	@include bp(medium) {
 		display: block;
@@ -29,7 +29,7 @@
 	}
 }
 
-#menuItems {
+.menuItems {
 	@include container-int;
 	@include bp(medium) {
 		flex-direction: column;
@@ -61,11 +61,11 @@
 
 /* toggle visibility of menu on smalles screens */
 
-#menuToggleBox {
-	display: none !important;
+.menuToggleBox {
+	display: none;
 }
 
-#menuToggle {
+.menuToggle {
 	display: none;
 
 	@include bp(medium) {
@@ -92,15 +92,21 @@
 	transition: margin 0.07s;
 }
 
-#darkenScreen {
+.menuToggle:hover .menuToggle__stripe:nth-child(2) {
+	margin: 4.5px 0;
+}
+
+.darkenScreen {
+	cursor: pointer;
 	position: fixed;
 	left: 0;
-	top:0;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	background: rgba(3, 3, 3, 0.64);
 	opacity: 0;
 	transition: opacity 0.3s;
+	visibility: hidden;
 	z-index: -1;
 
 	@include bp(large) {
