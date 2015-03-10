@@ -46,10 +46,9 @@ window.addEventListener('scroll', function() {
   }
 });
 
-//toggle label state and toggle menu visibility on sass bp(medium);
+//toggle menu visibility on sass bp(medium);
 window.onload = function menuToggle() {
-  var label = document.getElementById('cm_menuToggle');
-  var checkBox =  document.getElementById('cm_menuToggleBox');
+  var button = document.getElementById('cm_menuToggle');
   var menu = document.getElementById('cm_menuItems');
   var menuWidth = menu.offsetWidth;
   var menuItems = document.getElementsByClassName('menu__item');
@@ -67,22 +66,23 @@ window.onload = function menuToggle() {
   var toggleDisplay = function() {
     toggleClassName(menu, ' menu--visible', 'menu');
     toggleClassName(darkenScreen, ' darkenScreen--visible', 'darkenScreen--hidden');
-    for (i = 0; i < menuItems.length; i++) {
-      //let on click on menu item togle visibility of menu
-      menuItems[i].onclick = function() {
-        toggleDisplay();
-      };
-    }
   };
 
-  label.onclick = function() {
+  //let button toggle menu and dark screen
+  button.onclick = function() {
     toggleDisplay();
   }
 
+  //hide darken screen by clicking on it
   darkenScreen.onclick = function() {
     toggleDisplay();
-    toggleDarkenScreen('0', 'hidden');
-    checkBox.checked = false;
+  }
+
+  //let on click on menu item togle visibility of menu
+  for (i = 0; i < menuItems.length; i++) {
+    menuItems[i].onclick = function() {
+      toggleDisplay();
+    };
   }
 };
 
