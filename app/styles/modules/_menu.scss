@@ -24,6 +24,9 @@
 .menu-wrapper {
 	@include container-int;
 	@include bp(medium) {
+		position: fixed;
+		top: 0;
+		left: 0;
 		height: auto;
 		flex-direction: column;
 	}
@@ -123,6 +126,8 @@
 }
 
 .darkenScreen--visible {
-	opacity: 1;
-	visibility: visible;
+	// @include bp(medium) {
+		opacity: 1;
+		visibility: visible;
+	// }
 }

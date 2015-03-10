@@ -2,12 +2,12 @@
 @import '../mixins';
 
 .partners {
-	@include container-int;
+@include container-int;
 	flex-direction: column;
 }
 
 #partners {
-		background: #f2f2f2;
+	background: #f2f2f2;
 }
 
 .partners__category {
@@ -18,13 +18,13 @@
 }
 
 .partners__category-header {
-    box-shadow: 0 34px 40px -33px rgba(26, 26, 26, 0.7);
-		color: $color__primary--dark;
-		font-size: 3em;
-		margin-bottom: 30px;
-		padding: 45px 80px 0;
-		text-align: center;
-		text-transform: capitalize;
+	box-shadow: 0 34px 40px -33px rgba(26, 26, 26, 0.7);
+	color: $color__primary--dark;
+	font-size: 3em;
+	margin-bottom: 30px;
+	padding: 45px 80px 0;
+	text-align: center;
+	text-transform: capitalize;
 }
 
 .partners__items {
@@ -40,7 +40,7 @@
 	max-width: 25%;
 	justify-content: center;
 	margin: 20px;
-	
+
 	img {
 		width: 100%;
 		transition: transform 0.2s;
@@ -48,11 +48,5 @@
 }
 
 .partners__item-link:hover img {
-	 transform: translatey(-3px);
-	}
-
-// .partners__category-header--organizers {
-// 	color: $color__primary;
-// 	font-size: 2.5em;
-// 	margin-top: 40px;
-// }
+	transform: translateY(-3px);
+}
