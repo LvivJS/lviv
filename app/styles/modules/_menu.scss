@@ -125,8 +125,6 @@
 }
 
 .darkenScreen--visible {
-	// @include bp(medium) {
 		opacity: 1;
 		visibility: visible;
-	// }
 }
