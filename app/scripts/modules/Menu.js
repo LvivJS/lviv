@@ -58,4 +58,17 @@ window.addEventListener('scroll', function() {
   }
 });
 
+window.onload = function() {
+  var menu = document.getElementById('cm_menuItems');
+  var links = menu.querySelectorAll('.menu__item');
+  for (var i = 0; i < links.length; i++) {
+    links[i].onclick = function(e) {
+      e.preventDefault();
+      var hash = e.target.href.substr(e.target.href.indexOf('#') + 1);
+      var element = document.getElementById(hash);
+      console.log(element);
+    };
+  }
+};
+
 module.exports = Menu;
