@@ -1,25 +1,37 @@
 var React = require('react');
 
 var Menu = React.createClass({
+  getInitialState: function() {
+    return {
+      active: false
+    };
+  },
+
+  toggleMenu: function() {
+    return this.setState({active: !this.state.active});
+  },
+
   render: function() {
+    var menuCls = this.state.active ? 'menu menu--visible' : 'menu';
+    var darkCls = this.state.active ? 'darkenScreen--hidden darkenScreen--visible' : 'darkenScreen--hidden';
     return (
       <div className="menu-wrapper">
         <div id="cm_toggleWrapper" className="toggleWrapper">
-          <div id="cm_menuToggle" className="menuToggle">
+          <div id="cm_menuToggle" className="menuToggle" onClick={this.toggleMenu}>
             <div className="menuToggle__stripe"></div>
             <div className="menuToggle__stripe"></div>
             <div className="menuToggle__stripe"></div>
           </div>
         </div>
-        <nav id="cm_menuItems" className="menu">
-            <a href="#overview" className="menu__item">Overview</a>
-            <a href="#speakers" className="menu__item">Speakers</a>
-            <a href="#shedule" className="menu__item">Shedule</a>
-            <a href="#location" className="menu__item">Location</a>
-            <a href="#registration" className="menu__item">Registration</a>
-            <a href="#partners" className="menu__item">Partners</a>
+        <nav id="cm_menuItems" className={menuCls}>
+            <a href="#overview" className="menu__item" onClick={this.toggleMenu}>Overview</a>
+            <a href="#speakers" className="menu__item" onClick={this.toggleMenu}>Speakers</a>
+            <a href="#shedule" className="menu__item" onClick={this.toggleMenu}>Shedule</a>
+            <a href="#location" className="menu__item" onClick={this.toggleMenu}>Location</a>
+            <a href="#registration" className="menu__item" onClick={this.toggleMenu}>Registration</a>
+            <a href="#partners" className="menu__item" onClick={this.toggleMenu}>Partners</a>
         </nav>
-        <div id="cm_darkenScreen" className="darkenScreen--hidden"></div>
+        <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
       </div>
     );
   }
@@ -45,36 +57,5 @@ window.addEventListener('scroll', function() {
     overview.style.paddingTop = '0px';
   }
 });
-
-//toggle menu visibility on sass bp(medium);
-window.onload = function menuToggle() {
-  var button = document.getElementById('cm_menuToggle');
-  var menu = document.getElementById('cm_menuItems');
-  var menuWidth = menu.offsetWidth;
-  var menuItems = document.getElementsByClassName('menu__item');
-  var darkenScreen = document.getElementById('cm_darkenScreen');
-
-  var toggleDisplay = function() {
-    menu.classList.toggle('menu--visible');
-    darkenScreen.classList.toggle('darkenScreen--visible');
-  };
-
-  //let button toggle menu and dark screen
-  button.onclick = function() {
-    toggleDisplay();
-  }
-
-  //hide darken screen by clicking on it
-  darkenScreen.onclick = function() {
-    toggleDisplay();
-  }
-
-  //let on click on menu item togle visibility of menu
-  for (i = 0; i < menuItems.length; i++) {
-    menuItems[i].onclick = function() {
-      toggleDisplay();
-    };
-  }
-};
 
 module.exports = Menu;
