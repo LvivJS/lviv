@@ -5,29 +5,13 @@ var Registration = React.createClass({
     return (
       <form className="registration" role="form" onChange={this.handleChange}>
         <div>
-          <div>
-            <input className="registration__input" type="text" name="fName" ref="firstName" placeholder="First Name"/>
-          </div>
+            <input className="registration__input registration__input--transition" type="text" name="fName" ref="firstName" placeholder="User Name"/>
         </div>
         <div>
-          <div>
-            <input className="registration__input" type="text" name="lName" ref="lastName" placeholder="Last Name"/>
-          </div>
+            <input className="registration__input registration__input--transition" type="text" name="email" ref="email" placeholder="Email Address"/>
         </div>
         <div>
-          <div>
-            <input className="registration__input" type="text" name="email" ref="email" placeholder="Email Address"/>
-          </div>
-        </div>
-        <div>
-          <div>
-            <input className="registration__input" type="password" name="password" ref="password" value="" placeholder="Password"/>
-          </div>
-        </div>
-        <div>
-          <div className="item-cont">
-            <input className="registration__input" type="password" name="confirmPassword" ref="confPassword" value="" placeholder="Confirm Password"/>
-          </div>
+            <input className="registration__input registration__input--transition" type="password" name="password" ref="password" value="" placeholder="Password"/>
         </div>
         <div className="submit">
           <input type="submit" value="Register"/>

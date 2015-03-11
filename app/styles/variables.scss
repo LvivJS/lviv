@@ -10,6 +10,13 @@ $color__heading--active: LightSeaGreen;
 $color-boder: blue;
 $color__gray--darken: rgb(108, 122, 137);
 $color__gray--light: lighten($color__gray--darken, 40%);
+$color__registration--text: rgb(255, 255, 255);
+$color__registration--link: rgb(200, 159, 28);
+$color__registration--hover: rgb(112, 127, 142);
+$color__registration--active: rgb(40, 54, 69);
+$color__inputBorder--normal: rgb(189, 195, 199);
+$color__inputBorder--hover: rgb(112, 127, 142);
+$color__inputBorder--focus: rgb(52, 73, 94);
 
 /* fonts */
 $font__main: Calibri;

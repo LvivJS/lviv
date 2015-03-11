@@ -7,11 +7,8 @@ var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
 var Speakers = require('./Speakers');
 var Partners = require('./Partners');
-<<<<<<< HEAD
 var Schedule = require('./Schedule');
-=======
 var Registration = require('./Registration');
->>>>>>> Registration form. w/o validation&firebase
 
 var LayoutBasic = React.createClass({
   render: function() {
