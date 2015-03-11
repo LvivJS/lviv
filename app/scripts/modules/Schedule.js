@@ -7,12 +7,12 @@ var ajax = require('../utility');
 var Schedule = React.createClass({
   getInitialState: function() {
     return {
-      conferences:[]
+      conferences: []
     }
   },
   componentDidMount: function() {
     var getData = function(data) {
-      this.setState({conferences:JSON.parse(data)})
+      this.setState({conferences: JSON.parse(data)})
     }.bind(this);
     ajax('get', config.path.schedule, getData)
   },
@@ -31,25 +31,25 @@ var Schedule = React.createClass({
 var Conference = React.createClass({
   getInitialState: function() {
     return {
-      activeTable:this.props.days[0],
-      activeDay:this.props.days[0].day_id,
-      confIsVisible:true
+      activeTable: this.props.days[0],
+      activeDay: this.props.days[0].day_id,
+      confIsVisible: true
     }
   },
-  ChangeTab: function(day) {
+  changeTab: function(day) {
     this.setState({
-      activeTable:day,
+      activeTable: day,
       activeDay: day.day_id
     });
   },
-  ChangeConfRepresent: function() {
-    this.state.confIsVisible ? this.setState({confIsVisible:false}) : this.setState({confIsVisible:true});
+  changeConfRepresent: function() {
+    this.setState({confIsVisible: this.state.confIsVisible ? false : true});
   },
   render: function() {
     var days = this.props.days.map(function(day) {
       return (
-        <li onClick={this.ChangeTab.bind(null, day)} key={day.day_id} 
-          className={(this.state.activeDay==day.day_id)?"conference__tab--active":null}>
+        <li onClick={this.changeTab.bind(null, day)} key={day.day_id} 
+          className={(this.state.activeDay==day.day_id) ? "conference__tab--active" : null}>
           <span>{day.day_name}</span>
         </li>
       )
@@ -62,7 +62,7 @@ var Conference = React.createClass({
       <div className="conference">
         <div className="conference__title">
           <h3>Shedule: {this.props.name}</h3>
-          <input type="button" onClick={this.ChangeConfRepresent} 
+          <input type="button" onClick={this.changeConfRepresent} 
             className={this.state.confIsVisible ? "up-arrow" : "down-arrow"}/>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}
@@ -73,7 +73,7 @@ var Conference = React.createClass({
 });
 
 var Timetable = React.createClass({
-  getInitialState:function() {
+  getInitialState: function() {
     return {
       sessions:this.props.sessions
     }
@@ -93,38 +93,58 @@ var Timetable = React.createClass({
 var Session = React.createClass({
   getInitialState: function() {
     return {
-      session:this.props.session,
-      isHidden:false,
+      session: this.props.session,
+      isHidden: false,
       isReport: this.props.session.type == 'report'
     }
   },
-  ChangeAbout: function() {
-    this.state.isHidden ? this.setState({isHidden:false}) : this.setState({isHidden:true});
+  changeAbout: function() {
+    this.setState({isHidden:this.state.isHidden ? false : true});
   },
   render: function() {
+    var sessionClass = 'session ';
+    var sessionInfoClass = 'session__info ';
+    var sessionAboutClass = 'session__about ';
+    var sessionButtonClass = 'session__button ';
+    var speaker = null;
+    var button = null;
+
+    if (this.state.isReport) {
+      sessionClass += 'session--report';
+      speaker = (
+        <span className="speaker__name">
+          {this.state.session.speaker.name}{this.state.session.speaker.position}
+        </span>
+      )
+    } else {
+      sessionClass += 'session--entertainment';
+      sessionInfoClass += 'session__info--right';
+    };
+
+    if (this.state.isHidden) {
+      sessionAboutClass += 'invisible'
+      sessionButtonClass += 'session__button--inactive'
+    } else {
+      sessionButtonClass += 'session__button--active'
+    };
+    if (this.state.session.about) {
+      button = (
+        <span onClick={this.changeAbout.bind(null,this.state.session)} className= {sessionButtonClass}>
+        </span>
+      )
+    }
+
     return (
       <div key={this.state.session.article}
-       className={this.state.isReport ? "session session--report" : "session session--entertainment"}>
+       className={sessionClass}>
         <div className="session__time">{this.state.session.time}</div>
         <div className="session__arrangement">
           <h4 className="session__name">{this.state.session.article}</h4>
-          <div className={this.state.isReport ? "session__info" : "session__info session__info--right"}>
-            {
-              this.state.isReport ?
-              <span className="speaker__name">
-                {this.state.session.speaker.name}{this.state.session.speaker.position}
-              </span>:null
-            }
-            {
-              this.state.session.about ?
-              <span onClick={this.ChangeAbout.bind(null,this.state.session)} 
-                className= {this.state.isHidden ? 
-                "session__button  session__button--inactive" : "session__button  session__button--active"}>
-              </span>:null
-            }
+          <div className={sessionInfoClass}>
+            {speaker}
+            {button}
           </div>
-          <div className={this.state.isHidden ? 
-            "session__about invisible" : "session__about"}>
+          <div className={sessionAboutClass}>
               {this.state.session.about}
           </div>
         </div>
