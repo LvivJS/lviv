@@ -2,7 +2,7 @@
 
 var React = require('react');
 var config = require('../config');
-var ajax = require('../utility');
+var utilities = require('../utility');
 
 var Schedule = React.createClass({
   getInitialState: function() {
@@ -11,10 +11,9 @@ var Schedule = React.createClass({
     }
   },
   componentDidMount: function() {
-    var getData = function(data) {
+    utilities.ajax('get', config.path.schedule, function(data) {
       this.setState({conferences: JSON.parse(data)})
-    }.bind(this);
-    ajax('get', config.path.schedule, getData)
+    }.bind(this));
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
