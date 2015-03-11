@@ -5,7 +5,7 @@
     margin: 50px auto;
     width: 80%;
 
-    .registration__fields {
+    .registration__field {
         margin: 25px;
         position: relative;
     }
@@ -16,7 +16,6 @@
         font-size: 16px;
         line-height: 1.231;
     }
-
     .registration_submit {
         outline: none;
         font-size: 19px;
@@ -41,6 +40,11 @@
             background-color: $color__registration--active;
         }
     }
+    .registration--error {
+            border: 1px red solid;
+            color: red;
+            display: none;        
+    }
     .registration__input--transition {
         border-style: solid;
         border-width: 2px;
@@ -62,5 +66,30 @@
         &:focus {
             border-color: $color__inputBorder--focus;
         }
+    }
+}
+.registration__submit {
+    outline: none;
+    font-size: 19px;
+    display: inline-block;
+    padding: 15px 20px;
+    margin-bottom: 1px;
+    color: $color__registration--text;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    opacity: 1;
+    border: none;
+    background-color: $color__registration--link;
+    width: 30%;
+    
+    &:hover {
+        text-decoration: none;
+        background-color: $color__registration--hover;
+        opacity: 0.9;
+    }
+    &:active {
+        box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2);
+        background-color: $color__registration--active;
     }
 }
