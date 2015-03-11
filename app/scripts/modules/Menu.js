@@ -51,10 +51,6 @@ window.addEventListener('scroll', function() {
     menuStyle.position = 'fixed';
     menuStyle.width = '100%';
     menuStyle.top = '0';
-<<<<<<< HEAD
-=======
-    menuStyle.zIndex = '1';
->>>>>>> added brakepoint mixin, added toggle button and functionality on it for bp(medium), styled menu for bp(medium). added some sass variables.
     overview.style.paddingTop = menu.offsetHeight + 'px';
   } else {
     menuStyle.position = 'static';
