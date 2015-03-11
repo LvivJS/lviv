@@ -22,17 +22,16 @@
 	padding: 25px;
 	background: $color__primary--dark;
 	color: $color__heading--menu;
-	align-items: center;
 	font-size: 2em;
 }
 
 h1 {
 	@include container-ext;
-	align-items: center;
+	text-align: center;
 	color: $color__primary;
 	font-size: 5em;
 	font-style: italic;
-	padding: 50px;
+	padding: 25px;
 }
 
 .invisible {

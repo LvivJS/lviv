@@ -4,20 +4,127 @@
 #menu {
 	@include container-ext;
 	background: $color__primary--dark;
+	z-index: 2;
+	@include bp(medium) {
+		position: fixed;
+		width: 100%;
+		top: 0px;
+	}
+}
+
+.toggleWrapper {
+	display: none;
+	@include bp(medium) {
+		display: block;
+		height: auto;
+		background: $color__primary--dark;
+	}
+}
+
+.menu-wrapper {
+	@include container-int;
+	@include bp(medium) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: auto;
+		flex-direction: column;
+	}
 }
 
 .menu {
 	@include container-int;
+	@include bp(medium) {
+		flex-direction: column;
+		max-width: $menu-width--resp;
+		position: fixed;
+		background: $color__primary--dark;
+		left: - $menu-width--resp;
+		transition: left 0.4s;
+		height: 100%;
+	}
 }
 
+.menu--visible {
+	@include bp(medium) {
+		left: 0px;
+	}
+}
+
+
+
 .menu__item{
+	display: block;
 	list-style:none;
 	font-size: $font__giant;
 	color: $color__heading--menu;
-	padding: 20px;
+	padding: $item__padding--top-bottom $item__padding--left-right;
+	transition: all 0.2s;
+	@include bp(medium) {
+		padding-left: 40px;
+	}
 }
 
 .menu__item:hover{
 	color:$color__primary;
 	background:$color__heading--menu;
+}
+
+/* toggle visibility of menu on smalles screens */
+.menuToggleBox {
+	display: none;
+}
+
+.menuToggle {
+	display: none;
+
+	@include bp(medium) {
+		@include border-radius(5px);
+		background: $color__primary--soften;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		padding: 6px 0;
+		height: $toggle-button__size;
+		width: $toggle-button__size;
+		margin-left: 10px;
+		transition: justify-content 0.2s;
+	}
+}
+
+.menuToggle__stripe {
+	height: $stripe__height;
+	width: 70%;
+	background: $color__primary--dark;
+	@include border-radius($stripe__height / 2);
+	transition: margin 0.07s;
+}
+
+.menuToggle:hover .menuToggle__stripe:nth-child(2) {
+	margin: 4.5px 0;
+}
+
+.darkenScreen--hidden {
+	cursor: pointer;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(3, 3, 3, 0.64);
+	opacity: 0;
+	transition: opacity 0.3s;
+	visibility: hidden;
+	z-index: -1;
+
+	@include bp(large) {
+		display: none;
+	}
+}
+
+.darkenScreen--visible {
+		opacity: 1;
+		visibility: visible;
 }
