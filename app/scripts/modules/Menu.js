@@ -58,16 +58,43 @@ window.addEventListener('scroll', function() {
   }
 });
 
+//smooth scroll to anchors
 window.onload = function() {
   var menu = document.getElementById('cm_menuItems');
   var links = menu.querySelectorAll('.menu__item');
+
   for (var i = 0; i < links.length; i++) {
     links[i].onclick = function(e) {
       e.preventDefault();
       var hash = e.target.href.substr(e.target.href.indexOf('#') + 1);
-      var element = document.getElementById(hash);
-      console.log(element);
+      var anchor = document.getElementById(hash);
+      scrollToAnchor(anchor, 1);
     };
+  }
+
+  //scrolling function
+  function scrollToAnchor(el, speed) {
+    var startScroll = window.pageYOffset;
+    var targetScroll = el.offsetTop;
+    var steps = 10;
+    var step = (Math.abs(startScroll - targetScroll) / steps);
+
+    console.log('difference: ' + Math.abs(startScroll - targetScroll));
+    console.log('step by steps: ' + (step * steps));
+
+    var scroll = window.setInterval(function() {
+      var currentScroll = window.pageYOffset;
+      var menuHeight = document.querySelector('.menu-wrapper').offsetHeight;
+
+      if (currentScroll - (targetScroll - menuHeight) > 0) {
+        window.scrollBy(0, -step);
+      } else if (currentScroll - (targetScroll - menuHeight) < 0) {
+        window.scrollBy(0, step);
+      } else {
+        window.clearInterval(scroll);
+      }
+      step /= 1.1;
+    }, speed);
   }
 };
 
