@@ -5,9 +5,11 @@
 	@include container-ext;
 	background: $color__primary;
 	font-family: $font__main;
+	@include bp(medium) {
+		margin-top: $toggle-button__size;
+	}
 }
 
 .header {
 	@include container-int;
 }
-
