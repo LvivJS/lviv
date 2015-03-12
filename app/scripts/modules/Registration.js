@@ -1,83 +1,138 @@
 var React = require('react');
 
 var Registration = React.createClass({
-  getInitialState: function() {
-    return {
-      submitted: null
-    }
-  },
-  handleSubmit: function() {
-    if (this.refs.registration.isValid()) {
-      this.setState({submitted: this.refs.registration.getFormData()})
-    };
-    console.log(this.refs.registration.isValid());
+  pushData:function(data) {
+    // function that pushes data to database
+    console.log(data)
   },
   render: function() {
-    return (<div className="registration">
-      <RegistrationForm ref="registration"/>
-      <div className="registration__field">
-          <input type="submit" onClick={this.handleSubmit} className="registration__submit" value="Register"/>
+    return (
+      <div className="registration">
+        <RegistrationForm onDataReceived={this.pushData}/>
       </div>
-    </div>
     )
   }
 });
 
 var RegistrationForm = React.createClass({
   getInitialState: function() {
-    return {
-      errors: null
-    }
+    return({
+      name:false,
+      email:false,
+      password:false
+    })
   },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    if (this.isValid()) {
+      this.props.onDataReceived(this.isValid())
+      console.log(this.isValid());
+    };
+  },
+  nameIsValid: function(name){
+    this.setState(name);
+  },
+  emailIsValid: function(email){
+    this.setState(email);
+  },
+  passwordIsValid: function(password){
+    this.setState(password);
+  },  
   isValid: function() {
-    var fields = ['userName', 'email', 'password'];
-    var errors = {};
-    fields.forEach(function(field) {
-      var value = this.refs[field].getDOMNode().value
-      if (!value) {
-        errors[field] = 'This field is required';
+    if (this.state.name&&this.state.email&&this.state.password) {
+      return {
+        name: this.state.name,
+        email: this.state.email,
+        password : this.state.password
       }
-      // var nextEl = this.refs[field].getDOMNode().nextElementSibling;
-      // nextEl.className = "registration--error";
-    }.bind(this));
-    this.setState({errors: errors});
-
-    var isValid = true
-    for (var error in errors) {
-      isValid = false
-      break
-    }
-    return isValid
-  },
-   getFormData: function() {
-    var data = {
-      usertName: this.refs.userName.getDOMNode().value,
-      email: this.refs.email.getDOMNode().value,
-      password: this.refs.password.getDOMNode().value
-    }
-    return data
+    } else {return false}
   },
   render: function() {
-    console.log(this.state.errors);
     return (
-      <div>
+      <form onSubmit={this.handleSubmit}>
+        <NameInput valueReceived={this.nameIsValid}/>
+        <EmailInput valueReceived={this.emailIsValid}/>
+        <PasswordInput valueReceived={this.passwordIsValid}/>
         <div className="registration__field">
-            <input className="registration__input registration__input--transition" type="text" ref="userName" placeholder="User Name"/>
+          <input type="submit" className="registration__submit" value="Register"/>
         </div>
+      </form>
+    );
+  }
+});
 
-        <span className="registration--error">this field it required</span>
-        <div className="registration__field">
-            <input className="registration__input registration__input--transition" type="text"  ref="email" placeholder="Email Address"/>
-        </div>
-
-        <span className="registration--error">this field it required</span>
-        <div className="registration__field">
-            <input className="registration__input registration__input--transition" type="password"  ref="password" placeholder="Password"/>
-        </div>
-
+var NameInput = React.createClass({
+  getInitialState: function(){
+    return {
+      value: false
+    }
+  },
+  handleChange: function(){
+      var value = this.refs.userName.getDOMNode().value;
+      if(value == "pill") {
+      this.setState({
+        name: value
+      });
+      this.props.valueReceived({name:value})
+    }
+  },
+  render: function() {
+    return (
+      <div className="registration__field">
+        <input onChange={this.handleChange} className="registration__input registration__input--transition" type="text" ref="userName" placeholder="User Name"/>
         <span className="registration--error">this field it required</span>
       </div>
-    );
+    )
+  }
+});
+var EmailInput = React.createClass({
+  getInitialState: function(){
+    return {
+      value: false
+    }
+  },
+  handleChange: function(){
+    var value = this.refs.email.getDOMNode().value;
+      if(value == "hello") {
+        this.setState({
+              email: value
+        });
+        this.props.valueReceived({email:value})
+      }
+      
+  },
+  render: function() {
+    return (
+      <div className="registration__field">
+        <input onChange={this.handleChange} className="registration__input registration__input--transition" type="text"  ref="email" placeholder="Email Address"/>
+        <span className="registration--error">this field it required</span>
+      </div>
+    )
+  }
+});
+var PasswordInput = React.createClass({
+  getInitialState: function(){
+    return {
+      value: false
+    }
+  },
+  handleChange: function(){
+      var value = this.refs.password.getDOMNode().value;
+      if(value == '123') {
+      this.setState({
+        password: value
+      });
+      this.props.valueReceived({password:value})
+    }
+
+  },
+  render: function() {
+    return (
+      <div className="registration__field">
+        <input onChange={this.handleChange} className="registration__input registration__input--transition" type="password"  ref="password" placeholder="Password"/>
+        <span className="registration--error">this field it required</span>
+      </div>
+    )
   }
 });
 
