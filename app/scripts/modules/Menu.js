@@ -14,7 +14,7 @@ var Menu = React.createClass({
   menuLinkHandler: function(e) {
     e.preventDefault();
     this.toggleMenu();
-    
+
     var menuHeight = document.querySelector('.menu-wrapper').offsetHeight;
     var hash = e.target.href.substr(e.target.href.indexOf('#') + 1);
     var anchor = document.getElementById(hash);
@@ -51,7 +51,7 @@ var Menu = React.createClass({
 });
 
 //fix menu when scrolling os make static due to window.pageYOffset
-window.addEventListener('scroll', function() {
+window.onscroll = function() {
   var menu = document.getElementById('menu');
   var header = document.getElementById('header');
   var overview = document.getElementById('overview');
@@ -69,8 +69,7 @@ window.addEventListener('scroll', function() {
     menuStyle.position = 'static';
     overview.style.paddingTop = '0px';
   }
-});
-
+};
 
 function animate(elem, style, unit, from, to, time, prop) {
   if (!elem) {
