@@ -2,7 +2,7 @@
 
 var React = require('react');
 var config = require('../config');
-var utilities = require('../utility');
+var utilities = require('../utilities');
 
 var Schedule = React.createClass({
   getInitialState: function() {
