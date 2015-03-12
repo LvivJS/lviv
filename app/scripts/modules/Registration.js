@@ -16,7 +16,7 @@ var Registration = React.createClass({
 
 var RegistrationForm = React.createClass({
   getInitialState: function() {
-    return({
+    return ({
       name:false,
       email:false,
       password:false
@@ -29,17 +29,17 @@ var RegistrationForm = React.createClass({
       console.log(this.isValid());
     };
   },
-  nameIsValid: function(name){
+  nameIsValid: function(name) {
     this.setState(name);
   },
-  emailIsValid: function(email){
+  emailIsValid: function(email) {
     this.setState(email);
   },
-  passwordIsValid: function(password){
+  passwordIsValid: function(password) {
     this.setState(password);
-  },  
+  },
   isValid: function() {
-    if (this.state.name&&this.state.email&&this.state.password) {
+    if (this.state.name && this.state.email && this.state.password) {
       return {
         name: this.state.name,
         email: this.state.email,
@@ -62,14 +62,14 @@ var RegistrationForm = React.createClass({
 });
 
 var NameInput = React.createClass({
-  getInitialState: function(){
+  getInitialState: function() {
     return {
       value: false
     }
   },
-  handleChange: function(){
-      var value = this.refs.userName.getDOMNode().value;
-      if(value == "pill") {
+  handleChange: function() {
+    var value = this.refs.userName.getDOMNode().value;
+    if (value == 'pill') {
       this.setState({
         name: value
       });
@@ -86,20 +86,19 @@ var NameInput = React.createClass({
   }
 });
 var EmailInput = React.createClass({
-  getInitialState: function(){
+  getInitialState: function() {
     return {
       value: false
     }
   },
-  handleChange: function(){
+  handleChange: function() {
     var value = this.refs.email.getDOMNode().value;
-      if(value == "hello") {
-        this.setState({
-              email: value
-        });
-        this.props.valueReceived({email:value})
-      }
-      
+    if (value == 'hello') {
+      this.setState({
+        email: value
+      });
+      this.props.valueReceived({email:value})
+    }
   },
   render: function() {
     return (
@@ -111,14 +110,14 @@ var EmailInput = React.createClass({
   }
 });
 var PasswordInput = React.createClass({
-  getInitialState: function(){
+  getInitialState: function() {
     return {
       value: false
     }
   },
-  handleChange: function(){
-      var value = this.refs.password.getDOMNode().value;
-      if(value == '123') {
+  handleChange: function() {
+    var value = this.refs.password.getDOMNode().value;
+    if (value == '123') {
       this.setState({
         password: value
       });
