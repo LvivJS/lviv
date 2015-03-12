@@ -12,6 +12,12 @@
     width:25%;
     margin:20px;
     height:auto;
+    @include bp(medium) {
+        width:35%
+    }
+    @include bp(very-small) {
+        width:55%
+    }
     .speaker__photo{
         overflow:hidden;
         img {
@@ -31,6 +37,9 @@
             color:$color__primary--dark;
             font-weight:bold;
             font-size: $font__large;
+            @include bp(small) {
+                font-size: 16px;
+            }
         }
         .speaker__pos {
             color:$color__primary--dark;
@@ -41,6 +50,9 @@
         .speaker__about {
             color:$color__gray--darken;
             text-align:justify;
+            @include bp(small) {
+                display:none;
+            }
         }
         .speaker__contacts {
             flex-wrap:wrap;

@@ -15,15 +15,22 @@
     border-bottom:2px solid $color__gray--darken;
     .conference__title {
         padding:15px 0;
+        display:flex;
+        justify-content: space-between;
         h3 {
-            width:40%;
             font-size:$font__large;
             color:$color__primary;
-            display:inline-block;
             margin:10px 10px 10px 20px;
+            flex-shrink: 5;
+            @include bp(very-small) {
+                flex-shrink: 7;
+                margin:10px;
+            }
         }
         input {
-            vertical-align: middle;
+            cursor:pointer;
+            margin: 10px;
+            flex-shrink: 0;
         }
         input.up-arrow {
             @include schedule-arrow(url('../images/arrow-up.svg'))
@@ -39,6 +46,7 @@
             font-size: $font__larger;
             background-color: $color__primary--soft;
             padding:10px;
+            cursor: pointer;
         }
         li.conference__tab--active {
             background-color: $color__primary--soften;
@@ -57,10 +65,16 @@
     justify-content: flex-start;
     padding:5px;
     border-bottom:1px dashed $color__gray--darken;
+    @include bp(small) {
+        flex-direction: column;
+    }
     .session__time {
         width:100px;
         margin-right:20px;
         flex-shrink: 0;
+        @include bp(small) {
+            margin: 10px 0;
+        }
     }
     .session__arrangement {
         display:flex;
@@ -79,6 +93,10 @@
         display:flex;
         justify-content: space-between;
         flex-direction: row;
+        @include bp(very-small) {
+           flex-direction: column;
+           margin-bottom:0;
+        }
         .speaker__name {
             flex-shrink:3;
         }
@@ -88,7 +106,10 @@
             border:0px;
             margin:0 10px;
             cursor:pointer;
-            @include user-select
+            @include user-select;
+            @include bp(very-small) {
+                margin: 10px;
+            }
         }
         span.session__button--inactive::after {
             @include schedule-about-button('+');
