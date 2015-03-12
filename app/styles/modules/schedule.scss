@@ -15,22 +15,22 @@
     border-bottom:2px solid $color__gray--darken;
     .conference__title {
         padding:15px 0;
+        display:flex;
+        justify-content: space-between;
         h3 {
-            width:40%;
             font-size:$font__large;
             color:$color__primary;
-            display:inline-block;
             margin:10px 10px 10px 20px;
-            @include bp(small) {
-                width:100%;
+            flex-shrink: 5;
+            @include bp(very-small) {
+                flex-shrink: 7;
+                margin:10px;
             }
         }
         input {
-            vertical-align: middle;
             cursor:pointer;
-            @include bp(small) {
-                margin-left:10px;
-            }
+            margin: 10px;
+            flex-shrink: 0;
         }
         input.up-arrow {
             @include schedule-arrow(url('../images/arrow-up.svg'))

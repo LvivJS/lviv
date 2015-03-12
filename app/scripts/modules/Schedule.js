@@ -14,9 +14,7 @@ var Schedule = React.createClass({
     utilities.ajax('get', config.path.schedule, function(data) {
       this.setState({conferences: JSON.parse(data)})
     }.bind(this));
-    window.addEventListener('resize', this.handleResize);
-
-  }, 
+  },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
       return (<Conference key={conference.name} days={conference.days} name={conference.name} />)
@@ -77,7 +75,7 @@ var Timetable = React.createClass({
   getInitialState: function() {
     return {
       sessions:this.props.sessions,
-      smallScreen:null
+      smallScreen: (window.innerWidth <= 320)
     }
   },
   componentDidMount: function() {
@@ -86,14 +84,9 @@ var Timetable = React.createClass({
   handleResize: function() {
     var smallScreen = 320;
     var windowWidth = window.innerWidth;
-    if (windowWidth<=smallScreen) {
-      this.setState({smallScreen: true})
-    } else {
-      this.setState({smallScreen: false})
-    }
+    this.setState({smallScreen: (windowWidth <= smallScreen)})
   },
   render: function() {
-    
     var sessions = this.state.sessions.map(function(session) {
       return <Session key={session.article} session={session} smallScreen={this.state.smallScreen}/>
     }.bind(this));
@@ -109,12 +102,16 @@ var Session = React.createClass({
   getInitialState: function() {
     return {
       session: this.props.session,
-      isHidden: this.props.smallScreen,
       isReport: this.props.session.type == 'report'
     }
   },
   changeAbout: function() {
     this.setState({isHidden:!this.state.isHidden});
+  },
+  componentWillReceiveProps: function() {
+    this.setState({
+      isHidden: this.props.smallScreen
+    });
   },
   render: function() {
     var sessionClass = 'session ';
@@ -149,7 +146,6 @@ var Session = React.createClass({
         </span>
       )
     }
-
     return (
       <div key={this.state.session.article}
        className={sessionClass}>
