@@ -17,23 +17,17 @@ $color__registration--active: rgb(40, 54, 69);
 $color__inputBorder--normal: rgb(189, 195, 199);
 $color__inputBorder--hover: rgb(112, 127, 142);
 $color__inputBorder--focus: rgb(52, 73, 94);
+$color__inputBorder--invalid: rgb(211, 84, 0);
+$color__inputBorder--invalid-hover: rgb(231, 76, 60);
+$color__inputBorder--invalid-focus: rgb(192, 57, 43);
 
 /* fonts */
-$color__registration--text: rgb(255, 255, 255);
-$color__registration--link: rgb(200, 159, 28);
-$color__registration--hover: rgb(112, 127, 142);
-$color__registration--active: rgb(40, 54, 69);
-
-$color__inputBorder--normal: rgb(189, 195, 199);
-$color__inputBorder--hover: rgb(112, 127, 142);
-$color__inputBorder--focus: rgb(52, 73, 94);
-
-
 $font__main: Calibri;
 $font__giant:24px;
 $font__larger:22px;
 $font__large:20px;
 $font__small:16px;
+$font__mini:14px;
 
 
 /* layout */

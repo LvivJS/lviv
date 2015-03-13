@@ -2,53 +2,37 @@
 @import '../mixins';
 
 .registration {
-    margin: 50px auto;
-    width: 80%;
+    @include container-int;
+    padding: 10px;
+    justify-content:center;
+    form {
+        width: 80%;
+        margin:20px 0;
+        justify-content:center;
+        flex-direction: column;
+        display: flex;
 
-    .registration__field {
-        margin: 25px;
-        position: relative;
     }
-
+}
+.registration__field {
+    width: 60%;
+    margin:15px auto;
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    @include bp(medium) {
+        width:75%;
+    }
+    @include bp(small) {
+        width:90%;
+    }
+    @include bp(very-small) {
+        width:100%;
+    }
     .registration__input {
-        width: 60%;
-        margin: auto;
         font-size: 16px;
         line-height: 1.231;
-    }
-    .registration_submit {
-        outline: none;
-        font-size: 19px;
-        display: inline-block;
-        padding: 15px 20px;
-        margin-bottom: 1px;
-        color: $color__registration--text;
-        text-align: center;
-        vertical-align: middle;
-        cursor: pointer;
-        opacity: 1;
-        border: none;
-        background-color: $color__registration--link;
-        width: 30%;
-        &:hover {
-            text-decoration: none;
-            background-color: $color__registration--hover;
-            opacity: 0.9;
-        }
-        &:active {
-            box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2);
-            background-color: $color__registration--active;
-        }
-    }
-    .registration--error {
-            border: 1px red solid;
-            color: red;
-            display: none;        
-    }
-    .registration__input--transition {
-        border-style: solid;
-        border-width: 2px;
-        border-color: $color__inputBorder--normal;
+        border:2px solid $color__inputBorder--normal;
         transition: border-color 0.5s ease-in-out;
         border-radius: 3px;
         padding: 10px 10px 9px 36px;
@@ -58,31 +42,60 @@
         -moz-appearance: none;
         appearance: normal;
         font-size: 16px;
-
+        margin: 0 20px;
         &:hover {
             border-color: $color__inputBorder--hover;
         }
-
         &:focus {
             border-color: $color__inputBorder--focus;
         }
+        @include bp(small) {
+            font-size: $font__mini;
+            padding: 10px 10px 9px 10px;
+        }
+        @include bp(very-small) {
+            padding: 10px 2px 9px 2px;
+        }        
+    }
+    .registration__input--invalid {
+        border-color: $color__inputBorder--invalid;
+        color: $color__inputBorder--invalid;  
+        &:hover {
+           border-color: $color__inputBorder--invalid-hover;
+        }
+        &:focus {
+            border-color: $color__inputBorder--invalid-focus;
+        }     
+    }
+    .registration__tip{
+        margin: 5px auto;
+        display: block;
+        transition: display 0.5s ease-in-out;
+        color:$color__gray--darken;
+        font-size: $font__mini;
+        @include bp(medium) {
+            margin:5px 25px;
+        }
+    }
+    .registration__tip.invisible{
+        display:none
+
     }
 }
+
+
+
 .registration__submit {
     outline: none;
     font-size: 19px;
-    display: inline-block;
-    padding: 15px 20px;
-    margin-bottom: 1px;
+    padding: 20px;
+    margin: 0 auto 1px auto;
     color: $color__registration--text;
     text-align: center;
-    vertical-align: middle;
     cursor: pointer;
     opacity: 1;
     border: none;
     background-color: $color__registration--link;
-    width: 30%;
-    
     &:hover {
         text-decoration: none;
         background-color: $color__registration--hover;
@@ -91,5 +104,16 @@
     &:active {
         box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2);
         background-color: $color__registration--active;
+    }
+    @include bp(medium) {
+        width:55%;
+    }
+    @include bp(small) {
+        width:65%;
+        font-size:$font__small;
+    }
+    @include bp(very-small) {
+        width: 80%;
+        font-size: $font__mini;
     }
 }
