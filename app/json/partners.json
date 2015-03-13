@@ -1,67 +1,67 @@
 [
-	{
-		"title": "general",
-		"data": [
-			{
-				"title": "Lohika Systems",
-				"link": "http://www.lohika.com/",
-				"img": "./dev/images/partners/general/lohika.jpg"
-			}
-		]
-	},
-	{
-		"title": "golden",
-		"data": [
-			{
-				"title": "DataArt",
-				"link": "http://www.dataart.com/",
-				"img": "./dev/images/partners/gold/dataart-logo.jpg"
-			},
-			{
-				"title": "Eleks",
-				"link": "http://www.eleks.com/",
-				"img": "./dev/images/partners/gold/eleks-1.png"
-			},
-			{
-				"title": "Epam Systems",
-				"link": "http://www.epam.com/",
-				"img": "./dev/images/partners/gold/logo_epam_20.png"
-			},
-			{
-				"title": "Remit",
-				"link": "http://www.remit.se/",
-				"img": "./dev/images/partners/gold/remit-logo-1.png"
-			},
-			{
-				"title": "Team International",
-				"link": "http://www.teaminternational.com/",
-				"img": "./dev/images/partners/gold/team-international.jpg"
-			}
-		]
-	},
-	{
-		"title": "silver",
-		"data": [
-			{
-				"title": "GlobalLogic",
-				"link": "http://www.globallogic.com.ua/",
-				"img": "./dev/images/partners/silver/globallogic.jpg"
-			}
-		]
-	},
-	{
-		"title": "bronze",
-		"data": [
-			{
-				"title": "Intellias",
-				"link": "http://www.intellias.com/",
-				"img": "./dev/images/partners/bronze/INTELLIAS_LOGO_BACKGR_BACK.jpg"
-			},
-			{
-				"title": "N-iX",
-				"link": "http://n-ix.com/",
-				"img": "./dev/images/partners/bronze/Logo in color big.png"
-			}
-		]
-	}
+  {
+    "title": "general",
+    "data": [
+      {
+        "title": "Lohika Systems",
+        "link": "http://www.lohika.com/",
+        "img": "./dev/images/partners/general/lohika.jpg"
+      }
+    ]
+  },
+  {
+    "title": "golden",
+    "data": [
+      {
+        "title": "DataArt",
+        "link": "http://www.dataart.com/",
+        "img": "./dev/images/partners/gold/dataart-logo.jpg"
+      },
+      {
+        "title": "Eleks",
+        "link": "http://www.eleks.com/",
+        "img": "./dev/images/partners/gold/eleks-1.png"
+      },
+      {
+        "title": "Epam Systems",
+        "link": "http://www.epam.com/",
+        "img": "./dev/images/partners/gold/logo_epam_20.png"
+      },
+      {
+        "title": "Remit",
+        "link": "http://www.remit.se/",
+        "img": "./dev/images/partners/gold/remit-logo-1.png"
+      },
+      {
+        "title": "Team International",
+        "link": "http://www.teaminternational.com/",
+        "img": "./dev/images/partners/gold/team-international.jpg"
+      }
+    ]
+  },
+  {
+    "title": "silver",
+    "data": [
+      {
+        "title": "GlobalLogic",
+        "link": "http://www.globallogic.com.ua/",
+        "img": "./dev/images/partners/silver/globallogic.jpg"
+      }
+    ]
+  },
+  {
+    "title": "bronze",
+    "data": [
+      {
+        "title": "Intellias",
+        "link": "http://www.intellias.com/",
+        "img": "./dev/images/partners/bronze/INTELLIAS_LOGO_BACKGR_BACK.jpg"
+      },
+      {
+        "title": "N-iX",
+        "link": "http://n-ix.com/",
+        "img": "./dev/images/partners/bronze/Logo in color big.png"
+      }
+    ]
+  }
 ]

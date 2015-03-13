@@ -5,7 +5,11 @@ var utilities = {
       var request = new XMLHttpRequest();
       request.open(method, url, true);
       request.onreadystatechange = function() {
-        callBack(request.responseText);
+        if (request.readyState == 4) {
+          if (request.status == 200) {
+            callBack(request.responseText);
+          }
+        }
       };
       request.send();
     }

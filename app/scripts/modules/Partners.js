@@ -1,15 +1,14 @@
 'use strict';
 
 var React = require('react');
+var config = require('../config');
+var utilities = require('../utilities');
 
 var Partners = React.createClass({
   componentDidMount: function() {
-    var oReq = new XMLHttpRequest();
-    oReq.open('get', './dev/json/partners.json', true);
-    oReq.onreadystatechange = function reqListener () {
-      this.setState({categories: JSON.parse(oReq.responseText)});
-    }.bind(this);
-    oReq.send();
+    utilities.ajax('get', config.path.partners, function(data) {
+      this.setState({categories: JSON.parse(data)});
+    }.bind(this));
   },
 
   getInitialState: function() {
@@ -34,7 +33,7 @@ var PartnerCategory = React.createClass({
   render: function() {
     return (
       <section className="partners__category">
-      <h3 className="partners__category-header">{this.props.category.title}</h3>        
+      <h3 className="partners__category-header">{this.props.category.title}</h3>
           <PartnerLink array={this.props.category.data} />
       </section>
     );
