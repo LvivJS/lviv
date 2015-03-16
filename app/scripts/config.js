@@ -6,7 +6,8 @@ var config = (function() {
       schedule: './dev/json/schedule.json',
       speakers: './dev/json/speakers.json',
       partners: './dev/json/partners.json'
-    }
+    },
+    firebasePath: 'https://blistering-fire-6843.firebaseio.com/users'
   }
 })()
 

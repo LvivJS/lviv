@@ -1,33 +1,41 @@
 var React = require('react');
 var Firebase = require('firebase');
 var InputField = require('../components/input.jsx');
+var config = require('../config');
 
 var inputFields = [
       {
         type:'name',
-        regExp:/^[a-zA-Z_ -]{3,50}$/,
+        pattern:/^[a-zA-Z_ -]{3,50}$/,
         placeholder:'Name',
         errorMessage:'Name should have at least 3 characters, but no more than 50'
       },
       {
         type:'email',
-        regExp:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
+        pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
         placeholder:'Email',
         errorMessage:'Please, enter valid email'
       },
       {
         type:'phone',
-        regExp:/^([0-9\(\)\/\+ \-]{3,20})$/,
+        pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
         placeholder:'PhoneNumber',
         errorMessage:'Phone must have at least 4 numeric digit.'
       }
 ];
 
 var Registration = React.createClass({
-  pushData:function(data) {
-    var ref = new Firebase('https://blistering-fire-6843.firebaseio.com/users');
-    ref.push(data);
-    alert('You succesfully registered!');
+  pushData: function(data) {
+    var user = data;
+    var ref = new Firebase(config.firebasePath);
+    ref.push(user);
+    ref.once('child_added', function(snapshot) {
+      var userData = snapshot.val();
+      //TODO - object comparing that not depends on order
+      if (JSON.stringify(userData) == JSON.stringify(user)) {
+        alert('You succesfully registered!!!!');
+      };
+    });
   },
   render: function() {
     return (
@@ -65,8 +73,8 @@ var RegistrationForm = React.createClass({
   isValid: function() {
     if (this.state.name && this.state.email && this.state.phone) {
       return {
-        name: this.state.name,
         email: this.state.email,
+        name: this.state.name,
         phone : this.state.phone
       }
     } else {
@@ -86,7 +94,7 @@ var RegistrationForm = React.createClass({
     var formInputs = inputFields.map(function(input) {
       return (
           <InputField valueReceived={this.fieldIsValid} tipIsShown={this.state.registerButtonIsPressed} 
-            clear={this.state.clear} unclear={this.clearForm} type={input.type} regExp={input.regExp} placeholder={input.placeholder} 
+            clear={this.state.clear} unclear={this.clearForm} type={input.type} pattern={input.pattern} placeholder={input.placeholder} 
             errorMessage={input.errorMessage} key={input.type} inputAbleToFill={this.clearForm}/>
         )
     }.bind(this));

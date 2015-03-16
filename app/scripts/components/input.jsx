@@ -11,9 +11,9 @@ var InputField = React.createClass({
     }
   },
   isValid: function(){
-    var regExp = this.props.regExp;
+    var pattern = this.props.pattern;
     var value = this.refs.data.getDOMNode().value;
-    return regExp.test(value);
+    return pattern.test(value);
   },
   handleChange: function() {
     var value = this.refs.data.getDOMNode().value;
