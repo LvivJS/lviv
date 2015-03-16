@@ -5,10 +5,10 @@ var React = require('react');
 var Header = require('./Header');
 var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
-var Speakers = require('./Speakers');
-var Partners = require('./Partners');
-var Schedule = require('./Schedule');
-var Registration = require('./Registration');
+var Speakers = require('./Speakers.jsx');
+var Partners = require('./Partners.js');
+var Schedule = require('./Schedule.jsx');
+var Registration = require('./Registration.jsx');
 
 var LayoutBasic = React.createClass({
   render: function() {
