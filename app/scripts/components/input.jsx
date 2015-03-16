@@ -5,8 +5,9 @@ var React = require('react');
 var InputField = React.createClass({
   getInitialState: function() {
     return {
-      value:  true,
-      errorMessageIsShown: false
+      value:  null,
+      errorMessageIsShown: false,
+      inputInvalid:false
     }
   },
   isValid: function(){
@@ -18,20 +19,25 @@ var InputField = React.createClass({
     var value = this.refs.data.getDOMNode().value;
     var isValid = this.isValid();
     var prop = isValid ? value : false;
-    this.setState({value: prop});
+    this.setState({value: prop, inputInvalid: !isValid});
+    if (this.props.tipIsShown) {
+    	this.setState({errorMessageIsShown:!isValid})
+    } 
     this.props.valueReceived({name: this.props.type, value: prop}); 
   },
   componentWillReceiveProps: function(props) {
     if (props.clear) {
       this.refs.data.getDOMNode().value = '';
+      this.replaceState(this.getInitialState());
+      this.props.unclear(false)
     };
     if (props.tipIsShown) {
-      this.setState({errorMessageIsShown: !this.isValid()});
+      this.setState({errorMessageIsShown: !this.isValid(), inputInvalid: !this.isValid()});
     }
   },
   render: function() {
     var inputClass = 'registration__input ';
-    if (!this.state.value /*|| this.props.tipIsShown*/) {
+    if (this.state.inputInvalid) {
       inputClass += 'registration__input--invalid'
     };
     var spanClass = 'registration__tip ';

@@ -17,8 +17,8 @@ var inputFields = [
       },
       {
         type:'phone',
-        regExp:/^([0-9\(\)\/\+ \-]*)$/,
-        placeholder:'Phone Number',
+        regExp:/^([0-9\(\)\/\+ \-]{3,20})$/,
+        placeholder:'PhoneNumber',
         errorMessage:'Phone must have at least 4 numeric digit.'
       }
 ];
@@ -44,28 +44,23 @@ var RegistrationForm = React.createClass({
       name:false,
       email:false,
       phone:false,
-      errorMessagesAreShown: false,
+      registerButtonIsPressed: false,
       clear:false
     })
   },
   handleSubmit: function(e) {
     e.preventDefault();
-    this.checkData();
+    this.setState({registerButtonIsPressed:true});
     if (this.isValid()) {
       this.props.onDataReceived(this.isValid());
-      this.clearForm(false);
+      this.clearForm(true);
     };
-  },
-  checkData: function() {
-    this.setState({errorMessagesAreShown: !this.isValid()})
   },
   fieldIsValid: function(field) {
     var data = {};
-    if (field.value) {
-      data[field.name] = field.value;
-      data.errorMessagesAreShown = false;
-      this.setState(data);
-    }
+    data[field.name] = field.value;
+    this.setState(data);
+
   },
   isValid: function() {
     if (this.state.name && this.state.email && this.state.phone) {
@@ -79,13 +74,19 @@ var RegistrationForm = React.createClass({
     };
   },
   clearForm: function(value) {
-    this.setState({clear:!value});
+    this.setState({
+      name:false,
+      email:false,
+      phone:false,
+      registerButtonIsPressed: false,
+      clear:value
+    });
   },
   render: function() {
     var formInputs = inputFields.map(function(input) {
       return (
-          <InputField valueReceived={this.fieldIsValid} tipIsShown={this.state.errorMessagesAreShown} 
-            clear={this.state.clear} type={input.type} regExp={input.regExp} placeholder={input.placeholder} 
+          <InputField valueReceived={this.fieldIsValid} tipIsShown={this.state.registerButtonIsPressed} 
+            clear={this.state.clear} unclear={this.clearForm} type={input.type} regExp={input.regExp} placeholder={input.placeholder} 
             errorMessage={input.errorMessage} key={input.type} inputAbleToFill={this.clearForm}/>
         )
     }.bind(this));
