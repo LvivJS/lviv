@@ -1,0 +1,80 @@
+@import '../variables';
+@import '../mixins';
+
+.overview {
+    @include container-ext;
+    background: url('../images/logo-main.jpg') center center no-repeat;
+    height:752px;
+    z-index:1;
+}
+.overview__wrap {
+    position:absolute;
+    background-color:rgba(30, 145, 255,0.1);
+    width: 100%;
+    height:752px;
+    z-index: 3;
+    margin-top: 0;
+    left: 0;
+}
+.overview__content {
+    z-index:5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        color: $color__primary--dark; 
+        text-transform: uppercase;
+        font-size: 87px;
+        padding: 25px 0;
+        margin: 30px auto;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: white;
+        text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+    }
+}
+.overview__about {
+    width: 60%;
+    margin: 20px auto;
+    padding: 25px;
+    color: $color__heading--menu;
+    font-size: $font__giant;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+}
+.overview__info {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+}
+
+.overview__infoBlock {
+  display: flex;
+  flex-direction: row;
+  padding:15px;
+  background: $color__bg--transparent;
+  margin:15px;
+  padding:30px;
+  font-size:$font__giant;
+  color:$color__primary--dark;
+  color:#fff;
+}
+
+.overview__infoIcon {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+}
+.overview__infoIcon--when{
+    background:url('../images/time.svg');
+}
+
+.overview__infoIcon--where{
+    background:url('../images/location.svg');
+}
+.overview__infoData {
+    display: flex;
+    align-items: center;
+    span {
+        margin:0 5px;
+    }
+}
