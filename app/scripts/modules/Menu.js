@@ -29,8 +29,9 @@ var Menu = React.createClass({
     var darkCls = this.state.active ? 'darkenScreen--hidden darkenScreen--visible' : 'darkenScreen--hidden';
 
     var itemsToRender = this.props.items.map(function(item) {
-      return <MenuItem key={item} item={item} />
-    });
+      var href = '#' + item;
+      return <a href={href} key={item} className="menu__item" onClick={this.menuLinkHandler}>{item}</a>
+    }.bind(this));
 
     return (
       <div id="menu" className="module-wrapper">
@@ -49,17 +50,6 @@ var Menu = React.createClass({
         </div>
       </div>
 
-    );
-  }
-});
-
-var MenuItem = React.createClass({
-  render: function() {
-    var href = '#' + this.props.item;
-    return (
-      <a href={href} className="menu__item" onClick={this.menuLinkHandler}>
-        {this.props.item}
-      </a>
     );
   }
 });

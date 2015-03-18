@@ -17,11 +17,12 @@ var LayoutBasic = React.createClass({
   render: function() {
     var confModules = [];
 
-    config.modules.map(function(module) {
-      if (module.isRendering) {
-        confModules.splice(module.order, 0, module.title);
+    config.modules.map(function(item) {
+      if (item.isRendering) {
+        confModules.splice(item.order, 0, item.title);
       }
     });
+    console.log(confModules);
 
     var moduleList = {
       location: <LocationMap key="LocationMap" />,

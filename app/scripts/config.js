@@ -15,32 +15,32 @@ var config = (function() {
       {
         title: 'overview',
         isRendering: true,
-        order: 1
+        order: 0
       },
       {
         title: 'speakers',
         isRendering: true,
-        order: 2
+        order: 1
       },
       {
         title: 'schedule',
         isRendering: true,
-        order: 3
+        order: 2
       },
       {
         title: 'location',
         isRendering: true,
-        order: 4
+        order: 3
       },
       {
         title: 'registration',
         isRendering: true,
-        order: 5
+        order: 4
       },
       {
         title: 'partners',
         isRendering: true,
-        order: 6
+        order: 5
       },
     ]
   }
