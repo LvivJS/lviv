@@ -16,7 +16,8 @@
         width:35%
     }
     @include bp(very-small) {
-        width:55%
+        width:100%;
+        margin:10px;
     }
     .speaker__photo{
         overflow:hidden;
@@ -59,6 +60,9 @@
             justify-content:center;
             display: flex;
             padding:10px;
+            @include bp(small) {
+                padding:5px;
+            }
             .speaker__contact {
                 display:flex;
                 height:20px;
