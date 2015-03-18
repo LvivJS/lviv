@@ -7,23 +7,34 @@ var InputField = React.createClass({
     return {
       value:  null,
       errorMessageIsShown: false,
-      inputInvalid:false
+      inputInvalid:false,
+      madeFirstBlur:false
     }
   },
-  isValid: function(){
-    var pattern = this.props.pattern;
+  inputValue: function() {
     var value = this.refs.data.getDOMNode().value;
+    return value
+  },
+  isValid: function() {
+    var pattern = this.props.pattern;
+    var value = this.inputValue();
     return pattern.test(value);
   },
+  madeFirstBlur: function() {
+    if (this.inputValue()) {
+      this.setState({madeFirstBlur:true});
+      this.handleChange();
+    }
+  },
   handleChange: function() {
-    var value = this.refs.data.getDOMNode().value;
-    var isValid = this.isValid();
-    var prop = isValid ? value : false;
-    this.setState({value: prop, inputInvalid: !isValid});
-    if (this.props.tipIsShown) {
-    	this.setState({errorMessageIsShown:!isValid})
-    } 
-    this.props.valueReceived({name: this.props.type, value: prop}); 
+      var value = this.inputValue();
+      var isValid = this.isValid();
+      var prop = isValid ? value : false;
+      this.setState({value: prop, inputInvalid: !isValid});
+      if (this.props.tipIsShown) {
+      	this.setState({errorMessageIsShown:!isValid})
+      } 
+      this.props.valueReceived({name: this.props.type, value: prop}); 
   },
   componentWillReceiveProps: function(props) {
     if (props.clear) {
@@ -32,7 +43,7 @@ var InputField = React.createClass({
       this.props.unclear(false)
     };
     if (props.tipIsShown) {
-      this.setState({errorMessageIsShown: !this.isValid(), inputInvalid: !this.isValid()});
+      this.setState({errorMessageIsShown: !this.isValid(), inputInvalid: !this.isValid(), madeFirstBlur: true});
     }
   },
   render: function() {
@@ -44,9 +55,10 @@ var InputField = React.createClass({
     if (!this.state.errorMessageIsShown) {
       spanClass += 'invisible'
     }
+    var shouldCheck = this.state.madeFirstBlur ? this.handleChange : null;
     return (
       <div className="registration__field">
-        <input onChange={this.handleChange} className={inputClass} type="text" ref="data" 
+        <input onChange={shouldCheck} onBlur={this.madeFirstBlur} className={inputClass} type="text" ref="data" 
           placeholder={this.props.placeholder}/>
         <span className={spanClass}>{this.props.errorMessage}</span>
       </div>
