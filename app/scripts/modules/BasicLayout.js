@@ -9,6 +9,7 @@ var Speakers = require('./Speakers.jsx');
 var Partners = require('./Partners.js');
 var Schedule = require('./Schedule.jsx');
 var Registration = require('./Registration.jsx');
+var Overview = require('./Overview.jsx');
 
 var LayoutBasic = React.createClass({
   render: function() {
@@ -21,10 +22,7 @@ var LayoutBasic = React.createClass({
           <Menu />
         </div>        
         <section id="overview" className="page-wrap">  
-        <h1>A name of conference</h1>
-          <div className="container">
-            here to be inserted overview module
-          </div>
+          <Overview />
         </section>        
         <section id="speakers" className="page-wrap">        
           <h2 className="module-header">Speakers</h2>

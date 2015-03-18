@@ -20,14 +20,15 @@ $color__inputBorder--focus: rgb(52, 73, 94);
 $color__inputBorder--invalid: rgb(211, 84, 0);
 $color__inputBorder--invalid-hover: rgb(231, 76, 60);
 $color__inputBorder--invalid-focus: rgb(192, 57, 43);
+$color__bg--transparent: rgba(37, 58, 79, 0.7);
 
 /* fonts */
 $font__main: Calibri;
-$font__giant:24px;
-$font__larger:22px;
-$font__large:20px;
-$font__small:16px;
-$font__mini:14px;
+$font__giant:1.5em;
+$font__larger:1.375em;
+$font__large:1.25em;
+$font__small:1em;
+$font__mini:0.875em;
 
 
 /* layout */
