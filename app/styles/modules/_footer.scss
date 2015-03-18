@@ -1,0 +1,21 @@
+@import '../variables';
+@import '../mixins';
+
+.footer {
+  background: $color__primary--dark;
+  display: flex;
+}
+
+.footer__container {
+  @include container-int;
+}
+
+.footer__info {
+  font-size: $font__small;
+  font-style: italic;
+  color: $color__heading--menu;
+  padding: $item__padding--top-bottom 0;
+  @include bp(medium) {
+    padding-left: 20px;
+  }
+}

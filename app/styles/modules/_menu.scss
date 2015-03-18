@@ -60,6 +60,7 @@
 	color: $color__heading--menu;
 	padding: $item__padding--top-bottom $item__padding--left-right;
 	transition: all 0.2s;
+	text-transform: capitalize;
 	@include bp(medium) {
 		padding-left: 40px;
 	}

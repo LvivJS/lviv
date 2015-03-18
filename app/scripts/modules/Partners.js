@@ -22,9 +22,13 @@ var Partners = React.createClass({
       return <PartnerCategory key={data.title} category={data} />
     });
     return (
-      <div className="partners">
-        { categoriesToRender }
-      </div>
+      <section id="partners" className="page-wrap">
+        <h2 className="module-header">Partners</h2>
+        <div className="partners">
+          { categoriesToRender }
+        </div>
+      </section>
+
     );
   }
 });
