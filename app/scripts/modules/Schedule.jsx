@@ -21,7 +21,7 @@ var Schedule = React.createClass({
     });
     return (
       <section id="schedule" className="page-wrap">
-        <h2 className="module-header">Shedule</h2>
+        <h2 className="module-header">Schedule</h2>
         <div className="schedule">
           {conferences}
         </div>
