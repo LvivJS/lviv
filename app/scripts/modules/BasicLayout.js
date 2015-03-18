@@ -13,34 +13,37 @@ var Footer = require('./Footer.jsx');
 var config = require('../config');
 var utilities = require('../utilities');
 
-var configModules = [];
-
-config.modules.map(function(module) {
-  if (module.isRendering) {
-    configModules.splice(module.order, 0, module.title);
-  }
-});
-
-var moduleList = {
-  header: <Header />,
-  menu: <Menu items={configModules}/>,
-  location: <LocationMap />,
-  speakers: <Speakers />,
-  partners: <Partners />,
-  schedule: <Schedule />,
-  registration: <Registration />,
-  overview: <Overview />,
-  footer: <Footer />
-};
-
 var LayoutBasic = React.createClass({
-  var modulesToRender = configModules.map(function(item) {
-    return moduleList[item];
-  });
   render: function() {
+    var confModules = [];
+
+    config.modules.map(function(module) {
+      if (module.isRendering) {
+        confModules.splice(module.order, 0, module.title);
+      }
+    });
+
+    var moduleList = {
+      location: <LocationMap key="LocationMap" />,
+      speakers: <Speakers key="Speakers" />,
+      partners: <Partners key="Partners" />,
+      schedule: <Schedule key="Schedule" />,
+      registration: <Registration key="Registration" />,
+      overview: <Overview key="Overview" />
+    };
+
+    var modulesToRender = confModules.map(function(item) {
+      return moduleList[item];
+    });
+
     return (
       <div className="page-wrap">
+        <Header />
+        <Menu items={confModules}/>
+
         {modulesToRender}
+
+        <Footer />
       </div>
     );
   }

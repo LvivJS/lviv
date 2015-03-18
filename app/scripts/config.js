@@ -13,50 +13,35 @@ var config = (function() {
 
     modules: [
       {
-        title: 'header',
+        title: 'overview',
         isRendering: true,
         order: 1
       },
       {
-        title: 'menu',
+        title: 'speakers',
         isRendering: true,
         order: 2
       },
       {
-        title: 'overview',
+        title: 'schedule',
         isRendering: true,
         order: 3
       },
       {
-        title: 'speakers',
+        title: 'location',
         isRendering: true,
         order: 4
       },
       {
-        title: 'schedule',
+        title: 'registration',
         isRendering: true,
         order: 5
       },
       {
-        title: 'location',
+        title: 'partners',
         isRendering: true,
         order: 6
       },
-      {
-        title: 'registration',
-        isRendering: true,
-        order: 7
-      },
-      {
-        title: 'partners',
-        isRendering: true,
-        order: 8
-      },
-      {
-        title: 'footer',
-        isRendering: true,
-        order: 9
-      }
     ]
   }
 })()

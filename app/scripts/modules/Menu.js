@@ -27,6 +27,11 @@ var Menu = React.createClass({
   render: function() {
     var menuCls = this.state.active ? 'menu menu--visible' : 'menu';
     var darkCls = this.state.active ? 'darkenScreen--hidden darkenScreen--visible' : 'darkenScreen--hidden';
+
+    var itemsToRender = this.props.items.map(function(item) {
+      return <MenuItem key={item} item={item} />
+    });
+
     return (
       <div id="menu" className="module-wrapper">
         <div className="menu-wrapper">
@@ -38,12 +43,7 @@ var Menu = React.createClass({
             </div>
           </div>
           <nav id="cm_menuItems" className={menuCls}>
-              <a href="#overview" className="menu__item" onClick={this.menuLinkHandler}>Overview</a>
-              <a href="#speakers" className="menu__item" onClick={this.menuLinkHandler}>Speakers</a>
-              <a href="#shedule" className="menu__item" onClick={this.menuLinkHandler}>Shedule</a>
-              <a href="#location" className="menu__item" onClick={this.menuLinkHandler}>Location</a>
-              <a href="#registration" className="menu__item" onClick={this.menuLinkHandler}>Registration</a>
-              <a href="#partners" className="menu__item" onClick={this.menuLinkHandler}>Partners</a>
+            {itemsToRender}
           </nav>
           <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
         </div>
@@ -53,11 +53,22 @@ var Menu = React.createClass({
   }
 });
 
+var MenuItem = React.createClass({
+  render: function() {
+    var href = '#' + this.props.item;
+    return (
+      <a href={href} className="menu__item" onClick={this.menuLinkHandler}>
+        {this.props.item}
+      </a>
+    );
+  }
+});
+
 //fix menu when scrolling os make static due to window.pageYOffset
 window.onscroll = function() {
   var menu = document.getElementById('menu');
   var header = document.getElementById('header');
-  var overview = document.getElementById('overview');
+  var overview = document.querySelector('#menu + section');
   var pageScroll = window.pageYOffset;
   var menuStyle = menu.style;
   var manuHeight = menu.offsetHeight;
