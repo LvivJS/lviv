@@ -15,35 +15,6 @@ var LayoutBasic = React.createClass({
   render: function() {
     return (
       <div className="page-wrap">
-        <header id="header">
-          <Header />
-        </header>
-        <div id="menu" className="module-wrapper">
-          <Menu />
-        </div>
-        <section id="overview" className="page-wrap">
-          <Overview />
-        </section>
-        <section id="speakers" className="page-wrap">
-          <h2 className="module-header">Speakers</h2>
-            <Speakers />
-        </section>
-        <section id="schedule" className="page-wrap">        
-          <h2 className="module-header">Shedule</h2>
-          <Schedule />
-        </section>
-        <section id="location" className="page-wrap">
-        <h2 className="module-header">Location</h2>
-          <LocationMap />
-        </section>
-        <section id="registration" className="page-wrap">
-        <h2 className="module-header">Registration</h2>
-          <Registration />
-        </section>
-        <section id="partners" className="page-wrap">
-        <h2 className="module-header">Partners</h2>
-          <Partners />
-        </section>
         <footer id="footer" className="page-wrap">
           <div className="container">
             here to be inserted footer module

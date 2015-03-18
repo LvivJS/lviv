@@ -18,10 +18,13 @@ var OverviewBlock = React.createClass({
       return <Overview mainInfo={info} key={info.name}/>
     });
     return (
-      <div className="overview">
-        {conferenceInfo}
-        <div className="overview__wrap"></div>
-      </div>
+      <section id="overview" className="page-wrap">
+        <div className="overview">
+          {conferenceInfo}
+          <div className="overview__wrap"></div>
+        </div>
+      </section>
+
     )
   }
 });
