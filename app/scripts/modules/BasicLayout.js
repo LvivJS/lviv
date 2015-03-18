@@ -20,26 +20,26 @@ var LayoutBasic = React.createClass({
         </header>
         <div id="menu" className="module-wrapper">
           <Menu />
-        </div>        
-        <section id="overview" className="page-wrap">  
+        </div>
+        <section id="overview" className="page-wrap">
           <Overview />
-        </section>        
-        <section id="speakers" className="page-wrap">        
+        </section>
+        <section id="speakers" className="page-wrap">
           <h2 className="module-header">Speakers</h2>
             <Speakers />
-        </section>        
-        <section id="shedule" className="page-wrap">        
+        </section>
+        <section id="schedule" className="page-wrap">        
           <h2 className="module-header">Shedule</h2>
-          <Schedule /> 
-        </section>        
+          <Schedule />
+        </section>
         <section id="location" className="page-wrap">
         <h2 className="module-header">Location</h2>
           <LocationMap />
-        </section>        
-        <section id="registration" className="page-wrap">        
+        </section>
+        <section id="registration" className="page-wrap">
         <h2 className="module-header">Registration</h2>
           <Registration />
-        </section>        
+        </section>
         <section id="partners" className="page-wrap">
         <h2 className="module-header">Partners</h2>
           <Partners />
