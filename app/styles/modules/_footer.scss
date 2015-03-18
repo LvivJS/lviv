@@ -12,7 +12,7 @@
 
 .footer__info {
   font-size: $font__small;
-  text-style: italic;
+  font-style: italic;
   color: $color__heading--menu;
   padding: $item__padding--top-bottom 0;
   @include bp(medium) {
