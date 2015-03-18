@@ -25,18 +25,19 @@
         color: $color__primary--dark; 
         text-transform: uppercase;
         text-align: center;
-        font-size: 87px;
+        font-size: 5.4375em;
         padding: 25px 0;
         margin: 30px auto;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: white;
         text-shadow: 1px 1px 2px #000, 0 0 1em #000;
         @include bp(medium) {
-        	font-size: 67px;
+        	font-size: 4.1875em;
         	margin: 20px auto;
         }
         @include bp(small) {
     		font-size: 3em;
+            -webkit-text-stroke-width: 1.5px;
     	}
         @include bp(very-small) {
             font-size: 2.5em;
