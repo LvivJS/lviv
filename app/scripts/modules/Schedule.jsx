@@ -20,9 +20,13 @@ var Schedule = React.createClass({
       return (<Conference key={conference.name} days={conference.days} name={conference.name} />)
     });
     return (
-      <div className="schedule">
-        {conferences}
-      </div>
+      <section id="schedule" className="page-wrap">
+        <h2 className="module-header">Schedule</h2>
+        <div className="schedule">
+          {conferences}
+        </div>
+      </section>
+
     );
   }
 });

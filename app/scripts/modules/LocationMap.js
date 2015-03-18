@@ -3,8 +3,12 @@ var React = require('react');
 var LocationMap = React.createClass({
   render: function() {
     return (
-      <div id="googleMap" className="location">
-      </div>
+      <section id="location" className="page-wrap">
+        <h2 className="module-header">Location</h2>
+        <div id="googleMap" className="location">
+        </div>
+      </section>
+
     );
   }
 });

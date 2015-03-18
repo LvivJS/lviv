@@ -21,9 +21,13 @@ var Speakers = React.createClass({
     });
 
     return (
-     <div className="speakers">
-      {speakers}
-     </div>
+      <section id="speakers" className="page-wrap">
+        <h2 className="module-header">Speakers</h2>
+        <div className="speakers">
+         {speakers}
+        </div>
+      </section>
+
     );
   }
 });

@@ -1,4 +1,3 @@
-
 'use strict';
 
 var React = require('react');
@@ -9,48 +8,43 @@ var Speakers = require('./Speakers.jsx');
 var Partners = require('./Partners.js');
 var Schedule = require('./Schedule.jsx');
 var Registration = require('./Registration.jsx');
+var Overview = require('./Overview.jsx');
+var Footer = require('./Footer.jsx');
+var config = require('../config');
+var utilities = require('../utilities');
 
 var LayoutBasic = React.createClass({
   render: function() {
+    var confModules = [];
+
+    config.modules.map(function(item) {
+      if (item.isRendering) {
+        confModules.splice(item.order, 0, item.title);
+      }
+    });
+    console.log(confModules);
+
+    var moduleList = {
+      location: <LocationMap key="LocationMap" />,
+      speakers: <Speakers key="Speakers" />,
+      partners: <Partners key="Partners" />,
+      schedule: <Schedule key="Schedule" />,
+      registration: <Registration key="Registration" />,
+      overview: <Overview key="Overview" />
+    };
+
+    var modulesToRender = confModules.map(function(item) {
+      return moduleList[item];
+    });
+
     return (
       <div className="page-wrap">
-        <header id="header">
-          <Header />
-        </header>
-        <div id="menu" className="module-wrapper">
-          <Menu />
-        </div>        
-        <section id="overview" className="page-wrap">  
-        <h1>A name of conference</h1>
-          <div className="container">
-            here to be inserted overview module
-          </div>
-        </section>        
-        <section id="speakers" className="page-wrap">        
-          <h2 className="module-header">Speakers</h2>
-            <Speakers />
-        </section>        
-        <section id="shedule" className="page-wrap">        
-          <h2 className="module-header">Shedule</h2>
-          <Schedule /> 
-        </section>        
-        <section id="location" className="page-wrap">
-        <h2 className="module-header">Location</h2>
-          <LocationMap />
-        </section>        
-        <section id="registration" className="page-wrap">        
-        <h2 className="module-header">Registration</h2>
-          <Registration />
-        </section>        
-        <section id="partners" className="page-wrap">
-        <h2 className="module-header">Partners</h2>
-          <Partners />
-        </section>
-        <footer id="footer" className="page-wrap">
-          <div className="container">
-            here to be inserted footer module
-          </div>
-        </footer>
+        <Header />
+        <Menu items={confModules}/>
+
+        {modulesToRender}
+
+        <Footer />
       </div>
     );
   }

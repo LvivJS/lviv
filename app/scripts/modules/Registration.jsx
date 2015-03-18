@@ -39,9 +39,13 @@ var Registration = React.createClass({
   },
   render: function() {
     return (
-      <div className="registration">
-        <RegistrationForm onDataReceived={this.pushData}/>
-      </div>
+      <section id="registration" className="page-wrap">
+        <h2 className="module-header">Registration</h2>
+        <div className="registration">
+          <RegistrationForm onDataReceived={this.pushData}/>
+        </div>
+      </section>
+
     )
   }
 });
@@ -93,8 +97,8 @@ var RegistrationForm = React.createClass({
   render: function() {
     var formInputs = inputFields.map(function(input) {
       return (
-          <InputField valueReceived={this.fieldIsValid} tipIsShown={this.state.registerButtonIsPressed} 
-            clear={this.state.clear} unclear={this.clearForm} type={input.type} pattern={input.pattern} placeholder={input.placeholder} 
+          <InputField valueReceived={this.fieldIsValid} tipIsShown={this.state.registerButtonIsPressed}
+            clear={this.state.clear} unclear={this.clearForm} type={input.type} pattern={input.pattern} placeholder={input.placeholder}
             errorMessage={input.errorMessage} key={input.type} inputAbleToFill={this.clearForm}/>
         )
     }.bind(this));

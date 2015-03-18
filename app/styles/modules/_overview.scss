@@ -1,0 +1,110 @@
+@import '../variables';
+@import '../mixins';
+
+.overview {
+    @include container-ext;
+    background: url('../images/logo-main.jpg') center center no-repeat;
+    height:752px;
+    z-index:1;
+}
+.overview__wrap {
+    position:absolute;
+    background-color:rgba(30, 145, 255,0.1);
+    width: 100%;
+    height:752px;
+    z-index: 3;
+    margin-top: 0;
+    left: 0;
+}
+.overview__content {
+    z-index:5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        color: $color__primary--dark; 
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 5.4375em;
+        padding: 25px 0;
+        margin: 30px auto;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: white;
+        text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+        @include bp(medium) {
+        	font-size: 4.1875em;
+        	margin: 20px auto;
+        }
+        @include bp(small) {
+    		font-size: 3em;
+            -webkit-text-stroke-width: 1.5px;
+    	}
+        @include bp(very-small) {
+            font-size: 2.5em;
+        }
+    }
+}
+.overview__about {
+    width: 60%;
+    margin: 20px auto;
+    padding: 25px;
+    color: $color__heading--menu;
+    font-size: $font__giant;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+    @include bp(small) {
+        margin: 10px auto;
+        width: 80%;
+        font-size: $font__large;
+    }
+}
+.overview__info {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    @include bp(small) {
+    	flex-direction: column;
+    }
+}
+
+.overview__infoBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding:15px;
+  background: $color__bg--transparent;
+  margin:15px;
+  padding:30px;
+  font-size:$font__giant;
+  color:$color__primary--dark;
+  color:#fff;
+  @include bp(medium) {
+    padding: 20px;
+    font-size:$font__large;
+  }
+}
+
+.overview__infoIcon {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    flex-shrink: 0;
+    @include bp(medium) {
+    width: 30px;
+    height: 30px;
+  }
+}
+.overview__infoIcon--when{
+    background:url('../images/time.svg') center center no-repeat;
+}
+
+.overview__infoIcon--where{
+    background:url('../images/location.svg') center center no-repeat;
+}
+.overview__infoData {
+    display: flex;
+    align-items: center;
+    span {
+        margin:0 5px;
+    }
+}
