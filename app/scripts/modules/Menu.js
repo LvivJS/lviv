@@ -1,5 +1,5 @@
 var React = require('react');
-
+var classNames = require('classnames');
 var Menu = React.createClass({
   getInitialState: function() {
     return {
@@ -25,8 +25,17 @@ var Menu = React.createClass({
   },
 
   render: function() {
-    var menuCls = this.state.active ? 'menu menu--visible' : 'menu';
-    var darkCls = this.state.active ? 'darkenScreen--hidden darkenScreen--visible' : 'darkenScreen--hidden';
+    // var menuCls = this.state.active ? 'menu menu--visible' : 'menu';
+    var menuCls = classNames({
+      'menu--visible': this.state.active,
+      'menu': true
+    });
+    var darkCls = classNames({
+      'darkenScreen--hidden': true,
+      'darkenScreen--visible': this.state.active
+    });
+
+    // this.state.active ? 'darkenScreen--hidden darkenScreen--visible' : 'darkenScreen--hidden';
 
     var itemsToRender = this.props.items.map(function(item) {
       var href = '#' + item;
