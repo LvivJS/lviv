@@ -22,7 +22,6 @@ var LayoutBasic = React.createClass({
         confModules.splice(item.order, 0, item.title);
       }
     });
-    console.log(confModules);
 
     var moduleList = {
       location: <LocationMap key="LocationMap" />,

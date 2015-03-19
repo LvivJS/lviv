@@ -6,4 +6,7 @@
 #googleMap {
 	flex: 1;
 	height: 500px;
+	@include bp(small) {
+		height: 360px;
+	}
 }

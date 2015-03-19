@@ -3,6 +3,7 @@
 var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
+var classNames = require('classnames');
 
 var Schedule = React.createClass({
   getInitialState: function() {
@@ -48,25 +49,37 @@ var Conference = React.createClass({
   changeConfRepresent: function() {
     this.setState({confIsVisible: !this.state.confIsVisible});
   },
-  render: function() {
+  render: function() {   
     var days = this.props.days.map(function(day) {
+      var dayIsActive = (this.state.activeDay==day.day_id);
+      var liClass = classNames({
+        'conference__tab--active': dayIsActive
+      });
       return (
-        <li onClick={this.changeTab.bind(null, day)} key={day.day_id}
-          className={(this.state.activeDay==day.day_id) ? "conference__tab--active" : null}>
+        <li onClick={this.changeTab.bind(null, day)} key={day.day_id} className={liClass}>
           <span>{day.day_name}</span>
         </li>
       )
     }.bind(this));
+
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
         return <Timetable sessions={day.timetable} key={day.day_id}/>
-      };}.bind(this));
+      }
+    }.bind(this));
+
+    //set direction of arrow
+    var inputClass = classNames({
+        'up-arrow': this.state.confIsVisible,
+        'down-arrow': !this.state.confIsVisible
+    });
+
     return (
       <div className="conference">
         <div className="conference__title">
           <h3>Shedule: {this.props.name}</h3>
           <input type="button" onClick={this.changeConfRepresent}
-            className={this.state.confIsVisible ? "up-arrow" : "down-arrow"}/>
+            className={inputClass}/>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}
         {timetable}
@@ -118,32 +131,40 @@ var Session = React.createClass({
     });
   },
   render: function() {
-    var sessionClass = 'session ';
-    var sessionInfoClass = 'session__info ';
-    var sessionAboutClass = 'session__about ';
-    var sessionButtonClass = 'session__button ';
     var speaker = null;
     var button = null;
 
     if (this.state.isReport) {
-      sessionClass += 'session--report';
       speaker = (
         <span className="speaker__name">
           {this.state.session.speaker.name}
           {this.state.session.speaker.position}
         </span>
       )
-    } else {
-      sessionClass += 'session--entertainment';
-      sessionInfoClass += 'session__info--right';
-    };
+    }
+   
+    var sessionClass = classNames({
+      'session': true,
+      'session--report': this.state.isReport,
+      'session--entertainment': !this.state.isReport
+    });
+    
+    var sessionInfoClass = classNames({
+      'session__info': true,
+      'session__info--right': !this.state.isReport
+    });
 
-    if (this.state.isHidden) {
-      sessionAboutClass += 'invisible'
-      sessionButtonClass += 'session__button--inactive'
-    } else {
-      sessionButtonClass += 'session__button--active'
-    };
+    var sessionAboutClass = classNames({
+      'session__about': true,
+      'invisible': this.state.isHidden
+    });
+
+    var sessionButtonClass = classNames ({
+      'session__button': true,
+      'session__button--inactive': this.state.isHidden,
+      'session__button--active': !this.state.isHidden
+    });
+
     if (this.state.session.about) {
       button = (
         <span onClick={this.changeAbout.bind(null,this.state.session)} className= {sessionButtonClass}>

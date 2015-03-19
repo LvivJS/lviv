@@ -1,14 +1,15 @@
 'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 var InputField = React.createClass({
   getInitialState: function() {
     return {
       value:  null,
       errorMessageIsShown: false,
-      inputInvalid:false,
-      madeFirstBlur:false
+      inputInvalid: false,
+      madeFirstBlur: false
     }
   },
   inputValue: function() {
@@ -47,14 +48,14 @@ var InputField = React.createClass({
     }
   },
   render: function() {
-    var inputClass = 'registration__input ';
-    if (this.state.inputInvalid) {
-      inputClass += 'registration__input--invalid'
-    };
-    var spanClass = 'registration__tip ';
-    if (!this.state.errorMessageIsShown) {
-      spanClass += 'invisible'
-    }
+    var spanClass = classNames({
+        'registration__tip': true,
+        'invisible': !this.state.errorMessageIsShown
+      });
+    var inputClass = classNames({
+        'registration__input': true,
+        'registration__input--invalid': this.state.inputInvalid
+      });
     var shouldCheck = this.state.madeFirstBlur ? this.handleChange : null;
     return (
       <div className="registration__field">
