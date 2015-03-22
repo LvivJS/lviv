@@ -5,7 +5,7 @@ var utilities = require('../utilities');
 var OverviewBlock = React.createClass({
   getInitialState: function(){
     return {
-      mainInfo:[]
+      mainInfo: []
     }
   },
   componentDidMount: function() {
@@ -24,7 +24,6 @@ var OverviewBlock = React.createClass({
           <div className="overview__wrap"></div>
         </div>
       </section>
-
     )
   }
 });

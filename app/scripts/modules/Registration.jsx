@@ -4,24 +4,24 @@ var InputField = require('../components/input.jsx');
 var config = require('../config');
 
 var inputFields = [
-      {
-        type:'name',
-        pattern:/^[a-zA-Z_ -]{3,50}$/,
-        placeholder:'Name',
-        errorMessage:'Name should have at least 3 characters, but no more than 50'
-      },
-      {
-        type:'email',
-        pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
-        placeholder:'Email',
-        errorMessage:'Please, enter valid email'
-      },
-      {
-        type:'phone',
-        pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
-        placeholder:'PhoneNumber',
-        errorMessage:'Phone must have at least 4 numeric digit.'
-      }
+  {
+    type:'name',
+    pattern:/^[a-zA-Z_ -]{3,50}$/,
+    placeholder:'Name',
+    errorMessage:'Name should have at least 3 characters, but no more than 50'
+  },
+  {
+    type:'email',
+    pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
+    placeholder:'Email',
+    errorMessage:'Please, enter valid email'
+  },
+  {
+    type:'phone',
+    pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
+    placeholder:'PhoneNumber',
+    errorMessage:'Phone must have at least 4 numeric digit.'
+  }
 ];
 
 var Registration = React.createClass({
@@ -45,7 +45,6 @@ var Registration = React.createClass({
           <RegistrationForm onDataReceived={this.pushData}/>
         </div>
       </section>
-
     )
   }
 });
@@ -72,7 +71,6 @@ var RegistrationForm = React.createClass({
     var data = {};
     data[field.name] = field.value;
     this.setState(data);
-
   },
   isValid: function() {
     if (this.state.name && this.state.email && this.state.phone) {
@@ -97,9 +95,17 @@ var RegistrationForm = React.createClass({
   render: function() {
     var formInputs = inputFields.map(function(input) {
       return (
-          <InputField valueReceived={this.fieldIsValid} tipIsShown={this.state.registerButtonIsPressed}
-            clear={this.state.clear} unclear={this.clearForm} type={input.type} pattern={input.pattern} placeholder={input.placeholder}
-            errorMessage={input.errorMessage} key={input.type} inputAbleToFill={this.clearForm}/>
+        <InputField
+          type={input.type}
+          valueReceived={this.fieldIsValid}
+          placeholder={input.placeholder}
+          tipIsShown={this.state.registerButtonIsPressed}
+          clear={this.state.clear}
+          unclear={this.clearForm}
+          pattern={input.pattern}
+          errorMessage={input.errorMessage}
+          key={input.type}
+          inputAbleToFill={this.clearForm}/>
         )
     }.bind(this));
 
