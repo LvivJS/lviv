@@ -12,6 +12,15 @@ var utilities = {
         }
       };
       request.send();
+    },
+    time: function(timeObj) {
+      var time = new Date();
+      time.setYear(timeObj.year);
+      time.setMonth(timeObj.month);
+      time.setDate(timeObj.date);
+      time.setHours(timeObj.hours);
+      time.setMinutes(timeObj.minutes);
+      return time
     }
 };
 

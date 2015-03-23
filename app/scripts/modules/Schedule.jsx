@@ -4,6 +4,9 @@ var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
 var classNames = require('classnames');
+var ReactIntl = require('react-intl');
+var IntlMixin     = ReactIntl.IntlMixin;
+var FormattedTime = ReactIntl.FormattedTime;
 
 var Schedule = React.createClass({
   getInitialState: function() {
@@ -56,14 +59,14 @@ var Conference = React.createClass({
       });
       return (
         <li onClick={this.changeTab.bind(null, day)} key={day.day_id} className={liClass}>
-          <span>{day.day_name}</span>
+          <span>{day.day_name.date}</span>
         </li>
       )
     }.bind(this));
 
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id}/>
+        return <Timetable sessions={day.timetable} key={day.day_id} date={utilities.time(day.day_name)} />
       }
     }.bind(this));
 
@@ -104,7 +107,16 @@ var Timetable = React.createClass({
   },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
-      return <Session key={session.article} session={session} smallScreen={this.state.smallScreen}/>
+      var sessionTimeStart = this.props.date;
+      sessionTimeStart.setHours(session.time.start.hour);
+      sessionTimeStart.setMinutes(session.time.start.minutes);
+      var sessionTimeEnd = this.props.date;
+      sessionTimeEnd.setHours(session.time.end.hour);
+      sessionTimeEnd.setMinutes(session.time.end.minutes);
+      return (
+        <Session key={session.article} session={session} smallScreen={this.state.smallScreen} 
+          start={sessionTimeStart} end={sessionTimeEnd} />
+      )
     }.bind(this));
     return (
       <div className="timetable">
@@ -173,7 +185,16 @@ var Session = React.createClass({
     return (
       <div key={this.state.session.article}
        className={sessionClass}>
-        <div className="session__time">{this.state.session.time}</div>
+        <div className="session__time">
+          <FormattedTime 
+            value={this.props.start} 
+            hour="numeric" 
+            minute="numeric" />
+          <FormattedTime 
+            value={this.props.end} 
+            hour="numeric" 
+            minute="numeric" />
+        </div>
         <div className="session__arrangement">
           <h4 className="session__name">{this.state.session.article}</h4>
           <div className={sessionInfoClass}>
