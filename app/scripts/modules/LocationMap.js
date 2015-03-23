@@ -1,6 +1,9 @@
 var React = require('react');
 
 var LocationMap = React.createClass({
+  componentWillMount: function() {
+    google.maps.event.addDomListener(window, 'load', initialize);
+  },
   render: function() {
     return (
       <section id="location" className="page-wrap">
@@ -8,7 +11,6 @@ var LocationMap = React.createClass({
         <div id="googleMap" className="location">
         </div>
       </section>
-
     );
   }
 });
@@ -23,15 +25,11 @@ function initialize() {
     scrollwheel: false
   };
   var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
-
   var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Awesome place for conference! See you there!'
+    position: myLatlng,
+    map: map,
+    title: 'Awesome place for conference! See you there!'
   });
-
 }
-
-google.maps.event.addDomListener(window, 'load', initialize);
 
 module.exports = LocationMap;

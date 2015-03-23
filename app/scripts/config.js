@@ -3,10 +3,11 @@
 var config = (function() {
   return {
     path: {
-      schedule: './dev/json/schedule.json',
-      speakers: './dev/json/speakers.json',
-      partners: './dev/json/partners.json',
-      mainInfo: './dev/json/mainInfo.json'
+      schedule: 'json/schedule.json',
+      speakers: 'json/speakers.json',
+      partners: 'json/partners.json',
+      mainInfo: 'json/mainInfo.json',
+      conf_logo: 'images/logo.jpg'
     },
 
     firebasePath: 'https://blistering-fire-6843.firebaseio.com/users',
@@ -41,7 +42,7 @@ var config = (function() {
         title: 'partners',
         isRendering: true,
         order: 5
-      },
+      }
     ]
   }
 })()

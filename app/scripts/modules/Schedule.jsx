@@ -18,7 +18,7 @@ var Schedule = React.createClass({
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
-      return (<Conference key={conference.name} days={conference.days} name={conference.name} />)
+      return <Conference key={conference.name} days={conference.days} name={conference.name} />
     });
     return (
       <section id="schedule" className="page-wrap">
@@ -27,7 +27,6 @@ var Schedule = React.createClass({
           {conferences}
         </div>
       </section>
-
     );
   }
 });
@@ -49,9 +48,9 @@ var Conference = React.createClass({
   changeConfRepresent: function() {
     this.setState({confIsVisible: !this.state.confIsVisible});
   },
-  render: function() {   
+  render: function() {
     var days = this.props.days.map(function(day) {
-      var dayIsActive = (this.state.activeDay==day.day_id);
+      var dayIsActive = (this.state.activeDay == day.day_id);
       var liClass = classNames({
         'conference__tab--active': dayIsActive
       });
@@ -142,13 +141,13 @@ var Session = React.createClass({
         </span>
       )
     }
-   
+
     var sessionClass = classNames({
       'session': true,
       'session--report': this.state.isReport,
       'session--entertainment': !this.state.isReport
     });
-    
+
     var sessionInfoClass = classNames({
       'session__info': true,
       'session__info--right': !this.state.isReport

@@ -7,9 +7,9 @@ var classNames = require('classnames');
 
 var Speakers = React.createClass({
   getInitialState: function() {
-    return (
-      {speakerInfo: []}
-    )
+    return {
+      speakerInfo: []
+    }
   },
   componentDidMount: function() {
     utilities.ajax('get', config.path.speakers, function(data) {
@@ -28,16 +28,15 @@ var Speakers = React.createClass({
          {speakers}
         </div>
       </section>
-
     );
   }
 });
 
 var Speaker = React.createClass({
-  getInitialState:function(){
-    return({
+  getInitialState: function() {
+    return {
       contacts: this.props.information.contact
-    })
+    }
   },
   setClass: function(network) {
     var classes = {
@@ -49,8 +48,9 @@ var Speaker = React.createClass({
   },
   render: function() {
     var contToRender = Object.keys(this.state.contacts).map(function(val) {
-        return <a className={this.setClass(val)} href={this.state.contacts[val]} key={val}></a>
+      return <a className={this.setClass(val)} href={this.state.contacts[val]} key={val}></a>
     }.bind(this));
+
     return (
      <div className="speaker">
       <div className="speaker__photo">
@@ -61,7 +61,7 @@ var Speaker = React.createClass({
         <div className="speaker__pos">{this.props.information.position}</div>
         <div className="speaker__about">{this.props.information.about}</div>
           <div className="speaker__contacts">
-          {contToRender}
+            {contToRender}
           </div>
         </div>
      </div>

@@ -48,7 +48,8 @@ var PartnerLink = React.createClass({
   render: function() {
     var link = this.props.array.map(function(item) {
       return (
-      	<a href={item.link} title={item.title} className="partners__item-link" key={item.title} target="_blank">
+        <a href={item.link} title={item.title} className="partners__item-link"
+           key={item.title} target="_blank">
           <img src={item.img} alt={item.title} />
         </a>
       );
