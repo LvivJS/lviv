@@ -13,12 +13,14 @@ var utilities = {
       };
       request.send();
     },
+
+    //Look if we have users localisation, if not - use default.
     locales: function() {
       var availableLocals = ['en-US', 'uk-UA'];
       var defaultLocale = 'en-US';
       var loc;
 
-      for (i = 0; i < availableLocals.length; i++) {
+      for (var i = 0; i < availableLocals.length; i++) {
         if (availableLocals[i] == navigator.language) {
           loc = availableLocals[i];
           break;

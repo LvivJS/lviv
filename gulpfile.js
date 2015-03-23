@@ -30,7 +30,7 @@ paths.jsEntry = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles = './app/styles/**/*.scss';
 paths.imageFiles = './app/images/**/*';
-paths.jsonFiles = './app/json/*.json';
+paths.jsonFiles = './app/locales/**/*';
 paths.styles = '/style';
 paths.script = '/scripts';
 paths.build = './dist';
@@ -87,8 +87,8 @@ gulp.task('build_image', function() {
 
 //TEMPORARY task for moving json folder form app into dist/dev
 gulp.task('json_move', function() {
-  gulp.src(paths.jsonFiles)
-      .pipe(gulp.dest(paths.build + '/json'));
+  return gulp.src(paths.jsonFiles)
+      .pipe(gulp.dest(paths.build + '/locales'));
 });
 
 //code healthiness

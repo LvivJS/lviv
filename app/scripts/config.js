@@ -2,12 +2,13 @@
 var utilities = require('./utilities');
 
 var config = (function() {
+
   return {
     path: {
-      schedule: 'locale/' + utilities.locales + '/schedule.json',
-      speakers: 'locale/' + utilities.locales + '/speakers.json',
-      partners: 'locale/' + utilities.locales + '/partners.json',
-      mainInfo: 'locale/' + utilities.locales + '/mainInfo.json',
+      schedule: 'locales/' + utilities.locales() + '/schedule.json',
+      speakers: 'locales/' + utilities.locales() + '/speakers.json',
+      partners: 'locales/' + utilities.locales() + '/partners.json',
+      mainInfo: 'locales/' + utilities.locales() + '/mainInfo.json',
       conf_logo: 'images/logo.jpg'
     },
 
