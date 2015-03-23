@@ -1,12 +1,13 @@
 'use strict';
+var utilities = require('./utilities');
 
 var config = (function() {
   return {
     path: {
-      schedule: 'json/schedule.json',
-      speakers: 'json/speakers.json',
-      partners: 'json/partners.json',
-      mainInfo: 'json/mainInfo.json',
+      schedule: 'locale/' + utilities.locales + '/schedule.json',
+      speakers: 'locale/' + utilities.locales + '/speakers.json',
+      partners: 'locale/' + utilities.locales + '/partners.json',
+      mainInfo: 'locale/' + utilities.locales + '/mainInfo.json',
       conf_logo: 'images/logo.jpg'
     },
 
