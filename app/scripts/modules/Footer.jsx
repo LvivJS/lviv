@@ -7,7 +7,7 @@ var Footer = React.createClass({
     return (
       <footer id="footer" className="page-wrap footer">
         <div className="footer__container">
-          <span className="footer__info">&copy; Taras Kharuk</span>
+          <span className="footer__info">&copy; 2015 Taras Kharuk</span>
         </div>
       </footer>
     );
