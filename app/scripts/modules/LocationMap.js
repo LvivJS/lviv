@@ -18,7 +18,6 @@ var LocationMap = React.createClass({
 //google map script
 function initialize() {
   var myLatlng = new google.maps.LatLng(49.842721, 24.000630);
-  console.log(myLatlng);
   var mapProp = {
     center: myLatlng,
     zoom: 17,
