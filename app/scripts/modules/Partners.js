@@ -7,13 +7,18 @@ var utilities = require('../utilities');
 var Partners = React.createClass({
   componentDidMount: function() {
     utilities.ajax('get', config.path.partners, function(data) {
-      this.setState({categories: JSON.parse(data)});
+      var temp = JSON.parse(data);
+      this.setState({
+        categories: temp.data,
+        header: temp.title
+        });
     }.bind(this));
   },
 
   getInitialState: function() {
     return {
-      categories: []
+      categories: [],
+      title: ''
     }
   },
 
@@ -23,7 +28,7 @@ var Partners = React.createClass({
     });
     return (
       <section id="partners" className="page-wrap">
-        <h2 className="module-header">Partners</h2>
+        <h2 className="module-header">{this.state.header}</h2>
         <div className="partners">
           { categoriesToRender }
         </div>
