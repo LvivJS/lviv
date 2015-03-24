@@ -18,8 +18,8 @@ var utilities = {
       time.setYear(timeObj.year);
       time.setMonth(timeObj.month);
       time.setDate(timeObj.date);
-      time.setHours(timeObj.hours);
-      time.setMinutes(timeObj.minutes);
+      time.setHours(timeObj.hours || null);
+      time.setMinutes(timeObj.minutes || null);
       return time
     }
 };

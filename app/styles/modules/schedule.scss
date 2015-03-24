@@ -68,63 +68,68 @@
     @include bp(small) {
         flex-direction: column;
     }
-    .session__time {
-        width:100px;
-        margin-right:20px;
-        flex-shrink: 0;
-        @include bp(small) {
-            margin: 10px 0;
-        }
+}
+.session__time {
+    width:100px;
+    margin-right:20px;
+    flex-shrink: 0;
+    @include bp(small) {
+        margin: 10px 0;
     }
-    .session__arrangement {
-        display:flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        flex-shrink: 3;
-        width:100%;
-    }
-    .session__name {
-        margin-bottom:10px;
-    }
-    .session__info {
-        margin-bottom:10px;
-        color:$color__primary--dark;
-        font-weight:bold;
-        display:flex;
-        justify-content: space-between;
-        flex-direction: row;
-        @include bp(very-small) {
-           flex-direction: column;
-           margin-bottom:0;
-        }
-        .speaker__name {
-            flex-shrink:3;
-        }
-        span.session__button{
-            width:20px;
-            height:20px;
-            border:0px;
-            margin:0 10px;
-            cursor:pointer;
-            @include user-select;
-            @include bp(very-small) {
-                margin: 10px;
-            }
-        }
-        span.session__button--inactive::after {
-            @include schedule-about-button('+');
-        }
-        span.session__button--active::after {
-            @include schedule-about-button('-');
-        }
-    }
-    .session__info--right{
-        justify-content: flex-end;
-    }
-    .session__about {
-        margin-bottom:10px;
+    span+span:before{
+        content: " - ";
+        display: inline-block;
     }
 }
+.session__arrangement {
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-shrink: 3;
+    width:100%;
+}
+.session__name {
+    margin-bottom:10px;
+}
+.session__info {
+    margin-bottom:10px;
+    color:$color__primary--dark;
+    font-weight:bold;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    @include bp(very-small) {
+       flex-direction: column;
+       margin-bottom:0;
+    }
+    .speaker__name {
+        flex-shrink:3;
+    }
+    span.session__button{
+        width:20px;
+        height:20px;
+        border:0px;
+        margin:0 10px;
+        cursor:pointer;
+        @include user-select;
+        @include bp(very-small) {
+            margin: 10px;
+        }
+    }
+    span.session__button--inactive::after {
+        @include schedule-about-button('+');
+    }
+    span.session__button--active::after {
+        @include schedule-about-button('-');
+    }
+}
+.session__info--right{
+    justify-content: flex-end;
+}
+.session__about {
+    margin-bottom:10px;
+}
+
 .session:last-child {
     border-bottom:0px;
 }

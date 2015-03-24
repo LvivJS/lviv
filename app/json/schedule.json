@@ -4,7 +4,7 @@
     "days": [
       {
         "day_id":"01",
-        "day_name": {
+        "day_info": {
           "year":"2015",
           "month":"04",
           "date":"22"
@@ -13,12 +13,11 @@
           {
             "time": {
               "start": {
-                "hour":"8", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"8", 
                 "minutes":"55"
-              },
-              "end": {
-                "hour":"", 
-                "minutes":""
               }
             },
             "article":"Morning Welcome",
@@ -27,11 +26,17 @@
           {
             "time": {
               "start": {
-                "hour":"9", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"9", 
                 "minutes":"0"
               },
               "end": {
-                "hour":"10", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"10", 
                 "minutes":"0"
               }
             },
@@ -47,11 +52,17 @@
           {
             "time": {
               "start": {
-                "hour":"10", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"10", 
                 "minutes":"15"
               },
               "end": {
-                "hour":"11", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"11", 
                 "minutes":"15"
               }
             },
@@ -67,11 +78,17 @@
           {
             "time": {
               "start": {
-                "hour":"11", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"11", 
                 "minutes":"30"
               },
               "end": {
-                "hour":"12", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"12", 
                 "minutes":"30"
               }
             },
@@ -87,11 +104,17 @@
           {
             "time": {
               "start": {
-                "hour":"12", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"12", 
                 "minutes":"30"
               },
               "end": {
-                "hour":"14", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"14", 
                 "minutes":"0"
               }
             },
@@ -101,11 +124,17 @@
           {
             "time":{
               "start": {
-                "hour":"14", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"14", 
                 "minutes":"0"
               },
               "end": {
-                "hour":"15", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"15", 
                 "minutes":"0"
               }
             },
@@ -121,11 +150,17 @@
           {
             "time":{
               "start": {
-                "hour":"15", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"15", 
                 "minutes":"35"
               },
               "end": {
-                "hour":"16", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"16", 
                 "minutes":"15"
               }
             },
@@ -141,32 +176,48 @@
           {
             "time":{
               "start": {
-                "hour":"16", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"16", 
                 "minutes":"30"
               },
               "end": {
-                "hour":"19", 
+                "year":"2015",
+                "month":"04",
+                "date":"22",
+                "hours":"19", 
                 "minutes":"0"
               }
             },
-            "article":"Opening Night Happy Hour",
+            "article":"Opening Night Happy Hours",
             "type":"entertainment",
-            "about":"Join us at A Happy Hour Apart, to be held in the 4th floor foyer, right next to the registration desk. We’ll provide tasty snacks and tastier beverages to recharge your body after a full day of recharging your mind!"
+            "about":"Join us at A Happy Hours Apart, to be held in the 4th floor foyer, right next to the registration desk. We’ll provide tasty snacks and tastier beverages to recharge your body after a full day of recharging your mind!"
           }
         ]
       },
       {
         "day_id":"02",
-        "day_name":"Saturday, 21 October",
+        "day_info": {
+          "year":"2015",
+          "month":"04",
+          "date":"23"
+        },
         "timetable": [
           {
             "time": {
               "start": {
-                "hour":"8", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"8", 
                 "minutes":"55"
               },
               "end": {
-                "hour":"", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"", 
                 "minutes":""
               }
             },
@@ -176,11 +227,17 @@
           {
             "time": {
               "start": {
-                "hour":"9", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"9", 
                 "minutes":"0"
               },
               "end": {
-                "hour":"10", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"10", 
                 "minutes":"0"
               }
             },
@@ -196,11 +253,17 @@
           {
             "time":{
               "start": {
-                "hour":"10", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"10", 
                 "minutes":"15"
               },
               "end": {
-                "hour":"11", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"11", 
                 "minutes":"15"
               }
             },
@@ -216,11 +279,17 @@
           {
             "time": {
               "start": {
-                "hour":"11", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"11", 
                 "minutes":"30"
               },
               "end": {
-                "hour":"12", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"12", 
                 "minutes":"30"
               }
             },
@@ -230,11 +299,17 @@
           {
             "time": {
               "start": {
-                "hour":"12", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"12", 
                 "minutes":"30"
               },
               "end": {
-                "hour":"14", 
+                "year":"2015",
+                "month":"04",
+                "date":"23",
+                "hours":"14", 
                 "minutes":"0"
               }
             },
