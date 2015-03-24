@@ -39,6 +39,7 @@ var config = (function() {
       mainInfo: 'locales/' + chooseLocale() + '/mainInfo.json',
       localisation: 'locales/' + chooseLocale() + '/localisation.json',
       registration: 'locales/' + chooseLocale() + '/registration.json',
+      footer: 'locales/' + chooseLocale() + '/footer.json',
       conf_logo: 'images/logo.jpg'
     },
 
