@@ -55,7 +55,6 @@ var Menu = React.createClass({
           <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
         </div>
       </div>
-
     );
   }
 });

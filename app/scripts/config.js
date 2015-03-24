@@ -37,7 +37,7 @@ var config = (function() {
       speakers: 'locales/' + chooseLocale() + '/speakers.json',
       partners: 'locales/' + chooseLocale() + '/partners.json',
       mainInfo: 'locales/' + chooseLocale() + '/mainInfo.json',
-      localisation: 'locales/' + chooseLocale() + '/localisation.json',
+      location: 'locales/' + chooseLocale() + '/localisation.json',
       registration: 'locales/' + chooseLocale() + '/registration.json',
       footer: 'locales/' + chooseLocale() + '/footer.json',
       conf_logo: 'images/logo.jpg'
@@ -48,7 +48,7 @@ var config = (function() {
     modules: [
       {
         title: 'overview',
-        isRendering: true,
+        isRendering: false,
         order: 0
       },
       {
