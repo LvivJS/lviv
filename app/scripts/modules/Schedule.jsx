@@ -9,11 +9,18 @@ var Schedule = React.createClass({
   getInitialState: function() {
     return {
       conferences: [],
+      title: ''
     }
   },
   componentDidMount: function() {
     utilities.ajax('get', config.path.schedule, function(data) {
-      this.setState({conferences: JSON.parse(data)})
+      var temp = JSON.parse(data);
+      this.setState({
+        conferences: temp.data,
+        title: temp.title
+        });
+
+      console.log(temp);
     }.bind(this));
   },
   render: function() {
@@ -22,7 +29,7 @@ var Schedule = React.createClass({
     });
     return (
       <section id="schedule" className="page-wrap">
-        <h2 className="module-header">Schedule</h2>
+        <h2 className="module-header">{this.state.title}</h2>
         <div className="schedule">
           {conferences}
         </div>
