@@ -42,7 +42,11 @@ function initialize() {
   var marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
-    title: 'Awesome place for conference! See you there!'
+    title: 'Awesome place for conference! See you there!',
+    url: 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    window.open(marker.url, '_blank')
   });
 }
 
