@@ -37,6 +37,7 @@
     "live-reload": "^1.1.0",
     "node-notifier": "^4.1.1",
     "node-sass": "^3.0.0-alpha.0",
+    "react-intl": "^1.2.0",
     "reactify": "^1.1.0",
     "rimraf": "^2.3.2",
     "run-sequence": "^1.0.2",

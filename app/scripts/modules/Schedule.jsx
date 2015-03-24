@@ -4,6 +4,10 @@ var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
 var classNames = require('classnames');
+var ReactIntl = require('react-intl');
+var IntlMixin     = ReactIntl.IntlMixin;
+var FormattedDate = ReactIntl.FormattedDate;
+var FormattedTime = ReactIntl.FormattedTime;
 
 var Schedule = React.createClass({
   getInitialState: function() {
@@ -61,14 +65,17 @@ var Conference = React.createClass({
       });
       return (
         <li onClick={this.changeTab.bind(null, day)} key={day.day_id} className={liClass}>
-          <span>{day.day_name}</span>
+          <FormattedDate
+            value={utilities.time(day.day_info)}
+            day="numeric"
+            month="long" />
         </li>
       )
     }.bind(this));
 
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id}/>
+        return <Timetable sessions={day.timetable} key={day.day_id} />
       }
     }.bind(this));
 
@@ -109,7 +116,14 @@ var Timetable = React.createClass({
   },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
-      return <Session key={session.article} session={session} smallScreen={this.state.smallScreen}/>
+      var timeStart = utilities.time(session.time.start);
+      if (session.time.end) {
+        var timeEnd = utilities.time(session.time.end)
+      }
+      return (
+        <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
+          start={timeStart} end={timeEnd} />
+      )
     }.bind(this));
     return (
       <div className="timetable">
@@ -137,6 +151,7 @@ var Session = React.createClass({
   render: function() {
     var speaker = null;
     var button = null;
+    var timeEnd = null;
 
     if (this.state.isReport) {
       speaker = (
@@ -174,11 +189,26 @@ var Session = React.createClass({
         <span onClick={this.changeAbout.bind(null,this.state.session)} className= {sessionButtonClass}>
         </span>
       )
+    };
+
+    if(this.props.end) {
+      timeEnd = (
+        <FormattedTime
+            value={this.props.end}
+            hour="numeric"
+            minute="numeric" />
+      )
     }
     return (
       <div key={this.state.session.article}
        className={sessionClass}>
-        <div className="session__time">{this.state.session.time}</div>
+        <div className="session__time">
+          <FormattedTime
+            value={this.props.start}
+            hour="numeric"
+            minute="numeric" />
+          {timeEnd}
+        </div>
         <div className="session__arrangement">
           <h4 className="session__name">{this.state.session.article}</h4>
           <div className={sessionInfoClass}>

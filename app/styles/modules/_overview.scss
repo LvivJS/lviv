@@ -82,6 +82,13 @@
     padding: 20px;
     font-size:$font__large;
   }
+    @include bp(small) {
+    padding: 15px;
+  }
+  @include bp(very-small) {
+    padding: 10px;
+    font-size:$font__small;
+  }
 }
 
 .overview__infoIcon {

@@ -12,8 +12,11 @@ var Overview = require('./Overview.jsx');
 var Footer = require('./Footer.jsx');
 var config = require('../config');
 var utilities = require('../utilities');
+var ReactIntl = require('react-intl');
+var IntlMixin     = ReactIntl.IntlMixin;
 
 var LayoutBasic = React.createClass({
+  mixins: [IntlMixin],
   render: function() {
     var confModules = [];
 
