@@ -37,6 +37,7 @@ var config = (function() {
       speakers: 'locales/' + chooseLocale() + '/speakers.json',
       partners: 'locales/' + chooseLocale() + '/partners.json',
       mainInfo: 'locales/' + chooseLocale() + '/mainInfo.json',
+      localisation: 'locales/' + chooseLocale() + '/localisation.json',
       registration: 'locales/' + chooseLocale() + '/registration.json',
       conf_logo: 'images/logo.jpg'
     },

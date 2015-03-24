@@ -19,8 +19,6 @@ var Schedule = React.createClass({
         conferences: temp.data,
         title: temp.title
         });
-
-      console.log(temp);
     }.bind(this));
   },
   render: function() {
