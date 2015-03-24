@@ -8,7 +8,8 @@ var Registration = React.createClass({
   componentDidMount: function() {
     utilities.ajax('get', config.path.registration, function(data) {
        var temp = JSON.parse(data);
-       this.setState({inputFields: [
+       this.setState({
+         inputFields: [
          {
            type:'name',
            pattern:/^[a-zA-Z_ -]{3,50}$/,
@@ -56,7 +57,7 @@ var Registration = React.createClass({
       <section id="registration" className="page-wrap">
         <h2 className="module-header">{this.state.title}</h2>
         <div className="registration">
-          <RegistrationForm onDataReceived={this.pushData} inputs={this.state.inputFields}/>
+          <RegistrationForm onDataReceived={this.pushData} inputs={this.state.inputFields} btnText={this.state.title}/>
         </div>
       </section>
     )
@@ -129,7 +130,7 @@ var RegistrationForm = React.createClass({
       <form onSubmit={this.handleSubmit}>
         {formInputs}
         <div className="registration__field">
-          <input type="submit" className="registration__submit" value="Register"/>
+          <input type="submit" className="registration__submit" value={this.props.btnText}/>
         </div>
       </form>
     );
