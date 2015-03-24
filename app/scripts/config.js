@@ -48,7 +48,7 @@ var config = (function() {
     modules: [
       {
         title: 'overview',
-        isRendering: false,
+        isRendering: true,
         order: 0
       },
       {
