@@ -1,12 +1,45 @@
 'use strict';
 
 var config = (function() {
+  //Look if we have users localisation, if not - use default.
+  var chooseLocale = function() {
+    //=======================================AVAILABLE LOCALES SEETINGS HERE
+    var availableLocales = ['en', 'uk', {defLang: 'en'}];
+    var navLng = navigator.language;
+    var userLang;
+    var setLocale;
+    var defLang;
+
+    //Check if navigator.language includes dash
+    if (navLng.indexOf('-') != -1) {
+      userLang = navLng.substr(0, navLng.indexOf('-'));
+    } else {
+      userLang = navLng;
+    }
+    //Actually set proper path
+    for (var i = 0; i < availableLocales.length; i++) {
+      if (typeof availableLocales[i] == 'object') {
+        defLang = availableLocales[i].defLang;
+      }
+      if (availableLocales[i] == userLang) {
+        setLocale = availableLocales[i];
+        break;
+      } else {
+        setLocale = defLang;
+      }
+    }
+    return setLocale;
+  };
+
   return {
     path: {
-      schedule: 'json/schedule.json',
-      speakers: 'json/speakers.json',
-      partners: 'json/partners.json',
-      mainInfo: 'json/mainInfo.json',
+      schedule: 'locales/' + chooseLocale() + '/schedule.json',
+      speakers: 'locales/' + chooseLocale() + '/speakers.json',
+      partners: 'locales/' + chooseLocale() + '/partners.json',
+      mainInfo: 'locales/' + chooseLocale() + '/mainInfo.json',
+      location: 'locales/' + chooseLocale() + '/localisation.json',
+      registration: 'locales/' + chooseLocale() + '/registration.json',
+      footer: 'locales/' + chooseLocale() + '/footer.json',
       conf_logo: 'images/logo.jpg'
     },
 

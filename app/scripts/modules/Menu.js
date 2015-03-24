@@ -25,7 +25,6 @@ var Menu = React.createClass({
   },
 
   render: function() {
-    // var menuCls = this.state.active ? 'menu menu--visible' : 'menu';
     var menuCls = classNames({
       'menu--visible': this.state.active,
       'menu': true
@@ -34,8 +33,6 @@ var Menu = React.createClass({
       'darkenScreen--hidden': true,
       'darkenScreen--visible': this.state.active
     });
-
-    // this.state.active ? 'darkenScreen--hidden darkenScreen--visible' : 'darkenScreen--hidden';
 
     var itemsToRender = this.props.items.map(function(item) {
       var href = '#' + item;
@@ -58,7 +55,6 @@ var Menu = React.createClass({
           <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
         </div>
       </div>
-
     );
   }
 });

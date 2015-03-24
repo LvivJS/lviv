@@ -1,0 +1,86 @@
+{
+  "title": "Доповідачі",
+  "data": [
+    {
+      "name":"Вернер Вогелс",
+      "position":"Filmmaker + Artist at The External World, Mountain",
+      "photo_url":"images/speakers/speaker-brian-wong.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "facebook":"http://www.facebook.com",
+          "linkedin":"http://www.linkedin.com"
+      }
+    },
+    {
+      "name":"Девід Аллен",
+      "position":"Designer at That Dragon, Cancer",
+      "photo_url":"images/speakers/speaker-david-allen.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "twitter":"http://www.twitter.com"
+      }
+    },
+    {
+      "name":"Неллі Кроес",
+      "position":"Game Designer at Set Adventure",
+      "photo_url":"images/speakers/speaker-eric-brewer.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "twitter":"http://www.twitter.com",
+          "linkedin":"http://www.linkedin.com"
+      }
+    },
+    {
+      "name":"Ерік Бревер",
+      "position":"CTO, Amazon",
+      "photo_url":"images/speakers/speaker-gabe-zichermann.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "facebook":"http://www.facebook.com",
+          "twitter":"http://www.twitter.com",
+          "linkedin":"http://www.linkedin.com"
+      }
+    },
+    {
+      "name":"Іван Резаб",
+      "position":"Creative Director EVE Universe",
+      "photo_url":"images/speakers/speaker-jan-rezab.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "facebook":"http://www.facebook.com",
+          "linkedin":"http://www.linkedin.com"
+      }
+    },
+    {
+      "name":"Маркіян Рандалл",
+      "position":"Play Maker Toca Boca",
+      "photo_url":"images/speakers/speaker-mark-randall-new.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "facebook":"http://www.facebook.com",
+          "twitter":"http://www.twitter.com",
+          "linkedin":"http://www.linkedin.com"
+      }
+    },
+    {
+      "name":"Геб Зіхерманн",
+      "position":"Author at Getting Things Done",
+      "photo_url":"images/speakers/speaker-nicolas-brusson.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "facebook":"http://www.facebook.com",
+          "linkedin":"http://www.linkedin.com"
+      }
+    },
+    {
+      "name":"Браян Вонг",
+      "position":"Founder & CEO, Kiip",
+      "photo_url":"images/speakers/speaker-scott-smith.jpg",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "contact": {
+          "facebook":"http://www.facebook.com",
+          "twitter":"http://www.twitter.com"
+      }
+    }
+  ]
+}

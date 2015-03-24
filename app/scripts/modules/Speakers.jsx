@@ -8,12 +8,17 @@ var classNames = require('classnames');
 var Speakers = React.createClass({
   getInitialState: function() {
     return {
-      speakerInfo: []
+      speakerInfo: [],
+      header: ''
     }
   },
   componentDidMount: function() {
     utilities.ajax('get', config.path.speakers, function(data) {
-      this.setState({speakerInfo: JSON.parse(data)});
+      var temp = JSON.parse(data)
+      this.setState({
+        speakerInfo: temp.data,
+        header: temp.title
+        });
     }.bind(this));
   },
   render: function() {
@@ -23,7 +28,7 @@ var Speakers = React.createClass({
 
     return (
       <section id="speakers" className="page-wrap">
-        <h2 className="module-header">Speakers</h2>
+        <h2 className="module-header">{this.state.header}</h2>
         <div className="speakers">
          {speakers}
         </div>
