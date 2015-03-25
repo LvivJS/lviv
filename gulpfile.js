@@ -39,9 +39,15 @@ paths.build = './dist';
 gulp.task('default', ['serve']);
 
 //run browserify, start server and reload page on saving changes
+<<<<<<< HEAD
 var serveTasks = {
+<<<<<<< HEAD
   'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload', 'tunnel'],
   'production' : ['start_server']
+=======
+  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
+  'production' : ['start_server', 'tunnel']
+>>>>>>> added localtunnel to development dependences and to serve gulp task. renamed localisation.json to location.json.
 }
 
 gulp.task('serve', serveTasks[env],
@@ -132,6 +138,7 @@ function browserify_bundle(){
 //start server
 gulp.task('start_server', shell.task(['node server.js']));
 
+//tunnel your localhost to web
 gulp.task('tunnel', shell.task(['lt --port 8080']));
 
 //livereload
