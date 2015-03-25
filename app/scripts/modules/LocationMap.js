@@ -9,7 +9,8 @@ var LocationMap = React.createClass({
     utilities.ajax('get', config.path.location, function(data) {
       var temp = JSON.parse(data);
       this.setState({
-        header: temp.title
+        header: temp.title,
+        linkTitle: temp.linkTitle
       });
     }.bind(this));
   },
@@ -35,13 +36,14 @@ var LocationMap = React.createClass({
     controlText.className = 'location__controlText';
     controlText.href = 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D;
     controlText.target = 'blank';
-    controlText.innerHTML = 'View on Google Maps';
+    controlText.innerHTML = this.state.linkTitle;
     controlDiv.appendChild(controlText);
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
   },
   getInitialState: function() {
     return ({
-      header: ''
+      header: '',
+      linkTitle: ''
     });
   },
   render: function() {
