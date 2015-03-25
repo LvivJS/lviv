@@ -17,7 +17,7 @@ var Schedule = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('schedule'), function(data) {
+    utilities.ajax('get', config.path.schedule, function(data) {
       var temp = JSON.parse(data);
       this.setState({
         conferences: temp.data,

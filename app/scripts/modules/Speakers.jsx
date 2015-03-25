@@ -13,7 +13,7 @@ var Speakers = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('speakers'), function(data) {
+    utilities.ajax('get', config.path.speakers, function(data) {
       var temp = JSON.parse(data)
       this.setState({
         speakerInfo: temp.data,
