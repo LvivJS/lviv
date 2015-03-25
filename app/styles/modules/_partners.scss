@@ -37,13 +37,17 @@
 .partners__item-link {
 	display: flex;
 	align-items: center;
-	max-width: 25%;
+  width: 25%;
 	justify-content: center;
 	margin: 20px;
 
 	img {
 		width: 100%;
 		transition: transform 0.2s;
+	}
+
+	@include bp(small) {
+		width: 65%;
 	}
 }
 
