@@ -2,7 +2,7 @@
 
 var config = (function() {
   //Look if we have users localisation, if not - use default.
-  var chooseLocale =  function() {
+  var chooseLocale = function() {
     //=======================================AVAILABLE LOCALES SEETINGS HERE
     var availableLocales = ['en', 'uk', {defLang: 'en'}];
     var navLng = navigator.language;
@@ -28,7 +28,6 @@ var config = (function() {
         setLocale = defLang;
       }
     }
-
     return setLocale;
   };
 
