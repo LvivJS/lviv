@@ -32,6 +32,10 @@ app.get('*', function(req, res) {
   });
 });
 
+app.post('/payload', function(req, res){
+  console.log('GITHUB : changes to repository detected');
+})
+
 app.listen(port);
 
 console.log(env.toUpperCase() + ' server is up and running at port : ' + port);
