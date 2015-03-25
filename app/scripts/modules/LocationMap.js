@@ -2,7 +2,32 @@ var React = require('react');
 
 var LocationMap = React.createClass({
   componentWillMount: function() {
-    google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', this.initialize);
+  },
+  initialize: function() {
+    var myLatlng = new google.maps.LatLng(49.842721, 24.000630);
+    var mapProp = {
+      center: myLatlng,
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false
+    };
+    var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Awesome place for conference! See you there!'
+    });
+    //creating custom control - link to maps website
+    var controlDiv = document.createElement('div');
+    controlDiv.className = 'location__control'
+    var controlText = document.createElement('a');
+    controlText.className = 'location__controlText';
+    controlText.href = 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D;
+    controlText.target = 'blank';
+    controlText.innerHTML = 'View on Google Maps';
+    controlDiv.appendChild(controlText);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(controlDiv);
   },
   render: function() {
     return (
@@ -14,26 +39,5 @@ var LocationMap = React.createClass({
     );
   }
 });
-
-//google map script
-function initialize() {
-  var myLatlng = new google.maps.LatLng(49.842721, 24.000630);
-  var mapProp = {
-    center: myLatlng,
-    zoom: 17,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    scrollwheel: false
-  };
-  var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    map: map,
-    title: 'Awesome place for conference! See you there!',
-    url: 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D
-  });
-  google.maps.event.addListener(marker, 'click', function() {
-    window.open(marker.url, '_blank')
-  });
-}
 
 module.exports = LocationMap;
