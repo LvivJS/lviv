@@ -19,7 +19,8 @@ var LocationMap = React.createClass({
       center: myLatlng,
       zoom: 17,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      scrollwheel: false
+      scrollwheel: false,
+      draggable: false
     };
     var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
     var marker = new google.maps.Marker({
@@ -36,7 +37,7 @@ var LocationMap = React.createClass({
     controlText.target = 'blank';
     controlText.innerHTML = 'View on Google Maps';
     controlDiv.appendChild(controlText);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(controlDiv);
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
   },
   getInitialState: function() {
     return ({
