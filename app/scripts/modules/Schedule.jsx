@@ -148,7 +148,7 @@ var Session = React.createClass({
       isHidden: this.props.smallScreen
     });
   },
-  createCalendLink: function() {
+  createGoogleCalendLink: function() {
     var calendLink = 
       "http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.state.session.article +
       "&dates=" + utilities.time.convertForGoogleCalend(this.props.start) + '/' 
@@ -156,6 +156,15 @@ var Session = React.createClass({
       "&details=" + this.state.session.about||'' + 
       "&trp=false&sprop=name:"
     return calendLink
+  },
+  createIcalLink: function() {
+    var calendLink = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT" + 
+    "\nDTSTART:" + utilities.time.convertForGoogleCalend(this.props.start) + 
+    "\nDTEND:" + utilities.time.convertForGoogleCalend(this.props.end) + 
+    "\nSUMMARY:" + this.state.session.article + 
+    "\nDESCRIPTION:" + this.state.session.about + 
+    "\nEND:VEVENT\nEND:VCALENDAR";
+    window.open( "data:text/calendar;charset=utf8," + escape(calendLink));
   },
   render: function() {
     var speaker = null;
@@ -173,7 +182,8 @@ var Session = React.createClass({
       calendarLinks = (
         <div className="session__calendButoon">
           <span>Add to: </span>
-          <a href={this.createCalendLink()} target="_blank" rel="nofollow">Google Calendar</a>
+          <a href={this.createGoogleCalendLink()} target="_blank" rel="nofollow">Google Calendar</a>
+          <span className="session__calendLink--iCal" onClick={this.createIcalLink}>iCalendar</span>
         </div>
       )
     }
