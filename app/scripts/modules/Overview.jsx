@@ -14,7 +14,7 @@ var OverviewBlock = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.path.mainInfo, function(data) {
+    utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
       this.setState({mainInfo: JSON.parse(data)});
     }.bind(this));
   },
@@ -54,13 +54,13 @@ var Overview = React.createClass({
             <div className="overview__infoIcon overview__infoIcon--when"></div>
             <div className="overview__infoData overview__infoData--when">
               <span>
-                <FormattedDate 
-                  value={this.state.confTime} 
+                <FormattedDate
+                  value={this.state.confTime}
                   day="numeric"
                   month="long"
                   year="numeric" /><br/>
-                <FormattedTime 
-                  value={this.state.confTime} 
+                <FormattedTime
+                  value={this.state.confTime}
                   hour="numeric"
                   minute="numeric" />
               </span>
