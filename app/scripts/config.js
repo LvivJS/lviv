@@ -2,7 +2,7 @@
 
 var config = (function() {
   //Look if we have users localisation, if not - use default.
-  var chooseLocale = function() {
+  var chooseLocale =  function() {
     //=======================================AVAILABLE LOCALES SEETINGS HERE
     var availableLocales = ['en', 'uk', {defLang: 'en'}];
     var navLng = navigator.language;
@@ -28,18 +28,21 @@ var config = (function() {
         setLocale = defLang;
       }
     }
+
     return setLocale;
   };
 
+  var loc = chooseLocale();
+
   return {
     path: {
-      schedule: 'locales/' + chooseLocale() + '/schedule.json',
-      speakers: 'locales/' + chooseLocale() + '/speakers.json',
-      partners: 'locales/' + chooseLocale() + '/partners.json',
-      mainInfo: 'locales/' + chooseLocale() + '/mainInfo.json',
-      location: 'locales/' + chooseLocale() + '/location.json',
-      registration: 'locales/' + chooseLocale() + '/registration.json',
-      footer: 'locales/' + chooseLocale() + '/footer.json',
+      schedule: 'locales/' + loc + '/schedule.json',
+      speakers: 'locales/' + loc + '/speakers.json',
+      partners: 'locales/' + loc + '/partners.json',
+      mainInfo: 'locales/' + loc + '/mainInfo.json',
+      location: 'locales/' + loc + '/location.json',
+      registration: 'locales/' + loc + '/registration.json',
+      footer: 'locales/' + loc + '/footer.json',
       conf_logo: 'images/logo.jpg'
     },
 
