@@ -40,7 +40,7 @@ gulp.task('default', ['serve']);
 
 //run browserify, start server and reload page on saving changes
 gulp.task('serve',
-  ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
+  ['start_server', 'browserify_watch', 'app_watch', 'start_livereload', 'tunnel'],
   function() { gutil.log('Started successfully!'); });
 
 //create folders and files before starting serve
@@ -126,6 +126,8 @@ function browserify_bundle(){
 
 //start server
 gulp.task('start_server', shell.task(['node server.js']));
+
+gulp.task('tunnel', shell.task(['lt --port 4444']));
 
 //livereload
 gulp.task('start_livereload', shell.task(['live-reload --port 9091 dist/']));
