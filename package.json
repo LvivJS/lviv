@@ -1,6 +1,6 @@
 {
   "name": "conf_maker",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "conf_maker",
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
     "run-sequence": "^1.0.2",
     "vinyl-source-stream": "^1.1.0",
     "watch": "^0.14.0",
-    "watchify": "^2.3.0"
+    "watchify": "^2.6.0"
   },
   "scripts": {
     "start": "npm run serve & npm run watchify & npm run livereload",

@@ -39,8 +39,12 @@ paths.build = './dist';
 gulp.task('default', ['serve']);
 
 //run browserify, start server and reload page on saving changes
-gulp.task('serve',
-  ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
+var serveTasks = {
+  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
+  'production' : ['start_server']
+}
+
+gulp.task('serve', serveTasks[env],
   function() { gutil.log('Started successfully!'); });
 
 //create folders and files before starting serve
@@ -65,7 +69,7 @@ gulp.task('build', function () {
 gulp.task('app_watch', function(){
   gulp.watch(paths.jsFiles, ['scripts_styleguide']);
   gulp.watch(paths.sassFiles, ['build_style']);
-})
+});
 
 //STYLES
 gulp.task('build_style', function() {
