@@ -5,8 +5,8 @@ var config = require('../config');
 
 var LocationMap = React.createClass({
   componentWillMount: function() {
-    google.maps.event.addDomListener(window, 'load', this.initialize);
-    utilities.ajax('get', config.path.location, function(data) {
+    google.maps.event.addDomListener(window, 'load', initialize);
+    utilities.ajax('get', config.pathJSON('location'), function(data) {
       var temp = JSON.parse(data);
       this.setState({
         header: temp.title,
