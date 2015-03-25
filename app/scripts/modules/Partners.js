@@ -6,7 +6,7 @@ var utilities = require('../utilities');
 
 var Partners = React.createClass({
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('partners'), function(data) {
+    utilities.ajax('get', config.path.partners, function(data) {
       var temp = JSON.parse(data);
       this.setState({
         categories: temp.data,

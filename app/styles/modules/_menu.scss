@@ -6,6 +6,7 @@
 	background: $color__primary--dark;
 	z-index: 2;
 	@include bp(medium) {
+		position: fixed;
 		width: 100%;
 		top: 0px;
 	}
@@ -26,6 +27,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
+		height: auto;
 		flex-direction: column;
 	}
 }
@@ -37,7 +39,7 @@
 		flex-direction: column;
 		justify-content: left;
 		max-width: $menu-width--resp;
-		position: relative;
+		position: fixed;
 		background: $color__primary--dark;
 		left: - $menu-width--resp;
 		transition: left 0.4s;

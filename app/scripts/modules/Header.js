@@ -8,7 +8,7 @@ var Header = React.createClass({
     return (
       <header id="header">
         <div className="header">
-          <div id="logo" className="header__logo"><img src={config.pathIMG.conf_logo}/></div>
+          <div id="logo" className="header__logo"><img src={config.path.conf_logo}/></div>
         </div>
       </header>
     );
