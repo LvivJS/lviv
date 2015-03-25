@@ -66,7 +66,7 @@ var Conference = React.createClass({
       return (
         <li onClick={this.changeTab.bind(null, day)} key={day.day_id} className={liClass}>
           <FormattedDate
-            value={utilities.time(day.day_info)}
+            value={utilities.time.createDate(day.day_info)}
             day="numeric"
             month="long" />
         </li>
@@ -116,9 +116,9 @@ var Timetable = React.createClass({
   },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
-      var timeStart = utilities.time(session.time.start);
+      var timeStart = utilities.time.createDate(session.time.start);
       if (session.time.end) {
-        var timeEnd = utilities.time(session.time.end)
+        var timeEnd = utilities.time.createDate(session.time.end)
       }
       return (
         <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
@@ -148,10 +148,20 @@ var Session = React.createClass({
       isHidden: this.props.smallScreen
     });
   },
+  createCalendLink: function() {
+    var calendLink = 
+      "http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.state.session.article +
+      "&dates=" + utilities.time.convertForGoogleCalend(this.props.start) + '/' 
+      + utilities.time.convertForGoogleCalend(this.props.end) +
+      "&details=" + this.state.session.about||'' + 
+      "&trp=false&sprop=name:"
+    return calendLink
+  },
   render: function() {
     var speaker = null;
     var button = null;
     var timeEnd = null;
+    var calendarLinks = null;
 
     if (this.state.isReport) {
       speaker = (
@@ -159,6 +169,12 @@ var Session = React.createClass({
           {this.state.session.speaker.name}
           {this.state.session.speaker.position}
         </span>
+      )
+      calendarLinks = (
+        <div className="session__calendButoon">
+          <span>Add to: </span>
+          <a href={this.createCalendLink()} target="_blank" rel="nofollow">Google Calendar</a>
+        </div>
       )
     }
 
@@ -190,7 +206,6 @@ var Session = React.createClass({
         </span>
       )
     };
-
     if(this.props.end) {
       timeEnd = (
         <FormattedTime
@@ -218,6 +233,7 @@ var Session = React.createClass({
           <div className={sessionAboutClass}>
               {this.state.session.about}
           </div>
+          {calendarLinks}
         </div>
       </div>
     )
