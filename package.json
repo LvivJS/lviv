@@ -1,6 +1,6 @@
 {
   "name": "conf_maker",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "conf_maker",
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
     "express": "^4.12.3",
     "node-jsx": "^0.12.4",
     "react": "^0.13.1",
-    "react-tools": "^0.13.1"
+    "react-tools": "^0.13.1",
+    "underscore": "^1.8.2"
   },
   "devDependencies": {
     "browserify": "^9.0.3",
@@ -36,32 +37,16 @@
     "gulp-util": "^3.0.3",
     "live-reload": "^1.1.0",
     "node-notifier": "^4.1.1",
-    "node-sass": "^3.0.0-alpha.0",
+    "node-sass": "^3.0.0-beta.2",
     "react-intl": "^1.2.0",
     "reactify": "^1.1.0",
     "rimraf": "^2.3.2",
     "run-sequence": "^1.0.2",
     "vinyl-source-stream": "^1.1.0",
     "watch": "^0.14.0",
-    "watchify": "^2.3.0"
+    "watchify": "^2.6.1"
   },
   "scripts": {
-    "start": "npm run serve & npm run watchify & npm run livereload",
-    "prestart": "build",
-    "serve": "node server.js",
-    "build": "npm run build:js",
-    "build:js": "if not exist dist\\dev\\scripts mkdir dist\\dev\\scripts && npm run browserify",
-    "prebuild:js": "npm run jscs",
-    "watch": "npm run watch:js",
-    "watch:js": "watch 'npm run jscs' app/js",
-    "clean": "npm run clean:js",
-    "clean:js": "rimraf dist/dev/scripts/*",
-    "livereload": "live-reload --port 9091 dist/",
-    "jscs": "",
-    "browserify": "browserify app/js/main.js > dist/js/bundle.js",
-    "watchify": "watchify app/js/main.js -o dist/js/bundle.js -dv",
-    "build:css:dev": "node-sass --source-map dist/dev/style/style.css.map app/styles/styles.scss dist/dev/style/styles.css",
-    "build:css:prod": "node-sass --output-style compressed app/styles/styles.scss dist/prod/style/styles.css",
-    "watch:css": "node-sass app/styles --watch --source-map dist/dev/style/style.css.map --output dist/dev/style "
+    "start": "gulp build && gulp"
   }
 }
