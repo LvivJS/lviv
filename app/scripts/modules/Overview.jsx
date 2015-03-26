@@ -41,7 +41,7 @@ var Overview = React.createClass({
     }
   },
   componentWillMount: function() {
-    var confTime = utilities.time(this.props.mainInfo.start_date);
+    var confTime = utilities.time.createDate(this.props.mainInfo.start_date);
     this.setState({confTime:confTime})
   },
   render:function(){

@@ -13,7 +13,7 @@ var Schedule = React.createClass({
   getInitialState: function() {
     return {
       conferences: [],
-      title: ''
+      locales:''
     }
   },
   componentDidMount: function() {
@@ -21,17 +21,18 @@ var Schedule = React.createClass({
       var temp = JSON.parse(data);
       this.setState({
         conferences: temp.data,
-        title: temp.title
+        locales: temp.locales,
         });
     }.bind(this));
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
-      return <Conference key={conference.name} days={conference.days} name={conference.name} />
-    });
+      return <Conference key={conference.name} days={conference.days} 
+        name={conference.name} locales={this.state.locales} />
+    }.bind(this));
     return (
       <section id="schedule" className="page-wrap">
-        <h2 className="module-header">{this.state.title}</h2>
+        <h2 className="module-header">{this.state.locales.title}</h2>
         <div className="schedule">
           {conferences}
         </div>
@@ -66,7 +67,7 @@ var Conference = React.createClass({
       return (
         <li onClick={this.changeTab.bind(null, day)} key={day.day_id} className={liClass}>
           <FormattedDate
-            value={utilities.time(day.day_info)}
+            value={utilities.time.createDate(day.day_info)}
             day="numeric"
             month="long" />
         </li>
@@ -75,7 +76,8 @@ var Conference = React.createClass({
 
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id} />
+        return <Timetable sessions={day.timetable} key={day.day_id} 
+        location={day.location} locales={this.props.locales} />
       }
     }.bind(this));
 
@@ -88,7 +90,7 @@ var Conference = React.createClass({
     return (
       <div className="conference">
         <div className="conference__title">
-          <h3>Shedule: {this.props.name}</h3>
+          <h3>{this.props.locales.conf_schedule}{this.props.name}</h3>
           <input type="button" onClick={this.changeConfRepresent}
             className={inputClass}/>
         </div>
@@ -116,13 +118,13 @@ var Timetable = React.createClass({
   },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
-      var timeStart = utilities.time(session.time.start);
+      var timeStart = utilities.time.createDate(session.time.start);
       if (session.time.end) {
-        var timeEnd = utilities.time(session.time.end)
+        var timeEnd = utilities.time.createDate(session.time.end)
       }
       return (
         <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
-          start={timeStart} end={timeEnd} />
+          start={timeStart} end={timeEnd} location={this.props.location} locales={this.props.locales} />
       )
     }.bind(this));
     return (
@@ -148,10 +150,33 @@ var Session = React.createClass({
       isHidden: this.props.smallScreen
     });
   },
+  createGoogleCalendLink: function() {
+    var calendLink = 
+      "http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.state.session.article +
+      "&dates=" + utilities.time.convertForCalend(this.props.start) + '/' 
+      + utilities.time.convertForCalend(this.props.end) +
+      "&details=" + (this.state.session.about||'') + 
+      "&location=" + this.props.location +
+      "&trp=false&sprop=name:"
+    return calendLink
+  },
+  createIcalLink: function() {
+    window.open(
+      "data:text/calendar;charset=utf8," + 
+      escape("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:") +
+      utilities.time.convertForCalend(this.props.start) + 
+      escape("\nDTEND:") + utilities.time.convertForCalend(this.props.end) + 
+      escape("\nSUMMARY:") + this.state.session.article + 
+      escape("\nDESCRIPTION:") + this.state.session.about + 
+      escape("\nLOCATION:") + this.props.location +
+      escape("\nEND:VEVENT\nEND:VCALENDAR")
+    );
+  },
   render: function() {
     var speaker = null;
     var button = null;
     var timeEnd = null;
+    var calendarLinks = null;
 
     if (this.state.isReport) {
       speaker = (
@@ -159,6 +184,14 @@ var Session = React.createClass({
           {this.state.session.speaker.name}
           {this.state.session.speaker.position}
         </span>
+      )
+      calendarLinks = (
+        <div className="session__calendButtons">
+          <span>{this.props.locales.calend_links}</span> <br/>
+          <a href={this.createGoogleCalendLink()} target="_blank" rel="nofollow" 
+            className="session__calendLink session__calendLink--gCal">Google Calendar</a>
+          <span className="session__calendLink session__calendLink--iCal" onClick={this.createIcalLink}>iCalendar</span>
+        </div>
       )
     }
 
@@ -190,7 +223,6 @@ var Session = React.createClass({
         </span>
       )
     };
-
     if(this.props.end) {
       timeEnd = (
         <FormattedTime
@@ -218,6 +250,7 @@ var Session = React.createClass({
           <div className={sessionAboutClass}>
               {this.state.session.about}
           </div>
+          {calendarLinks}
         </div>
       </div>
     )
