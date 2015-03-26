@@ -151,22 +151,24 @@ var Session = React.createClass({
   createGoogleCalendLink: function() {
     var calendLink = 
       "http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.state.session.article +
-      "&dates=" + utilities.time.convertForGoogleCalend(this.props.start) + '/' 
-      + utilities.time.convertForGoogleCalend(this.props.end) +
+      "&dates=" + utilities.time.convertForCalend(this.props.start) + '/' 
+      + utilities.time.convertForCalend(this.props.end) +
       "&details=" + (this.state.session.about||'') + 
       "&location=" + this.props.location +
       "&trp=false&sprop=name:"
     return calendLink
   },
   createIcalLink: function() {
-    var calendLink = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT" + 
-    "\nDTSTART:" + utilities.time.convertForGoogleCalend(this.props.start) + 
-    "\nDTEND:" + utilities.time.convertForGoogleCalend(this.props.end) + 
-    "\nSUMMARY:" + this.state.session.article + 
-    "\nDESCRIPTION:" + this.state.session.about + 
-    "\nLOCATION:" + this.props.location +
-    "\nEND:VEVENT\nEND:VCALENDAR";
-    window.open( "data:text/calendar;charset=utf8," + escape(calendLink));
+    window.open(
+      "data:text/calendar;charset=utf8," + 
+      escape("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:") +
+      utilities.time.convertForCalend(this.props.start) + 
+      escape("\nDTEND:") + utilities.time.convertForCalend(this.props.end) + 
+      escape("\nSUMMARY:") + this.state.session.article + 
+      escape("\nDESCRIPTION:") + this.state.session.about + 
+      escape("\nLOCATION:") + this.props.location +
+      escape("\nEND:VEVENT\nEND:VCALENDAR")
+    );
   },
   render: function() {
     var speaker = null;

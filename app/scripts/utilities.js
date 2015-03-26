@@ -23,7 +23,7 @@ var utilities = {
         time.setMinutes(timeObj.minutes || null);
         return time
       },
-      convertForGoogleCalend: function(date) {
+      convertForCalend: function(date) {
         var year, month, day, hours, minutes, formatted;
         year = date.getFullYear();
         month = date.getMonth() + 1;
