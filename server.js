@@ -3,6 +3,7 @@ var express = require('express');
 var Q = require('q');
 var path = require('path');
 var exec = require('child_process').exec;
+var fs =  require('fs');
 var _ = require('underscore');
 var app = express();
 
@@ -51,7 +52,8 @@ if (env !== 'development'){
           res.status(200).send('Build success');
         }, function(err){
           res.status(409).send(err);
-        });
+        })
+        .then(updateAppEnvData)
     }
   });
 }
@@ -97,14 +99,26 @@ function updateNpm(body){
     }
   });
 }
-function rebuildApp(body){
+function rebuildApp(){
   return new Promise(function(resolve, reject){
     exec('gulp build', function(err, stdout, stderr){
       if(err){
         reject(err);
       } else {
-        resolve(body);
+        resolve(stdout);
       }
     });
   });
+}
+function updateAppEnvData(){
+  return new Promise(function(resolve, reject){
+    fs.readFile('./package.json', 'utf-8', function(err, data){
+      if (err){
+        reject(err);
+      } else {
+        appEnvData.version = JSON.parse(data).version;
+        resolve();
+      }
+    })
+  })
 }
