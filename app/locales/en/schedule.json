@@ -11,6 +11,7 @@
             "month":"04",
             "date":"22"
           },
+          "location":"Ukraine, Lviv, Oleny Stepanivny 45",
           "timetable": [
             {
               "time": {
@@ -204,6 +205,7 @@
             "month":"04",
             "date":"23"
           },
+          "location":"Ukraine, Lviv, Oleny Stepanivny 45",
           "timetable": [
             {
               "time": {

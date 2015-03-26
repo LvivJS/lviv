@@ -75,7 +75,7 @@ var Conference = React.createClass({
 
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id} />
+        return <Timetable sessions={day.timetable} key={day.day_id} location={day.location} />
       }
     }.bind(this));
 
@@ -122,7 +122,7 @@ var Timetable = React.createClass({
       }
       return (
         <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
-          start={timeStart} end={timeEnd} />
+          start={timeStart} end={timeEnd} location={this.props.location} />
       )
     }.bind(this));
     return (
@@ -153,7 +153,8 @@ var Session = React.createClass({
       "http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.state.session.article +
       "&dates=" + utilities.time.convertForGoogleCalend(this.props.start) + '/' 
       + utilities.time.convertForGoogleCalend(this.props.end) +
-      "&details=" + this.state.session.about||'' + 
+      "&details=" + (this.state.session.about||'') + 
+      "&location=" + this.props.location +
       "&trp=false&sprop=name:"
     return calendLink
   },
@@ -163,6 +164,7 @@ var Session = React.createClass({
     "\nDTEND:" + utilities.time.convertForGoogleCalend(this.props.end) + 
     "\nSUMMARY:" + this.state.session.article + 
     "\nDESCRIPTION:" + this.state.session.about + 
+    "\nLOCATION:" + this.props.location +
     "\nEND:VEVENT\nEND:VCALENDAR";
     window.open( "data:text/calendar;charset=utf8," + escape(calendLink));
   },
