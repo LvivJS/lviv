@@ -13,7 +13,7 @@ var Schedule = React.createClass({
   getInitialState: function() {
     return {
       conferences: [],
-      title: ''
+      locales:''
     }
   },
   componentDidMount: function() {
@@ -21,17 +21,18 @@ var Schedule = React.createClass({
       var temp = JSON.parse(data);
       this.setState({
         conferences: temp.data,
-        title: temp.title
+        locales: temp.locales,
         });
     }.bind(this));
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
-      return <Conference key={conference.name} days={conference.days} name={conference.name} />
-    });
+      return <Conference key={conference.name} days={conference.days} 
+        name={conference.name} locales={this.state.locales} />
+    }.bind(this));
     return (
       <section id="schedule" className="page-wrap">
-        <h2 className="module-header">{this.state.title}</h2>
+        <h2 className="module-header">{this.state.locales.title}</h2>
         <div className="schedule">
           {conferences}
         </div>
@@ -75,7 +76,8 @@ var Conference = React.createClass({
 
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id} location={day.location} />
+        return <Timetable sessions={day.timetable} key={day.day_id} 
+        location={day.location} locales={this.props.locales} />
       }
     }.bind(this));
 
@@ -88,7 +90,7 @@ var Conference = React.createClass({
     return (
       <div className="conference">
         <div className="conference__title">
-          <h3>Shedule: {this.props.name}</h3>
+          <h3>{this.props.locales.conf_schedule}{this.props.name}</h3>
           <input type="button" onClick={this.changeConfRepresent}
             className={inputClass}/>
         </div>
@@ -122,7 +124,7 @@ var Timetable = React.createClass({
       }
       return (
         <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
-          start={timeStart} end={timeEnd} location={this.props.location} />
+          start={timeStart} end={timeEnd} location={this.props.location} locales={this.props.locales} />
       )
     }.bind(this));
     return (
@@ -184,10 +186,11 @@ var Session = React.createClass({
         </span>
       )
       calendarLinks = (
-        <div className="session__calendButoon">
-          <span>Add to: </span>
-          <a href={this.createGoogleCalendLink()} target="_blank" rel="nofollow">Google Calendar</a>
-          <span className="session__calendLink--iCal" onClick={this.createIcalLink}>iCalendar</span>
+        <div className="session__calendButtons">
+          <span>{this.props.locales.calend_links}</span> <br/>
+          <a href={this.createGoogleCalendLink()} target="_blank" rel="nofollow" 
+            className="session__calendLink session__calendLink--gCal">Google Calendar</a>
+          <span className="session__calendLink session__calendLink--iCal" onClick={this.createIcalLink}>iCalendar</span>
         </div>
       )
     }

@@ -136,3 +136,16 @@
 .session--entertainment {
     color:$color__primary;
 }
+.session__calendButtons {
+    color: $color__gray--darken;
+}
+a.session__calendLink{
+    color: $color__gray--darken;
+}
+.session__calendLink {
+    font-weight: bold;
+    padding: 0 7px;
+}
+.session__calendLink:hover {
+    text-decoration: underline;
+}

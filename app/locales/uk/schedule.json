@@ -1,5 +1,9 @@
 {
-  "title": "Розклад",
+  "locales": {
+    "title": "Розклад",
+    "conf_schedule":"Розклад конференції: ",
+    "calend_links":"Добавити подію у: "
+  },
   "data": [
     {
       "name": "Джаваскриптова конференція",
@@ -43,14 +47,14 @@
                   "minutes":"0"
                 }
               },
-              "article":"The Fault, Dear Brutus (or: Career Advice From a Cranky Old Man)",
+              "article":"Несправність (або: Кар'єра поради від примхливий старий чоловік)",
               "type":"report",
               "speaker":
                 {
                   "name":"Джеффрі Зелдмен",
-                  "position":"A Book Apart, An Event Apart"
+                  "position":"Книга Apart, події Крім"
                   },
-              "about":"бла-бла-блалалалалалала-бал=бла"
+              "about":"Детальні поради старшої людини про те як кодити!"
             },
             {
               "time": {
@@ -69,14 +73,14 @@
                   "minutes":"15"
                 }
               },
-              "article":"Icon Design Process",
+              "article":"Іконка Процес проектування",
               "type":"report",
               "speaker":
                 {
-                  "name":"Jon Hicks",
-                  "position":"author Icons: The Icon Handbook"
+                  "name":"Джон Хікс",
+                  "position":"Автор іконки: Іконка Довідник"
                   },
-              "about":"Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers.Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers."
+              "about":"Ікони більше, ніж просто досить декоративної графіки для веб-сайтів та програм; Вони маленькі чудотворці. Вони узагальнюють і пояснити дії, забезпечує напрям, пропонують зворотний зв'язок і навіть прорватися мови barriers.Icons більше, ніж просто досить декоративної графіки для веб-сайтів та програм; Вони маленькі чудотворці. Вони узагальнюють і пояснити дії, забезпечує напрям, пропонують зворотний зв'язок і навіть прорватися мовних бар'єрів."
             },
             {
               "time": {
@@ -95,14 +99,14 @@
                   "minutes":"30"
                 }
               },
-              "article":"Designing for Social Behaor",
+              "article":"Проектування соціальної поведінки",
               "type":"report",
               "speaker":
                 {
-                  "name":"Sarah Parmenter",
-                  "position":"Founder, You Know Who"
+                  "name":"Сара Парментер",
+                  "position":"Засновник, Ви знаєте, хто"
                   },
-              "about":"Love it or loathe it, social media has been burned into everything we do. Once more, it’s fallen on the head of the trusty, multiple-hat-wearing web designer to become a social engineer. In addition to everything else we do, it’s now our job to design strategies and integrate them into our projects. It’s not just about connecting these services to our apps or websites. It’s about knowing how to craft together behaviors, user experience, and traditional design elements in a beautifully harmonious way that achieves business goals. From lessons learned while designing a large social network from scratch, and minus the overly familiar buzzwords and marketing cliches, Sarah will teach you how to truly engage with your users. Discover the real value of social media reciprocity, and learn how to make it work for you. "
+              "about":"Любов це чи ненавидіти його, соціальні медіа був спалений у все, що ми робимо. Ще раз, це впав на голову вірного, кілька капелюхів носіння веб-дизайнера, щоб стати соціальний інженер. На додаток до всього ще, що ми робимо, це тепер наше завдання розробки стратегій і інтегрувати їх у наших проектах. Це не просто про підключення цих послуг для наших додатків або веб-сайтів. Мова йде про Знаючи, як обробити разом поведінку, користувальницький досвід і традиційні елементи дизайну в красивому гармонійно Que досягає цілей бізнесу. З уроків при розробці соціальної мережі з нуля великого, і мінус дуже знайомі слівця і маркетингові кліше, Сара навчить вас, як по-справжньому взаємодіяти з вашими користувачами. Відкрийте для себе реальну цінність соціальних медіа взаємності, і дізнатися, як змусити його працювати на вас. "
             },
             {
               "time": {
@@ -121,7 +125,7 @@
                   "minutes":"0"
                 }
               },
-              "article":"Lunch",
+              "article":"Перерва на каву та обід",
               "type":"entertainment"
             },
             {
@@ -141,14 +145,14 @@
                   "minutes":"0"
                 }
               },
-              "article":"Icon Design Pross",
+              "article":"Дизайн іконок просив",
               "type":"report",
               "speaker":
                 {
-                  "name":"Jon Hicks",
-                  "position":"author Icons: The Icon Handbook"
+                  "name":"Джон гікс",
+                  "position":"Автор іконки: Іконка Довідник"
                   },
-              "about":"Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers.Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers."
+              "about":"Іконки більше, ніж просто досить декоративної графіки для веб-сайтів та програм; Вони маленькі чудотворці. Вони узагальнюють і пояснити дії, забезпечує напрям, пропонують зворотний зв'язок і навіть прорватися мови barriers.Icons більше, ніж просто досить декоративної графіки для веб-сайтів та програм; Вони маленькі чудотворці. Вони узагальнюють і пояснити дії, забезпечує напрям, пропонують зворотний зв'язок і навіть прорватися мовних бар'єрів."
             },
             {
               "time":{
@@ -167,12 +171,12 @@
                   "minutes":"15"
                 }
               },
-              "article":"Designing for Social Behavior",
+              "article":"Процес проектування",
               "type":"report",
               "speaker":
                 {
-                  "name":"Sarah Parmenter",
-                  "position":"Founder, You Know Who"
+                  "name":"Максим Іваненко",
+                  "position":"Founder, You Know WhoЗасновник ІТ компанії Привіт"
                   }
             },
             {
@@ -192,9 +196,9 @@
                   "minutes":"0"
                 }
               },
-              "article":"Opening Night Happy Hours",
+              "article":"Щаслива нічна година",
               "type":"entertainment",
-              "about":"Join us at A Happy Hours Apart, to be held in the 4th floor foyer, right next to the registration desk. We’ll provide tasty snacks and tastier beverages to recharge your body after a full day of recharging your mind!"
+              "about":"Приєднуйтесь до нас в щасливі години Apart, який буде проведений в 4 фойє першого поверху, поруч з реєстрації. Ми надамо смачні закуски і напої смачніше, щоб поповнити свій організм після цілого дня підзарядки свій розум!"
             }
           ]
         },
@@ -224,7 +228,7 @@
                   "minutes":""
                 }
               },
-              "article":"Morning Welcome",
+              "article":"І знову добого ранку!",
               "type":"entertainment"
             },
             {
@@ -244,14 +248,14 @@
                   "minutes":"0"
                 }
               },
-              "article":"SVG is for Everybody",
+              "article":"SVG для кожного",
               "type":"report",
               "speaker":
                 {
-                  "name":"Chris Coyier",
-                  "position":"Author, CSS-Tricks.com"
+                  "name":"Кріс Коер",
+                  "position":"Автор CSS-Tricks.com"
                   },
-              "about":"While SVG isn’t exactly new, browser support is just getting to the point that we can use it without much worry. Even if we do need fallbacks for older browsers, modern tools make it easy. This makes now the perfect time to learn about SVG and how it can help you in everyday web design. Perhaps the most compelling reason: SVG images look sharp at any dimension with tiny file sizes—which is great for making responsive websites responsibly. You’ll also learn how SVG helps to easily create complex shapes, and how to use it to make icons that are more accessible than with any other web-based icon creation technique. You’ll learn how SVG can make customized complex graphics on the fly, create compelling animations and other interactions, and empower some pretty great designerly effects."
+              "about":"У той час як SVG не зовсім новий, підтримка браузера просто дістатися до точки, що ми можемо використовувати його без особливого занепокоєння. Навіть якщо нам потрібно відкати для старих браузерів, сучасні інструменти дозволяють легко. Це робить зараз прекрасний час, щоб дізнатися про SVG і як вона може допомогти вам у повсякденному веб-дизайну. Можливо, найбільш переконлива причина: SVG зображення виглядають рівно в будь-якої розмірності з крихітними розміри файлів-який відмінно підходить для виготовлення відповідально чуйні веб-сайтів. Ви дізнаєтеся, як SVG також допомагає легко створювати складні форми, і як використовувати його, щоб зробити значки Que є більш доступними, ніж з будь-якої іншої технікою створення іконок веб-інтерфейсу. Ви дізнаєтеся, як SVG можна провести індивідуальні комплексні графіки на льоту, створювати привабливі анімації та інших взаємодій, а також розширити можливості деякі досить великі designerly ефекти."
             },
             {
               "time":{
@@ -270,12 +274,12 @@
                   "minutes":"15"
                 }
               },
-              "article":"CSS Grid Layout",
+              "article":"CSS Лейаут",
               "type":"report",
               "speaker":
                 {
-                  "name":"Rachel Andrew",
-                  "position":"Co-founder, Perch"
+                  "name":"Рейчл Ендрю",
+                  "position":"співзасновник Perch"
                   },
               "about":""
             },
@@ -296,7 +300,7 @@
                   "minutes":"30"
                 }
               },
-              "article":"Lunch",
+              "article":"Кава-тістечка",
               "type":"entertainment"
             },
             {
@@ -316,14 +320,14 @@
                   "minutes":"0"
                 }
               },
-              "article":"Everything You Wanted to Know About Responsive Design…And Less!",
+              "article":"Все, що ви хотіли знати про Чуйний дизайн ... і менше!",
               "type":"report",
               "speaker":
                 {
                   "name":"",
                   "position":""
                   },
-              "about":"But how many designs can help a user who is completely in the dark and barely capable of rational thought? In this talk, Eric will draw on his personal and professional experience to explore examples of crisis-mitigating design successes and failures. In the process, he'll illustrate ways that you can and should consider the needs of users teetering on the edge of panic. Helping them will make your designs more relevant and useful for all your users."
+              "about":"Але скільки проекти можуть допомогти користувачеві, який повністю темно, і ледь здатний до раціонального мислення? У цій доповіді, Ерік буде спиратися на його особистий і професійний досвід, щоб досліджувати приклади кризою пом'якшення успіхи і невдачі проекту. У процесі, він ілюструють способи, які ви можете і не повинні враховувати потреби користувачів балансує на межі паніки. Допомогти їм буде зробити ваші конструкції більш актуальним і корисним для всіх ваших користувачів."
             }
           ]
         }
