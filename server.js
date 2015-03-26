@@ -13,7 +13,7 @@ var appEnvData = {
 }
 require("node-jsx").install();
 
-var port = 8081;
+var port = 8080;
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
