@@ -8,14 +8,58 @@
 
 .footer__container {
   @include container-int;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.footer__info {
+.footer__block {
+  padding: 15px;
+  margin: 10px 0 30px 0;
+  min-width: 25%;
+  color:$color__primary;
+  display: flex;
+  flex-direction: column;
+}
+.footer__event {
+  display:block;
+  margin:5px;
+}
+.footer__event:hover {
+  text-decoration: underline;
+}
+.footer__headings {
+  color:white;
   font-size: $font__small;
-  font-style: italic;
-  color: $color__heading--menu;
-  padding: $item__padding--top-bottom 0;
-  @include bp(medium) {
-    padding-left: 20px;
-  }
+  padding: 8px 5px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.footer__mailLink:hover{
+  text-decoration: underline;
+}
+.footer__socials {
+  display:flex;
+  margin: 10px;
+  justify-content: center;
+}
+.footer__socials a {
+  height:20px;
+  width:20px;
+  margin:5px;
+  display:block;
+}
+.footer__social--twitter {
+  @include social-button(url('../images/socials/twitter.svg'));
+}
+
+.footer__social--facebook {
+  @include social-button(url('../images/socials/facebook.svg'));
+}
+.footer__contacts{
+  margin: 10px;
+}
+.footer__copyright {
+  margin: 10px;
+  align-self: flex-end;
 }

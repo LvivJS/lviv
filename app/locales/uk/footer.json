@@ -2,10 +2,10 @@
   "locales": {
     "events_header":"Інші події",
     "connection_header":"Зворотній звязок",
-    "subscribe_prop":"Отримувати наші останні новини: ",
-    "submit_subscribe":"Підписатись"
+    "contact_us":"Написати нам листа: ",
+    "copyright":"Всі права захищені © Тарас Харук 2015"
   },
-  "data":{
+  "data": {
     "events":[
       {
         "name":"Конференція мобільної розробки",
@@ -27,7 +27,13 @@
         "name":"Веб 2014",
         "link":"http://webconference.psu.edu/web2014"
       }
-    ]
-
+    ],
+    "socials": {
+      "networks": {
+        "twitter":"http://www.twitter.com",
+        "facebook":"http://www.facebook.com"
+      },
+      "email":"mail@gmail.com"
+    }
   }
 }

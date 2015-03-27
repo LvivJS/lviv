@@ -24,7 +24,7 @@
 
 /* speakers */
 @mixin social-button($image) {
-    background: $image;
+    background: $image no-repeat;
 };
 
 @mixin schedule-arrow($image) {
