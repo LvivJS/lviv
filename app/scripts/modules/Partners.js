@@ -11,7 +11,7 @@ var Partners = React.createClass({
       this.setState({
         categories: temp.data,
         header: temp.title
-        });
+      });
     }.bind(this));
   },
 
