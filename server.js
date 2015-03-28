@@ -10,8 +10,10 @@ var app = express();
 var env = process.env.NODE_ENV || 'development';
 var appEnvData = {
   version: appData.version,
-  env: env
+  env: env,
+  head_commit: "null"
 }
+
 require("node-jsx").install();
 
 var port = 8080;
@@ -26,21 +28,20 @@ app.set('views', path.join(__dirname, 'views'));
 
 // index url
 app.get('/', function(req, res){
+  console.log(appEnvData);
   res.render('index', appEnvData);
 });
 
 //Route not found -- Set 404
 app.get('*', function(req, res) {
-  res.json({
-    "route": "Sorry this page does not exist!"
-  });
+  res.status(404).body("Sorry this page does not exist!");
 });
 
 //listen to github webhook notification
 if (env !== 'development'){
   app.post('/payload', function(req, res) {
     var body = req.body;
-    if (body.commits.length){
+    if (body.commits && body.commits.length){
       // console.log('GITHUB : changes to repository detected');
       // console.log('by : ', body.pusher.email);
       // chain of what have to be done to ensure latest steady version on test
@@ -54,6 +55,8 @@ if (env !== 'development'){
           res.status(409).send(err);
         })
         .then(updateAppEnvData)
+    } else {
+      res.status(200).send('What is that? no commits, meh :/')
     }
   });
 }
@@ -68,6 +71,7 @@ function pullUpdates(body){
       if (err){
         reject(err);
       } else {
+        appEnvData.head_commit = JSON.stringify(_.pick(body.head_commit, 'message', 'timestamp', 'url', 'author'));
         resolve(body);
       }
     });
@@ -91,11 +95,11 @@ function updateNpm(body){
         if (err){
           reject(err)
         } else {
-          resolve(body);
+          resolve();
         }
       });
     } else {
-      resolve(body);
+      resolve();
     }
   });
 }
@@ -105,7 +109,7 @@ function rebuildApp(){
       if(err){
         reject(err);
       } else {
-        resolve(stdout);
+        resolve();
       }
     });
   });
