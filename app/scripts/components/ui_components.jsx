@@ -40,9 +40,7 @@ var UiComp = React.createClass({
     }.bind(this));
 
     return (
-      <div>
-        {outputImage}
-      </div>
+      <div>{outputImage}</div>
     )
   }
 });
