@@ -1,5 +1,6 @@
 var appData = require('./package.json');
 var express = require('express');
+var compress = require('compression');
 var Q = require('q');
 var path = require('path');
 var exec = require('child_process').exec;
@@ -19,6 +20,7 @@ require("node-jsx").install();
 var port = 8080;
 var bodyParser = require('body-parser');
 
+app.use(compress());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'dist')));
