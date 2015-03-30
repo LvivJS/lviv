@@ -4,6 +4,7 @@ var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
 var classNames = require('classnames');
+var UiComp = require('../components/ui_components.jsx');
 var ReactIntl = require('react-intl');
 var IntlMixin     = ReactIntl.IntlMixin;
 var FormattedDate = ReactIntl.FormattedDate;
@@ -82,17 +83,18 @@ var Conference = React.createClass({
     }.bind(this));
 
     //set direction of arrow
-    var inputClass = classNames({
-        'up-arrow': this.state.confIsVisible,
-        'down-arrow': !this.state.confIsVisible
+    var toggleButtonImage = classNames({
+        'arrowUp': this.state.confIsVisible,
+        'arrowDown': !this.state.confIsVisible
     });
 
     return (
       <div className="conference">
         <div className="conference__title">
           <h3>{this.props.locales.conf_schedule}{this.props.name}</h3>
-          <input type="button" onClick={this.changeConfRepresent}
-            className={inputClass}/>
+          <span onClick={this.changeConfRepresent} className="schedule__toggleButton">
+            <UiComp image={toggleButtonImage} />
+          </span>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}
         {timetable}

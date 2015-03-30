@@ -4,7 +4,7 @@ var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
 var classNames = require('classnames');
-var SocialIcon = require('../components/socials.jsx')
+var SocialIcon = require('../components/socials.jsx');
 
 var Speakers = React.createClass({
   getInitialState: function() {
@@ -49,7 +49,6 @@ var Speaker = React.createClass({
       'speaker__contact': this.state.contacts[network],
       'invisible': !this.state.contacts[network]
     };
-    classes['speaker__contact--' + network] = this.state.contacts[network];
     return classNames(classes);
   },
   render: function() {
