@@ -77,7 +77,7 @@
         @include bp(small) {
             padding:5px;
         }
-        .socials__icon {
+        .social__icon {
             fill:$color__gray--darken;
         }
 }
@@ -87,11 +87,11 @@
     width:20px;
     margin:5px;
     &:hover {
-        .socials__icon {
+        .social__icon {
             fill:$color__primary--dark;
         }
     }
-    svg {
+    svg.social_icons {
         width:100%;
     }
 }
