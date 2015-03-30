@@ -39,10 +39,10 @@ paths.build = './dist';
 gulp.task('default', ['serve']);
 
 //run browserify, start server and reload page on saving changes
-<<<<<<< HEAD
+
 var serveTasks = {
-  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
-  'production' : ['start_server', 'tunnel']
+  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload', 'tunnel'],
+  'production' : ['start_server']
 }
 
 gulp.task('serve', serveTasks[env],
