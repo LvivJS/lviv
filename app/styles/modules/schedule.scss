@@ -13,35 +13,6 @@
     margin:15px auto;
     border-top:2px solid $color__gray--darken;
     border-bottom:2px solid $color__gray--darken;
-    .conference__title {
-        padding:15px 0;
-        display:flex;
-        justify-content: space-between;
-        h3 {
-            font-size:$font__large;
-            color:$color__primary;
-            margin:10px 10px 10px 20px;
-            flex-shrink: 5;
-            @include bp(very-small) {
-                flex-shrink: 7;
-                margin:10px;
-            }
-        }
-        .schedule__toggleButton {
-            display:block;
-            cursor:pointer;
-            margin: 10px;
-            flex-shrink: 0;
-            svg.ui__comp {
-                width:30px;
-                height:30px;
-                border:0px;
-                .arrows{
-                    fill:$color__primary--dark;
-                }
-            }
-        }
-    }
     ul {
          display: flex;
         li {
@@ -58,6 +29,41 @@
             text-decoration: underline;
         }
     }
+}
+
+.conference__title {
+    padding:15px 0;
+    display:flex;
+    justify-content: space-between;
+    h3 {
+        font-size:$font__large;
+        color:$color__primary;
+        margin:10px 10px 10px 20px;
+        flex-shrink: 5;
+        @include bp(very-small) {
+            flex-shrink: 7;
+            margin:10px;
+        }
+    }
+    .schedule__toggleButton {
+        display:block;
+        cursor:pointer;
+        margin: 10px;
+        flex-shrink: 0;
+        svg.ui__comp {
+            width:30px;
+            height:30px;
+            border:0px;
+            .arrow{
+                fill:$color__primary--dark;
+            }
+        }
+    }
+    .schedule__toggleButton.arrowDown {
+        svg.ui__comp {
+            transform:rotate(180deg);
+        }
+    } 
 }
 .timetable {
     background-color: $color__primary--soften;

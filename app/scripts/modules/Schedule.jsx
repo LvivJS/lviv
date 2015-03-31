@@ -84,7 +84,7 @@ var Conference = React.createClass({
 
     //set direction of arrow
     var toggleButtonImage = classNames({
-        'arrowUp': this.state.confIsVisible,
+        'schedule__toggleButton': true,
         'arrowDown': !this.state.confIsVisible
     });
 
@@ -92,8 +92,8 @@ var Conference = React.createClass({
       <div className="conference">
         <div className="conference__title">
           <h3>{this.props.locales.conf_schedule}{this.props.name}</h3>
-          <span onClick={this.changeConfRepresent} className="schedule__toggleButton">
-            <UiComp image={toggleButtonImage} />
+          <span onClick={this.changeConfRepresent} className={toggleButtonImage}>
+            <UiComp image='arrowUp' />
           </span>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}

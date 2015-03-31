@@ -7,13 +7,8 @@ var UiComp = React.createClass({
     return {
       images: {
         arrowUp: (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 306" className='ui__comp'>
-            <path className="arrows" d="M35.7 247.35L153 130.05l117.3 117.3 35.7-35.7-153-153-153 153z"/>
-          </svg>
-        ),
-        arrowDown: (
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 306"  className='ui__comp'>
-            <path className="arrows" d="M270.3 58.65L153 175.95 35.7 58.65 0 94.35l153 153 153-153z"/>
+            <path className="arrow" d="M270.3 58.65L153 175.95 35.7 58.65 0 94.35l153 153 153-153z"/>
           </svg>
         ),
         location: (
