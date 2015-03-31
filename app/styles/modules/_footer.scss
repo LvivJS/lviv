@@ -57,12 +57,11 @@
 
 .footer__event,
 .footer__mailLink {
-    @include bp(medium) {
-        text-decoration:underline;
-    }
-    &:hover {
-        text-decoration: underline;
-    }
+  color: $color__primary--lighter;
+}
+.footer__contacts{
+  margin: 10px;
+  text-align: center;
 }
 
 .footer__contacts {

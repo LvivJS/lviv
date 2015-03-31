@@ -7,16 +7,16 @@ $color__heading--menu: rgb(255, 255, 255);
 $color__error: rgb(211, 84, 0);
 
 /*primary color variables*/
-$color__primary--light: lighten($color__primary, 5%);
-$color__primary--soft: lighten($color__primary, 40%);
-$color__primary--soften:lighten($color__primary, 30%);
 $color__primary--dark: darken($color__primary, 20%);
-$color__primary--saturated: saturate($color__primary, 80%);
+$color__primary--light: lighten($color__primary, 5%);
+$color__primary--lighter:lighten($color__primary, 30%);
+$color__primary--lightest: lighten($color__primary, 40%);
+$color__primary--saturate: saturate($color__primary, 80%);
 
 /*gray color variables*/
-$color__gray--darken: darken($color__gray, 35%);
 $color__gray--dark: darken($color__gray, 20%);
-$color__gray--darker: darken($color__gray, 65%);
+$color__gray--darker: darken($color__gray, 35%);
+$color__gray--darkest: darken($color__gray, 65%);
 $color__gray--light: lighten($color__gray, 40%);
 
 /*functional colors*/
