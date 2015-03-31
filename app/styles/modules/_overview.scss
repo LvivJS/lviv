@@ -76,8 +76,7 @@
   margin:15px;
   padding:30px;
   font-size:$font__giant;
-  color:$color__primary--dark;
-  color:#fff;
+  color:$color__white;
   @include bp(medium) {
     padding: 20px;
     font-size:$font__large;
