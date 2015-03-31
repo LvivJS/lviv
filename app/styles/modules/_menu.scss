@@ -59,7 +59,7 @@
 	display: block;
 	list-style:none;
 	font-size: $font__giant;
-	color: $color__heading--menu;
+	color: $color__white;
 	padding: $item__padding--top-bottom $item__padding--left-right;
 	transition: all 0.2s;
 	text-transform: capitalize;
@@ -70,7 +70,7 @@
 
 .menu__item:hover{
 	color:$color__primary;
-	background:$color__heading--menu;
+	background:$color__white;
 }
 
 /* toggle visibility of menu on smalles screens */
