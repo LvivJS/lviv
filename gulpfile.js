@@ -133,7 +133,7 @@ function browserify_bundle(){
 //start server
 gulp.task('start_server', shell.task(['node server.js']));
 
-gulp.task('tunnel', shell.task(['lt --port 4444']));
+gulp.task('tunnel', shell.task(['lt --port 8080']));
 
 //livereload
 gulp.task('start_livereload', shell.task(['live-reload --port 9091 dist/']));
