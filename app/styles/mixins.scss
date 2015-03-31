@@ -21,19 +21,6 @@
     justify-content: center;
 };
 
-
-/* speakers */
-@mixin social-button($image) {
-    background: $image no-repeat;
-};
-
-@mixin schedule-arrow($image) {
-    width:30px;
-    height:30px;
-    border:0px;
-    background: $image;
-};
-
 @mixin schedule-about-button($content) {
     content:$content;
     display:block;

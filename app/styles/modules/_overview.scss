@@ -97,16 +97,12 @@
     margin: 10px;
     flex-shrink: 0;
     @include bp(medium) {
-    width: 30px;
-    height: 30px;
-  }
-}
-.overview__infoIcon--when{
-    background:url('../images/time.svg') center center no-repeat;
-}
-
-.overview__infoIcon--where{
-    background:url('../images/location.svg') center center no-repeat;
+        width: 30px;
+        height: 30px;
+    }
+    .ui__comp {
+        fill:white;
+    }
 }
 .overview__infoData {
     display: flex;

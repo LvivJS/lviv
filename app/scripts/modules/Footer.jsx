@@ -3,6 +3,7 @@
 var React = require('react');
 var utilities = require('../utilities');
 var config = require('../config');
+var SocialIcon = require('../components/socials.jsx');
 
 var Footer = React.createClass({
   getInitialState: function() {
@@ -59,9 +60,11 @@ var CommunityEvents = React.createClass({
 var Connection = React.createClass({
   render: function() {
     var socials= Object.keys(this.props.networks).map(function(network) {
-      var soc_class= "footer__social--" + network
-      return <a className={soc_class} href={this.props.networks[network]}
-                key={network} target="_blank"></a>
+      return (
+        <a href={this.props.networks[network]} key={network} target="_blank">
+          <SocialIcon network={network} />
+        </a>
+      )
     }.bind(this));
     var mailto = "mailto:"+ this.props.mail;
     return (
