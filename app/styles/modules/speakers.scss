@@ -29,7 +29,7 @@
         }
     }
     .speaker__main {
-        background-color:$color__primary--soft;
+        background-color:$color__primary--lightest;
         padding:5px;
         transition: background-color 0.3s;
         .speaker__name {
@@ -48,7 +48,7 @@
             margin:5px auto;
         }
         .speaker__about {
-            color:$color__gray--darken;
+            color:$color__gray--darker;
             text-align:justify;
             @include bp(small) {
                 display:none;
@@ -73,7 +73,7 @@
 }
 .speaker:hover{
     .speaker__main{
-        background-color:$color__primary--soften;
+        background-color:$color__primary--lighter;
     }
     .speaker__photo{
         img {
