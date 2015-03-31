@@ -4,6 +4,7 @@ var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
 var classNames = require('classnames');
+var SocialIcon = require('../components/socials.jsx');
 
 var Speakers = React.createClass({
   getInitialState: function() {
@@ -48,12 +49,15 @@ var Speaker = React.createClass({
       'speaker__contact': this.state.contacts[network],
       'invisible': !this.state.contacts[network]
     };
-    classes['speaker__contact--' + network] = this.state.contacts[network];
     return classNames(classes);
   },
   render: function() {
     var contToRender = Object.keys(this.state.contacts).map(function(val) {
-      return <a className={this.setClass(val)} href={this.state.contacts[val]} key={val}></a>
+      return (
+        <a className={this.setClass(val)} href={this.state.contacts[val]} key={val}>
+          <SocialIcon network={val} />
+        </a>
+      )
     }.bind(this));
 
     return (

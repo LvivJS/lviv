@@ -1,6 +1,7 @@
 var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
+var UiComp = require('../components/ui_components.jsx');
 var ReactIntl = require('react-intl');
 var IntlMixin     = ReactIntl.IntlMixin;
 var FormattedDate = ReactIntl.FormattedDate;
@@ -51,7 +52,9 @@ var Overview = React.createClass({
         <div className="overview__about">{this.props.mainInfo.about}</div>
         <div className="overview__info">
           <div className="overview__infoBlock">
-            <div className="overview__infoIcon overview__infoIcon--when"></div>
+            <div className="overview__infoIcon">
+              <UiComp image="time" />
+            </div>
             <div className="overview__infoData overview__infoData--when">
               <span>
                 <FormattedDate 
@@ -67,7 +70,9 @@ var Overview = React.createClass({
             </div>
           </div>
           <div className="overview__infoBlock">
-            <div className="overview__infoIcon overview__infoIcon--where"></div>
+            <div className="overview__infoIcon">
+              <UiComp image="location" />
+            </div>
             <div className="overview__infoData overview__infoData--where">
               <span>{this.props.mainInfo.location}</span>
             </div>
