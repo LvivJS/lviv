@@ -29,7 +29,7 @@
         padding: 25px 0;
         margin: 30px auto;
         -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-color: $color__white;
         text-shadow: 1px 1px 2px #000, 0 0 1em #000;
         @include bp(medium) {
         	font-size: 4.1875em;
@@ -48,7 +48,7 @@
     width: 60%;
     margin: 20px auto;
     padding: 25px;
-    color: $color__heading--menu;
+    color: $color__white;
     font-size: $font__giant;
     text-align: center;
     text-shadow: 1px 1px 2px #000, 0 0 1em #000;
@@ -72,7 +72,7 @@
   flex-direction: row;
   align-items: center;
   padding:15px;
-  background: $color__bg--transparent;
+  background: $color__primary--darkTransparent;
   margin:15px;
   padding:30px;
   font-size:$font__giant;
@@ -101,7 +101,7 @@
         height: 30px;
     }
     .ui__comp {
-        fill:white;
+        fill:$color__white;
     }
 }
 .overview__infoData {
