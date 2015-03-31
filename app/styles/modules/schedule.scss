@@ -32,13 +32,13 @@
 }
 
 .conference__title {
-    padding:15px 0;
-    display:flex;
+    padding: 15px 0;
+    display: flex;
     justify-content: space-between;
     h3 {
-        font-size:$font__large;
-        color:$color__primary;
-        margin:10px 10px 10px 20px;
+        font-size: $font__large;
+        color: $color__primary;
+        margin: 10px 10px 10px 20px;
         flex-shrink: 5;
         @include bp(very-small) {
             flex-shrink: 7;
@@ -115,14 +115,14 @@
        margin-bottom:0;
     }
     .speaker__name {
-        flex-shrink:3;
+        flex-shrink: 3;
     }
     span.session__button{
-        width:20px;
-        height:20px;
-        border:0px;
-        margin:0 10px;
-        cursor:pointer;
+        width: 20px;
+        height: 20px;
+        border: 0px;
+        margin: 0 10px;
+        cursor: pointer;
         @include user-select;
         @include bp(very-small) {
             margin: 10px;
@@ -135,7 +135,7 @@
         @include schedule-about-button('-');
     }
 }
-.session__info--right{
+.session__info--right {
     justify-content: flex-end;
 }
 .session__about {
@@ -146,7 +146,7 @@
     border-bottom:0px;
 }
 .session--entertainment {
-    color:$color__primary;
+    color: $color__primary;
 }
 .session__calendButtons,
 a.session__calendLink {

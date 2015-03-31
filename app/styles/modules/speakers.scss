@@ -5,8 +5,8 @@
 
 .speakers {
     @include container-int;
-    flex-wrap:wrap;
-    justify-content:center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .speaker {
@@ -17,16 +17,16 @@
         width:35%
     }
     @include bp(very-small) {
-        width:100%;
-        margin:10px;
+        width: 100%;
+        margin: 10px;
     }
     &:hover {
         .speaker__main {
-            background-color:$color__primary--lighter;
+            background-color: $color__primary--lighter;
         }
         .speaker__photo {
             img {
-                transform:scale(1.1,1.1);
+                transform: scale(1.1,1.1);
             }
         }
     }
@@ -46,20 +46,20 @@
     padding:5px;
     transition: background-color 0.3s;
     .speaker__name {
-        text-transform:uppercase;
-        text-align:center;
+        text-transform: uppercase;
+        text-align: center;
         color:$color__primary--dark;
-        font-weight:bold;
+        font-weight: bold;
         font-size: $font__large;
         @include bp(small) {
             font-size: 16px;
         }
     }
     .speaker__pos {
-        color:$color__primary--dark;
-        text-align:center;
-        font-size:$font__small;
-        margin:5px auto;
+        color: $color__primary--dark;
+        text-align: center;
+        font-size: $font__small;
+        margin: 5px auto;
     }
     .speaker__about {
         color:$color__gray--darker;
@@ -71,8 +71,7 @@
 }
 .speaker__contacts {
         flex-wrap:wrap;
-        justify-content:center;
-        display: flex;
+        @include container-ext;
         padding:10px;
         @include bp(small) {
             padding:5px;

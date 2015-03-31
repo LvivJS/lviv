@@ -2,15 +2,13 @@
 @import '../mixins';
 
 #app {
-	display: flex;
-	justify-content: center;
+	@include container-ext;
 }
 
 .page-wrap {
-	display: flex;
+	@include container-ext;
 	flex-direction: column;
 	width: 100%;
-	justify-content: center;
 }
 
 .module-wrapper {
@@ -21,7 +19,7 @@
 	@include container-ext;
 	padding: 25px;
 	background: $color__primary--dark;
-	color: $color__heading--menu;
+	color: $color__white;
 	font-size: 2em;
 	text-transform: capitalize;
 }
