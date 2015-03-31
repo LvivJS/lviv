@@ -20,12 +20,11 @@
         flex-direction: column;
     }
     .footer__block {
-        padding: 15px;
+        display: flex;
+        flex-direction: column;padding: 15px;
         margin-top: 10px;
         margin-bottom:30px;
         min-width: 25%;
-        display: flex;
-        flex-direction: column;
         @include bp(small) {
             margin:0px;
             padding:8px;
@@ -34,7 +33,7 @@
 }
 
 .footer__headings {
-    color:white;
+    color:$color__white;
     font-size: $font__small;
     text-align: center;
     padding: 8px 5px;
@@ -69,21 +68,20 @@
     margin: 10px;
     text-align: center;
     .footer__mailLink {
-        color: $color__primary--soften;
+        color: $color__primary--lighter;
     }
 }
 
 .footer__socials {
-    display:flex;
+    @include container-ext;
     margin: 10px;
-    justify-content: center;
     a {
         height:20px;
         width:20px;
         margin:5px;
         display:block;
         .social__icon {
-            fill: $color__primary--soften;
+            fill: $color__primary--lighter;
         }
     }
 }

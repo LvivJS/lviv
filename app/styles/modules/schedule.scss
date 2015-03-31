@@ -11,19 +11,19 @@
 .conference {
     width:90%;
     margin:15px auto;
-    border-top:2px solid $color__gray--darken;
-    border-bottom:2px solid $color__gray--darken;
+    border-top:2px solid $color__gray--darker;
+    border-bottom:2px solid $color__gray--darker;
     ul {
          display: flex;
         li {
             list-style:none;
             font-size: $font__larger;
-            background-color: $color__primary--soft;
+            background-color: $color__primary--lightest;
             padding:10px;
             cursor: pointer;
         }
         li.conference__tab--active {
-            background-color: $color__primary--soften;
+            background-color: $color__primary--lighter;
         }
         li:hover {
             text-decoration: underline;
@@ -32,13 +32,13 @@
 }
 
 .conference__title {
-    padding:15px 0;
-    display:flex;
+    padding: 15px 0;
+    display: flex;
     justify-content: space-between;
     h3 {
-        font-size:$font__large;
-        color:$color__primary;
-        margin:10px 10px 10px 20px;
+        font-size: $font__large;
+        color: $color__primary;
+        margin: 10px 10px 10px 20px;
         flex-shrink: 5;
         @include bp(very-small) {
             flex-shrink: 7;
@@ -66,14 +66,14 @@
     } 
 }
 .timetable {
-    background-color: $color__primary--soften;
+    background-color: $color__primary--lighter;
     padding:10px;
 }
 .session {
     display:flex;
     justify-content: flex-start;
     padding:5px;
-    border-bottom:1px dashed $color__gray--darken;
+    border-bottom:1px dashed $color__gray--darker;
     @include bp(small) {
         flex-direction: column;
     }
@@ -98,11 +98,14 @@
     width:100%;
 }
 .session__name {
-    margin-bottom:10px;
+    color: $color__primary--dark;
+    margin-bottom: 10px;
+}
+.session--entertainment .session__name {
+    color: $color__primary;
 }
 .session__info {
     margin-bottom:10px;
-    color:$color__primary--dark;
     font-weight:bold;
     display:flex;
     justify-content: space-between;
@@ -112,14 +115,14 @@
        margin-bottom:0;
     }
     .speaker__name {
-        flex-shrink:3;
+        flex-shrink: 3;
     }
     span.session__button{
-        width:20px;
-        height:20px;
-        border:0px;
-        margin:0 10px;
-        cursor:pointer;
+        width: 20px;
+        height: 20px;
+        border: 0px;
+        margin: 0 10px;
+        cursor: pointer;
         @include user-select;
         @include bp(very-small) {
             margin: 10px;
@@ -132,7 +135,7 @@
         @include schedule-about-button('-');
     }
 }
-.session__info--right{
+.session__info--right {
     justify-content: flex-end;
 }
 .session__about {
@@ -143,11 +146,11 @@
     border-bottom:0px;
 }
 .session--entertainment {
-    color:$color__primary;
+    color: $color__primary;
 }
 .session__calendButtons,
 a.session__calendLink {
-    color: $color__gray--darken;
+    color: $color__gray--darker;
 }
 .session__calendLink {
     font-weight: bold;

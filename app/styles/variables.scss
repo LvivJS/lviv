@@ -1,26 +1,23 @@
 
-/* colors */
+/* main variables */
 $color__primary: rgb(30, 145, 255);
+$color__gray: desaturate($color__primary, 100%);
+$color__white: rgb(255, 255, 255);
+$color__error: rgb(211, 84, 0);
+
+/*primary color variables*/
+$color__primary--dark: darken($color__primary, 20%);
 $color__primary--light: lighten($color__primary, 5%);
-$color__primary--soft: lighten($color__primary, 40%);
-$color__primary--soften:lighten($color__primary, 30%);
-$color__primary--dark: darken($color__primary, 30%);
-$color__heading--menu: rgb(255, 255, 255);
-$color__heading--active: LightSeaGreen;
-$color-boder: blue;
-$color__gray--darken: rgb(108, 122, 137);
-$color__gray--light: lighten($color__gray--darken, 40%);
-$color__registration--text: rgb(255, 255, 255);
-$color__registration--link: rgb(200, 159, 28);
-$color__registration--hover: rgb(112, 127, 142);
-$color__registration--active: rgb(40, 54, 69);
-$color__inputBorder--normal: rgb(189, 195, 199);
-$color__inputBorder--hover: rgb(112, 127, 142);
-$color__inputBorder--focus: rgb(52, 73, 94);
-$color__inputBorder--invalid: rgb(211, 84, 0);
-$color__inputBorder--invalid-hover: rgb(231, 76, 60);
-$color__inputBorder--invalid-focus: rgb(192, 57, 43);
-$color__bg--transparent: rgba(darken($color__primary--dark, 13%), 0.8);
+$color__primary--lighter: lighten($color__primary, 30%);
+$color__primary--lightest: lighten($color__primary, 40%);
+$color__primary--saturate: saturate($color__primary, 80%);
+$color__primary--darkTransparent: rgba(darken($color__primary--dark, 13%), 0.8);
+
+/*gray color variables*/
+$color__gray--dark: darken($color__gray, 20%);
+$color__gray--light: lighten($color__gray, 10%);
+$color__gray--darker: darken($color__gray, 35%);
+$color__gray--darkest: darken($color__gray, 65%);
 
 /* fonts */
 $font__main: Calibri;
