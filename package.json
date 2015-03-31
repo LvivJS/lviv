@@ -26,6 +26,7 @@
     "del": "^1.1.1",
     "firebase": "^2.2.3",
     "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
     "gulp-concat": "^2.5.1",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.2.1",

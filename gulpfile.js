@@ -19,6 +19,7 @@ var del = require('del');
 var reactify = require('reactify');
 var imagemin = require('gulp-imagemin');
 var jsxcs = require('gulp-jsxcs');
+var autoprefixer = require('gulp-autoprefixer');
 
 var env = process.env.NODE_ENV || 'development';
 var isProd = env === 'production';
@@ -76,6 +77,7 @@ gulp.task('build_style', function() {
   return gulp.src(paths.sassFiles)
     .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(sass())
+    .pipe(autoprefixer({browsers: ['> 5%','last 2 versions']}))
     .pipe(concating('styles.css'))
     .pipe(gulpif(!isProd, sourcemaps.write()))
     .pipe(gulpif(isProd, minifycss()))
