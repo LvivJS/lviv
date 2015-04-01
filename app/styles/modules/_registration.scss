@@ -52,17 +52,17 @@
         }
         @include bp(very-small) {
             padding: 10px 2px 9px 2px;
-        }        
+        }
     }
     .registration__input--invalid {
         border-color: $color__error;
-        color: $color__error;  
+        color: $color__error;
         &:hover {
            border-color: $color__error;
         }
         &:focus {
             border-color: $color__error;
-        }     
+        }
     }
     .registration__tip{
         margin: 5px auto;
@@ -90,6 +90,7 @@
     opacity: 1;
     border: none;
     background-color: $color__primary--saturate;
+    text-transform: capitalize;
     &:hover {
         background-color: $color__gray--dark;
         opacity: 0.9;
