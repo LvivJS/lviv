@@ -73,6 +73,7 @@ window.onscroll = function() {
     menuStyle.position = 'fixed';
     menuStyle.width = '100%';
     menuStyle.top = '0';
+    menuStyle.left = '0';
     overview.style.paddingTop = menu.offsetHeight + 'px';
   } else {
     menuStyle.position = 'static';

@@ -27,7 +27,6 @@ var OverviewBlock = React.createClass({
       <section id="overview" className="page-wrap">
         <div className="overview">
           {conferenceInfo}
-          <div className="overview__wrap"></div>
         </div>
       </section>
     )
@@ -78,6 +77,7 @@ var Overview = React.createClass({
             </div>
           </div>
         </div>
+        <div className="overview__wrap"></div>
       </div>
     )
   }

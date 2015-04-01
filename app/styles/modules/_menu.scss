@@ -5,8 +5,8 @@
 	@include container-ext;
 	background: $color__primary--dark;
 	z-index: 2;
+	width: 100%;
 	@include bp(medium) {
-		width: 100%;
 		top: 0px;
 	}
 }
