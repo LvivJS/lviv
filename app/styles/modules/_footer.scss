@@ -5,7 +5,7 @@
     background: $color__primary--dark;
     display: flex;
     color:$color__primary;
-    @include bp(small){
+    @include bp(small) {
         font-size: $font__mini;
     }
     hr {

@@ -37,7 +37,7 @@
 		flex-direction: column;
 		justify-content: left;
 		max-width: $menu-width--resp;
-		position: relative;
+		position: fixed;
 		background: $color__primary--dark;
 		left: - $menu-width--resp;
 		transition: left 0.4s;

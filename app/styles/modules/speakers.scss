@@ -3,13 +3,13 @@
 
 
 
-.speakers{
+.speakers {
     @include container-int;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.speaker{
+.speaker {
     width:25%;
     margin:20px;
     height:auto;
@@ -31,9 +31,14 @@
         }
     }
 }
-.speaker:hover{
-    .speaker__main{
-        background-color:$color__primary--lighter;
+
+.speaker__photo{
+    overflow:hidden;
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: -5px;
+        transition: transform 0.3s;
     }
 }
 .speaker__main {

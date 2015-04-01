@@ -15,7 +15,7 @@ var OverviewBlock = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
+    utilities.ajax('get', config.path.mainInfo, function(data) {
       this.setState({mainInfo: JSON.parse(data)});
     }.bind(this));
   },

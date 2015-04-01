@@ -18,7 +18,7 @@ var Schedule = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('schedule'), function(data) {
+    utilities.ajax('get', config.path.schedule, function(data) {
       var temp = JSON.parse(data);
       this.setState({
         conferences: temp.data,
@@ -28,7 +28,7 @@ var Schedule = React.createClass({
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
-      return <Conference key={conference.name} days={conference.days} 
+      return <Conference key={conference.name} days={conference.days}
         name={conference.name} locales={this.state.locales} />
     }.bind(this));
     return (
@@ -77,7 +77,7 @@ var Conference = React.createClass({
 
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id} 
+        return <Timetable sessions={day.timetable} key={day.day_id}
         location={day.location} locales={this.props.locales} />
       }
     }.bind(this));
@@ -153,23 +153,23 @@ var Session = React.createClass({
     });
   },
   createGoogleCalendLink: function() {
-    var calendLink = 
+    var calendLink =
       "http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.state.session.article +
-      "&dates=" + utilities.time.convertForCalend(this.props.start) + '/' 
+      "&dates=" + utilities.time.convertForCalend(this.props.start) + '/'
       + utilities.time.convertForCalend(this.props.end) +
-      "&details=" + (this.state.session.about||'') + 
+      "&details=" + (this.state.session.about||'') +
       "&location=" + this.props.location +
       "&trp=false&sprop=name:"
     return calendLink
   },
   createIcalLink: function() {
     window.open(
-      "data:text/calendar;charset=utf8," + 
+      "data:text/calendar;charset=utf8," +
       escape("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:") +
-      utilities.time.convertForCalend(this.props.start) + 
-      escape("\nDTEND:") + utilities.time.convertForCalend(this.props.end) + 
-      escape("\nSUMMARY:") + this.state.session.article + 
-      escape("\nDESCRIPTION:") + this.state.session.about + 
+      utilities.time.convertForCalend(this.props.start) +
+      escape("\nDTEND:") + utilities.time.convertForCalend(this.props.end) +
+      escape("\nSUMMARY:") + this.state.session.article +
+      escape("\nDESCRIPTION:") + this.state.session.about +
       escape("\nLOCATION:") + this.props.location +
       escape("\nEND:VEVENT\nEND:VCALENDAR")
     );
@@ -190,7 +190,7 @@ var Session = React.createClass({
       calendarLinks = (
         <div className="session__calendButtons">
           <span>{this.props.locales.calend_links}</span> <br/>
-          <a href={this.createGoogleCalendLink()} target="_blank" rel="nofollow" 
+          <a href={this.createGoogleCalendLink()} target="_blank" rel="nofollow"
             className="session__calendLink session__calendLink--gCal">Google Calendar</a>
           <span className="session__calendLink session__calendLink--iCal" onClick={this.createIcalLink}>iCalendar</span>
         </div>
