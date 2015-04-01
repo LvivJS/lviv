@@ -124,9 +124,10 @@ var Timetable = React.createClass({
       if (session.time.end) {
         var timeEnd = utilities.time.createDate(session.time.end)
       }
+      session.location = this.props.location
       return (
         <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
-          start={timeStart} end={timeEnd} location={this.props.location} locales={this.props.locales} />
+          start={timeStart} end={timeEnd} locales={this.props.locales} />
       )
     }.bind(this));
     return (
@@ -152,34 +153,15 @@ var Session = React.createClass({
       isHidden: this.props.smallScreen
     });
   },
-  createGoogleCalendLink: function() {
-    var calendLink = 
-      "http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.state.session.article +
-      "&dates=" + utilities.time.convertForCalend(this.props.start) + '/' 
-      + utilities.time.convertForCalend(this.props.end) +
-      "&details=" + (this.state.session.about||'') + 
-      "&location=" + this.props.location +
-      "&trp=false&sprop=name:"
-    return calendLink
-  },
-  createIcalLink: function() {
-    window.open(
-      "data:text/calendar;charset=utf8," + 
-      escape("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:") +
-      utilities.time.convertForCalend(this.props.start) + 
-      escape("\nDTEND:") + utilities.time.convertForCalend(this.props.end) + 
-      escape("\nSUMMARY:") + this.state.session.article + 
-      escape("\nDESCRIPTION:") + this.state.session.about + 
-      escape("\nLOCATION:") + this.props.location +
-      escape("\nEND:VEVENT\nEND:VCALENDAR")
-    );
+  createCalendLink: function() {
+    utilities.calendLinks.iCalendar(this.state.session);
   },
   render: function() {
     var speaker = null;
     var button = null;
     var timeEnd = null;
     var calendarLinks = null;
-
+    
     if (this.state.isReport) {
       speaker = (
         <span className="speaker__name">
@@ -190,12 +172,12 @@ var Session = React.createClass({
       calendarLinks = (
         <div className="session__calendButtons">
           <span>{this.props.locales.calend_links}</span> <br/>
-          <a href={this.createGoogleCalendLink()} target="_blank" rel="nofollow" 
+          <a href={utilities.calendLinks.googleCalendar(this.state.session)} target="_blank" rel="nofollow" 
             className="session__calendLink session__calendLink--gCal">Google Calendar</a>
-          <span className="session__calendLink session__calendLink--iCal" onClick={this.createIcalLink}>iCalendar</span>
+          <a className="session__calendLink session__calendLink--iCal" onClick={this.createCalendLink}>iCalendar</a>
         </div>
       )
-    }
+    };
 
     var sessionClass = classNames({
       'session': true,

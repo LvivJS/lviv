@@ -23,19 +23,40 @@ var utilities = {
       time.setMinutes(timeObj.minutes || null);
       return time
     },
-    convertForCalend: function(date) {
-      var year, month, day, hours, minutes, formatted;
-      year = date.getFullYear();
-      month = date.getMonth() + 1;
-      day = date.getDate();
-      hours = date.getHours();
-      minutes = date.getMinutes();
-      if (month < 10) {month = '0' + month};
-      if (day < 10) {day = '0' + day};
-      if (hours < 10) {hours = '0' + hours};
-      if (minutes < 10) {minutes = '0' + minutes};
-      formatted = '' + year + month + day + 'T' + hours + minutes + '00';
-      return formatted
+    convertForCalend: function(date, linkType) {
+      var link;
+      if ((date.month < 10) && (linkType == 'googleCalendar')) {
+        date.month = '0' + (+date.month + 1)
+      };
+      if (date.date < 10) {date.date = '0' + +date.date};
+      if (date.hours < 10) {date.hours = '0' + +date.hours};
+      if (date.minutes < 10) {date.minutes = '0' + +date.minutes};
+      link = '' + date.year + date.month + date.date + 'T' + date.hours + date.minutes + '00';
+      return link
+    }
+  },
+  calendLinks: {
+    googleCalendar: function(obj) {
+      var calendLink =
+        'https://www.google.com/calendar/event?action=TEMPLATE&text=' + obj.article +
+        '&dates=' + utilities.time.convertForCalend(obj.time.start, 'googleCalendar') + '/' +
+        utilities.time.convertForCalend(obj.time.end, 'googleCalendar') +
+        '&details=' + (obj.about || '') +
+        '&location=' + obj.location +
+        '&trp=false&sprop=name:'
+      return calendLink
+    },
+    iCalendar: function(obj) {
+      window.open(
+        'data:text/calendar;charset=utf8,' +
+        escape('BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:') +
+        utilities.time.convertForCalend(obj.time.start, 'iCalendar') +
+        escape('\nDTEND:') + utilities.time.convertForCalend(obj.time.end, 'iCalendar') +
+        escape('\nSUMMARY:') + obj.article +
+        escape('\nDESCRIPTION:') + (obj.about || '') +
+        escape('\nLOCATION:') + obj.location +
+        escape('\nEND:VEVENT\nEND:VCALENDAR')
+      );
     }
   }
 };
