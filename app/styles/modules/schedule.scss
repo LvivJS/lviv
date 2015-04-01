@@ -13,32 +13,6 @@
     margin:15px auto;
     border-top:2px solid $color__gray--darker;
     border-bottom:2px solid $color__gray--darker;
-    .conference__title {
-        padding:15px 0;
-        display:flex;
-        justify-content: space-between;
-        h3 {
-            font-size:$font__large;
-            color:$color__primary;
-            margin:10px 10px 10px 20px;
-            flex-shrink: 5;
-            @include bp(very-small) {
-                flex-shrink: 7;
-                margin:10px;
-            }
-        }
-        input {
-            cursor:pointer;
-            margin: 10px;
-            flex-shrink: 0;
-        }
-        input.up-arrow {
-            @include schedule-arrow(url('../images/arrow-up.svg'))
-        }
-        input.down-arrow {
-            @include schedule-arrow(url('../images/arrow-down.svg'))
-        }
-    }
     ul {
          display: flex;
         li {
@@ -174,11 +148,8 @@
 .session--entertainment {
     color: $color__primary;
 }
-
-.session__calendButtons {
-    color: $color__gray--darker;
-}
-a.session__calendLink{
+.session__calendButtons,
+a.session__calendLink {
     color: $color__gray--darker;
 }
 .session__calendLink {
