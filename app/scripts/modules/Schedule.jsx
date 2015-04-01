@@ -11,6 +11,7 @@ var FormattedDate = ReactIntl.FormattedDate;
 var FormattedTime = ReactIntl.FormattedTime;
 
 var Schedule = React.createClass({
+  mixins: [IntlMixin],
   getInitialState: function() {
     return {
       conferences: [],

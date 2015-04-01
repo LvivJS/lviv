@@ -34,7 +34,6 @@ var OverviewBlock = React.createClass({
 });
 
 var Overview = React.createClass({
-  mixins: [IntlMixin],
   getInitialState:function(){
     return {
       confTime:null
