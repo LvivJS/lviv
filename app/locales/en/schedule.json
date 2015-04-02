@@ -10,42 +10,20 @@
       "days": [
         {
           "day_id":"01",
-          "day_info": {
-            "year":"2015",
-            "month":"04",
-            "date":"22"
-          },
+          "day_info": "Fri May 22 2015",
           "location":"Ukraine, Lviv, Oleny Stepanivny 45",
           "timetable": [
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"8",
-                  "minutes":"55"
-                }
+                "start": "Fri May 22 2015 08:55:00"
               },
               "article":"Morning Welcome",
               "type":"entertainment"
             },
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"9",
-                  "minutes":"0"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"10",
-                  "minutes":"0"
-                }
+                "start": "Fri May 22 2015 09:00:00",
+                "end": "Fri May 22 2015 10:00:00"
               },
               "article":"The Fault, Dear Brutus (or: Career Advice From a Cranky Old Man)",
               "type":"report",
@@ -58,20 +36,8 @@
             },
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"10",
-                  "minutes":"15"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"11",
-                  "minutes":"15"
-                }
+                "start": "Fri May 22 2015 10:15:00",
+                "end": "Fri May 22 2015 11:15:00"
               },
               "article":"Icon Design Process",
               "type":"report",
@@ -84,20 +50,8 @@
             },
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"11",
-                  "minutes":"30"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"12",
-                  "minutes":"30"
-                }
+                "start": "Fri May 22 2015 11:30:00",
+                "end": "Fri May 22 2015 12:30:00"
               },
               "article":"Designing for Social Behaor",
               "type":"report",
@@ -110,40 +64,16 @@
             },
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"12",
-                  "minutes":"30"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"14",
-                  "minutes":"0"
-                }
+                "start": "Fri May 22 2015 12:30:00",
+                "end": "Fri May 22 2015 14:00:00"
               },
               "article":"Lunch",
               "type":"entertainment"
             },
             {
               "time":{
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"14",
-                  "minutes":"0"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"15",
-                  "minutes":"0"
-                }
+                "start": "Fri May 22 2015 14:00:00",
+                "end": "Fri May 22 2015 15:00:00"
               },
               "article":"Icon Design Pross",
               "type":"report",
@@ -155,20 +85,8 @@
             },
             {
               "time":{
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"15",
-                  "minutes":"35"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"16",
-                  "minutes":"15"
-                }
+                "start": "Fri May 22 2015 15:35:00",
+                "end": "Fri May 22 2015 16:15:00"
               },
               "article":"Designing for Social Behavior",
               "type":"report",
@@ -181,20 +99,8 @@
             },
             {
               "time":{
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"16",
-                  "minutes":"30"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"22",
-                  "hours":"19",
-                  "minutes":"0"
-                }
+                "start": "Fri May 22 2015 16:30:00",
+                "end": "Fri May 22 2015 19:00:00"
               },
               "article":"Opening Night Happy Hours",
               "type":"entertainment",
@@ -204,49 +110,20 @@
         },
         {
           "day_id":"02",
-          "day_info": {
-            "year":"2015",
-            "month":"04",
-            "date":"23"
-          },
+          "day_info": "Sat May 23 2015",
           "location":"Ukraine, Lviv, Oleny Stepanivny 45",
           "timetable": [
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"8",
-                  "minutes":"55"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"",
-                  "minutes":""
-                }
+                "start": "Sat May 23 2015 08:55:00"
               },
               "article":"Morning Welcome",
               "type":"entertainment"
             },
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"9",
-                  "minutes":"0"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"10",
-                  "minutes":"0"
-                }
+                "start": "Sat May 23 2015 09:00:00",
+                "end": "Sat May 23 2015 10:00:00"
               },
               "article":"SVG is for Everybody",
               "type":"report",
@@ -259,20 +136,8 @@
             },
             {
               "time":{
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"10",
-                  "minutes":"15"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"11",
-                  "minutes":"15"
-                }
+                "start": "Sat May 23 2015 10:15:00",
+                "end": "Sat May 23 2015 11:15:00"
               },
               "article":"CSS Grid Layout",
               "type":"report",
@@ -285,40 +150,16 @@
             },
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"11",
-                  "minutes":"30"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"12",
-                  "minutes":"30"
-                }
+                "start": "Sat May 23 2015 11:30:00",
+                "end": "Sat May 23 2015 12:30:00"
               },
               "article":"Lunch",
               "type":"entertainment"
             },
             {
               "time": {
-                "start": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"12",
-                  "minutes":"30"
-                },
-                "end": {
-                  "year":"2015",
-                  "month":"04",
-                  "date":"23",
-                  "hours":"14",
-                  "minutes":"0"
-                }
+                "start": "Sat May 23 2015 12:30:00",
+                "end": "Sat May 23 2015 14:00:00"
               },
               "article":"Everything You Wanted to Know About Responsive Design…And Less!",
               "type":"report",

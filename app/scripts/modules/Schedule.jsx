@@ -68,7 +68,7 @@ var Conference = React.createClass({
       return (
         <li onClick={this.changeTab.bind(null, day)} key={day.day_id} className={liClass}>
           <FormattedDate
-            value={utilities.time.createDate(day.day_info)}
+            value={new Date(day.day_info)}
             day="numeric"
             month="long" />
         </li>
@@ -120,9 +120,9 @@ var Timetable = React.createClass({
   },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
-      var timeStart = utilities.time.createDate(session.time.start);
+      var timeStart =  new Date(session.time.start);
       if (session.time.end) {
-        var timeEnd = utilities.time.createDate(session.time.end)
+        var timeEnd =  new Date(session.time.end)
       }
       session.location = this.props.location
       return (
@@ -210,7 +210,7 @@ var Session = React.createClass({
     if(this.props.end) {
       timeEnd = (
         <FormattedTime
-            value={this.props.end}
+            value={new Date(this.props.end)}
             hour="numeric"
             minute="numeric" />
       )
@@ -220,7 +220,7 @@ var Session = React.createClass({
        className={sessionClass}>
         <div className="session__time">
           <FormattedTime
-            value={this.props.start}
+            value={new Date(this.props.start)}
             hour="numeric"
             minute="numeric" />
           {timeEnd}
