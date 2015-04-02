@@ -53,8 +53,8 @@ var Menu = React.createClass({
           <nav id="cm_menuItems" className={menuCls}>
             {itemsToRender}
           </nav>
-          <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
         </div>
+        <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
       </div>
     );
   }
@@ -86,8 +86,8 @@ function scrollTo(to, duration) {
   if (duration < 0) {
     return;
   }
-  var top = (document.documentElement && document.documentElement.scrollTop) ||
-              document.body.scrollTop;
+  //This is for IE compability
+  var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
   var difference = to - top;
   var perTick = difference / duration * 10;
 
