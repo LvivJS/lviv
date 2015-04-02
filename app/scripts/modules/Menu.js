@@ -21,7 +21,8 @@ var Menu = React.createClass({
     var startY = window.pageYOffset;
     var targetY = anchor.offsetTop - menuHeight;
 
-    animate(document.body, 'scrollTop', '', startY, targetY, 350, true);
+    scrollTo(targetY, 500);
+    // animate(document.body, 'scrollTop', '', startY, targetY, 350, true);
   },
 
   render: function() {
@@ -81,23 +82,42 @@ window.onscroll = function() {
   }
 };
 
-function animate(elem, style, unit, from, to, time, prop) {
-  if (!elem) {
+function scrollTo(to, duration) {
+  if (duration < 0) {
     return;
   }
-  var start = new Date().getTime();
-  var timer = setInterval(function() {
-    var step = Math.min(1, (new Date().getTime() - start) / time);
-    if (prop) {
-      elem[style] = (from + step * (to - from)) + unit;
-    } else {
-      elem.style[style] = (from + step * (to - from)) + unit;
+  var top = (document.documentElement && document.documentElement.scrollTop) ||
+              document.body.scrollTop;
+  var difference = to - top;
+  var perTick = difference / duration * 10;
+
+  setTimeout(function() {
+    window.scroll(0, top + perTick);
+    if (top == to) {
+      window.scroll(0, to);
+      return;
     }
-    if (step == 1) {
-      clearInterval(timer);
-    }
-  }, 25);
-  elem.style[style] = from + unit;
+    scrollTo(to, duration - 10);
+  }, 10);
 }
+
+// function animate(elem, style, unit, from, to, time, prop) {
+//   if (!elem) {
+//     return;
+//   }
+//   var start = new Date().getTime();
+//   var timer = setInterval(function() {
+//     var step = Math.min(1, (new Date().getTime() - start) / time);
+//     if (prop) {
+//       elem[style] = (from + step * (to - from)) + unit;
+//     } else {
+//       elem.style[style] = (from + step * (to - from)) + unit;
+//     }
+//     if (step == 1) {
+//       clearInterval(timer);
+//     }
+//   }, 25);
+//   elem.style[style] = from + unit;
+// }
 
 module.exports = Menu;
