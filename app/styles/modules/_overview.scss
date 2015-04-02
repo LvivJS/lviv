@@ -5,6 +5,7 @@
     @include container-ext;
     background: url('../images/logo-main.jpg') center center no-repeat;
     height:752px;
+    width: 100%;
     z-index:1;
 }
 .overview__wrap {
@@ -95,16 +96,16 @@
 }
 
 .overview__infoIcon {
-    width: 45px;
-    height: 45px;
     margin: 10px;
-    display: block;
-    @include bp(medium) {
-        width: 30px;
-        height: 30px;
-    }
+    display: block;    
     .ui__comp {
         fill:$color__white;
+        width: 45px;
+        height: 45px;
+        @include bp(medium) {
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 .overview__infoData {

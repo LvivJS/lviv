@@ -76,14 +76,16 @@
     @include container-ext;
     margin: 10px;
     a {
-        height:20px;
-        width:20px;
         margin:5px;
         display:block;
         .social__icon {
             fill: $color__primary--lighter;
         }
     }
+}
+.social_icons {
+  height:20px;
+  width:20px;
 }
 
 .footer__copyright {
