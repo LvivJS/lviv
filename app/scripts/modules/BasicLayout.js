@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react');
-var Intl = require('intl');
 var Header = require('./Header');
 var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');

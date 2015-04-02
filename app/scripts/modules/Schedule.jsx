@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react');
-var Intl = require('intl');
 var config = require('../config');
 var utilities = require('../utilities');
 var classNames = require('classnames');
