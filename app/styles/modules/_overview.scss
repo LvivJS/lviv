@@ -18,8 +18,9 @@
     left: 0;
     top: 0;
 }
+
 .overview__content {
-    z-index: 2000;
+    z-index: 0;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -97,7 +98,7 @@
 
 .overview__infoIcon {
     margin: 10px;
-    display: block;    
+    display: block;
     .ui__comp {
         fill:$color__white;
         width: 45px;

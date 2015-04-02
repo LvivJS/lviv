@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var Intl = require('intl');
 var Header = require('./Header');
 var Menu = require('./Menu');
 var LocationMap = require('./LocationMap');
@@ -13,7 +14,7 @@ var Footer = require('./Footer.jsx');
 var config = require('../config');
 var utilities = require('../utilities');
 var ReactIntl = require('react-intl');
-var IntlMixin     = ReactIntl.IntlMixin;
+var IntlMixin = ReactIntl.IntlMixin;
 
 var LayoutBasic = React.createClass({
   mixins: [IntlMixin],

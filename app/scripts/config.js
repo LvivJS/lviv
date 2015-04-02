@@ -5,7 +5,7 @@ var config = (function() {
   var chooseLocale = function() {
     //=======================================AVAILABLE LOCALES SEETINGS HERE
     var availableLocales = ['en', 'uk', {defLang: 'en'}];
-    var navLng = navigator.language;
+    var navLng = navigator.browserLanguage || navigator.language;
     var userLang;
     var setLocale;
     var defLang;

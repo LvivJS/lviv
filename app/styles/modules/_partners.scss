@@ -31,20 +31,21 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-content: flex-start;
 	width: 100%;
-}
+	.partners__item-link {
+		width: 25%;
+		margin: 20px;
+		display: block;
+		img {
+			width: 100%;
+			transition: transform 0.2s;
+			display: block;
+		}
 
-.partners__item-link {
-  width: 25%;
-	margin: 20px;
-
-	img {
-		width: 100%;
-		transition: transform 0.2s;
-	}
-
-	@include bp(small) {
-		width: 65%;
+		@include bp(small) {
+			width: 65%;
+		}
 	}
 }
 

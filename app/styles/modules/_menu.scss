@@ -33,9 +33,10 @@
 .menu {
 	@include container-int;
 	justify-content: center;
+	flex-direction: row;
 	@include bp(medium) {
 		flex-direction: column;
-		justify-content: left;
+		justify-content: flex-start;
 		max-width: $menu-width--resp;
 		position: fixed;
 		background: $color__primary--dark;
