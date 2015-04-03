@@ -41,7 +41,7 @@ app.get('/', function(req, res){
 app.post('/payload', function(req, res) {
   var body = req.body;
   if (body.commits && body.commits.length){
-    console.log(new Date().toLocaleString('uk', date_opts), 'GITHUB : changes to repository detected by : ', body.pusher.email);
+    console.log(new Date().toLocaleString('uk', date_opts), 'GITHUB : changes to repository detected by :', body.pusher.email);
     // what have to be done to ensure latest steady version on test
     // we return success status only if all steps passed
     Q.fcall(pullUpdates, body)
@@ -60,7 +60,7 @@ app.post('/payload', function(req, res) {
 
 //Route not found -- Set 404
 app.get('*', function(req, res) {
-  res.status(404).body("Sorry this page does not exist!");
+  res.status(404).send("Sorry this page does not exist!");
 });
 
 app.listen(port);
@@ -76,6 +76,7 @@ function pullUpdates(body){
         appEnvData.head_commit = JSON.stringify(_.pick(body.head_commit, 'message', 'timestamp', 'url', 'author'));
         resolve(body);
       }
+      console.log('[pullUpdates]::', err, stdout, stderr);
     });
   });
 };
@@ -99,6 +100,7 @@ function updateNpm(body){
         } else {
           resolve();
         }
+        console.log('[updateNpm]::', err, stdout, stderr);
       });
     } else {
       resolve();
@@ -113,6 +115,7 @@ function rebuildApp(){
       } else {
         resolve();
       }
+      console.log('[rebuildApp]::', err, stdout, stderr);
     });
   });
 }
