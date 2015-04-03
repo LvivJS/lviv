@@ -20,6 +20,7 @@ var reactify = require('reactify');
 var imagemin = require('gulp-imagemin');
 var jsxcs = require('gulp-jsxcs');
 var autoprefixer = require('gulp-autoprefixer');
+var jpegoptim = require('imagemin-jpegoptim');
 
 var env = process.env.NODE_ENV || 'development';
 var isProd = env === 'production';
@@ -86,9 +87,11 @@ gulp.task('build_style', function() {
 });
 
 //IMAGES
+// todo: console actual save on jpegoptim task
 gulp.task('build_image', function() {
   return gulp.src(paths.imageFiles)
-    .pipe(imagemin({ progressive: true }))
+    .pipe(imagemin({progressive: true }))
+    .pipe(jpegoptim({max: 50})())
     .pipe(gulp.dest(paths.build + '/images'));
 });
 
