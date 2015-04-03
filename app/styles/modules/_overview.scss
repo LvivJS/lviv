@@ -90,6 +90,7 @@
   }
   @include bp(small) {
     display: block;
+    display: flex;
     padding: 15px;
   }
   @include bp(very-small) {

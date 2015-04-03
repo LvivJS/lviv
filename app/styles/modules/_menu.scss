@@ -6,6 +6,7 @@
 	background: $color__primary--dark;
 	z-index: 2;
 	width: 100%;
+	position: relative;
 	@include bp(medium) {
 		top: 0px;
 	}
@@ -22,6 +23,7 @@
 
 .menu-wrapper {
 	@include container-int;
+	margin: 0;
 	@include bp(medium) {
 		position: fixed;
 		top: 0;
