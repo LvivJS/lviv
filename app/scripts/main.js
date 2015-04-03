@@ -1,5 +1,8 @@
 'use strict';
 
+if (!global.Intl) {
+  require('intl');
+}
 var React = require('react');
 var BasicLayout = require('./modules/BasicLayout');
 var ReactIntl = require('react-intl');

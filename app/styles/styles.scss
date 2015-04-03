@@ -18,6 +18,10 @@ a {
     text-decoration: none;
 }
 
+img {
+  border: none;
+}
+
 
 @import 'modules/_basicLayout';
 @import 'modules/header';

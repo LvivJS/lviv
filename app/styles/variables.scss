@@ -20,7 +20,7 @@ $color__gray--darker: darken($color__gray, 35%);
 $color__gray--darkest: darken($color__gray, 65%);
 
 /* fonts */
-$font__main: Calibri;
+$font__main: Calibri, Helvetica, sans-serif;
 $font__giant:1.5em;
 $font__larger:1.375em;
 $font__large:1.25em;

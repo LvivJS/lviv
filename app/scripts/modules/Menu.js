@@ -21,7 +21,8 @@ var Menu = React.createClass({
     var startY = window.pageYOffset;
     var targetY = anchor.offsetTop - menuHeight;
 
-    animate(document.body, 'scrollTop', '', startY, targetY, 350, true);
+    scrollTo(targetY, 300);
+    // animate(document.body, 'scrollTop', '', startY, targetY, 350, true);
   },
 
   render: function() {
@@ -52,8 +53,8 @@ var Menu = React.createClass({
           <nav id="cm_menuItems" className={menuCls}>
             {itemsToRender}
           </nav>
-          <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
         </div>
+        <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
       </div>
     );
   }
@@ -73,30 +74,33 @@ window.onscroll = function() {
     menuStyle.position = 'fixed';
     menuStyle.width = '100%';
     menuStyle.top = '0';
+    menuStyle.left = '0';
     overview.style.paddingTop = menu.offsetHeight + 'px';
   } else {
-    menuStyle.position = 'static';
+    menuStyle.position = 'relative';
     overview.style.paddingTop = '0px';
   }
 };
 
-function animate(elem, style, unit, from, to, time, prop) {
-  if (!elem) {
+function scrollTo(to, duration) {
+  if (duration < 0) {
     return;
   }
-  var start = new Date().getTime();
-  var timer = setInterval(function() {
-    var step = Math.min(1, (new Date().getTime() - start) / time);
-    if (prop) {
-      elem[style] = (from + step * (to - from)) + unit;
-    } else {
-      elem.style[style] = (from + step * (to - from)) + unit;
+  //This is for IE compability
+  var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+  var difference = to - top;
+  var perTick = difference / duration * 10;
+
+  setTimeout(function() {
+    window.scroll(0, top + perTick);
+    if (top == to) {
+      //this is to prevent scrolling to top
+      //after animation has been done in IE
+      window.scroll(0, to);
+      return;
     }
-    if (step == 1) {
-      clearInterval(timer);
-    }
-  }, 25);
-  elem.style[style] = from + unit;
+    scrollTo(to, duration - 10);
+  }, 10);
 }
 
 module.exports = Menu;
