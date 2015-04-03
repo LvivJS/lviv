@@ -55,14 +55,16 @@
 
 
 .menu__item{
-	display: block;
+	display: inline-block;
 	list-style:none;
 	font-size: $font__giant;
 	color: $color__white;
 	padding: $item__padding--top-bottom $item__padding--left-right;
 	transition: all 0.2s;
 	text-transform: capitalize;
+	text-align: left;
 	@include bp(medium) {
+		display: block;
 		padding-left: 40px;
 	}
 }
@@ -84,6 +86,7 @@
 		@include border-radius(5px);
 		background: $color__primary--lighter;
 		cursor: pointer;
+		display: block;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -98,6 +101,7 @@
 
 .menuToggle__stripe {
 	height: $stripe__height;
+	margin: 2px auto;
 	width: 70%;
 	background: $color__primary--dark;
 	@include border-radius($stripe__height / 2);
@@ -105,7 +109,7 @@
 }
 
 .menuToggle:hover .menuToggle__stripe:nth-child(2) {
-	margin: 4.5px 0;
+	margin: 4.5px auto;
 }
 
 .darkenScreen--hidden {

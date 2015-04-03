@@ -75,6 +75,7 @@
 }
 
 .overview__infoBlock {
+  display: inline-block;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -87,7 +88,8 @@
     padding: 20px;
     font-size: $font__large;
   }
-    @include bp(small) {
+  @include bp(small) {
+    display: block;
     padding: 15px;
   }
   @include bp(very-small) {
@@ -98,7 +100,7 @@
 
 .overview__infoIcon {
     margin: 10px;
-    display: block;
+    display: inline-block;
     .ui__comp {
         fill:$color__white;
         width: 45px;
@@ -110,6 +112,7 @@
     }
 }
 .overview__infoData {
+    display: inline-block;
     display: flex;
     align-items: center;
     span {

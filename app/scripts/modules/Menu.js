@@ -21,7 +21,7 @@ var Menu = React.createClass({
     var startY = window.pageYOffset;
     var targetY = anchor.offsetTop - menuHeight;
 
-    scrollTo(targetY, 500);
+    scrollTo(targetY, 300);
     // animate(document.body, 'scrollTop', '', startY, targetY, 350, true);
   },
 
@@ -77,7 +77,7 @@ window.onscroll = function() {
     menuStyle.left = '0';
     overview.style.paddingTop = menu.offsetHeight + 'px';
   } else {
-    menuStyle.position = 'static';
+    menuStyle.position = 'relative';
     overview.style.paddingTop = '0px';
   }
 };

@@ -78,7 +78,7 @@ gulp.task('build_style', function() {
   return gulp.src(paths.sassFiles)
     .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(sass())
-    // .pipe(autoprefixer({browsers: ['> 5%','last 2 versions']}))
+    .pipe(autoprefixer({browsers: ['> 5%','last 2 versions']}))
     .pipe(concating('styles.css'))
     .pipe(gulpif(!isProd, sourcemaps.write()))
     .pipe(gulpif(isProd, minifycss()))

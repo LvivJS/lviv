@@ -10,11 +10,14 @@
 @mixin container-int {
     max-width: $container;
     width: 100%;
+    margin: 0 auto;
     display: flex;
 }
 
 @mixin container-ext {
-    display:flex;
+    display: block;
+    text-align: center;
+    display: flex;
     justify-content: center;
 };
 
