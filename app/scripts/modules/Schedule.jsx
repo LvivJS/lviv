@@ -11,6 +11,7 @@ var FormattedDate = ReactIntl.FormattedDate;
 var FormattedTime = ReactIntl.FormattedTime;
 
 var Schedule = React.createClass({
+  mixins: [IntlMixin],
   getInitialState: function() {
     return {
       conferences: [],
@@ -28,7 +29,7 @@ var Schedule = React.createClass({
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
-      return <Conference key={conference.name} days={conference.days} 
+      return <Conference key={conference.name} days={conference.days}
         name={conference.name} locales={this.state.locales} />
     }.bind(this));
     return (
@@ -77,7 +78,7 @@ var Conference = React.createClass({
 
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id} 
+        return <Timetable sessions={day.timetable} key={day.day_id}
         location={day.location} locales={this.props.locales} />
       }
     }.bind(this));

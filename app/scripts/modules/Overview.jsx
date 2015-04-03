@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
@@ -27,7 +29,6 @@ var OverviewBlock = React.createClass({
       <section id="overview" className="page-wrap">
         <div className="overview">
           {conferenceInfo}
-          <div className="overview__wrap"></div>
         </div>
       </section>
     )
@@ -36,6 +37,15 @@ var OverviewBlock = React.createClass({
 
 var Overview = React.createClass({
   mixins: [IntlMixin],
+  getInitialState:function(){
+    return {
+      confTime:null
+    }
+  },
+  componentWillMount: function() {
+    var confTime = utilities.time.createDate(this.props.mainInfo.start_date);
+    this.setState({confTime:confTime})
+  },
   render:function(){
     return(
       <div className="overview__content">
@@ -69,6 +79,7 @@ var Overview = React.createClass({
             </div>
           </div>
         </div>
+        <div className="overview__wrap"></div>
       </div>
     )
   }

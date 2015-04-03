@@ -14,6 +14,10 @@ var appEnvData = {
   env: env,
   head_commit: "null"
 }
+var date_opts =  {
+  year: 'numeric', month: 'numeric', day: 'numeric',
+  hour: 'numeric', minute: 'numeric', second: 'numeric'
+};
 
 require("node-jsx").install();
 
@@ -30,38 +34,34 @@ app.set('views', path.join(__dirname, 'views'));
 
 // index url
 app.get('/', function(req, res){
-  console.log(appEnvData);
   res.render('index', appEnvData);
+});
+
+//listen to github webhook notification
+app.post('/payload', function(req, res) {
+  var body = req.body;
+  if (body.commits && body.commits.length){
+    console.log(new Date().toLocaleString('uk', date_opts), 'GITHUB : changes to repository detected by : ', body.pusher.email);
+    // what have to be done to ensure latest steady version on test
+    // we return success status only if all steps passed
+    Q.fcall(pullUpdates, body)
+      .then(updateNpm)
+      .then(rebuildApp)
+      .then(function(){
+        res.status(200).send('Build success');
+      }, function(err){
+        res.status(409).send(err);
+      })
+      .then(updateAppEnvData)
+  } else {
+    res.status(200).send('What is that? no commits, meh :/')
+  }
 });
 
 //Route not found -- Set 404
 app.get('*', function(req, res) {
   res.status(404).body("Sorry this page does not exist!");
 });
-
-//listen to github webhook notification
-if (env !== 'development'){
-  app.post('/payload', function(req, res) {
-    var body = req.body;
-    if (body.commits && body.commits.length){
-      // console.log('GITHUB : changes to repository detected');
-      // console.log('by : ', body.pusher.email);
-      // chain of what have to be done to ensure latest steady version on test
-      // we return success status only if all steps passed
-      Q.fcall(pullUpdates, body)
-        .then(updateNpm)
-        .then(rebuildApp)
-        .then(function(){
-          res.status(200).send('Build success');
-        }, function(err){
-          res.status(409).send(err);
-        })
-        .then(updateAppEnvData)
-    } else {
-      res.status(200).send('What is that? no commits, meh :/')
-    }
-  });
-}
 
 app.listen(port);
 

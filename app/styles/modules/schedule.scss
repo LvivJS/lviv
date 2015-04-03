@@ -3,6 +3,7 @@
 
 .schedule {
     @include container-int;
+    text-align: left;
     input:focus {
         outline: 0;
     }
@@ -63,7 +64,7 @@
         svg.ui__comp {
             transform:rotate(180deg);
         }
-    } 
+    }
 }
 .timetable {
     background-color: $color__primary--lighter;
