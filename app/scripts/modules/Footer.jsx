@@ -15,7 +15,7 @@ var Footer = React.createClass({
     });
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.path.footer, function(data) {
+    utilities.ajax('get', config.pathJSON('footer'), function(data) {
       var temp = JSON.parse(data);
       this.setState({
         events: temp.data.events,

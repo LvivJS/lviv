@@ -17,7 +17,7 @@ var OverviewBlock = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.path.mainInfo, function(data) {
+    utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
       this.setState({mainInfo: JSON.parse(data)});
     }.bind(this));
   },
@@ -37,15 +37,6 @@ var OverviewBlock = React.createClass({
 
 var Overview = React.createClass({
   mixins: [IntlMixin],
-  getInitialState:function(){
-    return {
-      confTime:null
-    }
-  },
-  componentWillMount: function() {
-    var confTime = utilities.time.createDate(this.props.mainInfo.start_date);
-    this.setState({confTime:confTime})
-  },
   render:function(){
     return(
       <div className="overview__content">
