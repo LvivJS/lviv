@@ -17,7 +17,7 @@ var OverviewBlock = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.path.mainInfo, function(data) {
+    utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
       this.setState({mainInfo: JSON.parse(data)});
     }.bind(this));
   },
@@ -36,15 +36,7 @@ var OverviewBlock = React.createClass({
 });
 
 var Overview = React.createClass({
-  getInitialState:function(){
-    return {
-      confTime:null
-    }
-  },
-  componentWillMount: function() {
-    var confTime = utilities.time.createDate(this.props.mainInfo.start_date);
-    this.setState({confTime:confTime})
-  },
+  mixins: [IntlMixin],
   render:function(){
     return(
       <div className="overview__content">
@@ -57,13 +49,13 @@ var Overview = React.createClass({
             </div>
             <div className="overview__infoData overview__infoData--when">
               <span>
-                <FormattedDate
-                  value={this.state.confTime}
+                <FormattedDate 
+                  value={new Date(this.props.mainInfo.start_date)} 
                   day="numeric"
                   month="long"
                   year="numeric" /><br/>
-                <FormattedTime
-                  value={this.state.confTime}
+                <FormattedTime 
+                  value={new Date(this.props.mainInfo.start_date)} 
                   hour="numeric"
                   minute="numeric" />
               </span>

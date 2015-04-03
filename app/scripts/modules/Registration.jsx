@@ -6,7 +6,7 @@ var utilities = require('../utilities');
 
 var Registration = React.createClass({
   componentDidMount: function() {
-    utilities.ajax('get', config.path.registration, function(data) {
+    utilities.ajax('get', config.pathJSON('registration'), function(data) {
        var temp = JSON.parse(data);
        this.setState({
          inputFields: [
