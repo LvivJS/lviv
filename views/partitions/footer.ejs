@@ -1,0 +1,30 @@
+
+<footer id="footer" class="page-wrap footer">
+  <div class="footer__container">
+    <div class="footer__block">
+      <h5 class="footer__headings">
+        <%= footer.locales.events_header %>
+      </h5>
+      <div class="footer__eventLinks">
+        <% footer.data.events.forEach(function(event){ %>
+          <a class="footer__event" href="<%= event.link %>" target="_blank">
+            <%= event.name %>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+    <div class="footer__block">
+      <h5 class="footer__headings"><%= footer.locales.connection_header %></h5>
+      <div class="footer__contacts">
+        <span><%= footer.locales.contact_us %></span>
+        <a class="footer__mailLink" href="<%= footer.data.socials.email %>">
+          <%= footer.data.socials.email %>
+        </a>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="footer__copyright">
+    <span><%= footer.locales.copyright %></span>
+  </div>
+</footer>
