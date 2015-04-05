@@ -4,6 +4,7 @@
 .overview {
     @include container-ext;
     background: url('../images/logo-main.jpg') center center no-repeat;
+    background-size: cover;
     height:752px;
     width: 100%;
     z-index:1;
