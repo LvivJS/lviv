@@ -11,18 +11,17 @@ var env = process.env.NODE_ENV || 'development';
 var data = {}
 data.footer = require('./app/locales/en/footer.json');
 
+app.use(compress());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(compress());
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.set('view engine', 'ejs');
-// app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
 
 // index url
 app.get('/', function(req, res){
-  res.render('index_ejs', data);
+  res.render('index', data);
 });
 
 //Route not found -- Set 404

@@ -56,7 +56,7 @@ var CommunityEvents = React.createClass({
     )
   }
 });
-          
+
 var Connection = React.createClass({
   render: function() {
     var socials= Object.keys(this.props.networks).map(function(network) {
@@ -80,6 +80,3 @@ var Connection = React.createClass({
   }
 });
 module.exports = Footer;
-
-
- 
