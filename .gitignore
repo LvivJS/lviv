@@ -1,6 +1,7 @@
 node_modules
 *.log
 .sass-cache
+.c9
 *.css.map
 
 dist/*
