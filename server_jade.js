@@ -10,6 +10,7 @@ var env = process.env.NODE_ENV || 'development';
 // mocked data
 var data = {};
 data.footer = require('./app/locales/en/footer.json');
+data.overview = require('./app/locales/en/mainInfo.json')[0]; // todo: refactor
 data.config = require('./app/scripts/config');
 
 app.use(compress());
