@@ -1,0 +1,39 @@
+{
+  "locales": {
+    "events_header":"Інші події",
+    "connection_header":"Зворотній звязок",
+    "contact_us":"Написати нам листа: ",
+    "copyright":"Всі права захищені ©"
+  },
+  "data": {
+    "events":[
+      {
+        "name":"Конференція мобільної розробки",
+        "link":"http://mobilewebdevconference.com/"
+      },
+      {
+        "name":"Конференція в Атланті",
+        "link":"http://aneventapart.com/event/atlanta-2014"
+      },
+      {
+        "name":"Веб-конференція",
+        "link":"http://thenextweb.com/conference/europe/"
+      },
+      {
+        "name":"Сonvergese",
+        "link":"http://convergese.com/"
+      },
+      {
+        "name":"Веб 2014",
+        "link":"http://webconference.psu.edu/web2014"
+      }
+    ],
+    "socials": {
+      "networks": {
+        "twitter":"http://www.twitter.com",
+        "facebook":"http://www.facebook.com"
+      },
+      "email":"mail@gmail.com"
+    }
+  }
+}

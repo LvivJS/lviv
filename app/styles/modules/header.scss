@@ -5,6 +5,7 @@
 	@include container-ext;
 	background: $color__primary;
 	font-family: $font__main;
+	width: 100%;
 	@include bp(medium) {
 		margin-top: $toggle-button__size;
 	}
@@ -12,4 +13,5 @@
 
 .header {
 	@include container-int;
+	margin: 0;
 }

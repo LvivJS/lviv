@@ -2,29 +2,43 @@ var React = require('react');
 var Firebase = require('firebase');
 var InputField = require('../components/input.jsx');
 var config = require('../config');
-
-var inputFields = [
-      {
-        type:'name',
-        pattern:/^[a-zA-Z_ -]{3,50}$/,
-        placeholder:'Name',
-        errorMessage:'Name should have at least 3 characters, but no more than 50'
-      },
-      {
-        type:'email',
-        pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
-        placeholder:'Email',
-        errorMessage:'Please, enter valid email'
-      },
-      {
-        type:'phone',
-        pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
-        placeholder:'PhoneNumber',
-        errorMessage:'Phone must have at least 4 numeric digit.'
-      }
-];
+var utilities = require('../utilities');
 
 var Registration = React.createClass({
+  componentDidMount: function() {
+    utilities.ajax('get', config.pathJSON('registration'), function(data) {
+       var temp = JSON.parse(data);
+       this.setState({
+         inputFields: [
+         {
+           type:'name',
+           pattern:/^[a-zA-Z_ -]{3,50}$/,
+           placeholder: temp.Name_placeHolder,
+           errorMessage: temp.Name_err
+         },
+         {
+           type:'email',
+           pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
+           placeholder: temp.Email_placeHolder,
+           errorMessage: temp.Email_err
+         },
+         {
+           type:'phone',
+           pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
+           placeholder: temp.Phone_placeHolder,
+           errorMessage: temp.Phone_err
+         }
+       ],
+       title: temp.title});
+     }.bind(this));
+  },
+  getInitialState: function() {
+    return ({
+      inputFields: [],
+      title: ''
+    });
+  },
+
   pushData: function(data) {
     var user = data;
     var ref = new Firebase(config.firebasePath);
@@ -37,20 +51,22 @@ var Registration = React.createClass({
       };
     });
   },
+
   render: function() {
     return (
       <section id="registration" className="page-wrap">
-        <h2 className="module-header">Registration</h2>
+        <h2 className="module-header">{this.state.title}</h2>
         <div className="registration">
-          <RegistrationForm onDataReceived={this.pushData}/>
+          <RegistrationForm onDataReceived={this.pushData} inputs={this.state.inputFields} btnText={this.state.title}/>
         </div>
       </section>
-
     )
   }
 });
 
 var RegistrationForm = React.createClass({
+
+
   getInitialState: function() {
     return ({
       name:false,
@@ -72,7 +88,6 @@ var RegistrationForm = React.createClass({
     var data = {};
     data[field.name] = field.value;
     this.setState(data);
-
   },
   isValid: function() {
     if (this.state.name && this.state.email && this.state.phone) {
@@ -95,11 +110,19 @@ var RegistrationForm = React.createClass({
     });
   },
   render: function() {
-    var formInputs = inputFields.map(function(input) {
+    var formInputs = this.props.inputs.map(function(input) {
       return (
-          <InputField valueReceived={this.fieldIsValid} tipIsShown={this.state.registerButtonIsPressed}
-            clear={this.state.clear} unclear={this.clearForm} type={input.type} pattern={input.pattern} placeholder={input.placeholder}
-            errorMessage={input.errorMessage} key={input.type} inputAbleToFill={this.clearForm}/>
+        <InputField
+          type={input.type}
+          valueReceived={this.fieldIsValid}
+          placeholder={input.placeholder}
+          tipIsShown={this.state.registerButtonIsPressed}
+          clear={this.state.clear}
+          unclear={this.clearForm}
+          pattern={input.pattern}
+          errorMessage={input.errorMessage}
+          key={input.type}
+          inputAbleToFill={this.clearForm}/>
         )
     }.bind(this));
 
@@ -107,7 +130,7 @@ var RegistrationForm = React.createClass({
       <form onSubmit={this.handleSubmit}>
         {formInputs}
         <div className="registration__field">
-          <input type="submit" className="registration__submit" value="Register"/>
+          <input type="submit" className="registration__submit" value={this.props.btnText}/>
         </div>
       </form>
     );

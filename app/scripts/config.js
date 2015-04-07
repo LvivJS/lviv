@@ -1,12 +1,31 @@
 'use strict';
 
 var config = (function() {
+
   return {
-    path: {
-      schedule: './dev/json/schedule.json',
-      speakers: './dev/json/speakers.json',
-      partners: './dev/json/partners.json',
-      mainInfo: './dev/json/mainInfo.json'
+    //Look if we have users localisation, if not - use default.
+    pathJSON: function(module) {
+      //=======================================AVAILABLE LOCALES SEETINGS HERE
+      var availableLocales = ['en', 'uk'];
+      var defLang = 'en';
+      var navLng = navigator.browserLanguage || navigator.language;
+      //Check if navigator.language includes dash
+      var userLang = navLng.substr(0, navLng.indexOf('-')) || navLng;
+      var setLocale;
+
+      //Actually set proper path
+      for (var i = 0; i < availableLocales.length; i++) {
+        if (availableLocales[i] == userLang) {
+          setLocale = availableLocales[i];
+          break;
+        } else {
+          setLocale = defLang;
+        }
+      }
+      return 'locales/' + setLocale + '/' + module + '.json';
+    },
+    pathIMG: {
+      conf_logo: 'images/logo.jpg'
     },
 
     firebasePath: 'https://blistering-fire-6843.firebaseio.com/users',
@@ -41,9 +60,9 @@ var config = (function() {
         title: 'partners',
         isRendering: true,
         order: 5
-      },
+      }
     ]
   }
-})()
+})();
 
 module.exports = config;

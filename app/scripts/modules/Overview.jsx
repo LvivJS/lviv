@@ -1,15 +1,23 @@
+'use strict';
+
 var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
+var UiComp = require('../components/ui_components.jsx');
+var ReactIntl = require('react-intl');
+var IntlMixin     = ReactIntl.IntlMixin;
+var FormattedDate = ReactIntl.FormattedDate;
+var FormattedTime = ReactIntl.FormattedTime;
 
 var OverviewBlock = React.createClass({
+  mixins: [IntlMixin],
   getInitialState: function(){
     return {
-      mainInfo:[]
+      mainInfo: []
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.path.mainInfo, function(data) {
+    utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
       this.setState({mainInfo: JSON.parse(data)});
     }.bind(this));
   },
@@ -21,15 +29,14 @@ var OverviewBlock = React.createClass({
       <section id="overview" className="page-wrap">
         <div className="overview">
           {conferenceInfo}
-          <div className="overview__wrap"></div>
         </div>
       </section>
-
     )
   }
 });
 
 var Overview = React.createClass({
+  mixins: [IntlMixin],
   render:function(){
     return(
       <div className="overview__content">
@@ -37,18 +44,33 @@ var Overview = React.createClass({
         <div className="overview__about">{this.props.mainInfo.about}</div>
         <div className="overview__info">
           <div className="overview__infoBlock">
-            <div className="overview__infoIcon overview__infoIcon--when"></div>
+            <div className="overview__infoIcon">
+              <UiComp image="time" />
+            </div>
             <div className="overview__infoData overview__infoData--when">
-              <span>{this.props.mainInfo.time}</span>
+              <span>
+                <FormattedDate 
+                  value={new Date(this.props.mainInfo.start_date)} 
+                  day="numeric"
+                  month="long"
+                  year="numeric" /><br/>
+                <FormattedTime 
+                  value={new Date(this.props.mainInfo.start_date)} 
+                  hour="numeric"
+                  minute="numeric" />
+              </span>
             </div>
           </div>
           <div className="overview__infoBlock">
-            <div className="overview__infoIcon overview__infoIcon--where"></div>
+            <div className="overview__infoIcon">
+              <UiComp image="location" />
+            </div>
             <div className="overview__infoData overview__infoData--where">
               <span>{this.props.mainInfo.location}</span>
             </div>
           </div>
         </div>
+        <div className="overview__wrap"></div>
       </div>
     )
   }

@@ -6,14 +6,19 @@ var utilities = require('../utilities');
 
 var Partners = React.createClass({
   componentDidMount: function() {
-    utilities.ajax('get', config.path.partners, function(data) {
-      this.setState({categories: JSON.parse(data)});
+    utilities.ajax('get', config.pathJSON('partners'), function(data) {
+      var temp = JSON.parse(data);
+      this.setState({
+        categories: temp.data,
+        header: temp.title
+      });
     }.bind(this));
   },
 
   getInitialState: function() {
     return {
-      categories: []
+      categories: [],
+      title: ''
     }
   },
 
@@ -23,7 +28,7 @@ var Partners = React.createClass({
     });
     return (
       <section id="partners" className="page-wrap">
-        <h2 className="module-header">Partners</h2>
+        <h2 className="module-header">{this.state.header}</h2>
         <div className="partners">
           { categoriesToRender }
         </div>
@@ -48,7 +53,7 @@ var PartnerLink = React.createClass({
   render: function() {
     var link = this.props.array.map(function(item) {
       return (
-      	<a href={item.link} title={item.title} className="partners__item-link" key={item.title} target="_blank">
+        <a href={item.link} title={item.title} className="partners__item-link" key={item.title} target="_blank">
           <img src={item.img} alt={item.title} />
         </a>
       );

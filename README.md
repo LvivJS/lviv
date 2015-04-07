@@ -1,3 +1,6 @@
 # conf_maker
-run `npm install`, `gulp build` and `gulp serve`. 
-then navigate your browser to `localhost:4444`
+run:  
+1) `npm install`  
+2) `gulp build`  
+3) `gulp serve`  
+4) navigate browser to `localhost:8080`

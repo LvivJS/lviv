@@ -16,8 +16,7 @@
 .registration__field {
     width: 60%;
     margin:15px auto;
-    display:flex;
-    justify-content: center;
+    @include container-ext;
     flex-direction:column;
     @include bp(medium) {
         width:75%;
@@ -31,7 +30,7 @@
     .registration__input {
         font-size: $font__small;
         line-height: 1.231;
-        border:2px solid $color__inputBorder--normal;
+        border:2px solid $color__gray;
         transition: border-color 0.5s ease-in-out;
         border-radius: 3px;
         padding: 10px 10px 9px 36px;
@@ -42,10 +41,10 @@
         appearance: normal;
         margin: 0 20px;
         &:hover {
-            border-color: $color__inputBorder--hover;
+            border-color: $color__gray--dark;
         }
         &:focus {
-            border-color: $color__inputBorder--focus;
+            border-color: $color__gray--darkest;
         }
         @include bp(small) {
             font-size: $font__mini;
@@ -53,23 +52,23 @@
         }
         @include bp(very-small) {
             padding: 10px 2px 9px 2px;
-        }        
+        }
     }
     .registration__input--invalid {
-        border-color: $color__inputBorder--invalid;
-        color: $color__inputBorder--invalid;  
+        border-color: $color__error;
+        color: $color__error;
         &:hover {
-           border-color: $color__inputBorder--invalid-hover;
+           border-color: $color__error;
         }
         &:focus {
-            border-color: $color__inputBorder--invalid-focus;
-        }     
+            border-color: $color__error;
+        }
     }
     .registration__tip{
         margin: 5px auto;
         display: block;
         transition: display 0.5s ease-in-out;
-        color:$color__gray--darken;
+        color: $color__gray--darker;
         font-size: $font__mini;
         @include bp(medium) {
             margin:5px 25px;
@@ -77,7 +76,6 @@
     }
     .registration__tip.invisible{
         display:none
-
     }
 }
 
@@ -86,23 +84,21 @@
     font-size: $font__large;
     padding: 20px;
     margin: 0 auto 1px auto;
-    color: $color__registration--text;
+    color: white;
     text-align: center;
     cursor: pointer;
     opacity: 1;
     border: none;
-    background-color: $color__registration--link;
+    background-color: $color__primary--saturate;
+    text-transform: capitalize;
+    width:55%;
     &:hover {
-        text-decoration: none;
-        background-color: $color__registration--hover;
+        background-color: $color__gray--dark;
         opacity: 0.9;
     }
     &:active {
         box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2);
-        background-color: $color__registration--active;
-    }
-    @include bp(medium) {
-        width:55%;
+        background-color: $color__gray--darker;
     }
     @include bp(small) {
         width:65%;

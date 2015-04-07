@@ -19,6 +19,8 @@ var del = require('del');
 var reactify = require('reactify');
 var imagemin = require('gulp-imagemin');
 var jsxcs = require('gulp-jsxcs');
+var autoprefixer = require('gulp-autoprefixer');
+var jpegoptim = require('imagemin-jpegoptim');
 
 var env = process.env.NODE_ENV || 'development';
 var isProd = env === 'production';
@@ -30,19 +32,23 @@ paths.jsEntry = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles = './app/styles/**/*.scss';
 paths.imageFiles = './app/images/**/*';
-paths.jsonFiles = './app/json/*.json';
+paths.jsonFiles = './app/locales/**/*';
 paths.styles = '/style';
 paths.script = '/scripts';
-paths.buildDev = './dist/dev';
-paths.buildProd = './dist/prod';
+paths.build = './dist';
 
 // default
 gulp.task('default', ['serve']);
 
 //run browserify, start server and reload page on saving changes
-gulp.task('serve',
-  ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
-  function() { gutil.log('Started successfully!'); });
+var serveTasks = {
+  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload', 'tunnel'],
+  'production' : ['start_server']
+}
+
+gulp.task('serve', serveTasks[env],
+  function() { gutil.log('Started successfully!');
+});
 
 //create folders and files before starting serve
 gulp.task('build', function () {
@@ -55,7 +61,7 @@ gulp.task('build', function () {
   function notify_success(err){
     notifier.notify({
       title: 'GULP BUILD ' + (err ? 'FAILED' : 'SUCCESS'),
-      message: err ? 'at ' + err.message : '✔'
+      message: err ? 'at ' + err.message : '✔ ' + env
    }, function(){
      //hack: exits process since browserify_build does not :(
      process.exit();
@@ -65,39 +71,39 @@ gulp.task('build', function () {
 
 gulp.task('app_watch', function(){
   gulp.watch(paths.jsFiles, ['scripts_styleguide']);
-  gulp.watch(paths.sassFiles,['build_style']);
-})
+  gulp.watch(paths.sassFiles, ['build_style']);
+});
 
 //STYLES
 gulp.task('build_style', function() {
   return gulp.src(paths.sassFiles)
-    .pipe(gulpif(env === 'development', sourcemaps.init()))
+    .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(sass())
+    .pipe(autoprefixer({browsers: ['> 5%','last 2 versions']}))
     .pipe(concating('styles.css'))
     .pipe(gulpif(!isProd, sourcemaps.write()))
-    .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + paths.styles)))
     .pipe(gulpif(isProd, minifycss()))
-    .pipe(gulpif(isProd, gulp.dest(paths.buildProd + paths.styles)))
+    .pipe(gulp.dest(paths.build + paths.styles));
 });
 
 //IMAGES
+// todo: console actual save on jpegoptim task
 gulp.task('build_image', function() {
   return gulp.src(paths.imageFiles)
-    .pipe(imagemin({ progressive: true }))
-    .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + '/images')))
-    .pipe(gulpif(isProd, gulp.dest(paths.buildProd + '/images')))
+    .pipe(imagemin({progressive: true }))
+    // .pipe(jpegoptim({max: 50})())
+    .pipe(gulp.dest(paths.build + '/images'));
 });
 
 //TEMPORARY task for moving json folder form app into dist/dev
 gulp.task('json_move', function() {
-  gulp.src(paths.jsonFiles)
-      .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + '/json')))
-      .pipe(gulpif(isProd, gulp.dest(paths.buildProd + '/json')))
+  return gulp.src(paths.jsonFiles)
+      .pipe(gulp.dest(paths.build + '/locales'));
 });
 
 //code healthiness
 gulp.task('scripts_styleguide', function () {
-  return gulp.src(paths.jsFiles).pipe(jsxcs())
+  return gulp.src(paths.jsFiles).pipe(jsxcs());
 });
 
 //BROWSERIFY
@@ -125,17 +131,19 @@ function browserify_bundle(){
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source(paths.buildFileName))
     .pipe(gulpif(isProd, streamify(uglify())))
-    .pipe(gulpif(isProd, gulp.dest(paths.buildProd + paths.script)))
-    .pipe(gulpif(!isProd, gulp.dest(paths.buildDev + paths.script)));
+    .pipe(gulp.dest(paths.build + paths.script));
 }
 
 //start server
 gulp.task('start_server', shell.task(['node server.js']));
+
+//tunnel your localhost to web
+gulp.task('tunnel', shell.task(['lt --port 8080']));
 
 //livereload
 gulp.task('start_livereload', shell.task(['live-reload --port 9091 dist/']));
 
 //clean folders
 gulp.task('deleteDist', function() {
-  del([paths.buildDev, paths.buildProd]);
+  del(paths.build);
 });

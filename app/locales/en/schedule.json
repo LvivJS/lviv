@@ -1,0 +1,178 @@
+{
+  "locales":{
+    "title": "Schedule",
+    "conf_schedule":"Schedule:",
+    "calend_links":"Add event to: "
+  },
+  "data": [
+    {
+      "name": "JavaScript Conference",
+      "days": [
+        {
+          "day_id":"01",
+          "day_info": "Fri May 22 2015",
+          "location":"Ukraine, Lviv, Oleny Stepanivny 45",
+          "timetable": [
+            {
+              "time": {
+                "start": "Fri May 22 2015 08:55:00"
+              },
+              "article":"Morning Welcome",
+              "type":"entertainment"
+            },
+            {
+              "time": {
+                "start": "Fri May 22 2015 09:00:00",
+                "end": "Fri May 22 2015 10:00:00"
+              },
+              "article":"The Fault, Dear Brutus (or: Career Advice From a Cranky Old Man)",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"Jeffrey Zeldman",
+                  "position":"A Book Apart, An Event Apart"
+                  },
+              "about":"We have met the enemy, and he is us. Many of the professional problems we blame on boneheaded bosses and clueless coworkers actually come from ourselves. Identify career woes you bring on yourself, and learn to get out of your own way. Make yourself irreplaceable."
+            },
+            {
+              "time": {
+                "start": "Fri May 22 2015 10:15:00",
+                "end": "Fri May 22 2015 11:15:00"
+              },
+              "article":"Icon Design Process",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"Jon Hicks",
+                  "position":"author Icons: The Icon Handbook"
+                  },
+              "about":"Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers.Icons are more than just pretty decorative graphics for sites and applications; they are little miracle workers. They summarize and explain actions, provide direction, offer feedback and even break through language barriers."
+            },
+            {
+              "time": {
+                "start": "Fri May 22 2015 11:30:00",
+                "end": "Fri May 22 2015 12:30:00"
+              },
+              "article":"Designing for Social Behaor",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"Sarah Parmenter",
+                  "position":"Founder, You Know Who"
+                  },
+              "about":"Love it or loathe it, social media has been burned into everything we do. Once more, it’s fallen on the head of the trusty, multiple-hat-wearing web designer to become a social engineer. In addition to everything else we do, it’s now our job to design strategies and integrate them into our projects. It’s not just about connecting these services to our apps or websites. It’s about knowing how to craft together behaviors, user experience, and traditional design elements in a beautifully harmonious way that achieves business goals. From lessons learned while designing a large social network from scratch, and minus the overly familiar buzzwords and marketing cliches, Sarah will teach you how to truly engage with your users. Discover the real value of social media reciprocity, and learn how to make it work for you. "
+            },
+            {
+              "time": {
+                "start": "Fri May 22 2015 12:30:00",
+                "end": "Fri May 22 2015 14:00:00"
+              },
+              "article":"Lunch",
+              "type":"entertainment"
+            },
+            {
+              "time":{
+                "start": "Fri May 22 2015 14:00:00",
+                "end": "Fri May 22 2015 15:00:00"
+              },
+              "article":"Icon Design Pross",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"Jon Hicks",
+                  "position":"author Icons: The Icon Handbook"
+                  }
+            },
+            {
+              "time":{
+                "start": "Fri May 22 2015 15:35:00",
+                "end": "Fri May 22 2015 16:15:00"
+              },
+              "article":"Designing for Social Behavior",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"Sarah Parmenter",
+                  "position":"Founder, You Know Who"
+                  },
+              "about":"Love it or loathe it, social media has been burned ine do, it’s now our job to design strategies and integrate them into our projects. It’s not just about connecting these services to our apps or websites. It’s about knowing how to craft together behaviors, user experience, and traditional design elements in a beautifully harmonious way that achieves business goals. From lessons learned while designing a large social network from scratch, and minus the overly familiar buzzwords and marketing cliches, Sarah will teach you how to truly engage with your users. Discover the real value of social media reciprocity, and learn how to make it work for you. "
+            },
+            {
+              "time":{
+                "start": "Fri May 22 2015 16:30:00",
+                "end": "Fri May 22 2015 19:00:00"
+              },
+              "article":"Opening Night Happy Hours",
+              "type":"entertainment",
+              "about":"Join us at A Happy Hours Apart, to be held in the 4th floor foyer, right next to the registration desk. We’ll provide tasty snacks and tastier beverages to recharge your body after a full day of recharging your mind!"
+            }
+          ]
+        },
+        {
+          "day_id":"02",
+          "day_info": "Sat May 23 2015",
+          "location":"Ukraine, Lviv, Oleny Stepanivny 45",
+          "timetable": [
+            {
+              "time": {
+                "start": "Sat May 23 2015 08:55:00"
+              },
+              "article":"Morning Welcome",
+              "type":"entertainment"
+            },
+            {
+              "time": {
+                "start": "Sat May 23 2015 09:00:00",
+                "end": "Sat May 23 2015 10:00:00"
+              },
+              "article":"SVG is for Everybody",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"Chris Coyier",
+                  "position":"Author, CSS-Tricks.com"
+                  },
+              "about":"While SVG isn’t exactly new, browser support is just getting to the point that we can use it without much worry. Even if we do need fallbacks for older browsers, modern tools make it easy. This makes now the perfect time to learn about SVG and how it can help you in everyday web design. Perhaps the most compelling reason: SVG images look sharp at any dimension with tiny file sizes—which is great for making responsive websites responsibly. You’ll also learn how SVG helps to easily create complex shapes, and how to use it to make icons that are more accessible than with any other web-based icon creation technique. You’ll learn how SVG can make customized complex graphics on the fly, create compelling animations and other interactions, and empower some pretty great designerly effects."
+            },
+            {
+              "time":{
+                "start": "Sat May 23 2015 10:15:00",
+                "end": "Sat May 23 2015 11:15:00"
+              },
+              "article":"CSS Grid Layout",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"Rachel Andrew",
+                  "position":"Co-founder, Perch"
+                  },
+              "about":""
+            },
+            {
+              "time": {
+                "start": "Sat May 23 2015 11:30:00",
+                "end": "Sat May 23 2015 12:30:00"
+              },
+              "article":"Lunch",
+              "type":"entertainment"
+            },
+            {
+              "time": {
+                "start": "Sat May 23 2015 12:30:00",
+                "end": "Sat May 23 2015 14:00:00"
+              },
+              "article":"Everything You Wanted to Know About Responsive Design…And Less!",
+              "type":"report",
+              "speaker":
+                {
+                  "name":"",
+                  "position":""
+                  },
+              "about":"But how many designs can help a user who is completely in the dark and barely capable of rational thought? In this talk, Eric will draw on his personal and professional experience to explore examples of crisis-mitigating design successes and failures. In the process, he'll illustrate ways that you can and should consider the needs of users teetering on the edge of panic. Helping them will make your designs more relevant and useful for all your users."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

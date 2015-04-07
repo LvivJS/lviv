@@ -2,15 +2,14 @@
 @import '../mixins';
 
 #app {
-	display: flex;
-	justify-content: center;
+	@include container-ext;
 }
 
 .page-wrap {
-	display: flex;
+	@include container-ext;
 	flex-direction: column;
+	align-items: center;
 	width: 100%;
-	justify-content: center;
 }
 
 .module-wrapper {
@@ -19,10 +18,12 @@
 
 .module-header {
 	@include container-ext;
+	width: 100%;
 	padding: 25px;
 	background: $color__primary--dark;
-	color: $color__heading--menu;
+	color: $color__white;
 	font-size: 2em;
+	text-transform: capitalize;
 }
 
 h1 {
@@ -37,16 +38,3 @@ h1 {
 .invisible {
 	display:none
 }
-
-/*  
-this is test styles and should be deleted
-every module which would be instead of .container
-should contain @include container-int; 
-*/
-.container,
- {
-	@include container-int;
-	border: 3px $color__primary solid;
-	height: 400px;
-}
-

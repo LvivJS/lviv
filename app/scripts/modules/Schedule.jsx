@@ -3,30 +3,42 @@
 var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
+var classNames = require('classnames');
+var UiComp = require('../components/ui_components.jsx');
+var ReactIntl = require('react-intl');
+var IntlMixin     = ReactIntl.IntlMixin;
+var FormattedDate = ReactIntl.FormattedDate;
+var FormattedTime = ReactIntl.FormattedTime;
 
 var Schedule = React.createClass({
+  mixins: [IntlMixin],
   getInitialState: function() {
     return {
       conferences: [],
+      locales:''
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.path.schedule, function(data) {
-      this.setState({conferences: JSON.parse(data)})
+    utilities.ajax('get', config.pathJSON('schedule'), function(data) {
+      var temp = JSON.parse(data);
+      this.setState({
+        conferences: temp.data,
+        locales: temp.locales,
+        });
     }.bind(this));
   },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
-      return (<Conference key={conference.name} days={conference.days} name={conference.name} />)
-    });
+      return <Conference key={conference.name} days={conference.days}
+        name={conference.name} locales={this.state.locales} />
+    }.bind(this));
     return (
       <section id="schedule" className="page-wrap">
-        <h2 className="module-header">Schedule</h2>
+        <h2 className="module-header">{this.state.locales.title}</h2>
         <div className="schedule">
           {conferences}
         </div>
       </section>
-
     );
   }
 });
@@ -50,23 +62,40 @@ var Conference = React.createClass({
   },
   render: function() {
     var days = this.props.days.map(function(day) {
+      var dayIsActive = (this.state.activeDay == day.day_id);
+      var liClass = classNames({
+        'conference__tab--active': dayIsActive
+      });
       return (
-        <li onClick={this.changeTab.bind(null, day)} key={day.day_id}
-          className={(this.state.activeDay==day.day_id) ? "conference__tab--active" : null}>
-          <span>{day.day_name}</span>
+        <li onClick={this.changeTab.bind(null, day)} key={day.day_id} className={liClass}>
+          <FormattedDate
+            value={new Date(day.day_info)}
+            day="numeric"
+            month="long" />
         </li>
       )
     }.bind(this));
+
     var timetable = this.props.days.map(function(day) {
       if (day.day_id == this.state.activeDay && this.state.confIsVisible) {
-        return <Timetable sessions={day.timetable} key={day.day_id}/>
-      };}.bind(this));
+        return <Timetable sessions={day.timetable} key={day.day_id}
+        location={day.location} locales={this.props.locales} />
+      }
+    }.bind(this));
+
+    //set direction of arrow
+    var toggleButtonImage = classNames({
+        'schedule__toggleButton': true,
+        'arrowDown': !this.state.confIsVisible
+    });
+
     return (
       <div className="conference">
         <div className="conference__title">
-          <h3>Shedule: {this.props.name}</h3>
-          <input type="button" onClick={this.changeConfRepresent}
-            className={this.state.confIsVisible ? "up-arrow" : "down-arrow"}/>
+          <h3>{this.props.locales.conf_schedule}{this.props.name}</h3>
+          <span onClick={this.changeConfRepresent} className={toggleButtonImage}>
+            <UiComp image='arrowUp' />
+          </span>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}
         {timetable}
@@ -92,7 +121,15 @@ var Timetable = React.createClass({
   },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
-      return <Session key={session.article} session={session} smallScreen={this.state.smallScreen}/>
+      var timeStart =  new Date(session.time.start);
+      if (session.time.end) {
+        var timeEnd =  new Date(session.time.end)
+      }
+      session.location = this.props.location
+      return (
+        <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
+          start={timeStart} end={timeEnd} locales={this.props.locales} />
+      )
     }.bind(this));
     return (
       <div className="timetable">
@@ -117,43 +154,78 @@ var Session = React.createClass({
       isHidden: this.props.smallScreen
     });
   },
+  createCalendLink: function() {
+    utilities.calendLinks.iCalendar(this.state.session);
+  },
   render: function() {
-    var sessionClass = 'session ';
-    var sessionInfoClass = 'session__info ';
-    var sessionAboutClass = 'session__about ';
-    var sessionButtonClass = 'session__button ';
     var speaker = null;
     var button = null;
-
+    var timeEnd = null;
+    var calendarLinks = null;
+    
     if (this.state.isReport) {
-      sessionClass += 'session--report';
       speaker = (
         <span className="speaker__name">
           {this.state.session.speaker.name}
           {this.state.session.speaker.position}
         </span>
       )
-    } else {
-      sessionClass += 'session--entertainment';
-      sessionInfoClass += 'session__info--right';
+      calendarLinks = (
+        <div className="session__calendButtons">
+          <span>{this.props.locales.calend_links}</span> <br/>
+          <a href={utilities.calendLinks.googleCalendar(this.state.session)} target="_blank" rel="nofollow" 
+            className="session__calendLink session__calendLink--gCal">Google Calendar</a>
+          <a className="session__calendLink session__calendLink--iCal" onClick={this.createCalendLink}>iCalendar</a>
+        </div>
+      )
     };
 
-    if (this.state.isHidden) {
-      sessionAboutClass += 'invisible'
-      sessionButtonClass += 'session__button--inactive'
-    } else {
-      sessionButtonClass += 'session__button--active'
-    };
+    var sessionClass = classNames({
+      'session': true,
+      'session--report': this.state.isReport,
+      'session--entertainment': !this.state.isReport
+    });
+
+    var sessionInfoClass = classNames({
+      'session__info': true,
+      'session__info--right': !this.state.isReport
+    });
+
+    var sessionAboutClass = classNames({
+      'session__about': true,
+      'invisible': this.state.isHidden
+    });
+
+    var sessionButtonClass = classNames ({
+      'session__button': true,
+      'session__button--inactive': this.state.isHidden,
+      'session__button--active': !this.state.isHidden
+    });
+
     if (this.state.session.about) {
       button = (
         <span onClick={this.changeAbout.bind(null,this.state.session)} className= {sessionButtonClass}>
         </span>
       )
+    };
+    if(this.props.end) {
+      timeEnd = (
+        <FormattedTime
+            value={new Date(this.props.end)}
+            hour="numeric"
+            minute="numeric" />
+      )
     }
     return (
       <div key={this.state.session.article}
        className={sessionClass}>
-        <div className="session__time">{this.state.session.time}</div>
+        <div className="session__time">
+          <FormattedTime
+            value={new Date(this.props.start)}
+            hour="numeric"
+            minute="numeric" />
+          {timeEnd}
+        </div>
         <div className="session__arrangement">
           <h4 className="session__name">{this.state.session.article}</h4>
           <div className={sessionInfoClass}>
@@ -163,6 +235,7 @@ var Session = React.createClass({
           <div className={sessionAboutClass}>
               {this.state.session.about}
           </div>
+          {calendarLinks}
         </div>
       </div>
     )
