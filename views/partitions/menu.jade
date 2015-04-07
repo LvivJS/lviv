@@ -1,0 +1,26 @@
+div#menu.module-wrapper
+  div.menu-wrapper
+    div#cm_toggleWrapper.toggleWrapper
+        div#cm_menuToggle.menuToggle
+          div.menuToggle__stripe
+          div.menuToggle__stripe
+          div.menuToggle__stripe
+    nav#cm_menuItems.menu
+      each module in config.modules
+        a.menu__item(href="##{module.title}")= module.title
+  div#cm_darkenScreen.darkenScreen--hidden
+  
+script.
+  // TODO: refactor
+  var menuToggler = document.getElementById('cm_menuToggle');
+  var menuItems = document.getElementById('cm_menuItems');
+  var overlay = document.getElementById('cm_darkenScreen');
+  
+  menuToggler.addEventListener('click', toggleMenu);
+  menuItems.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+  
+  function toggleMenu() {
+    menuItems.classList.toggle('menu--visible');
+    overlay.classList.toggle('darkenScreen--visible');
+  }

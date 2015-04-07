@@ -4,12 +4,13 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 
-var port = 8080;
+var port = process.env.port || 8080;
 var env = process.env.NODE_ENV || 'development';
 
 // mocked data
-var data = {}
+var data = {};
 data.footer = require('./app/locales/en/footer.json');
+data.config = require('./app/scripts/config');
 
 app.use(compress());
 app.use(bodyParser.json());
