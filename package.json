@@ -15,14 +15,13 @@
     "ejs": "^2.2.4",
     "express": "^4.12.3",
     "jade": "^1.9.2",
+    "moment": "^2.10.0",
     "node-jsx": "^0.12.4",
     "q": "^1.2.0",
     "underscore": "^1.8.2"
   },
   "devDependencies": {
-    "react": "^0.13.1",
-    "react-tools": "^0.13.1",
-    "browserify": "^9.0.3",
+    "browserify": "^9.0.7",
     "classnames": "^1.2.0",
     "del": "^1.1.1",
     "firebase": "^2.2.3",
@@ -44,12 +43,14 @@
     "live-reload": "^1.1.0",
     "localtunnel": "^1.5.0",
     "node-notifier": "^4.1.1",
+    "react": "^0.13.1",
     "react-intl": "^1.2.0",
+    "react-tools": "^0.13.1",
     "reactify": "^1.1.0",
     "rimraf": "^2.3.2",
     "run-sequence": "^1.0.2",
     "vinyl-source-stream": "^1.1.0",
-    "watch": "^0.15.0",
+    "watch": "^0.16.0",
     "watchify": "^3.1.0"
   },
   "scripts": {
