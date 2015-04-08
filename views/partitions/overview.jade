@@ -1,3 +1,4 @@
+
 section#overview.page-wrap
   div.overview
     div.overview__content
@@ -5,12 +6,16 @@ section#overview.page-wrap
       div.overview__about= overview.about
       div.overview__info
           div.overview__infoBlock
-            div.overview__infoIcon time
+            div.overview__infoIcon
+               +icon('time')
             div.overview__infoData.overview__infoData--when
-              span when
+              //- TODO: remove unnecessary div after sprint2 refactor
+              div
+                div= moment(overview.start_date).format('MMM DD, YYYY')
+                div= moment(overview.start_date).format('h:mm a')
           div.overview__infoBlock
-            div.overview__infoIcon loc
+            div.overview__infoIcon
+              +icon('location')
             div.overview__infoData.overview__infoData--where
               span= overview.location
         div.overview__wrap
-//- todo: icons

@@ -6,7 +6,8 @@ var app = express();
 
 var port = process.env.port || 8080;
 var env = process.env.NODE_ENV || 'development';
-
+// utilities
+app.locals.moment = require('moment');
 // mocked data
 var data = {};
 data.footer = require('./app/locales/en/footer.json');
