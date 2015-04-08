@@ -8,27 +8,28 @@ var ReactIntl = require('react-intl');
 var IntlMixin     = ReactIntl.IntlMixin;
 var FormattedDate = ReactIntl.FormattedDate;
 var FormattedTime = ReactIntl.FormattedTime;
+var files = require('../db_connector');
 
 var OverviewBlock = React.createClass({
   mixins: [IntlMixin],
   getInitialState: function(){
     return {
-      mainInfo: []
+      mainInfo: {}
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
-      this.setState({mainInfo: JSON.parse(data)});
+    files.get('overview',  function(data) {
+      this.setState({mainInfo: data});
     }.bind(this));
   },
   render: function() {
-    var conferenceInfo = this.state.mainInfo.map(function(info){
-      return <Overview mainInfo={info} key={info.name}/>
-    });
+    // var conferenceInfo = this.state.mainInfo.map(function(info){
+    //   return
+    // });
     return (
       <section id="overview" className="page-wrap">
         <div className="overview">
-          {conferenceInfo}
+          <Overview mainInfo={this.state.mainInfo} />
         </div>
       </section>
     )
@@ -49,13 +50,13 @@ var Overview = React.createClass({
             </div>
             <div className="overview__infoData overview__infoData--when">
               <span>
-                <FormattedDate 
-                  value={new Date(this.props.mainInfo.start_date)} 
+                <FormattedDate
+                  value={new Date(this.props.mainInfo.start_date)}
                   day="numeric"
                   month="long"
                   year="numeric" /><br/>
-                <FormattedTime 
-                  value={new Date(this.props.mainInfo.start_date)} 
+                <FormattedTime
+                  value={new Date(this.props.mainInfo.start_date)}
                   hour="numeric"
                   minute="numeric" />
               </span>
