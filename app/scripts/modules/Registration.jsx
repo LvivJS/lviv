@@ -3,6 +3,7 @@ var Firebase = require('firebase');
 var InputField = require('../components/input.jsx');
 var config = require('../config');
 var utilities = require('../utilities');
+var files = require('../db_connector');
 
 var Registration = React.createClass({
   componentDidMount: function() {
@@ -40,15 +41,12 @@ var Registration = React.createClass({
   },
 
   pushData: function(data) {
-    var user = data;
-    var ref = new Firebase(config.firebasePath);
-    ref.push(user);
-    ref.once('child_added', function(snapshot) {
-      var userData = snapshot.val();
-      //TODO - object comparing that not depends on order
-      if (JSON.stringify(userData) == JSON.stringify(user)) {
+    files.push('users', data, function(id) {
+      if (id) {
         alert('You succesfully registered!!!!');
-      };
+      } else {
+        alert('Unfortunately registration failed...');
+      }
     });
   },
 
