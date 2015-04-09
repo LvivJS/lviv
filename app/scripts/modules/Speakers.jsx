@@ -16,7 +16,7 @@ var Speakers = React.createClass({
   },
   componentDidMount: function() {
     files.get('modules/speakers', function(data) {
-      var temp = JSON.parse(data)
+      var temp = data;
       this.setState({
         speakerInfo: temp.data,
         header: temp.title

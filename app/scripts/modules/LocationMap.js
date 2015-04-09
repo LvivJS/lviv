@@ -9,10 +9,9 @@ var LocationMap = React.createClass({
     google.maps.event.addDomListener(window, 'load', this.initialize);
     files.get('modules/location', function(data) {
       var temp = data;
-      debugger;
       this.setState({
         header: temp.title,
-        linkTitleText: temp.linkTitle
+        linkTitle: temp.linkTitle
       });
     }.bind(this));
   },
@@ -38,14 +37,15 @@ var LocationMap = React.createClass({
     controlText.className = 'location__controlText';
     controlText.href = 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D;
     controlText.target = 'blank';
-    controlText.innerHTML = this.state.linkTitleText;
+    // TODO: fix - when this code executes, this.state.linkTitle is an epty string
+    controlText.innerHTML = this.state.linkTitle;
     controlDiv.appendChild(controlText);
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
   },
   getInitialState: function() {
     return ({
       header: '',
-      linkTitleText: ''
+      linkTitle: ''
     });
   },
   render: function() {
