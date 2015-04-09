@@ -5,6 +5,7 @@ var config = require('../config');
 var utilities = require('../utilities');
 var classNames = require('classnames');
 var SocialIcon = require('../components/socials.jsx');
+var files = require('../db_connector');
 
 var Speakers = React.createClass({
   getInitialState: function() {
@@ -14,7 +15,7 @@ var Speakers = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('speakers'), function(data) {
+    files.get('modules/speakers', function(data) {
       var temp = JSON.parse(data)
       this.setState({
         speakerInfo: temp.data,

@@ -2,15 +2,17 @@
 var React = require('react');
 var utilities = require('../utilities');
 var config = require('../config');
+var files = require('../db_connector');
 
 var LocationMap = React.createClass({
   componentWillMount: function() {
     google.maps.event.addDomListener(window, 'load', this.initialize);
-    utilities.ajax('get', config.pathJSON('location'), function(data) {
-      var temp = JSON.parse(data);
+    files.get('modules/location', function(data) {
+      var temp = data;
+      debugger;
       this.setState({
         header: temp.title,
-        linkTitle: temp.linkTitle
+        linkTitleText: temp.linkTitle
       });
     }.bind(this));
   },
@@ -36,14 +38,14 @@ var LocationMap = React.createClass({
     controlText.className = 'location__controlText';
     controlText.href = 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D;
     controlText.target = 'blank';
-    controlText.innerHTML = this.state.linkTitle;
+    controlText.innerHTML = this.state.linkTitleText;
     controlDiv.appendChild(controlText);
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
   },
   getInitialState: function() {
     return ({
       header: '',
-      linkTitle: ''
+      linkTitleText: ''
     });
   },
   render: function() {

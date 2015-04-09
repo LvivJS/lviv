@@ -7,8 +7,8 @@ var files = require('../db_connector');
 
 var Registration = React.createClass({
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('registration'), function(data) {
-       var temp = JSON.parse(data);
+    files.get('modules/registration', function(data) {
+       var temp = data;
        this.setState({
          inputFields: [
          {
