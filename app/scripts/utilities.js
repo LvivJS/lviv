@@ -7,7 +7,8 @@ var utilities = {
     request.onreadystatechange = function() {
       if (request.readyState == 4) {
         if (request.status == 200) {
-          callBack(request.responseText);
+          var temp = JSON.parse(request.responseText);
+          callBack(temp);
         }
       }
     };

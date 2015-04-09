@@ -46,7 +46,17 @@ var Overview = React.createClass({
               <UiComp image="time" />
             </div>
             <div className="overview__infoData overview__infoData--when">
-
+              <span>
+                  <FormattedDate
+                    value={new Date(this.props.mainInfo.start_date)}
+                    day="numeric"
+                    month="long"
+                    year="numeric" /><br/>
+                  <FormattedTime
+                    value={new Date(this.props.mainInfo.start_date)}
+                    hour="numeric"
+                    minute="numeric" />
+                </span>
             </div>
           </div>
           <div className="overview__infoBlock">
