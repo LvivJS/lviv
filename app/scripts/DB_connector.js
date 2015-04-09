@@ -49,4 +49,4 @@ var LocalConnect = {
   }
 };
 
-module.exports = LocalConnect;
+module.exports = FirebaseConect;

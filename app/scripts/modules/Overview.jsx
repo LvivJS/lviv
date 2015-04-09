@@ -11,7 +11,6 @@ var FormattedTime = ReactIntl.FormattedTime;
 var files = require('../db_connector');
 
 var OverviewBlock = React.createClass({
-  mixins: [IntlMixin],
   getInitialState: function(){
     return {
       mainInfo: {}
@@ -23,53 +22,58 @@ var OverviewBlock = React.createClass({
     }.bind(this));
   },
   render: function() {
+    var date = function() {
+      if (this.state.mainInfo.hasOwnProperty('start_date')) {
+        return <Dates date={this.state.mainInfo.start_date} />
+      }
+    }.bind(this);
     return (
       <section id="overview" className="page-wrap">
         <div className="overview">
-          <Overview mainInfo={this.state.mainInfo} />
+        <div className="overview__content">
+          <h2>{this.state.mainInfo.name}</h2>
+          <div className="overview__about">{this.state.mainInfo.about}</div>
+          <div className="overview__info">
+            <div className="overview__infoBlock">
+              <div className="overview__infoIcon">
+                <UiComp image="time" />
+              </div>
+              <div className="overview__infoData overview__infoData--when">
+                {date()}
+              </div>
+            </div>
+            <div className="overview__infoBlock">
+              <div className="overview__infoIcon">
+                <UiComp image="location" />
+              </div>
+              <div className="overview__infoData overview__infoData--where">
+                <span>{this.state.mainInfo.location}</span>
+              </div>
+            </div>
+          </div>
+          <div className="overview__wrap"></div>
+        </div>
         </div>
       </section>
     )
   }
 });
 
-var Overview = React.createClass({
+var Dates = React.createClass({
   mixins: [IntlMixin],
   render:function(){
     return(
-      <div className="overview__content">
-        <h2>{this.props.mainInfo.name}</h2>
-        <div className="overview__about">{this.props.mainInfo.about}</div>
-        <div className="overview__info">
-          <div className="overview__infoBlock">
-            <div className="overview__infoIcon">
-              <UiComp image="time" />
-            </div>
-            <div className="overview__infoData overview__infoData--when">
-              <span>
-                  <FormattedDate
-                    value={new Date(this.props.mainInfo.start_date)}
-                    day="numeric"
-                    month="long"
-                    year="numeric" /><br/>
-                  <FormattedTime
-                    value={new Date(this.props.mainInfo.start_date)}
-                    hour="numeric"
-                    minute="numeric" />
-                </span>
-            </div>
-          </div>
-          <div className="overview__infoBlock">
-            <div className="overview__infoIcon">
-              <UiComp image="location" />
-            </div>
-            <div className="overview__infoData overview__infoData--where">
-              <span>{this.props.mainInfo.location}</span>
-            </div>
-          </div>
-        </div>
-        <div className="overview__wrap"></div>
-      </div>
+      <span>
+        <FormattedDate
+          value={new Date(this.props.date)}
+          day="numeric"
+          month="long"
+          year="numeric" /><br/>
+        <FormattedTime
+          value={new Date(this.props.date)}
+          hour="numeric"
+          minute="numeric" />
+      </span>
     )
   }
 });
