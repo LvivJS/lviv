@@ -11,7 +11,8 @@ app.locals.moment = require('moment');
 // mocked data
 var data = {};
 data.footer = require('./app/locales/en/footer.json');
-data.overview = require('./app/locales/en/mainInfo.json')[0]; // todo: refactor
+data.speakers = require('./app/locales/en/speakers.json');
+data.overview = require('./app/locales/en/mainInfo.json')[0]; // todo: refactor [0]
 data.config = require('./app/scripts/config');
 
 app.use(compress());
