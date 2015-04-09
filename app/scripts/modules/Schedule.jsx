@@ -9,6 +9,7 @@ var ReactIntl = require('react-intl');
 var IntlMixin     = ReactIntl.IntlMixin;
 var FormattedDate = ReactIntl.FormattedDate;
 var FormattedTime = ReactIntl.FormattedTime;
+var files = require('../db_connector');
 
 var Schedule = React.createClass({
   mixins: [IntlMixin],
@@ -19,8 +20,8 @@ var Schedule = React.createClass({
     }
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('schedule'), function(data) {
-      var temp = JSON.parse(data);
+    files.get('modules/schedule', function(data) {
+      var temp = data;
       this.setState({
         conferences: temp.data,
         locales: temp.locales,
@@ -162,7 +163,7 @@ var Session = React.createClass({
     var button = null;
     var timeEnd = null;
     var calendarLinks = null;
-    
+
     if (this.state.isReport) {
       speaker = (
         <span className="speaker__name">
@@ -173,7 +174,7 @@ var Session = React.createClass({
       calendarLinks = (
         <div className="session__calendButtons">
           <span>{this.props.locales.calend_links}</span> <br/>
-          <a href={utilities.calendLinks.googleCalendar(this.state.session)} target="_blank" rel="nofollow" 
+          <a href={utilities.calendLinks.googleCalendar(this.state.session)} target="_blank" rel="nofollow"
             className="session__calendLink session__calendLink--gCal">Google Calendar</a>
           <a className="session__calendLink session__calendLink--iCal" onClick={this.createCalendLink}>iCalendar</a>
         </div>

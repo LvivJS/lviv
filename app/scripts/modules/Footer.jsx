@@ -4,6 +4,7 @@ var React = require('react');
 var utilities = require('../utilities');
 var config = require('../config');
 var SocialIcon = require('../components/socials.jsx');
+var files = require('../db_connector');
 
 var Footer = React.createClass({
   getInitialState: function() {
@@ -15,8 +16,8 @@ var Footer = React.createClass({
     });
   },
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('footer'), function(data) {
-      var temp = JSON.parse(data);
+    files.get('modules/footer', function(data) {
+      var temp = data;
       this.setState({
         events: temp.data.events,
         networks: temp.data.socials.networks,

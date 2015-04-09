@@ -28,7 +28,7 @@ var config = (function() {
       conf_logo: 'images/logo.jpg'
     },
 
-    firebasePath: 'https://blistering-fire-6843.firebaseio.com/users',
+    firebasePath: 'https://blistering-fire-6843.firebaseio.com',
 
     modules: [
       {

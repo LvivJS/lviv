@@ -3,11 +3,12 @@
 var React = require('react');
 var config = require('../config');
 var utilities = require('../utilities');
+var files = require('../db_connector');
 
 var Partners = React.createClass({
   componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('partners'), function(data) {
-      var temp = JSON.parse(data);
+    files.get('modules/partners', function(data) {
+      var temp = data;
       this.setState({
         categories: temp.data,
         header: temp.title
