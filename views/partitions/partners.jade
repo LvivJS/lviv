@@ -1,0 +1,16 @@
+mixin partnerLink(partner)
+  a.partners__item-link(href=partner.link title=partner.title target="_blank")
+    img(src="#{partner.img}" alt="#{partner.title}")
+
+mixin partnerCategory(category)
+  section.partners__category
+    h3.partners__category-header= category.title
+    div.partners__items
+      each partner in category.data
+        +partnerLink(partner)
+
+section#partners.page-wrap
+  h2.module-header= partners.title
+  div.partners
+    each category in partners.data
+      +partnerCategory(category)
