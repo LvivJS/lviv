@@ -13,6 +13,7 @@ var data = {};
 data.config = require('./app/scripts/config');
 data.overview = require('./app/locales/en/mainInfo.json')[0]; // todo: refactor [0]
 data.speakers = require('./app/locales/en/speakers.json');
+data.location = require('./app/locales/en/location.json');
 data.partners = require('./app/locales/en/partners.json');
 data.footer = require('./app/locales/en/footer.json');
 
