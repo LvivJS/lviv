@@ -82,13 +82,13 @@ window.onload = function() {
       });
       //this styles should be applied directly to be
       //responcive to menu height
-      overview.style.paddingTop = menu.offsetHeight + 'px';
+      header.style.paddingBottom = menu.offsetHeight + 'px';
     } else {
       menu.className = classNames({
         'fixed': false,
         '': true
       });
-      overview.style.paddingTop = '0px';
+      header.style.paddingBottom = '0px';
     }
   }
 };
