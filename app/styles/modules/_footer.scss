@@ -81,6 +81,9 @@
             fill: $color__primary--lighter;
         }
     }
+    a:hover .social__icon {
+        fill: $color__white;
+    }
 }
 .social_icons {
   height:20px;

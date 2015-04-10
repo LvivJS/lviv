@@ -45,7 +45,7 @@ var Dates = React.createClass({
       <div className="overview__info">
         <div className="overview__infoBlock">
           <div className="overview__infoIcon">
-            <UiComp image="time" />
+            <UiComp img="time" />
           </div>
           <div className="overview__infoData">
             <FormattedDate
@@ -61,7 +61,7 @@ var Dates = React.createClass({
         </div>
         <div className="overview__infoBlock">
           <div className="overview__infoIcon">
-            <UiComp image="location" />
+            <UiComp img="location" />
           </div>
           <div className="overview__infoData">
             {this.props.date.location}

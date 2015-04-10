@@ -3,7 +3,7 @@
 var React = require('react');
 var utilities = require('../utilities');
 var config = require('../config');
-var SocialIcon = require('../components/socials.jsx');
+var SocialIconLink = require('../components/socials.jsx');
 var files = require('../db_connector');
 
 var Footer = React.createClass({
@@ -62,9 +62,7 @@ var Connection = React.createClass({
   render: function() {
     var socials= Object.keys(this.props.networks).map(function(network) {
       return (
-        <a href={this.props.networks[network]} key={network} target="_blank">
-          <SocialIcon network={network} />
-        </a>
+          <SocialIconLink Href={this.props.networks[network]} network={network} key={network} />
       )
     }.bind(this));
     var mailto = "mailto:"+ this.props.mail;
