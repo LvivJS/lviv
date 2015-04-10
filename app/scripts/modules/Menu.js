@@ -1,5 +1,6 @@
 var React = require('react');
 var classNames = require('classnames');
+
 var Menu = React.createClass({
   getInitialState: function() {
     return {
@@ -18,11 +19,9 @@ var Menu = React.createClass({
     var menuHeight = document.querySelector('.menu-wrapper').offsetHeight;
     var hash = e.target.href.substr(e.target.href.indexOf('#') + 1);
     var anchor = document.getElementById(hash);
-    var startY = window.pageYOffset;
     var targetY = anchor.offsetTop - menuHeight;
 
     scrollTo(targetY, 300);
-    // animate(document.body, 'scrollTop', '', startY, targetY, 350, true);
   },
 
   render: function() {
@@ -37,7 +36,7 @@ var Menu = React.createClass({
 
     var itemsToRender = this.props.items.map(function(item) {
       var href = '#' + item;
-      return <a href={href} key={item} className="menu__item" onClick={this.menuLinkHandler}>{item}</a>
+      return <a href={href} key={item} className="menu__item" onClick={this.menuLinkHandler}>{item}</a>;
     }.bind(this));
 
     return (
@@ -61,24 +60,36 @@ var Menu = React.createClass({
 });
 
 //fix menu when scrolling os make static due to window.pageYOffset
-window.onscroll = function() {
+window.onload = function() {
   var menu = document.getElementById('menu');
   var header = document.getElementById('header');
   var overview = document.querySelector('#menu + section');
-  var pageScroll = window.pageYOffset;
-  var menuStyle = menu.style;
-  var manuHeight = menu.offsetHeight;
   var headerHeight = header.offsetHeight;
 
-  if (pageScroll >= headerHeight) {
-    menuStyle.position = 'fixed';
-    menuStyle.width = '100%';
-    menuStyle.top = '0';
-    menuStyle.left = '0';
-    overview.style.paddingTop = menu.offsetHeight + 'px';
-  } else {
-    menuStyle.position = 'relative';
-    overview.style.paddingTop = '0px';
+  //for correction of menu position when reloading page
+  //and 0 < pageScroll < headerHeight
+  menuPositionHandler;
+
+  window.onscroll = menuPositionHandler;
+
+  function menuPositionHandler() {
+    var pageScroll = window.pageYOffset;
+
+    if (pageScroll >= headerHeight) {
+      menu.className = classNames({
+        'fixed': true,
+        '': true
+      });
+      //this styles should be applied directly to be
+      //responcive to menu height
+      overview.style.paddingTop = menu.offsetHeight + 'px';
+    } else {
+      menu.className = classNames({
+        'fixed': false,
+        '': true
+      });
+      overview.style.paddingTop = '0px';
+    }
   }
 };
 
