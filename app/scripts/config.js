@@ -1,8 +1,6 @@
 'use strict';
 
-var config = (function() {
-
-  return {
+var config = {
     //Look if we have users localisation, if not - use default.
     pathJSON: function(module) {
       //=======================================AVAILABLE LOCALES SEETINGS HERE
@@ -62,7 +60,6 @@ var config = (function() {
         order: 5
       }
     ]
-  }
-})();
+  };
 
 module.exports = config;

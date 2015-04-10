@@ -20,7 +20,7 @@ var LayoutBasic = React.createClass({
   render: function() {
     var confModules = [];
 
-    config.modules.map(function(item) {
+    config.modules.forEach(function(item) {
       if (item.isRendering) {
         confModules.splice(item.order, 0, item.title);
       }

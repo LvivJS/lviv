@@ -39,7 +39,6 @@
 		display: inline-block;
 		img {
 			width: 100%;
-			transition: transform 0.2s;
 			display: block;
 		}
 
@@ -47,8 +46,4 @@
 			width: 65%;
 		}
 	}
-}
-
-.partners__item-link:hover img {
-	transform: translateY(-3px);
 }

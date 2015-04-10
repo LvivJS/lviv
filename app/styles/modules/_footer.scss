@@ -57,12 +57,10 @@
 
 .footer__event,
 .footer__mailLink {
-    @include bp(medium) {
-        text-decoration:underline;
-    }
-    &:hover {
-        text-decoration: underline;
-    }
+  transition: color 0.2s;
+  &:hover {
+      color: $color__white;
+  }
 }
 
 .footer__contacts {
@@ -82,6 +80,9 @@
         .social__icon {
             fill: $color__primary--lighter;
         }
+    }
+    a:hover .social__icon {
+        fill: $color__white;
     }
 }
 .social_icons {

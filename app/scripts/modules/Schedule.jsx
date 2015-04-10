@@ -95,7 +95,7 @@ var Conference = React.createClass({
         <div className="conference__title">
           <h3>{this.props.locales.conf_schedule}{this.props.name}</h3>
           <span onClick={this.changeConfRepresent} className={toggleButtonImage}>
-            <UiComp image='arrowUp' />
+            <UiComp img='arrowUp' />
           </span>
         </div>
         {this.state.confIsVisible ? <ul>{days}</ul> : null}
