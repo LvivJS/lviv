@@ -44,9 +44,13 @@ var FirebaseConect = {
 };
 
 var LocalConnect = {
-  get: function(file, next) {
-    utilities.ajax('get', 'locales/en/' + file.substr(file.indexOf('/') + 1) + '.json', next);
+  get: function(path, next) {
+    // strip 'modules' from path becasue we dont have such locally
+    var filePath = '/' + path.replace('modules/', '');
+    var file = (config.localePath + filePath + '.json');
+
+    utilities.ajax('get', file, next);
   }
 };
 
-module.exports = FirebaseConect;
+module.exports = LocalConnect;

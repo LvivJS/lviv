@@ -4,14 +4,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 
-var port = process.env.port || 8080;
+var port = process.env.port || 8082;
 var env = process.env.NODE_ENV || 'development';
 // utilities
 app.locals.moment = require('moment');
 // mocked data
 var data = {};
 data.config = require('./app/scripts/config');
-data.overview = require('./app/locales/en/mainInfo.json')[0]; // todo: refactor [0]
+data.overview = require('./app/locales/en/overview.json');
 data.speakers = require('./app/locales/en/speakers.json');
 data.location = require('./app/locales/en/location.json');
 data.partners = require('./app/locales/en/partners.json');
@@ -32,7 +32,7 @@ app.get('/', function(req, res){
 
 //Route not found -- Set 404
 app.get('*', function(req, res) {
-  res.status(404).send("Sorry this page does not exist!");
+  res.status(404).send('Sorry this page does not exist!');
 });
 
 app.listen(port);

@@ -8,10 +8,9 @@ var LocationMap = React.createClass({
   componentWillMount: function() {
     google.maps.event.addDomListener(window, 'load', this.initialize);
     files.get('modules/location', function(data) {
-      var temp = data;
       this.setState({
-        header: temp.title,
-        linkTitle: temp.linkTitle
+        header: data.title,
+        linkTitle: data.linkTitle
       });
     }.bind(this));
   },

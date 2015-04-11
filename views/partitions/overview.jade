@@ -1,21 +1,17 @@
 
-section#overview.page-wrap
-  div.overview
-    div.overview__content
-      h2= overview.name
-      div.overview__about= overview.about
-      div.overview__info
-          div.overview__infoBlock
-            div.overview__infoIcon
-               +icon('time')
-            div.overview__infoData.overview__infoData--when
-              //- TODO: remove unnecessary div after sprint2 refactor
-              div
-                div= moment(overview.start_date).format('MMM DD, YYYY')
-                div= moment(overview.start_date).format('h:mm a')
-          div.overview__infoBlock
-            div.overview__infoIcon
-              +icon('location')
-            div.overview__infoData.overview__infoData--where
-              span= overview.location
-        div.overview__wrap
+section#overview.page-wrap.overview
+  h2= overview.name
+  div.overview__about= overview.about
+  div.overview__info
+      div.overview__infoBlock
+        div.overview__infoIcon
+           +icon('time')
+        div.overview__infoData
+            span= moment(overview.start_date).format('MMM DD, YYYY')
+            span= moment(overview.start_date).format('h:mm a')
+      div.overview__infoBlock
+        div.overview__infoIcon
+          +icon('location')
+        div.overview__infoData
+          span= overview.location
+    div.overview__wrap
