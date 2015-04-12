@@ -21,6 +21,7 @@ var imagemin = require('gulp-imagemin');
 var jsxcs = require('gulp-jsxcs');
 var autoprefixer = require('gulp-autoprefixer');
 var jpegoptim = require('imagemin-jpegoptim');
+var _ = require('underscore');
 
 var env = process.env.NODE_ENV || 'development';
 var isProd = env === 'production';
@@ -46,8 +47,8 @@ var serveTasks = {
   'production' : ['start_server']
 }
 
-gulp.task('serve', serveTasks[env],
-  function() { gutil.log('Started successfully!');
+gulp.task('serve', serveTasks[env], function() {
+  gutil.log('Started successfully!');
 });
 
 //create folders and files before starting serve
@@ -55,19 +56,16 @@ gulp.task('build', function () {
   runSequence(
     'deleteDist',
     'scripts_styleguide',
-    ['build_style', 'build_image', 'browserify_build', 'json_move'],
+    ['build_style', 'build_image', 'browserify_bundle', 'json_move'],
     notify_success);
-
-  function notify_success(err){
-    notifier.notify({
-      title: 'GULP BUILD ' + (err ? 'FAILED' : 'SUCCESS'),
-      message: err ? 'at ' + err.message : '✔ ' + env
-   }, function(){
-     //hack: exits process since browserify_build does not :(
-     process.exit();
-   });
-  }
 });
+
+function notify_success(err){
+  notifier.notify({
+    title: 'GULP BUILD ' + (err ? 'FAILED' : 'SUCCESS'),
+    message: err ? 'at ' + err.message : '✔ ' + env
+ });
+}
 
 gulp.task('app_watch', function(){
   gulp.watch(paths.jsFiles, ['scripts_styleguide']);
@@ -91,7 +89,7 @@ gulp.task('build_style', function() {
 gulp.task('build_image', function() {
   return gulp.src(paths.imageFiles)
     .pipe(imagemin({progressive: true }))
-    // .pipe(jpegoptim({max: 50})())
+    // .pipe(jpegoptim({max: 50})()) // todo: fix this on ec2 server
     .pipe(gulp.dest(paths.build + '/images'));
 });
 
@@ -107,27 +105,40 @@ gulp.task('scripts_styleguide', function () {
 });
 
 //BROWSERIFY
-var bundler = watchify(browserify({
+var browserifyOptions = {
   entries: [paths.jsEntry],
-  debug: !isProd, // gives sourcemaps for development environment
-  cache: {},
-  packageCache: {},
+  debug: !isProd,
   fullPaths: true
-}).transform(reactify));
+}
 
-gulp.task('browserify_build', browserify_bundle);
-gulp.task('browserify_watch', function(){
-  bundler.on('update', browserify_bundle);
-  return bundler.bundle(); // needed too keep process running
+var watchifyOptions = _.extend({
+  cache: {},
+  packageCache: {}
+}, browserifyOptions);
+
+var bundler = browserify(browserifyOptions).transform(reactify);
+var watchBundler = watchify(browserify(watchifyOptions).transform(reactify));
+// todo: refactor
+gulp.task('browserify_bundle', function(){
+  return bundler.bundle()
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source(paths.buildFileName))
+    .pipe(gulpif(isProd, streamify(uglify())))
+    .pipe(gulp.dest(paths.build + paths.script));
 });
 
-bundler.on('time', function(time){
+gulp.task('browserify_watch', function(){
+  watchBundler.on('update', watchify_bundle);
+  return watchBundler.bundle(); // needed too keep process running
+});
+
+watchBundler.on('time', function(time){
   gutil.log('Browserify rebundle finished after '+ gutil.colors.magenta(time + ' ms'));
 });
 
 // TODO : exit process somehow
-function browserify_bundle(){
-  return bundler.bundle()
+function watchify_bundle(){
+  return watchBundler.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source(paths.buildFileName))
     .pipe(gulpif(isProd, streamify(uglify())))
