@@ -43,6 +43,27 @@ var FirebaseConect = {
   }
 };
 
+var MongoRestfulConnect = {
+  get: function(path, next) {
+    //handle path string to get proper link for mongoLab account
+    var pathSplitted = path.split('/');
+    var collection = pathSplitted[0];
+    var file = pathSplitted[1];
+    //get proper id of file from local config file
+    var module = config.mongoLab.modulesIds[file];
+    //concat link for mongoLab
+    var pathToFile = config.mongoLab.baseURL + collection + '/' + module + config.mongoLab.apiKey;
+    //use http request to get file
+    utilities.ajax('get', pathToFile, next);
+  },
+  push: function(listPath, obj, next) {
+    var collection = listPath;
+    var pathToFile = config.mongoLab.baseURL + collection + config.mongoLab.apiKey;
+    utilities.ajax('post', pathToFile, next, obj);
+    console.log(pathToFile);
+  },
+};
+
 var LocalConnect = {
   get: function(path, next) {
     // strip 'modules' from path becasue we dont have such locally
@@ -53,4 +74,4 @@ var LocalConnect = {
   }
 };
 
-module.exports = LocalConnect;
+module.exports = MongoRestfulConnect;

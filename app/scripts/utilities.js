@@ -1,7 +1,7 @@
 'use strict';
 
 var utilities = {
-  ajax: function(method, url, callBack) {
+  ajax: function(method, url, callBack, obj) {
     var request = new XMLHttpRequest();
     request.open(method, url, true);
     request.onreadystatechange = function() {
@@ -12,7 +12,13 @@ var utilities = {
         }
       }
     };
-    request.send();
+    if (method == 'post') {
+      var data = JSON.stringify(obj);
+      request.setRequestHeader('Content-Type', 'application/json');
+      request.send(data);
+    } else {
+      request.send();
+    }
   },
   time: {
     convertForCalendLink: function(date, linkType) {
