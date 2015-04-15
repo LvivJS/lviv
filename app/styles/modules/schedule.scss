@@ -10,17 +10,17 @@
 }
 
 .conference {
-    width:90%;
-    margin:15px auto;
-    border-top:2px solid $color__gray--darker;
-    border-bottom:2px solid $color__gray--darker;
+    width: 90%;
+    margin: 15px auto;
+    border-top: 2px solid $color__gray--darker;
+    border-bottom: 2px solid $color__gray--darker;
     ul {
          display: flex;
         li {
-            list-style:none;
+            list-style: none;
             font-size: $font__larger;
             background-color: $color__primary--lightest;
-            padding:10px;
+            padding: 10px;
             cursor: pointer;
         }
         li.conference__tab--active {
@@ -43,60 +43,62 @@
         flex-shrink: 5;
         @include bp(very-small) {
             flex-shrink: 7;
-            margin:10px;
+            margin: 10px;
         }
     }
     .schedule__toggleButton {
-        display:block;
-        cursor:pointer;
+        display: block;
+        cursor: pointer;
         margin: 10px;
         flex-shrink: 0;
         svg.ui__comp {
-            width:30px;
-            height:30px;
-            border:0px;
+            width: 30px;
+            height: 30px;
+            border: 0px;
             .arrow{
-                fill:$color__primary--dark;
+                fill: $color__primary--dark;
             }
         }
     }
     .schedule__toggleButton.arrowDown {
         svg.ui__comp {
-            transform:rotate(180deg);
+            transform: rotate(180deg);
         }
     }
 }
 .timetable {
     background-color: $color__primary--lighter;
-    padding:10px;
+    padding: 10px;
 }
 .session {
-    display:flex;
+    display: flex;
     justify-content: flex-start;
-    padding:5px;
-    border-bottom:1px dashed $color__gray--darker;
+    padding: 5px;
+    border-bottom: 1px dashed $color__gray--darker;
     @include bp(small) {
         flex-direction: column;
     }
 }
 .session__time {
-    width:100px;
-    margin-right:20px;
+    width: 140px;
+    margin-right: 20px;
     flex-shrink: 0;
     @include bp(small) {
         margin: 10px 0;
+        width: 100%;
     }
     span+span:before{
         content: " - ";
         display: inline-block;
+        margin: 0 4px;
     }
 }
 .session__arrangement {
-    display:flex;
+    display: flex;
     justify-content: flex-start;
     flex-direction: column;
     flex-shrink: 3;
-    width:100%;
+    width: 100%;
 }
 .session__name {
     color: $color__primary--dark;
@@ -106,14 +108,14 @@
     color: $color__primary;
 }
 .session__info {
-    margin-bottom:10px;
-    font-weight:bold;
-    display:flex;
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: flex;
     justify-content: space-between;
     flex-direction: row;
     @include bp(very-small) {
        flex-direction: column;
-       margin-bottom:0;
+       margin-bottom: 0;
     }
     .speaker__name {
         flex-shrink: 3;
@@ -140,11 +142,11 @@
     justify-content: flex-end;
 }
 .session__about {
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 .session:last-child {
-    border-bottom:0px;
+    border-bottom: 0px;
 }
 .session--entertainment {
     color: $color__primary;
