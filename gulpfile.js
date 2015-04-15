@@ -22,6 +22,7 @@ var jsxcs = require('gulp-jsxcs');
 var autoprefixer = require('gulp-autoprefixer');
 var jpegoptim = require('imagemin-jpegoptim');
 var _ = require('underscore');
+var copy = new (require('task-copy'));
 
 var env = process.env.NODE_ENV || 'development';
 var isProd = env === 'production';
@@ -33,7 +34,7 @@ paths.jsEntry = paths.sourceRoot + '/main.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles = './app/styles/**/*.scss';
 paths.imageFiles = './app/images/**/*';
-paths.jsonFiles = './app/locales/**/*';
+paths.jsonFiles = './app/locales/';
 paths.styles = '/style';
 paths.script = '/scripts';
 paths.build = './dist';
@@ -93,12 +94,13 @@ gulp.task('build_image', function() {
     .pipe(gulp.dest(paths.build + '/images'));
 });
 
-//TEMPORARY task for moving json folder form app into dist/dev
+//task for moving json folder form app into dist/dev
 gulp.task('json_move', function() {
-  return gulp.src(paths.jsonFiles)
-      .pipe(gulp.dest(paths.build + '/locales'));
+  //callback should exist to prevent default console.log
+  copy.run(paths.jsonFiles, {
+    dest: paths.build + '/locales'
+  }, function() {console.log(process.platform)});
 });
-
 //code healthiness
 gulp.task('scripts_styleguide', function () {
   return gulp.src(paths.jsFiles).pipe(jsxcs());
