@@ -74,4 +74,4 @@ var LocalConnect = {
   }
 };
 
-module.exports = MongoRestfulConnect;
+module.exports = LocalConnect;

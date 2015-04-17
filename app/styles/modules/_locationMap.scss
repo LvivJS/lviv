@@ -26,7 +26,6 @@
 .location__controlText {
 	display: block;
 	z-index: 1;
-	color: darken($color__primary--dark, 20%);
 }
 .location__controlText:hover {
 	text-decoration:underline;
