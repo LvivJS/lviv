@@ -36,32 +36,50 @@ var config = {
   },
   modules: [
     {
-      title: 'overview',
+      title: {
+        en: 'overview',
+        uk: 'огляд'
+      },
       isRendering: true,
       order: 0
     },
     {
-      title: 'speakers',
+      title: {
+        en: 'speakers',
+        uk: 'доповідачі'
+      },
       isRendering: true,
       order: 1
     },
     {
-      title: 'schedule',
+      title: {
+        en: 'schedule',
+        uk: 'розклад'
+      },
       isRendering: true,
       order: 2
     },
     {
-      title: 'location',
+      title: {
+        en: 'location',
+        uk: 'локація'
+      },
       isRendering: true,
       order: 3
     },
     {
-      title: 'registration',
+      title: {
+        en: 'registration',
+        uk: 'реєестрація'
+      },
       isRendering: true,
       order: 4
     },
     {
-      title: 'partners',
+      title: {
+        en: 'partners',
+        uk: 'партнери'
+      },
       isRendering: true,
       order: 5
     }

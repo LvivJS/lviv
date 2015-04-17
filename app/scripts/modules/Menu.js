@@ -1,5 +1,6 @@
 var React = require('react');
 var classNames = require('classnames');
+var config = require('../config');
 
 var Menu = React.createClass({
   getInitialState: function() {
@@ -33,10 +34,13 @@ var Menu = React.createClass({
       'darkenScreen--hidden': true,
       'darkenScreen--visible': this.state.active
     });
+    //choose locale from config
+    var localePath = config.localePath;
+    var loc = localePath.substr(localePath.lastIndexOf('/') + 1);
 
     var itemsToRender = this.props.items.map(function(item) {
-      var href = '#' + item;
-      return <a href={href} key={item} className="menu__item" onClick={this.menuLinkHandler}>{item}</a>;
+      var href = '#' + item.en;
+      return <a href={href} key={item.en} className="menu__item" onClick={this.menuLinkHandler}>{item[loc]}</a>;
     }.bind(this));
 
     return (

@@ -36,7 +36,7 @@ var LayoutBasic = React.createClass({
     };
 
     var modulesToRender = confModules.map(function(item) {
-      return moduleList[item];
+      return moduleList[item.en];
     });
 
     return (
