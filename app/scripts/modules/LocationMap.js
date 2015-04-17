@@ -29,30 +29,30 @@ var LocationMap = React.createClass({
       map: map,
       title: 'Awesome place for conference! See you there!'
     });
-    //creating custom control - link to maps website
-    var controlDiv = document.createElement('div');
-    controlDiv.className = 'location__control'
-    var controlText = document.createElement('a');
-    controlText.className = 'location__controlText';
-    controlText.href = 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D;
-    controlText.target = 'blank';
-    // TODO: fix - when this code executes, this.state.linkTitle is an epty string
-    controlText.innerHTML = this.state.linkTitle;
-    controlDiv.appendChild(controlText);
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+    //this will be used from control div
+    this.setState({href: 'http://maps.google.com/maps?&z=' + mapProp.zoom + '&q=' + myLatlng.k + ',' + myLatlng.D});
   },
   getInitialState: function() {
     return ({
       header: '',
-      linkTitle: ''
+      linkTitle: '',
+      href: ''
     });
   },
   render: function() {
+    //creating custom control - link to maps website
+    var controlDiv = React.createElement('div', {className: 'location__control'},
+      React.createElement('a', {
+        className: 'location__controlText',
+        href: this.state.href,
+        target: '_blank'
+      }, this.state.linkTitle));
     return (
-      <section id="location" className="page-wrap">
+      <section id="location" className="page-wrap loc-wrap">
         <h2 className="module-header">{this.state.header}</h2>
         <div id="googleMap" className="location">
         </div>
+        {controlDiv}
       </section>
     );
   }
