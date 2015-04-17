@@ -12,16 +12,26 @@
 }
 
 .location__control {
-	margin: 10px;
+		margin: 10px;
     padding: 5px 14px 5px 14px;
     box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
     border-radius: 2px;
     background-color: $color__white;
-    text-align:center;
+	  text-align: center;
+	  z-index: 0;
+	  position: absolute;
+		right: 0;
+	  bottom: 10px;
 }
 .location__controlText {
-	display:block
+	display: block;
+	z-index: 1;
+	color: darken($color__primary--dark, 20%);
 }
 .location__controlText:hover {
 	text-decoration:underline;
+}
+
+.loc-wrap {
+	position: relative;
 }
