@@ -8,8 +8,8 @@ if (typeof window !== 'undefined') {
   navLng = window.navigator.browserLanguage || window.navigator.language;
 }
 //Check if navigator.language includes dash and strip after it
-var userLang = navLng.substr(0, navLng.indexOf('-')) || navLng;
-// var userLang = 'uk'; // set for testing purposes
+// var userLang = navLng.substr(0, navLng.indexOf('-')) || navLng;
+var userLang = 'en'; // set for testing purposes
 var locale = ~availableLocales.indexOf(userLang) ? userLang : defLang;
 
 var config = {

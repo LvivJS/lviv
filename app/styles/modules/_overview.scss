@@ -93,16 +93,16 @@
 }
 
 .overview__infoIcon {
-    margin: 10px;
-    display: inline-block;
-    .ui__comp {
-        fill:$color__white;
-        width: 45px;
-        height: 45px;
-        @include bp(medium) {
-            width: 30px;
-            height: 30px;
-        }
+  margin: 10px;
+  display: inline-block;
+}
+.ui__comp {
+    fill:$color__white;
+    width: 45px;
+    height: 45px;
+    @include bp(medium) {
+        width: 30px;
+        height: 30px;
     }
 }
 .overview__infoData {

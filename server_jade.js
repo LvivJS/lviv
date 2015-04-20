@@ -16,6 +16,7 @@ data.speakers = require('./app/locales/en/speakers.json');
 data.location = require('./app/locales/en/location.json');
 data.partners = require('./app/locales/en/partners.json');
 data.footer = require('./app/locales/en/footer.json');
+data.schedule = require('./app/locales/en/schedule.json');
 
 app.use(compress());
 app.use(bodyParser.json());
