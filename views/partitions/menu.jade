@@ -1,5 +1,4 @@
 div#menu.module-wrapper
-  div.menu-wrapper
     div#cm_toggleWrapper.toggleWrapper
         div#cm_menuToggle.menuToggle
           div.menuToggle__stripe
@@ -7,7 +6,7 @@ div#menu.module-wrapper
           div.menuToggle__stripe
     nav#cm_menuItems.menu
       each module in config.modules
-        a.menu__item(href="##{module.title}")= module.title
+        a.menu__item(href="##{module.title.en}")= module.title.en
   div#cm_darkenScreen.darkenScreen--hidden
   
 script.
