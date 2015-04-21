@@ -1,0 +1,47 @@
+section#registration.page-wrap
+  h2.module-header= regist.title
+  .registration
+    form(onsubmit="submitForm(this)")
+      .registration__field
+        input.registration__input(type="text" placeholder="#{regist.Name_placeHolder}" pattern="^[a-zA-Z_ -]{3,50}$")
+        span.registration__tip.invisible= regist.Name_err
+      .registration__field
+        input.registration__input(type="email" placeholder="#{regist.Email_placeHolder}")
+        span.registration__tip.invisible= regist.Email_err
+      .registration__field
+        input.registration__input(type="tel" placeholder="#{regist.Phone_placeHolder}" pattern="^([0-9\(\)\/\+ \-]{3,20})$")
+        span.registration__tip.invisible= regist.Phone_err
+      .registration__field
+        input.registration__submit(type="submit" value="#{regist.title}")
+
+
+
+script.
+  function pushData(data) {
+    files.push('users', data, function(id) {
+      if (id) {
+        alert('You succesfully registered!!!!');
+      } else {
+        alert('Unfortunately registration failed...');
+      }
+    });
+  }
+  
+  function submitForm(form) {
+    var inputs = form.getElementsByTagName('input');
+    
+    Array.prototype.forEach.call(inputs, function(input) {
+      //TODO: check validation.
+      var isValid = true;
+      var errorSpan = input.nextSibling;
+      if (!isValid) {
+        errorSpan.classList.remove('invisible');
+        input.classList.add('registration__input--invalid');
+      
+        setTimeout(function makeInvisible() {
+          errorSpan.classList.add('invisible');
+          input.classList.remove('registration__input--invalid');
+        }, 5000);
+      }
+    });
+  }

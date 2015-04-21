@@ -58,14 +58,13 @@ script.
     var confTitle = el.parentNode;
     var dayList = confTitle.nextSibling;
     var conference = confTitle.parentNode;
+    var tables = conference.getElementsByClassName(timetable);
     
     el.classList.toggle('arrowDown');
     dayList.classList.toggle('conf-hidden');
     //Toggle inner timetables class
-    Array.prototype.forEach.call(conference.childNodes, function(child) {
-      if (child.className.substr(0, timetable.length) == timetable) {
-        child.classList.toggle('conf-hidden');
-      }
+    Array.prototype.forEach.call(tables, function(table) {
+      table.classList.toggle('conf-hidden');
     });
   }
   
