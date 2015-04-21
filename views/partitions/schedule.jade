@@ -1,35 +1,96 @@
+mixin sessionData(session)
+  .session__time
+    span= moment(session.time.start).format('HH:MM')
+    if session.time.end
+      span= moment(session.time.end).format('HH:MM')
+  .session__arrangement
+    h4.session__name= session.article
+    .sessionInfoClass
+      if session.speaker
+        span.speaker__name
+          span.session__info= session.speaker.name
+          span.session__info= session.speaker.position
+      if session.about
+        span.session__button.session__button--inactive
+    .session__about= session.about
+    .session__calendButtons
+      span= schedule.locales.calend_links
+      br
+      a.session__calendLink.session__calendLink--gCal( href="#{TODO get link from utilities}" target="_blank" rel="nofollow") Google Calendar
+      a.session__calendLink.session__calendLink--iCal( href="#") iCalendar
+
+mixin table(data)
+  each session, indx in data
+    if (session.type == 'entertainment')
+      .session.session--entertainment
+        +sessionData(session)
+    else
+      .session.session--report
+        +sessionData(session)
+
 section#schedule.page-wrap
   h2.module-header= schedule.locales.title
   .schedule
     each conference in schedule.data
       .conference
         .conference__title
-          h3= schedule.locales.conf_schedule+conference.name
-          span.schedule__toggleButton
+          h3= schedule.locales.conf_schedule + ' ' + conference.name
+          span.schedule__toggleButton(onclick="changeConfRepresent(this)")
             +icon('arrowUp')
         ul
-          each day in conference.days
-            li.conference__tab--active=  moment(day.day_info).format('DD MMM')
-        each day in conference.days
-          .timetable
-            each session in day.timetable
-              .session
-                .session__time
-                  span= moment(session.time.start).format('HH:MM')
-                  if session.time.end
-                    span= moment(session.time.end).format('HH:MM')
-                .session__arrangement
-                  h4.session__name= session.article
-                  .sessionInfoClass
-                    if session.speaker
-                      span.speaker__name
-                        span.session__info= session.speaker.name
-                        span.session__info= session.speaker.position
-                    if session.about
-                      span.session__button.session__button--inactive
-                  .session__about= session.about
-                  .session__calendButtons
-                    span= schedule.locales.calend_links
-                    br
-                    a.session__calendLink.session__calendLink--gCal( href="#{TODO get link from utilities}" target="_blank" rel="nofollow") Google Calendar
-                    a.session__calendLink.session__calendLink--iCal iCalendar
+          each day, indx in conference.days
+            if (indx == 0)
+              li.conference__tab--active(onclick="changeTab(this)")=  moment(day.day_info).format('DD MMM')
+            else
+              li(onclick="changeTab(this)")=  moment(day.day_info).format('DD MMM')
+        each day, indx in conference.days
+          if (indx == 0)
+            .timetable
+              +table(day.timetable)
+          else
+            .timetable.table-hidden
+              +table(day.timetable)
+            
+script.
+  var timetable = 'timetable';
+  
+  function changeConfRepresent(el) {
+    var confTitle = el.parentNode;
+    var dayList = confTitle.nextSibling;
+    var conference = confTitle.parentNode;
+    
+    el.classList.toggle('arrowDown');
+    dayList.classList.toggle('conf-hidden');
+    //Toggle inner timetables class
+    Array.prototype.forEach.call(conference.childNodes, function(child) {
+      if (child.className.substr(0, timetable.length) == timetable) {
+        child.classList.toggle('conf-hidden');
+      }
+    });
+  }
+  
+  function changeTab(el) {
+    //this variables should be created here to specify exactly current conference
+    var list = el.parentNode;
+    var conf = list.parentNode;
+    var activeClass = 'conference__tab--active';
+    var tableHidden = 'table-hidden';
+    var tables = conf.getElementsByClassName(timetable);
+    
+    //make li active if it is not
+    el.classList.add(activeClass);
+    
+    //find index of active tab and show appropriate table
+    Array.prototype.forEach.call(list.childNodes, function(item, i) {
+      tables[i].classList.add(tableHidden);
+      //remove active class is item was active before click
+      if (item !== el) {
+        item.classList.remove(activeClass);
+      }
+      //show table with the same index as active tab
+      if (item == el) {
+        tables[i].classList.remove(tableHidden);
+      }
+    });    
+    //find index of target and handle class for table with the same index in tables
+  }

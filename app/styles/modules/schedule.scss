@@ -14,8 +14,12 @@
     margin: 15px auto;
     border-top: 2px solid $color__gray--darker;
     border-bottom: 2px solid $color__gray--darker;
+    ul.conf-hidden {
+      display: none;
+    }
     ul {
          display: flex;
+         transition: height 0.2s;
         li {
             list-style: none;
             font-size: $font__larger;
@@ -55,6 +59,7 @@
             width: 30px;
             height: 30px;
             border: 0px;
+            transition: transform 0.2s;
             .arrow{
                 fill: $color__primary--dark;
             }
@@ -69,6 +74,7 @@
 .timetable {
     background-color: $color__primary--lighter;
     padding: 10px;
+    transition: height 0.2s;
 }
 .session {
     display: flex;
@@ -167,4 +173,12 @@ a.session__calendLink {
 }
 .arrow {
   fill: $color__primary;
+}
+
+.conf-hidden {
+  display: none;
+}
+
+.table-hidden {
+  display: none;
 }
