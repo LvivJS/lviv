@@ -1,12 +1,38 @@
+style.
+  #menu {
+    position: fixed;
+  }
+  #header {
+    margin-top: 69px;
+  }
+  @media (max-width: 768px) {
+    #menu {
+      position: fixed;
+    }
+    #cm_toggleWrapper {
+      position: fixed;
+      left: 0;
+      width: 100%
+    }
+    #cm_menuItems {
+      position: fixed;
+      top: 40px
+    }
+    #header {
+      margin-top: 40px;
+    }
+  }
+  
+
 div#menu.module-wrapper
-    div#cm_toggleWrapper.toggleWrapper
-        div#cm_menuToggle.menuToggle
-          div.menuToggle__stripe
-          div.menuToggle__stripe
-          div.menuToggle__stripe
-    nav#cm_menuItems.menu
-      each module in config.modules
-        a.menu__item(href="##{module.title.en}")= module.title.en
+  div#cm_toggleWrapper.toggleWrapper
+      div#cm_menuToggle.menuToggle
+        div.menuToggle__stripe
+        div.menuToggle__stripe
+        div.menuToggle__stripe
+  nav#cm_menuItems.menu
+    each module in config.modules
+      a.menu__item(href="##{module.title.en}")= module.title.en
   div#cm_darkenScreen.darkenScreen--hidden
   
 script.
@@ -14,6 +40,7 @@ script.
   var menuToggler = document.getElementById('cm_menuToggle');
   var menuItems = document.getElementById('cm_menuItems');
   var overlay = document.getElementById('cm_darkenScreen');
+  var links = menuItems.getElementsByClassName('menu__item');
   
   menuToggler.addEventListener('click', toggleMenu);
   menuItems.addEventListener('click', toggleMenu);
@@ -22,4 +49,41 @@ script.
   function toggleMenu() {
     menuItems.classList.toggle('menu--visible');
     overlay.classList.toggle('darkenScreen--visible');
+  }
+  
+  Array.prototype.forEach.call(links, function(link) {
+    link.addEventListener('click', menuLinkHandler);
+  });
+  
+  function menuLinkHandler(e) {
+    e.preventDefault();
+    var menuMeasure = document.getElementById('menu').offsetHeight || document.getElementById('cm_menuToggle').offsetHeight;
+  
+    var menuHeight = menuMeasure;
+    var hash = e.target.href.substr(e.target.href.indexOf('#') + 1);
+    var anchor = document.getElementById(hash);
+    var targetY = anchor.offsetTop - menuHeight;
+
+    scrollTo(targetY, 300);
+  }
+  
+  function scrollTo(to, duration) {
+    if (duration < 0) {
+      return;
+    }
+    //This is for IE compability
+    var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var difference = to - top;
+    var perTick = difference / duration * 10;
+  
+    setTimeout(function() {
+      window.scroll(0, top + perTick);
+      if (top == to) {
+        //this is to prevent scrolling to top
+        //after animation has been done in IE
+        window.scroll(0, to);
+        return;
+      }
+      scrollTo(to, duration - 10);
+    }, 10);
   }
