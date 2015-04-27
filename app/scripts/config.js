@@ -40,6 +40,7 @@ var config = {
         en: 'overview',
         uk: 'огляд'
       },
+      component: 'overview',
       isRendering: true,
       order: 0
     },
@@ -48,6 +49,7 @@ var config = {
         en: 'speakers',
         uk: 'доповідачі'
       },
+      component: 'speakers',
       isRendering: true,
       order: 1
     },
@@ -56,6 +58,7 @@ var config = {
         en: 'schedule',
         uk: 'розклад'
       },
+      component: 'schedule',
       isRendering: true,
       order: 2
     },
@@ -64,6 +67,7 @@ var config = {
         en: 'location',
         uk: 'локація'
       },
+      component: 'location',
       isRendering: true,
       order: 3
     },
@@ -72,6 +76,7 @@ var config = {
         en: 'registration',
         uk: 'реєстрація'
       },
+      component: 'registration',
       isRendering: true,
       order: 4
     },
@@ -80,6 +85,7 @@ var config = {
         en: 'partners',
         uk: 'партнери'
       },
+      component: 'partners',
       isRendering: true,
       order: 5
     }

@@ -25,14 +25,17 @@ style.
   
 
 div#menu.module-wrapper
-  div#cm_toggleWrapper.toggleWrapper
-      div#cm_menuToggle.menuToggle
-        div.menuToggle__stripe
-        div.menuToggle__stripe
-        div.menuToggle__stripe
-  nav#cm_menuItems.menu
-    each module in config.modules
-      a.menu__item(href="##{module.title.en}")= module.title.en
+  .menu-wrapper
+    div#cm_toggleWrapper.toggleWrapper
+        div#cm_menuToggle.menuToggle
+          div.menuToggle__stripe
+          div.menuToggle__stripe
+          div.menuToggle__stripe
+    img(src="images/logo_lvivjs.png")
+    nav#cm_menuItems.menu
+      each module in config.modules
+        if module.isRendering
+          a.menu__item(href="##{module.title.en}")= module.title.en
   div#cm_darkenScreen.darkenScreen--hidden
   
 script.

@@ -3,21 +3,26 @@ var compress = require('compression');
 var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
+var jade = require('jade');
 
 var port = process.env.port || 8082;
 var env = process.env.NODE_ENV || 'development';
 // utilities
 app.locals.moment = require('moment');
-// mocked data
 var data = {};
-data.config = require('./app/scripts/config');
-data.overview = require('./app/locales/en/overview.json');
-data.speakers = require('./app/locales/en/speakers.json');
-data.location = require('./app/locales/en/location.json');
-data.partners = require('./app/locales/en/partners.json');
+
+data.config = require('./app/scripts/config.js');
 data.footer = require('./app/locales/en/footer.json');
-data.schedule = require('./app/locales/en/schedule.json');
-data.regist = require('./app/locales/en/registration.json');
+data.moment = app.locals.moment;
+
+//get data only for (isRendering == true) modules
+data.config.modules.forEach(function(module) {
+  if (module.isRendering) {
+    var mod = module.component;
+    var path = './app/locales/en/' + mod + '.json';
+    data[mod] = require(path);
+  }
+});
 
 app.use(compress());
 app.use(bodyParser.json());
@@ -28,7 +33,8 @@ app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
 
 // index url
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
+  // res.setHeader('Cache-Control', 'no-cache');
   res.render('index', data);
 });
 

@@ -1,7 +1,13 @@
 //- TODO: use js api or manage to disable scrollwheel event on map
-//- note: is not an issue for touch devices since ther is no scroll 
-section#location.page-wrap
-  h2.module-header= location.title
-  div#googleMap.location
-    iframe(width="100%" height="100%" frameborder="0" style="border:0" 
-      src="https://www.google.com/maps/embed/v1/place?q=45%20Oleny%20Stepanivny%20Street%2C%20Lviv%2C%20Lviv%20Oblast%2C%20Ukraine&key=AIzaSyA4mtrLuErJROuZl5_kwcPxEVPWBt-bhWo&zoom=17")
+//- note: is not an issue for touch devices since ther is no scroll
+
+//data is pushed to template only if isRendering==true in config.js
+//next two lines are to prevent error because data is not defined for module
+//if isRendering==false
+if !location
+else
+  section#location.page-wrap
+    h2.module-header= location.title
+    div#googleMap.location
+      iframe(width="100%" height="100%" frameborder="0" style="border:0" 
+        src="https://www.google.com/maps/embed/v1/place?q=45%20Oleny%20Stepanivny%20Street%2C%20Lviv%2C%20Lviv%20Oblast%2C%20Ukraine&key=AIzaSyA4mtrLuErJROuZl5_kwcPxEVPWBt-bhWo&zoom=17")

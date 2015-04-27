@@ -27,69 +27,73 @@ mixin table(data)
     else
       .session.session--report
         +sessionData(session)
-
-section#schedule.page-wrap
-  h2.module-header= schedule.locales.title
-  .schedule
-    each conference in schedule.data
-      .conference
-        .conference__title
-          h3= schedule.locales.conf_schedule + ' ' + conference.name
-          span.schedule__toggleButton(onclick="changeConfRepresent(this)")
-            +icon('arrowUp')
-        ul
+//data is pushed to template only if isRendering==true in config.js
+//next two lines are to prevent error because data
+//is not defined for module if isRendering==false
+if !schedule
+else
+  section#schedule.page-wrap
+    h2.module-header= schedule.locales.title
+    .schedule
+      each conference in schedule.data
+        .conference
+          .conference__title
+            h3= schedule.locales.conf_schedule + ' ' + conference.name
+            span.schedule__toggleButton(onclick="changeConfRepresent(this)")
+              +icon('arrowUp')
+          ul
+            each day, indx in conference.days
+              if (indx == 0)
+                li.conference__tab--active(onclick="changeTab(this)")=  moment(day.day_info).format('MMM DD')
+              else
+                li(onclick="changeTab(this)")=  moment(day.day_info).format('MMM DD')
           each day, indx in conference.days
             if (indx == 0)
-              li.conference__tab--active(onclick="changeTab(this)")=  moment(day.day_info).format('DD MMM')
+              .timetable
+                +table(day.timetable)
             else
-              li(onclick="changeTab(this)")=  moment(day.day_info).format('DD MMM')
-        each day, indx in conference.days
-          if (indx == 0)
-            .timetable
-              +table(day.timetable)
-          else
-            .timetable.table-hidden
-              +table(day.timetable)
-            
-script.
-  var timetable = 'timetable';
-  
-  function changeConfRepresent(el) {
-    var confTitle = el.parentNode;
-    var dayList = confTitle.nextSibling;
-    var conference = confTitle.parentNode;
-    var tables = conference.getElementsByClassName(timetable);
+              .timetable.table-hidden
+                +table(day.timetable)
+              
+  script.
+    var timetable = 'timetable';
     
-    el.classList.toggle('arrowDown');
-    dayList.classList.toggle('conf-hidden');
-    //Toggle inner timetables class
-    Array.prototype.forEach.call(tables, function(table) {
-      table.classList.toggle('conf-hidden');
-    });
-  }
-  
-  function changeTab(el) {
-    //this variables should be created here to specify exactly current conference
-    var list = el.parentNode;
-    var conf = list.parentNode;
-    var activeClass = 'conference__tab--active';
-    var tableHidden = 'table-hidden';
-    var tables = conf.getElementsByClassName(timetable);
+    function changeConfRepresent(el) {
+      var confTitle = el.parentNode;
+      var dayList = confTitle.nextSibling;
+      var conference = confTitle.parentNode;
+      var tables = conference.getElementsByClassName(timetable);
+      
+      el.classList.toggle('arrowDown');
+      dayList.classList.toggle('conf-hidden');
+      //Toggle inner timetables class
+      Array.prototype.forEach.call(tables, function(table) {
+        table.classList.toggle('conf-hidden');
+      });
+    }
     
-    //make li active if it is not
-    el.classList.add(activeClass);
-    
-    //find index of active tab and show appropriate table
-    Array.prototype.forEach.call(list.childNodes, function(item, i) {
-      tables[i].classList.add(tableHidden);
-      //remove active class is item was active before click
-      if (item !== el) {
-        item.classList.remove(activeClass);
-      }
-      //show table with the same index as active tab
-      if (item == el) {
-        tables[i].classList.remove(tableHidden);
-      }
-    });    
-    //find index of target and handle class for table with the same index in tables
-  }
+    function changeTab(el) {
+      //this variables should be created here to specify exactly current conference
+      var list = el.parentNode;
+      var conf = list.parentNode;
+      var activeClass = 'conference__tab--active';
+      var tableHidden = 'table-hidden';
+      var tables = conf.getElementsByClassName(timetable);
+      
+      //make li active if it is not
+      el.classList.add(activeClass);
+      
+      //find index of active tab and show appropriate table
+      Array.prototype.forEach.call(list.childNodes, function(item, i) {
+        tables[i].classList.add(tableHidden);
+        //remove active class is item was active before click
+        if (item !== el) {
+          item.classList.remove(activeClass);
+        }
+        //show table with the same index as active tab
+        if (item == el) {
+          tables[i].classList.remove(tableHidden);
+        }
+      });    
+      //find index of target and handle class for table with the same index in tables
+    }

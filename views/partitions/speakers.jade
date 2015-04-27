@@ -9,9 +9,13 @@ mixin speaker(speaker)
         div.speaker__contacts
          +socialIcons(speaker.contact)(class="speaker__contact")
 
-
-section#speakers.page-wrap
-  h2.module-header= speakers.title
-  div.speakers
-    each speaker in speakers.data
-      +speaker(speaker)
+//data is pushed to template only if isRendering==true in config.js
+//next two lines are to prevent error because data is not defined for module
+//if isRendering==false
+if !speakers   
+else
+  section#speakers.page-wrap
+    h2.module-header= speakers.title
+    div.speakers
+      each speaker in speakers.data
+        +speaker(speaker)

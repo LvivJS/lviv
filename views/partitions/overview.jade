@@ -1,17 +1,12 @@
-
-section#overview.page-wrap.overview
-  h2= overview.name
-  div.overview__about= overview.about
-  div.overview__info
-      div.overview__infoBlock
-        div.overview__infoIcon
-           +icon('time')
-        div.overview__infoData
-            span= moment(overview.start_date).format('MMM DD, YYYY')
-            span= moment(overview.start_date).format('h:mm a')
-      div.overview__infoBlock
-        div.overview__infoIcon
-          +icon('location')
-        div.overview__infoData
+//data is pushed to template only if isRendering==true in config.js
+//next two lines are to prevent error because data is not defined for module
+//if isRendering==false
+if !overview 
+else
+  section#overview.page-wrap.overview
+    h2= overview.name
+    div.overview__info
+        div.overview__infoBlock
+          span= moment(overview.start_date).format('MMM DD, YYYY')
           span= overview.location
-    div.overview__wrap
+      div.overview__wrap
