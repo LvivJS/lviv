@@ -8,16 +8,16 @@ else
     .registration
       form(onsubmit="submitForm(this, event)")
         .registration__field
-          label(for="cm_name") name
-          input.registration__input(id="cm_name" type="text")
+          label.label-regInput(for="cm_name") name
+          input.registration__input(id="cm_name" type="text" onchange="checkValidation(this)")
           span.registration__tip.invisible= registration.Name_err
         .registration__field
-          label(for="cm_email") email
-          input.registration__input(id="cm_email" type="text")
+          label.label-regInput(for="cm_email") email
+          input.registration__input(id="cm_email" type="email" onchange="checkValidation(this)")
           span.registration__tip.invisible= registration.Email_err
         .registration__field
-          label(for="cm_tel") phone
-          input.registration__input(id="cm_tel" type="text")
+          label.label-regInput(for="cm_tel") phone
+          input.registration__input(id="cm_tel" type="tel" onchange="checkValidation(this)")
           span.registration__tip.invisible= registration.Phone_err
         .registration__field
           input.registration__submit(type="submit" value="#{registration.title}")
@@ -36,22 +36,49 @@ else
     }
     
     function submitForm(form, e) {
-      var inputs = form.getElementsByTagName('input');
+      e.preventDefault();
+      
+      var inputs = document.getElementsByClassName('registration__input');
+      
+      var formInputStates = [];
       
       Array.prototype.forEach.call(inputs, function(input) {
-        //TODO: check validation.
-        //- var isValid = false;
-        var errorSpan = input.nextSibling;
-        if (input.validity.badInput) {
-          errorSpan.classList.remove('invisible');
-          input.classList.add('registration__input--invalid');
-          
-          //prevent form submition
-          e.preventDefault();
-          setTimeout(function makeInvisible() {
-            errorSpan.classList.add('invisible');
-            input.classList.remove('registration__input--invalid');
-          }, 5000);
-        }
+        var state = checkValidation(input);
+        formInputStates.push(state);
       });
+      //check if every element is valid
+      var formState = Array.prototype.every.call(formInputStates, function(item){
+        return item == true;
+      });
+      if (formState) {
+        //TODO: implement send form inputs data to server.
+        alert('make data sent to server!!!');
+      }
+    }
+    
+    function checkValidation(input) {
+      var errorSpan = input.nextSibling;
+      var label = input.previousSibling;
+      var bool = isValid(input);
+      if (bool) {
+          errorSpan.classList.add('invisible');
+          input.classList.remove('registration__input--invalid');
+          label.classList.remove('registration__input--invalid');
+      } else {
+        errorSpan.classList.remove('invisible');
+        input.classList.add('registration__input--invalid');
+        label.classList.add('registration__input--invalid');
+      }
+      return bool;
+    }
+    
+    function isValid(input) {
+      var type = input.getAttribute('type');
+      var patterns = {
+        tel:/^([0-9\(\)\/\+ \-]{3,20})$/,
+        email: /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
+        text: /^[a-zA-Z_ -]{3,50}$/
+      };
+      var isValid = new RegExp(patterns[type]).test(input.value);
+      return isValid;
     }

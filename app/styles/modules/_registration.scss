@@ -23,19 +23,19 @@
   flex-direction: row;
   margin-bottom: 5px;
   flex-wrap: wrap;
-  label {
-    width: 65px;
-    background: $color__gray--lightest;
-    text-transform: capitalize;
-    height: 44px;
-    line-height: 39px;
-    text-align: center;
-    color: $color__gray;
-  }
   span {
     width: 100%;
     text-align: center;
   }
+}
+.label-regInput {
+  width: 65px;
+  background: $color__gray--lightest;
+  text-transform: capitalize;
+  height: 44px;
+  line-height: 39px;
+  text-align: center;
+  color: $color__gray;
 }
 
 .registration__input {
@@ -50,11 +50,12 @@ input, label {
 }
 
 .registration__input--invalid {
+  background: #FF6969;
 }
 
 .registration__tip{
     display: block;
-    color: $color__gray--darker;
+    color: $color__gray--light;
     font-size: $font__mini;
     @include bp(medium) {
     }

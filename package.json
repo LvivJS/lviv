@@ -19,7 +19,8 @@
     "node-jsx": "^0.12.4",
     "q": "^1.2.0",
     "task-copy": "^0.1.1",
-    "underscore": "^1.8.2"
+    "underscore": "^1.8.2",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "browserify": "^9.0.7",
