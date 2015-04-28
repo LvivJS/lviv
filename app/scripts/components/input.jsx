@@ -34,8 +34,8 @@ var InputField = React.createClass({
       this.setState({value: prop, inputInvalid: !isValid});
       if (this.props.tipIsShown) {
       	this.setState({errorMessageIsShown:!isValid})
-      } 
-      this.props.valueReceived({name: this.props.type, value: prop}); 
+      }
+      this.props.valueReceived({name: this.props.type, value: prop});
   },
   componentWillReceiveProps: function(props) {
     if (props.clear) {
@@ -57,10 +57,11 @@ var InputField = React.createClass({
         'registration__input--invalid': this.state.inputInvalid
       });
     var shouldCheck = this.state.madeFirstBlur ? this.handleChange : null;
+    var inputId = 'cm_' + this.props.placeholder;
     return (
       <div className="registration__field">
-        <input onChange={shouldCheck} onBlur={this.madeFirstBlur} className={inputClass} type="text" ref="data" 
-          placeholder={this.props.placeholder}/>
+        <label htmlFor={inputId}>{this.props.placeholder == 'tel' ? 'Phone' : this.props.placeholder}</label>
+        <input id={inputId} onChange={shouldCheck} onBlur={this.madeFirstBlur} className={inputClass} type="text" ref="data" />
         <span className={spanClass}>{this.props.errorMessage}</span>
       </div>
     )

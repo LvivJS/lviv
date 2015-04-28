@@ -53,6 +53,7 @@ var Menu = React.createClass({
               <div className="menuToggle__stripe"></div>
             </div>
           </div>
+          <img src="images/logo_lvivjs.png"/>
           <nav id="cm_menuItems" className={menuCls}>
             {itemsToRender}
           </nav>
@@ -62,40 +63,6 @@ var Menu = React.createClass({
     );
   }
 });
-
-//fix menu when scrolling os make static due to window.pageYOffset
-window.onload = function() {
-  var menu = document.getElementById('menu');
-  var header = document.getElementById('header');
-  var overview = document.querySelector('#menu + section');
-  var headerHeight = header.offsetHeight;
-
-  //for correction of menu position when reloading page
-  //and 0 < pageScroll < headerHeight
-  menuPositionHandler;
-
-  window.onscroll = menuPositionHandler;
-
-  function menuPositionHandler() {
-    var pageScroll = window.pageYOffset;
-
-    if (pageScroll >= headerHeight) {
-      menu.className = classNames({
-        'fixed': true,
-        '': true
-      });
-      //this styles should be applied directly to be
-      //responcive to menu height
-      header.style.paddingBottom = menu.offsetHeight + 'px';
-    } else {
-      menu.className = classNames({
-        'fixed': false,
-        '': true
-      });
-      header.style.paddingBottom = '0px';
-    }
-  }
-};
 
 function scrollTo(to, duration) {
   if (duration < 0) {

@@ -1,18 +1,25 @@
+mixin details(session)
+  if session.speaker
+    span.speaker__name--schedule
+      span= session.speaker.name
+      span= session.speaker.position
+  //- if session.about
+  //-   span.session__button.session__button--inactive
+
 mixin sessionData(session)
   .session__time
     span= moment(session.time.start).format('HH:MM')
     if session.time.end
       span= moment(session.time.end).format('HH:MM')
   .session__arrangement
-    h4.session__name= session.article
-    .sessionInfoClass
-      if session.speaker
-        span.speaker__name
-          span.session__info= session.speaker.name
-          span.session__info= session.speaker.position
-      if session.about
-        span.session__button.session__button--inactive
-    .session__about= session.about
+    h4.session__name(onclick="toggleAbout(this)")= session.article
+    if (session.type == report)
+      .session__info.session__info--right
+        +details(session)
+    else
+      .session__info
+        +details(session)
+    .session__about.invisible= session.about || 'sorry, no description...'
     .session__calendButtons
       span= schedule.locales.calend_links
       br
@@ -96,4 +103,10 @@ else
         }
       });    
       //find index of target and handle class for table with the same index in tables
+    }
+    
+    function toggleAbout(el) {
+      var session = el.parentNode;
+      var about = session.getElementsByClassName('session__about')[0];
+      about.classList.toggle('invisible');
     }

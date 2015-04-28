@@ -6,15 +6,18 @@ else
   section#registration.page-wrap
     h2.module-header= registration.title
     .registration
-      form(onsubmit="submitForm(this)")
+      form(onsubmit="submitForm(this, event)")
         .registration__field
-          input.registration__input(type="text" placeholder="#{registration.Name_placeHolder}" pattern="^[a-zA-Z_ -]{3,50}$")
+          label(for="cm_name") name
+          input.registration__input(id="cm_name" type="text")
           span.registration__tip.invisible= registration.Name_err
         .registration__field
-          input.registration__input(type="email" placeholder="#{registration.Email_placeHolder}")
+          label(for="cm_email") email
+          input.registration__input(id="cm_email" type="text")
           span.registration__tip.invisible= registration.Email_err
         .registration__field
-          input.registration__input(type="tel" placeholder="#{registration.Phone_placeHolder}" pattern="^([0-9\(\)\/\+ \-]{3,20})$")
+          label(for="cm_tel") phone
+          input.registration__input(id="cm_tel" type="text")
           span.registration__tip.invisible= registration.Phone_err
         .registration__field
           input.registration__submit(type="submit" value="#{registration.title}")
@@ -32,17 +35,19 @@ else
       });
     }
     
-    function submitForm(form) {
+    function submitForm(form, e) {
       var inputs = form.getElementsByTagName('input');
       
       Array.prototype.forEach.call(inputs, function(input) {
         //TODO: check validation.
-        var isValid = true;
+        //- var isValid = false;
         var errorSpan = input.nextSibling;
-        if (!isValid) {
+        if (input.validity.badInput) {
           errorSpan.classList.remove('invisible');
           input.classList.add('registration__input--invalid');
-        
+          
+          //prevent form submition
+          e.preventDefault();
           setTimeout(function makeInvisible() {
             errorSpan.classList.add('invisible');
             input.classList.remove('registration__input--invalid');

@@ -30,7 +30,6 @@ var OverviewBlock = React.createClass({
     return (
       <section id="overview" className="page-wrap overview">
           <h2>{this.state.mainInfo.name}</h2>
-          <div className="overview__about">{this.state.mainInfo.about}</div>
           {date()}
           <div className="overview__wrap"></div>
       </section>
@@ -44,28 +43,12 @@ var Dates = React.createClass({
     return(
       <div className="overview__info">
         <div className="overview__infoBlock">
-          <div className="overview__infoIcon">
-            <UiComp img="time" />
-          </div>
-          <div className="overview__infoData">
-            <FormattedDate
-              value={new Date(this.props.date.start_date)}
-              day="numeric"
-              month="long"
-              year="numeric" />
-            <FormattedTime
-              value={new Date(this.props.date.start_date)}
-              hour="numeric"
-              minute="numeric" />
-          </div>
-        </div>
-        <div className="overview__infoBlock">
-          <div className="overview__infoIcon">
-            <UiComp img="location" />
-          </div>
-          <div className="overview__infoData">
+          <FormattedDate
+            value={new Date(this.props.date.start_date)}
+            day="numeric"
+            month="long"
+            year="numeric" />
             {this.props.date.location}
-          </div>
         </div>
       </div>
     )

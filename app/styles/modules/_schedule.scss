@@ -1,37 +1,53 @@
-@import '../variables';
-@import '../mixins';
-
 .schedule {
     @include container-int;
     text-align: left;
+    margin-top: 40px;
     input:focus {
         outline: 0;
     }
 }
 
+#schedule .module-header {
+  background: initial;
+  color: $color__gray;
+  padding: 0;
+  margin-top: 22px;
+  font-weight: 400;
+}
+
+
 .conference {
-    width: 90%;
-    margin: 15px auto;
-    border-top: 2px solid $color__gray--darker;
-    border-bottom: 2px solid $color__gray--darker;
+  width: 100%;
     ul.conf-hidden {
       display: none;
     }
     ul {
          display: flex;
          transition: height 0.2s;
+         margin-left: $session-time-width;
         li {
             list-style: none;
-            font-size: $font__larger;
-            background-color: $color__primary--lightest;
+            font-size: 1.1em;
+            background-color: $color__gray--lighten;
             padding: 10px;
             cursor: pointer;
+            color: $color__white;
+            font-weight: 700;
+            padding: 15.5px 41.2px;
+            text-transform: uppercase;
         }
         li.conference__tab--active {
-            background-color: $color__primary--lighter;
+            background-color: $color__gray--lightest;
+            color: $color__primary;
         }
+        li.conference__tab--active:hover {
+          background-color: $color__gray--lightest;
+          color: $color__primary;
+        }
+
         li:hover {
-            text-decoration: underline;
+            background: $color__gray--light;
+            color: $color__white;
         }
     }
 }
@@ -40,6 +56,7 @@
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
+    display: none;
     h3 {
         font-size: $font__large;
         color: $color__primary;
@@ -72,23 +89,31 @@
     }
 }
 .timetable {
-    background-color: $color__primary--lighter;
-    padding: 10px;
     transition: height 0.2s;
 }
 .session {
     display: flex;
     justify-content: flex-start;
-    padding: 5px;
-    border-bottom: 1px dashed $color__gray--darker;
     @include bp(small) {
         flex-direction: column;
     }
 }
+.session:first-child .session__time {
+  padding: 32px 36px 0 0;
+}
+.session:first-child .session__arrangement {
+  padding: 32px 0 0 36px;
+}
+
 .session__time {
-    width: 140px;
-    margin-right: 20px;
+    width: $session-time-width;
+    background: $color__gray;
     flex-shrink: 0;
+    padding-right: 36px;
+    text-align: right;
+    color: $color__white;
+    font-weight: 500;
+    padding-bottom: 28px;
     @include bp(small) {
         margin: 10px 0;
         width: 100%;
@@ -99,49 +124,49 @@
         margin: 0 4px;
     }
 }
+.session--entertainment .session__time {
+  color: $color__primary;
+}
 .session__arrangement {
+    background: $color__gray--lightest;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     flex-shrink: 3;
     width: 100%;
+    padding-left: 36px;
+}
+.session--report > .session__arrangement {
+  color: lighten($color__gray, 10%);
 }
 .session__name {
-    color: $color__primary--dark;
-    margin-bottom: 10px;
+    color: inherit;
+    margin-bottom: 1px;
+}
+.session__name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: $color__gray;
 }
 .session--entertainment .session__name {
     color: $color__primary;
 }
+
+.speaker__name--schedule {
+    flex-shrink: 3;
+    display: flex;
+    font-size: 0.648em;
+    color: inherit;
+}
+
 .session__info {
     margin-bottom: 10px;
     font-weight: bold;
-    display: flex;
     justify-content: space-between;
     flex-direction: row;
     @include bp(very-small) {
        flex-direction: column;
        margin-bottom: 0;
-    }
-    .speaker__name {
-        flex-shrink: 3;
-    }
-    span.session__button{
-        width: 20px;
-        height: 20px;
-        border: 0px;
-        margin: 0 10px;
-        cursor: pointer;
-        @include user-select;
-        @include bp(very-small) {
-            margin: 10px;
-        }
-    }
-    span.session__button--inactive::after {
-        @include schedule-about-button('+');
-    }
-    span.session__button--active::after {
-        @include schedule-about-button('-');
     }
 }
 .session__info--right {
@@ -149,6 +174,8 @@
 }
 .session__about {
     margin-bottom: 10px;
+    font-size: 0.85em;
+    color: lighten($color__gray, 10%);
 }
 
 .session:last-child {
@@ -160,6 +187,7 @@
 .session__calendButtons,
 a.session__calendLink {
     color: $color__gray--darker;
+    display: none;
 }
 .session__calendLink {
     font-weight: bold;

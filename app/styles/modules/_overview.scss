@@ -1,6 +1,3 @@
-@import '../variables';
-@import '../mixins';
-
 .overview__wrap {
     position: absolute;
     background-color: rgba(30, 145, 255,0.1);
@@ -13,33 +10,30 @@
 }
 
 .overview {
-    background: url('../images/logo-main.jpg') center center no-repeat;
+    background: url('../images/partner.jpg') center center no-repeat;
     background-size: cover;
-    height: 752px;
+    height: 421px;
     z-index: 0;
     display: flex;
     flex-direction: column;
     align-content: center;
     position: relative;
     h2 {
-        color: $color__primary--dark;
-        text-transform: uppercase;
+        color: $color__gray--lightest;
+        text-transform: capitalize;
         text-align: center;
-        font-size: 5.4375em;
-        padding: 25px 0;
-        margin: 30px auto;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: $color__white;
-        text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+        font-size: 4.255em;
+        margin: 45px 0 0;
+        padding-bottom: 3px;
         z-index: 1;
+        border-bottom: 2px solid $color__primary;
         @include bp(medium) {
         	font-size: 4.1875em;
-        	margin: 20px auto;
+        	margin: 20px 0 0;
         }
         @include bp(small) {
-    		font-size: 3em;
-            -webkit-text-stroke-width: 1.5px;
-    	}
+    		  font-size: 3em;
+    	  }
         @include bp(very-small) {
             font-size: 2.5em;
         }
@@ -74,11 +68,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 30px;
-  background: $color__primary--darkTransparent;
-  margin: 15px;
-  font-size: $font__giant;
-  color: $color__white;
+  padding: 26px 13px;
+  background: rgb(224, 120, 43);
+  margin-top: 3px;
+  font-size: 1.13em;
+  color: white;
+  line-height: 13px;
+  span+span {
+    margin-left: 9px;
+  }
   @include bp(medium) {
     padding: 20px;
     font-size: $font__large;

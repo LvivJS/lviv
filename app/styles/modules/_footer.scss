@@ -1,16 +1,17 @@
-@import '../variables';
-@import '../mixins';
-
 .footer {
-    background: $color__primary--dark;
+    background: $color__gray;
     display: flex;
-    color:$color__primary;
+    color: $color__gray--lighten;
     @include bp(small) {
         font-size: $font__mini;
     }
     hr {
-        border-color:$color__primary;
+        border-color:$color__gray--light;
     }
+}
+
+.footer a {
+  color: $color__gray--light;
 }
 
 .footer__container {
@@ -34,12 +35,12 @@
 }
 
 .footer__headings {
-    color:$color__white;
+    color:$color__gray--lighten;
     font-size: $font__small;
     text-align: center;
     padding: 8px 5px;
     margin: 10px 0;
-    border-bottom: 1px solid $color__primary;
+    border-bottom: 1px solid $color__gray--lighten;
 }
 
 .footer__eventLinks {
@@ -56,10 +57,10 @@
 }
 
 .footer__event,
-.footer__mailLink {
+a.footer__mailLink {
   transition: color 0.2s;
   &:hover {
-      color: $color__white;
+      color: $color__primary;
   }
 }
 
@@ -67,7 +68,7 @@
     margin: 10px;
     text-align: center;
     .footer__mailLink {
-        color: $color__primary--lighter;
+        color: $color__gray--lighten;
     }
 }
 
@@ -78,11 +79,11 @@
         margin:5px;
         display:block;
         .social__icon {
-            fill: $color__primary--lighter;
+            fill: $color__gray--lighten;
         }
     }
     a:hover .social__icon {
-        fill: $color__white;
+        fill: $color__primary;
     }
 }
 .social_icons {

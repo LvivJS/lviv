@@ -1,0 +1,88 @@
+#speakers .module-header {
+  color: $color__primary;
+  background: initial;
+  padding-top: 42px;
+  margin-bottom: 24px;
+  font-weight: 400;
+
+}
+.speakers {
+  @include container-int;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 7%;
+  margin: 0 auto;
+}
+
+.speaker {
+    display: inline-block;
+    width: 17.1%;
+    margin: 0 4.7%;
+    height: auto;
+}
+.speaker:hover img {
+  filter: none;
+}
+
+.speaker__photo{
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: -5px;
+        border-radius: 50%;
+        filter: grayscale(1);
+        transition: filter 0.2s;
+    }
+}
+.speaker__name {
+    text-transform: capitalize;
+    text-align: center;
+    color: $color__primary;
+    font-weight: bold;
+    font-size: 0.94em;
+    margin-top: 17px;
+    @include bp(small) {
+        font-size: 16px;
+    }
+}
+.speaker__pos {
+    color: $color__gray;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0;
+}
+.speaker__about {
+    color: #A9ACAE;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 0.7em;
+    line-height: 1.1em;
+    @include bp(small) {
+        display:none;
+    }
+}
+
+.speaker__contacts {
+        flex-wrap:wrap;
+        @include container-ext;
+        padding:10px;
+        @include bp(small) {
+            padding:5px;
+        }
+        .social__icon {
+            fill:#A9ACAE;
+        }
+}
+.speaker__contact {
+    display: block;
+    margin:5px;
+    &:hover {
+        .social__icon {
+            fill:$color__primary;
+        }
+    }
+    svg.social_icons {
+      height:20px;
+      width:20px;
+    }
+}

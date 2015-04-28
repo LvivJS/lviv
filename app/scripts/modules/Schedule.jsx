@@ -10,6 +10,7 @@ var IntlMixin     = ReactIntl.IntlMixin;
 var FormattedDate = ReactIntl.FormattedDate;
 var FormattedTime = ReactIntl.FormattedTime;
 var files = require('../db_connector');
+var moment = require('moment');
 
 var Schedule = React.createClass({
   mixins: [IntlMixin],
@@ -108,17 +109,11 @@ var Conference = React.createClass({
 var Timetable = React.createClass({
   getInitialState: function() {
     return {
-      sessions:this.props.sessions,
-      smallScreen: (window.innerWidth <= 320)
+      sessions:this.props.sessions
     }
   },
   componentDidMount: function() {
     window.addEventListener('resize', this.handleResize);
-  },
-  handleResize: function() {
-    var smallScreen = 320;
-    var windowWidth = window.innerWidth;
-    this.setState({smallScreen: (windowWidth <= smallScreen)})
   },
   render: function() {
     var sessions = this.state.sessions.map(function(session) {
@@ -128,8 +123,7 @@ var Timetable = React.createClass({
       }
       session.location = this.props.location
       return (
-        <Session key={session.article} session={session} smallScreen={this.state.smallScreen}
-          start={timeStart} end={timeEnd} locales={this.props.locales} />
+        <Session key={session.article} session={session} start={timeStart} end={timeEnd} locales={this.props.locales} />
       )
     }.bind(this));
     return (
@@ -144,16 +138,12 @@ var Session = React.createClass({
   getInitialState: function() {
     return {
       session: this.props.session,
-      isReport: this.props.session.type == 'report'
+      isReport: this.props.session.type == 'report',
+      isHidden: true
     }
   },
   changeAbout: function() {
     this.setState({isHidden:!this.state.isHidden});
-  },
-  componentWillReceiveProps: function() {
-    this.setState({
-      isHidden: this.props.smallScreen
-    });
   },
   createCalendLink: function() {
     utilities.calendLinks.iCalendar(this.state.session);
@@ -166,7 +156,7 @@ var Session = React.createClass({
 
     if (this.state.isReport) {
       speaker = (
-        <span className="speaker__name">
+        <span className="speaker__name--schedule">
           {this.state.session.speaker.name}
           {this.state.session.speaker.position}
         </span>
@@ -197,44 +187,23 @@ var Session = React.createClass({
       'invisible': this.state.isHidden
     });
 
-    var sessionButtonClass = classNames ({
-      'session__button': true,
-      'session__button--inactive': this.state.isHidden,
-      'session__button--active': !this.state.isHidden
-    });
-
-    if (this.state.session.about) {
-      button = (
-        <span onClick={this.changeAbout.bind(null,this.state.session)} className= {sessionButtonClass}>
-        </span>
-      )
-    };
     if(this.props.end) {
-      timeEnd = (
-        <FormattedTime
-            value={new Date(this.props.end)}
-            hour="numeric"
-            minute="numeric" />
-      )
+      timeEnd = (<span>{moment(this.props.end).format('HH:MM')}</span>)
     }
     return (
       <div key={this.state.session.article}
        className={sessionClass}>
         <div className="session__time">
-          <FormattedTime
-            value={new Date(this.props.start)}
-            hour="numeric"
-            minute="numeric" />
+          <span>{moment(this.props.start).format('HH:MM')}</span>
           {timeEnd}
         </div>
         <div className="session__arrangement">
-          <h4 className="session__name">{this.state.session.article}</h4>
+          <h4 className="session__name" onClick={this.changeAbout}>{this.state.session.article}</h4>
           <div className={sessionInfoClass}>
             {speaker}
-            {button}
           </div>
           <div className={sessionAboutClass}>
-              {this.state.session.about}
+              {this.state.session.about || 'sorry, no description...'}
           </div>
           {calendarLinks}
         </div>
