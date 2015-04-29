@@ -92,9 +92,12 @@
 }
 
 .menu__item:hover{
-	color: #E0782B;
-	background: $color__gray--lightest;
-	text-shadow: none;
+	color: $color__primary;
+	@include bp(medium) {
+		color: #E0782B;
+		background: $color__gray--lightest;
+		text-shadow: none;
+	}
 }
 
 /* toggle visibility of menu on smalles screens */
