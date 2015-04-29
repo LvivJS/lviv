@@ -4,6 +4,8 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var jade = require('jade');
+var files = require('./app/scripts/db_connector.js');
+
 
 var port = process.env.port || 8082;
 var env = process.env.NODE_ENV || 'development';
@@ -14,6 +16,7 @@ var data = {};
 data.config = require('./app/scripts/config.js');
 data.footer = require('./app/locales/en/footer.json');
 data.moment = app.locals.moment;
+data.connect = JSON.stringify(require('./app/scripts/db_connector.js'));
 
 //get data only for (isRendering == true) modules
 data.config.modules.forEach(function(module) {
@@ -38,9 +41,16 @@ app.get('/', function(req, res) {
   res.render('index', data);
 });
 
+//handle data from form
+app.post('/', function(req, res, next) {
+  files.push('users', req.body);
+  res.status(200).send('Thanks for registration!');
+});
+
 //Route not found -- Set 404
 app.get('*', function(req, res) {
   res.status(404).send('Sorry this page does not exist!');
+
 });
 
 app.listen(port);

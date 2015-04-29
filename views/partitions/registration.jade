@@ -1,8 +1,7 @@
 //data is pushed to template only if isRendering==true in config.js
 //next two lines are to prevent error because data is not defined for module
 //if isRendering==false
-if !registration
-else
+if registration
   section#registration.page-wrap
     h2.module-header= registration.title
     .registration
@@ -22,63 +21,87 @@ else
         .registration__field
           input.registration__submit(type="submit" value="#{registration.title}")
 
-
-
-  script.
-    function pushData(data) {
-      files.push('users', data, function(id) {
-        if (id) {
-          alert('You succesfully registered!!!!');
-        } else {
-          alert('Unfortunately registration failed...');
-        }
-      });
-    }
+script.
+  function submitForm(form, e) {
+    e.preventDefault();
     
-    function submitForm(form, e) {
-      e.preventDefault();
-      
-      var inputs = document.getElementsByClassName('registration__input');
-      
-      var formInputStates = [];
-      
-      Array.prototype.forEach.call(inputs, function(input) {
-        var state = checkValidation(input);
-        formInputStates.push(state);
-      });
-      //check if every element is valid
-      var formState = Array.prototype.every.call(formInputStates, function(item){
-        return item == true;
-      });
-      if (formState) {
-        //TODO: implement send form inputs data to server.
-        alert('make data sent to server!!!');
+    var inputs = document.getElementsByClassName('registration__input');      
+    var formInputStates = [];
+    var formData = {};
+    
+    //collect states of all inputs in formInputStates array
+    Array.prototype.forEach.call(inputs, function(input) {
+      var state = checkValidation(input);
+      formInputStates.push(state);
+      //collect values to formData object
+      formData[convertType(input.type)] = input.value;
+    });
+    
+    //if every input is valid - set general formState equals true
+    var formState = Array.prototype.every.call(formInputStates, function(item){
+      return item == true;
+    });
+    
+    //send formData if all items are valid
+    if (formState) {
+      pushData(formData);
+      clearInputs(inputs);
+    }
+  }
+  
+  function pushData(data) {
+    var json = JSON.stringify(data);
+    var request = new XMLHttpRequest();
+    request.open('post', '/', true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.onreadystatechange = function() {
+      if (request.readyState==4 && request.status==200) {
+        
+        var regForm = document.getElementsByClassName('registration')[0];
+        regForm.innerHTML = '<div class="regist-resp">' + request.responseText + '</div>';
       }
     }
-    
-    function checkValidation(input) {
-      var errorSpan = input.nextSibling;
-      var label = input.previousSibling;
-      var bool = isValid(input);
-      if (bool) {
-          errorSpan.classList.add('invisible');
-          input.classList.remove('registration__input--invalid');
-          label.classList.remove('registration__input--invalid');
-      } else {
-        errorSpan.classList.remove('invisible');
-        input.classList.add('registration__input--invalid');
-        label.classList.add('registration__input--invalid');
-      }
-      return bool;
+    request.send(json);
+  }
+  
+  function clearInputs(items) {
+    Array.prototype.forEach.call(items, function(item) {
+      item.value = '';
+    });
+  }
+  
+  function checkValidation(input) {
+    var errorSpan = input.nextSibling;
+    var label = input.previousSibling;
+    var bool = isValid(input);
+    if (bool) {
+        errorSpan.classList.add('invisible');
+        input.classList.remove('registration__input--invalid');
+        label.classList.remove('registration__input--invalid');
+    } else {
+      errorSpan.classList.remove('invisible');
+      input.classList.add('registration__input--invalid');
+      label.classList.add('registration__input--invalid');
     }
-    
-    function isValid(input) {
-      var type = input.getAttribute('type');
-      var patterns = {
-        tel:/^([0-9\(\)\/\+ \-]{3,20})$/,
-        email: /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
-        text: /^[a-zA-Z_ -]{3,50}$/
-      };
-      var isValid = new RegExp(patterns[type]).test(input.value);
-      return isValid;
+    return bool;
+  }
+  
+  function isValid(input) {
+    var type = input.getAttribute('type');
+    var patterns = {
+      tel:/^([0-9\(\)\/\+ \-]{3,20})$/,
+      email: /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
+      text: /^[a-zA-Z_ -]{3,50}$/
+    };
+    var isValid = new RegExp(patterns[type]).test(input.value);
+    return isValid;
+  }
+  
+  function convertType(type) {
+    var convert = {
+      tel: 'Phone',
+      email: 'E-mail',
+      text: 'Name'
     }
+    return convert[type];
+  }

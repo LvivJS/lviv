@@ -1,5 +1,4 @@
 var React = require('react');
-var Firebase = require('firebase');
 var InputField = require('../components/input.jsx');
 var config = require('../config');
 var utilities = require('../utilities');
