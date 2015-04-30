@@ -16,6 +16,11 @@ var utilities = {
       var data = JSON.stringify(obj);
       request.setRequestHeader('Content-Type', 'application/json');
       request.send(data);
+      request.onreadystatechange = function() {
+      if (request.readyState == 4) {
+          callBack(request.status);
+      }
+    };
     } else {
       request.send();
     }

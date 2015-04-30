@@ -50,15 +50,17 @@ script.
   }
   
   function pushData(data) {
+    var regForm = document.getElementsByClassName('registration')[0];
     var json = JSON.stringify(data);
     var request = new XMLHttpRequest();
     request.open('post', '/', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.onreadystatechange = function() {
       if (request.readyState==4 && request.status==200) {
-        
-        var regForm = document.getElementsByClassName('registration')[0];
         regForm.innerHTML = '<div class="regist-resp">' + request.responseText + '</div>';
+      }
+      if (request.status==500) {
+        regForm.innerHTML = '<div class="regist-resp">Registration failed...</div>';
       }
     }
     request.send(json);

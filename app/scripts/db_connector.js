@@ -75,7 +75,18 @@ var LocalConnect = {
     var file = (config.localePath + filePath + '.json');
 
     utilities.ajax('get', file, next);
+  },
+  push: function(callBack, obj) {
+    var regForm = document.getElementsByClassName('registration')[0];
+    utilities.ajax('post', '', function(status) {
+      if (status == 200) {
+        regForm.innerHTML = '<div class="regist-resp">Thanks for registration!</div>';
+      }
+      if (status == 500 || status == 404) {
+        regForm.innerHTML = '<div class="regist-resp">Registration failed...</div>';
+      }
+    }, obj);
   }
 };
 
-module.exports = FirebaseConnect;
+module.exports = LocalConnect;

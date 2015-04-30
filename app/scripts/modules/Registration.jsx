@@ -40,13 +40,7 @@ var Registration = React.createClass({
   },
 
   pushData: function(data) {
-    files.push('users', data, function(id) {
-      if (id) {
-        alert('You succesfully registered!!!!');
-      } else {
-        alert('Unfortunately registration failed...');
-      }
-    });
+    files.push(data);
   },
 
   render: function() {

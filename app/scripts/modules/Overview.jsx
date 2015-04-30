@@ -31,7 +31,6 @@ var OverviewBlock = React.createClass({
       <section id="overview" className="page-wrap overview">
           <h2>{this.state.mainInfo.name}</h2>
           {date()}
-          <div className="overview__wrap"></div>
       </section>
     )
   }
