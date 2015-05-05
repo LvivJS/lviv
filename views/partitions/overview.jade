@@ -1,11 +1,10 @@
 //data is pushed to template only if isRendering==true in config.js
 //next two lines are to prevent error because data is not defined for module
 //if isRendering==false
-if !overview 
-else
+if overview 
   section#overview.page-wrap.overview
-    h2= overview.name
-    div.overview__info
-        div.overview__infoBlock
-          span= moment(overview.start_date).format('MMM DD, YYYY')
-          span= overview.location
+    .overview-wrap
+      h2= overview.name
+      div.overview__infoBlock
+        span= moment(overview.start_date).format('MMM DD, YYYY')
+        span= overview.location

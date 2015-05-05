@@ -53,7 +53,6 @@ var Menu = React.createClass({
               <div className="menuToggle__stripe"></div>
             </div>
           </div>
-          <img src="images/logo_lvivjs.png"/>
           <nav id="cm_menuItems" className={menuCls}>
             {itemsToRender}
           </nav>

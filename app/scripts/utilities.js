@@ -18,7 +18,7 @@ var utilities = {
       request.send(data);
       request.onreadystatechange = function() {
       if (request.readyState == 4) {
-          callBack(request.status);
+        callBack(request.status);
       }
     };
     } else {

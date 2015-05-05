@@ -5,11 +5,12 @@ div#menu.module-wrapper
           div.menuToggle__stripe
           div.menuToggle__stripe
           div.menuToggle__stripe
-    img(src="images/logo_lvivjs.png")
     nav#cm_menuItems.menu
       each module in config.modules
         if module.isRendering
           a.menu__item(href="##{module.title.en}")= module.title.en
+    .menu__socials
+      +socialIcons(menu_socials)(class="menu__social-item")
   div#cm_darkenScreen.darkenScreen--hidden
   
 script.

@@ -10,83 +10,49 @@
 }
 
 .overview {
-    background: url('../images/partner.jpg') center center no-repeat;
+    background: #333;
     background-size: cover;
-    height: 421px;
+    height: 401px;
     z-index: 0;
     display: flex;
     flex-direction: column;
     align-content: center;
     position: relative;
+    margin-bottom: 22px;
     h2 {
-        color: $color__gray--lightest;
+        color: $color__primary;
         text-transform: capitalize;
-        text-align: center;
-        font-size: 4.255em;
-        margin: 45px 0 0;
-        padding-bottom: 3px;
+        text-align: right;
         z-index: 1;
-        border-bottom: 2px solid $color__primary;
-        @include bp(medium) {
-        	font-size: 4.1875em;
-        	margin: 20px 0 0;
-        }
-        @include bp(small) {
-    		  font-size: 3em;
-    	  }
-        @include bp(very-small) {
-            font-size: 2.5em;
-        }
-    }
-}
-.overview__about {
-    width: 60%;
-    margin: 20px 20%;
-    padding: 25px;
-    color: $color__white;
-    font-size: $font__giant;
-    text-align: center;
-    text-shadow: 1px 1px 2px #000, 0 0 1em #000;
-    z-index: 1;
-    @include bp(small) {
-        margin: 10px auto;
-        width: 80%;
-        font-size: $font__large;
-    }
-}
-.overview__info {
-    display: flex;
-    margin: 20px auto;
-    z-index: 1;
-    @include bp(small) {
-    	flex-direction: column;
+        background: url('../images/logo_lvivjs.png') left top no-repeat;
+        background-size: 16.1818181818%;
+        background-color: rgba(0, 0, 0, 0.8);
+        margin: 75px 0 0 7.5%;
+        width: 55%;
+        font-size: 3.8em;
+        padding: 17px 29px 24px 110px;
+        line-height: 1.1em;
     }
 }
 
+.overview-wrap {
+  @include container-int;
+  background: #555;
+  height: inherit;
+  flex-direction: column;
+}
+
 .overview__infoBlock {
-  display: inline-block;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 26px 13px;
-  background: rgb(224, 120, 43);
-  margin-top: 3px;
-  font-size: 1.13em;
-  color: white;
-  line-height: 13px;
+  font-size: 1.3em;
+  font-weight: 600;
+  width: 29%;
+  margin-left: 33.6%;
+  background: rgba(255, 255, 255, 0.8);
+  height: 77px;
+  line-height: 3.85em;
   span+span {
     margin-left: 9px;
-  }
-  @include bp(medium) {
-    padding: 20px;
-    font-size: $font__large;
-  }
-  @include bp(small) {
-    padding: 15px;
-  }
-  @include bp(very-small) {
-    padding: 10px;
-    font-size: $font__small;
+    font-weight: 400;
   }
 }
 

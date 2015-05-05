@@ -1,6 +1,6 @@
 
 /* main variables */
-$color__primary: rgb(255, 149, 25);
+$color__primary: rgb(247, 223, 30);
 $color__gray: rgb(88, 89, 91);
 $color__white: rgb(255, 255, 255);
 $color__error: rgb(211, 84, 0);
@@ -14,12 +14,12 @@ $color__primary--saturate: saturate($color__primary, 80%);
 $color__primary--darkTransparent: rgba(darken($color__primary--dark, 13%), 0.8);
 
 /*gray color variables*/
-$color__gray--dark: darken($color__gray, 20%);
+$color__gray--dark: rgb(100, 100, 100);
 $color__gray--light: #A6A8AB;
 $color__gray--lighten: #D0D2D3;
 $color__gray--lightest: #F1F1F2;
 $color__gray--darker: darken($color__gray, 35%);
-$color__gray--darkest: darken($color__gray, 65%);
+$color__gray--darkest: #0B0B0B;
 
 /* fonts */
 $font__main: Calibri, Helvetica, sans-serif;
@@ -31,12 +31,12 @@ $font__mini:0.875em;
 
 
 /* layout */
-$container: 1050px;
+$container: 1000px;
 
 /* menu values */
 $item__padding--top-bottom: 33px;
 $item__padding--left-right: 2.9%;
-$menu__height: 86px;
+$menu__height: 70px;
 
 $toggle-button__size: 45px;
 $stripe__height: 4px;

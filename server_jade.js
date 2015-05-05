@@ -15,6 +15,7 @@ var data = {};
 
 data.config = require('./app/scripts/config.js');
 data.footer = require('./app/locales/en/footer.json');
+data.menu_socials = require('./app/locales/en/menu_socials.json');
 data.moment = app.locals.moment;
 data.connect = JSON.stringify(require('./app/scripts/db_connector.js'));
 
