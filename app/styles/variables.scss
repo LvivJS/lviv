@@ -6,6 +6,7 @@ $color__white: rgb(255, 255, 255);
 $color__error: rgb(211, 84, 0);
 
 /*primary color variables*/
+$color__primary--schedule: rgb(246, 225, 51);
 $color__primary--dark: darken($color__primary, 20%);
 $color__primary--light: lighten($color__primary, 5%);
 $color__primary--lighter: lighten($color__primary, 30%);
@@ -43,4 +44,4 @@ $stripe__height: 4px;
 
 $menu-width--resp: 350px;
 
-$session-time-width: 29.7%;
+$session-time-width: 29.9%;

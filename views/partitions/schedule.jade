@@ -37,8 +37,7 @@ mixin table(data)
 //data is pushed to template only if isRendering==true in config.js
 //next two lines are to prevent error because data
 //is not defined for module if isRendering==false
-if !schedule
-else
+if schedule
   section#schedule.page-wrap
     h2.module-header= schedule.locales.title
     .schedule

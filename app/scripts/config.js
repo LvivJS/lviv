@@ -64,7 +64,7 @@ var config = {
     },
     {
       title: {
-        en: 'location',
+        en: 'locations',
         uk: 'локація'
       },
       component: 'location',

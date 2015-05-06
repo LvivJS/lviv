@@ -1,7 +1,7 @@
 .schedule {
     @include container-int;
     text-align: left;
-    margin-top: 40px;
+    margin-top: 50px;
     input:focus {
         outline: 0;
     }
@@ -23,33 +23,45 @@
       display: none;
     }
     ul {
-         display: flex;
-         transition: height 0.2s;
-         margin-left: $session-time-width;
-        li {
-            list-style: none;
-            font-size: 1.1em;
-            background-color: $color__gray--lighten;
-            padding: 10px;
-            cursor: pointer;
-            color: $color__white;
-            font-weight: 700;
-            padding: 15.5px 41.2px;
-            text-transform: uppercase;
+      display: flex;
+      transition: height 0.2s;
+      margin-left: $session-time-width;
+      overflow: hidden;
+      li {
+        list-style: none;
+        background-color: #B3B3B3;
+        cursor: pointer;
+        color: #151317;
+        font-weight: 700;
+        text-transform: capitalize;
+        height: 49px;
+        width: 93px;
+        margin-right: 4px;
+        text-align: center;
+        line-height: 2.4em;
+        font-size: 1.16em;
+        position: relative;
+      }
+      li.conference__tab--active {
+        background-color: $color__primary--schedule;
+        &:after {
+          display: block;
+          content: "";
+          background: $color__primary--schedule;
+          position: absolute;
+          top: 41px;
+          left: 0;
+          height: 8px;
+          width: 800px;
+          z-index: 1;
         }
-        li.conference__tab--active {
-            background-color: $color__gray--lightest;
-            color: $color__primary;
-        }
-        li.conference__tab--active:hover {
-          background-color: $color__gray--lightest;
-          color: $color__primary;
-        }
-
-        li:hover {
-            background: $color__gray--light;
-            color: $color__white;
-        }
+      }
+      li.conference__tab--active:hover {
+        background-color: $color__primary--schedule;
+      }
+      li:hover {
+        background: $color__gray--light;
+      }
     }
 }
 
@@ -91,6 +103,7 @@
 }
 .timetable {
     transition: height 0.2s;
+    position: relative;
 }
 .session {
     display: flex;
