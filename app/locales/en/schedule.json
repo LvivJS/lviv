@@ -2,7 +2,7 @@
   "locales":{
     "title": "Schedule",
     "conf_schedule":"Schedule:",
-    "calend_links":"Add event to: "
+    "calend_links":"Add Event to: "
   },
   "data": [
     {
@@ -13,13 +13,6 @@
           "day_info": "Fri May 22 2015",
           "location":"Ukraine, Lviv, Oleny Stepanivny 45",
           "timetable": [
-            {
-              "time": {
-                "start": "Fri May 22 2015 08:55:00"
-              },
-              "article":"Morning Welcome",
-              "type":"entertainment"
-            },
             {
               "time": {
                 "start": "Fri May 22 2015 09:00:00",
@@ -68,7 +61,11 @@
                 "end": "Fri May 22 2015 14:00:00"
               },
               "article":"Lunch",
-              "type":"entertainment"
+              "type":"entertainment",
+              "speaker":
+                {
+                  "name":"We'll provide tasty snacks"
+                  }
             },
             {
               "time":{
@@ -115,13 +112,6 @@
           "timetable": [
             {
               "time": {
-                "start": "Sat May 23 2015 08:55:00"
-              },
-              "article":"Morning Welcome",
-              "type":"entertainment"
-            },
-            {
-              "time": {
                 "start": "Sat May 23 2015 09:00:00",
                 "end": "Sat May 23 2015 10:00:00"
               },
@@ -154,7 +144,11 @@
                 "end": "Sat May 23 2015 12:30:00"
               },
               "article":"Lunch",
-              "type":"entertainment"
+              "type":"entertainment",
+              "speaker":
+                {
+                  "name":"We'll provide tasty snacks"
+                }
             },
             {
               "time": {

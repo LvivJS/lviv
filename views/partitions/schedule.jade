@@ -12,7 +12,8 @@ mixin sessionData(session)
     if session.time.end
       span= moment(session.time.end).format('HH:MM')
   .session__arrangement
-    h4.session__name(onclick="toggleAbout(this)")= session.article
+    h4.session__name
+      span.session__icon= session.article
     if (session.type == report)
       .session__info.session__info--right
         +details(session)
@@ -20,11 +21,10 @@ mixin sessionData(session)
       .session__info
         +details(session)
     .session__about.invisible= session.about || 'sorry, no description...'
-    .session__calendButtons
-      span= schedule.locales.calend_links
-      br
-      a.session__calendLink.session__calendLink--gCal( href="#{TODO get link from utilities}" target="_blank" rel="nofollow") Google Calendar
-      a.session__calendLink.session__calendLink--iCal( href="#") iCalendar
+      .session__calendButtons
+        span= schedule.locales.calend_links
+        a.session__calendLink.session__calendLink--gCal( href="#{TODO get link from utilities}" target="_blank" rel="nofollow") Google Calendar
+        a.session__calendLink.session__calendLink--iCal( href="#") iCalendar
 
 mixin table(data)
   each session, indx in data
@@ -107,5 +107,15 @@ if schedule
     function toggleAbout(el) {
       var session = el.parentNode;
       var about = session.getElementsByClassName('session__about')[0];
+      var icon = session.getElementsByClassName('session__icon')[0];
+      icon.classList.toggle('session__icon--expanded');
       about.classList.toggle('invisible');
     }
+    
+    (function() {
+      var reports = document.getElementsByClassName('session--report');
+      Array.prototype.forEach.call(reports, function(report) {
+        var header = report.getElementsByClassName('session__name')[0];
+        header.addEventListener('click', function() {toggleAbout(header)});
+      });
+    })();
