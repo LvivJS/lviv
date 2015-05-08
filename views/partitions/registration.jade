@@ -3,23 +3,23 @@
 //if isRendering==false
 if registration
   section#registration.page-wrap
-    h2.module-header= registration.title
     .registration
+      h2.module-header= registration.title
       form(onsubmit="submitForm(this, event)")
         .registration__field
-          label.label-regInput(for="cm_name") name
           input.registration__input(id="cm_name" type="text" onchange="checkValidation(this)")
+          label.label-regInput(for="cm_name") name
           span.registration__tip.invisible= registration.Name_err
         .registration__field
-          label.label-regInput(for="cm_email") email
           input.registration__input(id="cm_email" type="email" onchange="checkValidation(this)")
+          label.label-regInput(for="cm_email") email
           span.registration__tip.invisible= registration.Email_err
         .registration__field
-          label.label-regInput(for="cm_tel") phone
           input.registration__input(id="cm_tel" type="tel" onchange="checkValidation(this)")
+          label.label-regInput(for="cm_tel") phone
           span.registration__tip.invisible= registration.Phone_err
         .registration__field
-          input.registration__submit(type="submit" value="#{registration.title}")
+          input.registration__submit(type="submit" value="#{registration.button_text}")
 
 script.
   function submitForm(form, e) {
@@ -50,17 +50,17 @@ script.
   }
   
   function pushData(data) {
-    var regForm = document.getElementsByClassName('registration')[0];
+    var regWrap = document.getElementById('registration');
     var json = JSON.stringify(data);
     var request = new XMLHttpRequest();
     request.open('post', '/', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.onreadystatechange = function() {
       if (request.readyState==4 && request.status==200) {
-        regForm.innerHTML = '<div class="regist-resp">' + request.responseText + '</div>';
+        regWrap.innerHTML = '<div class="regist-resp">' + request.responseText + '</div>';
       }
       if (request.status==500) {
-        regForm.innerHTML = '<div class="regist-resp">Registration failed...</div>';
+        regWrap.innerHTML = '<div class="regist-resp">Registration failed...</div>';
       }
     }
     request.send(json);
@@ -72,15 +72,30 @@ script.
     });
   }
   
+  //collector of existing error messages
+  var errors = {};
+  
   function checkValidation(input) {
-    var errorSpan = input.nextSibling;
-    var label = input.previousSibling;
+    var label = input.nextSibling;
+    var errorSpan = label.nextSibling;
+    var emptyInpErr = 'This field is required';
+    //store original
+    if (errorSpan.innerHTML !== emptyInpErr) {
+      errors[input.id] = errorSpan.innerHTML;
+    }
+    
     var bool = isValid(input);
+    
     if (bool) {
         errorSpan.classList.add('invisible');
         input.classList.remove('registration__input--invalid');
         label.classList.remove('registration__input--invalid');
     } else {
+      if (!input.value) {
+        errorSpan.innerHTML = emptyInpErr;
+      } else {
+        errorSpan.innerHTML = errors[input.id];
+      }
       errorSpan.classList.remove('invisible');
       input.classList.add('registration__input--invalid');
       label.classList.add('registration__input--invalid');

@@ -26,7 +26,7 @@
       display: flex;
       transition: height 0.2s;
       margin-left: $session-time-width;
-      border-bottom: 8px solid $color__primary--schedule;
+      border-bottom: 8px solid $color__primary;
       li {
         list-style: none;
         background-color: #B3B3B3;
@@ -43,10 +43,10 @@
         position: relative;
       }
       li.conference__tab--active {
-        background-color: $color__primary--schedule;
+        background-color: $color__primary;
       }
       li.conference__tab--active:hover {
-        background-color: $color__primary--schedule;
+        background-color: $color__primary;
       }
       li:hover {
         background: $color__gray--light;
