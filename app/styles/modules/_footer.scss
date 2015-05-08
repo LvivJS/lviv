@@ -1,96 +1,75 @@
 .footer {
-    background: $color__gray;
-    display: flex;
-    color: $color__gray--lighten;
-    @include bp(small) {
-        font-size: $font__mini;
-    }
-    hr {
-        border-color:$color__gray--light;
-    }
-}
-
-.footer a {
-  color: $color__gray--light;
+  @include container-ext;
+  background: #383838;
 }
 
 .footer__container {
-    @include container-int;
-        justify-content: space-around;
-    @include bp(small) {
-        flex-direction: column;
-    }
-    .footer__block {
-      display: inline-block;
-        display: flex;
-        flex-direction: column;padding: 15px;
-        margin-top: 10px;
-        margin-bottom:30px;
-        min-width: 25%;
-        @include bp(small) {
-            margin:0px;
-            padding:8px;
-        }
-    }
+  @include container-int;
+  justify-content: space-between;
 }
 
-.footer__headings {
-    color:$color__gray--lighten;
-    font-size: $font__small;
-    text-align: center;
-    padding: 8px 5px;
-    margin: 10px 0;
-    border-bottom: 1px solid $color__gray--lighten;
+.footer__block {
+  margin: 76px 9px 72px;
 }
 
-.footer__eventLinks {
-    @include bp(small) {
-      padding-left:10px;
-    }
-    .footer__event {
-        display:block;
-        margin:5px;
-        @include bp(medium) {
-            margin:8px 0px;
-        }
-    }
+.block__header {
+  color: #FFF;
+  font-size: 1.11em;
+  text-align: left;
+  font-weight: 500;
+  text-shadow: 0 0 1px #8F8F8F;
 }
 
-.footer__event,
-a.footer__mailLink {
-  transition: color 0.2s;
-  &:hover {
-      color: $color__primary;
-  }
+.block__contact {
+  display: flex;
+  flex-direction: column;
+  color: yellow;
+  margin-top: 21px;
+  text-align: left;
 }
 
-.footer__contacts {
-    margin: 10px;
-    text-align: center;
-    .footer__mailLink {
-        color: $color__gray--lighten;
-    }
+.block__contact__name,
+.block__contact__phone,
+.block__contact__email {
+  margin-bottom: 3px;
+}
+
+.block__contact__name,
+.block__contact__phone {
+  color: #A9A9A9;
+}
+
+.block__contact__email {
+  color: rgb(27, 117, 186);
+  text-decoration: underline;
+}
+
+
+.footer__copyright {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  height: 97px;
+}
+
+.copyright__text {
+  margin: 33px 14px 0;
+  color: rgba(169, 169, 169, 0.99);
+  font-size: 1.12em;
 }
 
 .footer__socials {
-    @include container-ext;
-    margin: 10px;
-    a {
-        margin:5px;
-        display:block;
-        .social__icon {
-            fill: $color__gray--lighten;
-        }
-    }
-    a:hover .social__icon {
-        fill: $color__primary;
-    }
-}
-.social_icons {
-  height:20px;
-  width:20px;
+  display: flex;
+  margin-right: 8px;
 }
 
-.footer__copyright {
-    margin: 10px auto;
+.footer__social-item {
+  margin-top: 31px;
+  &:hover {
+    background: $color__gray--darkest;
+  }
+  path {
+    fill: #fff;
+  }
 }

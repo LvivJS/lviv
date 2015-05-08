@@ -1,18 +1,16 @@
 
 footer#footer.page-wrap.footer
   .footer__container
-    .footer__block
-      h5.footer__headings= footer.locales.events_header
-      .footer__eventLinks
-        each event in footer.data.events
-          a.footer__event(href="#{ event.link }", target="_blank")= event.name
-    .footer__block
-      h5.footer__headings= footer.locales.connection_header
-      .footer__socials
-        +socialIcons( footer.data.socials.networks )
-      .footer__contacts
-        span= footer.locales.contact_us
-        a.footer__mailLink(href="mailto:#{ footer.data.socials.email }")= footer.data.socials.email
-  hr
+    each block in footer.contacts
+      .footer__block
+        h4.block__header= block.title
+        each contact in block.contacts
+          .block__contact
+            span.block__contact__name= contact.name
+            span.block__contact__phone= contact.phone
+            a.block__contact__email(href="mailto:#{contact.email}")= contact.email  
   .footer__copyright
-    span= footer.locales.copyright
+    .footer__container
+      span.copyright__text= footer.copyright
+      .footer__socials
+        +socialIcons(menu_socials)(class="menu__social-item footer__social-item")
