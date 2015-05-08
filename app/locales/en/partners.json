@@ -12,17 +12,12 @@
       ]
     },
     {
-      "title": "golden",
+      "title": "gold",
       "data": [
         {
-          "title": "DataArt",
-          "link": "http://www.dataart.com/",
-          "img": "images/partners/gold/dataart-logo.jpg"
-        },
-        {
-          "title": "Eleks",
-          "link": "http://www.eleks.com/",
-          "img": "images/partners/gold/eleks-1.png"
+          "title": "Remit",
+          "link": "http://www.remit.se/",
+          "img": "images/partners/gold/remit-logo-1.png"
         },
         {
           "title": "Epam Systems",
@@ -30,14 +25,14 @@
           "img": "images/partners/gold/logo_epam_20.png"
         },
         {
-          "title": "Remit",
-          "link": "http://www.remit.se/",
-          "img": "images/partners/gold/remit-logo-1.png"
+          "title": "Eleks",
+          "link": "http://www.eleks.com/",
+          "img": "images/partners/gold/eleks-1.png"
         },
         {
-          "title": "Team International",
-          "link": "http://www.teaminternational.com/",
-          "img": "images/partners/gold/team-international.jpg"
+          "title": "DataArt",
+          "link": "http://www.dataart.com/",
+          "img": "images/partners/gold/dataart-logo.jpg"
         }
       ]
     },

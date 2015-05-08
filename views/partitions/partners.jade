@@ -1,6 +1,6 @@
 mixin partnerLink(partner)
-  a.partners__item-link(href=partner.link title=partner.title target="_blank")
-    img(src="#{partner.img}" alt="#{partner.title}")
+  a.partners__item-link(href=partner.link title=partner.title target="_blank" style="background-image: url(#{partner.img})")
+    //- img(src="#{partner.img}" alt="#{partner.title}")
 
 mixin partnerCategory(category)
   section.partners__category
