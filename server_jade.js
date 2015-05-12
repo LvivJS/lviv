@@ -6,8 +6,7 @@ var app = express();
 var jade = require('jade');
 var files = require('./app/scripts/db_connector.js');
 
-
-var port = process.env.port || 8082;
+var port = process.env.port || 8080;
 var env = process.env.NODE_ENV || 'development';
 // utilities
 app.locals.moment = require('moment');
@@ -38,11 +37,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 // index url
 app.get('/', function(req, res) {
-  // res.setHeader('Cache-Control', 'no-cache');
   res.render('index', data);
 });
 
 //handle data from form
+// todo: should be POST to "/users"
 app.post('/', function(req, res, next) {
   files.push('users', req.body);
   res.status(200).send('Thanks for registration!');
@@ -51,7 +50,6 @@ app.post('/', function(req, res, next) {
 //Route not found -- Set 404
 app.get('*', function(req, res) {
   res.status(404).send('Sorry this page does not exist!');
-
 });
 
 app.listen(port);
