@@ -4,11 +4,24 @@
   margin: 37px 0 25px;
   color: #515151;
   padding: 0;
+  @include bp(medium) {
+    font-weight: 600;
+    font-size: 1.4em;
+  }
 }
 .speakers {
   @include container-int;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include bp(medium) {
+    //this depends on particular speaker's "about" content.
+    // height: 552px;
+    overflow: hidden;
+  }
+}
+
+.speakers__expanded {
+  height: initial;
 }
 
 .speaker {
@@ -18,6 +31,10 @@
   margin: 43px 3% 24px;
   flex-direction: column;
   align-items: center;
+  @include bp(medium) {
+    margin: 4px 2.94117647059% 42px;
+    width: 42.2459893048%;
+  }
 }
 .speaker:hover img {
   filter: none;
@@ -25,14 +42,17 @@
 
 .speaker__photo{
   width: 69.2307692308%;
-    img {
-        width: 100%;
-        height: auto;
-        margin-bottom: -5px;
-        border-radius: 50%;
-        filter: grayscale(1);
-        transition: filter 0.3s;
-    }
+  img {
+      width: 100%;
+      height: auto;
+      margin-bottom: -5px;
+      border-radius: 50%;
+      filter: grayscale(1);
+      transition: filter 0.3s;
+  }
+  @include bp(medium) {
+    width: 63.2911392405%
+  }
 }
 .speaker__name {
   text-transform: capitalize;
@@ -40,12 +60,18 @@
   font-weight: 700;
   font-size: 1.45em;
   margin-top: 31px;
+  @include bp(medium) {
+    margin-top: 14px;
+  }
 }
 .speaker__pos {
   color: #969696;
   text-align: center;
   font-size: 1.1em;
   margin: 8px 0;
+  @include bp(medium) {
+    display: none;
+  }
 }
 .speaker__about {
   color: #565656;
@@ -54,6 +80,11 @@
   font-size: 1.099em;
   line-height: 1.4em;
   text-shadow: 0 0 0.5px #999;
+  @include bp(medium) {
+    font-size: 1em;
+    line-height: 1em;
+    margin-top: 7px;
+  }
 }
 
 .speaker__contacts {
@@ -76,4 +107,18 @@
       height:20px;
       width:20px;
     }
+}
+
+.speakers__expand-button {
+  display: none;
+  @include bp(medium) {
+    cursor: pointer;
+    display: block;
+    background: $color__primary--registration;
+    width: 139px;
+    height: 33px;
+    font-size: 0.84em;
+    line-height: 2.5em;
+    font-weight: 600;
+  }
 }

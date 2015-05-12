@@ -6,6 +6,9 @@
 .footer__container {
   @include container-int;
   justify-content: space-between;
+  @include bp(medium) {
+    flex-direction: column;
+  }
 }
 
 .footer__block {
