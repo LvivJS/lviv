@@ -1,16 +1,16 @@
-.overview__wrap {
-    position: absolute;
-    background-color: rgba(30, 145, 255,0.1);
-    width: 100%;
-    height: inherit;
-    z-index: 0;
-    margin-top: 0;
-    left: 0;
-    top: 0;
-}
+// .overview__wrap {
+//     position: absolute;
+//     background-color: url('../images/header_picture.png');
+//     width: 100%;
+//     height: inherit;
+//     z-index: 0;
+//     margin-top: 0;
+//     left: 0;
+//     top: 0;
+// }
 
 .overview {
-    background: #333;
+    background: url('../images/bg_header.jpg');
     background-size: cover;
     height: 401px;
     z-index: 0;
@@ -28,7 +28,7 @@
 }
 
 .main-header {
-  color: $color__primary;
+  color: #f7df1e;
   text-transform: capitalize;
   text-align: right;
   z-index: 1;
@@ -36,9 +36,9 @@
   background-size: 16.18182%;
   background-color: rgba(0, 0, 0, 0.8);
   width: 55%;
-  font-size: 3.8em;
-  padding: 17px 29px 24px 110px;
-  line-height: 1.1em;
+  font-size: 52px;
+  padding: 24px 32px 23px 110px;
+  line-height: 63px;
   margin: 75px 0 0 7.5%;
   @include bp(medium) {
     display: none;
@@ -47,7 +47,7 @@
 
 .overview-wrap {
   @include container-int;
-  background: #555;
+  background: url('../images/header_picture.png');
   height: inherit;
   flex-direction: column;
 }
