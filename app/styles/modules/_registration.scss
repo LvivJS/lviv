@@ -8,6 +8,10 @@
     rgb(216, 195, 35) 50%,
     rgb(231, 209, 38) 51%);
   background-size: 8px 8px;
+  @include bp(medium) {
+    background: none;
+    height: 336px;
+  }
 }
 
 .registration {
@@ -26,6 +30,9 @@
       align-items: center;
       height: 275px;
     }
+    @include bp(medium) {
+      height: 100%;
+    }
 }
 
 .registration .module-header {
@@ -34,6 +41,12 @@
   line-height: 79px;
   padding: 20px 0;
   color: #515151;
+  @include bp(medium) {
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 22px;
+  }
 }
 
 .registration__field {
@@ -45,6 +58,9 @@
     width: 100%;
     text-align: center;
     margin-bottom: 15px;
+  }
+  &:last-child {
+    margin-top: 20px;
   }
 }
 .label-regInput {
@@ -76,6 +92,9 @@
   padding: 4px 0 0px 10px;
   font-size: 1em;
   font-weight: 600;
+  @include bp(medium) {
+    width: 205px;
+  }
 }
 
 .registration__input:focus {
@@ -140,6 +159,15 @@ input, label {
   margin-left: 1px;
   z-index: 1;
   border-radius: 5px;
+  @include bp(medium) {
+    margin-top: 0;
+    margin-bottom: 37px;
+    width: 265px;
+  }
+  &active {
+    position: relative;
+    top: 4px;
+  }
 }
 
 .registration__field:last-child {
@@ -151,10 +179,15 @@ input, label {
     height: 46px;
     position: relative;
     top: -47px;
+    left: 0;
     background: rgb(78, 166, 93);
     z-index: 0;
     margin-left: 1px;
     border-radius: 5px;
+    @include bp(medium) {
+      top: -79px;
+      width: 265px;
+    }
   }
 }
 
@@ -163,4 +196,10 @@ input, label {
   font-size: 2.5em;
   margin: 40px 0 50px;
   text-shadow: 0 1px 4px #745400;
+}
+
+
+.button-pushed {
+  position: relative;
+  top: 4px;
 }
