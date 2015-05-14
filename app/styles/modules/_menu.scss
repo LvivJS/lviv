@@ -74,12 +74,18 @@
 	text-transform: capitalize;
 	text-align: left;
 	font-weight: 500;
+	&:hover{
+		color: #f1f1f1;
+	}
 	@include bp(medium) {
+		&:hover{
+			background: rgba($color__primary, 0.5);
+		}
 		display: block;
 		padding: 20px 40px;
 		font-size: 1.4em;
 		color: #F1F1F1;
-		a:active {
+		&:active {
 			background: $color__primary;
 			color: $color__gray--dark;
 		}
@@ -94,9 +100,7 @@
 }
 
 
-.menu__item:hover{
-	background: rgba($color__primary, 0.5);
-}
+
 
 .menu__socials {
 	display: flex;

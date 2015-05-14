@@ -10,7 +10,7 @@
   background-size: 8px 8px;
   @include bp(medium) {
     background: none;
-    height: 336px;
+    height: auto;
   }
 }
 
@@ -57,10 +57,13 @@
   span {
     width: 100%;
     text-align: center;
-    margin-bottom: 15px;
   }
   &:last-child {
-    margin-top: 20px;
+    width: 304px;
+    @include bp(medium) {
+      width: 265px;
+      margin-top: 20px;
+    }
   }
 }
 .label-regInput {
@@ -154,17 +157,17 @@ input, label {
   text-transform: capitalize;
   width: 304px;
   height: 46px;
-  margin-bottom: 5px;
+  margin-bottom: 51px;
   margin-top: 24px;
   margin-left: 1px;
   z-index: 1;
   border-radius: 5px;
   @include bp(medium) {
     margin-top: 0;
-    margin-bottom: 37px;
+    margin-bottom: 83px;
     width: 265px;
   }
-  &active {
+  &:active {
     position: relative;
     top: 4px;
   }
@@ -177,15 +180,15 @@ input, label {
     content: "";
     width: 304px;
     height: 46px;
-    position: relative;
-    top: -47px;
+    position: absolute;
+    top: 28px;
     left: 0;
     background: rgb(78, 166, 93);
     z-index: 0;
     margin-left: 1px;
     border-radius: 5px;
     @include bp(medium) {
-      top: -79px;
+      top: 4px;
       width: 265px;
     }
   }
@@ -196,10 +199,8 @@ input, label {
   font-size: 2.5em;
   margin: 40px 0 50px;
   text-shadow: 0 1px 4px #745400;
-}
-
-
-.button-pushed {
-  position: relative;
-  top: 4px;
+  @include bp(medium) {
+    color: #DA8300;
+    text-shadow: none;
+  }
 }

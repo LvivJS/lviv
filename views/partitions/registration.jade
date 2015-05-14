@@ -22,20 +22,6 @@ if registration
           input.registration__submit(type="submit" value="#{registration.button_text}")
 
 script.
-  //add listeners for button
-  (function() {
-    var btn = document.getElementsByClassName('registration__submit')[0];
-    btn.onmousedown = pushButton;
-    btn.onmouseup = resetButton;
-    btn.onmouseout = resetButton;
-    function pushButton() {
-      btn.classList.add('button-pushed');
-    }
-    
-    function resetButton() {
-      btn.classList.remove('button-pushed');
-    }
-  })();
   function submitForm(form, e) {
     e.preventDefault();
     

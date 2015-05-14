@@ -2,6 +2,9 @@
 @include container-int;
 	flex-direction: column;
 	margin-top: 37px;
+	@include bp(medium) {
+		margin: 0;
+	}
 }
 
 #partners .module-header {
@@ -11,6 +14,11 @@
 	font-weight: 500;
 	margin-top: 68px;
 	text-shadow: 0 0 1px #A8A8A8;
+	@include bp(medium) {
+		margin: 34px 0 0;
+		font-size: 1.36em;
+		font-weight: 600;
+	}
 }
 
 .partners__category {
@@ -31,6 +39,9 @@
 	font-weight: 600;
 	font-size: 1.26em;
 	z-index: 1;
+	@include bp(medium) {
+		display: none;
+	}
 }
 
 .partners__items {
@@ -49,6 +60,9 @@
 	a[title="Team International"] {
 		background-size: cover;
 		height: 177px;
+		@include bp(medium) {
+			height: 88px;
+		}
 	}
 	.partners__item-link {
 		display: inline-block;
@@ -58,6 +72,10 @@
 		background-repeat: no-repeat;
 		background-size: 100% auto;
 		background-position: center center;
+		@include bp(medium) {
+			width: 88px;
+			margin: 0 3px;
+		}
 	}
 }
 

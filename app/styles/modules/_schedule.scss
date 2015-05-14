@@ -363,11 +363,13 @@ a.session__calendLink {
   display: none;
 }
 
-.list-fixed {
+.conference ul.list-fixed {
   position: fixed;
   top: $toggle-button__height;
   left: 0;
   z-index: 2;
   width: 100%;
   background: #fff;
+  border-top: 8px solid #f7df1e;
+  border-bottom: none;
 }
