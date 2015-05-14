@@ -25,10 +25,15 @@ script.
   
   //set collapsed .speakers height
   (function() {
+    var viewport = document.documentElement.clientWidth;
     var fifthSpeaker = document.getElementsByClassName('speaker')[4];
     var speakersWrap = fifthSpeaker.parentNode;
-    speakersWrap.style.height = fifthSpeaker.offsetTop - speakersWrap.offsetTop + 'px';
-    collapsedSpeakersHeight = speakersWrap.style.height;
+    
+    if (viewport <= #{config.breakPoint}) {
+      speakersWrap.style.height = fifthSpeaker.offsetTop - speakersWrap.offsetTop + 'px';
+      collapsedSpeakersHeight = speakersWrap.style.height;
+    }
+    
   })();
   
   (function() {

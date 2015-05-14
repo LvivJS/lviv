@@ -5,6 +5,9 @@
     input:focus {
         outline: 0;
     }
+    @include bp(medium) {
+      margin-top: 20px;
+    }
 }
 
 #schedule .module-header {
@@ -14,6 +17,11 @@
   margin-top: 37px;
   font-weight: 400;
   font-size: 2.4em;
+  @include bp(medium) {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 48px;
+  }
 }
 
 
@@ -27,6 +35,9 @@
       transition: height 0.2s;
       margin-left: $session-time-width;
       border-bottom: 8px solid $color__primary;
+      @include bp(medium) {
+        margin: 0;
+      }
       li {
         list-style: none;
         background-color: #B3B3B3;
@@ -41,6 +52,9 @@
         line-height: 2.4em;
         font-size: 1.16em;
         position: relative;
+        @include bp(medium) {
+          height: 44px;
+        }
       }
       li.conference__tab--active {
         background-color: $color__primary;
@@ -93,19 +107,29 @@
 .timetable {
     transition: height 0.2s;
     position: relative;
+    @include bp(medium) {
+      padding-top: 27px;
+    }
 }
 .session {
     display: flex;
     justify-content: flex-start;
-    @include bp(small) {
+    @include bp(medium) {
         flex-direction: column;
+        position: relative;
     }
 }
 .session:first-child .session__time {
   padding: 30px 29px 51px 0;
+  @include bp(medium) {
+    padding: 0;
+  }
 }
 .session:first-child .session__arrangement {
   padding: 25px 0 0 26px;
+  @include bp(medium) {
+    padding: 0 0 0 40px;
+  }
 }
 
 .session__time {
@@ -116,9 +140,14 @@
     text-align: right;
     color: $color__white;
     font-weight: 500;
-    @include bp(small) {
-        margin: 10px 0;
-        width: 100%;
+    @include bp(medium) {
+      width: 100%;
+      background: none;
+      color: #636363;
+      text-align: left;
+      margin-left: 44px;
+      font-size: 1.18em;
+      padding: 0;
     }
     span {
       font-size: 1.2em;
@@ -147,6 +176,19 @@
     max-width: 655px;
     width: 100%;
     margin-bottom: 14px;
+    @include bp(medium) {
+      padding: 0 0 0 40px;
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      left: 23px;
+      top: 33px;
+      background: #8C8C8C;
+    }
 }
 .session--report > .session__arrangement {
   color: lighten($color__gray, 10%);
@@ -159,6 +201,15 @@
   color: #151317;
   text-shadow: 0 0 1px #8A898B;
   font-weight: 600;
+  @include bp(medium) {
+    padding: 28px 0 0 0;
+    text-align: left;
+    font-size: 0.85em;
+    font-weight: 400;
+    line-height: 1.3em;
+    position: relative;
+    top: -28px;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -176,9 +227,14 @@
     left: 5px;
     border-radius: 1px;
     z-index: 1;
+    @include bp(medium) {
+      top: 14px;
+      left: -22px;
+    }
   }
   .session__icon{
     position: relative;
+    text-align: left;
     &:before {
       content: '';
       width: 23px;
@@ -189,6 +245,10 @@
       position: relative;
       right: 18.5px;
       top: 7px;
+      @include bp(medium) {
+        right: 27.5px;
+        top: -24px;
+      }
     }
     &:after {
       content: '';
@@ -201,6 +261,10 @@
       left: -9px;
       z-index: 1;
       border-radius: 1px;
+      @include bp(medium) {
+        top: -29px;
+        left: -17px;
+      }
     }
   }
   .session__icon--expanded{
@@ -290,4 +354,13 @@ a.session__calendLink {
 
 .table-hidden {
   display: none;
+}
+
+.list-fixed {
+  position: fixed;
+  top: $toggle-button__height;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background: #fff;
 }

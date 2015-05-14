@@ -1,7 +1,7 @@
 #menu {
 	@include container-ext;
 	background: $color__gray--darkest;
-	z-index: 2;
+	z-index: 3;
 	width: 100%;
 	height: $menu__height;
 	position: fixed;

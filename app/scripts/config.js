@@ -89,7 +89,8 @@ var config = {
       isRendering: true,
       order: 5
     }
-  ]
+  ],
+  breakPoint: 768
 };
 
 module.exports = config;

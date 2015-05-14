@@ -54,54 +54,70 @@ if schedule
               else
                 li(onclick="changeTab(this)")=  moment(day.day_info).format('MMM DD')
           each day, indx in conference.days
-            if (indx == 0)
-              .timetable
-                +table(day.timetable)
-            else
-              .timetable.table-hidden
-                +table(day.timetable)
+            .timetable
+              +table(day.timetable)
               
   script.
+    var activeClass = 'conference__tab--active';
+    var tableHidden = 'table-hidden';
     var timetable = 'timetable';
+    var viewport = document.documentElement.clientWidth;
+    var menuHeight = document.getElementById('menu').offsetHeight;
+    var list = document.querySelector('.conference > ul');
+    var activeTab = list.querySelector('.' + activeClass);
+    var conf = list.parentNode;
+    var listHeight = list.offsetHeight;
+    var tables = conf.getElementsByClassName(timetable);
     
-    function changeConfRepresent(el) {
-      var confTitle = el.parentNode;
-      var dayList = confTitle.nextSibling;
-      var conference = confTitle.parentNode;
-      var tables = conference.getElementsByClassName(timetable);
-      
-      el.classList.toggle('arrowDown');
-      dayList.classList.toggle('conf-hidden');
-      //Toggle inner timetables class
-      Array.prototype.forEach.call(tables, function(table) {
-        table.classList.toggle('conf-hidden');
-      });
-    }
     
-    function changeTab(el) {
+      if (viewport <= #{config.breakPoint}) {
+        //fix tabs on scroll for small devices
+        document.body.onscroll = fixTabs;
+      } else {
+        //show proper tab
+        activeTab.onclick();
+      }
+    
+    //- function changeConfRepresent(el) {
+    //-   var confTitle = el.parentNode;
+    //-   var dayList = confTitle.nextSibling;
+    //-   var conference = confTitle.parentNode;
+    //-   var tables = conference.getElementsByClassName(timetable);
+    //-   
+    //-   el.classList.toggle('arrowDown');
+    //-   dayList.classList.toggle('conf-hidden');
+    //-   //Toggle inner timetables class
+    //-   Array.prototype.forEach.call(tables, function(table) {
+    //-     table.classList.toggle('conf-hidden');
+    //-   });
+    //- }
+    
+    
+    function changeTab(el, scroll) {
       //this variables should be created here to specify exactly current conference
-      var list = el.parentNode;
-      var conf = list.parentNode;
-      var activeClass = 'conference__tab--active';
-      var tableHidden = 'table-hidden';
-      var tables = conf.getElementsByClassName(timetable);
       
-      //make li active if it is not
-      el.classList.add(activeClass);
-      
-      //find index of active tab and show appropriate table
-      Array.prototype.forEach.call(list.childNodes, function(item, i) {
-        tables[i].classList.add(tableHidden);
-        //remove active class is item was active before click
-        if (item !== el) {
-          item.classList.remove(activeClass);
-        }
-        //show table with the same index as active tab
-        if (item == el) {
-          tables[i].classList.remove(tableHidden);
-        }
-      });    
-      //find index of target and handle class for table with the same index in tables
+        //make li active if it is not
+        el.classList.add(activeClass);
+        //find index of active tab and show appropriate table
+        Array.prototype.forEach.call(list.childNodes, function(item, i) {
+          
+          if (viewport > #{config.breakPoint}) {
+            tables[i].classList.add(tableHidden);
+          }
+          //remove active class is item was active before click
+          if (item !== el) {
+            item.classList.remove(activeClass);
+          }
+          //show table with the same index as active tab
+          if (item == el) {
+            if (viewport > #{config.breakPoint}) {
+              tables[i].classList.remove(tableHidden);
+            } else {
+              var targetScroll = tables[i].offsetTop - menuHeight - list.offsetHeight;
+              scrollTo(targetScroll, 300);
+            }
+          }
+        });
     }
     
     function toggleAbout(el) {
@@ -119,3 +135,55 @@ if schedule
         header.addEventListener('click', function() {toggleAbout(header)});
       });
     })();
+      
+      function fixTabs(el) {
+        var bodyScrlPos = document.body.scrollTop;
+        //- var listTopPos = list.offsetTop;
+        var confTopPos = conf.offsetTop;
+        var confHeight = conf.offsetHeight;
+        var confBottom = confTopPos + confHeight;
+        var tablesTopPoss = Array.prototype.map.call(tables, function(table) {
+          return table.offsetTop;
+        });
+        tablesTopPoss.push(confBottom);
+        
+        if (viewport <= #{config.breakPoint}) {          
+          if (bodyScrlPos >= confTopPos - menuHeight) {            
+            if (bodyScrlPos <= (confBottom - menuHeight)) {
+              
+              //this chunk is for fixing tabs on scroll
+              conf.style.paddingTop = listHeight + 'px';
+              list.classList.add('list-fixed');
+              list.style.top = menuHeight + 'px';
+              
+              //make tabs "stick" to confBottom
+              if (bodyScrlPos > ((confTopPos + confHeight) - listHeight - menuHeight)) {
+                list.style.top = confBottom - bodyScrlPos - listHeight + 'px';
+              }
+              
+              //this chunk is for selecting proper tab due to scrollTop
+              //
+              //remove active tab classname
+              
+              Array.prototype.forEach.call(tablesTopPoss, function(tablTop, i) {
+                var nextItem = tablesTopPoss[i + 1]
+                if ((bodyScrlPos >= tablTop - menuHeight - listHeight) && (bodyScrlPos < nextItem - menuHeight - listHeight)) {
+                  list.childNodes[i].classList.add(activeClass);
+                } else {
+                  list.childNodes[i].classList.remove(activeClass);
+                }
+              });
+            } else {
+              resetList();
+            }
+          } else {
+            resetList();
+          }
+        }
+        
+        function resetList() {
+          conf.style.paddingTop = '0px';
+          list.classList.remove('list-fixed');
+        }
+      }
+    
