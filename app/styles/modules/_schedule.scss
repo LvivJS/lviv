@@ -24,7 +24,6 @@
   }
 }
 
-
 .conference {
   width: 100%;
     ul.conf-hidden {
@@ -117,6 +116,7 @@
     @include bp(medium) {
         flex-direction: column;
         position: relative;
+        margin-bottom: 16px;
     }
 }
 .session:first-child .session__time {
@@ -128,7 +128,7 @@
 .session:first-child .session__arrangement {
   padding: 25px 0 0 26px;
   @include bp(medium) {
-    padding: 0 0 0 40px;
+    padding: 0 14px 0;
   }
 }
 
@@ -163,6 +163,10 @@
   color: #717275;
   .session__time {
     color: $color__primary;
+    @include bp(medium) {
+      color: #504E51;
+      margin-left: 13px;
+    }
   }
 }
 
@@ -177,17 +181,9 @@
     width: 100%;
     margin-bottom: 14px;
     @include bp(medium) {
-      padding: 0 0 0 40px;
-    }
-    &:before {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 100%;
-      position: absolute;
-      left: 23px;
-      top: 33px;
-      background: #8C8C8C;
+      margin: 6px 0 -5px 23px;
+      padding: 0 16px 0;
+      border-left: 4px solid #777;
     }
 }
 .session--report > .session__arrangement {
@@ -204,11 +200,12 @@
   @include bp(medium) {
     padding: 28px 0 0 0;
     text-align: left;
-    font-size: 0.85em;
-    font-weight: 400;
+    font-size: 1em;
+    font-weight: 600;
     line-height: 1.3em;
     position: relative;
     top: -28px;
+    text-shadow: none;
   }
   &:hover {
     cursor: pointer;
@@ -228,8 +225,8 @@
     border-radius: 1px;
     z-index: 1;
     @include bp(medium) {
-      top: 14px;
-      left: -22px;
+      top: 7px;
+      left: -24px;
     }
   }
   .session__icon{
@@ -246,8 +243,9 @@
       right: 18.5px;
       top: 7px;
       @include bp(medium) {
-        right: 27.5px;
-        top: -24px;
+        position: absolute;
+        left: -29.5px;
+        top: -31px;
       }
     }
     &:after {
@@ -262,8 +260,8 @@
       z-index: 1;
       border-radius: 1px;
       @include bp(medium) {
-        top: -29px;
-        left: -17px;
+        top: -26px;
+        left: -19px;
       }
     }
   }
@@ -280,6 +278,9 @@
 .session--entertainment .session__name {
   margin: 5px 0 1px 23px;
   cursor: initial;
+  @include bp(medium) {
+    margin: 0;
+  }
   &:before {
     display: none;
   }
@@ -301,6 +302,9 @@
     margin: 4px 0 0 43px;
     span + span {
       margin-left: 5px;
+    }
+    @include bp(medium) {
+      margin: -3px 0 0;
     }
 }
 
@@ -324,6 +328,9 @@
     font-size: 1.1em;
     font-weight: 500;
     line-height: 1.42em;
+    @include bp(medium) {
+      padding: 0;
+    }
 }
 
 .session:last-child {

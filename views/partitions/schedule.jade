@@ -73,6 +73,11 @@ if schedule
       if (viewport <= #{config.breakPoint}) {
         //fix tabs on scroll for small devices
         document.body.onscroll = fixTabs;
+        //hide session info
+        var sessionInfoArr = document.getElementsByClassName('session__info');
+        Array.prototype.forEach.call(sessionInfoArr, function(el) {
+          el.classList.add('invisible');
+        });
       } else {
         //show proper tab
         activeTab.onclick();
@@ -97,7 +102,9 @@ if schedule
       //this variables should be created here to specify exactly current conference
       
         //make li active if it is not
-        el.classList.add(activeClass);
+        if (viewport > #{config.breakPoint}) {
+          el.classList.add(activeClass);
+        }
         //find index of active tab and show appropriate table
         Array.prototype.forEach.call(list.childNodes, function(item, i) {
           
@@ -124,8 +131,10 @@ if schedule
       var session = el.parentNode;
       var about = session.getElementsByClassName('session__about')[0];
       var icon = session.getElementsByClassName('session__icon')[0];
+      var info = session.getElementsByClassName('session__info')[0];
       icon.classList.toggle('session__icon--expanded');
       about.classList.toggle('invisible');
+      info.classList.toggle('invisible');
     }
     
     (function() {
