@@ -1,17 +1,20 @@
 #googleMap {
 	width: 100%;
 	height: 626px;
-	@include bp(small) {
-		height: 360px;
+	@include bp(medium) {
+		height: 254px;
 	}
 }
 #locations {
 	position: relative;
+	@include bp(medium) {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .loc-info {
 	color: #505050;
-	cursor: pointer;
 	text-shadow: 0 0 0.5px #999;
 	position: absolute;
   left: $session-time-width;
@@ -21,22 +24,39 @@
   height: 221px;
   display: flex;
 	transition: all 0.4s;
-	&:hover {
-		background: rgba(195, 195, 195, 0.64);
-		path {
-			fill: $color__gray;
+	@include bp(medium) {
+		position: static;
+		width: 100%;
+		height: 154px;
+	}
+	@include bp(large) {
+		cursor: pointer;
+		&:hover {
+			background: rgba(195, 195, 195, 0.64);
+			path {
+				fill: $color__gray;
+			}
 		}
 	}
+
 }
 
 .loc-info__text {
 	flex-grow: 1;
 	text-align: right;
+	@include bp(medium) {
+		text-align: center;
+	}
 	span {
 		width: 100%;
 		display: block;
 		font-size: 1.07em;
 		line-height: 1.46em;
+		@include bp(medium) {
+			font-size: 0.96em;
+	    font-weight: 600;
+			line-height: 1.4em;
+		}
 	}
 }
 
@@ -48,12 +68,20 @@
   font-weight: 500;
   margin: 37px 0 46px;
 	transition: margin 0.4s, padding 0.4s, color 0.1s;
+	@include bp(medium) {
+		text-align: center;
+    margin: 42px 0 17px;
+    font-size: 1.45em;
+	}
 }
 
 .loc-info__icon {
 	height: 100%;
 	width: 30.62136%;
 	margin-left: 2.66990291262%;
+	@include bp(medium) {
+		display: none;
+	}
 }
 
 .location__icon {
