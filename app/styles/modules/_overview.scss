@@ -1,14 +1,3 @@
-// .overview__wrap {
-//     position: absolute;
-//     background-color: url('../images/header_picture.png');
-//     width: 100%;
-//     height: inherit;
-//     z-index: 0;
-//     margin-top: 0;
-//     left: 0;
-//     top: 0;
-// }
-
 .overview {
     background: url('../images/bg_header.jpg');
     background-size: cover;
@@ -34,10 +23,11 @@
   z-index: 1;
   background: url('../images/logo_lvivjs.png') left top no-repeat;
   background-size: 16.18182%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: $color__main-header-background;
   width: 55%;
-  font-size: 52px;
-  padding: 24px 32px 23px 110px;
+  font-size: $font__size--7;
+  font-weight: 700;
+  padding: 24px 31px 23px 110px;
   line-height: 63px;
   margin: 75px 0 0 7.5%;
   @include bp(medium) {
@@ -53,22 +43,22 @@
 }
 
 .overview__infoBlock {
-  font-size: 1.3em;
-  font-weight: 600;
+  color: $color__grayscale--13;
+  font-size: $font__size--4;
+  font-weight: 500;
   width: 29%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba($color__grayscale--1, 0.85);
   height: 77px;
-  line-height: 3.85em;
+  line-height: 81px;
   margin-left: 33.6%;
   span+span {
-    margin-left: 9px;
-    font-weight: 400;
+    margin-left: 11px;
+    font-weight: 300;
   }
   @include bp(medium) {
-    font-size: 0.74em;
+    font-size: 0.84em;
     font-weight: 700;
     width: 45.5555555556%;
-    background: rgba(255, 255, 255, 0.8);
     height: 44px;
     line-height: 3.85em;
     margin: 45px 0 0 26.3888888889%;
@@ -80,7 +70,7 @@
   display: inline-block;
 }
 .ui__comp {
-    fill:$color__white;
+    fill: $color__grayscale--5;
     width: 45px;
     height: 45px;
     @include bp(medium) {

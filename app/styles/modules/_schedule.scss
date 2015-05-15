@@ -1,5 +1,5 @@
 .schedule {
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100%;
     text-align: left;
     input:focus {
@@ -8,20 +8,6 @@
     @include bp(medium) {
       margin-top: 20px;
     }
-}
-
-#schedule .module-header {
-  background: initial;
-  color: #58595b;
-  padding: 0;
-  margin-top: 37px;
-  font-weight: 400;
-  font-size: 2.4em;
-  @include bp(medium) {
-    font-size: 1.4em;
-    font-weight: 600;
-    margin-top: 48px;
-  }
 }
 
 .conference {
@@ -39,16 +25,16 @@
       }
       li {
         list-style: none;
-        background-color: #B3B3B3;
+        background-color: $color__grayscale--5;
         cursor: pointer;
-        color: #151317;
-        font-weight: 700;
+        color: $color__grayscale--11;
+        font-weight: 500;
         text-transform: capitalize;
         height: 41px;
         width: 93px;
         margin-right: 4px;
         text-align: center;
-        line-height: 2.4em;
+        line-height: 44px;
         font-size: 1.16em;
         position: relative;
         @include bp(medium) {
@@ -62,49 +48,49 @@
         background-color: $color__primary;
       }
       li:hover {
-        background: $color__gray--light;
+        background: $color__grayscale--6;
       }
     }
 }
 
 .conference__title {
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-between;
+    // padding: 15px 0;
+    // display: flex;
+    // justify-content: space-between;
     display: none;
-    h3 {
-        font-size: $font__large;
-        color: $color__primary;
-        margin: 10px 10px 10px 20px;
-        flex-shrink: 5;
-        @include bp(very-small) {
-            flex-shrink: 7;
-            margin: 10px;
-        }
-    }
-    .schedule__toggleButton {
-        display: block;
-        cursor: pointer;
-        margin: 10px;
-        flex-shrink: 0;
-        svg.ui__comp {
-            width: 30px;
-            height: 30px;
-            border: 0px;
-            transition: transform 0.2s;
-            .arrow{
-                fill: $color__primary--dark;
-            }
-        }
-    }
-    .schedule__toggleButton.arrowDown {
-        svg.ui__comp {
-            transform: rotate(180deg);
-        }
-    }
+    // h3 {
+    //     font-size: $font__large;
+    //     color: $color__primary;
+    //     margin: 10px 10px 10px 20px;
+    //     flex-shrink: 5;
+    //     @include bp(very-small) {
+    //         flex-shrink: 7;
+    //         margin: 10px;
+    //     }
+    // }
+    // .schedule__toggleButton {
+    //     display: block;
+    //     cursor: pointer;
+    //     margin: 10px;
+    //     flex-shrink: 0;
+    //     svg.ui__comp {
+    //         width: 30px;
+    //         height: 30px;
+    //         border: 0px;
+    //         transition: transform 0.2s;
+    //         .arrow{
+    //             fill: $color__primary--dark;
+    //         }
+    //     }
+    // }
+    // .schedule__toggleButton.arrowDown {
+    //     svg.ui__comp {
+    //         transform: rotate(180deg);
+    //     }
+    // }
 }
+
 .timetable {
-    transition: height 0.2s;
     position: relative;
     @include bp(medium) {
       padding-top: 27px;
@@ -120,7 +106,7 @@
     }
 }
 .session:first-child .session__time {
-  padding: 30px 29px 51px 0;
+  padding: 32px 30px 53px 0;
   @include bp(medium) {
     padding: 0;
   }
@@ -134,37 +120,36 @@
 
 .session__time {
     width: $session-time-width;
-    background: $color__gray;
+    background: $color__grayscale--9;
     flex-shrink: 0;
-    padding: 5px 29px 51px 0 ;
+    padding: 7px 30px 53px 0 ;
     text-align: right;
-    color: $color__white;
+    color: $color__grayscale--1;
     font-weight: 500;
     @include bp(medium) {
       width: 100%;
       background: none;
-      color: #636363;
+      color: $color__grayscale--9;
       text-align: left;
       margin-left: 44px;
       font-size: 1.18em;
       padding: 0;
     }
     span {
-      font-size: 1.2em;
-      font-weight: 600;
+      font-size: $font__size--2;
+      font-weight: 500;
     }
     span+span:before{
         content: " - ";
         display: inline-block;
-        margin: 0 4px;
+        margin: 0 6px;
     }
 }
 .session--entertainment {
-  color: #717275;
   .session__time {
     color: $color__primary;
     @include bp(medium) {
-      color: #504E51;
+      color: $color__grayscale--9;
       margin-left: 13px;
     }
   }
@@ -180,6 +165,9 @@
     max-width: 655px;
     width: 100%;
     margin-bottom: 14px;
+    color: $color__grayscale--9;
+    font-size: $font__size--2;
+    font-weight: 400;
     @include bp(medium) {
       margin: 6px 0 -5px 23px;
       padding: 0 16px 0;
@@ -187,16 +175,15 @@
     }
 }
 .session--report > .session__arrangement {
-  color: lighten($color__gray, 10%);
+  color: $color__grayscale--9;
 }
 .session__name {
   margin-bottom: 1px;
   position: relative;
-  padding-left: 19px;
-  font-size: 1.2em;
-  color: #151317;
-  text-shadow: 0 0 1px #8A898B;
-  font-weight: 600;
+  padding-left: 18px;
+  font-size: $font__size--3;
+  color: $color__grayscale--14;
+  font-weight: 500;
   @include bp(medium) {
     padding: 28px 0 0 0;
     text-align: left;
@@ -240,7 +227,7 @@
       display: inline-block;
       border-radius: 12px;
       position: relative;
-      right: 18.5px;
+      right: 17.5px;
       top: 7px;
       @include bp(medium) {
         position: absolute;
@@ -255,8 +242,8 @@
       height: 13px;
       background: #FFF;
       position: absolute;
-      top: 7px;
-      left: -9px;
+      top: 6px;
+      left: -8px;
       z-index: 1;
       border-radius: 1px;
       @include bp(medium) {
@@ -297,9 +284,8 @@
 .speaker__name--schedule {
     flex-shrink: 3;
     display: flex;
-    font-size: 1.07em;
-    color: inherit;
-    margin: 4px 0 0 43px;
+    margin: 5px 0 0 41px;
+    font-weight: 400;
     span + span {
       margin-left: 5px;
     }
@@ -322,15 +308,13 @@
     justify-content: flex-end;
 }
 .session__about {
-    margin-bottom: 10px;
-    color: lighten($color__gray, 10%);
-    padding: 8px 0 0 42px;
-    font-size: 1.1em;
-    font-weight: 500;
-    line-height: 1.42em;
-    @include bp(medium) {
-      padding: 0;
-    }
+  margin-bottom: 8px;
+  padding: 10px 0 0 41px;
+  font-size: $font__size--2;
+  line-height: 24px;
+  @include bp(medium) {
+    padding: 0;
+  }
 }
 
 .session:last-child {
@@ -338,15 +322,15 @@
 }
 
 .session__calendButtons {
-  margin-top: 16px;
-  font-size: 0.86em;
+  margin-top: 17px;
+  font-size: $font__size--1;
 }
 
 a.session__calendLink {
-    color: #1b75ba;
+    color: $color__link;
     text-decoration: underline;
-    font-weight: bold;
-    margin: 0 7px;
+    font-weight: 400;
+    margin-left: 11px;
 }
 .toggleButtonImage {
   cursor: pointer;

@@ -1,14 +1,4 @@
-#speakers .module-header {
-  font-size: 2.4em;
-  font-weight: 500;
-  margin: 37px 0 25px;
-  color: #515151;
-  padding: 0;
-  @include bp(medium) {
-    font-weight: 600;
-    font-size: 1.4em;
-  }
-}
+
 .speakers {
   @include container-int;
   flex-wrap: wrap;
@@ -28,7 +18,7 @@
   display: inline-block;
   display: flex;
   width: 26%;
-  margin: 43px 3% 24px;
+  margin: 43px 3% 23px;
   flex-direction: column;
   align-items: center;
   @include bp(medium) {
@@ -56,30 +46,31 @@
 }
 .speaker__name {
   text-transform: capitalize;
-  color: #202020;
+  color: $color__grayscale--11;
   font-weight: 700;
-  font-size: 1.45em;
-  margin-top: 31px;
+  font-size: $font__size--5;
+  margin-top: 32px;
   @include bp(medium) {
     margin-top: 14px;
   }
 }
 .speaker__pos {
-  color: #969696;
+  color: $color__grayscale--7;
   text-align: center;
-  font-size: 1.1em;
-  margin: 8px 0;
+  font-size: $font__size--2;
+  font-weight: 400;
+  margin: 10px 0;
   @include bp(medium) {
     display: none;
   }
 }
 .speaker__about {
-  color: #565656;
+  color: $color__grayscale--9;
   text-align: left;
-  margin-top: 27px;
-  font-size: 1.099em;
-  line-height: 1.4em;
-  text-shadow: 0 0 0.5px #999;
+  margin-top: 29px;
+  font-size: $font__size--2;
+  font-weight: 400;
+  line-height: 24px;
   @include bp(medium) {
     font-size: 1em;
     line-height: 1em;
@@ -89,10 +80,10 @@
 
 .speaker__contacts {
   display: none;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   .social__icon {
     display: none;
-      fill:#A9ACAE;
+      fill: #A9ACAE;
   }
 }
 .speaker__contact {
@@ -114,11 +105,11 @@
   @include bp(medium) {
     cursor: pointer;
     display: block;
-    background: $color__primary--registration;
+    background: $color__primary;
     width: 139px;
     height: 33px;
-    font-size: 0.84em;
+    font-size: $font__size--1;
     line-height: 2.5em;
-    font-weight: 600;
+    font-weight: 400;
   }
 }

@@ -1,30 +1,22 @@
 .partners {
 @include container-int;
 	flex-direction: column;
-	margin-top: 37px;
+	margin-top: 12px;
 	@include bp(medium) {
 		margin: 0;
 	}
 }
 
 #partners .module-header {
-	color: #515151;
-	padding: 0;
-	font-size: 2.4em;
-	font-weight: 500;
-	margin-top: 68px;
-	text-shadow: 0 0 1px #A8A8A8;
 	@include bp(medium) {
-		margin: 34px 0 0;
-		font-size: 1.36em;
-		font-weight: 600;
+		padding: 0;
 	}
 }
 
 .partners__category {
 	display: flex;
 	flex-direction: column;
-	margin-top: 9px;
+	margin-top: 11px;
 }
 
 .partners__category:nth-child(2) .partners__items {
@@ -33,11 +25,11 @@
 }
 
 .partners__category-header {
-	color: $color__primary--registration;
+	color: $color__partners-header;
 	text-align: center;
 	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 1.26em;
+	font-weight: 700;
+	font-size: $font__size--3;
 	z-index: 1;
 	@include bp(medium) {
 		display: none;

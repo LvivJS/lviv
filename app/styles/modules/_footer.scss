@@ -23,7 +23,7 @@
 }
 
 .footer__block {
-  margin: 76px 9px 72px;
+  margin: 78px 9px 70px;
   @include bp(medium) {
     &:first-child {
       margin: 53px 20px 0;
@@ -36,18 +36,16 @@
 }
 
 .block__header {
-  color: #FFF;
-  font-size: 1.11em;
+  color: $color__grayscale--1;
+  font-size: $font__size--2;
   text-align: left;
   font-weight: 500;
-  text-shadow: 0 0 1px #8F8F8F;
 }
 
 .block__contact {
   display: flex;
   flex-direction: column;
-  color: yellow;
-  margin-top: 21px;
+  margin-top: 24px;
   text-align: left;
   @include bp(medium) {
     margin-top: 14px;
@@ -57,7 +55,8 @@
 .block__contact__name,
 .block__contact__phone,
 .block__contact__email {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+  font-size: $font__size--1;
   @include bp(medium) {
     margin-bottom: 0;
     font-size: 0.97em;
@@ -67,11 +66,11 @@
 
 .block__contact__name,
 .block__contact__phone {
-  color: #A9A9A9;
+  color: $color__grayscale--6;
 }
 
 .block__contact__email {
-  color: rgb(27, 117, 186);
+  color: $color__link;
   text-decoration: underline;
 }
 
@@ -89,9 +88,9 @@
 }
 
 .copyright__text {
-  margin: 33px 14px 0;
-  color: rgba(169, 169, 169, 0.99);
-  font-size: 1.12em;
+  margin: 35px 12px 0;
+  color: $color__grayscale--6;
+  font-size: $font__size--2;
   @include bp(medium) {
     margin: 11px 0 0 22px;
     text-align: left;
@@ -119,7 +118,7 @@
 .footer__social-item {
   margin-top: 31px;
   &:hover {
-    background: $color__gray--darkest;
+    background: $color__grayscale--13;
   }
   path {
     fill: #fff;
