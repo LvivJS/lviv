@@ -12,9 +12,12 @@ mixin sessionData(session)
     if session.time.end
       span= moment(session.time.end).format('HH:MM')
   .session__arrangement
-    h4.session__name
-      span.session__icon= session.article
-    if (session.type == report)
+    if (session.type == 'report')
+      .session__icons
+        +icon("plus")
+        +icon("minus")(class="invisible")
+    h4.session__name= session.article
+    if (session.type == 'report')
       .session__info.session__info--right
         +details(session)
     else
@@ -43,10 +46,6 @@ if schedule
     .schedule
       each conference in schedule.data
         .conference
-          .conference__title
-            h3= schedule.locales.conf_schedule + ' ' + conference.name
-            span.schedule__toggleButton(onclick="changeConfRepresent(this)")
-              +icon('arrowUp')
           ul
             each day, indx in conference.days
               if (indx == 0)
@@ -83,21 +82,6 @@ if schedule
         activeTab.onclick();
       }
     
-    //- function changeConfRepresent(el) {
-    //-   var confTitle = el.parentNode;
-    //-   var dayList = confTitle.nextSibling;
-    //-   var conference = confTitle.parentNode;
-    //-   var tables = conference.getElementsByClassName(timetable);
-    //-   
-    //-   el.classList.toggle('arrowDown');
-    //-   dayList.classList.toggle('conf-hidden');
-    //-   //Toggle inner timetables class
-    //-   Array.prototype.forEach.call(tables, function(table) {
-    //-     table.classList.toggle('conf-hidden');
-    //-   });
-    //- }
-    
-    
     function changeTab(el, scroll) {
       //this variables should be created here to specify exactly current conference
       
@@ -128,11 +112,14 @@ if schedule
     }
     
     function toggleAbout(el) {
-      var session = el.parentNode;
+      var session = el.parentNode.parentNode;
       var about = session.getElementsByClassName('session__about')[0];
-      var icon = session.getElementsByClassName('session__icon')[0];
+      var icons = session.getElementsByClassName('session__icon');
       var info = session.getElementsByClassName('session__info')[0];
-      icon.classList.toggle('session__icon--expanded');
+      
+      Array.prototype.forEach.call(icons, function(icon) {
+        icon.classList.toggle('invisible');
+      });
       about.classList.toggle('invisible');
       if (viewport <= #{config.breakPoint}) {
         info.classList.toggle('invisible');
@@ -143,6 +130,8 @@ if schedule
       var reports = document.getElementsByClassName('session--report');
       Array.prototype.forEach.call(reports, function(report) {
         var header = report.getElementsByClassName('session__name')[0];
+        var icon = report.getElementsByClassName('session__icons')[0];
+        icon.addEventListener('click', function() {toggleAbout(header)});
         header.addEventListener('click', function() {toggleAbout(header)});
       });
     })();

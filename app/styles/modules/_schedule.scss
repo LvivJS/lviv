@@ -53,43 +53,6 @@
     }
 }
 
-.conference__title {
-    // padding: 15px 0;
-    // display: flex;
-    // justify-content: space-between;
-    display: none;
-    // h3 {
-    //     font-size: $font__large;
-    //     color: $color__primary;
-    //     margin: 10px 10px 10px 20px;
-    //     flex-shrink: 5;
-    //     @include bp(very-small) {
-    //         flex-shrink: 7;
-    //         margin: 10px;
-    //     }
-    // }
-    // .schedule__toggleButton {
-    //     display: block;
-    //     cursor: pointer;
-    //     margin: 10px;
-    //     flex-shrink: 0;
-    //     svg.ui__comp {
-    //         width: 30px;
-    //         height: 30px;
-    //         border: 0px;
-    //         transition: transform 0.2s;
-    //         .arrow{
-    //             fill: $color__primary--dark;
-    //         }
-    //     }
-    // }
-    // .schedule__toggleButton.arrowDown {
-    //     svg.ui__comp {
-    //         transform: rotate(180deg);
-    //     }
-    // }
-}
-
 .timetable {
     position: relative;
     @include bp(medium) {
@@ -113,8 +76,14 @@
 }
 .session:first-child .session__arrangement {
   padding: 25px 0 0 26px;
+  .session__icons {
+    top: 32px;
+  }
   @include bp(medium) {
-    padding: 0 14px 0;
+    padding: 0 3px 0;
+    .session__icons {
+      top: -29px;
+    }
   }
 }
 
@@ -156,114 +125,61 @@
 }
 
 .session__arrangement {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-shrink: 3;
-    width: 100%;
-    padding-left: 26px;
-    max-width: 655px;
-    width: 100%;
-    margin-bottom: 14px;
-    color: $color__grayscale--9;
-    font-size: $font__size--2;
-    font-weight: 400;
-    @include bp(medium) {
-      margin: 6px 0 -5px 23px;
-      padding: 0 16px 0;
-      border-left: 4px solid #777;
-    }
+  display: flex;
+  flex-direction: column;
+  padding-left: 26px;
+  max-width: 655px;
+  width: 100%;
+  margin-bottom: 13px;
+  color: $color__grayscale--9;
+  font-size: $font__size--2;
+  font-weight: 400;
+  position: relative;
+  @include bp(medium) {
+    margin: 6px 0 -5px 23px;
+    padding: 0 3px 0;
+    border-left: 4px solid #777;
+  }
 }
 .session--report > .session__arrangement {
   color: $color__grayscale--9;
 }
 .session__name {
-  margin-bottom: 1px;
-  position: relative;
-  padding-left: 18px;
+  padding-left: 40px;
   font-size: $font__size--3;
   color: $color__grayscale--14;
   font-weight: 500;
+  line-height: 35px;
   @include bp(medium) {
-    padding: 28px 0 0 0;
+    padding: 28px 0 0 35px;
     text-align: left;
     font-size: 1em;
     font-weight: 600;
     line-height: 1.3em;
     position: relative;
     top: -28px;
+    left: -23px;
     text-shadow: none;
   }
   &:hover {
     cursor: pointer;
   }
-  &:hover > .session__icon:before {
-    background: #504E51;
-  }
-  &:before {
-    content: '';
-    display: block;
-    width: 13px;
-    height: 3px;
-    background: #fff;
-    position: absolute;
-    top: 17px;
-    left: 5px;
-    border-radius: 1px;
-    z-index: 1;
-    @include bp(medium) {
-      top: 7px;
-      left: -24px;
-    }
-  }
-  .session__icon{
-    position: relative;
-    text-align: left;
-    &:before {
-      content: '';
-      width: 23px;
-      height: 23px;
-      background: #8E8E8E;
-      display: inline-block;
-      border-radius: 12px;
-      position: relative;
-      right: 17.5px;
-      top: 7px;
-      @include bp(medium) {
-        position: absolute;
-        left: -29.5px;
-        top: -31px;
-      }
-    }
-    &:after {
-      content: '';
-      display: block;
-      width: 3px;
-      height: 13px;
-      background: #FFF;
-      position: absolute;
-      top: 6px;
-      left: -8px;
-      z-index: 1;
-      border-radius: 1px;
-      @include bp(medium) {
-        top: -26px;
-        left: -19px;
-      }
-    }
-  }
-  .session__icon--expanded{
-    &:before {
-      background: #504E51;
-    }
-    &:after {
-      display: none;
-    }
+}
+
+.session__icons {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  top: 7px;
+  left: 26px;
+  @include bp(medium) {
+    top: -29px;
+    left: -13px;
   }
 }
 
 .session--entertainment .session__name {
-  margin: 5px 0 1px 23px;
+  margin: 5px 0 1px 0;
   cursor: initial;
   @include bp(medium) {
     margin: 0;
@@ -284,28 +200,30 @@
 .speaker__name--schedule {
     flex-shrink: 3;
     display: flex;
-    margin: 5px 0 0 41px;
+    margin: 2px 0 0 41px;
     font-weight: 400;
     span + span {
       margin-left: 5px;
     }
     @include bp(medium) {
-      margin: -3px 0 0;
+      margin: -3px 13px 0;
     }
 }
 
 .session__info {
-    margin-bottom: 10px;
-    font-weight: bold;
-    justify-content: space-between;
-    flex-direction: row;
-    @include bp(very-small) {
-       flex-direction: column;
-       margin-bottom: 0;
-    }
+  margin-top: 2px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  justify-content: space-between;
+  flex-direction: row;
+  line-height: 10px;
+  @include bp(very-small) {
+     flex-direction: column;
+     margin-bottom: 0;
+  }
 }
 .session__info--right {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 .session__about {
   margin-bottom: 8px;
@@ -313,7 +231,7 @@
   font-size: $font__size--2;
   line-height: 24px;
   @include bp(medium) {
-    padding: 0;
+    padding: 0 13px 0;
   }
 }
 

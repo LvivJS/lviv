@@ -10,8 +10,7 @@
   background-size: 8px 8px;
   margin-bottom: 31px;
   @include bp(medium) {
-    background: none;
-    height: auto;
+    height: 394px;
     margin-bottom: 0;
   }
 }
@@ -42,6 +41,7 @@
     }
     @include bp(medium) {
       height: 100%;
+      margin: 0;
     }
 }
 
@@ -181,8 +181,4 @@ input, label {
   font-size: 2.5em;
   margin: 40px 0 50px;
   text-shadow: 0 1px 4px #745400;
-  @include bp(medium) {
-    color: #DA8300;
-    text-shadow: none;
-  }
 }
