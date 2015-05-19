@@ -16,24 +16,8 @@
 
 @mixin container-ext {
     display: block;
-    text-align: center;
     display: flex;
     justify-content: center;
-};
-
-@mixin schedule-about-button($content) {
-    content:$content;
-    display:block;
-    font-size:$font__giant;
-    color:$color__gray--darker;
-    margin-top: -7px;
-};
-
-@mixin user-select() {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 };
 
 /* media queries */

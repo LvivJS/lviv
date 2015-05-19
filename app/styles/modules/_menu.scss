@@ -7,6 +7,7 @@
 	position: fixed;
 	left: 0;
 	@include bp(medium) {
+		background: none;
 		position: fixed;
 		height: $toggle-button__height;
 	}
@@ -22,6 +23,7 @@
 .toggleWrapper {
 	display: none;
 	@include bp(medium) {
+		background: $color__grayscale--1;
 		display: flex;
 		height: auto;
 		justify-content: flex-end;
@@ -45,7 +47,7 @@
 	display: flex;
 	margin: 0;
 	@include bp(medium) {
-		background: $color__grayscale--13;
+		background: $color__grayscale--1;
 		flex-direction: column;
 		max-width: $menu-width--resp;
 		width: 100%;
@@ -74,17 +76,19 @@
 	text-transform: capitalize;
 	text-align: left;
 	font-weight: 400;
-	&:hover{
-		color: $color__grayscale--4;
+	@include bp(large) {
+		&:hover{
+			color: $color__grayscale--4;
+		}
 	}
 	@include bp(medium) {
 		&:hover{
-			background: rgba($color__primary, 0.5);
+			background: $color__primary;
 		}
 		display: block;
 		padding: 20px 40px;
 		font-size: 1.4em;
-		color: #F1F1F1;
+		color: $color__grayscale--13;
 	}
 }
 
@@ -131,16 +135,17 @@
 	@include bp(medium) {
 		display: block;
 		position: absolute;
-		color: #f7df1e;
+		color: $color__grayscale--13;
 		text-transform: capitalize;
 		background: url('../images/logo_lvivjs.png') 7px 8px no-repeat;
-		background-size: 68px;
-		width: 55%;
-		max-width: 240px;
-		font-size: 1.65em;
-		padding: 17px 0 3px 92px;
-		line-height: 28px;
-		text-align: left;
+		background-size: 69px;
+    width: 55%;
+    max-width: 240px;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 10px 0 3px 120px;
+    line-height: 31px;
+    text-align: left;
 	}
 }
 
@@ -160,7 +165,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
-		padding: 19px 0 27px;
+		padding: 25px 0 30px;
 		height: $toggle-button__height;
 		width: $toggle-button__width;
 	}
@@ -169,10 +174,10 @@
 .menuToggle__stripe {
 	height: $stripe__height;
 	margin: 0 auto;
-	width: 55%;
-	background: $color__primary;
+	width: 64%;
+	background: $color__grayscale--13;
 	@include border-radius($stripe__height / 2);
-	transition: margin 0.07s;
+	// transition: margin 0.07s;
 }
 
 .menuToggle:hover .menuToggle__stripe:nth-child(2) {

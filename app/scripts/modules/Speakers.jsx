@@ -53,12 +53,6 @@ var Speaker = React.createClass({
     return classNames(classes);
   },
   render: function() {
-    var contToRender = Object.keys(this.state.contacts).map(function(val) {
-      return (
-          <SocialIconLink network={val} clName={this.setClass(val)} Href={this.state.contacts[val]} key={val} />
-      );
-    }.bind(this));
-
     return (
      <div className="speaker">
       <div className="speaker__photo">
@@ -68,10 +62,7 @@ var Speaker = React.createClass({
         <h3 className="speaker__name">{this.props.information.name}</h3>
         <div className="speaker__pos">{this.props.information.position}</div>
         <div className="speaker__about">{this.props.information.about}</div>
-          <div className="speaker__contacts">
-            {contToRender}
-          </div>
-        </div>
+      </div>
      </div>
     )
   }

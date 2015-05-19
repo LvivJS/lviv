@@ -6,7 +6,7 @@
         outline: 0;
     }
     @include bp(medium) {
-      margin-top: 20px;
+      margin-top: 1px;
     }
 }
 
@@ -22,6 +22,8 @@
       border-bottom: 8px solid $color__primary;
       @include bp(medium) {
         margin: 0;
+        padding: 0 7px;
+        border: none;
       }
       li {
         list-style: none;
@@ -39,6 +41,7 @@
         position: relative;
         @include bp(medium) {
           height: 44px;
+          width: 117px;
         }
       }
       li.conference__tab--active {
@@ -65,7 +68,7 @@
     @include bp(medium) {
         flex-direction: column;
         position: relative;
-        margin-bottom: 16px;
+        margin-bottom: 19px;
         width: 100%;
     }
 }
@@ -102,12 +105,13 @@
       color: #565656;
       text-align: left;
       margin-left: 11.7647058824%;
+      margin-top: 4px;
       font-size: 1.18em;
       padding: 0;
     }
     span {
       font-size: $font__size--2;
-      font-weight: 500;
+      font-weight: 700;
     }
     span+span:before{
         content: " - ";
@@ -145,7 +149,7 @@
   font-weight: 400;
   position: relative;
   @include bp(medium) {
-    margin: 6px 0 -5px 6.14973262032%;
+    margin: 8px 0 -5px 4.2%;
     padding: 0 3px 0;
     border-left: 4px solid #777;
     width: 93.8502673797%;
@@ -161,15 +165,14 @@
   font-weight: 500;
   line-height: 35px;
   @include bp(medium) {
-    padding: 28px 0 0 35px;
+    padding: 37px 0 0 12.9%;
     text-align: left;
-    font-size: 1em;
-    font-weight: 600;
-    line-height: 1.3em;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
     position: relative;
     top: -28px;
     left: -23px;
-    text-shadow: none;
   }
   &:hover {
     cursor: pointer;
@@ -197,11 +200,14 @@
     display: flex;
     margin: 2px 0 0 41px;
     font-weight: 400;
-    span + span {
-      margin-left: 5px;
+    span:first-child {
+      margin-right: 5px;
     }
     @include bp(medium) {
       margin: -3px 13px 0;
+      display: flex;
+      flex-wrap: wrap;
+      font-weight: 500;
     }
 }
 
@@ -212,9 +218,13 @@
   justify-content: space-between;
   flex-direction: row;
   line-height: 10px;
-  @include bp(very-small) {
-     flex-direction: column;
-     margin-bottom: 0;
+  @include bp(medium) {
+    margin-bottom: -3px;
+    padding-left: 2.55754475703%;
+    flex-direction: row;
+    line-height: 19px;
+    position: relative;
+    top: -13px;
   }
 }
 .session__info--right {
@@ -226,7 +236,8 @@
   font-size: $font__size--2;
   line-height: 24px;
   @include bp(medium) {
-    padding: 0 13px 0;
+    padding: 0 6.55270655271% 0;
+    font-weight: 500;
   }
 }
 
@@ -237,6 +248,11 @@
 .session__calendButtons {
   margin-top: 17px;
   font-size: $font__size--1;
+  display: flex;
+  flex-wrap: wrap;
+  @include bp(medium) {
+    display: none;
+  }
 }
 
 a.session__calendLink {
@@ -262,11 +278,9 @@ a.session__calendLink {
 
 .conference ul.list-fixed {
   position: fixed;
-  top: $toggle-button__height;
   left: 0;
   z-index: 2;
   width: 100%;
   background: #fff;
-  border-top: 8px solid #f7df1e;
   border-bottom: none;
 }

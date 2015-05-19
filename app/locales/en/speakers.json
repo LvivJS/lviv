@@ -2,10 +2,10 @@
   "title": "speakers",
   "data": [
     {
-      "name":"Eric Brewer",
-      "position":"CTO, Amazon",
+      "name":"Name",
+      "position":"Designer at That Dragon, Cancer",
       "photo_url":"images/speakers/speaker-gabe-zichermann.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ...",
       "contact": {
           "facebook":"http://www.facebook.com",
           "twitter":"http://www.twitter.com",
@@ -16,16 +16,16 @@
       "name":"David Allen",
       "position":"Designer at That Dragon, Cancer",
       "photo_url":"images/speakers/speaker-david-allen.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ...",
       "contact": {
           "twitter":"http://www.twitter.com"
       }
     },
     {
-      "name":"Neelie Kroes",
-      "position":"Game Designer at Set Adventure",
+      "name":"Name",
+      "position":"Designer at That Dragon, Cancer",
       "photo_url":"images/speakers/speaker-eric-brewer.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ...",
       "contact": {
           "twitter":"http://www.twitter.com",
           "linkedin":"http://www.linkedin.com"
@@ -35,17 +35,17 @@
       "name":"Gabe Zichermann",
       "position":"Author at Getting Things Done",
       "photo_url":"images/speakers/speaker-nicolas-brusson.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ...",
       "contact": {
           "facebook":"http://www.facebook.com",
           "linkedin":"http://www.linkedin.com"
       }
     },
     {
-      "name":"Jan Rezab",
-      "position":"Creative Director EVE Universe",
+      "name":"Name",
+      "position":"Designer at That Dragon, Cancer",
       "photo_url":"images/speakers/speaker-jan-rezab.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ...",
       "contact": {
           "facebook":"http://www.facebook.com",
           "linkedin":"http://www.linkedin.com"
@@ -55,7 +55,7 @@
       "name":"Brian Wong",
       "position":"Founder & CEO, Kiip",
       "photo_url":"images/speakers/speaker-scott-smith.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on his research at Berkeley.",
+      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ...",
       "contact": {
           "facebook":"http://www.facebook.com",
           "twitter":"http://www.twitter.com"

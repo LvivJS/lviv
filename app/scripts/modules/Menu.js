@@ -46,6 +46,7 @@ var Menu = React.createClass({
     return (
       <div id="menu" className="module-wrapper">
         <div className="menu-wrapper">
+          <h2 className="menu-header">{this.props.title}</h2>
           <div id="cm_toggleWrapper" className="toggleWrapper">
             <div id="cm_menuToggle" className="menuToggle" onClick={this.toggleMenu}>
               <div className="menuToggle__stripe"></div>

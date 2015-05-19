@@ -16,6 +16,9 @@ mixin sessionData(session)
       .session__icons
         +icon("plus")
         +icon("minus")(class="invisible")
+    else
+      .session__icons
+        +icon("coffe")
     h4.session__name= session.article
     if (session.type == 'report')
       .session__info.session__info--right
@@ -68,19 +71,23 @@ if schedule
     var listHeight = list.offsetHeight;
     var tables = conf.getElementsByClassName(timetable);
     
+    (function() {
+      var reports = document.getElementsByClassName('session--report');
+      Array.prototype.forEach.call(reports, function(report) {
+        var header = report.getElementsByClassName('session__name')[0];
+        var icon = report.getElementsByClassName('session__icons')[0];
+        icon.addEventListener('click', function() {toggleAbout(header)});
+        header.addEventListener('click', function() {toggleAbout(header)});
+      });
+    })();
     
-      if (viewport <= #{config.breakPoint}) {
-        //fix tabs on scroll for small devices
-        document.body.onscroll = fixTabs;
-        //hide session info
-        var sessionInfoArr = document.getElementsByClassName('session__info');
-        Array.prototype.forEach.call(sessionInfoArr, function(el) {
-          el.classList.add('invisible');
-        });
-      } else {
-        //show proper tab
-        activeTab.onclick();
-      }
+    if (viewport <= #{config.breakPoint}) {
+      //fix tabs on scroll for small devices
+      document.body.onscroll = fixTabs;
+    } else {
+      //show proper tab
+      activeTab.onclick();
+    }
     
     function changeTab(el, scroll) {
       //this variables should be created here to specify exactly current conference
@@ -115,26 +122,12 @@ if schedule
       var session = el.parentNode.parentNode;
       var about = session.getElementsByClassName('session__about')[0];
       var icons = session.getElementsByClassName('session__icon');
-      var info = session.getElementsByClassName('session__info')[0];
       
       Array.prototype.forEach.call(icons, function(icon) {
         icon.classList.toggle('invisible');
       });
       about.classList.toggle('invisible');
-      if (viewport <= #{config.breakPoint}) {
-        info.classList.toggle('invisible');
-      }
     }
-    
-    (function() {
-      var reports = document.getElementsByClassName('session--report');
-      Array.prototype.forEach.call(reports, function(report) {
-        var header = report.getElementsByClassName('session__name')[0];
-        var icon = report.getElementsByClassName('session__icons')[0];
-        icon.addEventListener('click', function() {toggleAbout(header)});
-        header.addEventListener('click', function() {toggleAbout(header)});
-      });
-    })();
       
       function fixTabs(el) {
         var bodyScrlPos = document.body.scrollTop;
@@ -163,11 +156,7 @@ if schedule
               if (bodyScrlPos > (scheduleBottom - listHeight - menuHeight)) {
                 list.style.top = scheduleBottom - bodyScrlPos - listHeight + 'px';
               }
-              
-              //this chunk is for selecting proper tab due to scrollTop
-              //
               //remove active tab classname
-              
               Array.prototype.forEach.call(tablesTopPoss, function(tablTop, i) {
                 var nextItem = tablesTopPoss[i + 1]
                 if ((bodyScrlPos >= tablTop - menuHeight - listHeight) && (bodyScrlPos < nextItem - menuHeight - listHeight)) {

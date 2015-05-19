@@ -1,13 +1,16 @@
 
 .speakers {
   @include container-int;
+  overflow: hidden;
   flex-wrap: wrap;
   justify-content: space-between;
   @include bp(medium) {
-    //this depends on particular speaker's "about" content.
-    // height: 552px;
-    overflow: hidden;
+    padding: 0 15px 0 21px
   }
+}
+
+#speakers {
+  margin-bottom: -5px;
 }
 
 .speakers__expanded {
@@ -21,13 +24,15 @@
   margin: 43px 3% 23px;
   flex-direction: column;
   align-items: center;
-  @include bp(medium) {
-    margin: 4px 2.94117647059% 42px;
-    width: 42.2459893048%;
+  &:hover {
+    img {
+     filter: none;
+   }
   }
-}
-.speaker:hover img {
-  filter: none;
+  @include bp(medium) {
+    margin: 0 0 35px;
+    width: 46.7455621302%;
+  }
 }
 
 .speaker__photo{
@@ -38,7 +43,7 @@
       margin-bottom: -5px;
       border-radius: 50%;
       filter: grayscale(1);
-      transition: filter 0.3s;
+      transition: all 0.3s;
   }
   @include bp(medium) {
     width: 63.2911392405%
@@ -50,8 +55,10 @@
   font-weight: 700;
   font-size: $font__size--5;
   margin-top: 32px;
+  text-align: center;
   @include bp(medium) {
     margin-top: 14px;
+    font-size: 16px;
   }
 }
 .speaker__pos {
@@ -61,7 +68,10 @@
   font-weight: 400;
   margin: 10px 0;
   @include bp(medium) {
-    display: none;
+    text-align: left;
+    font-size: 14px;
+    margin: 14px 0 12px;
+    line-height: 18px;
   }
 }
 .speaker__about {
@@ -72,9 +82,9 @@
   font-weight: 400;
   line-height: 24px;
   @include bp(medium) {
-    font-size: 1em;
-    line-height: 1em;
-    margin-top: 7px;
+    font-size: $font__size--1;
+    line-height: $font__size--3;
+    margin-top: 0;
   }
 }
 
@@ -104,12 +114,20 @@
   display: none;
   @include bp(medium) {
     cursor: pointer;
+    color: $color__grayscale--1;
     display: block;
-    background: $color__primary;
-    width: 139px;
+    background: $color__speakers-btn;
+    width: 146px;
     height: 33px;
-    font-size: $font__size--1;
-    line-height: 2.5em;
+    font-size: 13px;
+    line-height: 34px;
     font-weight: 400;
+    text-align: center;
+    position: relative;
+    top: -6px;
+    border-radius: 4px;
+    &:hover {
+      background: darken($color__speakers-btn, 10%);
+    }
   }
 }

@@ -22,8 +22,9 @@
 	padding: 42px 0 26px;
 	text-transform: capitalize;
 	@include bp(medium) {
-		font-size: $font__size--5;
-		padding-bottom: 18px;
+		font-size: 24px;
+		font-weight: 500;
+		padding: 35px 0 23px;
 	}
 
 }

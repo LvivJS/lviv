@@ -13,9 +13,20 @@ var config = require('../config');
 var utilities = require('../utilities');
 var ReactIntl = require('react-intl');
 var IntlMixin = ReactIntl.IntlMixin;
+var files = require('../db_connector');
 
 var LayoutBasic = React.createClass({
   mixins: [IntlMixin],
+  getInitialState: function() {
+    return {
+      overview: {}
+    }
+  },
+  componentDidMount: function() {
+    files.get('modules/overview',  function(data) {
+      this.setState({overview: data});
+    }.bind(this));
+  },
   render: function() {
     var confModules = [];
 
@@ -40,7 +51,7 @@ var LayoutBasic = React.createClass({
 
     return (
       <div className="page-wrap">
-        <Menu items={confModules}/>
+        <Menu items={confModules} title={this.state.overview.name}/>
 
         {modulesToRender}
 
