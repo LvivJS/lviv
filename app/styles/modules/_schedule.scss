@@ -66,6 +66,7 @@
         flex-direction: column;
         position: relative;
         margin-bottom: 16px;
+        width: 100%;
     }
 }
 .session:first-child .session__time {
@@ -96,11 +97,11 @@
     color: $color__grayscale--1;
     font-weight: 500;
     @include bp(medium) {
-      width: 100%;
+      width: 88.2352941176%;
       background: none;
-      color: $color__grayscale--9;
+      color: #565656;
       text-align: left;
-      margin-left: 44px;
+      margin-left: 11.7647058824%;
       font-size: 1.18em;
       padding: 0;
     }
@@ -119,8 +120,16 @@
     color: $color__primary;
     @include bp(medium) {
       color: $color__grayscale--9;
-      margin-left: 13px;
     }
+  }
+  .session__icon {
+    cursor: initial;
+    path{
+      fill: $color__primary;
+    }
+  }
+  .session__arrangement {
+    border-color: $color__primary;
   }
 }
 
@@ -136,9 +145,10 @@
   font-weight: 400;
   position: relative;
   @include bp(medium) {
-    margin: 6px 0 -5px 23px;
+    margin: 6px 0 -5px 6.14973262032%;
     padding: 0 3px 0;
     border-left: 4px solid #777;
+    width: 93.8502673797%;
   }
 }
 .session--report > .session__arrangement {
@@ -179,22 +189,7 @@
 }
 
 .session--entertainment .session__name {
-  margin: 5px 0 1px 0;
   cursor: initial;
-  @include bp(medium) {
-    margin: 0;
-  }
-  &:before {
-    display: none;
-  }
-  span {
-    &:before {
-      display: none;
-    }
-    &:after {
-      display: none;
-    }
-  }
 }
 
 .speaker__name--schedule {
