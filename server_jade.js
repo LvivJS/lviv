@@ -6,7 +6,7 @@ var app = express();
 var jade = require('jade');
 var files = require('./app/scripts/db_connector.js');
 
-var port = process.env.port || 8080;
+var port = process.env.port || 8082;
 var env = process.env.NODE_ENV || 'development';
 // utilities
 app.locals.moment = require('moment');

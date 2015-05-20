@@ -10,15 +10,15 @@
   background-size: 8px 8px;
   margin-bottom: 31px;
   @include bp(medium) {
-    height: 394px;
+    height: 319px;
     margin-bottom: 0;
   }
 }
 
 .registration > h2.module-header {
-  padding: 40px 0px 0px;
+  padding: 40px 0px 31px;
   @include bp(medium) {
-    padding: 49px 0 26px;;
+    padding: 36px 0 25px;
   }
 }
 
@@ -26,7 +26,7 @@
     @include container-int;
     justify-content:center;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     background: $color__grayscale--1;
     max-width: 398px;
     width: 100%;
@@ -37,7 +37,6 @@
       flex-direction: column;
       display: flex;
       align-items: center;
-      height: 275px;
     }
     @include bp(medium) {
       height: 100%;
@@ -48,17 +47,19 @@
 .registration__field {
   @include container-ext;
   flex-direction: row;
-  margin-top: 2px;
+  margin-top: 10px;
   flex-wrap: wrap;
   span {
     width: 100%;
     text-align: center;
   }
+  @include bp(medium) {
+    margin-top: 3px;
+  }
   &:last-child {
     width: 304px;
     @include bp(medium) {
-      width: 265px;
-      margin-top: 20px;
+      margin-top: 17px;
     }
   }
 }
@@ -91,9 +92,9 @@
   order: 1;
   padding: 4px 0 0px 10px;
   font-size: $font__size--2;
-  font-weight: 400;
+  font-weight: 700;
   @include bp(medium) {
-    width: 205px;
+    width: 213px;;
   }
 }
 
@@ -111,8 +112,8 @@
   }
 }
 
-.registration__input[type="email"] {
-  color: blue;
+.registration__input[type="email"], #cm_email {
+  color: $color__link;
   text-decoration: underline;
 }
 
@@ -136,6 +137,7 @@ input, label {
   color: $color__grayscale--4;
   font-size: $font__size--1;
   order: 2;
+  margin-bottom: -5px;
 }
 .registration__tip.invisible{
     display:none
@@ -161,9 +163,8 @@ input, label {
   border-radius: 5px;
   box-shadow: 0 4px $color__reg-btn-shad;
   @include bp(medium) {
-    margin-top: 0;
-    margin-bottom: 83px;
-    width: 265px;
+    margin: 0;
+    width: 273px;
   }
   &:hover {
     background-color: $color__reg-btn--hover;

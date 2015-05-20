@@ -46,8 +46,8 @@ var Registration = React.createClass({
   render: function() {
     return (
       <section id="registration" className="page-wrap">
-        <h2 className="module-header">{this.state.title}</h2>
         <div className="registration">
+          <h2 className="module-header">{this.state.title}</h2>
           <RegistrationForm onDataReceived={this.pushData} inputs={this.state.inputFields} btnText={this.state.title}/>
         </div>
       </section>

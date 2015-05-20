@@ -1,8 +1,10 @@
 #googleMap {
 	width: 100%;
 	height: 626px;
+	z-index: -1;
 	@include bp(medium) {
 		height: 254px;
+		z-index: 0;
 	}
 }
 #locations {
@@ -22,10 +24,11 @@
   height: 221px;
   display: flex;
 	transition: all 0.4s;
+	z-index: 1;
 	@include bp(medium) {
 		position: static;
 		width: 100%;
-		height: 154px;
+		height: 150px;
 	}
 	@include bp(large) {
 		cursor: pointer;
@@ -54,9 +57,9 @@
 		font-size: 1.07em;
 		line-height: 1.46em;
 		@include bp(medium) {
-			font-size: $font__size--1;
+			font-size: $font__size--2;
 			font-weight: 500;
-			line-height: 21px;
+			line-height: 25px;
 		}
 	}
 }
@@ -69,7 +72,7 @@
 		text-align: center;
 		margin: 0;
 		justify-content: center;
-		padding-bottom: 18px;
+		padding: 22px 0 24px;
 	}
 }
 
@@ -108,6 +111,7 @@
 .location__controlText {
 	display: block;
 	z-index: 1;
+	color: $color__link;
 }
 .location__controlText:hover {
 	text-decoration:underline;
@@ -121,10 +125,9 @@
 	height: 73px;
   top: 470px;
   left: 0;
-	// background: rgba(195, 195, 195, 0.64);
-	// path {
-	// 	fill: $color__gray;
-	// }
+	&+ #googleMap {
+		z-index: 0;
+	}
 	.loc-info__text {
 		margin-top: 13px;
 	}

@@ -10,7 +10,7 @@
 }
 
 #speakers {
-  margin-bottom: -5px;
+  margin-bottom: -7px;
 }
 
 .speakers__expanded {
@@ -124,7 +124,7 @@
     font-weight: 400;
     text-align: center;
     position: relative;
-    top: -6px;
+    top: -8px;
     border-radius: 4px;
     &:hover {
       background: darken($color__speakers-btn, 10%);

@@ -77,7 +77,7 @@ var LocalConnect = {
     utilities.ajax('get', file, next);
   },
   push: function(callBack, obj) {
-    var regForm = document.getElementsByClassName('registration')[0];
+    var regForm = document.getElementById('registration');
     utilities.ajax('post', '', function(status) {
       if (status == 200) {
         regForm.innerHTML = '<div class="regist-resp">Thanks for registration!</div>';
@@ -86,6 +86,9 @@ var LocalConnect = {
         regForm.innerHTML = '<div class="regist-resp">Registration failed...</div>';
       }
     }, obj);
+    if (callBack) {
+      callBack;
+    }
   }
 };
 

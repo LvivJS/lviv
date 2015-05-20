@@ -37,7 +37,7 @@ var LayoutBasic = React.createClass({
     });
 
     var moduleList = {
-      location: <LocationMap key="LocationMap" />,
+      locations: <LocationMap key="LocationMap" />,
       speakers: <Speakers key="Speakers" />,
       partners: <Partners key="Partners" />,
       schedule: <Schedule key="Schedule" />,

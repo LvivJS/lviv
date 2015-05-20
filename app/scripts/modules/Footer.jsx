@@ -1,81 +1,65 @@
 'use strict';
 
 var React = require('react');
-var utilities = require('../utilities');
-var config = require('../config');
-var SocialIconLink = require('../components/socials.jsx');
 var files = require('../db_connector');
 
 var Footer = React.createClass({
   getInitialState: function() {
-    return ({
-      events: [],
-      networks:{},
-      mail:'',
-      locales:{}
-    });
+    return {
+      contacts: [],
+      copyright: ''
+    }
   },
+
   componentDidMount: function() {
     files.get('modules/footer', function(data) {
       var temp = data;
       this.setState({
-        events: temp.data.events,
-        networks: temp.data.socials.networks,
-        mail: temp.data.socials.email,
-        locales: temp.locales
+        contacts: temp.contacts,
+        copyright: temp.copyright
       });
     }.bind(this));
   },
+
   render: function() {
+    var blocks = this.state.contacts.map(function(block) {
+      var blockContact = block.contacts.map(function(contact) {
+        var href = 'mailto:' + contact.email;
+        return (
+          <div className="block__contact" key={contact.name}>
+            <span className="block__contact__name">{contact.name}</span>
+            <span className="block__contact__phone">{contact.phone}</span>
+            <a className="block__contact__email" href={href}>
+              {contact.email}
+            </a>
+          </div>
+        );
+      });
+      return (
+        <div className="footer__block" key={new Date().now}>
+          <h4 className="block__header">
+            {block.title}
+          </h4>
+          {blockContact}
+        </div>
+      );
+    });
     return (
       <footer id="footer" className="page-wrap footer">
         <div className="footer__container">
-          <CommunityEvents events={this.state.events} locales={this.state.locales} />
-          <Connection networks={this.state.networks} mail={this.state.mail} locales={this.state.locales} />
+          {blocks}
         </div>
-        <hr/>
         <div className="footer__copyright">
-          <span>{this.state.locales.copyright}</span>
+          <div className="footer__container">
+            <span className="copyright__text">{this.state.copyright}</span>
+            <div className="footer__socials">
+
+            </div>
+          </div>
         </div>
       </footer>
     );
   }
 });
 
-var CommunityEvents = React.createClass({
-  render: function() {
-    var events = this.props.events.map(function(ev){
-      return <a className="footer__event" href={ev.link} key={ev.name} target="_blank">{ev.name}</a>
-    }.bind(this));
-    return (
-      <div className="footer__block">
-        <h5 className="footer__headings">{this.props.locales.events_header}</h5>
-        <div className="footer__eventLinks">
-          {events}
-        </div>
-      </div>
-    )
-  }
-});
-
-var Connection = React.createClass({
-  render: function() {
-    var socials= Object.keys(this.props.networks).map(function(network) {
-      return (
-          <SocialIconLink Href={this.props.networks[network]} network={network} key={network} />
-      )
-    }.bind(this));
-    var mailto = "mailto:"+ this.props.mail;
-    return (
-      <div className="footer__block">
-        <h5 className="footer__headings">{this.props.locales.connection_header}</h5>
-        <div className="footer__socials">{socials}</div>
-        <div className="footer__contacts">
-          <span>{this.props.locales.contact_us}</span>
-          <a className="footer__mailLink" href={mailto}>{this.props.mail}</a>
-        </div>
-      </div>
-    )
-  }
-});
 module.exports = Footer;

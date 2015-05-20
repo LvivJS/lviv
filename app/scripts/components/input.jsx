@@ -64,8 +64,8 @@ var InputField = React.createClass({
     var inputId = 'cm_' + this.props.placeholder;
     return (
       <div className="registration__field">
-        <label htmlFor={inputId} className={labelClass}>{this.props.placeholder == 'tel' ? 'Phone' : this.props.placeholder}</label>
         <input id={inputId} onChange={shouldCheck} onBlur={this.madeFirstBlur} className={inputClass} type="text" ref="data" />
+        <label htmlFor={inputId} className={labelClass}>{this.props.placeholder == 'tel' ? 'Phone' : this.props.placeholder}</label>
         <span className={spanClass}>{this.props.errorMessage}</span>
       </div>
     )
