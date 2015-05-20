@@ -1,68 +1,36 @@
-var React = require('react');
-var classNames = require('classnames');
-var config = require('../config');
+'use strict';
+var menuToggler = document.getElementById('cm_menuToggle');
+var menuItems = document.getElementById('cm_menuItems');
+var overlay = document.getElementById('cm_darkenScreen');
+var links = menuItems.getElementsByClassName('menu__item');
 
-var Menu = React.createClass({
-  getInitialState: function() {
-    return {
-      active: false
-    };
-  },
+menuToggler.addEventListener('click', toggleMenu);
+menuItems.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
 
-  toggleMenu: function() {
-    return this.setState({active: !this.state.active});
-  },
+function toggleMenu() {
+  menuItems.classList.toggle('menu--visible');
+  overlay.classList.toggle('darkenScreen--visible');
+}
 
-  menuLinkHandler: function(e) {
-    e.preventDefault();
-    this.toggleMenu();
-
-    var menuHeight = document.querySelector('.menu-wrapper').offsetHeight;
-    var hash = e.target.href.substr(e.target.href.indexOf('#') + 1);
-    var anchor = document.getElementById(hash);
-    var targetY = anchor.offsetTop - menuHeight;
-
-    scrollTo(targetY, 300);
-  },
-
-  render: function() {
-    var menuCls = classNames({
-      'menu--visible': this.state.active,
-      'menu': true
-    });
-    var darkCls = classNames({
-      'darkenScreen--hidden': true,
-      'darkenScreen--visible': this.state.active
-    });
-    //choose locale from config
-    var localePath = config.localePath;
-    var loc = localePath.substr(localePath.lastIndexOf('/') + 1);
-
-    var itemsToRender = this.props.items.map(function(item) {
-      var href = '#' + item.en;
-      return <a href={href} key={item.en} className="menu__item" onClick={this.menuLinkHandler}>{item[loc]}</a>;
-    }.bind(this));
-
-    return (
-      <div id="menu" className="module-wrapper">
-        <div className="menu-wrapper">
-          <h2 className="menu-header">{this.props.title}</h2>
-          <div id="cm_toggleWrapper" className="toggleWrapper">
-            <div id="cm_menuToggle" className="menuToggle" onClick={this.toggleMenu}>
-              <div className="menuToggle__stripe"></div>
-              <div className="menuToggle__stripe"></div>
-              <div className="menuToggle__stripe"></div>
-            </div>
-          </div>
-          <nav id="cm_menuItems" className={menuCls}>
-            {itemsToRender}
-          </nav>
-        </div>
-        <div id="cm_darkenScreen" className={darkCls} onClick={this.toggleMenu}></div>
-      </div>
-    );
-  }
+Array.prototype.forEach.call(links, function(link) {
+  link.addEventListener('click', menuLinkHandler);
 });
+
+function menuLinkHandler(e) {
+  e.preventDefault();
+  var getId = function(id) {
+    return document.getElementById(id);
+  };
+  var menuMeasure = getId('menu').offsetHeight || getId('cm_menuToggle').offsetHeight;
+
+  var menuHeight = menuMeasure;
+  var hash = e.target.href.substr(e.target.href.indexOf('#') + 1);
+  var anchor = document.getElementById(hash);
+  var targetY = anchor.offsetTop - menuHeight;
+
+  scrollTo(targetY, 300);
+}
 
 function scrollTo(to, duration) {
   if (duration < 0) {
@@ -84,5 +52,3 @@ function scrollTo(to, duration) {
     scrollTo(to, duration - 10);
   }, 10);
 }
-
-module.exports = Menu;
