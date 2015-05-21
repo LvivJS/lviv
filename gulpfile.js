@@ -90,7 +90,7 @@ gulp.task('build_style', function() {
 gulp.task('build_image', function() {
   return gulp.src(paths.imageFiles)
     .pipe(imagemin({progressive: true }))
-    // .pipe(jpegoptim({max: 50})()) // todo: fix this on ec2 server
+    .pipe(jpegoptim({max: 50})())
     .pipe(gulp.dest(paths.build + '/images'));
 });
 
