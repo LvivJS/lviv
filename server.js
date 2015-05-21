@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var jade = require('jade');
 var files = require('./app/scripts/db_connector.js');
+var ci = require('./simpleCI');
 
 var port = process.env.port || 8080;
 var env = process.env.NODE_ENV || 'development';
@@ -31,6 +32,8 @@ app.use(compress());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'dist')));
+// listens to payloads from github
+app.use('/github-payload', ci);
 
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));

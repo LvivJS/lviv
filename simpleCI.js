@@ -39,8 +39,6 @@ function ci(req, res, next){
   } else {
     res.status(501).send('What is that? no commits, meh :/')
   }
-  // pass back
-  // next();
 }
 
 // functions to be run on git push notification
@@ -88,7 +86,7 @@ function updateNpm(data){
 
 function rebuildApp(data){
   var changedFiles = _.uniq( _.flatten( data.body.commits.map(function(commit){
-    return _.union(commit.added, commit.removed, commit.modified)
+    return _.union(commit.added, commit.removed, commit.modified);
   })));
 
   var types = _.uniq( changedFiles.map(function(file){
@@ -115,11 +113,11 @@ function rebuildApp(data){
         console.log('[rebuildApp] :: \n', stdout, stderr);
       });
     } else {
-      resolve({body: data.body, log: data.log + '\n[rebuildApp] ::\nNo need to rebuild'})
+      resolve({body: data.body, log: data.log + '\n[rebuildApp] ::\nNo need to rebuild'});
     }
   });
 }
-// todo : pass updated data
+// todo : pass updated data (e.g. version) into html for convenience of tracking
 // function updateAppEnvData(){
 //   return new Promise(function(resolve, reject){
 //     fs.readFile('./package.json', 'utf-8', function(err, data){
