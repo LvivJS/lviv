@@ -33,9 +33,9 @@
 
 .speaker__photo{
   width: 69.2307692308%;
+  flex-shrink: 0;
   img {
       width: 100%;
-      height: auto;
       margin-bottom: -5px;
       border-radius: 50%;
       filter: grayscale(1);
@@ -45,6 +45,10 @@
     width: 63.2911392405%
   }
 }
+.speaker__main {
+  width: 100%;
+}
+
 .speaker__name {
   text-transform: capitalize;
   color: $color__grayscale--11;
