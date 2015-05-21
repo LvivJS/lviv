@@ -9,10 +9,6 @@
   }
 }
 
-#speakers {
-  margin-bottom: -7px;
-}
-
 .speakers__expanded {
   height: initial;
 }
@@ -123,9 +119,8 @@
     line-height: 34px;
     font-weight: 400;
     text-align: center;
-    position: relative;
-    top: -8px;
     border-radius: 4px;
+    margin-top: 27px;
     &:hover {
       background: darken($color__speakers-btn, 10%);
     }

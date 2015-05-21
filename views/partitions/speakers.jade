@@ -26,11 +26,13 @@ script.
   //set collapsed .speakers height
   (function() {
     var viewport = document.documentElement.clientWidth;
-    var fifthSpeaker = document.getElementsByClassName('speaker')[4];
-    var speakersWrap = fifthSpeaker.parentNode;
+    var fourthSpeaker = document.getElementsByClassName('speaker')[3];
+    var speakersWrap = fourthSpeaker.parentNode;
+    var fourthSpeakerTop = fourthSpeaker.offsetTop;
+    var fourthSpeakerBottom = fourthSpeakerTop + fourthSpeaker.offsetHeight;
   
     if (viewport <= #{config.breakPoint}) {
-      speakersWrap.style.height = fifthSpeaker.offsetTop - speakersWrap.offsetTop + 'px';
+      speakersWrap.style.height = fourthSpeakerBottom - speakersWrap.offsetTop + 'px';
       collapsedSpeakersHeight = speakersWrap.style.height;
     }
   
