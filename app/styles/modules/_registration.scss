@@ -83,6 +83,7 @@
 }
 
 .registration__input {
+  color: $color__grayscale--9;
   outline: none;
   background: $color__grayscale--2;
   width: 244px;
@@ -94,7 +95,7 @@
   order: 1;
   padding: 4px 0 0px 10px;
   font-size: $font__size--2;
-  font-weight: 700;
+  font-weight: 400;
   @include bp(medium) {
     width: 213px;;
   }
@@ -127,7 +128,7 @@ input, label {
   background: #FF6969;
   color: #fff;
   &:focus {
-    color: initial;
+    color: $color__grayscale--9;;
     &+label {
       color: #A6A6A6;
     }
