@@ -10,8 +10,8 @@
   background-size: 8px 8px;
   margin-bottom: 31px;
   @include bp(medium) {
-    height: 319px;
-    margin-bottom: 0;
+    height: auto;
+    margin-bottom: 4px;
   }
 }
 
@@ -49,12 +49,14 @@
   flex-direction: row;
   margin-top: 10px;
   flex-wrap: wrap;
+  flex-shrink: 0;
   span {
     width: 100%;
     text-align: center;
   }
   @include bp(medium) {
     margin-top: 3px;
+    width: 100%;
   }
   &:last-child {
     width: 304px;
@@ -178,8 +180,10 @@ input, label {
 }
 
 .regist-resp {
-  color: #FFFFFF;
-  font-size: 2.5em;
-  margin: 40px 0 50px;
+  color: $color__grayscale--1;
+  font-size: $font__size--6;
+  display: flex;
+  align-items: center;
   text-shadow: 0 1px 4px #745400;
+  height: 282px;
 }
