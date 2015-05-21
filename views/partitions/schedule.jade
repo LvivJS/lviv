@@ -82,18 +82,18 @@ script.
   
   if (viewport <= #{config.breakPoint}) {
     //fix tabs on scroll for small devices
-    document.body.onscroll = fixTabs;
+    window.addEventListener('scroll', fixTabs);
   } else {
     //show proper tab
     activeTab.onclick();
   }
   
-  function changeTab(el, scroll) {
+  function changeTab(el) {
     //this variables should be created here to specify exactly current conference
   
     //make li active if it is not
     if (viewport > #{config.breakPoint}) {
-      el.classList.add(activeClass);
+        el.classList.add(activeClass);
     }
     //find index of active tab and show appropriate table
     Array.prototype.forEach.call(list.childNodes, function(item, i) {
@@ -122,14 +122,25 @@ script.
     var about = session.getElementsByClassName('session__about')[0];
     var icons = session.getElementsByClassName('session__icon');
   
-    Array.prototype.forEach.call(icons, function(icon) {
-      icon.classList.toggle('invisible');
+    Array.prototype.forEach.call(icons, function(icon, idx, arr) {
+      if (typeof icon.classList !== 'undefined') {
+        icon.classList.toggle('invisible');
+      } else {
+        //IE does not support classList for SVG elements
+        var svgClassName = icon.getAttribute('class');
+        if (svgClassName.indexOf('invisible') == -1) {
+          icon.setAttribute('class', svgClassName += ' invisible');
+        } else {
+          icon.setAttribute('class', svgClassName.replace(' invisible', ''));
+        }
+      }
+      
     });
     about.classList.toggle('invisible');
   }
   
-  function fixTabs(el) {
-    var bodyScrlPos = document.body.scrollTop;
+  function fixTabs() {
+    var bodyScrlPos = document.body.scrollTop || document.documentElement.scrollTop;
     var schedule = conf.parentNode;
     var scheduleHeight = schedule.offsetHeight;
     var scheduleTop = schedule.offsetTop;
