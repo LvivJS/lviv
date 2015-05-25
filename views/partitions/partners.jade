@@ -2,11 +2,9 @@ mixin partnerLink(partner)
   a.partners__item-link(href=partner.link title=partner.title target="_blank" style="background-image: url(#{partner.img})")
 
 mixin partnerCategory(category)
-  section.partners__category
-    h3.partners__category-header= category.title
-    div.partners__items
-      each partner in category.data
-        +partnerLink(partner)
+  h3.partners__category-header= category.title
+  each partner in category.data
+      +partnerLink(partner)
 //data is pushed to template only if isRendering==true in config.js
 //next two lines are to prevent error because data is not defined for module
 //if isRendering==false
