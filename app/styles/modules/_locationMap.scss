@@ -84,19 +84,12 @@
 	width: 130px;
 	margin-left: 2px;
 	transition: all 0.4s;
+	path {
+		fill: $color__primary;
+		transition: all 0.4s;
+	}
 	@include bp(medium) {
 		display: none;
-	}
-}
-
-.location__icon {
-	margin-top: 47px;
-	height: 62px;
-	width: 33.4px;
-	transition: all 0.4s;
-	path {
-		fill: rgb(231, 209, 38);
-		transition: all 0.4s;
 	}
 }
 
