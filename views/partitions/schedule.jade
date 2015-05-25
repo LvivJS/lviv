@@ -14,8 +14,8 @@ mixin sessionData(session)
   .session__arrangement
     if (session.type == 'report')
       .session__icons
-        +icon("plus")
-        +icon("minus")(class="invisible")
+        +icon("plus")(class="session__icon")
+        +icon("minus")(class="session__icon invisible")
     else
       .session__icons
         +icon("coffe")

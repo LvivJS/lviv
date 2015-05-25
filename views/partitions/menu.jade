@@ -11,7 +11,7 @@ div#menu.module-wrapper
         if module.isRendering
           a.menu__item(href="##{module.title.en}")= module.title.en
     .menu__socials
-      +socialIcons(menu_socials)(class="menu__social-item")
+      +socialIcons(menu_socials)(class="menu__social_icon")
   div#cm_darkenScreen.darkenScreen--hidden
 script.
   var menuToggler = document.getElementById('cm_menuToggle');

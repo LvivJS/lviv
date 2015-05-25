@@ -115,32 +115,25 @@
   }
 }
 
-.footer__social-item {
-  margin-top: 31px;
+.footer__social_icon {
+	margin: 31px 5px;
   &:hover {
-    background: $color__grayscale--13;
+    .path-1 {
+      fill: #383838;
+    }
   }
-  path {
-    fill: $color__grayscale--1;
+  .path-1 {
+    fill: $color__grayscale--6;
     transition: all 0.3s;
   }
+  .path-2 {
+    fill: $color__grayscale--1;
+  }
   @include bp(medium) {
-    width: 42px;
-    height: 42px;
-    margin: 40px 4.03864847325%;
-    background-color: $color__grayscale--4;
-    &:hover {
-      path {
-        fill: $color__grayscale--1;
-      }
-    }
+    margin: 41px 15px;
     svg {
-      height: 20px;
-      width: 20px;
-      margin: 11px;
-      path {
-        fill: $color__grayscale--7;
-      }
+      width: 40px;
+      height: 40px;
     }
   }
 }

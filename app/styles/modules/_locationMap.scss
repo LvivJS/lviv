@@ -19,7 +19,8 @@
 	position: absolute;
   left: $session-time-width;
   top: 31px;
-  width: 27.4666666667%;
+	max-width: 412px;
+	width: 100%;
   background: rgb(255, 255, 255);
   height: 221px;
   display: flex;
@@ -27,7 +28,6 @@
 	z-index: 1;
 	@include bp(medium) {
 		position: static;
-		width: 100%;
 		height: 150px;
 	}
 	@include bp(large) {
@@ -77,22 +77,19 @@
 }
 
 .loc-info__icon {
+	display: flex;
+	justify-content: center;
+	padding-top: 52px;
 	height: 100%;
-	width: 30.62136%;
-	margin-left: 1.6699%;
-	@include bp(medium) {
-		display: none;
-	}
-}
-
-.location__icon {
-	margin-top: 47px;
-	height: 62px;
-	width: 33.4px;
+	width: 130px;
+	margin-left: 2px;
 	transition: all 0.4s;
 	path {
-		fill: rgb(231, 209, 38);
+		fill: $color__primary;
 		transition: all 0.4s;
+	}
+	@include bp(medium) {
+		display: none;
 	}
 }
 
@@ -139,7 +136,7 @@
 		color: rgba(255, 255, 255, 0);
 		z-index: 0;
 	}
-	.location__icon {
-		margin-top: 5px;
+	.loc-info__icon {
+		padding-top: 9px;
 	}
 }

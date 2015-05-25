@@ -95,6 +95,18 @@
   }
 }
 
+.session__icon--minus {
+  path {
+    fill: #504e51;
+  }
+}
+
+.session__icon--plus {
+  path {
+    fill: #8e8e8e;
+  }
+}
+
 .session__time {
     width: $session-time-width;
     background: $color__grayscale--9;
