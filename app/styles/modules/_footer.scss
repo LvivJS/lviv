@@ -115,31 +115,39 @@
   }
 }
 
-.footer__social-item {
-  margin-top: 31px;
-  &:hover {
-    background: $color__grayscale--13;
-  }
-  path {
-    fill: $color__grayscale--1;
-    transition: all 0.3s;
-  }
+.footer__social_icon {
+	display: block;
+	width: 28px;
+	height: 27px;
+	margin: 31px 5px 0;
+  background-image: url('../images/social_networks_footer.png');
   @include bp(medium) {
-    width: 42px;
-    height: 42px;
-    margin: 40px 4.03864847325%;
-    background-color: $color__grayscale--4;
-    &:hover {
-      path {
-        fill: $color__grayscale--1;
+    width: 45px;
+    height: 40px;
+    margin: 41px 5px 0;
+    background-size: 474%;
+    &.social_icon--facebook {
+      background-position: 0px -42px;
+      &:hover {
+        background-position: 0px 0px;
       }
     }
-    svg {
-      height: 20px;
-      width: 20px;
-      margin: 11px;
-      path {
-        fill: $color__grayscale--7;
+    &.social_icon--twitter {
+      background-position: -57px -42px;
+      &:hover {
+        background-position: -57px 0px;
+      }
+    }
+    &.social_icon--google-plus {
+      background-position: -114px -42px;
+      &:hover {
+        background-position: -114px 0px;
+      }
+    }
+    &.social_icon--skype {
+      background-position: -169px -42px;
+      &:hover {
+        background-position: -169px 0px;
       }
     }
   }

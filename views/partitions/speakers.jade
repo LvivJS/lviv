@@ -24,7 +24,7 @@ script.
   var collapsedSpeakersHeight;
   
   //set collapsed .speakers height
-  (function() {
+  window.onload = function() {
     var viewport = document.documentElement.clientWidth;
     var fourthSpeaker = document.getElementsByClassName('speaker')[3];
     var speakersWrap = fourthSpeaker.parentNode;
@@ -35,7 +35,7 @@ script.
       speakersWrap.style.height = fourthSpeakerBottom - speakersWrap.offsetTop + 'px';
       collapsedSpeakersHeight = speakersWrap.style.height;
     }
-  })();
+  };
   
   (function() {
     var buttonText = {
