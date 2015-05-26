@@ -62,8 +62,8 @@ script.
   var activeClass = 'conference__tab--active';
   var tableHidden = 'table-hidden';
   var timetable = 'timetable';
-  var viewport = document.documentElement.clientWidth;
-  var menuHeight = document.getElementById('menu').offsetHeight;
+  var viewport;
+  var menuHeight;
   var list = document.querySelector('.conference > ul');
   var activeTab = list.querySelector('.' + activeClass);
   var conf = list.parentNode;
@@ -80,17 +80,31 @@ script.
     });
   })();
   
-  if (viewport <= #{config.breakPoint}) {
-    //fix tabs on scroll for small devices
-    window.addEventListener('scroll', fixTabs);
-  } else {
-    //show proper tab
-    activeTab.onclick();
+  window.onresize = fixTabsOrNot;
+  
+  fixTabsOrNot();
+  
+  function fixTabsOrNot() {
+    viewport = window.innerWidth;
+    
+    if (viewport <= #{config.breakPoint}) {
+      //fix tabs on scroll for small devices
+      window.addEventListener('scroll', fixTabs);
+      fixTabs();
+      Array.prototype.forEach.call(tables, function(item, i) {
+        item.classList.remove(tableHidden);
+      });
+    } else {
+      //show proper tab
+      activeTab.onclick();
+      resetList();
+    }
   }
   
-  function changeTab(el) {
-    //this variables should be created here to specify exactly current conference
   
+  function changeTab(el) {
+    viewport = window.innerWidth;
+    menuHeight = document.getElementById('menu').offsetHeight;
     //make li active if it is not
     if (viewport > #{config.breakPoint}) {
         el.classList.add(activeClass);
@@ -135,7 +149,6 @@ script.
           icon.setAttribute('class', svgClassName.replace(' invisible', ''));
         }
       }
-      
     });
     about.classList.toggle('invisible');
     sessionTime.classList.toggle('session__time--about-expanded');
@@ -150,6 +163,10 @@ script.
     var confTopPos = conf.offsetTop;
     var confHeight = conf.offsetHeight;
     var confBottom = confTopPos + confHeight;
+    
+    viewport = window.innerWidth;
+    menuHeight = document.getElementById('menu').offsetHeight;
+    
     var tablesTopPoss = Array.prototype.map.call(tables, function(table) {
       return table.offsetTop;
     });
@@ -188,9 +205,8 @@ script.
         resetList();
       }
     }
-  
-    function resetList() {
-      conf.style.paddingTop = '0px';
-      list.classList.remove('list-fixed');
-    }
+  }
+  function resetList() {
+    conf.style.paddingTop = '0px';
+    list.classList.remove('list-fixed');
   }

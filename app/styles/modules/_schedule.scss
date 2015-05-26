@@ -137,7 +137,9 @@
 }
 
 .session__time--about-expanded {
-  color: #504e51;
+  @include bp(medium) {
+    color: #504e51;
+  }
 }
 
 .session--entertainment {
