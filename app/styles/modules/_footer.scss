@@ -90,12 +90,11 @@
   margin: 35px 12px 0;
   color: $color__grayscale--6;
   font-size: $font__size--2;
+  font-weight: 400;
   @include bp(medium) {
     margin: 28px 0 0 5.34759358289%;
     text-align: left;
     font-size: $font__size--1;
-    font-weight: 500;
-    color: #D6D6D5;
   }
 }
 
