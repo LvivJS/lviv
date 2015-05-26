@@ -121,10 +121,11 @@ script.
     var session = el.parentNode.parentNode;
     var about = session.getElementsByClassName('session__about')[0];
     var icons = session.getElementsByClassName('session__icon');
+    var sessionTime = session.getElementsByClassName('session__time')[0];
   
     Array.prototype.forEach.call(icons, function(icon, idx, arr) {
       if (typeof icon.classList !== 'undefined') {
-        icon.classList.toggle('invisible');
+        icon.classList.toggle('invisible');        
       } else {
         //IE does not support classList for SVG elements
         var svgClassName = icon.getAttribute('class');
@@ -137,6 +138,7 @@ script.
       
     });
     about.classList.toggle('invisible');
+    sessionTime.classList.toggle('session__time--about-expanded');
   }
   
   function fixTabs() {

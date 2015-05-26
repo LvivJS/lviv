@@ -118,7 +118,7 @@
     @include bp(medium) {
       width: 88.2352941176%;
       background: none;
-      color: #565656;
+      color: #8e8e8e;
       text-align: left;
       margin-left: 11.7647058824%;
       margin-top: 4px;
@@ -135,6 +135,11 @@
         margin: 0 6px;
     }
 }
+
+.session__time--about-expanded {
+  color: #504e51;
+}
+
 .session--entertainment {
   .session__time {
     color: $color__primary;
