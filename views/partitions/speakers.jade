@@ -18,7 +18,7 @@ if speakers
     div.speakers
       each speaker in speakers.data
         +speaker(speaker)
-    .speakers__expand-button
+    .speakers__expand-button See all speakers >>
 script.
   //store collapsed .speakers height
   var collapsedSpeakersHeight;
@@ -38,25 +38,14 @@ script.
   };
   
   (function() {
-    var buttonText = {
-      collapsed: 'See all speakers >>',
-      expanded: 'Hide speakers <<'
-    }
   
     var sreakersButton = document.querySelector('.speakers__expand-button');
-    sreakersButton.innerHTML = buttonText.collapsed;
   
     sreakersButton.onclick = function(e) {
       var speakersWrap = e.target.previousSibling;
-      toggleSpeakers(speakersWrap, buttonText, sreakersButton);
-      //this function is located in schedule.jade
+      var speakers = sreakersButton.previousSibling;
+      
+      speakers.style.height = 'auto';
+      speakersWrap.parentNode.removeChild(sreakersButton);
     };
   })();
-  
-  function toggleSpeakers(el, text, button) {
-    var isExpanded = el.classList.contains('speakers__expanded');
-    var speakers = button.previousSibling;
-    button.innerHTML = !isExpanded ? text.expanded : text.collapsed;
-    speakers.style.height = !isExpanded ? 'auto' : collapsedSpeakersHeight;
-    el.classList.toggle('speakers__expanded');
-  }
