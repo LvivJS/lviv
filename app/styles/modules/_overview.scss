@@ -16,13 +16,19 @@
     }
 }
 
+.main-logo {
+  position: absolute;
+  top: 75px;
+  left: 7.5%;
+  @include bp(medium) {
+    display: none;
+  }
+}
+
 .main-header {
   color: #f7df1e;
   text-transform: capitalize;
   text-align: right;
-  z-index: 1;
-  background: url('../images/logo.png') left top no-repeat;
-  background-size: 16.18182%;
   background-color: $color__main-header-background;
   width: 55%;
   font-size: $font__size--7;
@@ -41,6 +47,7 @@
   background-size: 100% auto;
   height: inherit;
   flex-direction: column;
+  position: relative;
 }
 
 .overview__infoBlock {

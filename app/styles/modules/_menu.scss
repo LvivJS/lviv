@@ -127,6 +127,17 @@
 	}
 }
 
+.menu-logo {
+  display: none;
+	@include bp(medium) {
+		display: block;
+		position: absolute;
+		top: 8px;
+		left: 7px;
+		width: 69px;
+	}
+}
+
 .menu-header {
 	display: none;
 	@include bp(medium) {
@@ -134,8 +145,6 @@
 		position: absolute;
 		color: $color__grayscale--13;
 		text-transform: capitalize;
-		background: url('../images/logo.png') 7px 8px no-repeat;
-		background-size: 69px;
     width: 100%;
     max-width: 240px;
     font-size: 26px;
