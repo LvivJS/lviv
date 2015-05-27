@@ -1,12 +1,6 @@
 #registration {
   height: 459px;
-  background: repeat linear-gradient(
-    -45deg,
-    rgb(231, 209, 38),
-    rgb(231, 209, 38) 49%,
-    rgb(216, 195, 35) 49%,
-    rgb(216, 195, 35) 50%,
-    rgb(231, 209, 38) 51%);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAPklEQVQYV2N8flHtPwMO8PHTXwZGXApAkvx8zNgVwCRBBmOYgCyJoQBdEkUBNkm4AlySYAU3Div/B7kWFwAABzMr0U4Mid0AAAAASUVORK5CYII=);
   background-size: 8px 8px;
   margin-bottom: 31px;
   @include bp(medium) {
