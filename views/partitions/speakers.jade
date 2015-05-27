@@ -19,33 +19,3 @@ if speakers
       each speaker in speakers.data
         +speaker(speaker)
     .speakers__expand-button See all speakers >>
-script.
-  //store collapsed .speakers height
-  var collapsedSpeakersHeight;
-  
-  //set collapsed .speakers height
-  window.onload = function() {
-    var viewport = document.documentElement.clientWidth;
-    var fourthSpeaker = document.getElementsByClassName('speaker')[3];
-    var speakersWrap = fourthSpeaker.parentNode;
-    var fourthSpeakerTop = fourthSpeaker.offsetTop;
-    var fourthSpeakerBottom = fourthSpeakerTop + fourthSpeaker.offsetHeight;
-  
-    if (viewport <= #{config.breakPoint}) {
-      speakersWrap.style.height = fourthSpeakerBottom - speakersWrap.offsetTop + 'px';
-      collapsedSpeakersHeight = speakersWrap.style.height;
-    }
-  };
-  
-  (function() {
-  
-    var sreakersButton = document.querySelector('.speakers__expand-button');
-  
-    sreakersButton.onclick = function(e) {
-      var speakersWrap = e.target.previousSibling;
-      var speakers = sreakersButton.previousSibling;
-      
-      speakers.style.height = 'auto';
-      speakersWrap.parentNode.removeChild(sreakersButton);
-    };
-  })();

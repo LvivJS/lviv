@@ -29,7 +29,7 @@
         padding: 0 7px;
         border: none;
       }
-      li {
+      .conference__tab {
         list-style: none;
         background-color: $color__grayscale--5;
         cursor: pointer;
@@ -43,19 +43,19 @@
         line-height: 44px;
         font-size: 1.16em;
         position: relative;
+        &:hover {
+          background: $color__grayscale--6;
+        }
         @include bp(medium) {
           height: 44px;
           width: 117px;
         }
       }
-      li.conference__tab--active {
+      .conference__tab--active {
         background-color: $color__primary;
       }
-      li.conference__tab--active:hover {
+      .conference__tab--active:hover {
         background-color: $color__primary;
-      }
-      li:hover {
-        background: $color__grayscale--6;
       }
     }
 }

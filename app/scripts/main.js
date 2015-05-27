@@ -5,3 +5,9 @@ var locationMap = require('./modules/locationMap.js');
 var registration = require('./modules/registration.js');
 var schedule = require('./modules/schedule.js');
 var speakers = require('./modules/speakers.js');
+
+menu();
+locationMap();
+registration();
+schedule();
+speakers();
