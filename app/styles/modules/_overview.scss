@@ -44,7 +44,7 @@
 .overview-wrap {
   @include container-int;
   background: url('../images/header_picture.jpg');
-  background-size: 100% auto;
+  background-size: cover;
   height: inherit;
   flex-direction: column;
   position: relative;
