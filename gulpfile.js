@@ -18,11 +18,11 @@ var runSequence = require('run-sequence');
 var del = require('del');
 var reactify = require('reactify');
 var imagemin = require('gulp-imagemin');
-var jsxcs = require('gulp-jsxcs');
 var autoprefixer = require('gulp-autoprefixer');
 var jpegoptim = require('imagemin-jpegoptim');
 var _ = require('underscore');
 var copy = new (require('task-copy'));
+var jscs = require('gulp-jscs');
 
 var env = process.env.NODE_ENV || 'development';
 var isProd = env === 'production';
@@ -103,7 +103,7 @@ gulp.task('json_move', function() {
 });
 //code healthiness
 gulp.task('scripts_styleguide', function () {
-  return gulp.src(paths.jsFiles).pipe(jsxcs());
+  return gulp.src(paths.jsFiles).pipe(jscs());
 });
 
 //BROWSERIFY
