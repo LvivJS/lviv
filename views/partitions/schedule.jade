@@ -49,12 +49,12 @@ if schedule
     .schedule
       each conference in schedule.data
         .conference
-          ul
+          ul.conference__tabs
             each day, indx in conference.days
               if (indx == 0)
-                li.conference__tab.conference__tab--active=  moment(day.day_info).format('MMM DD')
+                li.tabs__item.tabs__item--active=  moment(day.day_info).format('MMM DD')
               else
-                li.conference__tab=  moment(day.day_info).format('MMM DD')
+                li.tabs__item=  moment(day.day_info).format('MMM DD')
           each day, indx in conference.days
             .timetable
               +table(day.timetable)

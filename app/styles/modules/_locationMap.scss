@@ -1,34 +1,24 @@
 #googleMap {
-	width: 100%;
-	height: 626px;
-	z-index: -1;
 	@include bp(medium) {
 		height: 254px;
 		z-index: 0;
 	}
+	height: 626px;
+	width: 100%;
+	z-index: -1;
 }
 #locations {
-	position: relative;
 	@include bp(medium) {
 		display: flex;
 		flex-direction: column;
 	}
+	position: relative;
 }
 
 .loc-info {
-	position: absolute;
-  left: $session-time-width;
-  top: 31px;
-	max-width: 412px;
-	width: 100%;
-  background: rgb(255, 255, 255);
-  height: 221px;
-  display: flex;
-	transition: all 0.4s;
-	z-index: 1;
 	@include bp(medium) {
-		position: static;
 		height: 150px;
+		position: static;
 	}
 	@include bp(large) {
 		cursor: pointer;
@@ -39,79 +29,89 @@
 			}
 		}
 	}
-
+	background: rgb(255, 255, 255);
+	display: flex;
+	height: 221px;
+	left: $session-time-width;
+	max-width: 412px;
+	position: absolute;
+  top: 31px;
+	transition: all 0.4s;
+	width: 100%;
+	z-index: 1;
 }
 
 .loc-info__text {
-	font-size: $font__size--2;
-	color: $color__grayscale--9;
-	font-weight: 400;
-	flex-grow: 1;
-	text-align: right;
 	@include bp(medium) {
 		text-align: center;
 	}
 	span {
-		width: 100%;
-		display: block;
-		font-size: 1.07em;
-		line-height: 1.46em;
 		@include bp(medium) {
 			font-size: $font__size--2;
 			font-weight: 500;
 			line-height: 25px;
 		}
+		display: block;
+		font-size: 1.07em;
+		line-height: 1.46em;
+		width: 100%;
 	}
+	color: $color__grayscale--9;
+	flex-grow: 1;
+	font-size: $font__size--2;
+	font-weight: 400;
+	text-align: right;
 }
 
 .loc-info__text > h2.module-header {
-	transition: margin 0.4s, padding 0.4s, color 0.1s;
-	justify-content: flex-end;
-	padding: 42px 3px 46px 0;
 	@include bp(medium) {
-		text-align: center;
-		margin: 0;
 		justify-content: center;
+		margin: 0;
 		padding: 22px 0 24px;
+		text-align: center;
 	}
+	justify-content: flex-end;
+	transition: margin 0.4s, padding 0.4s, color 0.1s;
+	padding: 42px 3px 46px 0;
 }
 
 .loc-info__icon {
-	display: flex;
-	justify-content: center;
-	padding-top: 52px;
-	height: 100%;
-	width: 130px;
-	margin-left: 2px;
-	transition: all 0.4s;
+	@include bp(medium) {
+		display: none;
+	}
 	path {
 		fill: $color__primary;
 		transition: all 0.4s;
 	}
-	@include bp(medium) {
-		display: none;
-	}
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	margin-left: 2px;
+	padding-top: 52px;
+	transition: all 0.4s;
+	width: 130px;
 }
 
 .location__control {
-		margin: 10px;
-    padding: 5px 14px 5px 14px;
-    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
-    border-radius: 2px;
-    background-color: $color__grayscale--1;
-	  text-align: center;
-	  z-index: 0;
-	  position: absolute;
-		right: 0;
-	  bottom: 10px;
+	background-color: $color__grayscale--1;
+	border-radius: 2px;
+	bottom: 10px;
+	box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+	margin: 10px;
+  padding: 5px 14px 5px 14px;
+	position: absolute;
+	right: 0;
+  text-align: center;
+	z-index: 0;
 }
+
 .location__controlText {
+	&:hover {
+		text-decoration:underline;
+	}
+	color: $color__link;
 	display: block;
 	z-index: 1;
-	color: $color__link;
-}
-.location__controlText:hover {
-	text-decoration:underline;
 }
 
 .loc-wrap {
@@ -119,9 +119,6 @@
 }
 
 .loc-info--min {
-	height: 73px;
-  top: 470px;
-  left: 0;
 	&+ #googleMap {
 		z-index: 0;
 	}
@@ -129,14 +126,17 @@
 		margin-top: 13px;
 	}
 	.loc-info__text > h2.module-header {
+		color: rgba(255, 255, 255, 0);
 		height: 0;
 		margin: 0;
 		padding: 0;
 		visibility: hidden;
-		color: rgba(255, 255, 255, 0);
 		z-index: 0;
 	}
 	.loc-info__icon {
 		padding-top: 9px;
 	}
+	height: 73px;
+	left: 0;
+  top: 470px;
 }

@@ -1,112 +1,110 @@
 #registration {
-  height: 459px;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAPklEQVQYV2N8flHtPwMO8PHTXwZGXApAkvx8zNgVwCRBBmOYgCyJoQBdEkUBNkm4AlySYAU3Div/B7kWFwAABzMr0U4Mid0AAAAASUVORK5CYII=);
-  background-size: 8px 8px;
-  margin-bottom: 31px;
   @include bp(medium) {
     height: auto;
     margin-bottom: 4px;
   }
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAPklEQVQYV2N8flHtPwMO8PHTXwZGXApAkvx8zNgVwCRBBmOYgCyJoQBdEkUBNkm4AlySYAU3Div/B7kWFwAABzMr0U4Mid0AAAAASUVORK5CYII=);
+  background-size: 8px 8px;
+  height: 459px;
+  margin-bottom: 31px;
 }
 
 .registration > h2.module-header {
-  padding: 40px 0px 31px;
   @include bp(medium) {
     padding: 36px 0 25px;
   }
+  padding: 40px 0px 31px;
 }
 
 .registration {
-    @include container-int;
-    justify-content:center;
+  @include container-int;
+  @include bp(medium) {
+    height: 100%;
+    margin: 0;
+  }
+  form {
+    justify-content: space-between;
     flex-direction: column;
-    justify-content: flex-start;
-    background: $color__grayscale--1;
-    max-width: 398px;
-    width: 100%;
-    margin: 0 2px 2px 0;
-    height: 394px;
-    form {
-      justify-content: space-between;
-      flex-direction: column;
-      display: flex;
-      align-items: center;
-    }
-    @include bp(medium) {
-      height: 100%;
-      margin: 0;
-    }
+    display: flex;
+    align-items: center;
+  }
+  background: $color__grayscale--1;
+  flex-direction: column;
+  height: 394px;
+  justify-content: flex-start;
+  margin: 0 2px 2px 0;
+  max-width: 398px;
+  width: 100%;
 }
 
 .registration__field {
   @include container-ext;
-  flex-direction: row;
-  margin-top: 10px;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  span {
-    width: 100%;
-    text-align: center;
-  }
   @include bp(medium) {
     margin-top: 3px;
     width: 100%;
   }
   &:last-child {
-    width: 304px;
     @include bp(medium) {
       margin-top: 17px;
     }
+    width: 304px;
   }
+  span {
+    width: 100%;
+    text-align: center;
+  }
+  flex-direction: row;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
+
 .label-regInput {
-  width: 60px;
   background: $color__grayscale--2;
-  text-transform: capitalize;
-  height: 40px;
-  padding-left: 7px;
+  border-bottom: 1px solid $color__grayscale--3;
+  border-left: 1px solid $color__grayscale--3;
+  border-top: 1px solid $color__grayscale--3;
+  color: #A6A6A6;
   font-weight: 500;
   font-size: $font__size--1;
+  height: 40px;
   line-height: 41px;
-  text-align: left;
-  color: #A6A6A6;
-  border-top: 1px solid $color__grayscale--3;
-  border-left: 1px solid $color__grayscale--3;
-  border-bottom: 1px solid $color__grayscale--3;
   order: 0;
+  padding-left: 7px;
+  text-align: left;
+  text-transform: capitalize;
+  width: 60px;
 }
 
 .registration__input {
-  color: $color__grayscale--9;
-  outline: none;
-  background: $color__grayscale--2;
-  width: 244px;
-  height: 40px;
-  border-top: 1px solid $color__grayscale--3;
-  border-right: 1px solid $color__grayscale--3;
-  border-bottom: 1px solid $color__grayscale--3;
-  border-left: none;
-  order: 1;
-  padding: 4px 0 0px 10px;
-  font-size: $font__size--2;
-  font-weight: 400;
   @include bp(medium) {
     width: 213px;;
   }
-}
-
-.registration__input:focus {
-  background: $color__grayscale--1;
-  border-width: 2px;
-  border-color: $color__primary;
-
-  &+.label-regInput {
+  &:focus {
+    &+.label-regInput {
+      background: $color__grayscale--1;
+      border-color: $color__primary;
+      border-width: 2px;
+      line-height: 39px;
+      padding-left: 6px;
+    }
     background: $color__grayscale--1;
-    border-width: 2px;
     border-color: $color__primary;
-    padding-left: 6px;
-    line-height: 39px;
+    border-width: 2px;
   }
+  background: $color__grayscale--2;
+  border-bottom: 1px solid $color__grayscale--3;
+  border-left: none;
+  border-right: 1px solid $color__grayscale--3;
+  border-top: 1px solid $color__grayscale--3;
+  color: $color__grayscale--9;
+  font-size: $font__size--2;
+  font-weight: 400;
+  height: 40px;
+  order: 1;
+  outline: none;
+  padding: 4px 0 0px 10px;
+  width: 244px;
 }
 
 .registration__input[type="email"], #cm_email {
@@ -114,51 +112,25 @@
   text-decoration: underline;
 }
 
-input, label {
-  vertical-align: middle;
-}
-
 .registration__input--invalid {
-  background: #FF6969;
-  color: #fff;
   &:focus {
     color: $color__grayscale--9;;
     &+label {
       color: #A6A6A6;
     }
   }
+  background: #FF6969;
+  color: #fff;
 }
 
 .registration__tip{
-  display: block;
   color: $color__grayscale--4;
   font-size: $font__size--1;
-  order: 2;
   margin-bottom: -5px;
-}
-.registration__tip.invisible{
-    display:none
+  order: 2;
 }
 
 .registration__submit {
-  outline: none;
-  font-size: $font__size--3;
-  line-height: 1.05em;
-  font-weight: 700;
-  color: $color__grayscale--1;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  background-color: $color__reg-btn;
-  text-transform: capitalize;
-  width: 304px;
-  height: 46px;
-  margin-bottom: 51px;
-  margin-top: 24px;
-  margin-left: 1px;
-  z-index: 1;
-  border-radius: 5px;
-  box-shadow: 0 4px $color__reg-btn-shad;
   @include bp(medium) {
     margin: 0;
     width: 273px;
@@ -172,13 +144,29 @@ input, label {
     top: 4px;
     box-shadow: none;
   }
+  background-color: $color__reg-btn;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px $color__reg-btn-shad;
+  color: $color__grayscale--1;
+  cursor: pointer;
+  font-size: $font__size--3;
+  font-weight: 700;
+  height: 46px;
+  line-height: 1.05em;
+  margin:24px 0 51px 1px;
+  outline: none;
+  text-align: center;
+  text-transform: capitalize;
+  width: 304px;
+  z-index: 1;
 }
 
 .regist-resp {
-  color: $color__grayscale--1;
-  font-size: $font__size--6;
-  display: flex;
   align-items: center;
-  text-shadow: 0 1px 4px #745400;
+  color: $color__grayscale--1;
+  display: flex;
+  font-size: $font__size--6;
   height: 282px;
+  text-shadow: 0 1px 4px #745400;
 }

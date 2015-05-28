@@ -1,20 +1,21 @@
 .footer {
   @include container-ext;
-  background: #383838;
-  position: relative;
   @include bp(medium) {
-    padding-top: 125px;
     background: none;
     margin-top: 13px;
+    padding-top: 125px;
   }
+  background: #383838;
+  position: relative;
+
 }
 
 .footer__container {
   @include container-int;
-  justify-content: space-between;
   @include bp(medium) {
     flex-direction: column;
   }
+  justify-content: space-between;
 }
 
 
@@ -23,7 +24,6 @@
 }
 
 .footer__block {
-  margin: 78px 9px 70px;
   @include bp(medium) {
     &:first-child {
       margin: 39px 5.61497326203% 0;
@@ -33,34 +33,35 @@
     }
     margin: 37px 5.34759358289% 0;
   }
+  margin: 78px 9px 70px;
 }
 
 .block__header {
   color: $color__grayscale--1;
   font-size: $font__size--2;
-  text-align: left;
   font-weight: 500;
+  text-align: left;
 }
 
 .block__contact {
+  @include bp(medium) {
+    margin-top: 17px;
+  }
   display: flex;
   flex-direction: column;
   margin-top: 24px;
   text-align: left;
-  @include bp(medium) {
-    margin-top: 17px;
-  }
 }
 
 .block__contact__name,
 .block__contact__phone,
 .block__contact__email {
-  margin-bottom: 5px;
   font-size: $font__size--1;
+  margin-bottom: 5px;
   @include bp(medium) {
-    margin-bottom: 0;
     font-size: $font__size--1;
     line-height: 17px;
+    margin-bottom: 0;
   }
 }
 
@@ -76,46 +77,52 @@
 
 
 .footer__copyright {
-  width: 100%;
-  background: $color__grayscale--1;
-  display: flex;
-  justify-content: center;
-  height: 97px;
   @include bp(medium) {
     height: 67px;
   }
+  background: $color__grayscale--1;
+  display: flex;
+  height: 97px;
+  justify-content: center;
+  width: 100%;
 }
 
 .copyright__text {
-  margin: 35px 12px 0;
+  @include bp(medium) {
+    font-size: $font__size--1;
+    margin: 28px 0 0 5.34759358289%;
+    text-align: left;
+  }
   color: $color__grayscale--6;
   font-size: $font__size--2;
   font-weight: 400;
-  @include bp(medium) {
-    margin: 28px 0 0 5.34759358289%;
-    text-align: left;
-    font-size: $font__size--1;
-  }
+  margin: 35px 12px 0;
 }
 
 .footer__socials {
-  display: flex;
-  margin-right: 8px;
   @include bp(medium) {
+    border-top: 2px solid #DFDFDF;
+    display: flex;
+    height: 125px;
+    justify-content: center;
+    margin: 0 2%;
+    padding-left: 1.01257875964%;
     position: absolute;
     top: 0;
-    margin: 0 2%;
-    display: flex;
-    justify-content: center;
     width: 96%;
-    height: 125px;
-    border-top: 2px solid #DFDFDF;
-    padding-left: 1.01257875964%;
   }
+  display: flex;
+  margin-right: 8px;
 }
 
 .footer__social_icon {
-	margin: 31px 5px;
+  @include bp(medium) {
+    margin: 41px 15px;
+    svg {
+      height: 40px;
+      width: 40px;
+    }
+  }
   &:hover {
     .path-1 {
       fill: #383838;
@@ -128,11 +135,5 @@
   .path-2 {
     fill: $color__grayscale--1;
   }
-  @include bp(medium) {
-    margin: 41px 15px;
-    svg {
-      width: 40px;
-      height: 40px;
-    }
-  }
+  margin: 31px 5px;
 }

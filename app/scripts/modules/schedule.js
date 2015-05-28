@@ -4,12 +4,12 @@ var config = require('../config');
 var utilities = require('../utilities');
 
 function schedule() {
-  var activeClass = 'conference__tab--active';
-  var tableHidden = 'table-hidden';
+  var activeClass = 'tabs__item--active';
+  var invisible = 'invisible';
   var timetable = 'timetable';
   var viewport;
   var menuHeight;
-  var list = document.querySelector('.conference > ul');
+  var list = document.getElementsByClassName('conference__tabs')[0];
   var tabs = list.childNodes;
   var activeTab = list.querySelector('.' + activeClass);
   var conf = list.parentNode;
@@ -49,7 +49,7 @@ function schedule() {
       window.addEventListener('scroll', fixTabs);
       fixTabs();
       Array.prototype.forEach.call(tables, function(item, i) {
-        item.classList.remove(tableHidden);
+        item.classList.remove(invisible);
       });
     } else {
       //show proper tab
@@ -70,7 +70,7 @@ function schedule() {
     Array.prototype.forEach.call(tabs, function(item, i) {
 
       if (viewport > config.breakPoint) {
-        tables[i].classList.add(tableHidden);
+        tables[i].classList.add(invisible);
       }
       //remove active class is item was active before click
       if (item !== el) {
@@ -79,7 +79,7 @@ function schedule() {
       //show table with the same index as active tab
       if (item == el) {
         if (viewport > config.breakPoint) {
-          tables[i].classList.remove(tableHidden);
+          tables[i].classList.remove(invisible);
         } else {
           var targetScroll = tables[i].offsetTop - menuHeight - list.offsetHeight;
 

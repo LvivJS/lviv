@@ -1,14 +1,14 @@
 .partners {
-@include container-int;
-	margin-top: 12px;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-
+	@include container-int;
 	@include bp(medium) {
 		padding: 0 2%;
 	}
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 12px;
 }
+
 #partners {
 	margin-bottom: 44px;
 }
@@ -20,70 +20,67 @@
 }
 
 .partners__category {
-	display: flex;
-	flex-direction: column;
-	margin-top: 11px;
 	@include bp(medium) {
 		flex-direction: row;
 		flex-wrap: nowrap;
 	}
+	display: flex;
+	flex-direction: column;
+	margin-top: 11px;
 }
 
 .partners__category:nth-child(2) .partners__items {
-	margin-top: -31px;
-	margin-bottom: -6px;
+	margin: -31px 0 -6px;
 }
 
 .partners__category-header {
-	color: $color__partners-header;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: $font__size--3;
-	z-index: 1;
-	width: 100%;
-	margin: 30px 0px;
 	@include bp(medium) {
 		display: none;
 	}
+	color: $color__partners-header;
+	font-weight: 700;
+	font-size: $font__size--3;
+	margin: 30px 0px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	z-index: 1;
 }
 
 .partners__items {
+	align-content: flex-start;
+	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-content: flex-start;
+	margin: 11px 0 34px;
 	width: 100%;
-	margin-top: 11px;
-	margin-bottom: 34px;
-	align-items: center;
-
-
 }
 
 //this styles are specific to square images
 a[title="Lohika Systems"],
 a[title="Remit"],
 a[title="Team International"] {
-	background-size: cover;
-	height: 177px;
-	margin: -50px 0;
 	@include bp(medium) {
 		height: 88px;
 	}
+	background-size: cover;
+	height: 177px;
+	margin: -50px 0;
 }
+
 .partners__item-link {
-	display: inline-block;
-	margin: 0 20px;
-	height: 55px;
-	width: 172px;
+	@include bp(medium) {
+		margin: 11px 3px;
+		width: 27%;
+	}
+	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	background-position: center center;
-	@include bp(medium) {
-		width: 27%;
-    margin: 11px 3px;
-	}
+	display: inline-block;
+	height: 55px;
+	margin: 0 20px;
+	width: 172px;
 }
 
 .partners__category:first-of-type > .partners__items {
