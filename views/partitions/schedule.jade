@@ -45,16 +45,14 @@ mixin table(data)
 //is not defined for module if isRendering==false
 if schedule
   section#schedule.page-wrap
-    h2.module-header= schedule.locales.title
+    h2.module-header= schedule.title
     .schedule
-      each conference in schedule.data
-        .conference
-          ul.conference__tabs
-            each day, indx in conference.days
-              if (indx == 0)
-                li.tabs__item.tabs__item--active=  moment(day.day_info).format('MMM DD')
-              else
-                li.tabs__item=  moment(day.day_info).format('MMM DD')
-          each day, indx in conference.days
-            .timetable
-              +table(day.timetable)
+      ul.conference__tabs
+        each day, indx in schedule.days
+          if (indx == 0)
+            li.tabs__item.tabs__item--active=  moment(day.day_info).format('MMM DD')
+          else
+            li.tabs__item=  moment(day.day_info).format('MMM DD')
+      each day, indx in schedule.days
+        .timetable
+          +table(day.timetable)

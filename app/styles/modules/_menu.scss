@@ -15,7 +15,7 @@
 }
 
 //set margim to next element after menu equals to menu height
-.overview {
+#menu + section.page-wrap {
 	@include bp(medium) {
 		margin-top: $toggle-button__height;
 	}

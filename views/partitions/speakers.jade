@@ -6,8 +6,6 @@ mixin speaker(speaker)
       h3.speaker__name= speaker.name
       div.speaker__pos= speaker.position
       div.speaker__about= speaker.about
-        div.speaker__contacts
-         +socialIcons(speaker.contact)(class="speaker__contact")
 
 //data is pushed to template only if isRendering==true in config.js
 //next two lines are to prevent error because data is not defined for module

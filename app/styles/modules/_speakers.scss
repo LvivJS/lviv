@@ -85,27 +85,6 @@
   text-align: left;
 }
 
-.speaker__contacts {
-  .social__icon {
-    display: none;
-    fill: #A9ACAE;
-  }
-  display: none;
-  flex-wrap: wrap;
-}
-
-.speaker__contact {
-  &:hover .social__icon {
-    fill:$color__primary;
-  }
-  svg.social_icons {
-    height:20px;
-    width:20px;
-  }
-  display: block;
-  margin:5px;
-}
-
 .speakers__expand-button {
   @include bp(medium) {
     &:hover {

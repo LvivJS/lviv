@@ -15,7 +15,7 @@ function locMap() {
   var clientHeight = document.documentElement.clientHeight;
   var menuHeight = document.getElementById('menu').offsetHeight;
   document.onscroll = function() {
-    var parent = document.getElementById('locations');
+    var parent = document.getElementById('location');
     var el = parent.firstChild;
     if (window.pageYOffset < parent.offsetTop - clientHeight ||
     window.pageYOffset >= (parent.offsetTop + parent.offsetHeight) - menuHeight) {

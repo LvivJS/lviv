@@ -5,5 +5,6 @@
   "Email_placeHolder": "e-mail",
   "Email_err": "Будь ласка введіть правильний e-mail",
   "Phone_placeHolder": "Номер телефону",
-  "Phone_err": "Повинен бути хоча б 4 символи завдовжки."
+  "Phone_err": "Повинен бути хоча б 4 символи завдовжки.",
+  "button_text": "send"
 }

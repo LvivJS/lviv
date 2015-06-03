@@ -114,13 +114,10 @@ function schedule() {
 
   function fixTabs() {
     var bodyScrlPos = document.body.scrollTop || document.documentElement.scrollTop;
-    var schedule = conf.parentNode;
+    var schedule = conf;
     var scheduleHeight = schedule.offsetHeight;
     var scheduleTop = schedule.offsetTop;
     var scheduleBottom = scheduleHeight + scheduleTop;
-    var confTopPos = conf.offsetTop;
-    var confHeight = conf.offsetHeight;
-    var confBottom = confTopPos + confHeight;
 
     viewport = window.innerWidth;
     menuHeight = document.getElementById('menu').offsetHeight;
@@ -131,7 +128,7 @@ function schedule() {
     tablesTopPoss.push(scheduleBottom);
 
     if (viewport <= config.breakPoint) {
-      if (bodyScrlPos >= confTopPos - menuHeight) {
+      if (bodyScrlPos >= scheduleTop - menuHeight) {
         if (bodyScrlPos <= (scheduleBottom - menuHeight)) {
 
           //this chunk is for fixing tabs on scroll

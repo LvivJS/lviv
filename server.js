@@ -18,6 +18,7 @@ data.footer = require('./app/locales/en/footer.json');
 data.menu_socials = require('./app/locales/en/menu_socials.json');
 data.moment = app.locals.moment;
 data.connect = JSON.stringify(require('./app/scripts/db_connector.js'));
+data.menuItms = [];
 
 //get data only for (isRendering == true) modules
 data.config.modules.forEach(function(module) {
@@ -25,6 +26,12 @@ data.config.modules.forEach(function(module) {
     var mod = module.component;
     var path = './app/locales/en/' + mod + '.json';
     data[mod] = require(path);
+    var menuItem = {
+      component: module.component.toLowerCase(),
+      title: data[mod].title
+    };
+
+    data.menuItms.push(menuItem);
   }
 });
 

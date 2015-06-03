@@ -7,7 +7,7 @@
 	width: 100%;
 	z-index: -1;
 }
-#locations {
+#location {
 	@include bp(medium) {
 		display: flex;
 		flex-direction: column;

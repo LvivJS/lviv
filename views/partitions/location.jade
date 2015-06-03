@@ -4,13 +4,14 @@
 //data is pushed to template only if isRendering==true in config.js
 //next two lines are to prevent error because data is not defined for module
 //if isRendering==false
-if location && overview
-  section#locations.page-wrap
+if location
+  section#location.page-wrap
     .loc-info
       .loc-info__text
         h2.module-header= location.title
-        span= overview.address
-        span= overview.location.split(',')[0]+', '+overview.region+', '+overview.location.split(' ')[1]
+        if overview
+          span= overview.address
+          span= overview.location.split(',')[0]+', '+overview.region+', '+overview.location.split(' ')[1]
       .loc-info__icon
         +icon('location')(class="location__icon")
     div#googleMap.location
