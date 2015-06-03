@@ -142,16 +142,15 @@
 .menu-header {
 	@include bp(medium) {
 		color: $color__grayscale--13;
-		display: block;
-		font-size: 26px;
-    font-weight: 700;
-		line-height: 31px;
-		max-width: 240px;
-		padding: 10px 0 3px 32%;
-		position: absolute;
-		text-align: left;
-		text-transform: capitalize;
-    width: 100%;
+	  display: block;
+	  font-size: 26px;
+	  font-weight: 700;
+	  line-height: 31px;
+	  width: 100%;
+	  max-width: 135px;
+	  margin: 10px 0 3px 32%;
+	  position: absolute;
+	  text-align: left;
 	}
 	display: none;
 }
