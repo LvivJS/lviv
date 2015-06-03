@@ -36,34 +36,22 @@ var config = {
   },
   modules: [
     {
-      component: 'overview',
-      isRendering: true,
-      order: 0
+      component: 'overview'
     },
     {
-      component: 'speakers',
-      isRendering: true,
-      order: 1
+      component: 'speakers'
     },
     {
-      component: 'schedule',
-      isRendering: true,
-      order: 2
+      component: 'schedule'
     },
     {
-      component: 'location',
-      isRendering: true,
-      order: 3
+      component: 'location'
     },
     {
-      component: 'registration',
-      isRendering: true,
-      order: 4
+      component: 'registration'
     },
     {
-      component: 'partners',
-      isRendering: true,
-      order: 5
+      component: 'partners'
     }
   ],
   breakPoint: 768

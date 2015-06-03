@@ -16,7 +16,6 @@ var uglify = require('gulp-uglify');
 var shell = require('gulp-shell');
 var runSequence = require('run-sequence');
 var del = require('del');
-var reactify = require('reactify');
 var imagemin = require('gulp-imagemin');
 var autoprefixer = require('gulp-autoprefixer');
 var jpegoptim = require('imagemin-jpegoptim');
@@ -118,8 +117,8 @@ var watchifyOptions = _.extend({
   packageCache: {}
 }, browserifyOptions);
 
-var bundler = browserify(browserifyOptions).transform(reactify);
-var watchBundler = watchify(browserify(watchifyOptions).transform(reactify));
+var bundler = browserify(browserifyOptions);
+var watchBundler = watchify(browserify(watchifyOptions));
 // todo: refactor
 gulp.task('browserify_bundle', function(){
   return bundler.bundle()

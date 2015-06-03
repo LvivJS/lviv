@@ -18,7 +18,7 @@ mixin sessionData(session)
         +icon("minus")(class="session__icon invisible")
     else
       .session__icons
-        +icon("coffe")
+        +icon("tea")
     h4.session__name= session.article
     if (session.type == 'report')
       .session__info.session__info--right
@@ -40,19 +40,16 @@ mixin table(data)
     else
       .session.session--report
         +sessionData(session)
-//data is pushed to template only if isRendering==true in config.js
-//next two lines are to prevent error because data
-//is not defined for module if isRendering==false
-if schedule
-  section#schedule.page-wrap
-    h2.module-header= schedule.title
-    .schedule
-      ul.conference__tabs
-        each day, indx in schedule.days
-          if (indx == 0)
-            li.tabs__item.tabs__item--active=  moment(day.day_info).format('MMM DD')
-          else
-            li.tabs__item=  moment(day.day_info).format('MMM DD')
+
+section#schedule.page-wrap
+  h2.module-header= schedule.title
+  .schedule
+    ul.conference__tabs
       each day, indx in schedule.days
-        .timetable
-          +table(day.timetable)
+        if (indx == 0)
+          li.tabs__item.tabs__item--active=  moment(day.day_info).format('MMM DD')
+        else
+          li.tabs__item=  moment(day.day_info).format('MMM DD')
+    each day, indx in schedule.days
+      .timetable
+        +table(day.timetable)

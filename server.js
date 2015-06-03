@@ -20,19 +20,17 @@ data.moment = app.locals.moment;
 data.connect = JSON.stringify(require('./app/scripts/db_connector.js'));
 data.menuItms = [];
 
-//get data only for (isRendering == true) modules
+//get data for modules
 data.config.modules.forEach(function(module) {
-  if (module.isRendering) {
-    var mod = module.component;
-    var path = './app/locales/en/' + mod + '.json';
-    data[mod] = require(path);
-    var menuItem = {
-      component: module.component.toLowerCase(),
-      title: data[mod].title
-    };
+  var mod = module.component;
+  var path = './app/locales/en/' + mod + '.json';
+  data[mod] = require(path);
+  var menuItem = {
+    component: module.component.toLowerCase(),
+    title: data[mod].title
+  };
 
-    data.menuItms.push(menuItem);
-  }
+  data.menuItms.push(menuItem);
 });
 
 app.use(compress());

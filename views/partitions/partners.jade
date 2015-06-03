@@ -5,12 +5,9 @@ mixin partnerCategory(category)
   h3.partners__category-header= category.title
   each partner in category.data
       +partnerLink(partner)
-//data is pushed to template only if isRendering==true in config.js
-//next two lines are to prevent error because data is not defined for module
-//if isRendering==false
-if partners
-  section#partners.page-wrap
-    h2.module-header= partners.title
-    div.partners
-      each category in partners.data
-        +partnerCategory(category)
+
+section#partners.page-wrap
+  h2.module-header= partners.title
+  div.partners
+    each category in partners.data
+      +partnerCategory(category)

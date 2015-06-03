@@ -1,22 +1,18 @@
-//data is pushed to template only if isRendering==true in config.js
-//next two lines are to prevent error because data is not defined for module
-//if isRendering==false
-if registration
-  section#registration.page-wrap
-    .registration
-      h2.module-header= registration.title
-      form#regForm()
-        .registration__field
-          input.registration__input(id="cm_name" type="text")
-          label.label-regInput(for="cm_name") name
-          span.registration__tip.invisible= registration.Name_err
-        .registration__field
-          input.registration__input(id="cm_email" type="email")
-          label.label-regInput(for="cm_email") email
-          span.registration__tip.invisible= registration.Email_err
-        .registration__field
-          input.registration__input(id="cm_tel" type="tel")
-          label.label-regInput(for="cm_tel") phone
-          span.registration__tip.invisible= registration.Phone_err
-        .registration__field
-          input.registration__submit(type="submit" value="#{registration.button_text}")
+section#registration.page-wrap
+  .registration
+    h2.module-header= registration.title
+    form#regForm()
+      .registration__field
+        input.registration__input(id="cm_name" type="text")
+        label.label-regInput(for="cm_name") name
+        span.registration__tip.invisible= registration.Name_err
+      .registration__field
+        input.registration__input(id="cm_email" type="email")
+        label.label-regInput(for="cm_email") email
+        span.registration__tip.invisible= registration.Email_err
+      .registration__field
+        input.registration__input(id="cm_tel" type="tel")
+        label.label-regInput(for="cm_tel") phone
+        span.registration__tip.invisible= registration.Phone_err
+      .registration__field
+        input.registration__submit(type="submit" value="#{registration.button_text}")
