@@ -6,6 +6,7 @@ var app = express();
 var jade = require('jade');
 var files = require('./app/scripts/db_connector.js');
 var ci = require('./simpleCI');
+var fs = require('fs');
 
 var port = process.env.port || 8080;
 var env = process.env.NODE_ENV || 'development';
@@ -43,9 +44,26 @@ app.use('/github-payload', ci);
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
 
+//register bad bots
+app.get('/nolink', function(req, res, next) {
+  var usrAgnt = req.get('User-Agent');
+
+  var blackList = require('./dist/locales/badBots.json');
+  blackList.push({name: usrAgnt});
+  fs.writeFile('./dist/locales/badBots.json', JSON.stringify(blackList), function (err) {
+    if (err) {
+      throw err;
+    }
+    console.log('Bad bot list has been updated!');
+  });
+  checkUserAgent(req, res, function() {});
+});
+
 // index url
 app.get('/', function(req, res) {
-  res.render('index', data);
+  checkUserAgent(req, res, function() {
+    return res.render('index', data);
+  });
 });
 
 //handle data from form
@@ -57,9 +75,26 @@ app.post('/', function(req, res, next) {
 
 //Route not found -- Set 404
 app.get('*', function(req, res) {
-  res.status(404).send('Sorry this page does not exist!');
+  checkUserAgent(res, function() {
+    return res.status(404).send('Sorry this page does not exist!');
+  });
 });
+
 
 app.listen(port);
 
 console.log(env.toUpperCase() + ' server is up and running at port : ' + port);
+
+function checkUserAgent(req, res, next) {
+  var usrAgnt = req.get('User-Agent');
+  var blackList = require('./dist/locales/badBots.json');;
+  var isInList = false;
+
+  for (var i = blackList.length - 1; i >= 0; i--) {
+    isInList = blackList[i].name === usrAgnt ? true : false;
+    if (isInList) {
+      return res.status(200).send('Access denied!');
+    }
+  }
+  return next();
+}
