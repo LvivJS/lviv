@@ -12,9 +12,9 @@ function schedule() {
   var list = document.getElementsByClassName('conference__tabs')[0];
   var tabs = list.childNodes;
   var activeTab = list.querySelector('.' + activeClass);
-  var conf = list.parentNode;
+  var schedule = list.parentNode;
   var listHeight = list.offsetHeight;
-  var tables = conf.getElementsByClassName(timetable);
+  var tables = schedule.getElementsByClassName(timetable);
 
   (function() {
     var reports = document.getElementsByClassName('session--report');
@@ -35,11 +35,10 @@ function schedule() {
         toggleAbout(header)
       });
     });
+
+    window.addEventListener('resize', fixTabsOrNot);
+    fixTabsOrNot();
   })();
-
-  window.onresize = fixTabsOrNot;
-
-  fixTabsOrNot();
 
   function fixTabsOrNot() {
     viewport = window.innerWidth;
@@ -81,7 +80,7 @@ function schedule() {
         if (viewport > config.breakPoint) {
           tables[i].classList.remove(invisible);
         } else {
-          var targetScroll = tables[i].offsetTop - menuHeight - list.offsetHeight;
+          var targetScroll = tables[i].offsetTop - menuHeight - listHeight;
 
           utilities.scrollTo(targetScroll, 300);
         }
@@ -114,7 +113,6 @@ function schedule() {
 
   function fixTabs() {
     var bodyScrlPos = document.body.scrollTop || document.documentElement.scrollTop;
-    var schedule = conf;
     var scheduleHeight = schedule.offsetHeight;
     var scheduleTop = schedule.offsetTop;
     var scheduleBottom = scheduleHeight + scheduleTop;
@@ -132,7 +130,7 @@ function schedule() {
         if (bodyScrlPos <= (scheduleBottom - menuHeight)) {
 
           //this chunk is for fixing tabs on scroll
-          conf.style.paddingTop = listHeight + 'px';
+          schedule.style.paddingTop = listHeight + 'px';
           list.classList.add('list-fixed');
           list.style.top = menuHeight + 'px';
 
@@ -163,7 +161,7 @@ function schedule() {
   }
 
   function resetList() {
-    conf.style.paddingTop = '0px';
+    schedule.style.paddingTop = '0px';
     list.classList.remove('list-fixed');
   }
 }
