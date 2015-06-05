@@ -3,5 +3,6 @@ node_modules
 .sass-cache
 .c9
 *.css.map
+.DS_Store
 
 dist/*
