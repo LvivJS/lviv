@@ -1,7 +1,8 @@
 {
   "title": "Schedule",
   "locales":{
-    "calend_links":"Add Event to: "
+    "calend_links":"Add Event to: ",
+    "no_description": "Sorry, no description..."
   },
   "days": [
     {

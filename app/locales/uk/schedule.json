@@ -1,7 +1,8 @@
 {
   "title": "Регламент",
   "locales":{
-    "calend_links":"Додати до:"
+    "calend_links": "Додати до:",
+    "no_description": "Вибачте, нажаль немає опису..."
   },
   "days": [
     {
