@@ -10,4 +10,4 @@ menu();
 locationMap();
 registration();
 schedule();
-speakers();
+speakers('See all speakers');
