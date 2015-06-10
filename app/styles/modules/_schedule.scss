@@ -279,8 +279,9 @@
   margin-top: 17px;
 }
 
-a.session__calendLink {
+span.session__calendLink {
   color: $color__link;
+  cursor: pointer;
   font-weight: 400;
   margin-left: 11px;
   text-decoration: underline;

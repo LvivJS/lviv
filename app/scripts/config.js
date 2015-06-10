@@ -13,6 +13,7 @@ var userLang = 'en'; // set for testing purposes
 var locale = ~availableLocales.indexOf(userLang) ? userLang : defLang;
 
 var config = {
+  googleCalndrClientId: '910713467721-pnujab5h8bbnaqhorpen6c8s1qp3sclf.apps.googleusercontent.com',
   firebasePath: 'https://blistering-fire-6843.firebaseio.com',
   mongoLab: {
     baseURL: 'https://api.mongolab.com/api/1/databases/conf_maker/collections/',
