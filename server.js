@@ -7,6 +7,7 @@ var jade = require('jade');
 var files = require('./app/scripts/db_connector.js');
 var ci = require('./simpleCI');
 var fs = require('fs');
+var MobileDetect = require('mobile-detect');
 
 var port = process.env.port || 8080;
 var env = process.env.NODE_ENV || 'development';
@@ -86,6 +87,10 @@ app.listen(port);
 console.log(env.toUpperCase() + ' server is up and running at port : ' + port);
 
 function checkUserAgent(req, res, next) {
+  
+  md = new MobileDetect(req.headers['user-agent']);
+  data.isDesktop = !md.mobile();
+
   var usrAgnt = req.get('User-Agent');
   var blackList = require('./dist/locales/badBots.json');;
   var isInList = false;
