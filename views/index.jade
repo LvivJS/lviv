@@ -5,81 +5,6 @@ head
   link(rel='stylesheet', href='style/styles.css')
   link(rel="shortcut icon" href="images/favicon.png")
   meta(name='viewport', content='width=device-width, initial-scale=1')
-  if (isDesktop)
-    script.
-      // Add event to Google calendar
-      function googleCalendar(obj) {
-        var data = obj;
-      
-        var CLIENT_ID = '#{config.googleCalndrClientId}';
-      
-        var SCOPES = ['https://www.googleapis.com/auth/calendar'];
-      
-        function checkAuth() {
-          gapi.auth.authorize(
-            {
-              'client_id': CLIENT_ID,
-              'scope': SCOPES
-            }, handleAuthResult);
-        }
-        if (data) {
-          checkAuth();
-        }
-      
-        function handleAuthResult(authResult) {
-          if (authResult && !authResult.error) {
-            loadCalendarApi();
-          } else {
-            alert('Google calendar authorization failed :(');
-          }
-        }
-      
-        function loadCalendarApi() {
-          gapi.client.load('calendar', 'v3', createEvent);
-        }
-        
-        function createEvent() {
-          var event = {
-          summary: data.summary,
-          location: data.location,
-          description: data.description,
-          start: {
-            dateTime: ISODateString(new Date(data.start.dateTime)),
-            timeZone: 'Europe/Kiev'
-          },
-          end: {
-            dateTime: ISODateString(new Date(data.end.dateTime)),
-            timeZone: 'Europe/Kiev'
-          },
-          reminders: {
-            useDefault: true
-          }
-        };
-      
-          var request = gapi.client.calendar.events.insert({
-            'calendarId': 'primary',
-            'resource': event
-          });
-      
-          request.execute(function(event) {
-            window.open(event.htmlLink, 'Create event', "height=850,width=850");
-          });
-        }
-        
-        //Convert ISO string to RFC 3339
-        //d must be a "new Date()" object.
-        function ISODateString(d){
-          function pad(n) {
-            return n < 10 ? '0' + n : n
-          }
-          return d.getUTCFullYear()+'-'
-            + pad(d.getUTCMonth()+1)+'-'
-            + pad(d.getUTCDate())+'T'
-            + pad(d.getUTCHours())+':'
-            + pad(d.getUTCMinutes())+':'
-            + pad(d.getUTCSeconds())+'Z'
-        }
-      };
 #app
   a.invisible(href="/nolink")
   .page-wrap
@@ -93,6 +18,82 @@ head
     include partitions/partners.jade
     include partitions/footer.jade
 script(src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js")
-script(src="scripts/bundle.js")
+script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{config.google.mapsAPIKey}")
 if (isDesktop)
+  script.
+    // Add event to Google calendar
+    function googleCalendar(obj) {
+      var data = obj;
+    
+      var CLIENT_ID = '#{config.google.calndrClientId}';
+    
+      var SCOPES = ['https://www.googleapis.com/auth/calendar'];
+    
+      function checkAuth() {
+        gapi.auth.authorize(
+          {
+            'client_id': CLIENT_ID,
+            'scope': SCOPES
+          }, handleAuthResult);
+      }
+      if (data) {
+        checkAuth();
+      }
+    
+      function handleAuthResult(authResult) {
+        if (authResult && !authResult.error) {
+          loadCalendarApi();
+        } else {
+          alert('Google calendar authorization failed :(');
+        }
+      }
+    
+      function loadCalendarApi() {
+        gapi.client.load('calendar', 'v3', createEvent);
+      }
+      
+      function createEvent() {
+        var event = {
+        summary: data.summary,
+        location: data.location,
+        description: data.description,
+        start: {
+          dateTime: ISODateString(new Date(data.start.dateTime)),
+          timeZone: 'Europe/Kiev'
+        },
+        end: {
+          dateTime: ISODateString(new Date(data.end.dateTime)),
+          timeZone: 'Europe/Kiev'
+        },
+        reminders: {
+          useDefault: true
+        }
+      };
+    
+        var request = gapi.client.calendar.events.insert({
+          'calendarId': 'primary',
+          'resource': event
+        });
+    
+        request.execute(function(event) {
+          window.open(event.htmlLink, 'Create event', "height=850,width=850");
+        });
+      }
+      
+      //Convert ISO string to RFC 3339
+      //d must be a "new Date()" object.
+      function ISODateString(d){
+        function pad(n) {
+          return n < 10 ? '0' + n : n
+        }
+        return d.getUTCFullYear()+'-'
+          + pad(d.getUTCMonth()+1)+'-'
+          + pad(d.getUTCDate())+'T'
+          + pad(d.getUTCHours())+':'
+          + pad(d.getUTCMinutes())+':'
+          + pad(d.getUTCSeconds())+'Z'
+      }
+    };
   script(src="https://apis.google.com/js/client.js?onload=googleCalendar")
+
+script(src="scripts/bundle.js")

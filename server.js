@@ -76,7 +76,7 @@ app.post('/', function(req, res, next) {
 
 //Route not found -- Set 404
 app.get('*', function(req, res) {
-  checkUserAgent(res, function() {
+  checkUserAgent(req, res, function() {
     return res.status(404).send('Sorry this page does not exist!');
   });
 });
@@ -87,7 +87,7 @@ app.listen(port);
 console.log(env.toUpperCase() + ' server is up and running at port : ' + port);
 
 function checkUserAgent(req, res, next) {
-  
+  //add isDesktop variable to data passing to index.jade
   md = new MobileDetect(req.headers['user-agent']);
   data.isDesktop = !md.mobile();
 
