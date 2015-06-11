@@ -285,6 +285,9 @@ span.session__calendLink {
   font-weight: 400;
   margin-left: 11px;
   text-decoration: underline;
+  &.session__calendLink--iCal {
+    cursor: not-allowed;
+  }
 }
 
 .toggleButtonImage {
