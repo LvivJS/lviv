@@ -5,7 +5,6 @@
 	}
 	height: 626px;
 	width: 100%;
-	z-index: -1;
 }
 #location {
 	@include bp(medium) {
@@ -119,9 +118,6 @@
 }
 
 .loc-info--min {
-	&+ #googleMap {
-		z-index: 0;
-	}
 	.loc-info__text {
 		margin-top: 13px;
 	}
