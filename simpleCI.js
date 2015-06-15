@@ -35,6 +35,7 @@ function ci(req, res, next){
         res.status(500).send(err);
         console.log('Build failure :: \n', err);
       })
+      .then(restartServer);
       // .then(updateAppEnvData)
   } else {
     res.status(501).send('What is that? no commits, meh :/')
@@ -117,19 +118,17 @@ function rebuildApp(data){
     }
   });
 }
-// todo : pass updated data (e.g. version) into html for convenience of tracking
-// function updateAppEnvData(){
-//   return new Promise(function(resolve, reject){
-//     fs.readFile('./package.json', 'utf-8', function(err, data){
-//       if (err){
-//         reject(err);
-//       } else {
-//         appEnvData.version = JSON.parse(data).version;
-//         resolve();
-//       }
-//       console.log('[updateAppEnvData] :: ', appEnvData.version);
-//     });
-//   });
-// }
+
+function restartServer(data){
+  return new Promise(function(resolve, reject){
+    exec('forever restart server.js', function(err, stdout, stderr){
+      if(err) {
+        reject(err);
+      } else {
+        resolve({body: data.body, log: data.log + '\n[restartServer] :: restarted server'})
+      }
+    });
+  });
+}
 
 module.exports = ci;
