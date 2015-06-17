@@ -90,6 +90,7 @@ function checkUserAgent(req, res, next) {
   //add isDesktop variable to data passing to index.jade
   md = new MobileDetect(req.headers['user-agent']);
   data.isDesktop = !md.mobile();
+  data.isIE9 = md.version('Trident') <= 6;
 
   var usrAgnt = req.get('User-Agent');
   var blackList = require('./dist/locales/badBots.json');;

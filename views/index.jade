@@ -5,6 +5,74 @@ head
   link(rel='stylesheet', href='style/styles.css')
   link(rel="shortcut icon" href="images/favicon.png")
   meta(name='viewport', content='width=device-width, initial-scale=1')
+  if (isIE9)
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js")
+    style
+      .module-header {
+        text-align: center;
+      }
+      .footer__container {
+        overflow: hidden;
+      }
+      .footer__block {
+        display: inline-block;
+        width: calc(100% / 3.5);
+      }
+      .block__contact__name,
+      .block__contact__phone,
+      .block__contact__email {
+        display: block;
+      }
+      .loc-info__text {
+        width: calc(100% - 132px);
+        float: left;
+      }
+      .loc-info__text > h2.module-header {
+        text-align: right;
+      }
+      .loc-info__icon {
+        float: left;
+      }
+      .location__icon {
+      	margin: 0 calc((100% - 32px) /2);
+      }
+      #menu {
+        top: 0;
+      }
+      .menu {
+        width: calc(100% - 158px);
+        display: inline-block;
+      }
+      .menu__socials {
+        width: 152px;
+        display: inline-block;
+      }
+      .overview-wrap {
+        overflow: hidden;
+      }
+      #registration {
+        padding: calc((459px - 398px) /2);
+      }
+      .tabs__item {
+        display: inline-block;
+      }
+      .session {
+        overflow: hidden;
+      }
+      .session__time {
+        display: block;
+        float: left;
+      }
+      .session__arrangement {
+        display: block;
+        float: left;
+      }
+      .speaker {
+        display: inline-block;
+      }
+      .speaker__photo {
+        margin: 0 auto;
+      }
 #app
   a.invisible(href="/nolink")
   .page-wrap
@@ -19,6 +87,7 @@ head
     include partitions/footer.jade
 script(src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js")
 script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{config.google.mapsAPIKey}")
+script(src="scripts/bundle.js")
 if (isDesktop)
   script.
     // Add event to Google calendar
@@ -95,5 +164,3 @@ if (isDesktop)
       }
     };
   script(src="https://apis.google.com/js/client.js?onload=googleCalendar")
-
-script(src="scripts/bundle.js")
