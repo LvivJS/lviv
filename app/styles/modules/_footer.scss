@@ -58,6 +58,7 @@
 .block__contact__email {
   font-size: $font__size--1;
   margin-bottom: 5px;
+  display: block;
   @include bp(medium) {
     font-size: $font__size--1;
     line-height: 17px;

@@ -30,7 +30,7 @@ mixin sessionData(session)
       if (isDesktop)
         .session__calendButtons
           span= schedule.locales.calend_links
-          span.session__calendLink.session__calendLink--gCal(onclick="googleCalendar({'summary': '#{overview.name + ': ' + session.article}','location': '#{overview.address + ', ' + overview.location}','description': '#{session.about}','start': {'dateTime': '#{session.time.start}','timeZone': 'Europe/Kyiv'},'end': {'dateTime': '#{session.time.end}','timeZone': 'Europe/Kyiv'},'recurrence': ['RRULE:FREQ=DAILY;COUNT=2'],'reminders': {'useDefault': false,'overrides': [{'method': 'email', 'minutes': 24 * 60},{'method': 'sms', 'minutes': 10}]}})") Google Calendar
+          span.session__calendLink.session__calendLink--gCal(onclick="googleCalendar({'summary': '#{overview.name + ': ' + session.article}','location': '#{overview.address + ', ' + overview.location}','description': '#{session.about}','start': {'dateTime': '#{session.time.start}','timeZone': 'Europe/Kyiv'},'end': {'dateTime': '#{session.time.end}','timeZone': 'Europe/Kyiv'}})") Google Calendar
           span.session__calendLink.session__calendLink--iCal( href="#") iCalendar
 
 mixin table(data)
