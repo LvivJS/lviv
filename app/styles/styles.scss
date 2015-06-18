@@ -22,15 +22,31 @@ img {
   border: none;
 }
 
+//...This styles shoud be removed after merge with main_site
+.banner-wrap {
+  background-color: #D0B150;
+}
+
+.banner {
+  @include container-int;
+  background: #A4EDA4;
+  height: 700px;
+  text-transform: uppercase;
+  color: #777;
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+}
+//...
 
 @import 'modules/_basicLayout';
-@import 'modules/_menu';
-@import 'modules/_locationMap';
-@import 'modules/_speakers';
-@import 'modules/_partners';
-@import 'modules/_schedule';
-@import 'modules/_registration';
-@import 'modules/_overview';
+// @import 'modules/_menu';
+// @import 'modules/_locationMap';
+// @import 'modules/_speakers';
+// @import 'modules/_partners';
+// @import 'modules/_schedule';
+// @import 'modules/_registration';
+// @import 'modules/_overview';
 @import 'modules/_footer';
 
 
