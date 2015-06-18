@@ -1,0 +1,6 @@
+{
+  "web-port": 8081,
+  "preload": false,
+  "hidden": ["node_modules/"],
+  "stack-trace-limit": 50
+}

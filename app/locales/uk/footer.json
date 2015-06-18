@@ -1,0 +1,35 @@
+{
+  "contacts": [
+    {
+      "title": "Координатор Львів 2015",
+      "contacts": [
+        {
+          "name": "Роман Зачемба",
+          "phone": "+ 380 50 709 121",
+          "email": "roma.zachemba@uselab.ua"
+        }
+      ]
+    },
+    {
+      "title": "Для Спонсорів та Медіа",
+      "contacts": [
+        {
+          "name": "Роман Зачемба",
+          "phone": "+ 380 50 709 121",
+          "email": "roma.zachemba@uselab.ua"
+        }
+      ]
+    },
+    {
+      "title": "Координатор Львів 2015",
+      "contacts": [
+        {
+          "name": "Роман Зачемба",
+          "phone": "+ 380 50 709 121",
+          "email": "roma.zachemba@uselab.ua"
+        }
+      ]
+    }
+  ],
+  "copyright": "JavaScript Lviv Всі права захищено"
+}

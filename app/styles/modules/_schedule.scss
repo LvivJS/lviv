@@ -1,0 +1,302 @@
+#schedule {
+  margin-top: 1px;
+}
+
+.schedule {
+  @include bp(medium) {
+    margin-top: 1px;
+  }
+  input:focus {
+      outline: 0;
+  }
+  margin-top: 25px;
+  text-align: left;
+  width: 100%;
+}
+
+.conference {
+  width: 100%;
+}
+
+.conference__tabs {
+  @include bp(medium) {
+    margin: 0;
+    padding: 0 7px;
+    border: none;
+  }
+  border-bottom: 8px solid $color__primary;
+  display: flex;
+  margin-left: $session-time-width;
+  transition: height 0.2s;
+}
+
+.tabs__item {
+  @include bp(medium) {
+    height: 44px;
+    width: 117px;
+  }
+  &:hover {
+    background: $color__grayscale--6;
+  }
+  background-color: $color__grayscale--5;
+  color: $color__grayscale--11;
+  cursor: pointer;
+  font-size: 1.16em;
+  font-weight: 500;
+  height: 41px;
+  line-height: 44px;
+  list-style: none;
+  margin-right: 4px;
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+  width: 93px;
+}
+
+.tabs__item--active, .tabs__item--active:hover {
+  background-color: $color__primary;
+}
+
+.timetable {
+  @include bp(medium) {
+    padding-top: 27px;
+  }
+  position: relative;
+}
+
+.session {
+  @include bp(medium) {
+    flex-direction: column;
+    margin-bottom: 19px;
+    position: relative;
+    width: 100%;
+  }
+  display: flex;
+  justify-content: flex-start;
+}
+
+.session:first-child .session__time {
+  @include bp(medium) {
+    padding: 0;
+  }
+  padding: 32px 30px 53px 0;
+}
+
+.session:first-child .session__arrangement {
+  @include bp(medium) {
+    padding: 0 0.8547008547% 0;
+  }
+  .session__icons {
+    @include bp(medium) {
+      top: -29px;
+    }
+    top: 32px;
+  }
+  padding: 25px 0 0 26px;
+}
+
+.session__icon--minus path {
+  fill: #504e51;
+}
+
+.session__icon--plus path {
+  fill: #8e8e8e;
+}
+
+.session__time {
+  @include bp(medium) {
+    background: none;
+    color: #8e8e8e;
+    font-size: 1.18em;
+    margin: 4px 0 0 11.7647058824%;
+    padding: 0;
+    text-align: left;
+    width: 88.2352941176%;
+  }
+  span {
+    font-size: $font__size--2;
+    font-weight: 700;
+  }
+  span+span:before{
+    content: " - ";
+    display: inline-block;
+    margin: 0 6px;
+  }
+  background: $color__grayscale--9;
+  color: $color__grayscale--1;
+  flex-shrink: 0;
+  font-weight: 500;
+  padding: 7px 30px 53px 0 ;
+  text-align: right;
+  width: $session-time-width;
+}
+
+.session__time--about-expanded {
+  @include bp(medium) {
+    color: #504e51;
+  }
+}
+
+.session--entertainment {
+  .session__time {
+    @include bp(medium) {
+      color: $color__grayscale--9;
+    }
+    color: $color__primary;
+  }
+  .session__icon {
+    path{
+      fill: #f7e000;
+    }
+    cursor: initial;
+  }
+  .session__arrangement {
+    border-color: $color__primary;
+  }
+}
+
+.session__arrangement {
+  @include bp(medium) {
+    border-left: 4px solid #777;
+    margin: 8px 0 -5px 4.2%;
+    padding: 0 3px 0;
+    width: 93.8502673797%;
+  }
+  color: $color__grayscale--9;
+  display: flex;
+  flex-direction: column;
+  font-size: $font__size--2;
+  font-weight: 400;
+  margin-bottom: 13px;
+  max-width: 655px;
+  padding-left: 26px;
+  position: relative;
+  width: 100%;
+}
+
+.session--report > .session__arrangement {
+  color: $color__grayscale--9;
+}
+
+.session__name {
+  @include bp(medium) {
+    font-size: 18px;
+    font-weight: 700;
+    left: -6.55270655271%;
+    line-height: 22px;
+    padding: 37px 0 0 12.9%;
+    position: relative;
+    text-align: left;
+    top: -28px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  color: $color__grayscale--14;
+  font-size: $font__size--3;
+  font-weight: 500;
+  line-height: 35px;
+  padding-left: 41px;
+}
+
+.session__icons {
+  @include bp(medium) {
+    left: -13px;
+    top: -29px;
+  }
+  cursor: pointer;
+  display: flex;
+  left: 26px;
+  position: absolute;
+  top: 7px;
+}
+
+.session--entertainment .session__name {
+  cursor: initial;
+}
+
+.speaker__name--schedule {
+  @include bp(medium) {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+    margin: -3px 3.81651376147% 0;
+    width: 92.36698%;
+  }
+  span:first-child {
+    margin-right: 5px;
+  }
+  display: flex;
+  flex-shrink: 3;
+  font-weight: 400;
+  margin: 2px 0 0 41px;
+}
+
+.session__info {
+  @include bp(medium) {
+    flex-direction: row;
+    line-height: 19px;
+    margin-bottom: -3px;
+    padding-left: 2.55754475703%;
+    position: relative;
+    top: -13px;
+  }
+  flex-direction: row;
+  font-weight: bold;
+  justify-content: space-between;
+  line-height: 10px;
+  margin-bottom: 15px;
+  margin-top: 2px;
+}
+
+.session__info--right {
+  justify-content: flex-end;
+}
+
+.session__about {
+  @include bp(medium) {
+    font-weight: 500;
+    padding: 0 6.55270655271% 0;
+  }
+  font-size: $font__size--2;
+  line-height: 24px;
+  margin-bottom: 8px;
+  padding: 10px 0 0 41px;
+}
+
+.session:last-child {
+  border-bottom: 0px;
+}
+
+.session__calendButtons {
+  @include bp(medium) {
+    display: none;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  font-size: $font__size--1;
+  margin-top: 17px;
+}
+
+span.session__calendLink {
+  color: $color__link;
+  cursor: pointer;
+  font-weight: 400;
+  margin-left: 11px;
+  text-decoration: underline;
+  &.session__calendLink--iCal {
+    cursor: not-allowed;
+  }
+}
+
+.toggleButtonImage {
+  cursor: pointer;
+}
+
+.conference__tabs.list-fixed {
+  border-bottom: none;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}

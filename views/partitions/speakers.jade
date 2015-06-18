@@ -1,0 +1,14 @@
+mixin speaker(speaker)
+  div.speaker
+    div.speaker__photo
+      img(src=speaker.photo_url)
+    div.speaker__main
+      h3.speaker__name= speaker.name
+      div.speaker__pos= speaker.position
+      div.speaker__about= speaker.about
+
+section#speakers.page-wrap
+  h2.module-header= speakers.title
+  div.speakers
+    each speaker in speakers.data
+      +speaker(speaker)

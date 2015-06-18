@@ -1,0 +1,18 @@
+section#registration.page-wrap
+  .registration
+    h2.module-header= registration.title
+    form#regForm()
+      .registration__field
+        input.registration__input(id="cm_name" type="text")
+        label.label-regInput(for="cm_name") name
+        div.registration__tip.invisible= registration.Name_err
+      .registration__field
+        input.registration__input(id="cm_email" type="email")
+        label.label-regInput(for="cm_email") email
+        div.registration__tip.invisible= registration.Email_err
+      .registration__field
+        input.registration__input(id="cm_tel" type="tel")
+        label.label-regInput(for="cm_tel") phone
+        div.registration__tip.invisible= registration.Phone_err
+      .registration__field
+        input.registration__submit(type="submit" value="#{registration.button_text}")

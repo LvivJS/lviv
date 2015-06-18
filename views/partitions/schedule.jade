@@ -1,0 +1,56 @@
+mixin details(session)
+  if session.speaker
+    span.speaker__name--schedule
+      span= session.speaker.name
+      span= session.speaker.position
+  //- if session.about
+  //-   span.session__button.session__button--inactive
+
+mixin sessionData(session)
+  .session__time
+    span= moment(session.time.start).format('HH:MM')
+    if session.time.end
+      span= moment(session.time.end).format('HH:MM')
+  .session__arrangement
+    if (session.type == 'report')
+      .session__icons
+        +icon("plus")(class="session__icon")
+        +icon("minus")(class="session__icon invisible")
+    else
+      .session__icons
+        +icon("tea")
+    h4.session__name= session.article
+    if (session.type == 'report')
+      .session__info.session__info--right
+        +details(session)
+    else
+      .session__info
+        +details(session)
+    .session__about.invisible= session.about || schedule.locales.no_description
+      if (isDesktop)
+        .session__calendButtons
+          span= schedule.locales.calend_links
+          span.session__calendLink.session__calendLink--gCal(onclick="googleCalendar({'summary': '#{overview.name + ': ' + session.article}','location': '#{overview.address + ', ' + overview.location}','description': '#{session.about}','start': {'dateTime': '#{session.time.start}','timeZone': 'Europe/Kyiv'},'end': {'dateTime': '#{session.time.end}','timeZone': 'Europe/Kyiv'}})") Google Calendar
+          span.session__calendLink.session__calendLink--iCal( href="#") iCalendar
+
+mixin table(data)
+  each session, indx in data
+    if (session.type == 'entertainment')
+      .session.session--entertainment
+        +sessionData(session)
+    else
+      .session.session--report
+        +sessionData(session)
+
+section#schedule.page-wrap
+  h2.module-header= schedule.title
+  .schedule
+    ul.conference__tabs
+      each day, indx in schedule.days
+        if (indx == 0)
+          li.tabs__item.tabs__item--active=  moment(day.day_info).format('MMM DD')
+        else
+          li.tabs__item=  moment(day.day_info).format('MMM DD')
+    each day, indx in schedule.days
+      .timetable
+        +table(day.timetable)

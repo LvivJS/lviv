@@ -1,0 +1,140 @@
+.footer {
+  @include container-ext;
+  @include bp(medium) {
+    background: none;
+    margin-top: 13px;
+    padding-top: 125px;
+  }
+  background: #383838;
+  position: relative;
+
+}
+
+.footer__container {
+  @include container-int;
+  @include bp(medium) {
+    flex-direction: column;
+  }
+  justify-content: space-between;
+}
+
+
+.footer > .footer__container {
+  background: #383838;
+}
+
+.footer__block {
+  @include bp(medium) {
+    &:first-child {
+      margin: 39px 5.61497326203% 0;
+    }
+    &:last-child {
+      margin-bottom: 39px;
+    }
+    margin: 37px 5.34759358289% 0;
+  }
+  margin: 78px 9px 70px;
+}
+
+.block__header {
+  color: $color__grayscale--1;
+  font-size: $font__size--2;
+  font-weight: 500;
+  text-align: left;
+}
+
+.block__contact {
+  @include bp(medium) {
+    margin-top: 17px;
+  }
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.block__contact__name,
+.block__contact__phone,
+.block__contact__email {
+  font-size: $font__size--1;
+  margin-bottom: 5px;
+  display: block;
+  @include bp(medium) {
+    font-size: $font__size--1;
+    line-height: 17px;
+    margin-bottom: 0;
+  }
+}
+
+.block__contact__name,
+.block__contact__phone {
+  color: $color__grayscale--6;
+}
+
+.block__contact__email {
+  color: $color__link;
+  text-decoration: underline;
+}
+
+
+.footer__copyright {
+  @include bp(medium) {
+    height: 67px;
+  }
+  background: $color__grayscale--1;
+  display: flex;
+  height: 97px;
+  justify-content: center;
+  width: 100%;
+}
+
+.copyright__text {
+  @include bp(medium) {
+    font-size: $font__size--1;
+    margin: 28px 0 0 5.34759358289%;
+    text-align: left;
+  }
+  color: $color__grayscale--6;
+  font-size: $font__size--2;
+  font-weight: 400;
+  margin: 35px 12px 0;
+}
+
+.footer__socials {
+  @include bp(medium) {
+    border-top: 2px solid #DFDFDF;
+    display: flex;
+    height: 125px;
+    justify-content: center;
+    margin: 0 2%;
+    padding-left: 1.01257875964%;
+    position: absolute;
+    top: 0;
+    width: 96%;
+  }
+  display: flex;
+  margin-right: 8px;
+}
+
+.footer__social_icon {
+  @include bp(medium) {
+    margin: 41px 15px;
+    svg {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  &:hover {
+    .path-1 {
+      fill: #383838;
+    }
+  }
+  .path-1 {
+    fill: $color__grayscale--6;
+    transition: all 0.3s;
+  }
+  .path-2 {
+    fill: $color__grayscale--1;
+  }
+  margin: 31px 5px;
+}

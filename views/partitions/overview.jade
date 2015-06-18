@@ -1,0 +1,7 @@
+section#overview.page-wrap.overview
+  .overview-wrap
+    img.main-logo(src="images/logo.png")
+    h2.main-header= overview.name
+    div.overview__infoBlock
+      span= moment(overview.start_date).format('MMM DD, YYYY')
+      span= overview.location

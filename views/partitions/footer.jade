@@ -1,0 +1,15 @@
+footer#footer.page-wrap.footer
+  .footer__container
+    each block in footer.contacts
+      .footer__block
+        h4.block__header= block.title
+        each contact in block.contacts
+          .block__contact
+            span.block__contact__name= contact.name
+            span.block__contact__phone= contact.phone
+            a.block__contact__email(href="mailto:#{contact.email}")= contact.email  
+  .footer__copyright
+    .footer__container
+      span.copyright__text= footer.copyright
+      .footer__socials
+        +socialIcons(menu_socials)(class="footer__social_icon")

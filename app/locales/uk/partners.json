@@ -1,0 +1,70 @@
+{
+  "title": "партнери",
+  "data": [
+    {
+      "title": "генеральний",
+      "data": [
+        {
+          "title": "Lohika Systems",
+          "link": "http://www.lohika.com/",
+          "img": "images/partners/general/lohika.jpg"
+        }
+      ]
+    },
+    {
+      "title": "золоті",
+      "data": [
+        {
+          "title": "DataArt",
+          "link": "http://www.dataart.com/",
+          "img": "images/partners/gold/dataart-logo.jpg"
+        },
+        {
+          "title": "Eleks",
+          "link": "http://www.eleks.com/",
+          "img": "images/partners/gold/eleks-1.png"
+        },
+        {
+          "title": "Epam Systems",
+          "link": "http://www.epam.com/",
+          "img": "images/partners/gold/logo_epam_20.png"
+        },
+        {
+          "title": "Remit",
+          "link": "http://www.remit.se/",
+          "img": "images/partners/gold/remit-logo-1.png"
+        },
+        {
+          "title": "Team International",
+          "link": "http://www.teaminternational.com/",
+          "img": "images/partners/gold/team-international.jpg"
+        }
+      ]
+    },
+    {
+      "title": "срібні",
+      "data": [
+        {
+          "title": "GlobalLogic",
+          "link": "http://www.globallogic.com.ua/",
+          "img": "images/partners/silver/globallogic.jpg"
+        }
+      ]
+    },
+    {
+      "title": "бронзові",
+      "data": [
+        {
+          "title": "Intellias",
+          "link": "http://www.intellias.com/",
+          "img": "images/partners/bronze/INTELLIAS_LOGO_BACKGR_BACK.jpg"
+        },
+        {
+          "title": "N-iX",
+          "link": "http://n-ix.com/",
+          "img": "images/partners/bronze/Logo in color big.png"
+        }
+      ]
+    }
+  ]
+}

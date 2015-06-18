@@ -1,0 +1,35 @@
+{
+  "contacts": [
+    {
+      "title": "Lviv 2015 Coordinator",
+      "contacts": [
+        {
+          "name": "Roman Zachemba",
+          "phone": "+ 380 50 709 121",
+          "email": "roma.zachemba@uselab.ua"
+        }
+      ]
+    },
+    {
+      "title": "Media & Sponsors contact",
+      "contacts": [
+        {
+          "name": "Roman Zachemba",
+          "phone": "+ 380 50 709 121",
+          "email": "roma.zachemba@uselab.ua"
+        }
+      ]
+    },
+    {
+      "title": "Lviv 2015 Coordinator",
+      "contacts": [
+        {
+          "name": "Roman Zachemba",
+          "phone": "+ 380 50 709 121",
+          "email": "roma.zachemba@uselab.ua"
+        }
+      ]
+    }
+  ],
+  "copyright": "JavaScript Lviv All rights reserved"
+}

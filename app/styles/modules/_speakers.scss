@@ -1,0 +1,106 @@
+
+.speakers {
+  @include container-int;
+  @include bp(medium) {
+    padding: 0 15px 0 21px
+  }
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.speaker {
+  @include bp(medium) {
+    margin: 0 0 35px;
+    width: 46.7455621302%;
+  }
+  &:hover img {
+    filter: none;
+  }
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 43px 3% 23px;
+  width: 26%;
+}
+
+.speaker__photo{
+  @include bp(medium) {
+    width: 63.2911392405%
+  }
+  img {
+    border-radius: 50%;
+    filter: grayscale(1);
+    margin-bottom: -5px;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  flex-shrink: 0;
+  width: 69.2307692308%;
+}
+
+.speaker__main {
+  width: 100%;
+}
+
+.speaker__name {
+  @include bp(medium) {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+  color: $color__grayscale--11;
+  font-size: $font__size--5;
+  font-weight: 700;
+  margin-top: 32px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.speaker__pos {
+  @include bp(medium) {
+    text-align: left;
+    font-size: 14px;
+    margin: 14px 0 12px;
+    line-height: 18px;
+  }
+  color: $color__grayscale--7;
+  font-size: $font__size--2;
+  font-weight: 400;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.speaker__about {
+  @include bp(medium) {
+    font-size: $font__size--1;
+    line-height: $font__size--3;
+    margin-top: 0;
+  }
+  color: $color__grayscale--9;
+  font-size: $font__size--2;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 29px;
+  text-align: left;
+}
+
+.speakers__expand-button {
+  @include bp(medium) {
+    &:hover {
+      background: darken($color__speakers-btn, 10%);
+    }
+    background: $color__speakers-btn;
+    border-radius: 4px;
+    color: $color__grayscale--1;
+    cursor: pointer;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    height: 33px;
+    line-height: 34px;
+    margin-top: 27px;
+    text-align: center;
+    width: 146px;
+  }
+  display: none;
+}

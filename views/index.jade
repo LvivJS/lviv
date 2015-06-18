@@ -1,0 +1,161 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Conf maker
+  link(rel='stylesheet', href='style/styles.css')
+  link(rel="shortcut icon" href="images/favicon.png")
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  if (isIE9)
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js")
+    style.
+      .module-header {
+        text-align: center;
+      }
+      .footer__container {
+        overflow: hidden;
+      }
+      .footer__block {
+        display: inline-block;
+        width: calc(100% / 3.5);
+      }
+      .loc-info__text {
+        width: calc(100% - 132px);
+        float: left;
+      }
+      .loc-info__text > h2.module-header {
+        text-align: right;
+      }
+      .loc-info__icon {
+        float: left;
+      }
+      .location__icon {
+      	margin: 0 calc((100% - 32px) /2);
+      }
+      #menu {
+        top: 0;
+      }
+      .menu {
+        width: calc(100% - 158px);
+        display: inline-block;
+      }
+      .menu__socials {
+        width: 152px;
+        display: inline-block;
+      }
+      .overview-wrap {
+        overflow: hidden;
+      }
+      #registration {
+        padding: calc((459px - 398px) /2);
+      }
+      .tabs__item {
+        display: inline-block;
+      }
+      .session {
+        overflow: hidden;
+      }
+      .session__time {
+        display: block;
+        float: left;
+      }
+      .session__arrangement {
+        display: block;
+        float: left;
+      }
+      .speaker {
+        display: inline-block;
+      }
+      .speaker__photo {
+        margin: 0 auto;
+      }
+#app
+  a.invisible(href="/nolink")
+  .page-wrap
+    include mixins/icons.jade
+    include partitions/menu.jade
+    include partitions/overview.jade
+    include partitions/speakers.jade
+    include partitions/schedule.jade
+    include partitions/location.jade
+    include partitions/registration.jade
+    include partitions/partners.jade
+    include partitions/footer.jade
+script(src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js")
+script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{config.google.mapsAPIKey}")
+script(src="scripts/bundle.js")
+if (isDesktop)
+  script.
+    // Add event to Google calendar
+    function googleCalendar(obj) {
+      var data = obj;
+    
+      var CLIENT_ID = '#{config.google.calndrClientId}';
+    
+      var SCOPES = ['https://www.googleapis.com/auth/calendar'];
+    
+      function checkAuth() {
+        gapi.auth.authorize(
+          {
+            'client_id': CLIENT_ID,
+            'scope': SCOPES
+          }, handleAuthResult);
+      }
+      if (data) {
+        checkAuth();
+      }
+    
+      function handleAuthResult(authResult) {
+        if (authResult && !authResult.error) {
+          loadCalendarApi();
+        } else {
+          alert('Google calendar authorization failed :(');
+        }
+      }
+    
+      function loadCalendarApi() {
+        gapi.client.load('calendar', 'v3', createEvent);
+      }
+      
+      function createEvent() {
+        var event = {
+        summary: data.summary,
+        location: data.location,
+        description: data.description,
+        start: {
+          dateTime: ISODateString(new Date(data.start.dateTime)),
+          timeZone: 'Europe/Kiev'
+        },
+        end: {
+          dateTime: ISODateString(new Date(data.end.dateTime)),
+          timeZone: 'Europe/Kiev'
+        },
+        reminders: {
+          useDefault: true
+        }
+      };
+    
+        var request = gapi.client.calendar.events.insert({
+          'calendarId': 'primary',
+          'resource': event
+        });
+    
+        request.execute(function(event) {
+          window.open(event.htmlLink, 'Create event', "height=850,width=850");
+        });
+      }
+      
+      //Convert ISO string to RFC 3339
+      //d must be a "new Date()" object.
+      function ISODateString(d){
+        function pad(n) {
+          return n < 10 ? '0' + n : n
+        }
+        return d.getUTCFullYear()+'-'
+          + pad(d.getUTCMonth()+1)+'-'
+          + pad(d.getUTCDate())+'T'
+          + pad(d.getUTCHours())+':'
+          + pad(d.getUTCMinutes())+':'
+          + pad(d.getUTCSeconds())+'Z'
+      }
+    };
+  script(src="https://apis.google.com/js/client.js?onload=googleCalendar")

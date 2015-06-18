@@ -1,0 +1,209 @@
+#menu {
+	@include container-ext;
+	@include bp(medium) {
+		background: none;
+		box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+		height: $toggle-button__height;
+		position: fixed;
+	}
+	background: $color__grayscale--13;
+	height: $menu__height;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+}
+
+//set margim to next element after menu equals to menu height
+#menu + section.page-wrap {
+	@include bp(medium) {
+		margin-top: $toggle-button__height;
+	}
+	margin-top: $menu__height;
+}
+
+.toggleWrapper {
+	@include bp(medium) {
+		background: $color__grayscale--1;
+		display: flex;
+		height: auto;
+		justify-content: flex-end;
+	}
+	display: none;
+}
+
+.menu-wrapper {
+	@include container-int;
+	@include bp(medium) {
+		flex-direction: column;
+		left: 0;
+		position: fixed;
+		top: 0;
+	}
+	justify-content: space-between;
+	position: relative;
+}
+
+.menu {
+	@include bp(medium) {
+		background: $color__grayscale--1;
+		flex-direction: column;
+		height: 100%;
+		left: - $menu-width--resp;
+		margin: 0;
+		max-width: $menu-width--resp;
+		position: fixed;
+		transition: left 0.4s;
+		width: 100%;
+	}
+	display: flex;
+	margin: 0;
+}
+
+.menu--visible {
+	@include bp(medium) {
+		left: 0px;
+	}
+}
+
+
+.menu__item{
+	@include bp(large) {
+		&:hover{
+			color: $color__grayscale--4;
+		}
+	}
+	@include bp(medium) {
+		&:hover{
+			background: $color__primary;
+		}
+		display: block;
+		padding: 20px 40px;
+		font-size: 1.4em;
+		color: $color__grayscale--13;
+	}
+	color: $color__grayscale--8;
+	display: inline-block;
+	font-size: $font__size--3;
+	font-weight: 400;
+	list-style: none;
+	padding: 26px 17.6px 14px;
+	text-align: left;
+	text-transform: capitalize;
+	transition: all 0.2s;
+}
+
+.menu__item:first-child {
+	padding-left: 7px;
+	@include bp(medium) {
+		padding: 20px 40px;
+	}
+}
+
+.menu__socials {
+	display: flex;
+	margin-right: 6px;
+	@include bp(medium) {
+		display: none;
+	}
+}
+
+.menu__social_icon {
+	&:hover {
+		.path-1 {
+			fill: $color__grayscale--6;
+		}
+	}
+	.path-1 {
+		fill: $color__grayscale--8;
+		transition: all 0.3s;
+	}
+	.path-2 {
+		fill: $color__grayscale--13;
+	}
+	display: inline-block;
+	height: 28px;
+	margin: 21px 5px 0;
+	width: 28px;
+}
+
+.menu-logo {
+	@include bp(medium) {
+		display: block;
+		left: 7px;
+		position: absolute;
+		top: 8px;
+		width: 69px;
+	}
+  display: none;
+}
+
+.menu-header {
+	@include bp(medium) {
+		color: $color__grayscale--13;
+	  display: block;
+	  font-size: 26px;
+	  font-weight: 700;
+	  line-height: 31px;
+	  width: 100%;
+	  max-width: 135px;
+	  margin: 10px 0 3px 32%;
+	  position: absolute;
+	  text-align: left;
+	}
+	display: none;
+}
+
+/* toggle visibility of menu on smaller screens */
+
+.menuToggleBox {
+	display: none;
+}
+
+.menuToggle {
+	@include bp(medium) {
+		align-items: center;
+		cursor: pointer;
+		display: block;
+		display: flex;
+		flex-direction: column;
+		height: $toggle-button__height;
+		justify-content: space-around;
+		padding: 25px 0 30px;
+		width: $toggle-button__width;
+	}
+	&:hover .menuToggle__stripe:nth-child(2) {
+		margin: 3.5px auto;
+	}
+	display: none;
+}
+
+.menuToggle__stripe {
+	background: $color__grayscale--13;
+	border-radius: $stripe__height / 2;
+	height: $stripe__height;
+	margin: 0 auto;
+	width: 64%;
+}
+
+.darkenScreen--hidden {
+	@include bp(large) {
+		display: none;
+	}
+	background: rgba(3, 3, 3, 0.64);
+	cursor: pointer;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	transition: opacity 0.3s;
+	top: 0;
+	visibility: hidden;
+	width: 100%;
+	z-index: -1;
+}
+
+.darkenScreen--visible {
+		opacity: 1;
+		visibility: visible;
+}
