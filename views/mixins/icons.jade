@@ -2,16 +2,16 @@ mixin socialIcons(networks)
   each networkUrl, network in networks
     case network
       when "facebook"
-        a.social_link(href="#{ networkUrl }", target="_blank")&attributes(attributes)
+        a.social_link(href="#{ networkUrl }", title="#{network}" target="_blank")&attributes(attributes)
           +icon(network)
       when "twitter"
-        a.social_link(href="#{ networkUrl }", target="_blank")&attributes(attributes)
+        a.social_link(href="#{ networkUrl }", title="#{network}" target="_blank")&attributes(attributes)
           +icon(network)
       when "google-plus"
-        a.social_link(href="#{ networkUrl }", target="_blank")&attributes(attributes)
+        a.social_link(href="#{ networkUrl }", title="#{network}" target="_blank")&attributes(attributes)
           +icon(network)
       when "skype"
-        a.social_link(href="#{ networkUrl }", target="_blank")&attributes(attributes)
+        a.social_link(href="#{ networkUrl }", title="#{network}" target="_blank")&attributes(attributes)
           +icon(network)
         
 mixin icon(icon)

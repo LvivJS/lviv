@@ -1,13 +1,15 @@
 footer#footer.page-wrap.footer
   .footer__container
-    each block in footer.contacts
-      .footer__block
-        h4.block__header= block.title
-        each contact in block.contacts
-          .block__contact
-            span.block__contact__name= contact.name
-            span.block__contact__phone= contact.phone
-            a.block__contact__email(href="mailto:#{contact.email}")= contact.email  
+    .footer__block
+      .advert 
+        span.wanted Wanted speakers...
+        span.contact-us If you want to join our speakers, please contact us.
+    .footer__block
+      h4.block__header LvivJs Coordinator
+        .block__contact
+          span.block__contact__name Ksenya Medynska
+          span.block__contact__phone +38 (222) 123-4567
+          a.block__contact__email(href="mailto:medynska.ksenya@gmail.com") medynska.ksenya@gmail.com
   .footer__copyright
     .footer__container
       span.copyright__text= footer.copyright

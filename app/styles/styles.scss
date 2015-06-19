@@ -23,21 +23,9 @@ img {
 }
 
 //...This styles shoud be removed after merge with main_site
-.banner-wrap {
-  background-color: #D0B150;
-}
-
 .banner {
-  @include container-int;
-  background: #A4EDA4;
-  height: 700px;
-  text-transform: uppercase;
-  color: #777;
-  font-size: 50px;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
-//...
 
 @import 'modules/_basicLayout';
 // @import 'modules/_menu';
