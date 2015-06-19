@@ -11,9 +11,11 @@ var MobileDetect = require('mobile-detect');
 
 var port = process.env.port || 8080;
 var env = process.env.NODE_ENV || 'development';
+var isProd = env === 'production';
 // utilities
 app.locals.moment = require('moment');
 var data = {};
+var pathToStatic = isProd ? 'static' : 'dist';
 
 data.config = require('./app/scripts/config.js');
 data.footer = require('./app/locales/en/footer.json');
@@ -38,7 +40,7 @@ data.config.modules.forEach(function(module) {
 app.use(compress());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, pathToStatic)));
 // listens to payloads from github
 app.use('/github-payload', ci);
 
