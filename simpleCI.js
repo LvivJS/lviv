@@ -27,7 +27,7 @@ function ci(req, res, next){
     // we return success status only if all steps passed
     Q.fcall(pullUpdates, body)
       .then(updateNpm)
-      .then(rebuildApp)
+      // .then(rebuildApp)
       .then(function(data){
         res.status(200).send('[BUILD SUCCESS] :: \n' + data.log );
         console.log('res status 200 - Build success');
@@ -121,7 +121,7 @@ function rebuildApp(data){
 
 function restartServer(data){
   return new Promise(function(resolve, reject){
-    exec('forever restart server.js', function(err, stdout, stderr){
+    exec('service lvivjs restart', function(err, stdout, stderr){
       if(err) {
         reject(err);
       } else {

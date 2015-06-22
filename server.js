@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, staticDir)));
 // listens to payloads from github
-// app.use('/github-payload', ci);
+app.use('/github-payload', ci);
 
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
