@@ -36,7 +36,7 @@ paths.imageFiles = './app/images/**/*';
 paths.jsonFiles = './app/locales/';
 paths.styles = '/style';
 paths.script = '/scripts';
-paths.build = './dist';
+paths.build = isProd ? './static' : './dist';
 
 // default
 gulp.task('default', ['serve']);
