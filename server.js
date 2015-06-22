@@ -92,7 +92,7 @@ function checkUserAgent(req, res, next) {
   data.isIE9 = md.version('Trident') <= 6;
 
   var usrAgnt = req.get('User-Agent');
-  var blackList = require('./dist/locales/badBots.json');;
+  var blackList = require('./app/locales/badBots.json');;
   var isInList = false;
 
   for (var i = blackList.length - 1; i >= 0; i--) {
