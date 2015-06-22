@@ -1,0 +1,10 @@
+{
+  "title": "registration",
+  "Name_placeHolder": "name",
+  "Name_err": "Name should have at least 3 characters, but no more than 50",
+  "Email_placeHolder": "email",
+  "Email_err": "Please, enter valid email",
+  "Phone_placeHolder": "tel",
+  "Phone_err": "Phone must have at least 4 numeric digit.",
+  "button_text": "send"
+}

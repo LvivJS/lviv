@@ -46,7 +46,8 @@
     "watchify": "^3.1.0"
   },
   "scripts": {
-    "start": "gulp build && gulp",
-    "server:start": "NODE_ENV=production forever -o log/out.log -e log/err.log start server.js"
+    "start": "npm run server:start",
+    "server:build": "NODE_ENV=production gulp build",
+    "server:start": "NODE_ENV=production node server.js"
   }
 }
