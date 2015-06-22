@@ -26,7 +26,7 @@ function ci(req, res, next){
     // what have to be done to ensure latest steady version on test
     // we return success status only if all steps passed
     Q.fcall(pullUpdates, body)
-      .then(updateNpm)
+      // .then(updateNpm)
       // .then(rebuildApp)
       .then(function(data){
         res.status(200).send('[BUILD SUCCESS] :: \n' + data.log );
