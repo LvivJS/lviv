@@ -2,7 +2,6 @@
   @include container-ext;
   @include bp(medium) {
     background: none;
-    margin-top: 13px;
     padding-top: 125px;
   }
   background: #383838;
@@ -102,7 +101,6 @@
 
 .footer__socials {
   @include bp(medium) {
-    border-top: 2px solid #DFDFDF;
     display: flex;
     height: 125px;
     justify-content: center;
