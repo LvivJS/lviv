@@ -1,13 +1,17 @@
 footer#footer.page-wrap.footer
   .footer__container
-    each block in footer.contacts
+    .footer__block
+      .advert 
+        span.wanted Wanted speakers and partners...
+        span.contact-us We are open to cooperation, feel free to contact us.
+    each group in footer.contacts
       .footer__block
-        h4.block__header= block.title
-        each contact in block.contacts
+        h4.block__header= group.title
+        each contact in group.contacts
           .block__contact
             span.block__contact__name= contact.name
             span.block__contact__phone= contact.phone
-            a.block__contact__email(href="mailto:#{contact.email}")= contact.email  
+            a.block__contact__email(href="mailto:#{contact.email}")= contact.email
   .footer__copyright
     .footer__container
       span.copyright__text= footer.copyright

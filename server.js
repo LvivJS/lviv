@@ -33,8 +33,9 @@ data.config.modules.forEach(function(module) {
     component: module.component.toLowerCase(),
     title: data[mod].title
   };
-
-  data.menuItms.push(menuItem);
+  if (module.isRendering) {
+    data.menuItms.push(menuItem);
+  }
 });
 
 app.use(compress());

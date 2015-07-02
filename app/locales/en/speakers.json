@@ -1,41 +1,30 @@
 {
   "title": "speakers",
+  "ad": "This is only beginning, join our speakers!",
   "data": [
     {
-      "name":"Name",
-      "position":"Designer at That Dragon, Cancer",
-      "photo_url":"images/speakers/speaker-gabe-zichermann.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ..."
+      "name": "Artyom Trityak",
+      "position": "",
+      "photo_url": "images/speakers/artyom_trityak.jpg",
+      "about":""
     },
     {
-      "name":"David Allen",
-      "position":"Designer at That Dragon, Cancer",
-      "photo_url":"images/speakers/speaker-david-allen.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ..."
+      "name": "Dima Maleev",
+      "position": "",
+      "photo_url": "images/speakers/dima_maleev.jpg",
+      "about": ""
     },
     {
-      "name":"Name",
-      "position":"Designer at That Dragon, Cancer",
-      "photo_url":"images/speakers/speaker-eric-brewer.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ..."
+      "name": "Andrey Listochkin",
+      "position": "",
+      "photo_url": "images/speakers/andrey_listochkin.jpg",
+      "about": ""
     },
     {
-      "name":"Gabe Zichermann",
-      "position":"Author at Getting Things Done",
-      "photo_url":"images/speakers/speaker-nicolas-brusson.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ..."
-    },
-    {
-      "name":"Name",
-      "position":"Designer at That Dragon, Cancer",
-      "photo_url":"images/speakers/speaker-jan-rezab.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ..."
-    },
-    {
-      "name":"Brian Wong",
-      "position":"Founder & CEO, Kiip",
-      "photo_url":"images/speakers/speaker-scott-smith.jpg",
-      "about":"He pioneered the use of clusters of commodity servers for Internet services, based on ..."
+      "name": "Roman Kyrylych",
+      "position": "",
+      "photo_url": "images/speakers/kyrylych_roman.jpg",
+      "about": ""
     }
   ]
 }
