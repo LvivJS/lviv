@@ -14,10 +14,6 @@ var locale = ~availableLocales.indexOf(userLang) ? userLang : defLang;
 
 var config = {
   google: {
-    coordinates: {
-      lat: 49.842721,
-      lng: 24.000630
-    },
     calndrClientId: '910713467721-pnujab5h8bbnaqhorpen6c8s1qp3sclf.apps.googleusercontent.com',
     mapsAPIKey: 'AIzaSyC1b4B9v4bfOsDHrPk6u8ryB0j7tXGK6MU'
   },
@@ -44,22 +40,28 @@ var config = {
   },
   modules: [
     {
-      component: 'overview'
+      component: 'overview',
+      isRendering: true
     },
     {
-      component: 'speakers'
+      component: 'speakers',
+      isRendering: true
     },
     {
-      component: 'schedule'
+      component: 'schedule',
+      isRendering: false
     },
     {
-      component: 'location'
+      component: 'location',
+      isRendering: true
     },
     {
-      component: 'registration'
+      component: 'registration',
+      isRendering: true
     },
     {
-      component: 'partners'
+      component: 'partners',
+      isRendering: true
     }
   ],
   breakPoint: 768

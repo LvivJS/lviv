@@ -57,18 +57,6 @@
 	width: 100%;
 }
 
-//this styles are specific to square images
-a[title="Lohika Systems"],
-a[title="Remit"],
-a[title="Team International"] {
-	@include bp(medium) {
-		height: 88px;
-	}
-	background-size: cover;
-	height: 177px;
-	margin: -50px 0;
-}
-
 .partners__item-link {
 	@include bp(medium) {
 		margin: 11px 3px;
@@ -81,6 +69,16 @@ a[title="Team International"] {
 	height: 55px;
 	margin: 0 20px;
 	width: 172px;
+}
+
+//this styles are specific to square images
+a[title="Lohika Systems"] {
+	@include bp(medium) {
+		height: 88px;
+	}
+	background-size: cover;
+	height: 177px;
+	// margin: -50px 0 0;
 }
 
 .partners__category:first-of-type > .partners__items {

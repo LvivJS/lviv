@@ -1,15 +1,17 @@
 footer#footer.page-wrap.footer
   .footer__container
     .footer__block
-      .advert 
+      .advert
         span.wanted Wanted speakers and partners...
         span.contact-us We are open to cooperation, feel free to contact us.
-    .footer__block
-      h4.block__header Contacts
-        .block__contact
-          span.block__contact__name Ksenya Medynska
-          span.block__contact__phone skype: ksenya.medynska
-          a.block__contact__email(href="mailto:medynska.ksenya@gmail.com") medynska.ksenya@gmail.com
+    each group in footer.contacts
+      .footer__block
+        h4.block__header= group.title
+        each contact in group.contacts
+          .block__contact
+            span.block__contact__name= contact.name
+            span.block__contact__phone= contact.phone
+            a.block__contact__email(href="mailto:#{contact.email}")= contact.email
   .footer__copyright
     .footer__container
       span.copyright__text= footer.copyright

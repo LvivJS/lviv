@@ -1,6 +1,7 @@
 'use strict';
 
 var config = require('../config');
+var location = require('../../locales/en/location.json');
 
 function locMap(linkText) {
   var viewport = window.innerWidth;
@@ -46,12 +47,12 @@ function locMap(linkText) {
 
   //add map to the page
   function initialize() {
-    var lat = config.google.coordinates.lat;
-    var lng = config.google.coordinates.lng;
+    var lat = location.coordinates.lat;
+    var lng = location.coordinates.lng;
     var myLatlng = new google.maps.LatLng(lat, lng);
     var mapProp = {
       center: myLatlng,
-      zoom: 17,
+      zoom: 15,
       scrollwheel: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       draggable: true
@@ -62,7 +63,7 @@ function locMap(linkText) {
     var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
-      title: 'Awesome place for conference! See you there!'
+      title: location.markerTitle
     });
 
     window.addEventListener('resize', addWheelZoom);

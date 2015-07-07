@@ -10,5 +10,11 @@ head
   a.invisible(href="/nolink")
   .page-wrap.banner-wrap
     include mixins/icons.jade
-    img.banner(src="images/banner.png" alt="LvivJS Conference, August 29")
+    include partitions/menu.jade
+    include partitions/overview.jade
+    include partitions/speakers.jade
+    //- include partitions/schedule.jade
+    include partitions/location.jade
+    include partitions/registration.jade
+    include partitions/partners.jade
     include partitions/footer.jade

@@ -5,7 +5,7 @@ var config = require('../config');
 function speakers(btnText) {
   var allSpeakers = document.getElementsByClassName('speaker');
   var fourthSpeaker = allSpeakers[3];
-  var speakersWrap = fourthSpeaker.parentNode;
+  var speakersWrap = allSpeakers[0].parentNode;
   var isExpanded = false;
   var btn = document.createElement('div');
   var text = document.createTextNode(btnText + ' >>');
@@ -19,8 +19,10 @@ function speakers(btnText) {
   });
 
   //set collapsed .speakers height
-  window.onload = collapseSpeakers;
-  window.onresize = collapseSpeakers;
+  if (fourthSpeaker) {
+    window.onload = collapseSpeakers;
+    window.onresize = collapseSpeakers;
+  }
 
   function collapseSpeakers() {
     var viewport = window.innerWidth;
