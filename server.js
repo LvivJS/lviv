@@ -42,11 +42,7 @@ data.config.modules.forEach(function(module) {
 app.use(compress());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, staticDir)));
-=======
-app.use(express.static(path.join(__dirname, pathToStatic)));
->>>>>>> main_site
 // listens to payloads from github
 app.use('/github-payload', ci);
 
