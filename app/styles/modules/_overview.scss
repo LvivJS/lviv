@@ -49,11 +49,29 @@
   }
 }
 
+.overview__text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 39%;
+  align-items: center;
+  margin-right: 6.8%;
+  @include bp(medium) {
+    justify-content: center;
+    width: 28%;
+    margin: 0;
+  }
+  @include bp(small) {
+    flex-grow: 1;
+    width: 100%;
+  }
+}
+
 .overview__text--lviv,
-.overview__text--js,
-.overview__text--2015 {
+.overview__text--date {
+  width: 100%;
+  text-align: right;
   color: #5e5e5e;
-  text-transform: uppercase;
   font-size: 52px;
   font-weight: 500;
   @include bp(medium) {
@@ -64,34 +82,14 @@
   }
 }
 
-.overview__text-wrap {
-  display: flex;
-  justify-content: space-between;
-  width: 39%;
-  align-self: stretch;
-  align-items: center;
-  margin-right: 6.8%;
+.overview__text--lviv {
   @include bp(medium) {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 28%;
-    margin: 0;
-  }
-  @include bp(small) {
-    align-items: center;
-    flex-grow: 1;
-    width: 100%;
+    display: none;
   }
 }
 
-.overview__text--js {
-  font-size: 80px;
-  margin: 0 35px;
-  @include bp(medium) {
-    margin: 0;
-  }
+.overview__text--date {
   @include bp(small) {
-    display: none;
+    text-align: center;
   }
 }
