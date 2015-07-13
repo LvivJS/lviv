@@ -89,7 +89,7 @@ gulp.task('build_style', function() {
 gulp.task('build_image', function() {
   return gulp.src(paths.imageFiles)
     .pipe(imagemin({progressive: true }))
-    .pipe(jpegoptim({max: 50})())
+    .pipe(jpegoptim({max: 70})())
     .pipe(gulp.dest(paths.build + '/images'));
 });
 
