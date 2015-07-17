@@ -52,15 +52,15 @@ var config = {
       isRendering: false
     },
     {
-      component: 'location',
-      isRendering: true
-    },
-    {
       component: 'registration',
       isRendering: true
     },
     {
       component: 'partners',
+      isRendering: true
+    },
+    {
+      component: 'location',
       isRendering: true
     }
   ],
