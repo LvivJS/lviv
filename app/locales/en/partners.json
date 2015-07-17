@@ -10,6 +10,21 @@
           "img": "images/partners/general/lohika.jpg"
         }
       ]
+    },
+    {
+      "title": "golden",
+      "data": [
+        {
+          "title": "DataArt",
+          "link": "http://www.dataart.ua/",
+          "img": "images/partners/golden/dataart.png"
+        },
+        {
+          "title": "Eleks",
+          "link": "http://www.eleks.com/",
+          "img": "images/partners/golden/eleks.png"
+        }
+      ]
     }
   ]
 }

@@ -61,26 +61,35 @@
 	@include bp(medium) {
 		margin: 11px 3px;
 		width: 27%;
+		display: flex;
+		align-items: center;
 	}
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	display: inline-block;
-	height: 55px;
+	height: 30px;
 	margin: 0 20px;
-	width: 172px;
 }
 
 //this styles are specific to square images
 a[title="Lohika Systems"] {
 	@include bp(medium) {
 		height: 88px;
+		margin: 0;
 	}
-	background-size: cover;
-	height: 177px;
-	// margin: -50px 0 0;
+	height: 150px;
+	margin: -50px 0 0;
 }
 
 .partners__category:first-of-type > .partners__items {
 	margin: 0;
+}
+
+.partners__item-image {
+	@include bp(medium) {
+		width: 100%;
+		height: auto;
+	}
+  height: 100%;
 }

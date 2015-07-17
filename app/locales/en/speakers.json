@@ -3,6 +3,24 @@
   "ad": "This is only beginning, join our speakers!",
   "data": [
     {
+      "name": "Roman Kyrylych",
+      "position": "Modern Web Applications and Browser Support",
+      "photo_url": "images/speakers/kyrylych_roman.jpg",
+      "about": ""
+    },
+    {
+      "name": "Vadym Makeev",
+      "position": "Like real ones! Installing Web Apps",
+      "photo_url": "images/speakers/vadym_makeev.jpg",
+      "about": ""
+    },
+    {
+      "name": "Ivan Lavriv",
+      "position": "Introduction to OrbitJS",
+      "photo_url": "images/speakers/ivan_lavriv.jpg",
+      "about": ""
+    },
+    {
       "name": "Artyom Trityak",
       "position": "",
       "photo_url": "images/speakers/artyom_trityak.jpg",
@@ -18,12 +36,6 @@
       "name": "Andrey Listochkin",
       "position": "",
       "photo_url": "images/speakers/andrey_listochkin.jpg",
-      "about": ""
-    },
-    {
-      "name": "Roman Kyrylych",
-      "position": "",
-      "photo_url": "images/speakers/kyrylych_roman.jpg",
       "about": ""
     }
   ]
