@@ -25,6 +25,16 @@
           "img": "images/partners/golden/eleks.png"
         }
       ]
+    },
+    {
+      "title": "bronze",
+      "data": [
+        {
+          "title": "Intellias",
+          "link": "http://www.intellias.com/",
+          "img": "images/partners/bronze/intellias.png"
+        }
+      ]
     }
   ]
 }

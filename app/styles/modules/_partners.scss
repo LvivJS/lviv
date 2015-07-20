@@ -61,6 +61,7 @@
 	@include bp(medium) {
 		margin: 11px 3px;
 		width: 27%;
+		height: auto;
 		display: flex;
 		align-items: center;
 	}
