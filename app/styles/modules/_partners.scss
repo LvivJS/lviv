@@ -74,13 +74,21 @@
 }
 
 //this styles are specific to square images
-a[title="Lohika Systems"] {
+.partners__item-link[title="Lohika Systems"] {
 	@include bp(medium) {
 		height: 88px;
 		margin: 0;
 	}
-	height: 150px;
-	margin: -50px 0 0;
+	height: 190px;
+	margin: -50px 0;
+}
+
+.partners__item-link[title="Intellias"] {
+	@include bp(medium) {
+		width: 27%;
+		height: auto;
+	}
+	height: 60px;
 }
 
 .partners__category:first-of-type > .partners__items {
