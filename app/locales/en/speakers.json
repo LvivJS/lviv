@@ -9,6 +9,24 @@
       "about": ""
     },
     {
+      "name": "Dima Maleev",
+      "position": "Javascript under the hood",
+      "photo_url": "images/speakers/dima_maleev.jpg",
+      "about": ""
+    },
+    {
+      "name": "Artyom Trityak",
+      "position": "",
+      "photo_url": "images/speakers/artyom_trityak.jpg",
+      "about":""
+    },
+    {
+      "name": "Andrey Listochkin",
+      "position": "",
+      "photo_url": "images/speakers/andrey_listochkin.jpg",
+      "about": ""
+    },
+    {
       "name": "Vadym Makeev",
       "position": "Like real ones! Installing Web Apps",
       "photo_url": "images/speakers/vadym_makeev.jpg",
@@ -21,27 +39,21 @@
       "about": ""
     },
     {
-      "name": "Aleksander Zinewicz",
+      "name": "Oleksandr Zinewicz",
       "position": "Chrome Extensions",
       "photo_url": "images/speakers/aleksander_zinewicz.jpg",
       "about":""
     },
     {
-      "name": "Artyom Trityak",
-      "position": "",
-      "photo_url": "images/speakers/artyom_trityak.jpg",
-      "about":""
-    },
-    {
-      "name": "Dima Maleev",
-      "position": "",
-      "photo_url": "images/speakers/dima_maleev.jpg",
+      "name": "Bogdan Gorpynchuk",
+      "position": "WebGL: yesterday, today, tomorrow.",
+      "photo_url": "images/speakers/bogdan_gorpynchuk.jpg",
       "about": ""
     },
     {
-      "name": "Andrey Listochkin",
-      "position": "",
-      "photo_url": "images/speakers/andrey_listochkin.jpg",
+      "name": "Roman Iakobchuk",
+      "position": "Building Isomorphic SPA Using React.Js",
+      "photo_url": "images/speakers/roman_iakobchuk.jpg",
       "about": ""
     }
   ]

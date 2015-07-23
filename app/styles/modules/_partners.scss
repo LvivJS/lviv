@@ -14,6 +14,7 @@
 }
 
 #partners .module-header {
+	padding-bottom: 0;
 	@include bp(medium) {
 		padding: 34px 0 0;
 	}
@@ -40,7 +41,7 @@
 	color: $color__partners-header;
 	font-weight: 700;
 	font-size: $font__size--3;
-	margin: 30px 0px;
+	margin: 56px 0px 30px;
 	text-align: center;
 	text-transform: uppercase;
 	width: 100%;
@@ -71,24 +72,30 @@
 	display: inline-block;
 	height: 30px;
 	margin: 0 20px;
-}
-
-//this styles are specific to square images
-.partners__item-link[title="Lohika Systems"] {
-	@include bp(medium) {
-		height: 88px;
-		margin: 0;
+	&[title="Lohika Systems"] {
+		@include bp(medium) {
+			height: 88px;
+			margin: 0;
+		}
+		height: 190px;
+		margin: -50px 0;
 	}
-	height: 190px;
-	margin: -50px 0;
-}
-
-.partners__item-link[title="Intellias"] {
-	@include bp(medium) {
-		width: 27%;
-		height: auto;
+	&[title="Intellias"] {
+		@include bp(medium) {
+			width: 27%;
+			height: auto;
+		}
+		height: 60px;
 	}
-	height: 60px;
+	&[title="OdessaJS"],
+	&[title="Ukrainian IT Awards"],
+	&[title="Lits"] {
+		height: 90px;
+		@include bp(medium) {
+			width: 27%;
+			height: auto;
+		}
+	}
 }
 
 .partners__category:first-of-type > .partners__items {

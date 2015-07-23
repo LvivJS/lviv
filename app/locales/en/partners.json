@@ -35,6 +35,26 @@
           "img": "images/partners/bronze/intellias.png"
         }
       ]
+    },
+    {
+      "title": "informational partners",
+      "data": [
+        {
+          "title": "OdessaJS",
+          "link": "http://odessajs.org/",
+          "img": "images/partners/info/odessajs.png"
+        },
+        {
+          "title": "Ukrainian IT Awards",
+          "link": "https://www.facebook.com/itawards.ua?fref=ts",
+          "img": "images/partners/info/itawards.png"
+        },
+        {
+          "title": "Lits",
+          "link": "http://lits.com.ua/course/web-ui-course/",
+          "img": "images/partners/info/lits.jpg"
+        }
+      ]
     }
   ]
 }
