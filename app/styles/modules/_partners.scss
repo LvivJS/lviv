@@ -60,7 +60,7 @@
 
 .partners__item-link {
 	@include bp(medium) {
-		margin: 11px 3px;
+		margin: 11px;
 		width: 27%;
 		height: auto;
 		display: flex;
@@ -87,12 +87,19 @@
 		}
 		height: 60px;
 	}
+	&[title="Sigma Software"] {
+		height: 55px;
+		@include bp(medium) {
+			width: 27%;
+			height: auto;
+		}
+	}
 	&[title="OdessaJS"],
 	&[title="Ukrainian IT Awards"],
 	&[title="Lits"] {
 		height: 90px;
 		@include bp(medium) {
-			width: 27%;
+			width: 13%;
 			height: auto;
 		}
 	}
