@@ -80,7 +80,8 @@
 		height: 190px;
 		margin: -50px 0;
 	}
-	&[title="Intellias"] {
+	&[title="Intellias"],
+	&[title="Team International"]{
 		@include bp(medium) {
 			width: 27%;
 			height: auto;
