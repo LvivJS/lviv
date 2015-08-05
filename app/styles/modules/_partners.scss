@@ -95,6 +95,13 @@
 			height: auto;
 		}
 	}
+	&[title="Epam Systems"] {
+		height: 41px;
+		@include bp(medium) {
+			width: 27%;
+			height: auto;
+		}
+	}
 	&[title="OdessaJS"],
 	&[title="Ukrainian IT Awards"],
 	&[title="Lits"] {
