@@ -55,6 +55,12 @@
       "position": "Building Isomorphic SPA Using React.Js",
       "photo_url": "images/speakers/roman_iakobchuk.jpg",
       "about": ""
+    },
+    {
+      "name": "Oleksii Prohonnyi",
+      "position": "D3.js tips & tricks: export to svg, crossfilter, maps etc.",
+      "photo_url": "images/speakers/oleksii_prohonnyi.png",
+      "about": ""
     }
   ]
 }
