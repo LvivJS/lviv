@@ -61,6 +61,12 @@
       "position": "D3.js tips & tricks: export to svg, crossfilter, maps etc.",
       "photo_url": "images/speakers/oleksii_prohonnyi.png",
       "about": ""
+    },
+    {
+      "name": "Georgiy Podsvyetov",
+      "position": "Modern JavaScript engineer. Think wider.",
+      "photo_url": "images/speakers/georgiy_podsvyetov.jpg",
+      "about": ""
     }
   ]
 }
