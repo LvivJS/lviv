@@ -159,20 +159,6 @@
         },
         {
           "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"HR-session",
-          "type":"report",
-          "speaker":
-            {
-              "name":"DataArt",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
             "start": "2015-08-29T14:00:00",
             "end": ""
           },
