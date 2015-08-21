@@ -9,7 +9,6 @@ mixin speaker(speaker)
 
 section#speakers.page-wrap
   h2.module-header= speakers.title
-  span.speakers__description= speakers.ad
   div.speakers
     each speaker in speakers.data
       +speaker(speaker)

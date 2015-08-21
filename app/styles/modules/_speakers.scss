@@ -9,18 +9,6 @@
   overflow: hidden;
 }
 
-.speakers__description {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 22px;
-  color: #F37237;
-  padding: 0 38px;
-  @include bp(medium) {
-    padding-bottom: 20px;
-  }
-}
-
 .speaker {
   @include bp(medium) {
     margin: 0 0 35px;

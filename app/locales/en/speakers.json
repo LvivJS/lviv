@@ -1,6 +1,5 @@
 {
   "title": "speakers",
-  "ad": "This is only beginning, join our speakers!",
   "data": [
     {
       "name": "Roman Kyrylych",
@@ -16,13 +15,13 @@
     },
     {
       "name": "Artyom Trityak",
-      "position": "",
+      "position": "React Native from scratch: start, build and launch.",
       "photo_url": "images/speakers/artyom_trityak.jpg",
       "about":""
     },
     {
       "name": "Andrey Listochkin",
-      "position": "",
+      "position": "Staying Productive with Ember.",
       "photo_url": "images/speakers/andrey_listochkin.jpg",
       "about": ""
     },
