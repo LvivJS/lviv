@@ -68,6 +68,26 @@
           "title": "Lits",
           "link": "http://lits.com.ua/course/web-ui-course/",
           "img": "images/partners/info/lits.jpg"
+        },
+        {
+          "title": "Lviv IT Arena",
+          "link": "http://itarena.lviv.ua/",
+          "img": "images/partners/info/lviv_it_arena.png"
+        },
+        {
+          "title": "Lviv IT Cluster",
+          "link": "http://itcluster.lviv.ua/",
+          "img": "images/partners/info/lviv_it_cluster.png"
+        },
+        {
+          "title": "JDay Lviv",
+          "link": "http://www.jday.com.ua/",
+          "img": "images/partners/info/jday_lviv.png"
+        },
+        {
+          "title": "GDG DevFest",
+          "link": "http://devfest.gdg.org.ua/",
+          "img": "images/partners/info/gdg_devfest.png"
         }
       ]
     }

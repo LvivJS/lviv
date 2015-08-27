@@ -111,6 +111,21 @@
 			height: auto;
 		}
 	}
+	&[title="Lviv IT Arena"] {
+		height: 83px;
+	}
+	&[title="JDay Lviv"],
+	&[title="GDG DevFest"] {
+		height: 50px;
+		margin-top: 20px;
+	}
+	&[title="Lviv IT Cluster"] {
+		height: 77px;
+		@include bp(medium) {
+			height: auto;
+			width: 13%;
+		}
+	}
 }
 
 .partners__category:first-of-type > .partners__items {
