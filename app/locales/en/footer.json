@@ -14,18 +14,9 @@
       "title": "Technical Support",
       "contacts": [
         {
-          "name": "Artyom Trityak",
-          "email": "art.trityak@gmail.com"
-        },
-        {
           "name": "Taras Kharuk",
           "phone": "skype: taras.kharuk",
           "email": "taras.kharuk@gmail.com"
-        },
-        {
-          "name": "Andrii Pylat",
-          "phone": "skype: guitarbear2",
-          "email": "pilatao91@gmail.com"
         }
       ]
     }

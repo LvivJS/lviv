@@ -6,43 +6,33 @@
       "data": [
         {
           "title": "Lohika Systems",
-          "link": "http://www.lohika.com/",
+          "link": "http://www.lohika.com.ua/",
           "img": "images/partners/general/lohika.jpg"
         }
       ]
     },
     {
-      "title": "gold",
+      "title": "golden",
       "data": [
         {
-          "title": "Remit",
-          "link": "http://www.remit.se/",
-          "img": "images/partners/gold/remit-logo-1.png"
-        },
-        {
-          "title": "Epam Systems",
-          "link": "http://www.epam.com/",
-          "img": "images/partners/gold/logo_epam_20.png"
+          "title": "DataArt",
+          "link": "http://www.dataart.ua/",
+          "img": "images/partners/golden/dataart.png"
         },
         {
           "title": "Eleks",
           "link": "http://www.eleks.com/",
-          "img": "images/partners/gold/eleks-1.png"
+          "img": "images/partners/golden/eleks.png"
         },
         {
-          "title": "DataArt",
-          "link": "http://www.dataart.com/",
-          "img": "images/partners/gold/dataart-logo.jpg"
-        }
-      ]
-    },
-    {
-      "title": "silver",
-      "data": [
+          "title": "Sigma Software",
+          "link": "http://ua.sigma.software/",
+          "img": "images/partners/golden/sigma_software.png"
+        },
         {
-          "title": "GlobalLogic",
-          "link": "http://www.globallogic.com.ua/",
-          "img": "images/partners/silver/globallogic.jpg"
+          "title": "Epam Systems",
+          "link": "http://www.epam.com/",
+          "img": "images/partners/golden/epam.jpg"
         }
       ]
     },
@@ -52,12 +42,52 @@
         {
           "title": "Intellias",
           "link": "http://www.intellias.com/",
-          "img": "images/partners/bronze/INTELLIAS_LOGO_BACKGR_BACK.jpg"
+          "img": "images/partners/bronze/intellias.png"
         },
         {
-          "title": "N-iX",
-          "link": "http://n-ix.com/",
-          "img": "images/partners/bronze/n-ix.jpg"
+          "title": "Team International",
+          "link": "http://www.teaminternational.com/",
+          "img": "images/partners/bronze/team-international.jpg"
+        }
+      ]
+    },
+    {
+      "title": "informational partners",
+      "data": [
+        {
+          "title": "OdessaJS",
+          "link": "http://odessajs.org/",
+          "img": "images/partners/info/odessajs.png"
+        },
+        {
+          "title": "Ukrainian IT Awards",
+          "link": "https://www.facebook.com/itawards.ua?fref=ts",
+          "img": "images/partners/info/itawards.png"
+        },
+        {
+          "title": "Lits",
+          "link": "http://lits.com.ua/course/web-ui-course/",
+          "img": "images/partners/info/lits.jpg"
+        },
+        {
+          "title": "Lviv IT Arena",
+          "link": "http://itarena.lviv.ua/",
+          "img": "images/partners/info/lviv_it_arena.png"
+        },
+        {
+          "title": "Lviv IT Cluster",
+          "link": "http://itcluster.lviv.ua/",
+          "img": "images/partners/info/lviv_it_cluster.png"
+        },
+        {
+          "title": "JDay Lviv",
+          "link": "http://www.jday.com.ua/",
+          "img": "images/partners/info/jday_lviv.png"
+        },
+        {
+          "title": "GDG DevFest",
+          "link": "http://devfest.gdg.org.ua/",
+          "img": "images/partners/info/gdg_devfest.png"
         }
       ]
     }

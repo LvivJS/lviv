@@ -1,32 +1,31 @@
 {
   "contacts": [
     {
-      "title": "Lviv 2015 Coordinator",
+      "title": "Contacts",
       "contacts": [
         {
-          "name": "Roman Zachemba",
-          "phone": "+ 380 50 709 121",
-          "email": "roma.zachemba@uselab.ua"
+          "name": "Ksenya Medynska",
+          "phone": "skype: ksenya.medynska",
+          "email": "medynska.ksenya@gmail.com"
         }
       ]
     },
     {
-      "title": "Media & Sponsors contact",
+      "title": "Technical Support",
       "contacts": [
         {
-          "name": "Roman Zachemba",
-          "phone": "+ 380 50 709 121",
-          "email": "roma.zachemba@uselab.ua"
-        }
-      ]
-    },
-    {
-      "title": "Lviv 2015 Coordinator",
-      "contacts": [
+          "name": "Artyom Trityak",
+          "email": "art.trityak@gmail.com"
+        },
         {
-          "name": "Roman Zachemba",
-          "phone": "+ 380 50 709 121",
-          "email": "roma.zachemba@uselab.ua"
+          "name": "Taras Kharuk",
+          "phone": "skype: taras.kharuk",
+          "email": "taras.kharuk@gmail.com"
+        },
+        {
+          "name": "Andrii Pylat",
+          "phone": "skype: guitarbear2",
+          "email": "pilatao91@gmail.com"
         }
       ]
     }
