@@ -15,14 +15,6 @@
   @include container-int;
   align-items: center;
   justify-content: center;
-  height: inherit;
-
-  @include bp(medium) {
-    justify-content: center;
-  }
-  @include bp(small) {
-    flex-direction: column;
-  }
 }
 
 .main-logo {
@@ -30,17 +22,19 @@
   max-height: 100%;
 
   @include bp(medium) {
-    max-width: 350px;
-    margin: 0 0 20px 0;
+    max-height: 350px;
+    margin: 0 0 30px 0;
   }
   @include bp(small) {
-    max-width: 300px;
+    max-height: 250px;
+    margin-bottom: 40px;
   }
 }
 
 .overview__text-wrap {
   position: absolute;
   right: 0;
+  bottom: 50%;
   padding: 10px 150px 10px 10px;
   text-align: right;
   background: $brown;
@@ -50,7 +44,7 @@
     min-width: 450px;
   }
 
-  @include bp(medium) {
+  @include bp(990px) {
     bottom: 0;
   }
 
@@ -71,7 +65,7 @@
 }
 
 .overview__text--lviv {
-  @include bp(medium) {
+  @include bp(990px) {
     display: none;
   }
 }
