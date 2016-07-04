@@ -1,22 +1,14 @@
-#overview {
-  position: relative;
-  height: calc(100vh - 283px); // minus footer, for banner time
-}
-
 .overview {
-  @include bp(medium) {
-    height: 145px;
-    padding: 0 7px 0;
-    margin-bottom: 0;
-  }
-  background-image: url('../images/background-2.png');
-  background-size: cover;
-  align-content: center;
+  position: relative;
   display: flex;
   flex-direction: column;
-  // margin-bottom: 22px;
-  height: inherit;
+  align-content: center;
   width: 100%;
+  background-image: url('../images/lvivJS2016_pattern.jpg');
+
+  @include bp(medium) {
+    margin-bottom: 0;
+  }
 }
 
 .overview-wrap {
@@ -24,6 +16,7 @@
   align-items: center;
   justify-content: center;
   height: inherit;
+
   @include bp(medium) {
     justify-content: center;
   }
@@ -33,52 +26,45 @@
 }
 
 .main-logo {
-  margin-right: -7px;
+  margin-right: auto;
+  max-height: 100%;
+
   @include bp(medium) {
     max-width: 350px;
-    min-width: 300px;
-    width: 70%;
-    margin: 0;
+    margin: 0 0 20px 0;
   }
   @include bp(small) {
-    margin-top: 10px;
-    width: 65%;
-    min-width: 259px;
-    flex-shrink: 0;
+    max-width: 300px;
   }
 }
 
 .overview__text-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 39%;
-  align-items: center;
-  margin-left: 6.8%;
+  position: absolute;
+  right: 0;
+  padding: 10px 150px 10px 10px;
+  text-align: right;
+  background: $brown;
+  color: white;
+
   @include bp(large) {
     min-width: 450px;
   }
+
   @include bp(medium) {
-    justify-content: center;
-    width: 28%;
-    margin: 0;
+    bottom: 0;
   }
+
   @include bp(small) {
-    flex-grow: 1;
     width: 100%;
+    padding: 10px;
   }
 }
 
 .overview__text--lviv,
 .overview__text--date {
   width: 100%;
-  text-align: center;
-  color: #5e5e5e;
-  font-size: 52px;
-  font-weight: 500;
-  @include bp(medium) {
-    color: #474747;
-  }
+  font-size: 40px;
+
   @include bp(small) {
     font-size: 30px;
   }

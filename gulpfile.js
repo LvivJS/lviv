@@ -43,7 +43,7 @@ gulp.task('default', ['serve']);
 
 //run browserify, start server and reload page on saving changes
 var serveTasks = {
-  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload', 'tunnel'],
+  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
   'production' : ['start_server']
 }
 
@@ -153,7 +153,11 @@ gulp.task('start_server', shell.task(['node server.js']));
 gulp.task('tunnel', shell.task(['lt --port 8080']));
 
 //livereload
-gulp.task('start_livereload', shell.task(['live-reload --port 9091 dist/']));
+gulp.task('start_livereload', function() {
+  var livereload = require('livereload');
+  var server = livereload.createServer();
+  server.watch(__dirname + '/dist');
+});
 
 //clean folders
 gulp.task('deleteDist', function() {

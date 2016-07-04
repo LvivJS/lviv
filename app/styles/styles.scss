@@ -3,28 +3,23 @@
 @import 'mixins';
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: $font__main;
-    font-size: $font__size--1;
+  font-family: $font__main;
+  font-size: $font__size--1;
 }
 
 a {
-    color: $color__primary;
-    text-decoration: none;
+  color: $color__primary;
+  text-decoration: none;
 }
 
 img {
   border: none;
-}
-
-//...This styles shoud be removed after merge with main_site
-.banner {
-  width: 100%;
 }
 
 @import 'modules/_basicLayout';
@@ -39,5 +34,5 @@ img {
 
 
 .invisible {
-	display: none;
+  display: none;
 }
