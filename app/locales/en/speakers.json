@@ -6,6 +6,12 @@
       "position": "Exploring ways to use ES2015 today",
       "photo_url": "images/speakers/kyrylych_roman.jpg",
       "about": ""
+    },
+    {
+      "name": "John aka Alexander Lapshyn",
+      "position": "Beauty of everyday tools",
+      "photo_url": "images/speakers/alexander_lapshyn.jpg",
+      "about": ""
     }
   ]
 }

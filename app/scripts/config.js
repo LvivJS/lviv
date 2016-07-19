@@ -49,11 +49,11 @@ var config = {
     },
     {
       component: 'schedule',
-      isRendering: true
+      isRendering: false
     },
     {
       component: 'registration',
-      isRendering: true
+      isRendering: false
     },
     {
       component: 'partners',
