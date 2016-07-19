@@ -3,68 +3,8 @@
   "data": [
     {
       "name": "Roman Kyrylych",
-      "position": "Modern Web Applications and Browser Support",
+      "position": "Exploring ways to use ES2015 today",
       "photo_url": "images/speakers/kyrylych_roman.jpg",
-      "about": ""
-    },
-    {
-      "name": "Dima Maleev",
-      "position": "Javascript under the hood",
-      "photo_url": "images/speakers/dima_maleev.jpg",
-      "about": ""
-    },
-    {
-      "name": "Artyom Trityak",
-      "position": "React Native from scratch: start, build and launch.",
-      "photo_url": "images/speakers/artyom_trityak.jpg",
-      "about":""
-    },
-    {
-      "name": "Andrey Listochkin",
-      "position": "Staying Productive with Ember.",
-      "photo_url": "images/speakers/andrey_listochkin.jpg",
-      "about": ""
-    },
-    {
-      "name": "Vadym Makeev",
-      "position": "Like real ones! Installing Web Apps",
-      "photo_url": "images/speakers/vadym_makeev.jpg",
-      "about": ""
-    },
-    {
-      "name": "Ivan Lavriv",
-      "position": "Introduction to OrbitJS",
-      "photo_url": "images/speakers/ivan_lavriv.jpg",
-      "about": ""
-    },
-    {
-      "name": "Oleksandr Zinewicz",
-      "position": "Chrome Extensions",
-      "photo_url": "images/speakers/aleksander_zinewicz.jpg",
-      "about":""
-    },
-    {
-      "name": "Bogdan Gorpynchuk",
-      "position": "WebGL: yesterday, today, tomorrow.",
-      "photo_url": "images/speakers/bogdan_gorpynchuk.jpg",
-      "about": ""
-    },
-    {
-      "name": "Roman Iakobchuk",
-      "position": "Building Isomorphic SPA Using React.Js",
-      "photo_url": "images/speakers/roman_iakobchuk.jpg",
-      "about": ""
-    },
-    {
-      "name": "Oleksii Prohonnyi",
-      "position": "D3.js tips & tricks: export to svg, crossfilter, maps etc.",
-      "photo_url": "images/speakers/oleksii_prohonnyi.png",
-      "about": ""
-    },
-    {
-      "name": "Georgiy Podsvyetov",
-      "position": "Modern JavaScript engineer. Think wider.",
-      "photo_url": "images/speakers/georgiy_podsvyetov.jpg",
       "about": ""
     }
   ]

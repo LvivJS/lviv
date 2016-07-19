@@ -59,6 +59,13 @@
 }
 
 .partners__item-link {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	display: inline-block;
+	height: 30px;
+	margin: 0 20px;
+
 	@include bp(medium) {
 		margin: 11px;
 		width: 27%;
@@ -66,30 +73,27 @@
 		display: flex;
 		align-items: center;
 	}
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	display: inline-block;
-	height: 30px;
-	margin: 0 20px;
 	&[title="Lohika Systems"] {
+		height: 75px;
+		margin: -50px 0;
+
 		@include bp(medium) {
 			height: 88px;
 			margin: 0;
 		}
-		height: 190px;
-		margin: -50px 0;
 	}
 	&[title="Intellias"],
 	&[title="Team International"]{
+		height: 60px;
+
 		@include bp(medium) {
 			width: 27%;
 			height: auto;
 		}
-		height: 60px;
 	}
 	&[title="Sigma Software"] {
 		height: 55px;
+
 		@include bp(medium) {
 			width: 27%;
 			height: auto;
@@ -133,9 +137,10 @@
 }
 
 .partners__item-image {
+	height: 100%;
+
 	@include bp(medium) {
 		width: 100%;
 		height: auto;
 	}
-  height: 100%;
 }

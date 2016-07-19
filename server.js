@@ -9,7 +9,7 @@ var ci = require('./simpleCI');
 var fs = require('fs');
 var MobileDetect = require('mobile-detect');
 
-var port = process.env.port || 3000;
+var port = process.env.port || 3001;
 var env = process.env.NODE_ENV || 'development';
 var staticDir = env == 'development' ? 'dist' : 'static';
 var isProd = env === 'production';
