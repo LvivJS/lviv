@@ -75,7 +75,6 @@
 	}
 	&[title="Lohika Systems"] {
 		height: 75px;
-		margin: 0 0 100px 0;
 
 		@include bp(medium) {
 			height: 88px;
@@ -130,6 +129,9 @@
 			width: 13%;
 		}
 	}
+    &[title="DataArt"] {
+        margin: 0 0 100px 0;
+    }
 }
 
 .partners__category:first-of-type > .partners__items {

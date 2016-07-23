@@ -1,15 +1,25 @@
 {
-  "title": "partners",
-  "data": [
-    {
-      "title": "general",
-      "data": [
+    "title": "partners",
+    "data": [
         {
-          "title": "Lohika Systems",
-          "link": "http://www.lohika.com.ua/",
-          "img": "images/partners/general/lohika.png"
+            "title": "general",
+            "data": [
+                {
+                    "title": "Lohika Systems",
+                    "link": "http://www.lohika.com.ua/",
+                    "img": "images/partners/general/lohika.png"
+                }
+            ]
+        },
+        {
+            "title": "golden",
+            "data": [
+                {
+                    "title": "DataArt",
+                    "link": "http://dataart.ua/",
+                    "img": "images/partners/golden/dataart.png"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

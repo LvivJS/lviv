@@ -15,6 +15,16 @@
 }
 
 .loc-info {
+  background: rgb(255, 255, 255);
+  display: flex;
+  height: 221px;
+  left: calc((100% - 412px) / 2);
+  max-width: 412px;
+  position: absolute;
+  top: 31px;
+  transition: all 0.4s;
+  width: 100%;
+  z-index: 1;
   @include bp(medium) {
     height: 150px;
     position: static;
@@ -28,16 +38,6 @@
       }
     }
   }
-  background: rgb(255, 255, 255);
-  display: flex;
-  height: 221px;
-  left: $session-time-width;
-  max-width: 412px;
-  position: absolute;
-  top: 31px;
-  transition: all 0.4s;
-  width: 100%;
-  z-index: 1;
 }
 
 .loc-info__text {

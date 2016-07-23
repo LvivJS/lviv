@@ -53,7 +53,7 @@ var config = {
     },
     {
       component: 'registration',
-      isRendering: false
+      isRendering: true
     },
     {
       component: 'partners',

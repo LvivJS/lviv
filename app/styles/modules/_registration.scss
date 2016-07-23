@@ -1,20 +1,21 @@
 #registration {
-  @include bp(medium) {
-    height: 300px;
-    margin-bottom: 4px;
-  }
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAPklEQVQYV2N8flHtPwMO8PHTXwZGXApAkvx8zNgVwCRBBmOYgCyJoQBdEkUBNkm4AlySYAU3Div/B7kWFwAABzMr0U4Mid0AAAAASUVORK5CYII=);
   background-size: 8px 8px;
-  height: 459px;
+  height: 590px;
+  @include bp(medium) {
+    height: 590px;
+    margin-bottom: 4px;
+  }
   // margin-bottom: 31px;
 }
 
 .registration > h2.module-header {
+  padding: 40px 0px 31px;
+  text-transform: none;
   @include bp(medium) {
     font-size: 34px;
     padding: 36px 0 25px;
   }
-  padding: 40px 0px 31px;
 }
 
 .registration {

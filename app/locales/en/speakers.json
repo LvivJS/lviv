@@ -1,17 +1,29 @@
 {
-  "title": "speakers",
-  "data": [
-    {
-      "name": "Roman Kyrylych",
-      "position": "Exploring ways to use ES2015 today",
-      "photo_url": "images/speakers/kyrylych_roman.jpg",
-      "about": ""
-    },
-    {
-      "name": "John aka Alexander Lapshyn",
-      "position": "Beauty of everyday tools",
-      "photo_url": "images/speakers/alexander_lapshyn.jpg",
-      "about": ""
-    }
-  ]
+    "title": "speakers",
+    "data": [
+        {
+            "name": "Roman Kyrylych",
+            "position": "Exploring ways to use ES2015 today",
+            "photo_url": "images/speakers/kyrylych_roman.jpg",
+            "about": ""
+        },
+        {
+            "name": "John aka Alexander Lapshyn",
+            "position": "Beauty of everyday tools",
+            "photo_url": "images/speakers/alexander_lapshyn.jpg",
+            "about": ""
+        },
+        {
+            "name": "Roman Liutikov",
+            "position": "React Native: Are we there yet?",
+            "photo_url": "images/speakers/roman_liutikov.png",
+            "about": ""
+        },
+        {
+            "name": "Andrii Shumada",
+            "position": "How to deploy to production 10+ times a day",
+            "photo_url": "images/speakers/andrii_shumada.jpg",
+            "about": ""
+        }
+    ]
 }
