@@ -20,6 +20,21 @@
                     "img": "images/partners/golden/dataart.png"
                 }
             ]
+        },
+        {
+            "title": "silver",
+            "data": [
+                {
+                    "title": "Remit",
+                    "link": "http://remit.se/",
+                    "img": "images/partners/silver/remit.png"
+                },
+                {
+                    "title": "Sigma Software",
+                    "link": "http://sigma.software/",
+                    "img": "images/partners/silver/sigma.png"
+                }
+            ]
         }
     ]
 }
