@@ -1,145 +1,149 @@
 .partners {
-	@include container-int;
-	@include bp(medium) {
-		padding: 0 2%;
-	}
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-top: 12px;
+  @include container-int;
+  @include bp(medium) {
+    padding: 0 2%;
+  }
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
 }
 
 #partners {
-	margin-bottom: 44px;
+  margin-bottom: 44px;
 }
 
 #partners .module-header {
-	padding-bottom: 0;
-	@include bp(medium) {
-		padding: 34px 0 0;
-	}
+  padding-bottom: 0;
+  @include bp(medium) {
+    padding: 34px 0 0;
+  }
 }
 
 .partners__category {
-	@include bp(medium) {
-		flex-direction: row;
-		flex-wrap: nowrap;
-	}
-	display: flex;
-	flex-direction: column;
-	margin-top: 11px;
+  @include bp(medium) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  display: flex;
+  flex-direction: column;
+  margin-top: 11px;
 }
 
 .partners__category:nth-child(2) .partners__items {
-	margin: -31px 0 -6px;
+  margin: -31px 0 -6px;
 }
 
 .partners__category-header {
-	@include bp(medium) {
-		display: none;
-	}
-	color: $color__partners-header;
-	font-weight: 700;
-	font-size: $font__size--3;
-	margin: 56px 0px 30px;
-	text-align: center;
-	text-transform: uppercase;
-	width: 100%;
-	z-index: 1;
+  @include bp(medium) {
+    display: none;
+  }
+  color: $color__partners-header;
+  font-weight: 700;
+  font-size: $font__size--3;
+  margin: 56px 0px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  z-index: 1;
 }
 
 .partners__items {
-	align-content: flex-start;
-	align-items: center;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: 11px 0 34px;
-	width: 100%;
+  align-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 11px 0 34px;
+  width: 100%;
 }
 
 .partners__item-link {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	display: inline-block;
-	height: 30px;
-	margin: 0 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  height: 30px;
+  margin: 0 20px;
 
-	@include bp(medium) {
-		margin: 11px;
-		width: 27%;
-		height: auto;
-		display: flex;
-		align-items: center;
-	}
-	&[title="Lohika Systems"] {
-		height: 75px;
+  @include bp(medium) {
+    margin: 11px;
+    width: 27%;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
 
-		@include bp(medium) {
-			height: 88px;
-			margin: 0;
-		}
-	}
-	&[title="Intellias"],
-	&[title="Team International"]{
-		height: 60px;
+  // PARTNER LOGOS CUSTOM HEIGTS
+  &[title="Lohika Systems"] {
+    height: 75px;
 
-		@include bp(medium) {
-			width: 27%;
-			height: auto;
-		}
-	}
-	&[title="Sigma Software"] {
-		height: 55px;
+    @include bp(medium) {
+      height: 88px;
+      margin: 0;
+    }
+  }
+  &[title="Intellias"],
+  &[title="Team International"]{
+    height: 60px;
 
-		@include bp(medium) {
-			width: 27%;
-			height: auto;
-		}
-	}
-	&[title="Epam Systems"] {
-		height: 41px;
-		@include bp(medium) {
-			width: 27%;
-			height: auto;
-		}
-	}
-	&[title="OdessaJS"],
-	&[title="Ukrainian IT Awards"],
-	&[title="Lits"] {
-		height: 90px;
-		@include bp(medium) {
-			width: 13%;
-			height: auto;
-		}
-	}
-	&[title="Lviv IT Arena"] {
-		height: 83px;
-	}
-	&[title="JDay Lviv"],
-	&[title="GDG DevFest"] {
-		height: 50px;
-		margin-top: 20px;
-	}
-	&[title="Lviv IT Cluster"] {
-		height: 77px;
-		@include bp(medium) {
-			height: auto;
-			width: 13%;
-		}
-	}
+    @include bp(medium) {
+      width: 27%;
+      height: auto;
+    }
+  }
+  &[title="Sigma Software"],
+  &[title="Symphony Solutions"], {
+    height: 55px;
+
+    @include bp(medium) {
+      width: 27%;
+      height: auto;
+    }
+  }
+  &[title="Epam Systems"],
+	&[title="Remit"], {
+    height: 41px;
+    @include bp(medium) {
+      width: 27%;
+      height: auto;
+    }
+  }
+  &[title="OdessaJS"],
+  &[title="Ukrainian IT Awards"],
+  &[title="Lits"] {
+    height: 90px;
+    @include bp(medium) {
+      width: 13%;
+      height: auto;
+    }
+  }
+  &[title="Lviv IT Arena"] {
+    height: 83px;
+  }
+  &[title="JDay Lviv"],
+  &[title="GDG DevFest"] {
+    height: 50px;
+    margin-top: 20px;
+  }
+  &[title="Lviv IT Cluster"] {
+    height: 77px;
+    @include bp(medium) {
+      height: auto;
+      width: 13%;
+    }
+  }
 }
 
 .partners__category:first-of-type > .partners__items {
-	margin: 0;
+  margin: 0;
 }
 
 .partners__item-image {
-	height: 100%;
+  height: 100%;
 
-	@include bp(medium) {
-		width: 100%;
-		height: auto;
-	}
+  @include bp(medium) {
+    width: 100%;
+    height: auto;
+  }
 }
