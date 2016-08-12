@@ -6,12 +6,13 @@
     height: $toggle-button__height;
     position: fixed;
   }
-  background: $color__grayscale--13;
-  height: $menu__height;
-  left: 0;
   position: fixed;
+  top: 0;
+  left: 0;
+  height: $menu__height;
   width: 100%;
   z-index: 3;
+  background: $color__grayscale--13;
 }
 
 //set margim to next element after menu equals to menu height
@@ -204,6 +205,6 @@
 }
 
 .darkenScreen--visible {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }

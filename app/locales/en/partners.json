@@ -18,6 +18,11 @@
                     "title": "DataArt",
                     "link": "http://dataart.ua/",
                     "img": "images/partners/golden/dataart.png"
+                },
+                {
+                    "title": "Symfony Solutions",
+                    "link": "http://www.symphony-solutions.eu/",
+                    "img": "images/partners/golden/symfony_solutions.png"
                 }
             ]
         },

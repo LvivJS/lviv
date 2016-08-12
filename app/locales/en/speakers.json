@@ -30,6 +30,18 @@
             "position": "Creation of native mobile apps with NativeScript and Angular2",
             "photo_url": "images/speakers/eugene_alayev.jpg",
             "about": ""
+        },
+        {
+            "name": "Alexey Raspopov",
+            "position": "Flux is dead. Long live Flux!",
+            "photo_url": "images/speakers/alex_raspopov.jpg",
+            "about": ""
+        },
+        {
+            "name": "Denis Yaremov",
+            "position": "Reflex and offline-first",
+            "photo_url": "images/speakers/denis_yaremov.jpg",
+            "about": ""
         }
     ]
 }
