@@ -42,6 +42,12 @@
             "position": "Reflex and offline-first",
             "photo_url": "images/speakers/denis_yaremov.jpg",
             "about": ""
+        },
+        {
+            "name": "Maks Klymyshyn",
+            "position": "",
+            "photo_url": "images/speakers/maks_klymyshyn.jpg",
+            "about": ""
         }
     ]
 }

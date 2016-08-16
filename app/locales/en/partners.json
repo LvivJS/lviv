@@ -7,7 +7,7 @@
                 {
                     "title": "Lohika Systems",
                     "link": "http://www.lohika.com.ua/",
-                    "img": "images/partners/general/lohika.png"
+                    "img": "images/partners/lohika.png"
                 }
             ]
         },
@@ -17,12 +17,22 @@
                 {
                     "title": "DataArt",
                     "link": "http://dataart.ua/",
-                    "img": "images/partners/golden/dataart.png"
+                    "img": "images/partners/dataart.png"
                 },
                 {
                     "title": "Symphony Solutions",
                     "link": "http://www.symphony-solutions.eu/",
-                    "img": "images/partners/golden/symfony_solutions.png"
+                    "img": "images/partners/symphony_solutions.png"
+                },
+                {
+                    "title": "GlobalLogic",
+                    "link": "https://www.globallogic.com/ua/",
+                    "img": "images/partners/globallogic.png"
+                },
+                {
+                    "title": "Levi9",
+                    "link": "http://ukraine.levi9.jobs/",
+                    "img": "images/partners/levi9.png"
                 }
             ]
         },
@@ -32,12 +42,17 @@
                 {
                     "title": "Remit",
                     "link": "http://remit.se/",
-                    "img": "images/partners/silver/remit.png"
+                    "img": "images/partners/remit.png"
                 },
                 {
                     "title": "Sigma Software",
                     "link": "http://sigma.software/",
-                    "img": "images/partners/silver/sigma.png"
+                    "img": "images/partners/sigma_software.png"
+                },
+                {
+                    "title": "Eleks",
+                    "link": "http://eleks.com/?utm_source=LvivJS&utm_medium=conference&utm_campaign=rec",
+                    "img": "images/partners/eleks.png"
                 }
             ]
         }
