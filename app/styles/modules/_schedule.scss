@@ -27,7 +27,7 @@
   border-bottom: 8px solid $color__primary;
   display: flex;
   margin-left: $session-time-width;
-  transition: height 0.2s;
+  transition: background 0.2s;
 }
 
 .tabs__item {
@@ -304,6 +304,7 @@ span.session__calendLink {
 }
 
 .conference__tabs.list-fixed {
+  background: rgba(249, 249, 249, 0.93);
   border-bottom: none;
   left: 0;
   position: fixed;

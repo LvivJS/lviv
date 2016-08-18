@@ -9,7 +9,7 @@ function schedule() {
   var timetable = 'timetable';
   var viewport;
   var menuHeight;
-  var list = document.getElementsByClassName('conference__tabs')[0];
+  var list = document.querySelector('.conference__tabs');
   var tabs = list.childNodes;
   var activeTab = list.querySelector('.' + activeClass);
   var schedule = list.parentNode;
@@ -26,14 +26,18 @@ function schedule() {
     });
 
     Array.prototype.forEach.call(reports, function(report) {
-      var header = report.getElementsByClassName('session__name')[0];
-      var icon = report.getElementsByClassName('session__icons')[0];
-      icon.addEventListener('click', function() {
-        toggleAbout(header)
-      });
-      header.addEventListener('click', function() {
-        toggleAbout(header)
-      });
+      var header = report.querySelector('.session__name');
+      var icon = report.querySelector('.session__icons');
+      if (icon) {
+        icon.addEventListener('click', function() {
+          toggleAbout(header)
+        });
+      }
+      if (header) {
+        header.addEventListener('click', function() {
+          toggleAbout(header)
+        });
+      }
     });
 
     window.addEventListener('resize', fixTabsOrNot);

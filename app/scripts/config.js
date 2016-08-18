@@ -49,7 +49,7 @@ var config = {
     },
     {
       component: 'schedule',
-      isRendering: false
+      isRendering: true
     },
     {
       component: 'registration',

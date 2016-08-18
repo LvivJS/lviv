@@ -47,11 +47,11 @@ section#schedule.page-wrap
   h2.module-header= schedule.title
   .schedule
     ul.conference__tabs
-    //-   each day, indx in schedule.days
-    //-     if (indx == 0)
-    //-       li.tabs__item.tabs__item--active=  moment(day.day_info).format('MMM DD')
-    //-     else
-    //-       li.tabs__item=  moment(day.day_info).format('MMM DD')
+      each day, indx in schedule.days
+        if (indx == 0)
+          li.tabs__item.tabs__item--active=  day.day_info
+        else
+          li.tabs__item=  day.day_info
     each day, indx in schedule.days
       .timetable
         +table(day.timetable)
