@@ -3,6 +3,7 @@
   @include bp(medium) {
     padding: 0 2%;
   }
+  max-width: 760px; // magic number at which golden partners split into 2 rows - lazy for a proper group/rows
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
@@ -104,7 +105,7 @@
   }
   &[title="Epam Systems"],
   &[title="GlobalLogic"],
-	&[title="Remit"], {
+  &[title="Remit"], {
     height: 41px;
     @include bp(medium) {
       width: 27%;
@@ -133,6 +134,22 @@
     @include bp(medium) {
       height: auto;
       width: 13%;
+    }
+  }
+
+  @include bp(large) {
+    &[title="Eleks"] {
+      margin-top: -10px;
+    }
+
+    &[title="Remit"] {
+      margin-top: 5px;
+    }
+
+    // adjust second row in goldens
+    &[title="GlobalLogic"],
+    &[title="DataArt"] {
+      margin-top: 20px;
     }
   }
 }

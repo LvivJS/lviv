@@ -15,7 +15,7 @@
             "start": "2016-08-27T09:00:00",
             "end": ""
           },
-          "article":"Registration Start (morning coffe)",
+          "article":"Registration Start (morning coffee)",
           "type":"entertainment",
           "speaker":
             {
@@ -57,7 +57,7 @@
             "start": "2016-08-27T11:15:00",
             "end": "2016-08-27T11:25:00"
           },
-          "article":"HR-session",
+          "article":"HR session",
           "type":"report",
           "about":""
         },
@@ -134,7 +134,7 @@
             "start": "2016-08-27T15:00:00",
             "end": "2016-08-27T16:00:00"
           },
-          "article":"Exploring ways to use ES2015 today.",
+          "article":"Exploring ways to use ES2015 today",
           "type":"report",
           "speaker":
             {
@@ -237,7 +237,7 @@
           "start": "2016-08-27T09:00:00",
           "end": ""
         },
-        "article":"Registration Start (morning coffe)",
+        "article":"Registration Start (morning coffee)",
         "type":"entertainment",
         "speaker":
           {
@@ -300,7 +300,7 @@
           "start": "2016-08-27T16:15:00",
           "end": "2016-08-27T17:15:00"
         },
-        "article":"Reflex and offline-first",
+        "article":"Using Reflex for offline first applications",
         "type":"report",
         "speaker":
           {

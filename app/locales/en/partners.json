@@ -6,7 +6,7 @@
             "data": [
                 {
                     "title": "Lohika Systems",
-                    "link": "http://www.lohika.com.ua/",
+                    "link": "http://www.lohika.com.ua",
                     "img": "images/partners/lohika.png"
                 }
             ]
@@ -15,24 +15,29 @@
             "title": "golden",
             "data": [
                 {
-                    "title": "DataArt",
-                    "link": "http://dataart.ua/",
-                    "img": "images/partners/dataart.png"
-                },
-                {
                     "title": "Symphony Solutions",
-                    "link": "http://www.symphony-solutions.eu/",
+                    "link": "http://www.symphony-solutions.eu",
                     "img": "images/partners/symphony_solutions.png"
                 },
                 {
-                    "title": "GlobalLogic",
-                    "link": "https://www.globallogic.com/ua/",
-                    "img": "images/partners/globallogic.png"
+                    "title": "Levi9",
+                    "link": "http://ukraine.levi9.jobs",
+                    "img": "images/partners/levi9.png"
                 },
                 {
-                    "title": "Levi9",
-                    "link": "http://ukraine.levi9.jobs/",
-                    "img": "images/partners/levi9.png"
+                    "title": "Epam Systems",
+                    "link": "https://www.epam.com",
+                    "img": "images/partners/epam.jpg"
+                },
+                {
+                    "title": "DataArt",
+                    "link": "http://dataart.ua",
+                    "img": "images/partners/dataart.png"
+                },
+                {
+                    "title": "GlobalLogic",
+                    "link": "https://www.globallogic.com/ua",
+                    "img": "images/partners/globallogic.png"
                 }
             ]
         },
@@ -41,12 +46,12 @@
             "data": [
                 {
                     "title": "Remit",
-                    "link": "http://remit.se/",
+                    "link": "http://remit.se",
                     "img": "images/partners/remit.png"
                 },
                 {
                     "title": "Sigma Software",
-                    "link": "http://sigma.software/",
+                    "link": "http://sigma.software",
                     "img": "images/partners/sigma_software.png"
                 },
                 {
