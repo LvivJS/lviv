@@ -43,7 +43,7 @@
             "start": "2016-08-27T10:15:00",
             "end": "2016-08-27T11:15:00"
           },
-          "article":"Beauty of everyday tools",
+          "article":"Beauty of everyday tools (ENG)",
           "type":"report",
           "speaker":
             {
@@ -79,7 +79,7 @@
             "start": "2016-08-27T11:30:00",
             "end": "2016-08-27T12:30:00"
           },
-          "article":"Modern functional concepts and JavaScript",
+          "article":"Modern functional concepts and JavaScript (RUS)",
           "type":"report",
           "speaker":
             {
@@ -111,7 +111,7 @@
             "start": "2016-08-27T12:45:00",
             "end": "2016-08-27T13:45:00"
           },
-          "article":"Flux is dead. Long live Flux!",
+          "article":"Flux is dead. Long live Flux! (RUS)",
           "type":"report",
           "speaker":
             {
@@ -134,7 +134,7 @@
             "start": "2016-08-27T15:00:00",
             "end": "2016-08-27T16:00:00"
           },
-          "article":"Exploring ways to use ES2015 today",
+          "article":"Exploring ways to use ES2015 today (UKR)",
           "type":"report",
           "speaker":
             {
@@ -166,7 +166,7 @@
             "start": "2016-08-27T16:15:00",
             "end": "2016-08-27T17:15:00"
           },
-          "article":"React Native: Are we there yet?",
+          "article":"React Native: Are we there yet? (ENG)",
           "type":"report",
           "speaker":
             {
@@ -207,7 +207,7 @@
             "start": "2016-08-27T18:00:00",
             "end": "2016-08-27T19:00:00"
           },
-          "article":"How to deploy to production 10+ times a day",
+          "article":"How to deploy to production 10+ times a day (ENG)",
           "type":"report",
           "speaker":
             {
@@ -287,7 +287,7 @@
           "start": "2016-08-27T15:00:00",
           "end": "2016-08-27T16:00:00"
         },
-        "article":"Creation of native mobile apps with NativeScript and Angular2",
+        "article":"Creation of native mobile apps with NativeScript and Angular2 (RUS)",
         "type":"report",
         "speaker":
           {
@@ -300,7 +300,7 @@
           "start": "2016-08-27T16:15:00",
           "end": "2016-08-27T17:15:00"
         },
-        "article":"Using Reflex for offline first applications",
+        "article":"Using Reflex for offline first applications (ENG)",
         "type":"report",
         "speaker":
           {
