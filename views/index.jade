@@ -1,4 +1,5 @@
 doctype html
+html(lang='en')
 head
   meta(charset='utf-8')
   title LvivJS Conference
@@ -73,13 +74,14 @@ head
     include mixins/icons.jade
     include partitions/menu.jade
     include partitions/overview.jade
-    include partitions/speakers.jade
-    include partitions/schedule.jade
+    //- include partitions/speakers.jade
+    //- include partitions/schedule.jade
     include partitions/registration.jade
-    include partitions/partners.jade
-    include partitions/location.jade
+    //- include partitions/partners.jade
+    //- include partitions/location.jade
     include partitions/footer.jade
 
 script(src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js")
-script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{config.google.mapsAPIKey}")
+//- script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{config.google.mapsAPIKey}")
+script(src="scripts/smoothscroll.js")
 script(src="scripts/bundle.js")

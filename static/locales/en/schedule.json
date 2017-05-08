@@ -7,15 +7,15 @@
   "days": [
     {
       "day_id":"01",
-      "day_info": "Sat Aug 29 2015",
+      "day_info": "Stream 1",
       "location":"Ukraine, Lviv, Stryis'ka 199",
       "timetable": [
         {
           "time": {
-            "start": "2015-08-29T09:00:00",
+            "start": "2016-08-27T09:00:00",
             "end": ""
           },
-          "article":"Registration start",
+          "article":"Registration Start (morning coffee)",
           "type":"entertainment",
           "speaker":
             {
@@ -26,11 +26,11 @@
         },
         {
           "time": {
-            "start": "2015-08-29T09:30:00",
-            "end": ""
+            "start": "2016-08-27T10:00:00",
+            "end": "2016-08-27T10:15:00"
           },
           "article":"Conference start",
-          "type":"entertainment",
+          "type":"report",
           "speaker":
             {
               "name":"",
@@ -40,73 +40,101 @@
         },
         {
           "time": {
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T10:15:00",
+            "end": "2016-08-27T11:15:00"
           },
-          "article":"React Native from scratch: start, build and launch",
+          "article":"Beauty of everyday tools (ENG)",
           "type":"report",
           "speaker":
             {
-              "name":"Artem Trityak",
+              "name":"Oleksandr Lapshyn",
               "position":""
               },
           "about":""
         },
         {
           "time": {
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T11:15:00",
+            "end": "2016-08-27T11:25:00"
           },
-          "article":"HR-session",
+          "article":"HR session",
           "type":"report",
-          "speaker":
-            {
-              "name":"Eleks",
-              "position":""
-            }
+          "about":""
         },
         {
           "time":{
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T11:25:00",
+            "end": "2016-08-27T11:30:00"
           },
-          "article":"Building Isomorphic SPA Using React.Js",
+          "article":"Break",
           "type":"report",
           "speaker":
             {
-              "name":"Roman Iakobchuk",
+              "name":"",
               "position":""
               }
         },
         {
           "time":{
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T11:30:00",
+            "end": "2016-08-27T12:30:00"
           },
-          "article":"HR-session",
+          "article":"Modern functional concepts and JavaScript (RUS)",
           "type":"report",
           "speaker":
             {
-              "name":"DataArt",
+              "name":"Maks Klymyshyn",
               "position":""
               },
           "about":""
         },
         {
           "time":{
-            "start": "2015-08-29T11:30:00",
-            "end": ""
+            "start": "2016-08-27T12:30:00",
+            "end": "2016-08-27T12:40:00"
           },
-          "article":"Coffee-break",
+          "article":"HR session",
+          "type":"report",
+          "about":""
+        },
+        {
+          "time":{
+            "start": "2016-08-27T12:40:00",
+            "end": "2016-08-27T12:45:00"
+          },
+          "article":"Break",
+          "type":"report",
+          "about":""
+        },
+        {
+          "time":{
+            "start": "2016-08-27T12:45:00",
+            "end": "2016-08-27T13:45:00"
+          },
+          "article":"Flux is dead. Long live Flux! (RUS)",
+          "type":"report",
+          "speaker":
+            {
+              "name":"Alexey Raspopov",
+              "position":""
+              },
+          "about":""
+        },
+        {
+          "time":{
+            "start": "2016-08-27T13:45:00",
+            "end": "2016-08-27T15:00:00"
+          },
+          "article":"Lunch",
           "type":"entertainment",
           "about":""
         },
         {
           "time":{
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T15:00:00",
+            "end": "2016-08-27T16:00:00"
           },
-          "article":"Modern Web Applications and Browser Support",
+          "article":"Exploring ways to use ES2015 today (UKR)",
           "type":"report",
           "speaker":
             {
@@ -117,143 +145,49 @@
         },
         {
           "time":{
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T16:00:00",
+            "end": "2016-08-27T16:10:00"
           },
-          "article":"HR-session",
+          "article":"HR session",
+          "type":"report",
+          "about":""
+        },
+        {
+          "time":{
+            "start": "2016-08-27T16:10:00",
+            "end": "2016-08-27T16:15:00"
+          },
+          "article":"Break",
+          "type":"report",
+          "about":""
+        },
+        {
+          "time":{
+            "start": "2016-08-27T16:15:00",
+            "end": "2016-08-27T17:15:00"
+          },
+          "article":"React Native: Are we there yet? (ENG)",
           "type":"report",
           "speaker":
             {
-              "name":"Sigma",
+              "name":"Roman Liutikov",
               "position":""
               },
           "about":""
         },
         {
           "time":{
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T17:15:00",
+            "end": "2016-08-27T17:25:00"
           },
-          "article":"Like real ones! Installing Web Apps.",
+          "article":"HR session",
           "type":"report",
-          "speaker":
-            {
-              "name":"Vadym Makeev",
-              "position":""
-              },
           "about":""
         },
         {
           "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"Javascript under the hood",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Dima Maleev",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2015-08-29T14:00:00",
-            "end": ""
-          },
-          "article":"Lunch",
-          "type":"entertainment",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"Staying Productive with Ember.",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Andrey Listochkin",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"HR-session",
-          "type":"report",
-          "speaker":
-            {
-              "name":"EPAM",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"Introduction to OrbitJS.",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Ivan Lavriv",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"HR-session",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Lohika",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"Chrome Extensions",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Aleksander Zinewicz",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"D3.js tips & tricks: export to svg, crossfilter, maps etc.",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Oleksii Prohonnyi",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2015-08-29T17:30:00",
-            "end": ""
+            "start": "2016-08-27T17:25:00",
+            "end": "2016-08-27T17:50:00"
           },
           "article":"Coffee-break",
           "type":"entertainment",
@@ -261,57 +195,132 @@
         },
         {
           "time":{
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T17:50:00",
+            "end": "2016-08-27T18:00:00"
           },
-          "article":"An example of solution with isomorphic architecture.",
+          "article":"HR session",
+          "type":"report",
+          "about":""
+        },
+        {
+          "time":{
+            "start": "2016-08-27T18:00:00",
+            "end": "2016-08-27T19:00:00"
+          },
+          "article":"How to deploy to production 10+ times a day (ENG)",
           "type":"report",
           "speaker":
             {
-              "name":"Mykhailo Ivankiv",
+              "name":"Andrii Shumada",
               "position":""
               },
           "about":""
         },
         {
           "time":{
-            "start": "",
-            "end": ""
+            "start": "2016-08-27T19:00:00",
+            "end": "2016-08-27T19:10:00"
           },
-          "article":"WebGL: yesterday, today, tomorrow.",
+          "article":"Conference end",
           "type":"report",
-          "speaker":
-            {
-              "name":"Bogdan Gorpynchuk",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "",
-            "end": ""
-          },
-          "article":"Modern JavaScript engineer. Think wider.",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Georgy Podsvetov",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2015-08-29T20:00:00",
-            "end": ""
-          },
-          "article":"Conference Finish",
-          "type":"entertainment",
           "about":""
         }
       ]
-    }
+  },
+  {
+    "day_id":"02",
+    "day_info": "Stream 2",
+    "location":"Ukraine, Lviv, Stryis'ka 199",
+    "timetable": [
+      {
+        "time": {
+          "start": "2016-08-27T09:00:00",
+          "end": ""
+        },
+        "article":"Registration Start (morning coffee)",
+        "type":"entertainment",
+        "speaker":
+          {
+            "name":"",
+            "position":""
+            },
+        "about":""
+      },
+      {
+        "time": {
+          "start": "2016-08-27T10:00:00",
+          "end": "2016-08-27T10:15:00"
+        },
+        "article":"Conference start",
+        "type":"report",
+        "speaker":
+          {
+            "name":"",
+            "position":""
+            },
+        "about":""
+      },
+      {
+        "time": {
+          "start": "2016-08-27T10:15:00",
+          "end": "2016-08-27T13:55:00"
+        },
+        "article":"Node school",
+        "type":"report",
+        "speaker":
+          {
+            "name":"",
+            "position":""
+            },
+        "about":""
+      },
+      {
+        "time": {
+          "start": "2016-08-27T13:55:00",
+          "end": "2016-08-27T15:00:00"
+        },
+        "article":"Lunch",
+        "type":"entertainment"
+      },
+      {
+        "time":{
+          "start": "2016-08-27T15:00:00",
+          "end": "2016-08-27T16:00:00"
+        },
+        "article":"Creation of native mobile apps with NativeScript and Angular2 (RUS)",
+        "type":"report",
+        "speaker":
+          {
+            "name":"Evgene Alaev",
+            "position":""
+            }
+      },
+      {
+        "time":{
+          "start": "2016-08-27T16:15:00",
+          "end": "2016-08-27T17:15:00"
+        },
+        "article":"Using Reflex for offline first applications (ENG)",
+        "type":"report",
+        "speaker":
+          {
+            "name":"Denis Yaremov",
+            "position":""
+            },
+        "about":""
+      },
+      {
+        "time":{
+          "start": "2016-08-27T19:00:00",
+          "end": "2016-08-27T19:10:00"
+        },
+        "article":"Conference end",
+        "type":"report",
+        "about":""
+      }
+    ]
+  }
+
   ]
 
 }

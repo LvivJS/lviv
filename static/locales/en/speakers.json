@@ -1,71 +1,53 @@
 {
-  "title": "speakers",
-  "data": [
-    {
-      "name": "Roman Kyrylych",
-      "position": "Modern Web Applications and Browser Support",
-      "photo_url": "images/speakers/kyrylych_roman.jpg",
-      "about": ""
-    },
-    {
-      "name": "Dima Maleev",
-      "position": "Javascript under the hood",
-      "photo_url": "images/speakers/dima_maleev.jpg",
-      "about": ""
-    },
-    {
-      "name": "Artyom Trityak",
-      "position": "React Native from scratch: start, build and launch.",
-      "photo_url": "images/speakers/artyom_trityak.jpg",
-      "about":""
-    },
-    {
-      "name": "Andrey Listochkin",
-      "position": "Staying Productive with Ember.",
-      "photo_url": "images/speakers/andrey_listochkin.jpg",
-      "about": ""
-    },
-    {
-      "name": "Vadym Makeev",
-      "position": "Like real ones! Installing Web Apps",
-      "photo_url": "images/speakers/vadym_makeev.jpg",
-      "about": ""
-    },
-    {
-      "name": "Ivan Lavriv",
-      "position": "Introduction to OrbitJS",
-      "photo_url": "images/speakers/ivan_lavriv.jpg",
-      "about": ""
-    },
-    {
-      "name": "Oleksandr Zinewicz",
-      "position": "Chrome Extensions",
-      "photo_url": "images/speakers/aleksander_zinewicz.jpg",
-      "about":""
-    },
-    {
-      "name": "Bogdan Gorpynchuk",
-      "position": "WebGL: yesterday, today, tomorrow.",
-      "photo_url": "images/speakers/bogdan_gorpynchuk.jpg",
-      "about": ""
-    },
-    {
-      "name": "Roman Iakobchuk",
-      "position": "Building Isomorphic SPA Using React.Js",
-      "photo_url": "images/speakers/roman_iakobchuk.jpg",
-      "about": ""
-    },
-    {
-      "name": "Oleksii Prohonnyi",
-      "position": "D3.js tips & tricks: export to svg, crossfilter, maps etc.",
-      "photo_url": "images/speakers/oleksii_prohonnyi.png",
-      "about": ""
-    },
-    {
-      "name": "Georgiy Podsvyetov",
-      "position": "Modern JavaScript engineer. Think wider.",
-      "photo_url": "images/speakers/georgiy_podsvyetov.jpg",
-      "about": ""
-    }
-  ]
+    "title": "speakers",
+    "data": [
+        {
+            "name": "Roman Kyrylych",
+            "position": "Exploring ways to use ES2015 today (UKR)",
+            "photo_url": "images/speakers/kyrylych_roman.jpg",
+            "about": ""
+        },
+        {
+            "name": "John aka Alexander Lapshyn",
+            "position": "Beauty of everyday tools (ENG)",
+            "photo_url": "images/speakers/alexander_lapshyn.jpg",
+            "about": ""
+        },
+        {
+            "name": "Roman Liutikov",
+            "position": "React Native: Are we there yet? (ENG)",
+            "photo_url": "images/speakers/roman_liutikov.png",
+            "about": ""
+        },
+        {
+            "name": "Andrii Shumada",
+            "position": "How to deploy to production 10+ times a day (ENG)",
+            "photo_url": "images/speakers/andrii_shumada.jpg",
+            "about": ""
+        },
+        {
+            "name": "Eugene Alayev",
+            "position": "Creation of native mobile apps with NativeScript and Angular2 (RUS)",
+            "photo_url": "images/speakers/eugene_alayev.jpg",
+            "about": ""
+        },
+        {
+            "name": "Alexey Raspopov",
+            "position": "Flux is dead. Long live Flux! (RUS)",
+            "photo_url": "images/speakers/alex_raspopov.jpg",
+            "about": ""
+        },
+        {
+            "name": "Denis Yaremov",
+            "position": "Using Reflex for offline first applications (ENG)",
+            "photo_url": "images/speakers/denis_yaremov.jpg",
+            "about": ""
+        },
+        {
+            "name": "Maks Klymyshyn",
+            "position": "Modern functional concepts and JavaScript (RUS)",
+            "photo_url": "images/speakers/maks_klymyshyn.jpg",
+            "about": ""
+        }
+    ]
 }

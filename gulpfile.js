@@ -30,13 +30,14 @@ var paths = {};
 paths.sourceRoot = './app/scripts';
 paths.jsFiles = paths.sourceRoot + '/**/*.js';
 paths.jsEntry = paths.sourceRoot + '/main.js';
+paths.vendorJS = './app/vendor/scripts/*.js';
 paths.buildFileName = 'bundle.js';
 paths.sassFiles = './app/styles/**/*.scss';
 paths.imageFiles = './app/images/**/*';
 paths.jsonFiles = './app/locales/';
 paths.styles = '/style';
 paths.script = '/scripts';
-paths.build = isProd ? './static' : './dist';
+paths.build = './static';
 
 // default
 gulp.task('default', ['serve']);
@@ -56,7 +57,7 @@ gulp.task('build', function () {
   runSequence(
     'deleteDist',
     'scripts_styleguide',
-    ['build_style', 'build_image', 'browserify_bundle', 'json_move'],
+    ['build_style', 'build_image', 'browserify_bundle', 'build_vendors', 'json_move'],
     notify_success);
 });
 
@@ -145,6 +146,12 @@ function watchify_bundle(){
     .pipe(gulpif(isProd, streamify(uglify())))
     .pipe(gulp.dest(paths.build + paths.script));
 }
+
+gulp.task('build_vendors', function() {
+  gulp.src(paths.vendorJS)
+    .pipe(gulpif(isProd, streamify(uglify())))
+    .pipe(gulp.dest(paths.build + paths.script));
+});
 
 //start server
 gulp.task('start_server', shell.task(['node server.js']));

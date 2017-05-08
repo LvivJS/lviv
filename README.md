@@ -4,6 +4,8 @@ run:
 3) `gulp serve`  
 4) navigate browser to `localhost:8080`
 
-
 TODO:
-# cleanup obsolete styles, tasks etc.
+- cleanup server.js
+- clean obsolete styles, templates
+- clean config
+- clen unneded db_connector

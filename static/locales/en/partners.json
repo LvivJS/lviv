@@ -1,95 +1,65 @@
 {
-  "title": "partners",
-  "data": [
-    {
-      "title": "general",
-      "data": [
+    "title": "partners",
+    "data": [
         {
-          "title": "Lohika Systems",
-          "link": "http://www.lohika.com.ua/",
-          "img": "images/partners/general/lohika.jpg"
+            "title": "general",
+            "data": [
+                {
+                    "title": "Lohika Systems",
+                    "link": "http://www.lohika.com.ua",
+                    "img": "images/partners/lohika.png"
+                }
+            ]
+        },
+        {
+            "title": "golden",
+            "data": [
+                {
+                    "title": "Symphony Solutions",
+                    "link": "http://www.symphony-solutions.eu",
+                    "img": "images/partners/symphony_solutions.png"
+                },
+                {
+                    "title": "Levi9",
+                    "link": "http://ukraine.levi9.jobs",
+                    "img": "images/partners/levi9.png"
+                },
+                {
+                    "title": "Epam Systems",
+                    "link": "https://www.epam.com",
+                    "img": "images/partners/epam.jpg"
+                },
+                {
+                    "title": "DataArt",
+                    "link": "http://dataart.ua",
+                    "img": "images/partners/dataart.png"
+                },
+                {
+                    "title": "GlobalLogic",
+                    "link": "https://www.globallogic.com/ua",
+                    "img": "images/partners/globallogic.png"
+                }
+            ]
+        },
+        {
+            "title": "silver",
+            "data": [
+                {
+                    "title": "Remit",
+                    "link": "http://remit.se",
+                    "img": "images/partners/remit.png"
+                },
+                {
+                    "title": "Sigma Software",
+                    "link": "http://sigma.software",
+                    "img": "images/partners/sigma_software.png"
+                },
+                {
+                    "title": "Eleks",
+                    "link": "http://eleks.com/?utm_source=LvivJS&utm_medium=conference&utm_campaign=rec",
+                    "img": "images/partners/eleks.png"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "title": "golden",
-      "data": [
-        {
-          "title": "DataArt",
-          "link": "http://www.dataart.ua/",
-          "img": "images/partners/golden/dataart.png"
-        },
-        {
-          "title": "Eleks",
-          "link": "http://www.eleks.com/",
-          "img": "images/partners/golden/eleks.png"
-        },
-        {
-          "title": "Sigma Software",
-          "link": "http://ua.sigma.software/",
-          "img": "images/partners/golden/sigma_software.png"
-        },
-        {
-          "title": "Epam Systems",
-          "link": "http://www.epam.com/",
-          "img": "images/partners/golden/epam.jpg"
-        }
-      ]
-    },
-    {
-      "title": "bronze",
-      "data": [
-        {
-          "title": "Intellias",
-          "link": "http://www.intellias.com/",
-          "img": "images/partners/bronze/intellias.png"
-        },
-        {
-          "title": "Team International",
-          "link": "http://www.teaminternational.com/",
-          "img": "images/partners/bronze/team-international.jpg"
-        }
-      ]
-    },
-    {
-      "title": "informational partners",
-      "data": [
-        {
-          "title": "OdessaJS",
-          "link": "http://odessajs.org/",
-          "img": "images/partners/info/odessajs.png"
-        },
-        {
-          "title": "Ukrainian IT Awards",
-          "link": "https://www.facebook.com/itawards.ua?fref=ts",
-          "img": "images/partners/info/itawards.png"
-        },
-        {
-          "title": "Lits",
-          "link": "http://lits.com.ua/course/web-ui-course/",
-          "img": "images/partners/info/lits.jpg"
-        },
-        {
-          "title": "Lviv IT Arena",
-          "link": "http://itarena.lviv.ua/",
-          "img": "images/partners/info/lviv_it_arena.png"
-        },
-        {
-          "title": "Lviv IT Cluster",
-          "link": "http://itcluster.lviv.ua/",
-          "img": "images/partners/info/lviv_it_cluster.png"
-        },
-        {
-          "title": "JDay Lviv",
-          "link": "http://www.jday.com.ua/",
-          "img": "images/partners/info/jday_lviv.png"
-        },
-        {
-          "title": "GDG DevFest",
-          "link": "http://devfest.gdg.org.ua/",
-          "img": "images/partners/info/gdg_devfest.png"
-        }
-      ]
-    }
-  ]
+    ]
 }

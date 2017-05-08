@@ -66,25 +66,8 @@ var utilities = {
       );
     }
   },
-  scrollTo: function scrollTo(to, duration) {
-    if (duration < 0) {
-      return;
-    }
-    //This is for IE compability
-    var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var difference = to - top;
-    var perTick = difference / duration * 10;
-
-    setTimeout(function() {
-      window.scroll(0, top + perTick);
-      if (top == to) {
-        //this is to prevent scrolling to top
-        //after animation has been done in IE
-        window.scroll(0, to);
-        return;
-      }
-      scrollTo(to, duration - 10);
-    }, 10);
+  scrollTo: function scrollTo(to) {
+    window.scroll({top: to, behavior: 'smooth'});
   }
 };
 

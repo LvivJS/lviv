@@ -8,8 +8,3 @@ footer#footer.page-wrap.footer
             span.block__contact__name= contact.name
             span.block__contact__phone= contact.phone
             a.block__contact__email(href="mailto:#{contact.email}")= contact.email
-  .footer__copyright
-    .footer__container
-      span.copyright__text= footer.copyright
-      .footer__socials
-        +socialIcons(menu_socials)(class="footer__social_icon")

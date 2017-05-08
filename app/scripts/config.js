@@ -41,15 +41,15 @@ var config = {
   modules: [
     {
       component: 'overview',
-      isRendering: true
+      isRendering: false
     },
     {
       component: 'speakers',
-      isRendering: true
+      isRendering: false
     },
     {
       component: 'schedule',
-      isRendering: true
+      isRendering: false
     },
     {
       component: 'registration',
@@ -57,11 +57,11 @@ var config = {
     },
     {
       component: 'partners',
-      isRendering: true
+      isRendering: false
     },
     {
       component: 'location',
-      isRendering: true
+      isRendering: false
     }
   ],
   breakPoint: 768

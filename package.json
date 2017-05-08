@@ -1,10 +1,11 @@
 {
-  "name": "conf_maker",
-  "version": "0.0.9",
-  "description": "conf_maker",
+  "name": "lvivjs_website",
+  "version": "2.0.0",
+  "description": "Official website of LvivJS conference",
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:TuxujPes/conf_maker.git"
+    "url": "git@github.com:LvivJS/web_site.git"
   },
   "engines": {
     "node": ">=0.12.0"
