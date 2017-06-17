@@ -9,9 +9,8 @@ div#menu.module-wrapper
           div.menuToggle__stripe
           div.menuToggle__stripe
     nav#cm_menuItems.menu
-      each module in menuItms
-        if (module.component != 'location')
-          a.menu__item(href="##{module.component}")= module.title
+      each module in menuItems
+        a.menu__item(href="##{module.component}")= module.title
     .menu__socials
       +socialIcons(menu_socials)(class="menu__social_icon")
   div#cm_darkenScreen.darkenScreen--hidden

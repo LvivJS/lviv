@@ -22,14 +22,10 @@ data.menu_socials = require('./app/locales/en/menu_socials.json');
 data.moment = app.locals.moment;
 data.connect = JSON.stringify(require('./app/scripts/db_connector.js'));
 
-data.menuItms = [];
+data.menuItems = data.config.menuItems;
 data.config.modules.forEach(function(module) {
   var mod = module.component;
   data[mod] = require('./app/locales/en/' + mod + '.json');
-  var menuItem = { component: module.component.toLowerCase(), title: data[mod].title };
-  if (module.isRendering) {
-    data.menuItms.push(menuItem);
-  }
 });
 
 app.use(compress());

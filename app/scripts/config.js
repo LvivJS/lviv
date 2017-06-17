@@ -38,6 +38,10 @@ var config = {
   pathIMG: {
     conf_logo: 'images/logo.jpg'
   },
+  menuItems: [
+    {component: 'registration', title: 'Call for Papers'},
+    {component: 'location', title: 'Location'}
+  ],
   modules: [
     {
       component: 'overview',
