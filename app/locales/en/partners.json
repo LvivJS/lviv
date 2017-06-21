@@ -2,6 +2,18 @@
     "title": "partners",
     "data": [
         {
+            "title": "Exclusive",
+            "data": [
+                {
+                    "title": "Tech Magic",
+                    "link": "http://www.techmagic.co/",
+                    "img": "images/partners/tech_magic.png"
+                }
+            ]
+        }
+    ],
+    "commented": [
+        {
             "title": "general",
             "data": [
                 {

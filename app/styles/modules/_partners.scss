@@ -42,7 +42,7 @@
   color: $color__partners-header;
   font-weight: 700;
   font-size: $font__size--3;
-  margin: 56px 0px 30px;
+  margin: 56px 0 30px;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
@@ -75,7 +75,16 @@
     align-items: center;
   }
 
-  // PARTNER LOGOS CUSTOM HEIGTS
+  // PARTNER LOGOS CUSTOM HEIGHTS
+  &[title="Tech Magic"] {
+    height: 100px;
+
+    @include bp(medium) {
+      height: 113px;
+      margin: 0;
+    }
+  }
+
   &[title="Lohika Systems"] {
     height: 75px;
 
@@ -95,7 +104,7 @@
   }
   &[title="Sigma Software"],
   &[title="Levi9"],
-  &[title="Symphony Solutions"], {
+  &[title="Symphony Solutions"] {
     height: 55px;
 
     @include bp(medium) {
@@ -105,7 +114,7 @@
   }
   &[title="Epam Systems"],
   &[title="GlobalLogic"],
-  &[title="Remit"], {
+  &[title="Remit"] {
     height: 41px;
     @include bp(medium) {
       width: 27%;

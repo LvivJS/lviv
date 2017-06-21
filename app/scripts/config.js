@@ -40,6 +40,7 @@ var config = {
   },
   menuItems: [
     {component: 'registration', title: 'Call for Papers'},
+    {component: 'partners', title: 'Partners'},
     {component: 'location', title: 'Location'}
   ],
   modules: [
@@ -61,7 +62,7 @@ var config = {
     },
     {
       component: 'partners',
-      isRendering: false
+      isRendering: true
     },
     {
       component: 'location',
