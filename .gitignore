@@ -3,7 +3,16 @@ node_modules
 .sass-cache
 .c9
 *.css.map
+
+# mac os files
 .DS_Store
 
+# static files
 dist
 static
+
+# webstorm config folder
+.idea/
+
+# vscode config folder
+.vscode
