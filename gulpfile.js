@@ -40,7 +40,9 @@ paths.script = '/scripts';
 paths.build = './static';
 
 // default
-gulp.task('default', ['serve']);
+gulp.task('default', function() {
+  runSequence('build', 'serve');
+});
 
 //run browserify, start server and reload page on saving changes
 var serveTasks = {

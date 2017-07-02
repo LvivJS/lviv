@@ -10,6 +10,16 @@
                     "img": "images/partners/tech_magic.png"
                 }
             ]
+        },
+        {
+            "title": "golden",
+            "data": [
+                {
+                    "title": "Lohika Systems",
+                    "link": "http://www.lohika.com.ua",
+                    "img": "images/partners/lohika.png"
+                }
+            ]
         }
     ],
     "commented": [
