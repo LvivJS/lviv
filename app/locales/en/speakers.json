@@ -17,6 +17,12 @@
             "position": "TBD",
             "photo_url": "images/speakers/igor_fesenko.jpg",
             "about": ""
+        },
+        {
+            "name": "Roman Rodomanskyy",
+            "position": "TBD",
+            "photo_url": "images/speakers/roman_rodomanskyy.png",
+            "about": ""
         }
     ]
 }
