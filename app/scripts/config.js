@@ -10,6 +10,7 @@ var config = {
     conf_logo: 'images/logo.jpg'
   },
   menuItems: [
+    {component: 'registration', title: 'Buy Ticket'},
     {component: 'registration', title: 'Call for Papers'},
     {component: 'speakers', title: 'Speakers'},
     {component: 'partners', title: 'Partners'},
