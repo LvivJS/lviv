@@ -20,8 +20,38 @@
         },
         {
             "name": "Roman Rodomanskyy",
-            "position": "TBD",
+            "position": "Honey, we have a chatbot",
             "photo_url": "images/speakers/roman_rodomanskyy.png",
+            "about": ""
+        },
+        {
+            "name": "Vadim Makeev",
+            "position": "TBD",
+            "photo_url": "images/speakers/vadym_makeev.jpg",
+            "about": ""
+        },
+        {
+            "name": "Roman Liutikov",
+            "position": "Code Transformation for Fun and Profit",
+            "photo_url": "images/speakers/roman_liutikov.jpg",
+            "about": ""
+        },
+        {
+            "name": "Artem Arkhipov",
+            "position": "Building serverless applications with firebase and google functions",
+            "photo_url": "images/speakers/artem_arkhipov.jpg",
+            "about": ""
+        },
+        {
+            "name": "Aliaksandr Karlovich",
+            "position": "TV in Browsers: Live Cases",
+            "photo_url": "images/speakers/aliaksandr_karlovich.jpg",
+            "about": ""
+        },
+        {
+            "name": "Dmytro Tarasenko",
+            "position": "Evolutionary Programming on JS",
+            "photo_url": "images/speakers/dmytro_tarasenko.jpg",
             "about": ""
         }
     ]
