@@ -7,15 +7,15 @@
             "about": ""
         },
         {
-            "name": "Andriy Vandakurov",
-            "position": "TBD",
-            "photo_url": "images/speakers/andiy_vandakurov.jpg",
+            "name": "Assim Hussain",
+            "position": "How to hack a node app?",
+            "photo_url": "images/speakers/assim_hussain.png",
             "about": ""
         },
         {
-            "name": "Igor Fesenko",
-            "position": "TBD",
-            "photo_url": "images/speakers/igor_fesenko.jpg",
+            "name": "Vadim Makeev",
+            "position": "Cannibal UI",
+            "photo_url": "images/speakers/vadym_makeev.jpg",
             "about": ""
         },
         {
@@ -25,9 +25,15 @@
             "about": ""
         },
         {
-            "name": "Vadim Makeev",
+            "name": "Igor Fesenko",
             "position": "TBD",
-            "photo_url": "images/speakers/vadym_makeev.jpg",
+            "photo_url": "images/speakers/igor_fesenko.jpg",
+            "about": ""
+        },
+        {
+            "name": "Andriy Vandakurov",
+            "position": "Web is secure. Let's hack it",
+            "photo_url": "images/speakers/andiy_vandakurov.jpg",
             "about": ""
         },
         {

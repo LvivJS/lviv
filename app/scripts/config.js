@@ -11,7 +11,6 @@ var config = {
   },
   menuItems: [
     {component: 'registration', title: 'Buy Ticket'},
-    {component: 'registration', title: 'Call for Papers'},
     {component: 'speakers', title: 'Speakers'},
     {component: 'partners', title: 'Partners'},
     {component: 'location', title: 'Location'}
@@ -19,11 +18,11 @@ var config = {
   modules: [
     {
       component: 'overview',
-      isRendering: false
+      isRendering: true
     },
     {
       component: 'speakers',
-      isRendering: false
+      isRendering: true
     },
     {
       component: 'schedule',
@@ -39,7 +38,7 @@ var config = {
     },
     {
       component: 'location',
-      isRendering: false
+      isRendering: true
     }
   ],
   breakPoint: 768
