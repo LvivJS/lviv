@@ -75,6 +75,10 @@
     align-items: center;
   }
 
+  @include bp(small) {
+    width: 40%;
+  }
+
   // PARTNER LOGOS CUSTOM HEIGHTS
   &[title="Tech Magic"] {
     height: 100px;
@@ -86,7 +90,8 @@
   }
 
   &[title="Lohika Systems"] {
-    height: 75px;
+    height: 65px;
+    margin-top: -10px;
 
     @include bp(medium) {
       height: 88px;
@@ -115,11 +120,8 @@
   &[title="Epam Systems"],
   &[title="GlobalLogic"],
   &[title="Remit"] {
-    height: 41px;
-    @include bp(medium) {
-      width: 27%;
-      height: auto;
-    }
+    height: 50px;
+    margin-top: 5px;
   }
   &[title="OdessaJS"],
   &[title="Ukrainian IT Awards"],
@@ -145,16 +147,16 @@
       width: 13%;
     }
   }
+  &[title="Eleks"] {
+    height: 40px;
+    margin-top: 20px;
+
+    @include bp(medium) {
+      margin-left: 20px; 
+    }
+  }
 
   @include bp(large) {
-    &[title="Eleks"] {
-      margin-top: -10px;
-    }
-
-    &[title="Remit"] {
-      margin-top: 5px;
-    }
-
     // adjust second row in goldens
     &[title="GlobalLogic"],
     &[title="DataArt"] {

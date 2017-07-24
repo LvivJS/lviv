@@ -18,6 +18,16 @@
                     "title": "Lohika Systems",
                     "link": "http://www.lohika.com.ua",
                     "img": "images/partners/lohika.png"
+                },
+                {
+                    "title": "Eleks",
+                    "link": "http://eleks.com/?utm_source=LvivJS&utm_medium=conference&utm_campaign=rec",
+                    "img": "images/partners/eleks.png"
+                },
+                {
+                    "title": "Remit",
+                    "link": "http://remit.se",
+                    "img": "images/partners/remit.png"
                 }
             ]
         }
