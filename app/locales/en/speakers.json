@@ -14,8 +14,14 @@
         },
         {
             "name": "Vadim Makeev",
-            "position": "Cannibal UI",
+            "position": "Inhuman UI",
             "photo_url": "images/speakers/vadim_makeev.jpg",
+            "about": ""
+        },
+        {
+            "name": "Anton Nemtsev",
+            "position": "Code Style & Violence",
+            "photo_url": "images/speakers/anton_nemtsev.jpg",
             "about": ""
         },
         {

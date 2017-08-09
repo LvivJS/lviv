@@ -65,7 +65,7 @@
   background-size: 100% auto;
   display: inline-block;
   height: 30px;
-  margin: 0 20px;
+  margin: 20px;
 
   @include bp(medium) {
     margin: 11px;
@@ -89,26 +89,10 @@
     }
   }
 
-  &[title="Lohika Systems"] {
-    height: 65px;
-    margin-top: -10px;
-
-    @include bp(medium) {
-      height: 88px;
-      margin: 0 0 0 20px;
-    }
-  }
-  &[title="Intellias"],
-  &[title="Team International"]{
-    height: 60px;
-
-    @include bp(medium) {
-      width: 27%;
-      height: auto;
-    }
-  }
+  &[title="Lohika Systems"],
   &[title="Sigma Software"],
   &[title="Levi9"],
+  &[title="Ciklum"],
   &[title="Symphony Solutions"] {
     height: 55px;
 
@@ -117,12 +101,25 @@
       height: auto;
     }
   }
+
+  &[title="Lohika Systems"] {
+    margin-top: 0;
+  }
+
   &[title="Epam Systems"],
+  &[title="Intellias"],
   &[title="GlobalLogic"],
   &[title="Remit"] {
     height: 50px;
     margin-top: 5px;
   }
+
+  &[title="Soft Serve"] {
+    height: 35px;
+  }
+
+
+  // INFO PARTNERS
   &[title="OdessaJS"],
   &[title="Ukrainian IT Awards"],
   &[title="Lits"] {
@@ -132,6 +129,7 @@
       height: auto;
     }
   }
+
   &[title="Lviv IT Arena"] {
     height: 83px;
   }

@@ -1,23 +1,24 @@
 {
     "title": "partners",
-    "data": [
-        {
+    "data": [{
             "title": "Exclusive",
-            "data": [
-                {
-                    "title": "Tech Magic",
-                    "link": "http://www.techmagic.co/",
-                    "img": "images/partners/tech_magic.png"
-                }
-            ]
+            "data": [{
+                "title": "Tech Magic",
+                "link": "http://www.techmagic.co/",
+                "img": "images/partners/tech_magic.png"
+            }]
         },
         {
             "title": "golden",
-            "data": [
-                {
+            "data": [{
                     "title": "Lohika Systems",
                     "link": "http://www.lohika.com.ua",
                     "img": "images/partners/lohika.png"
+                },
+                {
+                    "title": "Soft Serve",
+                    "link": "https://softserve.ua/en/",
+                    "img": "images/partners/soft_serve.png"
                 },
                 {
                     "title": "Eleks",
@@ -25,28 +26,62 @@
                     "img": "images/partners/eleks.png"
                 },
                 {
+                    "title": "DataArt",
+                    "link": "http://dataart.ua",
+                    "img": "images/partners/dataart.png"
+                },
+                {
+                    "title": "Intellias",
+                    "link": "http://www.intellias.com/",
+                    "img": "images/partners/intellias.png"
+                },
+                {
                     "title": "Remit",
                     "link": "http://remit.se",
                     "img": "images/partners/remit.png"
-                }
-            ]
-        }
-    ],
-    "commented": [
-        {
-            "title": "general",
-            "data": [
+                },
                 {
-                    "title": "Lohika Systems",
-                    "link": "http://www.lohika.com.ua",
-                    "img": "images/partners/lohika.png"
+                    "title": "Levi9",
+                    "link": "http://ukraine.levi9.jobs",
+                    "img": "images/partners/levi9.png"
+                },
+                {
+                    "title": "Ciklum",
+                    "link": "https://www.ciklum.com/",
+                    "img": "images/partners/ciklum.png"
+                },
+                {
+                    "title": "Symphony Solutions",
+                    "link": "http://www.symphony-solutions.eu",
+                    "img": "images/partners/symphony_solutions.png"
+                },
+                {
+                    "title": "Sombra",
+                    "link": "https://sombrainc.com/",
+                    "img": "https://sombrainc.com/img/site/logo.svg"
                 }
             ]
         },
         {
+            "title": "bronze",
+            "data": [{
+                "title": "Sigma Software",
+                "link": "http://sigma.software",
+                "img": "images/partners/sigma_software.png"
+            }]
+        }
+    ],
+    "commented": [{
+            "title": "general",
+            "data": [{
+                "title": "Lohika Systems",
+                "link": "http://www.lohika.com.ua",
+                "img": "images/partners/lohika.png"
+            }]
+        },
+        {
             "title": "golden",
-            "data": [
-                {
+            "data": [{
                     "title": "Symphony Solutions",
                     "link": "http://www.symphony-solutions.eu",
                     "img": "images/partners/symphony_solutions.png"
@@ -75,8 +110,7 @@
         },
         {
             "title": "silver",
-            "data": [
-                {
+            "data": [{
                     "title": "Remit",
                     "link": "http://remit.se",
                     "img": "images/partners/remit.png"
