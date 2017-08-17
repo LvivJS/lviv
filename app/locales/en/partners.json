@@ -26,6 +26,11 @@
                     "img": "images/partners/eleks.png"
                 },
                 {
+                    "title": "Epam Systems",
+                    "link": "https://www.epam.com/",
+                    "img": "images/partners/epam.png"
+                },
+                {
                     "title": "DataArt",
                     "link": "http://dataart.ua",
                     "img": "images/partners/dataart.png"
@@ -58,7 +63,7 @@
                 {
                     "title": "Sombra",
                     "link": "https://sombrainc.com/",
-                    "img": "https://sombrainc.com/img/site/logo.svg"
+                    "img": "images/partners/sombra.svg"
                 }
             ]
         },

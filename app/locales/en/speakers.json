@@ -25,9 +25,15 @@
             "about": ""
         },
         {
-            "name": "Roman Rodomanskyy",
-            "position": "Honey, we have a chatbot",
-            "photo_url": "images/speakers/roman_rodomanskyy.png",
+            "name": "Dzmitry Varabei",
+            "position": "Serverless Architecture: Functions as a Service",
+            "photo_url": "images/speakers/dzmitry_varabei.jpg",
+            "about": ""
+        },
+        {
+            "name": "Siarhei Melnik",
+            "position": "Serverless Architecture: Functions as a Service",
+            "photo_url": "images/speakers/siarhei_melnik.jpg",
             "about": ""
         },
         {
@@ -46,6 +52,12 @@
             "name": "Roman Liutikov",
             "position": "Code Transformation for Fun and Profit",
             "photo_url": "images/speakers/roman_liutikov.jpg",
+            "about": ""
+        },
+        {
+            "name": "Oleksandr Pavlyshch",
+            "position": "Machines Must Suffer",
+            "photo_url": "images/speakers/oleksandr_pavlyshch.jpg",
             "about": ""
         },
         {
