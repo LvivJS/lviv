@@ -8,5 +8,5 @@ var speakers = require('./modules/speakers.js');
 //TODO: somehow disable locatinMap for mobiles
 menu();
 locationMap('View on Google Maps');
-// schedule();
+schedule();
 // speakers('See all speakers');

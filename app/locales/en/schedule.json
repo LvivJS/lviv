@@ -1,326 +1,308 @@
 {
   "title": "Schedule",
-  "locales":{
-    "calend_links":"Add Event to: ",
+  "locales": {
+    "calend_links": "Add Event to: ",
     "no_description": "Sorry, no description..."
   },
-  "days": [
-    {
-      "day_id":"01",
-      "day_info": "Stream 1",
-      "location":"Ukraine, Lviv, Stryis'ka 199",
-      "timetable": [
-        {
-          "time": {
-            "start": "2016-08-27T09:00:00",
-            "end": ""
-          },
-          "article":"Registration Start (morning coffee)",
-          "type":"entertainment",
-          "speaker":
-            {
-              "name":"",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time": {
-            "start": "2016-08-27T10:00:00",
-            "end": "2016-08-27T10:15:00"
-          },
-          "article":"Conference start",
-          "type":"report",
-          "speaker":
-            {
-              "name":"",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time": {
-            "start": "2016-08-27T10:15:00",
-            "end": "2016-08-27T11:15:00"
-          },
-          "article":"Beauty of everyday tools (ENG)",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Oleksandr Lapshyn",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time": {
-            "start": "2016-08-27T11:15:00",
-            "end": "2016-08-27T11:25:00"
-          },
-          "article":"HR session",
-          "type":"report",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T11:25:00",
-            "end": "2016-08-27T11:30:00"
-          },
-          "article":"Break",
-          "type":"report",
-          "speaker":
-            {
-              "name":"",
-              "position":""
-              }
-        },
-        {
-          "time":{
-            "start": "2016-08-27T11:30:00",
-            "end": "2016-08-27T12:30:00"
-          },
-          "article":"Modern functional concepts and JavaScript (RUS)",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Maks Klymyshyn",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T12:30:00",
-            "end": "2016-08-27T12:40:00"
-          },
-          "article":"HR session",
-          "type":"report",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T12:40:00",
-            "end": "2016-08-27T12:45:00"
-          },
-          "article":"Break",
-          "type":"report",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T12:45:00",
-            "end": "2016-08-27T13:45:00"
-          },
-          "article":"Flux is dead. Long live Flux! (RUS)",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Alexey Raspopov",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T13:45:00",
-            "end": "2016-08-27T15:00:00"
-          },
-          "article":"Lunch",
-          "type":"entertainment",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T15:00:00",
-            "end": "2016-08-27T16:00:00"
-          },
-          "article":"Exploring ways to use ES2015 today (UKR)",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Roman Kyrylych",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T16:00:00",
-            "end": "2016-08-27T16:10:00"
-          },
-          "article":"HR session",
-          "type":"report",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T16:10:00",
-            "end": "2016-08-27T16:15:00"
-          },
-          "article":"Break",
-          "type":"report",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T16:15:00",
-            "end": "2016-08-27T17:15:00"
-          },
-          "article":"React Native: Are we there yet? (ENG)",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Roman Liutikov",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T17:15:00",
-            "end": "2016-08-27T17:25:00"
-          },
-          "article":"HR session",
-          "type":"report",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T17:25:00",
-            "end": "2016-08-27T17:50:00"
-          },
-          "article":"Coffee-break",
-          "type":"entertainment",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T17:50:00",
-            "end": "2016-08-27T18:00:00"
-          },
-          "article":"HR session",
-          "type":"report",
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T18:00:00",
-            "end": "2016-08-27T19:00:00"
-          },
-          "article":"How to deploy to production 10+ times a day (ENG)",
-          "type":"report",
-          "speaker":
-            {
-              "name":"Andrii Shumada",
-              "position":""
-              },
-          "about":""
-        },
-        {
-          "time":{
-            "start": "2016-08-27T19:00:00",
-            "end": "2016-08-27T19:10:00"
-          },
-          "article":"Conference end",
-          "type":"report",
-          "about":""
-        }
-      ]
-  },
-  {
-    "day_id":"02",
-    "day_info": "Stream 2",
-    "location":"Ukraine, Lviv, Stryis'ka 199",
-    "timetable": [
-      {
+  "days": [{
+    "day_id": 1,
+    "day_info": "Stream A",
+    "location": "Staroznesenska, 24",
+    "timetable": [{
         "time": {
-          "start": "2016-08-27T09:00:00",
+          "start": "2017-08-26T09:00:00",
           "end": ""
         },
-        "article":"Registration Start (morning coffee)",
-        "type":"entertainment",
-        "speaker":
-          {
-            "name":"",
-            "position":""
-            },
-        "about":""
+        "article": "Registration Start (morning coffee)",
+        "type": "entertainment"
       },
       {
         "time": {
-          "start": "2016-08-27T10:00:00",
-          "end": "2016-08-27T10:15:00"
+          "start": "2017-08-26T09:50:00"
         },
-        "article":"Conference start",
-        "type":"report",
-        "speaker":
-          {
-            "name":"",
-            "position":""
-            },
-        "about":""
+        "article": "Conference start",
+        "type": "report"
       },
       {
         "time": {
-          "start": "2016-08-27T10:15:00",
-          "end": "2016-08-27T13:55:00"
+          "start": "2017-08-26T10:00:00"
         },
-        "article":"Node school",
-        "type":"report",
-        "speaker":
-          {
-            "name":"",
-            "position":""
-            },
-        "about":""
+        "article": "WebVR - The Next Frontier (ENG)",
+        "type": "report",
+        "speaker": {
+          "name": "Martin Splitt",
+          "position": ""
+        },
+        "about": ""
       },
       {
         "time": {
-          "start": "2016-08-27T13:55:00",
-          "end": "2016-08-27T15:00:00"
+          "start": "2017-08-26T11:00:00"
         },
-        "article":"Lunch",
-        "type":"entertainment"
+        "article": "Serverless Architecture: Functions as a Service (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Siarhey Melnik, Dzmitry Varabei",
+          "position": ""
+        },
+        "about": ""
       },
       {
-        "time":{
-          "start": "2016-08-27T15:00:00",
-          "end": "2016-08-27T16:00:00"
+        "time": {
+          "start": "2017-08-26T12:30:00"
         },
-        "article":"Creation of native mobile apps with NativeScript and Angular2 (RUS)",
-        "type":"report",
-        "speaker":
-          {
-            "name":"Evgene Alaev",
-            "position":""
-            }
+        "article": "Code Style & Violence (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Anton Nemtsev ",
+          "position": ""
+        },
+        "about": ""
       },
       {
-        "time":{
-          "start": "2016-08-27T16:15:00",
-          "end": "2016-08-27T17:15:00"
+        "time": {
+          "start": "2017-08-26T13:15:00"
         },
-        "article":"Using Reflex for offline first applications (ENG)",
-        "type":"report",
-        "speaker":
-          {
-            "name":"Denis Yaremov",
-            "position":""
-            },
-        "about":""
+        "article": "Lunch",
+        "type": "entertainment",
+        "about": ""
       },
       {
-        "time":{
-          "start": "2016-08-27T19:00:00",
-          "end": "2016-08-27T19:10:00"
+        "time": {
+          "start": "2017-08-26T14:00:00"
         },
-        "article":"Conference end",
-        "type":"report",
-        "about":""
+        "article": "How to Hack a Node App? (ENG)",
+        "type": "report",
+        "speaker": {
+          "name": "Asim Hussain",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T15:00:00"
+        },
+        "article": "Inhuman UI (ENG)",
+        "type": "report",
+        "speaker": {
+          "name": "Vadim Makeev",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T15:45:00"
+        },
+        "article": "Coffee-break",
+        "type": "entertainment",
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T16:15:00"
+        },
+        "article": "Programming Challenge (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Aliaksandr Herasimau",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T17:00:00"
+        },
+        "article": "Evolutionary Programming on JS (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Dmytro Tarasenko",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T17:45:00"
+        },
+        "article": "Conference end",
+        "type": "report",
+        "about": ""
       }
     ]
-  }
-
-  ]
+  }, {
+    "day_id": 2,
+    "day_info": "Stream B",
+    "location": "Staroznesenska, 24",
+    "timetable": [{
+        "time": {
+          "start": "2017-08-26T09:00:00"
+        },
+        "article": "Registration Start (morning coffee)",
+        "type": "entertainment"
+      },
+      {
+        "time": {
+          "start": "2017-08-26T09:50:00"
+        },
+        "article": "Conference start",
+        "type": "report"
+      },
+      {
+        "time": {
+          "start": "2017-08-26T11:00:00"
+        },
+        "article": "Machines Must Suffer (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Oleksandr Pavlyshch",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T12:00:00"
+        },
+        "article": "How to Track Success of Your Application? (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Igor Fesenko",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T13:15:00"
+        },
+        "article": "Lunch",
+        "type": "entertainment",
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T15:00:00"
+        },
+        "article": "Code Transformation for Fun and Profit (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Roman Liutikov",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T15:45:00"
+        },
+        "article": "Coffee-break",
+        "type": "entertainment",
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T17:45:00"
+        },
+        "article": "Conference end",
+        "type": "report",
+        "about": ""
+      }
+    ]
+  },{
+    "day_id": 3,
+    "day_info": "Stream C",
+    "location": "Staroznesenska, 24",
+    "timetable": [{
+        "time": {
+          "start": "2017-08-26T09:00:00",
+          "end": ""
+        },
+        "article": "Registration Start (morning coffee)",
+        "type": "entertainment"
+      },
+      {
+        "time": {
+          "start": "2017-08-26T09:50:00"
+        },
+        "article": "Conference start",
+        "type": "report"
+      },
+      {
+        "time": {
+          "start": "2017-08-26T11:00:00"
+        },
+        "article": "Web is Secure. Let's Hack It (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Andriy Vandakurov",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T12:00:00"
+        },
+        "article": "Building Serverless Applications with Firebase and Google Functions (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Artem Arkhipov",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T13:15:00"
+        },
+        "article": "Lunch",
+        "type": "entertainment",
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T15:00:00"
+        },
+        "article": "Developing an Android application through the eyes of a JS developer (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Timofey Lavrenyuk",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T15:45:00"
+        },
+        "article": "Coffee-break",
+        "type": "entertainment",
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T17:00:00"
+        },
+        "article": "TV in browsers: Live Cases (RUS)",
+        "type": "report",
+        "speaker": {
+          "name": "Aliaksandr Karlovich",
+          "position": ""
+        },
+        "about": ""
+      },
+      {
+        "time": {
+          "start": "2017-08-26T17:50:00"
+        },
+        "article": "Conference end",
+        "type": "report",
+        "about": ""
+      }
+    ]
+  }]
 
 }

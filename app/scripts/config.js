@@ -12,6 +12,7 @@ var config = {
   menuItems: [
     {component: 'registration', title: 'Buy Ticket'},
     {component: 'speakers', title: 'Speakers'},
+    {component: 'schedule', title: 'Schedule'},
     {component: 'partners', title: 'Partners'},
     {component: 'location', title: 'Location'}
   ],
