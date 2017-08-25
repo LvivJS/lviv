@@ -64,6 +64,11 @@
                     "title": "Sombra",
                     "link": "https://sombrainc.com/",
                     "img": "images/partners/sombra.svg"
+                },
+                {
+                    "title": "Dev-Pro",
+                    "link": "https://www.dev-pro.net",
+                    "img": "images/partners/dev_pro.png"
                 }
             ]
         },
