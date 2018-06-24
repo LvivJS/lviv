@@ -1,18 +1,7 @@
-node_modules
-*.log
-.sass-cache
-.c9
-*.css.map
-
-# mac os files
-.DS_Store
-
-# static files
+bower_components
 dist
-static
-
-# webstorm config folder
+node_modules
+build
 .idea/
-
-# vscode config folder
-.vscode
+.temp/
+.firebaserc

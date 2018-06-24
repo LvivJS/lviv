@@ -1,9 +1,0 @@
-{
-  "eslint.enable": false,
-  "vsicons.presets.angular": false,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/static/**/*": true
-  }
-}

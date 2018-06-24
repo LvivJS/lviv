@@ -1,174 +1,179 @@
 'use strict';
 
-var gulp = require('gulp');
-var browserify = require('browserify');
-var watchify = require('watchify');
-var source = require('vinyl-source-stream');
-var gutil = require('gulp-util');
-var notifier = require('node-notifier');
-var sass = require('gulp-sass');
-var minifycss = require('gulp-minify-css');
-var concating = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var gulpif = require('gulp-if');
-var streamify = require('gulp-streamify');
-var uglify = require('gulp-uglify');
-var shell = require('gulp-shell');
-var runSequence = require('run-sequence');
-var del = require('del');
-var imagemin = require('gulp-imagemin');
-var autoprefixer = require('gulp-autoprefixer');
-var jpegoptim = require('imagemin-jpegoptim');
-var _ = require('underscore');
-var copy = new (require('task-copy'));
-var jscs = require('gulp-jscs');
+const del = require('del');
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const uglify = require('gulp-uglify');
+const cssSlam = require('css-slam').gulp;
+const mergeStream = require('merge-stream');
+const polymerBuild = require('polymer-build');
+const browserSync = require('browser-sync').create();
+const history = require('connect-history-api-fallback');
 
-var env = process.env.NODE_ENV || 'development';
-var isProd = env === 'production';
+const logging = require('plylog');
+// logging.setVerbose();
 
-var paths = {};
-paths.sourceRoot = './app/scripts';
-paths.jsFiles = paths.sourceRoot + '/**/*.js';
-paths.jsEntry = paths.sourceRoot + '/main.js';
-paths.vendorJS = './app/vendor/scripts/*.js';
-paths.buildFileName = 'bundle.js';
-paths.sassFiles = './app/styles/**/*.scss';
-paths.imageFiles = './app/images/**/*';
-paths.jsonFiles = './app/locales/';
-paths.styles = '/style';
-paths.script = '/scripts';
-paths.build = './static';
+const config = {
+  polymerJsonPath: './polymer.json',
+  build: {
+    rootDirectory: 'build',
+    bundled: true
+  },
+  swPrecacheConfigPath: './sw-precache-config.js',
+  templateData: [
+    'data/hoverboard.config',
+    'data/resources'
+  ],
+  tempDirectory: '.temp'
+};
+const swPrecacheConfig = require(config.swPrecacheConfigPath);
+const polymerJson = require(config.polymerJsonPath);
+const buildPolymerJson = {
+  entrypoint: prependPath(config.tempDirectory, polymerJson.entrypoint),
+  shell: prependPath(config.tempDirectory, polymerJson.shell),
+  fragments: polymerJson.fragments.reduce((res, el) => [...res, prependPath(config.tempDirectory, el)], []),
+  sources: polymerJson.sources.reduce((res, el) => [...res, prependPath(config.tempDirectory, el)], []),
+  extraDependencies: polymerJson.extraDependencies
+};
 
-// default
-gulp.task('default', function() {
-  runSequence('build', 'serve');
-});
+const normalize = require('./gulp-tasks/normalize.js');
+const template = require('./gulp-tasks/template.js');
+const images = require('./gulp-tasks/images.js');
+const html = require('./gulp-tasks/html.js');
 
-//run browserify, start server and reload page on saving changes
-var serveTasks = {
-  'development': ['browserify_watch', 'app_watch', 'start_server', 'start_livereload'],
-  'production' : ['start_server']
+
+function build() {
+  return new Promise(resolve => {
+    let polymerProject = null;
+    let sourcesStreamSplitter = new polymerBuild.HtmlSplitter();
+    let dependenciesStreamSplitter = new polymerBuild.HtmlSplitter();
+
+    console.log(`Deleting ${config.build.rootDirectory} and ${config.tempDirectory} directories...`);
+
+    del([config.build.rootDirectory, config.tempDirectory])
+      .then(() => {
+        console.log(`Compiling template...`);
+
+        const compileStream = template.compile(config, polymerJson)
+          .on('end', () => {
+            polymerProject = new polymerBuild.PolymerProject(buildPolymerJson);
+          });
+        return waitFor(compileStream);
+      })
+      .then(() => {
+        console.log(`Polymer building...`);
+
+        const sourcesStream = polymerProject.sources()
+          .pipe(gulpif(/\.(png|gif|jpg|svg)$/, images.minify()))
+          .pipe(sourcesStreamSplitter.split())
+          // splitHtml doesn't split CSS https://github.com/Polymer/polymer-build/issues/32
+          .pipe(gulpif(/\.js$/, uglify()))
+          .pipe(gulpif(/\.(html|css)$/, cssSlam()))
+          .pipe(gulpif(/\.html$/, html.minify()))
+          .pipe(sourcesStreamSplitter.rejoin());
+
+        const dependenciesStream = polymerProject.dependencies()
+          .pipe(dependenciesStreamSplitter.split())
+          .pipe(gulpif(/\.js$/, uglify()))
+          .pipe(gulpif(/\.(html|css)$/, cssSlam()))
+          .pipe(gulpif(/\.html$/, html.minify()))
+          .pipe(dependenciesStreamSplitter.rejoin());
+
+        let buildStream = mergeStream(sourcesStream, dependenciesStream)
+          .once('data', () => {
+            console.log('Analyzing and optimizing...');
+          });
+
+        buildStream = buildStream.pipe(polymerProject.bundler());
+        buildStream = buildStream.pipe(gulp.dest(config.build.rootDirectory));
+        return waitFor(buildStream);
+      })
+      .then(() => {
+        console.log('Generating the Service Worker...');
+
+        return polymerBuild.addServiceWorker({
+          project: polymerProject,
+          buildRoot: prependPath(config.build.rootDirectory, config.tempDirectory).replace('\\', '/'),
+          bundled: config.build.bundled,
+          swPrecacheConfig
+        });
+      })
+      .then(() => {
+        console.log('Normalizing...');
+
+        const normalizeStream = normalize(config)
+          .on('end', () => {
+            del([prependPath(config.build.rootDirectory, config.tempDirectory)])
+          });
+
+        return waitFor(normalizeStream);
+      })
+      .then(() => {
+        return gulp.src(prependPath(config.build.rootDirectory, 'service-worker.js'))
+          .pipe(uglify())
+          .pipe(gulp.dest(config.build.rootDirectory));
+      })
+      .then(() => {
+        console.log('Build complete!');
+        resolve();
+      });
+  });
 }
 
-gulp.task('serve', serveTasks[env], function() {
-  gutil.log('Started successfully!');
-});
-
-//create folders and files before starting serve
-gulp.task('build', function () {
-  runSequence(
-    'deleteDist',
-    'scripts_styleguide',
-    ['build_style', 'build_image', 'browserify_bundle', 'build_vendors', 'json_move'],
-    notify_success);
-});
-
-function notify_success(err){
-  notifier.notify({
-    title: 'GULP BUILD ' + (err ? 'FAILED' : 'SUCCESS'),
-    message: err ? 'at ' + err.message : '✔ ' + env
- });
+function waitFor(stream) {
+  return new Promise((resolve, reject) => {
+    stream.on('end', resolve);
+    stream.on('error', reject);
+  });
 }
 
-gulp.task('app_watch', function(){
-  gulp.watch(paths.jsFiles, ['scripts_styleguide']);
-  gulp.watch(paths.sassFiles, ['build_style']);
-});
+function copyAndReload(file) {
+  const dest = prependPath(config.tempDirectory, file.substring(0, file.lastIndexOf('/')))		
+  
+  gulp.src(file).pipe(gulp.dest(dest));
 
-//STYLES
-gulp.task('build_style', function() {
-  return gulp.src(paths.sassFiles)
-    .pipe(gulpif(!isProd, sourcemaps.init()))
-    .pipe(sass())
-    .pipe(autoprefixer({browsers: ['> 5%','last 2 versions']}))
-    .pipe(concating('styles.css'))
-    .pipe(gulpif(!isProd, sourcemaps.write()))
-    .pipe(gulpif(isProd, minifycss()))
-    .pipe(gulp.dest(paths.build + paths.styles));
-});
-
-//IMAGES
-// todo: console actual save on jpegoptim task
-gulp.task('build_image', function() {
-  return gulp.src(paths.imageFiles)
-    .pipe(imagemin({progressive: true }))
-    // .pipe(jpegoptim({max: 70})())
-    .pipe(gulp.dest(paths.build + '/images'));
-});
-
-//task for moving json folder form app into dist/dev
-gulp.task('json_move', function() {
-  //callback should exist to prevent default console.log
-  copy.run(paths.jsonFiles, {
-    dest: paths.build + '/locales'
-  }, function() {console.log(process.platform)});
-});
-//code healthiness
-gulp.task('scripts_styleguide', function () {
-  return gulp.src(paths.jsFiles).pipe(jscs());
-});
-
-//BROWSERIFY
-var browserifyOptions = {
-  entries: [paths.jsEntry],
-  debug: !isProd,
-  fullPaths: true
+  browserSync.reload();
 }
 
-var watchifyOptions = _.extend({
-  cache: {},
-  packageCache: {}
-}, browserifyOptions);
-
-var bundler = browserify(browserifyOptions);
-var watchBundler = watchify(browserify(watchifyOptions));
-// todo: refactor
-gulp.task('browserify_bundle', function(){
-  return bundler.bundle()
-    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-    .pipe(source(paths.buildFileName))
-    .pipe(gulpif(isProd, streamify(uglify())))
-    .pipe(gulp.dest(paths.build + paths.script));
-});
-
-gulp.task('browserify_watch', function(){
-  watchBundler.on('update', watchify_bundle);
-  return watchBundler.bundle(); // needed too keep process running
-});
-
-watchBundler.on('time', function(time){
-  gutil.log('Browserify rebundle finished after '+ gutil.colors.magenta(time + ' ms'));
-});
-
-// TODO : exit process somehow
-function watchify_bundle(){
-  return watchBundler.bundle()
-    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-    .pipe(source(paths.buildFileName))
-    .pipe(gulpif(isProd, streamify(uglify())))
-    .pipe(gulp.dest(paths.build + paths.script));
+function reload(done) {
+  browserSync.reload();
+  done();
 }
 
-gulp.task('build_vendors', function() {
-  gulp.src(paths.vendorJS)
-    .pipe(gulpif(isProd, streamify(uglify())))
-    .pipe(gulp.dest(paths.build + paths.script));
-});
+function compileTemplate() {
+  return del([config.tempDirectory])
+    .then(() => {
+      return waitFor(template.compile(config, polymerJson));
+    });
+}
 
-//start server
-gulp.task('start_server', shell.task(['node server.js']));
+function prependPath(pre, to) {
+  return `${pre}/${to}`;
+}
 
-//tunnel your localhost to web
-gulp.task('tunnel', shell.task(['lt --port 8080']));
+gulp.task('default', build);
 
-//livereload
-gulp.task('start_livereload', function() {
-  var livereload = require('livereload');
-  var server = livereload.createServer();
-  server.watch(__dirname + '/dist');
-});
+gulp.task('serve', gulp.series(compileTemplate, () => {
+  browserSync.init({
+    logPrefix: 'Hoverboard',
+    notify: false,
+    server: {
+      baseDir: [config.tempDirectory, './'],
+      middleware: [history()]
+    }
+  });
 
-//clean folders
-gulp.task('deleteDist', function() {
-  del(paths.build);
-});
+  gulp.watch([
+    'data/**/*.{markdown,md}',
+    'images/**/*.{png,gif,jpg,svg}',
+  ]).on('change', copyAndReload);
+
+  gulp.watch([
+    'data/**/*.json',
+    'scripts/**/*.js',
+    'src/**/*.html',
+    './index.html',
+    'manifest.json'
+  ], gulp.series(compileTemplate, reload));
+}));
+

@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="welcome-page">
+
+  <template>
+
+    banner should be there
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+
+        is: 'welcome-page',
+
+        behaviors: [
+          HOVERBOARD.PageBehavior,
+          HOVERBOARD.CascadedBehavior
+        ],
+        
+        ready: function() {
+          this.updateCascadedNodes();
+        }
+
+      });
+
+    }());
+  </script>
+
+</dom-module>
