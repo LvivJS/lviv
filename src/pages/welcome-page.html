@@ -1,14 +1,95 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="welcome-page">
+    <style include="shared-styles">
+        :host {
+          --rhino-color: #fecc00;
+          --rhino-height: 350px;
+          --info-color: #ffffff;
+        }
+
+        .wrapper {
+          background: var(--welcome-background);
+        }
+
+        .rhino {
+          display: block;
+          margin: 5vh auto 0;
+          padding-left: 5%;
+          height: calc(var(--rhino-height));
+          width: calc(2.068 * var(--rhino-height));
+        }
+
+        .ready__info {
+          color: var(--info-color);
+          font-size: 70px;
+          font-weight: bold;
+          padding: 3vh 0;
+        }
+
+        .date__info {
+          color: var(--rhino-color);
+          font-size: 50px;
+        }
+
+        .center {
+          text-align: center;
+        }
+
+        @media (max-width: 775px) {
+          .rhino {
+            height: calc(var(--rhino-height) * 0.7);
+            width: calc(2.068 * var(--rhino-height) * 0.7);
+          }
+
+          .ready__info {
+            padding: 10vh 0;
+          }
+        }
+
+        @media (max-width: 535px) {
+          .rhino {
+            height: calc(var(--rhino-height) * 0.5);
+            width: calc(2.068 * var(--rhino-height) * 0.5);
+            margin-top: 10vh;
+          }
+
+          .ready__info {
+            font-size: 50px;
+            padding: 10vh 0;
+          }
+
+          .date__info {
+            font-size: 40px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .rhino {
+            height: calc(var(--rhino-height) * 0.35);
+            width: calc(2.068 * var(--rhino-height) * 0.35);
+            margin-top: 20vh;
+          }
+
+          .ready__info {
+            font-size: 40px;
+            padding: 10vh 0;
+          }
+
+          .date__info {
+            font-size: 30px;
+          }
+        }
+
+    </style>
 
   <template>
-    <div style="position:absolute; left:0; right:0; top:0; bottom:0; background:black;">
-        <img style="display:block; margin:5vh auto 0; padding-left: 5%; width:calc(2.068*350px); height:350px;" src="../../images/logos/JS-rhino-yellow-centered.png" alt="rhio">
-        <h1 style="text-align:center; padding:3vh 0; color:white; font-size:70px;">
+    <div class="wrapper" fit>
+        <img class="rhino" src="../../images/logos/JS-rhino-yellow-centered.png" alt="rhio">
+        <h1 class="ready__info center">
           Get ready for LvivJS!
         </h1>
-        <h2 style="text-align:center; color:#fecc00; font-size:50px;">
+        <h2 class="date__info center">
           1st of September, 2018
         </h2>
     </div>
