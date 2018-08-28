@@ -1,0 +1,217 @@
+{
+  "organizer": {
+    "name": "LvivJS",
+    "twitter": "lvivjs",
+    "blog": "https://medium.com/",
+    "url": "http://lvivjs.org.ua/"
+  },
+  "startDate": "2018-09-013T09:00:00+03:00",
+  "endDate": "2018-09-01T19:00:00+03:00",
+  "webapp": {
+    "shortName": "LvivJS",
+    "themeColor": "#F57C00",
+    "backgroundColor": "#F57C00"
+  },
+  "dateFormat": {
+    "locale": "en-US"
+  },
+  "hashtag": "LvivJS2018",
+  "disabledSchedule": false,
+  "navigation": [
+    {
+      "route": "home",
+      "permalink": "/",
+      "label": "Home"
+    },
+    {
+      "route": "speakers",
+      "permalink": "/speakers/",
+      "label": "Speakers"
+    },
+    {
+      "route": "schedule",
+      "permalink": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "heroSettings": {
+    "home": {
+      "description": "Get ready for LvivJS!",
+      "background": {
+        "color": "#000000",
+        "image": "/images/backgrounds/home.jpg"
+      },
+      "fontColor": "#FFF"
+    },
+    "blog": {
+      "title": "Blog",
+      "metaDescription": "Read stories from our team",
+      "background": {
+        "color": "#FFF"
+      },
+      "fontColor": "#424242"
+    },
+    "speakers": {
+      "title": "Speakers",
+      "metaDescription": "Hear from the Googlers, Partners, and Guest Speakers who are building the future of cloud. Check back often as we add more speakers, including our customers and partners.",
+      "description": "Hear from the Googlers, Partners, and Guest Speakers who are building the future of cloud. Check back often as we add more speakers, including our customers and partners.",
+      "background": {
+        "color": "#000"
+      },
+      "fontColor": "#ffcc39"
+    },
+    "previousSpeakers": {
+      "title": "Previous Speakers",
+      "metaDescription": "Check who was with us last years",
+      "background": {
+        "color": "#FFF"
+      },
+      "fontColor": "#424242"
+    },
+    "schedule": {
+      "title": "Schedule",
+      "metaDescription": "Choose your sessions to visit",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#424242"
+    },
+    "team": {
+      "title": "Team",
+      "metaDescription": "Get more info about organizers",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#424242"
+    },
+    "faq": {
+      "title": "FAQs",
+      "metaDescription": "Find you answer right here!",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#424242"
+    },
+    "cod": {
+      "title": "Code Of Conduct",
+      "metaDescription": "Lear more about our expectations for all those who participate in our community",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#424242"
+    }
+  },
+  "location": {
+    "label": "Location",
+    "name": "FEST Republic club",
+    "city": "Lviv",
+    "short": "Lviv, Ukraine",
+    "address": "Korduby St, L'viv, Lviv Oblast, Ukraine",
+    "pointer": {
+      "latitude": 49.8515828,
+      "longitude": 24.0518565,
+      "zoom": 14
+    },
+    "mapCenter": {
+      "latitude": 49.845,
+      "longitude": 24.04
+    },
+    "description": "Клуб на !FESTrepublic"
+  },
+  "mediaQueries": {
+    "xs": {
+      "max": "639px"
+    },
+    "sm": {
+      "min": "640px",
+      "max": "811px"
+    },
+    "md": {
+      "min": "812px",
+      "max": "1023px"
+    },
+    "lg": {
+      "min": "1024px"
+    }
+  },
+  "socialNetwork": {
+    "follow": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/LvivJavaScriptCommunity/"
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/lvivjs"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/"
+      },
+      {
+        "name": "youtube",
+        "url": "https://www.youtube.com/channel/UC6FuC3toXWdpNTVYdFd4quA"
+      }
+    ],
+    "share": [
+      {
+        "name": "gplus",
+        "url": "https://plus.google.com/share?url="
+      },
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/sharer.php?u="
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/intent/tweet?text="
+      }
+    ]
+  },
+  "mailto": "lvivjsconference@gmail.com",
+  "mailchimp": {
+    "url": "https://gdg.us11.list-manage.com/subscribe/post?u=b7e853a79164ddfdbda3ed77b&amp;id=7993e39fbe",
+    "name": "b_b7e853a79164ddfdbda3ed77b_7993e39fbe"
+  },
+  "signInProviders": {
+    "providersData": [
+      {
+        "name": "google",
+        "label": "Sign in with Google",
+        "url": "https://accounts.google.com"
+      },
+      {
+        "name": "facebook",
+        "label": "Sign in with Facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "twitter",
+        "label": "Sign in with Twitter",
+        "url": "https://twitter.com"
+      }
+    ],
+    "allowedProvidersUrl": [
+      "https://accounts.google.com",
+      "https://www.facebook.com",
+      "https://twitter.com"
+    ]
+  },
+  "contentLoaders": {
+    "schedule": {
+      "itemsCount": 2
+    },
+    "blog": {
+      "itemsCount": 3
+    },
+    "speakers": {
+      "itemsCount": 4
+    },
+    "previousSpeakers": {
+      "itemsCount": 6
+    },
+    "tickets": {
+      "itemsCount": 5
+    }
+  }
+}
