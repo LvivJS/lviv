@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+html,
+body {
+    background: rgb(10, 10, 10);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: rgb(198, 139, 77);
+}
+
+ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline
+}
+
+footer nav {
+    text-align: center;
+    font-size: 14px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 168px);
+    padding: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.main-logo {
+    height: 264px;
+}
+
+.bg {
+  background: url('/assets/images/pattern.jpg');
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.15;
+  pointer-events: none;
+}

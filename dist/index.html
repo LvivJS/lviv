@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>LvivJS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="assets/images/favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="is-preload">
+    <main>
+        <img class="main-logo" src="assets/images/logo.png" alt="lviv js logo" />
+        <h1>Get ready for LvivJS 2020!</h1>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="https://www.facebook.com/LvivJavaScriptCommunity" target="_blank">Facebook</a> | </li>
+                <li><a href="https://twitter.com/lvivjs" target="_blank">Twitter</a> |
+                </li>
+                <li><a href="mailto:lvivjsconference@gmail.com" target="_blank">Email</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <div class="bg"></div>
+    <script>
+        window.onload = function () {
+            document.body.classList.remove('is-preload');
+        }
+        window.ontouchmove = function () {
+            return false;
+        }
+        window.onorientationchange = function () {
+            document.body.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
