@@ -46,6 +46,8 @@ main {
 
 .main-logo {
     height: 264px;
+    margin-bottom: 24px;
+    margin-left: 48px;
 }
 
 .bg {
