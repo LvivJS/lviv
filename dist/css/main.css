@@ -22,7 +22,7 @@ a {
 }
 
 a:hover {
-  color: rgb(198, 139, 77);
+  color: var(--yellow);
 }
 
 ul {
@@ -61,6 +61,17 @@ footer nav li {
 
 .main-slogan {
   color: var(--yellow);
+}
+
+.bg {
+  background: url('/assets/images/pattern.svg');
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 /* COC page */

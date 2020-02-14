@@ -1,122 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1440 900" style="enable-background:new 0 0 1440 900;" xml:space="preserve">
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 245.8 900" style="enable-background:new 0 0 245.8 900;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
 	.st1{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:url(#New_Pattern_2);stroke-miterlimit:10;}
 </style>
-<g id="Layer_1">
-	<rect width="1440" height="900"/>
-</g>
-<g id="Layer_3">
+<pattern  y="900" width="737.3" height="896.2" patternUnits="userSpaceOnUse" id="New_Pattern_2" viewBox="0 -896.2 737.3 896.2" style="overflow:visible;">
 	<g>
-		<rect x="-22.1" y="-10" class="st0" width="739.1" height="920"/>
+		<rect x="0" y="-896.2" class="st0" width="737.3" height="896.2"/>
 		<g>
-			<rect x="505.6" y="64.6" class="st1" width="51.1" height="52.8"/>
-			<rect x="655.6" y="222.6" class="st1" width="40.1" height="41.4"/>
-			<rect x="532.2" y="689.8" class="st1" width="51.1" height="52.8"/>
-			<rect x="608.4" y="856.6" class="st1" width="51.1" height="52.8"/>
-			<ellipse class="st1" cx="583.4" cy="205" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="664.6" cy="776.9" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="516.2" cy="585.2" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="615.5" cy="27.8" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="656.1" cy="392" rx="22.6" ry="23.3"/>
-			<polygon class="st1" points="537.1,275.5 496.7,275.5 476.6,311.6 496.7,347.7 537.1,347.7 557.3,311.6 			"/>
-			<polygon class="st1" points="675.5,490 635.1,490 614.9,526.1 635.1,562.2 675.5,562.2 695.7,526.1 			"/>
-			<polygon class="st1" points="552.2,411.7 522.4,465 582,465 			"/>
-			<polygon class="st1" points="668.5,623 638.7,676.4 698.3,676.4 			"/>
-			<polygon class="st1" points="716,115.7 664.4,84.9 664.4,146.5 			"/>
-			<polygon class="st1" points="471.6,842 523.3,872.8 523.3,811.2 			"/>
+			<polygon class="st1" points="788.7,-96.2 788.7,-36.2 738.3,-66.2 			"/>
 		</g>
 		<g>
-			<rect x="259.3" y="64.6" class="st1" width="51.1" height="52.8"/>
-			<rect x="409.2" y="222.6" class="st1" width="40.1" height="41.4"/>
-			<rect x="285.9" y="689.8" class="st1" width="51.1" height="52.8"/>
-			<rect x="362.1" y="856.6" class="st1" width="51.1" height="52.8"/>
-			<ellipse class="st1" cx="337" cy="205" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="418.2" cy="776.9" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="269.8" cy="585.2" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="369.1" cy="27.8" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="409.7" cy="392" rx="22.6" ry="23.3"/>
-			<polygon class="st1" points="290.8,275.5 250.4,275.5 230.2,311.6 250.4,347.7 290.8,347.7 310.9,311.6 			"/>
-			<polygon class="st1" points="429.1,490 388.8,490 368.6,526.1 388.8,562.2 429.1,562.2 449.3,526.1 			"/>
-			<polygon class="st1" points="305.9,411.7 276,465 335.7,465 			"/>
-			<polygon class="st1" points="422.2,623 392.4,676.4 452,676.4 			"/>
-			<polygon class="st1" points="469.6,115.7 418,84.9 418,146.5 			"/>
-			<polygon class="st1" points="225.3,842 276.9,872.8 276.9,811.2 			"/>
+			<rect x="526.7" y="-861.7" class="st1" width="49.8" height="51.4"/>
+			<rect x="671.8" y="-669.6" class="st1" width="39.1" height="40.3"/>
+			<rect x="534.1" y="-713.2" class="st1" width="39.1" height="40.3"/>
+			<rect x="551.6" y="-214.5" class="st1" width="49.8" height="51.4"/>
+			<rect x="597.5" y="-87.7" class="st1" width="37.8" height="39"/>
+			<ellipse class="st1" cx="620.9" cy="-613.7" rx="19.6" ry="20.2"/>
+			<ellipse class="st1" cx="620.9" cy="-765.7" rx="19.6" ry="20.2"/>
+			<ellipse class="st1" cx="680.5" cy="-129.7" rx="25.4" ry="26.2"/>
+			<ellipse class="st1" cx="536" cy="-316.4" rx="35.2" ry="36.3"/>
+			<ellipse class="st1" cx="671.5" cy="-868.5" rx="20.3" ry="21"/>
+			<ellipse class="st1" cx="672.3" cy="-504.6" rx="22" ry="22.7"/>
+			<polygon class="st1" points="576,-582.9 556.3,-547.8 517,-547.8 497.4,-582.9 517,-618.1 556.3,-618.1 			"/>
+			<polygon class="st1" points="710.8,-374 691.2,-338.8 651.8,-338.8 632.1,-374 651.8,-409.1 691.2,-409.1 			"/>
+			<polygon class="st1" points="600.1,-433.5 542,-433.5 571.1,-485.4 			"/>
+			<polygon class="st1" points="713.4,-227.6 655.3,-227.6 684.3,-279.6 			"/>
+			<polygon class="st1" points="680.3,-743.8 680.3,-803.8 730.6,-773.8 			"/>
+			<polygon class="st1" points="542.9,-96.2 542.9,-36.2 492.5,-66.2 			"/>
 		</g>
 		<g>
-			<rect x="12.9" y="64.6" class="st1" width="51.1" height="52.8"/>
-			<rect x="162.9" y="222.6" class="st1" width="40.1" height="41.4"/>
-			<rect x="39.5" y="689.8" class="st1" width="51.1" height="52.8"/>
-			<rect x="115.7" y="856.6" class="st1" width="51.1" height="52.8"/>
-			<ellipse class="st1" cx="90.6" cy="205" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="171.9" cy="776.9" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="23.5" cy="585.2" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="122.7" cy="27.8" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="163.4" cy="392" rx="22.6" ry="23.3"/>
-			<polygon class="st1" points="44.4,275.5 4,275.5 -16.1,311.6 4,347.7 44.4,347.7 64.6,311.6 			"/>
-			<polygon class="st1" points="182.8,490 142.4,490 122.2,526.1 142.4,562.2 182.8,562.2 203,526.1 			"/>
-			<polygon class="st1" points="59.5,411.7 29.7,465 89.3,465 			"/>
-			<polygon class="st1" points="175.8,623 146,676.4 205.6,676.4 			"/>
-			<polygon class="st1" points="223.3,115.7 171.6,84.9 171.6,146.5 			"/>
-			<polygon class="st1" points="-21.1,842 30.6,872.8 30.6,811.2 			"/>
+			<rect x="280.9" y="-861.7" class="st1" width="49.8" height="51.4"/>
+			<rect x="426" y="-669.6" class="st1" width="39.1" height="40.3"/>
+			<rect x="288.3" y="-713.2" class="st1" width="39.1" height="40.3"/>
+			<rect x="305.8" y="-214.5" class="st1" width="49.8" height="51.4"/>
+			<rect x="351.7" y="-87.7" class="st1" width="37.8" height="39"/>
+			<ellipse class="st1" cx="375.1" cy="-613.7" rx="19.6" ry="20.2"/>
+			<ellipse class="st1" cx="375.1" cy="-765.7" rx="19.6" ry="20.2"/>
+			<ellipse class="st1" cx="434.8" cy="-129.7" rx="25.4" ry="26.2"/>
+			<ellipse class="st1" cx="290.2" cy="-316.4" rx="35.2" ry="36.3"/>
+			<ellipse class="st1" cx="425.7" cy="-868.5" rx="20.3" ry="21"/>
+			<ellipse class="st1" cx="426.5" cy="-504.6" rx="22" ry="22.7"/>
+			<polygon class="st1" points="330.2,-582.9 310.6,-547.8 271.2,-547.8 251.6,-582.9 271.2,-618.1 310.6,-618.1 			"/>
+			<polygon class="st1" points="465.1,-374 445.4,-338.8 406,-338.8 386.4,-374 406,-409.1 445.4,-409.1 			"/>
+			<polygon class="st1" points="354.3,-433.5 296.2,-433.5 325.3,-485.4 			"/>
+			<polygon class="st1" points="467.6,-227.6 409.5,-227.6 438.6,-279.6 			"/>
+			<polygon class="st1" points="434.5,-743.8 434.5,-803.8 484.8,-773.8 			"/>
+			<polygon class="st1" points="297.1,-96.2 297.1,-36.2 246.8,-66.2 			"/>
+		</g>
+		<g>
+			<rect x="35.1" y="-861.7" class="st1" width="49.8" height="51.4"/>
+			<rect x="180.2" y="-669.6" class="st1" width="39.1" height="40.3"/>
+			<rect x="42.5" y="-713.2" class="st1" width="39.1" height="40.3"/>
+			<rect x="60" y="-214.5" class="st1" width="49.8" height="51.4"/>
+			<rect x="105.9" y="-87.7" class="st1" width="37.8" height="39"/>
+			<ellipse class="st1" cx="129.4" cy="-613.7" rx="19.6" ry="20.2"/>
+			<ellipse class="st1" cx="129.4" cy="-765.7" rx="19.6" ry="20.2"/>
+			<ellipse class="st1" cx="189" cy="-129.7" rx="25.4" ry="26.2"/>
+			<ellipse class="st1" cx="44.4" cy="-316.4" rx="35.2" ry="36.3"/>
+			<ellipse class="st1" cx="179.9" cy="-868.5" rx="20.3" ry="21"/>
+			<ellipse class="st1" cx="180.7" cy="-504.6" rx="22" ry="22.7"/>
+			<polygon class="st1" points="84.5,-582.9 64.8,-547.8 25.4,-547.8 5.8,-582.9 25.4,-618.1 64.8,-618.1 			"/>
+			<polygon class="st1" points="219.3,-374 199.6,-338.8 160.3,-338.8 140.6,-374 160.3,-409.1 199.6,-409.1 			"/>
+			<polygon class="st1" points="108.5,-433.5 50.5,-433.5 79.5,-485.4 			"/>
+			<polygon class="st1" points="221.8,-227.6 163.8,-227.6 192.8,-279.6 			"/>
+			<polygon class="st1" points="188.7,-743.8 188.7,-803.8 239.1,-773.8 			"/>
+			<polygon class="st1" points="51.3,-96.2 51.3,-36.2 1,-66.2 			"/>
 		</g>
 	</g>
+</pattern>
+<g id="Layer_1_1_">
+	<rect y="0" width="245.8" height="900"/>
+</g>
+<g>
+	<rect y="1.9" class="st0" width="245.8" height="896.2"/>
 	<g>
-		<rect x="717" y="-10" class="st0" width="739.1" height="920"/>
-		<g>
-			<rect x="1244.7" y="64.6" class="st1" width="51.1" height="52.8"/>
-			<rect x="1394.6" y="222.6" class="st1" width="40.1" height="41.4"/>
-			<rect x="1271.3" y="689.8" class="st1" width="51.1" height="52.8"/>
-			<rect x="1347.5" y="856.6" class="st1" width="51.1" height="52.8"/>
-			<ellipse class="st1" cx="1322.4" cy="205" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="1403.7" cy="776.9" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="1255.2" cy="585.2" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="1354.5" cy="27.8" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="1395.1" cy="392" rx="22.6" ry="23.3"/>
-			<polygon class="st1" points="1276.2,275.5 1235.8,275.5 1215.6,311.6 1235.8,347.7 1276.2,347.7 1296.4,311.6 			"/>
-			<polygon class="st1" points="1414.6,490 1374.2,490 1354,526.1 1374.2,562.2 1414.6,562.2 1434.7,526.1 			"/>
-			<polygon class="st1" points="1291.3,411.7 1261.5,465 1321.1,465 			"/>
-			<polygon class="st1" points="1407.6,623 1377.8,676.4 1437.4,676.4 			"/>
-			<polygon class="st1" points="1455.1,115.7 1403.4,84.9 1403.4,146.5 			"/>
-			<polygon class="st1" points="1210.7,842 1262.4,872.8 1262.4,811.2 			"/>
-		</g>
-		<g>
-			<rect x="998.4" y="64.6" class="st1" width="51.1" height="52.8"/>
-			<rect x="1148.3" y="222.6" class="st1" width="40.1" height="41.4"/>
-			<rect x="1024.9" y="689.8" class="st1" width="51.1" height="52.8"/>
-			<rect x="1101.1" y="856.6" class="st1" width="51.1" height="52.8"/>
-			<ellipse class="st1" cx="1076.1" cy="205" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="1157.3" cy="776.9" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="1008.9" cy="585.2" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="1108.2" cy="27.8" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="1148.8" cy="392" rx="22.6" ry="23.3"/>
-			<polygon class="st1" points="1029.8,275.5 989.5,275.5 969.3,311.6 989.5,347.7 1029.8,347.7 1050,311.6 			"/>
-			<polygon class="st1" points="1168.2,490 1127.8,490 1107.7,526.1 1127.8,562.2 1168.2,562.2 1188.4,526.1 			"/>
-			<polygon class="st1" points="1044.9,411.7 1015.1,465 1074.7,465 			"/>
-			<polygon class="st1" points="1161.2,623 1131.4,676.4 1191.1,676.4 			"/>
-			<polygon class="st1" points="1208.7,115.7 1157.1,84.9 1157.1,146.5 			"/>
-			<polygon class="st1" points="964.4,842 1016,872.8 1016,811.2 			"/>
-		</g>
-		<g>
-			<rect x="752" y="64.6" class="st1" width="51.1" height="52.8"/>
-			<rect x="901.9" y="222.6" class="st1" width="40.1" height="41.4"/>
-			<rect x="778.6" y="689.8" class="st1" width="51.1" height="52.8"/>
-			<rect x="854.8" y="856.6" class="st1" width="51.1" height="52.8"/>
-			<ellipse class="st1" cx="829.7" cy="205" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="910.9" cy="776.9" rx="26.1" ry="26.9"/>
-			<ellipse class="st1" cx="762.5" cy="585.2" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="861.8" cy="27.8" rx="36.1" ry="37.3"/>
-			<ellipse class="st1" cx="902.4" cy="392" rx="22.6" ry="23.3"/>
-			<polygon class="st1" points="783.5,275.5 743.1,275.5 722.9,311.6 743.1,347.7 783.5,347.7 803.6,311.6 			"/>
-			<polygon class="st1" points="921.8,490 881.5,490 861.3,526.1 881.5,562.2 921.8,562.2 942,526.1 			"/>
-			<polygon class="st1" points="798.6,411.7 768.7,465 828.4,465 			"/>
-			<polygon class="st1" points="914.9,623 885.1,676.4 944.7,676.4 			"/>
-			<polygon class="st1" points="962.4,115.7 910.7,84.9 910.7,146.5 			"/>
-			<polygon class="st1" points="718,842 769.6,872.8 769.6,811.2 			"/>
-		</g>
+		<rect x="35.1" y="36.5" class="st1" width="49.8" height="51.4"/>
+		<rect x="180.2" y="228.5" class="st1" width="39.1" height="40.3"/>
+		<rect x="42.5" y="184.9" class="st1" width="39.1" height="40.3"/>
+		<rect x="60" y="683.6" class="st1" width="49.8" height="51.4"/>
+		<rect x="105.9" y="810.4" class="st1" width="37.8" height="39"/>
+		<ellipse class="st1" cx="129.4" cy="284.4" rx="19.6" ry="20.2"/>
+		<ellipse class="st1" cx="129.4" cy="132.5" rx="19.6" ry="20.2"/>
+		<ellipse class="st1" cx="189" cy="768.5" rx="25.4" ry="26.2"/>
+		<ellipse class="st1" cx="44.4" cy="581.7" rx="35.2" ry="36.3"/>
+		<ellipse class="st1" cx="179.9" cy="29.6" rx="20.3" ry="21"/>
+		<ellipse class="st1" cx="180.7" cy="393.5" rx="22" ry="22.7"/>
+		<polygon class="st1" points="64.8,280 25.4,280 5.8,315.2 25.4,350.3 64.8,350.3 84.5,315.2 		"/>
+		<polygon class="st1" points="199.6,489 160.2,489 140.6,524.1 160.2,559.3 199.6,559.3 219.3,524.1 		"/>
+		<polygon class="st1" points="79.5,412.7 50.5,464.6 108.5,464.6 		"/>
+		<polygon class="st1" points="192.8,618.5 163.8,670.5 221.8,670.5 		"/>
+		<polygon class="st1" points="239.1,124.3 188.7,94.3 188.7,154.3 		"/>
+		<polygon class="st1" points="1,831.9 51.3,861.9 51.3,801.9 		"/>
 	</g>
 </g>
+<rect y="-13.3" class="st2" width="1459.9" height="913.3"/>
 </svg>
