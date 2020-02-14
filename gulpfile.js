@@ -299,7 +299,7 @@ const copyAssets = function(done) {
   if (!settings.assets) return done();
 
   // custom domain CNAME
-  src("CNAME").pipe(dest("dist/"));
+  // src("CNAME").pipe(dest("dist/"));
 
   // Copy static files
   return src(paths.assets.input)
