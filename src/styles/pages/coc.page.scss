@@ -1,0 +1,38 @@
+.coc h1 {
+  font-size: 40px;
+}
+
+.coc h3 {
+  margin-top: 2em;
+  font-size: 30px;
+}
+
+.coc article {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 24px;
+  line-height: 1.4;
+  color: #1e063b;
+  border-radius: 4px;
+  background: white;
+}
+
+.coc p {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.coc ul,
+.coc ol {
+  font-size: 18px;
+
+  padding-inline-start: 20px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.coc ul {
+  list-style-type: disc;
+}

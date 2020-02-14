@@ -1,0 +1,39 @@
+@import './core/core';
+@import 'footer';
+
+@import './pages/index.page';
+@import './pages/coc.page.scss';
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $white;
+  background: $black;
+}
+
+a {
+  color: $white;
+}
+
+a:hover {
+  color: $yellow;
+}
+
+ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background: url('/images/pattern.svg');
+}
