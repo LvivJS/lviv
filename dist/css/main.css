@@ -1,3 +1,7 @@
+:root {
+  --yellow: #fdc834;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +10,7 @@
 
 html,
 body {
-  background: rgb(10, 10, 10);
+  background: rgb(0, 0, 0);
   color: white;
   font-family: 'Roboto', sans-serif;
   height: 100%;
@@ -29,6 +33,7 @@ nav ul li {
   display: inline
 }
 
+/* INDEX page */
 .index_page main {
   display: flex;
   align-items: center;
@@ -51,18 +56,11 @@ footer nav li {
 .main-logo {
   height: 264px;
   margin-bottom: 24px;
-  margin-left: 48px;
+  z-index: 2;
 }
 
-.bg {
-  background: url('/assets/images/pattern.jpg');
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  opacity: 0.15;
-  pointer-events: none;
+.main-slogan {
+  color: var(--yellow);
 }
 
 /* COC page */
