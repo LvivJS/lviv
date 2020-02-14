@@ -14,7 +14,7 @@
     "build": "NODE_ENV=production gulp"
   },
   "devDependencies": {
-    "browser-sync": "2.26.3",
+    "browser-sync": "^2.26.7",
     "csscomb": "^4.3.0",
     "del": "3.0.0",
     "gulp": "4.0.0",
