@@ -1,21 +1,9 @@
-FROM node:alpine
-ENV NODE_ENV production
-
-# deps for image optimisations
-RUN apk add --no-cache \
-    bash \
-    lcms2-dev \
-    libpng-dev \
-    gcc \
-    g++ \
-    make \
-    autoconf \
-    automake
-
+FROM node:slim
+RUN node -v
 WORKDIR /usr/src/app
 COPY . .
 
-RUN NODE_ENV=development yarn
+RUN yarn
 RUN yarn run build
 
 EXPOSE 8080
