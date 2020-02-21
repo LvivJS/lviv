@@ -94,6 +94,7 @@ const optimizejs = require("gulp-optimize-js");
 const sass = require("gulp-sass");
 const prefix = require("gulp-autoprefixer");
 const minify = require("gulp-cssnano");
+const uncss = require("gulp-uncss");
 
 // Images
 const imagemin = require("gulp-imagemin");
@@ -257,6 +258,22 @@ const buildStyles = function(done) {
     .pipe(dest(paths.styles.output));
 };
 
+// UNCSS - remove unused css
+function removeUnusedCss() {
+  return src("dist/styles/main.min.css")
+    .pipe(
+      uncss({
+        html: ["dist/index.html"]
+      })
+    )
+    .pipe(
+      size({
+        title: "CSS-pruned"
+      })
+    )
+    .pipe(dest("./dist/styles"));
+}
+
 // IMAGES
 const buildImages = function() {
   return src(paths.images.input)
@@ -346,6 +363,8 @@ exports.default = series(
     copyAssets
   )
 );
+
+exports.buildOptimized = series(exports.default, removeUnusedCss);
 
 // Watch and reload
 // gulp watch
