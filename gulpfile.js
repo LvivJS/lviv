@@ -5,8 +5,7 @@
 const settings = {
   clean: true,
   html: true,
-  scripts: false,
-  polyfills: false,
+  scripts: true,
   styles: true,
   assets: true,
   images: true,
@@ -26,7 +25,6 @@ const paths = {
   },
   scripts: {
     input: "src/js/**/*",
-    polyfills: ".polyfill.js",
     output: "dist/js/"
   },
   styles: {
@@ -151,22 +149,7 @@ const buildScripts = function(done) {
         // Setup a suffix constiable
         let suffix = "";
 
-        // If separate polyfill files enabled
-        if (settings.polyfills) {
-          // Update the suffix
-          suffix = ".polyfills";
-
-          // Grab files that aren't polyfills, concatenate them, and process them
-          src([
-            file.path + "/*.js",
-            "!" + file.path + "/*" + paths.scripts.polyfills
-          ])
-            .pipe(concat(file.relative + ".js"))
-            .pipe(jsTasks());
-        }
-
         // Grab all files and concatenate them
-        // If separate polyfills enabled, this will have .polyfills in the filename
         src(file.path + "/*.js")
           .pipe(concat(file.relative + suffix + ".js"))
           .pipe(jsTasks());
@@ -212,7 +195,8 @@ const buildHtml = function(done) {
     )
     .pipe(
       htmlmin({
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        removeComments: true
       })
     )
     .pipe(
