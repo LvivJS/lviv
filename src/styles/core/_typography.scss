@@ -5,3 +5,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 32px;
+  color: $yellow;
+}
+
+.ta-right {
+  text-align: right;
+}

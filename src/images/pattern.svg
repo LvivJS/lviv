@@ -4,10 +4,10 @@
 	 viewBox="0 0 245.8 900" style="enable-background:new 0 0 245.8 900;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
-	.st1{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:rgba(255,255,255,0.5);stroke-miterlimit:10;}
 	.st2{fill:none;stroke:url(#New_Pattern_2);stroke-miterlimit:10;}
 </style>
-<pattern  y="900" width="737.3" height="896.2" patternUnits="userSpaceOnUse" id="New_Pattern_2" viewBox="0 -896.2 737.3 896.2" style="overflow:visible;">
+<pattern  y="900" width="737.3" height="896.2" patternUnits="userSpaceOnUse" id="New_Pattern_2" viewBox="0 -896.2 737.3 896.2" style="overflow:visible;" >
 	<g>
 		<rect x="0" y="-896.2" class="st0" width="737.3" height="896.2"/>
 		<g>

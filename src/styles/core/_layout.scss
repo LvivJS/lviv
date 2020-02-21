@@ -32,7 +32,7 @@ $breakpoints: ('xs': (max-width: 480px), // small phones
 }
 
 // UTILITY spacing classes
-$spaceamounts: (auto, 0, 8, 16, 24, 32, 48, 76, 80, 124); // Adjust this to include the pixel amounts you need.
+$spaceamounts: (auto, 0, 8, 16, 24, 32, 48, 64, 124); // Adjust this to include the pixel amounts you need.
 $sides: (all, top, bottom, left, right);
 
 @each $space in $spaceamounts {
@@ -87,6 +87,9 @@ $sides: (all, top, bottom, left, right);
   @include valigned;
   justify-content: center;
 }
+.centered {
+  @include centered();
+}
 
 @mixin space-between {
   @include valigned;
@@ -107,11 +110,6 @@ $sides: (all, top, bottom, left, right);
 
 .no-shrink {
   flex-shrink: 0;
-}
-
-// TEXT aligns
-.ta-right {
-  text-align: right;
 }
 
 .hide {

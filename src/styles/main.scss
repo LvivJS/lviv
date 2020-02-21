@@ -1,5 +1,6 @@
 @import './core/core';
 @import 'footer';
+@import 'map';
 
 @import './pages/index.page';
 @import './pages/coc.page.scss';
@@ -8,7 +9,6 @@ html,
 body {
   font-family: 'Roboto', sans-serif;
   color: $white;
-  background: $black;
 }
 
 a {
@@ -27,13 +27,19 @@ nav ul li {
   display: inline;
 }
 
-.bg {
+.with-bg {
+  position: relative;
+}
+
+.polygon-pattern-bg {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: -1;
+  transform: scale(1);
   pointer-events: none;
-  opacity: 0.25;
+  color: white;
   background: url('/images/pattern.svg');
 }

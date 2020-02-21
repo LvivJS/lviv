@@ -1,0 +1,31 @@
+<!-- HTML -->
+<div id="map"></div>
+
+<!-- SCRIPT -->
+<script>
+  var map;
+  function initMap() {
+    const confLocation = new google.maps.LatLng(49.8515672, 24.0516607);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: confLocation,
+      zoom: 15,
+      mapTypeControl: false
+    });
+
+    var cityCircle = new google.maps.Circle({
+      map: map,
+      center: confLocation,
+      radius: 100,
+      strokeColor: '#fdc834',
+      strokeOpacity: 1,
+      strokeWeight: 1,
+      fillColor: '#fdc834',
+      fillOpacity: 0.25,
+      clickable: false
+    });
+  }
+</script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1b4B9v4bfOsDHrPk6u8ryB0j7tXGK6MU&callback=initMap&q=FESTrepublic"
+  async defer></script>

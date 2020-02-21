@@ -4,16 +4,62 @@
 <!-- HEAD -->
 <partial src="./partials/_head.html" />
 
-<body class="index_page">
-  <main>
-    <img class="main-logo" src="../images/logo.svg" alt="lviv js logo banner" />
-    <h2 class="main-slogan">Get ready for lviv.JS 2020!;</h2>
+<body class="index-page">
+  <div class="polygon-pattern-bg"></div>
+
+  <main class="container pt-48 pb-124">
+    <img class="main__logo" src="../images/logo.svg" alt="lviv js logo banner" />
+    <p class="main__date mb-16">6 June - Lviv</p>
+    <p class="main__desc">
+      <a href="https://www.facebook.com/events/171580974139687/" target="_blank">LvivJS Conference</a> is a good
+      chance for developers to discuss the future of the JavaScript
+      ecosystem and the latest technologies. From new features, WEB APIs to React, Vuejs, Angular, Node.js to
+      Testing, Performance, Security, Architecture and, finally, to fun experiments and everything else that matters
+      for those who are in love with JS!
+    </p>
   </main>
+
+  <div class="container">
+    <h2>Location</h2>
+  </div>
+  <div class="page-section--filled pb-64">
+    <partial src="./partials/_map.html" />
+  </div>
+
+  <div class="page-section--filled mb-124">
+    <div class="speakers container pb-32">
+      <h2 class="ta-right pb-32">Speakers</h2>
+
+      <div class="speakers__list row justify-content-center justify-content-lg-start">
+        <div class="speaker col">
+          <img class="speaker__pic" src="/images/speakers/erik_rasmussen_ava.jpg" alt="Erik Rasmussen" loading="lazy">
+          <div class="speaker__name">
+            <a href="https://github.com/sponsors/erikras" target="_blank">Erik Rasmussen</a>
+          </div>
+        </div>
+
+        <div class="speaker col">
+          <img class="speaker__pic" src="/images/speakers/sara_viera_ava.jpg" alt="Sara Vieira" loading="lazy">
+          <div class="speaker__name">
+            <a href="https://twitter.com/NikkitaFTW" target="_blank">Sara Vieira</a>
+          </div>
+        </div>
+
+        <div class="speaker speaker--undefined col">
+          <div class="speaker__pic centered">
+            <span class="speaker__pic__sign">?</span>
+          </div>
+          <div class="speaker__name">
+            Follow <a href="https://www.facebook.com/events/171580974139687/" target="_blank">LvivJS</a> for updates
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <partial src="./partials/_footer.html" />
 
-  <div class="bg"></div>
 </body>
 
 </html>
