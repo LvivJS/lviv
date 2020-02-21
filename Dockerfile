@@ -1,5 +1,6 @@
-FROM node:slim
+FROM node:12
 RUN node -v
+
 WORKDIR /usr/src/app
 COPY . .
 
