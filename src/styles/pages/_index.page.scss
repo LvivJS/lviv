@@ -33,8 +33,10 @@
   }
 
   .speaker {
+    flex-basis: 232px;
     flex-grow: 0;
     margin-bottom: 64px;
+    text-align: center;
 
     &__pic {
       height: 200px;
