@@ -1,14 +1,12 @@
 @import '_flexboxgrid.scss';
 
-// RWD
-$breakpoints: ('xs': (max-width: 480px), // small phones
-  'smr': (max-width: 600px), // tablet portrait (nexus 7)
-  'sm': (max-width: 768px), // tablet portrait (ipad air)
-  'md': (min-width: 769px) and (max-width: 991px), // tablet landscape
+// RWD as in bootstrap
+$breakpoints: (
+  'xs': (min-width: 0), // small phones
+  'sm': (min-width: 576px), // phones
+  'md': (min-width: 768px), // tablets
   'lg': (min-width: 992px), // small desktops
   'xl': (min-width: 1200px), // larger desktops
-  'lg-d': (max-width: 991.98px),
-  'xl-d': (max-width: 1199.98px),
 );
 
 @mixin respond-to($name) {
@@ -128,11 +126,6 @@ $sides: (all, top, bottom, left, right);
   }
 }
 
-.smr-hide {
-  @include respond-to('smr') {
-    display: none;
-  }
-}
 
 // OVERFLOWS
 // NO-SCROLL

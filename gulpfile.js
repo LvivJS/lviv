@@ -78,6 +78,7 @@ const rename = require("gulp-rename");
 const header = require("gulp-header");
 const size = require("gulp-size");
 const gif = require("gulp-if");
+const _ = require("lodash");
 
 // HTML
 const htmlmin = require("gulp-htmlmin");
@@ -98,6 +99,8 @@ const uncss = require("gulp-uncss");
 
 // Images
 const imagemin = require("gulp-imagemin");
+const responsiveConfig = require("gulp-responsive-config");
+const responsive = require("gulp-responsive");
 
 // BrowserSync
 const browserSync = require("browser-sync");
@@ -294,6 +297,26 @@ const buildImages = function() {
     .pipe(dest(paths.images.output));
 };
 
+// RESPONSIVE IMAGES
+function buildSpeakerAvatars(cb) {
+  // Make configuration from existing HTML and CSS files
+  var iconfig = responsiveConfig(["dist/*.html"]);
+
+  var config = _.uniqBy(
+    iconfig.filter(cfg => cfg.width),
+    "rename"
+  );
+
+  return src("src/images/speakers/*.{png,jpg}")
+    .pipe(
+      responsive(config, {
+        withMetadata: false,
+        quality: 90
+      })
+    )
+    .pipe(dest("dist/images/speakers"));
+}
+
 // Copy static asset files into output folder
 const copyAssets = function(done) {
   // Make sure this feature is activated before running
@@ -364,8 +387,12 @@ exports.default = series(
   )
 );
 
-exports.buildOptimized = series(exports.default, removeUnusedCss);
-
 // Watch and reload
 // gulp watch
 exports.watch = series(exports.default, startServer, watchSource);
+
+// optimized build
+exports.buildOptimized = series(
+  exports.default,
+  parallel(removeUnusedCss, buildSpeakerAvatars)
+);
