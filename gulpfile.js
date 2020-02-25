@@ -384,15 +384,13 @@ exports.default = series(
     buildStyles,
     buildImages,
     copyAssets
-  )
+  ),
+  buildSpeakerAvatars
 );
 
 // Watch and reload
 // gulp watch
 exports.watch = series(exports.default, startServer, watchSource);
 
-// optimized build
-exports.buildOptimized = series(
-  exports.default,
-  parallel(removeUnusedCss, buildSpeakerAvatars)
-);
+// optimized build - uncss after everything
+exports.buildOptimized = series(exports.default, removeUnusedCss);
