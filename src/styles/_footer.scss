@@ -1,7 +1,8 @@
 footer nav {
   text-align: center;
-}
 
-footer nav li {
-  font-size: 14px;
+  & li {
+    display: inline;
+    font-size: 14px;
+  }
 }
