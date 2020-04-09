@@ -11,6 +11,7 @@
     "start": "npm run up",
     "up": "http-server ./dist",
     "watch": "gulp watch",
+    "watch:prod": "NODE_ENV=production gulp watchProd",
     "build": "NODE_ENV=production gulp buildOptimized"
   },
   "devDependencies": {
