@@ -9,7 +9,7 @@ const settings = {
   styles: true,
   assets: true,
   images: true,
-  reload: true
+  reload: true,
 };
 
 /**
@@ -21,25 +21,25 @@ const paths = {
   html: {
     input: "src/public/**/*.html",
     partials: "src/public/",
-    output: "dist/"
+    output: "dist/",
   },
   scripts: {
     input: "src/js/**/*",
-    output: "dist/js/"
+    output: "dist/js/",
   },
   styles: {
     input: "src/styles/**/*.{scss,sass}",
-    output: "dist/styles/"
+    output: "dist/styles/",
   },
   images: {
     input: "src/images/**/*",
-    output: "dist/images"
+    output: "dist/images",
   },
   assets: {
     input: "src/assets/**/*",
-    output: "dist/assets/"
+    output: "dist/assets/",
   },
-  reload: "./dist/"
+  reload: "./dist/",
 };
 
 /**
@@ -61,7 +61,7 @@ const banner = {
     " | (c) " +
     new Date().getFullYear() +
     " | <%= package.repository.url %>" +
-    " */\n"
+    " */\n",
 };
 
 /**
@@ -112,7 +112,7 @@ const isProd = process.env.NODE_ENV === "production";
  */
 
 // Remove pre-existing content from output folders
-const cleanDist = function(done) {
+const cleanDist = function (done) {
   // Make sure this feature is activated before running
   if (!settings.clean) return done();
 
@@ -126,28 +126,28 @@ const cleanDist = function(done) {
 // Repeated JavaScript tasks
 const jsTasks = lazypipe()
   .pipe(header, banner.full, {
-    package: package
+    package: package,
   })
   .pipe(optimizejs)
   .pipe(dest, paths.scripts.output)
   .pipe(rename, {
-    suffix: ".min"
+    suffix: ".min",
   })
   .pipe(uglify)
   .pipe(optimizejs)
   .pipe(header, banner.min, {
-    package: package
+    package: package,
   })
   .pipe(dest, paths.scripts.output);
 
 // Lint, minify, and concatenate scripts
-const buildScripts = function(done) {
+const buildScripts = function (done) {
   // Make sure this feature is activated before running
   if (!settings.scripts) return done();
 
   // Run tasks on script files
   return src(paths.scripts.input).pipe(
-    flatmap(function(stream, file) {
+    flatmap(function (stream, file) {
       // If the file is a directory
       if (file.isDirectory()) {
         // Setup a suffix constiable
@@ -168,7 +168,7 @@ const buildScripts = function(done) {
 };
 
 // Lint scripts
-const lintScripts = function(done) {
+const lintScripts = function (done) {
   // Make sure this feature is activated before running
   if (!settings.scripts) return done();
 
@@ -176,43 +176,43 @@ const lintScripts = function(done) {
   return src(paths.scripts.input)
     .pipe(
       eslint({
-        fix: true
+        fix: true,
       })
     )
     .pipe(eslint.format());
 };
 
 // HTML
-const buildHtml = function(done) {
+const buildHtml = function (done) {
   if (!settings.html) return done();
 
   return src(paths.html.input)
     .pipe(
       htmlPartial({
-        basePath: paths.html.partials
+        basePath: paths.html.partials,
       })
     )
     .pipe(
       embedSvg({
-        root: "src/images"
+        root: "src/images",
       })
     )
     .pipe(
       htmlmin({
         collapseWhitespace: true,
-        removeComments: true
+        removeComments: true,
       })
     )
     .pipe(
       size({
-        title: "HTML"
+        title: "HTML",
       })
     )
     .pipe(dest(paths.html.output));
 };
 
 // Process, lint, and minify Sass files
-const buildStyles = function(done) {
+const buildStyles = function (done) {
   // Make sure this feature is activated before running
   if (!settings.styles) return done();
 
@@ -221,41 +221,41 @@ const buildStyles = function(done) {
     .pipe(
       sass({
         outputStyle: "expanded",
-        sourceComments: true
+        sourceComments: true,
       })
     )
     .pipe(
       prefix({
         cascade: true,
-        remove: true
+        remove: true,
       })
     )
     .pipe(
       header(banner.full, {
-        package: package
+        package: package,
       })
     )
     .pipe(dest(paths.styles.output))
     .pipe(
       rename({
-        suffix: ".min"
+        suffix: ".min",
       })
     )
     .pipe(
       minify({
         discardComments: {
-          removeAll: true
-        }
+          removeAll: true,
+        },
       })
     )
     .pipe(
       header(banner.min, {
-        package: package
+        package: package,
       })
     )
     .pipe(
       size({
-        title: "CSS"
+        title: "CSS",
       })
     )
     .pipe(dest(paths.styles.output));
@@ -267,23 +267,23 @@ function removeUnusedCss() {
     .pipe(
       uncss({
         html: ["dist/index.html"],
-        ignore: ["footer nav", "footer nav li"] // due to tickets script tag
+        ignore: ["footer nav", "footer nav li"], // due to tickets script tag
       })
     )
     .pipe(
       size({
-        title: "CSS-pruned"
+        title: "CSS-pruned",
       })
     )
     .pipe(dest("./dist/styles"));
 }
 
 // IMAGES
-const buildImages = function() {
+const buildImages = function () {
   return src(paths.images.input)
     .pipe(
       size({
-        title: "Images"
+        title: "Images",
       })
     )
     .pipe(gif(isProd, imagemin()))
@@ -291,7 +291,7 @@ const buildImages = function() {
       gif(
         isProd,
         size({
-          title: "Images (min)"
+          title: "Images (min)",
         })
       )
     )
@@ -304,22 +304,24 @@ function buildSpeakerAvatars(cb) {
   var iconfig = responsiveConfig(["dist/*.html"]);
 
   var config = _.uniqBy(
-    iconfig.filter(cfg => cfg.width),
+    iconfig.filter((cfg) => cfg.width),
     "rename"
   );
+
+  if (!config.length) return Promise.resolve();
 
   return src("src/images/speakers/*.{png,jpg}")
     .pipe(
       responsive(config, {
         withMetadata: false,
-        quality: 90
+        quality: 90,
       })
     )
     .pipe(dest("dist/images/speakers"));
 }
 
 // Copy static asset files into output folder
-const copyAssets = function(done) {
+const copyAssets = function (done) {
   // Make sure this feature is activated before running
   if (!settings.assets) return done();
 
@@ -330,14 +332,14 @@ const copyAssets = function(done) {
   return src(paths.assets.input)
     .pipe(
       size({
-        title: "Assets"
+        title: "Assets",
       })
     )
     .pipe(dest(paths.assets.output));
 };
 
 // Watch for changes to the src directory
-const startServer = function(done) {
+const startServer = function (done) {
   // Make sure this feature is activated before running
   if (!settings.reload) return done();
 
@@ -349,8 +351,8 @@ const startServer = function(done) {
     reloadDelay: 500,
     timestamps: true,
     server: {
-      baseDir: paths.reload
-    }
+      baseDir: paths.reload,
+    },
   });
 
   // Signal completion
@@ -358,14 +360,14 @@ const startServer = function(done) {
 };
 
 // Reload the browser when files change
-const reloadBrowser = function(done) {
+const reloadBrowser = function (done) {
   if (!settings.reload) return done();
   browserSync.reload();
   done();
 };
 
 // Watch for changes
-const watchSource = function(done) {
+const watchSource = function (done) {
   watch(paths.input, series(exports.default, reloadBrowser));
   done();
 };
