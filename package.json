@@ -12,7 +12,8 @@
     "up": "http-server ./dist",
     "watch": "gulp watch",
     "watch:prod": "NODE_ENV=production gulp watchProd",
-    "build": "NODE_ENV=production gulp buildOptimized"
+    "build": "NODE_ENV=production gulp buildOptimized",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
@@ -45,6 +46,7 @@
     "sharp": "^0.24.1"
   },
   "dependencies": {
-    "bootstrap": "4.3.1"
+    "bootstrap": "4.3.1",
+    "gh-pages": "^3.1.0"
   }
 }
