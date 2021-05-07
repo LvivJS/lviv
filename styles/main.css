@@ -1,0 +1,6839 @@
+/*!
+ * lviv-js v2020.0.2
+ * LvivJS Conference website
+ * (c) 2021
+ * https://github.com/LvivJS/web_site
+ */
+
+/* line 1, src/styles/core/_reset.scss */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
+}
+
+/* line 91, src/styles/core/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* line 105, src/styles/core/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 109, src/styles/core/_reset.scss */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* line 114, src/styles/core/_reset.scss */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 122, src/styles/core/_reset.scss */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/* line 127, src/styles/core/_reset.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 4, src/styles/core/_typography.scss */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 9, src/styles/core/_typography.scss */
+h2 {
+  margin-bottom: 8px;
+  font-size: 32px;
+  color: #fdc834;
+}
+
+/* line 15, src/styles/core/_typography.scss */
+.ta-right {
+  text-align: right;
+}
+
+/*!
+ * Bootstrap Grid v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/* line 8, node_modules/bootstrap/scss/bootstrap-grid.scss */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+/* line 13, node_modules/bootstrap/scss/bootstrap-grid.scss */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/* line 6, node_modules/bootstrap/scss/_grid.scss */
+.container {
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  /* line 6, node_modules/bootstrap/scss/_grid.scss */
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 6, node_modules/bootstrap/scss/_grid.scss */
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 6, node_modules/bootstrap/scss/_grid.scss */
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 6, node_modules/bootstrap/scss/_grid.scss */
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* line 18, node_modules/bootstrap/scss/_grid.scss */
+.container-fluid {
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 28, node_modules/bootstrap/scss/_grid.scss */
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -16px;
+  margin-left: -16px;
+}
+
+/* line 34, node_modules/bootstrap/scss/_grid.scss */
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* line 38, node_modules/bootstrap/scss/_grid.scss */
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* line 8, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16, .col-17, .col-18, .col-19, .col-20, .col-21, .col-22, .col-23, .col-24, .col,
+.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-13, .col-sm-14, .col-sm-15, .col-sm-16, .col-sm-17, .col-sm-18, .col-sm-19, .col-sm-20, .col-sm-21, .col-sm-22, .col-sm-23, .col-sm-24, .col-sm,
+.col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-13, .col-md-14, .col-md-15, .col-md-16, .col-md-17, .col-md-18, .col-md-19, .col-md-20, .col-md-21, .col-md-22, .col-md-23, .col-md-24, .col-md,
+.col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-13, .col-lg-14, .col-lg-15, .col-lg-16, .col-lg-17, .col-lg-18, .col-lg-19, .col-lg-20, .col-lg-21, .col-lg-22, .col-lg-23, .col-lg-24, .col-lg,
+.col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-13, .col-xl-14, .col-xl-15, .col-xl-16, .col-xl-17, .col-xl-18, .col-xl-19, .col-xl-20, .col-xl-21, .col-xl-22, .col-xl-23, .col-xl-24, .col-xl,
+.col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+/* line 31, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col {
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 100%;
+}
+
+/* line 36, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-auto {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 4.16667%;
+          flex: 0 0 4.16667%;
+  max-width: 4.16667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 8.33333%;
+          flex: 0 0 8.33333%;
+  max-width: 8.33333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 12.5%;
+          flex: 0 0 12.5%;
+  max-width: 12.5%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-4 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 16.66667%;
+          flex: 0 0 16.66667%;
+  max-width: 16.66667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-5 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20.83333%;
+          flex: 0 0 20.83333%;
+  max-width: 20.83333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-6 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  max-width: 25%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-7 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 29.16667%;
+          flex: 0 0 29.16667%;
+  max-width: 29.16667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-8 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.33333%;
+          flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-9 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 37.5%;
+          flex: 0 0 37.5%;
+  max-width: 37.5%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-10 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 41.66667%;
+          flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-11 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45.83333%;
+          flex: 0 0 45.83333%;
+  max-width: 45.83333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-12 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-13 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 54.16667%;
+          flex: 0 0 54.16667%;
+  max-width: 54.16667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-14 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 58.33333%;
+          flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-15 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 62.5%;
+          flex: 0 0 62.5%;
+  max-width: 62.5%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-16 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 66.66667%;
+          flex: 0 0 66.66667%;
+  max-width: 66.66667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-17 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70.83333%;
+          flex: 0 0 70.83333%;
+  max-width: 70.83333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-18 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
+  max-width: 75%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-19 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 79.16667%;
+          flex: 0 0 79.16667%;
+  max-width: 79.16667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-20 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 83.33333%;
+          flex: 0 0 83.33333%;
+  max-width: 83.33333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-21 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 87.5%;
+          flex: 0 0 87.5%;
+  max-width: 87.5%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-22 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 91.66667%;
+          flex: 0 0 91.66667%;
+  max-width: 91.66667%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-23 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 95.83333%;
+          flex: 0 0 95.83333%;
+  max-width: 95.83333%;
+}
+
+/* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.col-24 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* line 48, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-first {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+/* line 50, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-last {
+  -webkit-box-ordinal-group: 26;
+      -ms-flex-order: 25;
+          order: 25;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-0 {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-1 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-2 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-3 {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-4 {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-5 {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-6 {
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-7 {
+  -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+          order: 7;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-8 {
+  -webkit-box-ordinal-group: 9;
+      -ms-flex-order: 8;
+          order: 8;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-9 {
+  -webkit-box-ordinal-group: 10;
+      -ms-flex-order: 9;
+          order: 9;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-10 {
+  -webkit-box-ordinal-group: 11;
+      -ms-flex-order: 10;
+          order: 10;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-11 {
+  -webkit-box-ordinal-group: 12;
+      -ms-flex-order: 11;
+          order: 11;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-12 {
+  -webkit-box-ordinal-group: 13;
+      -ms-flex-order: 12;
+          order: 12;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-13 {
+  -webkit-box-ordinal-group: 14;
+      -ms-flex-order: 13;
+          order: 13;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-14 {
+  -webkit-box-ordinal-group: 15;
+      -ms-flex-order: 14;
+          order: 14;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-15 {
+  -webkit-box-ordinal-group: 16;
+      -ms-flex-order: 15;
+          order: 15;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-16 {
+  -webkit-box-ordinal-group: 17;
+      -ms-flex-order: 16;
+          order: 16;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-17 {
+  -webkit-box-ordinal-group: 18;
+      -ms-flex-order: 17;
+          order: 17;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-18 {
+  -webkit-box-ordinal-group: 19;
+      -ms-flex-order: 18;
+          order: 18;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-19 {
+  -webkit-box-ordinal-group: 20;
+      -ms-flex-order: 19;
+          order: 19;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-20 {
+  -webkit-box-ordinal-group: 21;
+      -ms-flex-order: 20;
+          order: 20;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-21 {
+  -webkit-box-ordinal-group: 22;
+      -ms-flex-order: 21;
+          order: 21;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-22 {
+  -webkit-box-ordinal-group: 23;
+      -ms-flex-order: 22;
+          order: 22;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-23 {
+  -webkit-box-ordinal-group: 24;
+      -ms-flex-order: 23;
+          order: 23;
+}
+
+/* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.order-24 {
+  -webkit-box-ordinal-group: 25;
+      -ms-flex-order: 24;
+          order: 24;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-1 {
+  margin-left: 4.16667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-2 {
+  margin-left: 8.33333%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-3 {
+  margin-left: 12.5%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-4 {
+  margin-left: 16.66667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-5 {
+  margin-left: 20.83333%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-6 {
+  margin-left: 25%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-7 {
+  margin-left: 29.16667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-8 {
+  margin-left: 33.33333%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-9 {
+  margin-left: 37.5%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-10 {
+  margin-left: 41.66667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-11 {
+  margin-left: 45.83333%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-12 {
+  margin-left: 50%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-13 {
+  margin-left: 54.16667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-14 {
+  margin-left: 58.33333%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-15 {
+  margin-left: 62.5%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-16 {
+  margin-left: 66.66667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-17 {
+  margin-left: 70.83333%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-18 {
+  margin-left: 75%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-19 {
+  margin-left: 79.16667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-20 {
+  margin-left: 83.33333%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-21 {
+  margin-left: 87.5%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-22 {
+  margin-left: 91.66667%;
+}
+
+/* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+.offset-23 {
+  margin-left: 95.83333%;
+}
+
+@media (min-width: 576px) {
+  /* line 31, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: 100%;
+  }
+  /* line 36, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-auto {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-1 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 4.16667%;
+            flex: 0 0 4.16667%;
+    max-width: 4.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.33333%;
+            flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 12.5%;
+            flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.66667%;
+            flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-5 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20.83333%;
+            flex: 0 0 20.83333%;
+    max-width: 20.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-7 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 29.16667%;
+            flex: 0 0 29.16667%;
+    max-width: 29.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-8 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+            flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-9 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 37.5%;
+            flex: 0 0 37.5%;
+    max-width: 37.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-10 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.66667%;
+            flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-11 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45.83333%;
+            flex: 0 0 45.83333%;
+    max-width: 45.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-12 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-13 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 54.16667%;
+            flex: 0 0 54.16667%;
+    max-width: 54.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-14 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 58.33333%;
+            flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-15 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 62.5%;
+            flex: 0 0 62.5%;
+    max-width: 62.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-16 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.66667%;
+            flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-17 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70.83333%;
+            flex: 0 0 70.83333%;
+    max-width: 70.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-18 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+    max-width: 75%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-19 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 79.16667%;
+            flex: 0 0 79.16667%;
+    max-width: 79.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-20 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 83.33333%;
+            flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-21 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 87.5%;
+            flex: 0 0 87.5%;
+    max-width: 87.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-22 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 91.66667%;
+            flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-23 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 95.83333%;
+            flex: 0 0 95.83333%;
+    max-width: 95.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-sm-24 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  /* line 48, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-first {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  /* line 50, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-last {
+    -webkit-box-ordinal-group: 26;
+        -ms-flex-order: 25;
+            order: 25;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-0 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-1 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-2 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-3 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-4 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-5 {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-6 {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-7 {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-8 {
+    -webkit-box-ordinal-group: 9;
+        -ms-flex-order: 8;
+            order: 8;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-9 {
+    -webkit-box-ordinal-group: 10;
+        -ms-flex-order: 9;
+            order: 9;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-10 {
+    -webkit-box-ordinal-group: 11;
+        -ms-flex-order: 10;
+            order: 10;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-11 {
+    -webkit-box-ordinal-group: 12;
+        -ms-flex-order: 11;
+            order: 11;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-12 {
+    -webkit-box-ordinal-group: 13;
+        -ms-flex-order: 12;
+            order: 12;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-13 {
+    -webkit-box-ordinal-group: 14;
+        -ms-flex-order: 13;
+            order: 13;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-14 {
+    -webkit-box-ordinal-group: 15;
+        -ms-flex-order: 14;
+            order: 14;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-15 {
+    -webkit-box-ordinal-group: 16;
+        -ms-flex-order: 15;
+            order: 15;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-16 {
+    -webkit-box-ordinal-group: 17;
+        -ms-flex-order: 16;
+            order: 16;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-17 {
+    -webkit-box-ordinal-group: 18;
+        -ms-flex-order: 17;
+            order: 17;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-18 {
+    -webkit-box-ordinal-group: 19;
+        -ms-flex-order: 18;
+            order: 18;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-19 {
+    -webkit-box-ordinal-group: 20;
+        -ms-flex-order: 19;
+            order: 19;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-20 {
+    -webkit-box-ordinal-group: 21;
+        -ms-flex-order: 20;
+            order: 20;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-21 {
+    -webkit-box-ordinal-group: 22;
+        -ms-flex-order: 21;
+            order: 21;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-22 {
+    -webkit-box-ordinal-group: 23;
+        -ms-flex-order: 22;
+            order: 22;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-23 {
+    -webkit-box-ordinal-group: 24;
+        -ms-flex-order: 23;
+            order: 23;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-sm-24 {
+    -webkit-box-ordinal-group: 25;
+        -ms-flex-order: 24;
+            order: 24;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-0 {
+    margin-left: 0;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-1 {
+    margin-left: 4.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-2 {
+    margin-left: 8.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-3 {
+    margin-left: 12.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-4 {
+    margin-left: 16.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-5 {
+    margin-left: 20.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-6 {
+    margin-left: 25%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-7 {
+    margin-left: 29.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-8 {
+    margin-left: 33.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-9 {
+    margin-left: 37.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-10 {
+    margin-left: 41.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-11 {
+    margin-left: 45.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-12 {
+    margin-left: 50%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-13 {
+    margin-left: 54.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-14 {
+    margin-left: 58.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-15 {
+    margin-left: 62.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-16 {
+    margin-left: 66.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-17 {
+    margin-left: 70.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-18 {
+    margin-left: 75%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-19 {
+    margin-left: 79.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-20 {
+    margin-left: 83.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-21 {
+    margin-left: 87.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-22 {
+    margin-left: 91.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-sm-23 {
+    margin-left: 95.83333%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 31, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: 100%;
+  }
+  /* line 36, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-auto {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-1 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 4.16667%;
+            flex: 0 0 4.16667%;
+    max-width: 4.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.33333%;
+            flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 12.5%;
+            flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.66667%;
+            flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-5 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20.83333%;
+            flex: 0 0 20.83333%;
+    max-width: 20.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-7 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 29.16667%;
+            flex: 0 0 29.16667%;
+    max-width: 29.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-8 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+            flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-9 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 37.5%;
+            flex: 0 0 37.5%;
+    max-width: 37.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-10 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.66667%;
+            flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-11 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45.83333%;
+            flex: 0 0 45.83333%;
+    max-width: 45.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-12 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-13 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 54.16667%;
+            flex: 0 0 54.16667%;
+    max-width: 54.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-14 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 58.33333%;
+            flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-15 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 62.5%;
+            flex: 0 0 62.5%;
+    max-width: 62.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-16 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.66667%;
+            flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-17 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70.83333%;
+            flex: 0 0 70.83333%;
+    max-width: 70.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-18 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+    max-width: 75%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-19 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 79.16667%;
+            flex: 0 0 79.16667%;
+    max-width: 79.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-20 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 83.33333%;
+            flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-21 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 87.5%;
+            flex: 0 0 87.5%;
+    max-width: 87.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-22 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 91.66667%;
+            flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-23 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 95.83333%;
+            flex: 0 0 95.83333%;
+    max-width: 95.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-md-24 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  /* line 48, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-first {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  /* line 50, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-last {
+    -webkit-box-ordinal-group: 26;
+        -ms-flex-order: 25;
+            order: 25;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-0 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-1 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-2 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-3 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-4 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-5 {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-6 {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-7 {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-8 {
+    -webkit-box-ordinal-group: 9;
+        -ms-flex-order: 8;
+            order: 8;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-9 {
+    -webkit-box-ordinal-group: 10;
+        -ms-flex-order: 9;
+            order: 9;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-10 {
+    -webkit-box-ordinal-group: 11;
+        -ms-flex-order: 10;
+            order: 10;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-11 {
+    -webkit-box-ordinal-group: 12;
+        -ms-flex-order: 11;
+            order: 11;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-12 {
+    -webkit-box-ordinal-group: 13;
+        -ms-flex-order: 12;
+            order: 12;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-13 {
+    -webkit-box-ordinal-group: 14;
+        -ms-flex-order: 13;
+            order: 13;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-14 {
+    -webkit-box-ordinal-group: 15;
+        -ms-flex-order: 14;
+            order: 14;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-15 {
+    -webkit-box-ordinal-group: 16;
+        -ms-flex-order: 15;
+            order: 15;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-16 {
+    -webkit-box-ordinal-group: 17;
+        -ms-flex-order: 16;
+            order: 16;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-17 {
+    -webkit-box-ordinal-group: 18;
+        -ms-flex-order: 17;
+            order: 17;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-18 {
+    -webkit-box-ordinal-group: 19;
+        -ms-flex-order: 18;
+            order: 18;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-19 {
+    -webkit-box-ordinal-group: 20;
+        -ms-flex-order: 19;
+            order: 19;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-20 {
+    -webkit-box-ordinal-group: 21;
+        -ms-flex-order: 20;
+            order: 20;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-21 {
+    -webkit-box-ordinal-group: 22;
+        -ms-flex-order: 21;
+            order: 21;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-22 {
+    -webkit-box-ordinal-group: 23;
+        -ms-flex-order: 22;
+            order: 22;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-23 {
+    -webkit-box-ordinal-group: 24;
+        -ms-flex-order: 23;
+            order: 23;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-md-24 {
+    -webkit-box-ordinal-group: 25;
+        -ms-flex-order: 24;
+            order: 24;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-0 {
+    margin-left: 0;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-1 {
+    margin-left: 4.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-2 {
+    margin-left: 8.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-3 {
+    margin-left: 12.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-4 {
+    margin-left: 16.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-5 {
+    margin-left: 20.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-6 {
+    margin-left: 25%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-7 {
+    margin-left: 29.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-8 {
+    margin-left: 33.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-9 {
+    margin-left: 37.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-10 {
+    margin-left: 41.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-11 {
+    margin-left: 45.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-12 {
+    margin-left: 50%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-13 {
+    margin-left: 54.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-14 {
+    margin-left: 58.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-15 {
+    margin-left: 62.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-16 {
+    margin-left: 66.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-17 {
+    margin-left: 70.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-18 {
+    margin-left: 75%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-19 {
+    margin-left: 79.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-20 {
+    margin-left: 83.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-21 {
+    margin-left: 87.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-22 {
+    margin-left: 91.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-md-23 {
+    margin-left: 95.83333%;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 31, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: 100%;
+  }
+  /* line 36, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-auto {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-1 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 4.16667%;
+            flex: 0 0 4.16667%;
+    max-width: 4.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.33333%;
+            flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 12.5%;
+            flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.66667%;
+            flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-5 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20.83333%;
+            flex: 0 0 20.83333%;
+    max-width: 20.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-7 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 29.16667%;
+            flex: 0 0 29.16667%;
+    max-width: 29.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-8 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+            flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-9 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 37.5%;
+            flex: 0 0 37.5%;
+    max-width: 37.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-10 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.66667%;
+            flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-11 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45.83333%;
+            flex: 0 0 45.83333%;
+    max-width: 45.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-12 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-13 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 54.16667%;
+            flex: 0 0 54.16667%;
+    max-width: 54.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-14 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 58.33333%;
+            flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-15 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 62.5%;
+            flex: 0 0 62.5%;
+    max-width: 62.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-16 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.66667%;
+            flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-17 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70.83333%;
+            flex: 0 0 70.83333%;
+    max-width: 70.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-18 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+    max-width: 75%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-19 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 79.16667%;
+            flex: 0 0 79.16667%;
+    max-width: 79.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-20 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 83.33333%;
+            flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-21 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 87.5%;
+            flex: 0 0 87.5%;
+    max-width: 87.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-22 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 91.66667%;
+            flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-23 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 95.83333%;
+            flex: 0 0 95.83333%;
+    max-width: 95.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-lg-24 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  /* line 48, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-first {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  /* line 50, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-last {
+    -webkit-box-ordinal-group: 26;
+        -ms-flex-order: 25;
+            order: 25;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-0 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-1 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-2 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-3 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-4 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-5 {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-6 {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-7 {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-8 {
+    -webkit-box-ordinal-group: 9;
+        -ms-flex-order: 8;
+            order: 8;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-9 {
+    -webkit-box-ordinal-group: 10;
+        -ms-flex-order: 9;
+            order: 9;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-10 {
+    -webkit-box-ordinal-group: 11;
+        -ms-flex-order: 10;
+            order: 10;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-11 {
+    -webkit-box-ordinal-group: 12;
+        -ms-flex-order: 11;
+            order: 11;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-12 {
+    -webkit-box-ordinal-group: 13;
+        -ms-flex-order: 12;
+            order: 12;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-13 {
+    -webkit-box-ordinal-group: 14;
+        -ms-flex-order: 13;
+            order: 13;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-14 {
+    -webkit-box-ordinal-group: 15;
+        -ms-flex-order: 14;
+            order: 14;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-15 {
+    -webkit-box-ordinal-group: 16;
+        -ms-flex-order: 15;
+            order: 15;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-16 {
+    -webkit-box-ordinal-group: 17;
+        -ms-flex-order: 16;
+            order: 16;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-17 {
+    -webkit-box-ordinal-group: 18;
+        -ms-flex-order: 17;
+            order: 17;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-18 {
+    -webkit-box-ordinal-group: 19;
+        -ms-flex-order: 18;
+            order: 18;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-19 {
+    -webkit-box-ordinal-group: 20;
+        -ms-flex-order: 19;
+            order: 19;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-20 {
+    -webkit-box-ordinal-group: 21;
+        -ms-flex-order: 20;
+            order: 20;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-21 {
+    -webkit-box-ordinal-group: 22;
+        -ms-flex-order: 21;
+            order: 21;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-22 {
+    -webkit-box-ordinal-group: 23;
+        -ms-flex-order: 22;
+            order: 22;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-23 {
+    -webkit-box-ordinal-group: 24;
+        -ms-flex-order: 23;
+            order: 23;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-lg-24 {
+    -webkit-box-ordinal-group: 25;
+        -ms-flex-order: 24;
+            order: 24;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-0 {
+    margin-left: 0;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-1 {
+    margin-left: 4.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-2 {
+    margin-left: 8.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-3 {
+    margin-left: 12.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-4 {
+    margin-left: 16.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-5 {
+    margin-left: 20.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-6 {
+    margin-left: 25%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-7 {
+    margin-left: 29.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-8 {
+    margin-left: 33.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-9 {
+    margin-left: 37.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-10 {
+    margin-left: 41.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-11 {
+    margin-left: 45.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-12 {
+    margin-left: 50%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-13 {
+    margin-left: 54.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-14 {
+    margin-left: 58.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-15 {
+    margin-left: 62.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-16 {
+    margin-left: 66.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-17 {
+    margin-left: 70.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-18 {
+    margin-left: 75%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-19 {
+    margin-left: 79.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-20 {
+    margin-left: 83.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-21 {
+    margin-left: 87.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-22 {
+    margin-left: 91.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-lg-23 {
+    margin-left: 95.83333%;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 31, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: 100%;
+  }
+  /* line 36, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-auto {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-1 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 4.16667%;
+            flex: 0 0 4.16667%;
+    max-width: 4.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.33333%;
+            flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 12.5%;
+            flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.66667%;
+            flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-5 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20.83333%;
+            flex: 0 0 20.83333%;
+    max-width: 20.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-7 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 29.16667%;
+            flex: 0 0 29.16667%;
+    max-width: 29.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-8 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+            flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-9 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 37.5%;
+            flex: 0 0 37.5%;
+    max-width: 37.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-10 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.66667%;
+            flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-11 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45.83333%;
+            flex: 0 0 45.83333%;
+    max-width: 45.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-12 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-13 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 54.16667%;
+            flex: 0 0 54.16667%;
+    max-width: 54.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-14 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 58.33333%;
+            flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-15 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 62.5%;
+            flex: 0 0 62.5%;
+    max-width: 62.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-16 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.66667%;
+            flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-17 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70.83333%;
+            flex: 0 0 70.83333%;
+    max-width: 70.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-18 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+    max-width: 75%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-19 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 79.16667%;
+            flex: 0 0 79.16667%;
+    max-width: 79.16667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-20 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 83.33333%;
+            flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-21 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 87.5%;
+            flex: 0 0 87.5%;
+    max-width: 87.5%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-22 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 91.66667%;
+            flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-23 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 95.83333%;
+            flex: 0 0 95.83333%;
+    max-width: 95.83333%;
+  }
+  /* line 43, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .col-xl-24 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  /* line 48, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-first {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  /* line 50, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-last {
+    -webkit-box-ordinal-group: 26;
+        -ms-flex-order: 25;
+            order: 25;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-0 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-1 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-2 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-3 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-4 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-5 {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-6 {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-7 {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-8 {
+    -webkit-box-ordinal-group: 9;
+        -ms-flex-order: 8;
+            order: 8;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-9 {
+    -webkit-box-ordinal-group: 10;
+        -ms-flex-order: 9;
+            order: 9;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-10 {
+    -webkit-box-ordinal-group: 11;
+        -ms-flex-order: 10;
+            order: 10;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-11 {
+    -webkit-box-ordinal-group: 12;
+        -ms-flex-order: 11;
+            order: 11;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-12 {
+    -webkit-box-ordinal-group: 13;
+        -ms-flex-order: 12;
+            order: 12;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-13 {
+    -webkit-box-ordinal-group: 14;
+        -ms-flex-order: 13;
+            order: 13;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-14 {
+    -webkit-box-ordinal-group: 15;
+        -ms-flex-order: 14;
+            order: 14;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-15 {
+    -webkit-box-ordinal-group: 16;
+        -ms-flex-order: 15;
+            order: 15;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-16 {
+    -webkit-box-ordinal-group: 17;
+        -ms-flex-order: 16;
+            order: 16;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-17 {
+    -webkit-box-ordinal-group: 18;
+        -ms-flex-order: 17;
+            order: 17;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-18 {
+    -webkit-box-ordinal-group: 19;
+        -ms-flex-order: 18;
+            order: 18;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-19 {
+    -webkit-box-ordinal-group: 20;
+        -ms-flex-order: 19;
+            order: 19;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-20 {
+    -webkit-box-ordinal-group: 21;
+        -ms-flex-order: 20;
+            order: 20;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-21 {
+    -webkit-box-ordinal-group: 22;
+        -ms-flex-order: 21;
+            order: 21;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-22 {
+    -webkit-box-ordinal-group: 23;
+        -ms-flex-order: 22;
+            order: 22;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-23 {
+    -webkit-box-ordinal-group: 24;
+        -ms-flex-order: 23;
+            order: 23;
+  }
+  /* line 53, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .order-xl-24 {
+    -webkit-box-ordinal-group: 25;
+        -ms-flex-order: 24;
+            order: 24;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-0 {
+    margin-left: 0;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-1 {
+    margin-left: 4.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-2 {
+    margin-left: 8.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-3 {
+    margin-left: 12.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-4 {
+    margin-left: 16.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-5 {
+    margin-left: 20.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-6 {
+    margin-left: 25%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-7 {
+    margin-left: 29.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-8 {
+    margin-left: 33.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-9 {
+    margin-left: 37.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-10 {
+    margin-left: 41.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-11 {
+    margin-left: 45.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-12 {
+    margin-left: 50%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-13 {
+    margin-left: 54.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-14 {
+    margin-left: 58.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-15 {
+    margin-left: 62.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-16 {
+    margin-left: 66.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-17 {
+    margin-left: 70.83333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-18 {
+    margin-left: 75%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-19 {
+    margin-left: 79.16667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-20 {
+    margin-left: 83.33333%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-21 {
+    margin-left: 87.5%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-22 {
+    margin-left: 91.66667%;
+  }
+  /* line 59, node_modules/bootstrap/scss/mixins/_grid-framework.scss */
+  .offset-xl-23 {
+    margin-left: 95.83333%;
+  }
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-none {
+  display: none !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-inline {
+  display: inline !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-inline-block {
+  display: inline-block !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-block {
+  display: block !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-table {
+  display: table !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-table-row {
+  display: table-row !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-table-cell {
+  display: table-cell !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+.d-inline-flex {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+}
+
+@media (min-width: 576px) {
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-none {
+    display: none !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-inline {
+    display: inline !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-inline-block {
+    display: inline-block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-block {
+    display: block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-table {
+    display: table !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-table-row {
+    display: table-row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-table-cell {
+    display: table-cell !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-sm-inline-flex {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-none {
+    display: none !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-inline {
+    display: inline !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-inline-block {
+    display: inline-block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-block {
+    display: block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-table {
+    display: table !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-table-row {
+    display: table-row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-table-cell {
+    display: table-cell !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-md-inline-flex {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-none {
+    display: none !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-inline {
+    display: inline !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-inline-block {
+    display: inline-block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-block {
+    display: block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-table {
+    display: table !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-table-row {
+    display: table-row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-table-cell {
+    display: table-cell !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-lg-inline-flex {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-none {
+    display: none !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-inline {
+    display: inline !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-inline-block {
+    display: inline-block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-block {
+    display: block !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-table {
+    display: table !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-table-row {
+    display: table-row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-table-cell {
+    display: table-cell !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-xl-inline-flex {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media print {
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-none {
+    display: none !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-inline {
+    display: inline !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-inline-block {
+    display: inline-block !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-block {
+    display: block !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-table {
+    display: table !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-table-row {
+    display: table-row !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-table-cell {
+    display: table-cell !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_display.scss */
+  .d-print-inline-flex {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-row {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-column {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+}
+
+/* line 13, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-row-reverse {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: reverse !important;
+      -ms-flex-direction: row-reverse !important;
+          flex-direction: row-reverse !important;
+}
+
+/* line 14, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-column-reverse {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: reverse !important;
+      -ms-flex-direction: column-reverse !important;
+          flex-direction: column-reverse !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-wrap {
+  -ms-flex-wrap: wrap !important;
+      flex-wrap: wrap !important;
+}
+
+/* line 17, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-nowrap {
+  -ms-flex-wrap: nowrap !important;
+      flex-wrap: nowrap !important;
+}
+
+/* line 18, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-wrap-reverse {
+  -ms-flex-wrap: wrap-reverse !important;
+      flex-wrap: wrap-reverse !important;
+}
+
+/* line 19, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-fill {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-grow-0 {
+  -webkit-box-flex: 0 !important;
+      -ms-flex-positive: 0 !important;
+          flex-grow: 0 !important;
+}
+
+/* line 21, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-grow-1 {
+  -webkit-box-flex: 1 !important;
+      -ms-flex-positive: 1 !important;
+          flex-grow: 1 !important;
+}
+
+/* line 22, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-shrink-0 {
+  -ms-flex-negative: 0 !important;
+      flex-shrink: 0 !important;
+}
+
+/* line 23, node_modules/bootstrap/scss/utilities/_flex.scss */
+.flex-shrink-1 {
+  -ms-flex-negative: 1 !important;
+      flex-shrink: 1 !important;
+}
+
+/* line 25, node_modules/bootstrap/scss/utilities/_flex.scss */
+.justify-content-start {
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
+
+/* line 26, node_modules/bootstrap/scss/utilities/_flex.scss */
+.justify-content-end {
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+}
+
+/* line 27, node_modules/bootstrap/scss/utilities/_flex.scss */
+.justify-content-center {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+/* line 28, node_modules/bootstrap/scss/utilities/_flex.scss */
+.justify-content-between {
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+}
+
+/* line 29, node_modules/bootstrap/scss/utilities/_flex.scss */
+.justify-content-around {
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
+}
+
+/* line 31, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-items-start {
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+}
+
+/* line 32, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-items-end {
+  -webkit-box-align: end !important;
+      -ms-flex-align: end !important;
+          align-items: flex-end !important;
+}
+
+/* line 33, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-items-center {
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
+/* line 34, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-items-baseline {
+  -webkit-box-align: baseline !important;
+      -ms-flex-align: baseline !important;
+          align-items: baseline !important;
+}
+
+/* line 35, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-items-stretch {
+  -webkit-box-align: stretch !important;
+      -ms-flex-align: stretch !important;
+          align-items: stretch !important;
+}
+
+/* line 37, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-content-start {
+  -ms-flex-line-pack: start !important;
+      align-content: flex-start !important;
+}
+
+/* line 38, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-content-end {
+  -ms-flex-line-pack: end !important;
+      align-content: flex-end !important;
+}
+
+/* line 39, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-content-center {
+  -ms-flex-line-pack: center !important;
+      align-content: center !important;
+}
+
+/* line 40, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-content-between {
+  -ms-flex-line-pack: justify !important;
+      align-content: space-between !important;
+}
+
+/* line 41, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-content-around {
+  -ms-flex-line-pack: distribute !important;
+      align-content: space-around !important;
+}
+
+/* line 42, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-content-stretch {
+  -ms-flex-line-pack: stretch !important;
+      align-content: stretch !important;
+}
+
+/* line 44, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-self-auto {
+  -ms-flex-item-align: auto !important;
+      align-self: auto !important;
+}
+
+/* line 45, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-self-start {
+  -ms-flex-item-align: start !important;
+      align-self: flex-start !important;
+}
+
+/* line 46, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-self-end {
+  -ms-flex-item-align: end !important;
+      align-self: flex-end !important;
+}
+
+/* line 47, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-self-center {
+  -ms-flex-item-align: center !important;
+      align-self: center !important;
+}
+
+/* line 48, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-self-baseline {
+  -ms-flex-item-align: baseline !important;
+      align-self: baseline !important;
+}
+
+/* line 49, node_modules/bootstrap/scss/utilities/_flex.scss */
+.align-self-stretch {
+  -ms-flex-item-align: stretch !important;
+      align-self: stretch !important;
+}
+
+@media (min-width: 576px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-row {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-column {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  /* line 13, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-row-reverse {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: row-reverse !important;
+            flex-direction: row-reverse !important;
+  }
+  /* line 14, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-column-reverse {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-wrap {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  /* line 17, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-nowrap {
+    -ms-flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important;
+  }
+  /* line 18, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+        flex-wrap: wrap-reverse !important;
+  }
+  /* line 19, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-grow-0 {
+    -webkit-box-flex: 0 !important;
+        -ms-flex-positive: 0 !important;
+            flex-grow: 0 !important;
+  }
+  /* line 21, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-grow-1 {
+    -webkit-box-flex: 1 !important;
+        -ms-flex-positive: 1 !important;
+            flex-grow: 1 !important;
+  }
+  /* line 22, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important;
+  }
+  /* line 23, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-sm-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important;
+  }
+  /* line 25, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-sm-start {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+  }
+  /* line 26, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-sm-end {
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+  }
+  /* line 27, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-sm-center {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  /* line 28, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-sm-between {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  /* line 29, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-sm-around {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+  /* line 31, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-sm-start {
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+  }
+  /* line 32, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-sm-end {
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+  }
+  /* line 33, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-sm-center {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-sm-baseline {
+    -webkit-box-align: baseline !important;
+        -ms-flex-align: baseline !important;
+            align-items: baseline !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-sm-stretch {
+    -webkit-box-align: stretch !important;
+        -ms-flex-align: stretch !important;
+            align-items: stretch !important;
+  }
+  /* line 37, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-sm-start {
+    -ms-flex-line-pack: start !important;
+        align-content: flex-start !important;
+  }
+  /* line 38, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-sm-end {
+    -ms-flex-line-pack: end !important;
+        align-content: flex-end !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-sm-center {
+    -ms-flex-line-pack: center !important;
+        align-content: center !important;
+  }
+  /* line 40, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-sm-between {
+    -ms-flex-line-pack: justify !important;
+        align-content: space-between !important;
+  }
+  /* line 41, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-sm-around {
+    -ms-flex-line-pack: distribute !important;
+        align-content: space-around !important;
+  }
+  /* line 42, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-sm-stretch {
+    -ms-flex-line-pack: stretch !important;
+        align-content: stretch !important;
+  }
+  /* line 44, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-sm-auto {
+    -ms-flex-item-align: auto !important;
+        align-self: auto !important;
+  }
+  /* line 45, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-sm-start {
+    -ms-flex-item-align: start !important;
+        align-self: flex-start !important;
+  }
+  /* line 46, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-sm-end {
+    -ms-flex-item-align: end !important;
+        align-self: flex-end !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-sm-center {
+    -ms-flex-item-align: center !important;
+        align-self: center !important;
+  }
+  /* line 48, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-sm-baseline {
+    -ms-flex-item-align: baseline !important;
+        align-self: baseline !important;
+  }
+  /* line 49, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-sm-stretch {
+    -ms-flex-item-align: stretch !important;
+        align-self: stretch !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-row {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-column {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  /* line 13, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-row-reverse {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: row-reverse !important;
+            flex-direction: row-reverse !important;
+  }
+  /* line 14, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-column-reverse {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-wrap {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  /* line 17, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-nowrap {
+    -ms-flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important;
+  }
+  /* line 18, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+        flex-wrap: wrap-reverse !important;
+  }
+  /* line 19, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-grow-0 {
+    -webkit-box-flex: 0 !important;
+        -ms-flex-positive: 0 !important;
+            flex-grow: 0 !important;
+  }
+  /* line 21, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-grow-1 {
+    -webkit-box-flex: 1 !important;
+        -ms-flex-positive: 1 !important;
+            flex-grow: 1 !important;
+  }
+  /* line 22, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important;
+  }
+  /* line 23, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-md-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important;
+  }
+  /* line 25, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-md-start {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+  }
+  /* line 26, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-md-end {
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+  }
+  /* line 27, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-md-center {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  /* line 28, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-md-between {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  /* line 29, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-md-around {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+  /* line 31, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-md-start {
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+  }
+  /* line 32, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-md-end {
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+  }
+  /* line 33, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-md-center {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-md-baseline {
+    -webkit-box-align: baseline !important;
+        -ms-flex-align: baseline !important;
+            align-items: baseline !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-md-stretch {
+    -webkit-box-align: stretch !important;
+        -ms-flex-align: stretch !important;
+            align-items: stretch !important;
+  }
+  /* line 37, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-md-start {
+    -ms-flex-line-pack: start !important;
+        align-content: flex-start !important;
+  }
+  /* line 38, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-md-end {
+    -ms-flex-line-pack: end !important;
+        align-content: flex-end !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-md-center {
+    -ms-flex-line-pack: center !important;
+        align-content: center !important;
+  }
+  /* line 40, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-md-between {
+    -ms-flex-line-pack: justify !important;
+        align-content: space-between !important;
+  }
+  /* line 41, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-md-around {
+    -ms-flex-line-pack: distribute !important;
+        align-content: space-around !important;
+  }
+  /* line 42, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-md-stretch {
+    -ms-flex-line-pack: stretch !important;
+        align-content: stretch !important;
+  }
+  /* line 44, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-md-auto {
+    -ms-flex-item-align: auto !important;
+        align-self: auto !important;
+  }
+  /* line 45, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-md-start {
+    -ms-flex-item-align: start !important;
+        align-self: flex-start !important;
+  }
+  /* line 46, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-md-end {
+    -ms-flex-item-align: end !important;
+        align-self: flex-end !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-md-center {
+    -ms-flex-item-align: center !important;
+        align-self: center !important;
+  }
+  /* line 48, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-md-baseline {
+    -ms-flex-item-align: baseline !important;
+        align-self: baseline !important;
+  }
+  /* line 49, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-md-stretch {
+    -ms-flex-item-align: stretch !important;
+        align-self: stretch !important;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-row {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-column {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  /* line 13, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-row-reverse {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: row-reverse !important;
+            flex-direction: row-reverse !important;
+  }
+  /* line 14, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-column-reverse {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-wrap {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  /* line 17, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-nowrap {
+    -ms-flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important;
+  }
+  /* line 18, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+        flex-wrap: wrap-reverse !important;
+  }
+  /* line 19, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-grow-0 {
+    -webkit-box-flex: 0 !important;
+        -ms-flex-positive: 0 !important;
+            flex-grow: 0 !important;
+  }
+  /* line 21, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-grow-1 {
+    -webkit-box-flex: 1 !important;
+        -ms-flex-positive: 1 !important;
+            flex-grow: 1 !important;
+  }
+  /* line 22, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important;
+  }
+  /* line 23, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-lg-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important;
+  }
+  /* line 25, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-lg-start {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+  }
+  /* line 26, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-lg-end {
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+  }
+  /* line 27, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-lg-center {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  /* line 28, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-lg-between {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  /* line 29, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-lg-around {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+  /* line 31, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-lg-start {
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+  }
+  /* line 32, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-lg-end {
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+  }
+  /* line 33, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-lg-center {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-lg-baseline {
+    -webkit-box-align: baseline !important;
+        -ms-flex-align: baseline !important;
+            align-items: baseline !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-lg-stretch {
+    -webkit-box-align: stretch !important;
+        -ms-flex-align: stretch !important;
+            align-items: stretch !important;
+  }
+  /* line 37, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-lg-start {
+    -ms-flex-line-pack: start !important;
+        align-content: flex-start !important;
+  }
+  /* line 38, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-lg-end {
+    -ms-flex-line-pack: end !important;
+        align-content: flex-end !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-lg-center {
+    -ms-flex-line-pack: center !important;
+        align-content: center !important;
+  }
+  /* line 40, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-lg-between {
+    -ms-flex-line-pack: justify !important;
+        align-content: space-between !important;
+  }
+  /* line 41, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-lg-around {
+    -ms-flex-line-pack: distribute !important;
+        align-content: space-around !important;
+  }
+  /* line 42, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-lg-stretch {
+    -ms-flex-line-pack: stretch !important;
+        align-content: stretch !important;
+  }
+  /* line 44, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-lg-auto {
+    -ms-flex-item-align: auto !important;
+        align-self: auto !important;
+  }
+  /* line 45, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-lg-start {
+    -ms-flex-item-align: start !important;
+        align-self: flex-start !important;
+  }
+  /* line 46, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-lg-end {
+    -ms-flex-item-align: end !important;
+        align-self: flex-end !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-lg-center {
+    -ms-flex-item-align: center !important;
+        align-self: center !important;
+  }
+  /* line 48, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-lg-baseline {
+    -ms-flex-item-align: baseline !important;
+        align-self: baseline !important;
+  }
+  /* line 49, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-lg-stretch {
+    -ms-flex-item-align: stretch !important;
+        align-self: stretch !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-row {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-column {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  /* line 13, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-row-reverse {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: row-reverse !important;
+            flex-direction: row-reverse !important;
+  }
+  /* line 14, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-column-reverse {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-wrap {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  /* line 17, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-nowrap {
+    -ms-flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important;
+  }
+  /* line 18, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+        flex-wrap: wrap-reverse !important;
+  }
+  /* line 19, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-grow-0 {
+    -webkit-box-flex: 0 !important;
+        -ms-flex-positive: 0 !important;
+            flex-grow: 0 !important;
+  }
+  /* line 21, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-grow-1 {
+    -webkit-box-flex: 1 !important;
+        -ms-flex-positive: 1 !important;
+            flex-grow: 1 !important;
+  }
+  /* line 22, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-shrink-0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important;
+  }
+  /* line 23, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .flex-xl-shrink-1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important;
+  }
+  /* line 25, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-xl-start {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+  }
+  /* line 26, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-xl-end {
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+  }
+  /* line 27, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-xl-center {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  /* line 28, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-xl-between {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  /* line 29, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .justify-content-xl-around {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+  /* line 31, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-xl-start {
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+  }
+  /* line 32, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-xl-end {
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+  }
+  /* line 33, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-xl-center {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-xl-baseline {
+    -webkit-box-align: baseline !important;
+        -ms-flex-align: baseline !important;
+            align-items: baseline !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-items-xl-stretch {
+    -webkit-box-align: stretch !important;
+        -ms-flex-align: stretch !important;
+            align-items: stretch !important;
+  }
+  /* line 37, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-xl-start {
+    -ms-flex-line-pack: start !important;
+        align-content: flex-start !important;
+  }
+  /* line 38, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-xl-end {
+    -ms-flex-line-pack: end !important;
+        align-content: flex-end !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-xl-center {
+    -ms-flex-line-pack: center !important;
+        align-content: center !important;
+  }
+  /* line 40, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-xl-between {
+    -ms-flex-line-pack: justify !important;
+        align-content: space-between !important;
+  }
+  /* line 41, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-xl-around {
+    -ms-flex-line-pack: distribute !important;
+        align-content: space-around !important;
+  }
+  /* line 42, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-content-xl-stretch {
+    -ms-flex-line-pack: stretch !important;
+        align-content: stretch !important;
+  }
+  /* line 44, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-xl-auto {
+    -ms-flex-item-align: auto !important;
+        align-self: auto !important;
+  }
+  /* line 45, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-xl-start {
+    -ms-flex-item-align: start !important;
+        align-self: flex-start !important;
+  }
+  /* line 46, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-xl-end {
+    -ms-flex-item-align: end !important;
+        align-self: flex-end !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-xl-center {
+    -ms-flex-item-align: center !important;
+        align-self: center !important;
+  }
+  /* line 48, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-xl-baseline {
+    -ms-flex-item-align: baseline !important;
+        align-self: baseline !important;
+  }
+  /* line 49, node_modules/bootstrap/scss/utilities/_flex.scss */
+  .align-self-xl-stretch {
+    -ms-flex-item-align: stretch !important;
+        align-self: stretch !important;
+  }
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-0 {
+  margin: 0 !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-0,
+.my-0 {
+  margin-top: 0 !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-0,
+.mx-0 {
+  margin-right: 0 !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-0,
+.my-0 {
+  margin-bottom: 0 !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-0,
+.mx-0 {
+  margin-left: 0 !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-1 {
+  margin: 0.25rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-1,
+.my-1 {
+  margin-top: 0.25rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-1,
+.mx-1 {
+  margin-right: 0.25rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-1,
+.my-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-1,
+.mx-1 {
+  margin-left: 0.25rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-2 {
+  margin: 0.5rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-2,
+.my-2 {
+  margin-top: 0.5rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-2,
+.mx-2 {
+  margin-right: 0.5rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-2,
+.my-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-2,
+.mx-2 {
+  margin-left: 0.5rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-3 {
+  margin: 1rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-3,
+.my-3 {
+  margin-top: 1rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-3,
+.mx-3 {
+  margin-right: 1rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-3,
+.mx-3 {
+  margin-left: 1rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-4 {
+  margin: 1.5rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-4,
+.my-4 {
+  margin-top: 1.5rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-4,
+.mx-4 {
+  margin-right: 1.5rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-4,
+.mx-4 {
+  margin-left: 1.5rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-5 {
+  margin: 3rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-5,
+.my-5 {
+  margin-top: 3rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-5,
+.mx-5 {
+  margin-right: 3rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-5,
+.my-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-5,
+.mx-5 {
+  margin-left: 3rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.p-0 {
+  padding: 0 !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pt-0,
+.py-0 {
+  padding-top: 0 !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pr-0,
+.px-0 {
+  padding-right: 0 !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pb-0,
+.py-0 {
+  padding-bottom: 0 !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pl-0,
+.px-0 {
+  padding-left: 0 !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.p-1 {
+  padding: 0.25rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pt-1,
+.py-1 {
+  padding-top: 0.25rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pr-1,
+.px-1 {
+  padding-right: 0.25rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pb-1,
+.py-1 {
+  padding-bottom: 0.25rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pl-1,
+.px-1 {
+  padding-left: 0.25rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.p-2 {
+  padding: 0.5rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pt-2,
+.py-2 {
+  padding-top: 0.5rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pr-2,
+.px-2 {
+  padding-right: 0.5rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pb-2,
+.py-2 {
+  padding-bottom: 0.5rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pl-2,
+.px-2 {
+  padding-left: 0.5rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.p-3 {
+  padding: 1rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pt-3,
+.py-3 {
+  padding-top: 1rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pr-3,
+.px-3 {
+  padding-right: 1rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pb-3,
+.py-3 {
+  padding-bottom: 1rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pl-3,
+.px-3 {
+  padding-left: 1rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pt-4,
+.py-4 {
+  padding-top: 1.5rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pr-4,
+.px-4 {
+  padding-right: 1.5rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pb-4,
+.py-4 {
+  padding-bottom: 1.5rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pl-4,
+.px-4 {
+  padding-left: 1.5rem !important;
+}
+
+/* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.p-5 {
+  padding: 3rem !important;
+}
+
+/* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pt-5,
+.py-5 {
+  padding-top: 3rem !important;
+}
+
+/* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pr-5,
+.px-5 {
+  padding-right: 3rem !important;
+}
+
+/* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pb-5,
+.py-5 {
+  padding-bottom: 3rem !important;
+}
+
+/* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.pl-5,
+.px-5 {
+  padding-left: 3rem !important;
+}
+
+/* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-n1 {
+  margin: -0.25rem !important;
+}
+
+/* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-n1,
+.my-n1 {
+  margin-top: -0.25rem !important;
+}
+
+/* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-n1,
+.mx-n1 {
+  margin-right: -0.25rem !important;
+}
+
+/* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-n1,
+.my-n1 {
+  margin-bottom: -0.25rem !important;
+}
+
+/* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-n1,
+.mx-n1 {
+  margin-left: -0.25rem !important;
+}
+
+/* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-n2 {
+  margin: -0.5rem !important;
+}
+
+/* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-n2,
+.my-n2 {
+  margin-top: -0.5rem !important;
+}
+
+/* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-n2,
+.mx-n2 {
+  margin-right: -0.5rem !important;
+}
+
+/* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-n2,
+.my-n2 {
+  margin-bottom: -0.5rem !important;
+}
+
+/* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-n2,
+.mx-n2 {
+  margin-left: -0.5rem !important;
+}
+
+/* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-n3 {
+  margin: -1rem !important;
+}
+
+/* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-n3,
+.my-n3 {
+  margin-top: -1rem !important;
+}
+
+/* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-n3,
+.mx-n3 {
+  margin-right: -1rem !important;
+}
+
+/* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-n3,
+.my-n3 {
+  margin-bottom: -1rem !important;
+}
+
+/* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-n3,
+.mx-n3 {
+  margin-left: -1rem !important;
+}
+
+/* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-n4 {
+  margin: -1.5rem !important;
+}
+
+/* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-n4,
+.my-n4 {
+  margin-top: -1.5rem !important;
+}
+
+/* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-n4,
+.mx-n4 {
+  margin-right: -1.5rem !important;
+}
+
+/* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-n4,
+.my-n4 {
+  margin-bottom: -1.5rem !important;
+}
+
+/* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-n4,
+.mx-n4 {
+  margin-left: -1.5rem !important;
+}
+
+/* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-n5 {
+  margin: -3rem !important;
+}
+
+/* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-n5,
+.my-n5 {
+  margin-top: -3rem !important;
+}
+
+/* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-n5,
+.mx-n5 {
+  margin-right: -3rem !important;
+}
+
+/* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-n5,
+.my-n5 {
+  margin-bottom: -3rem !important;
+}
+
+/* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-n5,
+.mx-n5 {
+  margin-left: -3rem !important;
+}
+
+/* line 55, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.m-auto {
+  margin: auto !important;
+}
+
+/* line 56, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mt-auto,
+.my-auto {
+  margin-top: auto !important;
+}
+
+/* line 60, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mr-auto,
+.mx-auto {
+  margin-right: auto !important;
+}
+
+/* line 64, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.mb-auto,
+.my-auto {
+  margin-bottom: auto !important;
+}
+
+/* line 68, node_modules/bootstrap/scss/utilities/_spacing.scss */
+.ml-auto,
+.mx-auto {
+  margin-left: auto !important;
+}
+
+@media (min-width: 576px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-0 {
+    margin: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-0,
+  .my-sm-0 {
+    margin-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-0,
+  .mx-sm-0 {
+    margin-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-0,
+  .my-sm-0 {
+    margin-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-0,
+  .mx-sm-0 {
+    margin-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-1 {
+    margin: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-1,
+  .my-sm-1 {
+    margin-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-1,
+  .mx-sm-1 {
+    margin-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-1,
+  .my-sm-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-1,
+  .mx-sm-1 {
+    margin-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-2 {
+    margin: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-2,
+  .my-sm-2 {
+    margin-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-2,
+  .mx-sm-2 {
+    margin-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-2,
+  .my-sm-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-2,
+  .mx-sm-2 {
+    margin-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-3 {
+    margin: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-3,
+  .my-sm-3 {
+    margin-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-3,
+  .mx-sm-3 {
+    margin-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-3,
+  .my-sm-3 {
+    margin-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-3,
+  .mx-sm-3 {
+    margin-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-4 {
+    margin: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-4,
+  .my-sm-4 {
+    margin-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-4,
+  .mx-sm-4 {
+    margin-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-4,
+  .my-sm-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-4,
+  .mx-sm-4 {
+    margin-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-5 {
+    margin: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-5,
+  .my-sm-5 {
+    margin-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-5,
+  .mx-sm-5 {
+    margin-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-5,
+  .my-sm-5 {
+    margin-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-5,
+  .mx-sm-5 {
+    margin-left: 3rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-sm-0 {
+    padding: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-sm-0,
+  .py-sm-0 {
+    padding-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-sm-0,
+  .px-sm-0 {
+    padding-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-sm-0,
+  .py-sm-0 {
+    padding-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-sm-0,
+  .px-sm-0 {
+    padding-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-sm-1 {
+    padding: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-sm-1,
+  .py-sm-1 {
+    padding-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-sm-1,
+  .px-sm-1 {
+    padding-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-sm-1,
+  .py-sm-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-sm-1,
+  .px-sm-1 {
+    padding-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-sm-2 {
+    padding: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-sm-2,
+  .py-sm-2 {
+    padding-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-sm-2,
+  .px-sm-2 {
+    padding-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-sm-2,
+  .py-sm-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-sm-2,
+  .px-sm-2 {
+    padding-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-sm-3 {
+    padding: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-sm-3,
+  .py-sm-3 {
+    padding-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-sm-3,
+  .px-sm-3 {
+    padding-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-sm-3,
+  .py-sm-3 {
+    padding-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-sm-3,
+  .px-sm-3 {
+    padding-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-sm-4 {
+    padding: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-sm-4,
+  .py-sm-4 {
+    padding-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-sm-4,
+  .px-sm-4 {
+    padding-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-sm-4,
+  .py-sm-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-sm-4,
+  .px-sm-4 {
+    padding-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-sm-5 {
+    padding: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-sm-5,
+  .py-sm-5 {
+    padding-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-sm-5,
+  .px-sm-5 {
+    padding-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-sm-5,
+  .py-sm-5 {
+    padding-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-sm-5,
+  .px-sm-5 {
+    padding-left: 3rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-n1 {
+    margin: -0.25rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-n1,
+  .my-sm-n1 {
+    margin-top: -0.25rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-n1,
+  .mx-sm-n1 {
+    margin-right: -0.25rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-n1,
+  .my-sm-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-n1,
+  .mx-sm-n1 {
+    margin-left: -0.25rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-n2 {
+    margin: -0.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-n2,
+  .my-sm-n2 {
+    margin-top: -0.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-n2,
+  .mx-sm-n2 {
+    margin-right: -0.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-n2,
+  .my-sm-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-n2,
+  .mx-sm-n2 {
+    margin-left: -0.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-n3 {
+    margin: -1rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-n3,
+  .my-sm-n3 {
+    margin-top: -1rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-n3,
+  .mx-sm-n3 {
+    margin-right: -1rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-n3,
+  .my-sm-n3 {
+    margin-bottom: -1rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-n3,
+  .mx-sm-n3 {
+    margin-left: -1rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-n4 {
+    margin: -1.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-n4,
+  .my-sm-n4 {
+    margin-top: -1.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-n4,
+  .mx-sm-n4 {
+    margin-right: -1.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-n4,
+  .my-sm-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-n4,
+  .mx-sm-n4 {
+    margin-left: -1.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-n5 {
+    margin: -3rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-n5,
+  .my-sm-n5 {
+    margin-top: -3rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-n5,
+  .mx-sm-n5 {
+    margin-right: -3rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-n5,
+  .my-sm-n5 {
+    margin-bottom: -3rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-n5,
+  .mx-sm-n5 {
+    margin-left: -3rem !important;
+  }
+  /* line 55, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-sm-auto {
+    margin: auto !important;
+  }
+  /* line 56, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-sm-auto,
+  .my-sm-auto {
+    margin-top: auto !important;
+  }
+  /* line 60, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-sm-auto,
+  .mx-sm-auto {
+    margin-right: auto !important;
+  }
+  /* line 64, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-sm-auto,
+  .my-sm-auto {
+    margin-bottom: auto !important;
+  }
+  /* line 68, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-sm-auto,
+  .mx-sm-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-0 {
+    margin: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-0,
+  .my-md-0 {
+    margin-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-0,
+  .mx-md-0 {
+    margin-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-0,
+  .my-md-0 {
+    margin-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-0,
+  .mx-md-0 {
+    margin-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-1 {
+    margin: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-1,
+  .my-md-1 {
+    margin-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-1,
+  .mx-md-1 {
+    margin-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-1,
+  .my-md-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-1,
+  .mx-md-1 {
+    margin-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-2 {
+    margin: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-2,
+  .my-md-2 {
+    margin-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-2,
+  .mx-md-2 {
+    margin-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-2,
+  .my-md-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-2,
+  .mx-md-2 {
+    margin-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-3 {
+    margin: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-3,
+  .my-md-3 {
+    margin-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-3,
+  .mx-md-3 {
+    margin-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-3,
+  .my-md-3 {
+    margin-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-3,
+  .mx-md-3 {
+    margin-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-4 {
+    margin: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-4,
+  .my-md-4 {
+    margin-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-4,
+  .mx-md-4 {
+    margin-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-4,
+  .my-md-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-4,
+  .mx-md-4 {
+    margin-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-5 {
+    margin: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-5,
+  .my-md-5 {
+    margin-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-5,
+  .mx-md-5 {
+    margin-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-5,
+  .my-md-5 {
+    margin-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-5,
+  .mx-md-5 {
+    margin-left: 3rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-md-0 {
+    padding: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-md-0,
+  .py-md-0 {
+    padding-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-md-0,
+  .px-md-0 {
+    padding-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-md-0,
+  .py-md-0 {
+    padding-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-md-0,
+  .px-md-0 {
+    padding-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-md-1 {
+    padding: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-md-1,
+  .py-md-1 {
+    padding-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-md-1,
+  .px-md-1 {
+    padding-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-md-1,
+  .py-md-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-md-1,
+  .px-md-1 {
+    padding-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-md-2 {
+    padding: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-md-2,
+  .py-md-2 {
+    padding-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-md-2,
+  .px-md-2 {
+    padding-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-md-2,
+  .py-md-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-md-2,
+  .px-md-2 {
+    padding-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-md-3 {
+    padding: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-md-3,
+  .py-md-3 {
+    padding-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-md-3,
+  .px-md-3 {
+    padding-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-md-3,
+  .py-md-3 {
+    padding-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-md-3,
+  .px-md-3 {
+    padding-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-md-4 {
+    padding: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-md-4,
+  .py-md-4 {
+    padding-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-md-4,
+  .px-md-4 {
+    padding-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-md-4,
+  .py-md-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-md-4,
+  .px-md-4 {
+    padding-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-md-5 {
+    padding: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-md-5,
+  .py-md-5 {
+    padding-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-md-5,
+  .px-md-5 {
+    padding-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-md-5,
+  .py-md-5 {
+    padding-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-md-5,
+  .px-md-5 {
+    padding-left: 3rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-n1 {
+    margin: -0.25rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-n1,
+  .my-md-n1 {
+    margin-top: -0.25rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-n1,
+  .mx-md-n1 {
+    margin-right: -0.25rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-n1,
+  .my-md-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-n1,
+  .mx-md-n1 {
+    margin-left: -0.25rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-n2 {
+    margin: -0.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-n2,
+  .my-md-n2 {
+    margin-top: -0.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-n2,
+  .mx-md-n2 {
+    margin-right: -0.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-n2,
+  .my-md-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-n2,
+  .mx-md-n2 {
+    margin-left: -0.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-n3 {
+    margin: -1rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-n3,
+  .my-md-n3 {
+    margin-top: -1rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-n3,
+  .mx-md-n3 {
+    margin-right: -1rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-n3,
+  .my-md-n3 {
+    margin-bottom: -1rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-n3,
+  .mx-md-n3 {
+    margin-left: -1rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-n4 {
+    margin: -1.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-n4,
+  .my-md-n4 {
+    margin-top: -1.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-n4,
+  .mx-md-n4 {
+    margin-right: -1.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-n4,
+  .my-md-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-n4,
+  .mx-md-n4 {
+    margin-left: -1.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-n5 {
+    margin: -3rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-n5,
+  .my-md-n5 {
+    margin-top: -3rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-n5,
+  .mx-md-n5 {
+    margin-right: -3rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-n5,
+  .my-md-n5 {
+    margin-bottom: -3rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-n5,
+  .mx-md-n5 {
+    margin-left: -3rem !important;
+  }
+  /* line 55, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-md-auto {
+    margin: auto !important;
+  }
+  /* line 56, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-md-auto,
+  .my-md-auto {
+    margin-top: auto !important;
+  }
+  /* line 60, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-md-auto,
+  .mx-md-auto {
+    margin-right: auto !important;
+  }
+  /* line 64, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-md-auto,
+  .my-md-auto {
+    margin-bottom: auto !important;
+  }
+  /* line 68, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-md-auto,
+  .mx-md-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-0 {
+    margin: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-0,
+  .my-lg-0 {
+    margin-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-0,
+  .mx-lg-0 {
+    margin-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-0,
+  .my-lg-0 {
+    margin-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-0,
+  .mx-lg-0 {
+    margin-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-1 {
+    margin: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-1,
+  .my-lg-1 {
+    margin-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-1,
+  .mx-lg-1 {
+    margin-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-1,
+  .my-lg-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-1,
+  .mx-lg-1 {
+    margin-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-2 {
+    margin: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-2,
+  .my-lg-2 {
+    margin-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-2,
+  .mx-lg-2 {
+    margin-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-2,
+  .my-lg-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-2,
+  .mx-lg-2 {
+    margin-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-3 {
+    margin: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-3,
+  .my-lg-3 {
+    margin-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-3,
+  .mx-lg-3 {
+    margin-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-3,
+  .my-lg-3 {
+    margin-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-3,
+  .mx-lg-3 {
+    margin-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-4 {
+    margin: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-4,
+  .my-lg-4 {
+    margin-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-4,
+  .mx-lg-4 {
+    margin-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-4,
+  .my-lg-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-4,
+  .mx-lg-4 {
+    margin-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-5 {
+    margin: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-5,
+  .my-lg-5 {
+    margin-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-5,
+  .mx-lg-5 {
+    margin-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-5,
+  .my-lg-5 {
+    margin-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-5,
+  .mx-lg-5 {
+    margin-left: 3rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-lg-0 {
+    padding: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-lg-0,
+  .py-lg-0 {
+    padding-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-lg-0,
+  .px-lg-0 {
+    padding-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-lg-0,
+  .py-lg-0 {
+    padding-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-lg-0,
+  .px-lg-0 {
+    padding-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-lg-1 {
+    padding: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-lg-1,
+  .py-lg-1 {
+    padding-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-lg-1,
+  .px-lg-1 {
+    padding-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-lg-1,
+  .py-lg-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-lg-1,
+  .px-lg-1 {
+    padding-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-lg-2 {
+    padding: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-lg-2,
+  .py-lg-2 {
+    padding-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-lg-2,
+  .px-lg-2 {
+    padding-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-lg-2,
+  .py-lg-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-lg-2,
+  .px-lg-2 {
+    padding-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-lg-3 {
+    padding: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-lg-3,
+  .py-lg-3 {
+    padding-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-lg-3,
+  .px-lg-3 {
+    padding-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-lg-3,
+  .py-lg-3 {
+    padding-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-lg-3,
+  .px-lg-3 {
+    padding-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-lg-4 {
+    padding: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-lg-4,
+  .py-lg-4 {
+    padding-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-lg-4,
+  .px-lg-4 {
+    padding-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-lg-4,
+  .py-lg-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-lg-4,
+  .px-lg-4 {
+    padding-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-lg-5 {
+    padding: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-lg-5,
+  .py-lg-5 {
+    padding-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-lg-5,
+  .px-lg-5 {
+    padding-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-lg-5,
+  .py-lg-5 {
+    padding-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-lg-5,
+  .px-lg-5 {
+    padding-left: 3rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-n1 {
+    margin: -0.25rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-n1,
+  .my-lg-n1 {
+    margin-top: -0.25rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-n1,
+  .mx-lg-n1 {
+    margin-right: -0.25rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-n1,
+  .my-lg-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-n1,
+  .mx-lg-n1 {
+    margin-left: -0.25rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-n2 {
+    margin: -0.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-n2,
+  .my-lg-n2 {
+    margin-top: -0.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-n2,
+  .mx-lg-n2 {
+    margin-right: -0.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-n2,
+  .my-lg-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-n2,
+  .mx-lg-n2 {
+    margin-left: -0.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-n3 {
+    margin: -1rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-n3,
+  .my-lg-n3 {
+    margin-top: -1rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-n3,
+  .mx-lg-n3 {
+    margin-right: -1rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-n3,
+  .my-lg-n3 {
+    margin-bottom: -1rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-n3,
+  .mx-lg-n3 {
+    margin-left: -1rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-n4 {
+    margin: -1.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-n4,
+  .my-lg-n4 {
+    margin-top: -1.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-n4,
+  .mx-lg-n4 {
+    margin-right: -1.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-n4,
+  .my-lg-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-n4,
+  .mx-lg-n4 {
+    margin-left: -1.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-n5 {
+    margin: -3rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-n5,
+  .my-lg-n5 {
+    margin-top: -3rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-n5,
+  .mx-lg-n5 {
+    margin-right: -3rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-n5,
+  .my-lg-n5 {
+    margin-bottom: -3rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-n5,
+  .mx-lg-n5 {
+    margin-left: -3rem !important;
+  }
+  /* line 55, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-lg-auto {
+    margin: auto !important;
+  }
+  /* line 56, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-lg-auto,
+  .my-lg-auto {
+    margin-top: auto !important;
+  }
+  /* line 60, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-lg-auto,
+  .mx-lg-auto {
+    margin-right: auto !important;
+  }
+  /* line 64, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-lg-auto,
+  .my-lg-auto {
+    margin-bottom: auto !important;
+  }
+  /* line 68, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-lg-auto,
+  .mx-lg-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-0 {
+    margin: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-0,
+  .my-xl-0 {
+    margin-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-0,
+  .mx-xl-0 {
+    margin-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-0,
+  .my-xl-0 {
+    margin-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-0,
+  .mx-xl-0 {
+    margin-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-1 {
+    margin: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-1,
+  .my-xl-1 {
+    margin-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-1,
+  .mx-xl-1 {
+    margin-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-1,
+  .my-xl-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-1,
+  .mx-xl-1 {
+    margin-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-2 {
+    margin: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-2,
+  .my-xl-2 {
+    margin-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-2,
+  .mx-xl-2 {
+    margin-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-2,
+  .my-xl-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-2,
+  .mx-xl-2 {
+    margin-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-3 {
+    margin: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-3,
+  .my-xl-3 {
+    margin-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-3,
+  .mx-xl-3 {
+    margin-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-3,
+  .my-xl-3 {
+    margin-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-3,
+  .mx-xl-3 {
+    margin-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-4 {
+    margin: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-4,
+  .my-xl-4 {
+    margin-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-4,
+  .mx-xl-4 {
+    margin-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-4,
+  .my-xl-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-4,
+  .mx-xl-4 {
+    margin-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-5 {
+    margin: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-5,
+  .my-xl-5 {
+    margin-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-5,
+  .mx-xl-5 {
+    margin-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-5,
+  .my-xl-5 {
+    margin-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-5,
+  .mx-xl-5 {
+    margin-left: 3rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-xl-0 {
+    padding: 0 !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-xl-0,
+  .py-xl-0 {
+    padding-top: 0 !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-xl-0,
+  .px-xl-0 {
+    padding-right: 0 !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-xl-0,
+  .py-xl-0 {
+    padding-bottom: 0 !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-xl-0,
+  .px-xl-0 {
+    padding-left: 0 !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-xl-1 {
+    padding: 0.25rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-xl-1,
+  .py-xl-1 {
+    padding-top: 0.25rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-xl-1,
+  .px-xl-1 {
+    padding-right: 0.25rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-xl-1,
+  .py-xl-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-xl-1,
+  .px-xl-1 {
+    padding-left: 0.25rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-xl-2 {
+    padding: 0.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-xl-2,
+  .py-xl-2 {
+    padding-top: 0.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-xl-2,
+  .px-xl-2 {
+    padding-right: 0.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-xl-2,
+  .py-xl-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-xl-2,
+  .px-xl-2 {
+    padding-left: 0.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-xl-3 {
+    padding: 1rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-xl-3,
+  .py-xl-3 {
+    padding-top: 1rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-xl-3,
+  .px-xl-3 {
+    padding-right: 1rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-xl-3,
+  .py-xl-3 {
+    padding-bottom: 1rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-xl-3,
+  .px-xl-3 {
+    padding-left: 1rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-xl-4 {
+    padding: 1.5rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-xl-4,
+  .py-xl-4 {
+    padding-top: 1.5rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-xl-4,
+  .px-xl-4 {
+    padding-right: 1.5rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-xl-4,
+  .py-xl-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-xl-4,
+  .px-xl-4 {
+    padding-left: 1.5rem !important;
+  }
+  /* line 11, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .p-xl-5 {
+    padding: 3rem !important;
+  }
+  /* line 12, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pt-xl-5,
+  .py-xl-5 {
+    padding-top: 3rem !important;
+  }
+  /* line 16, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pr-xl-5,
+  .px-xl-5 {
+    padding-right: 3rem !important;
+  }
+  /* line 20, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pb-xl-5,
+  .py-xl-5 {
+    padding-bottom: 3rem !important;
+  }
+  /* line 24, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .pl-xl-5,
+  .px-xl-5 {
+    padding-left: 3rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-n1 {
+    margin: -0.25rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-n1,
+  .my-xl-n1 {
+    margin-top: -0.25rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-n1,
+  .mx-xl-n1 {
+    margin-right: -0.25rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-n1,
+  .my-xl-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-n1,
+  .mx-xl-n1 {
+    margin-left: -0.25rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-n2 {
+    margin: -0.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-n2,
+  .my-xl-n2 {
+    margin-top: -0.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-n2,
+  .mx-xl-n2 {
+    margin-right: -0.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-n2,
+  .my-xl-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-n2,
+  .mx-xl-n2 {
+    margin-left: -0.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-n3 {
+    margin: -1rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-n3,
+  .my-xl-n3 {
+    margin-top: -1rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-n3,
+  .mx-xl-n3 {
+    margin-right: -1rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-n3,
+  .my-xl-n3 {
+    margin-bottom: -1rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-n3,
+  .mx-xl-n3 {
+    margin-left: -1rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-n4 {
+    margin: -1.5rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-n4,
+  .my-xl-n4 {
+    margin-top: -1.5rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-n4,
+  .mx-xl-n4 {
+    margin-right: -1.5rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-n4,
+  .my-xl-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-n4,
+  .mx-xl-n4 {
+    margin-left: -1.5rem !important;
+  }
+  /* line 34, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-n5 {
+    margin: -3rem !important;
+  }
+  /* line 35, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-n5,
+  .my-xl-n5 {
+    margin-top: -3rem !important;
+  }
+  /* line 39, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-n5,
+  .mx-xl-n5 {
+    margin-right: -3rem !important;
+  }
+  /* line 43, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-n5,
+  .my-xl-n5 {
+    margin-bottom: -3rem !important;
+  }
+  /* line 47, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-n5,
+  .mx-xl-n5 {
+    margin-left: -3rem !important;
+  }
+  /* line 55, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .m-xl-auto {
+    margin: auto !important;
+  }
+  /* line 56, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mt-xl-auto,
+  .my-xl-auto {
+    margin-top: auto !important;
+  }
+  /* line 60, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mr-xl-auto,
+  .mx-xl-auto {
+    margin-right: auto !important;
+  }
+  /* line 64, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .mb-xl-auto,
+  .my-xl-auto {
+    margin-bottom: auto !important;
+  }
+  /* line 68, node_modules/bootstrap/scss/utilities/_spacing.scss */
+  .ml-xl-auto,
+  .mx-xl-auto {
+    margin-left: auto !important;
+  }
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-auto {
+  margin: auto !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-auto {
+  padding: auto !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-auto {
+  margin-top: auto !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-auto {
+  padding-top: auto !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-auto {
+  padding-bottom: auto !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-auto {
+  margin-left: auto !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-auto {
+  padding-left: auto !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-auto {
+  margin-right: auto !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-auto {
+  padding-right: auto !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-0 {
+  margin: 0px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-0 {
+  padding: 0px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-0 {
+  margin-top: 0px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-0 {
+  padding-top: 0px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-0 {
+  padding-bottom: 0px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-0 {
+  margin-left: 0px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-0 {
+  padding-left: 0px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-0 {
+  margin-right: 0px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-0 {
+  padding-right: 0px !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-8 {
+  margin: 8px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-8 {
+  padding: 8px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-8 {
+  margin-top: 8px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-8 {
+  padding-top: 8px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-8 {
+  margin-bottom: 8px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-8 {
+  padding-bottom: 8px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-8 {
+  margin-left: 8px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-8 {
+  padding-left: 8px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-8 {
+  margin-right: 8px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-8 {
+  padding-right: 8px !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-16 {
+  margin: 16px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-16 {
+  padding: 16px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-16 {
+  padding-top: 16px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-16 {
+  padding-bottom: 16px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-16 {
+  margin-left: 16px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-16 {
+  padding-left: 16px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-16 {
+  margin-right: 16px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-16 {
+  padding-right: 16px !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-24 {
+  margin: 24px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-24 {
+  padding: 24px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-24 {
+  margin-top: 24px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-24 {
+  padding-top: 24px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-24 {
+  margin-bottom: 24px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-24 {
+  padding-bottom: 24px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-24 {
+  margin-left: 24px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-24 {
+  padding-left: 24px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-24 {
+  margin-right: 24px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-24 {
+  padding-right: 24px !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-32 {
+  margin: 32px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-32 {
+  padding: 32px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-32 {
+  margin-top: 32px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-32 {
+  padding-top: 32px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-32 {
+  margin-bottom: 32px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-32 {
+  padding-bottom: 32px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-32 {
+  margin-left: 32px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-32 {
+  padding-left: 32px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-32 {
+  margin-right: 32px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-32 {
+  padding-right: 32px !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-48 {
+  margin: 48px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-48 {
+  padding: 48px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-48 {
+  margin-top: 48px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-48 {
+  padding-top: 48px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-48 {
+  margin-bottom: 48px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-48 {
+  padding-bottom: 48px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-48 {
+  margin-left: 48px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-48 {
+  padding-left: 48px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-48 {
+  margin-right: 48px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-48 {
+  padding-right: 48px !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-64 {
+  margin: 64px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-64 {
+  padding: 64px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-64 {
+  margin-top: 64px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-64 {
+  padding-top: 64px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-64 {
+  margin-bottom: 64px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-64 {
+  padding-bottom: 64px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-64 {
+  margin-left: 64px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-64 {
+  padding-left: 64px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-64 {
+  margin-right: 64px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-64 {
+  padding-right: 64px !important;
+}
+
+/* line 39, src/styles/core/_layout.scss */
+.m-128 {
+  margin: 128px !important;
+}
+
+/* line 43, src/styles/core/_layout.scss */
+.p-128 {
+  padding: 128px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mt-128 {
+  margin-top: 128px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pt-128 {
+  padding-top: 128px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mb-128 {
+  margin-bottom: 128px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pb-128 {
+  padding-bottom: 128px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.ml-128 {
+  margin-left: 128px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pl-128 {
+  padding-left: 128px !important;
+}
+
+/* line 49, src/styles/core/_layout.scss */
+.mr-128 {
+  margin-right: 128px !important;
+}
+
+/* line 53, src/styles/core/_layout.scss */
+.pr-128 {
+  padding-right: 128px !important;
+}
+
+@media (min-width: 0) {
+  /* line 61, src/styles/core/_layout.scss */
+  .container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+/* line 75, src/styles/core/_layout.scss */
+.valigned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 88, src/styles/core/_layout.scss */
+.centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 97, src/styles/core/_layout.scss */
+.space-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 101, src/styles/core/_layout.scss */
+.grow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+/* line 105, src/styles/core/_layout.scss */
+.shrink {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+/* line 109, src/styles/core/_layout.scss */
+.no-shrink {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+/* line 113, src/styles/core/_layout.scss */
+.hide {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  /* line 117, src/styles/core/_layout.scss */
+  .lg-hide {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 123, src/styles/core/_layout.scss */
+  .lg-show {
+    display: initial;
+  }
+}
+
+/* line 132, src/styles/core/_layout.scss */
+.hide-scrollbar, .crop-content {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* line 136, src/styles/core/_layout.scss */
+.hide-scrollbar::-webkit-scrollbar, .crop-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 141, src/styles/core/_layout.scss */
+.crop-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 146, src/styles/core/_layout.scss */
+.crop-content {
+  overflow-x: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 1, src/styles/_footer.scss */
+footer nav {
+  text-align: center;
+}
+
+/* line 4, src/styles/_footer.scss */
+footer nav li {
+  font-size: 14px;
+}
+
+/* line 1, src/styles/_map.scss */
+#map {
+  min-height: 250px;
+}
+
+@media (min-width: 992px) {
+  /* line 1, src/styles/_map.scss */
+  #map {
+    min-height: 400px;
+  }
+}
+
+/* line 2, src/styles/pages/_index.page.scss */
+.index-page main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 10, src/styles/pages/_index.page.scss */
+.index-page .main__logo {
+  z-index: 2;
+  height: 200px;
+  margin-bottom: 24px;
+}
+
+/* line 16, src/styles/pages/_index.page.scss */
+.index-page .main__date {
+  font-weight: bold;
+  background: #000000;
+}
+
+/* line 21, src/styles/pages/_index.page.scss */
+.index-page .main__desc {
+  max-width: 60ch;
+  line-height: 1.4;
+  text-align: center;
+  background: #000000;
+}
+
+/* line 30, src/styles/pages/_index.page.scss */
+.index-page .page-section--filled {
+  background: #000000;
+}
+
+/* line 35, src/styles/pages/_index.page.scss */
+.index-page .speaker {
+  -ms-flex-preferred-size: 232px;
+      flex-basis: 232px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+/* line 41, src/styles/pages/_index.page.scss */
+.index-page .speaker__pic {
+  height: 200px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+}
+
+/* line 47, src/styles/pages/_index.page.scss */
+.index-page .speaker__name {
+  text-align: center;
+}
+
+/* line 53, src/styles/pages/_index.page.scss */
+.index-page .speaker--undefined .speaker__pic {
+  width: 200px;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 58, src/styles/pages/_index.page.scss */
+.index-page .speaker--undefined .speaker__pic__sign {
+  font-size: 72px;
+}
+
+/* line 1, src/styles/pages/coc.page.scss */
+.coc h1 {
+  font-size: 40px;
+}
+
+/* line 5, src/styles/pages/coc.page.scss */
+.coc h3 {
+  margin-top: 2em;
+  font-size: 30px;
+}
+
+/* line 10, src/styles/pages/coc.page.scss */
+.coc article {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 24px;
+  line-height: 1.4;
+  color: #1e063b;
+  border-radius: 4px;
+  background: white;
+}
+
+/* line 22, src/styles/pages/coc.page.scss */
+.coc p {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+/* line 27, src/styles/pages/coc.page.scss */
+.coc ul,
+.coc ol {
+  font-size: 18px;
+  -webkit-padding-start: 20px;
+          padding-inline-start: 20px;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+
+/* line 36, src/styles/pages/coc.page.scss */
+.coc ul {
+  list-style-type: disc;
+}
+
+/* line 8, src/styles/main.scss */
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+
+/* line 14, src/styles/main.scss */
+a {
+  color: #ffffff;
+}
+
+/* line 18, src/styles/main.scss */
+a:hover {
+  color: #fdc834;
+}
+
+/* line 22, src/styles/main.scss */
+ul {
+  list-style: none;
+}
+
+/* line 26, src/styles/main.scss */
+nav ul li {
+  display: inline;
+}
+
+/* line 30, src/styles/main.scss */
+.with-bg {
+  position: relative;
+}
+
+/* line 34, src/styles/main.scss */
+.polygon-pattern-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  pointer-events: none;
+  color: white;
+  background: url("/images/pattern.svg");
+  background-color: #000000;
+}

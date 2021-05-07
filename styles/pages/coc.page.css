@@ -1,0 +1,53 @@
+/*!
+ * lviv-js v2020.0.2
+ * LvivJS Conference website
+ * (c) 2021
+ * https://github.com/LvivJS/web_site
+ */
+
+/* line 1, src/styles/pages/coc.page.scss */
+.coc h1 {
+  font-size: 40px;
+}
+
+/* line 5, src/styles/pages/coc.page.scss */
+.coc h3 {
+  margin-top: 2em;
+  font-size: 30px;
+}
+
+/* line 10, src/styles/pages/coc.page.scss */
+.coc article {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 24px;
+  line-height: 1.4;
+  color: #1e063b;
+  border-radius: 4px;
+  background: white;
+}
+
+/* line 22, src/styles/pages/coc.page.scss */
+.coc p {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+/* line 27, src/styles/pages/coc.page.scss */
+.coc ul,
+.coc ol {
+  font-size: 18px;
+  -webkit-padding-start: 20px;
+          padding-inline-start: 20px;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+
+/* line 36, src/styles/pages/coc.page.scss */
+.coc ul {
+  list-style-type: disc;
+}

@@ -1,7 +1,0 @@
-#map {
-  min-height: 250px;
-
-  @include respond-to('lg') {
-    min-height: 400px;
-  }
-}

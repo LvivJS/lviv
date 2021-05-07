@@ -1,3 +1,10 @@
+/*!
+ * lviv-js v2020.0.2
+ * LvivJS Conference website
+ * (c) 2021
+ * https://github.com/LvivJS/web_site
+ */
+
 /* eslint-disable */
 // GOOGLE MAPS
 var map;
