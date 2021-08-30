@@ -51,3 +51,8 @@
 .coc ul {
   list-style-type: disc;
 }
+
+/* line 40, src/styles/pages/coc.page.scss */
+.coc strong {
+  font-weight: bold;
+}
