@@ -266,7 +266,7 @@ function removeUnusedCss() {
   return src("dist/styles/main.min.css")
     .pipe(
       uncss({
-        html: ["dist/index.html", "dist/code_of_conduct.html"],
+        html: ["dist/index.html", "dist/code_of_conduct.html", "dist/terms_and_conditions.html"],
         ignore: ["footer nav", "footer nav li"], // due to tickets script tag
       })
     )
