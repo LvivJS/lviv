@@ -43,7 +43,7 @@
     "gulp-uncss": "^1.0.6",
     "http-server": "0.12.1",
     "lazypipe": "1.0.1",
-    "sharp": "^0.24.1"
+    "sharp": "^0.30.5"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
